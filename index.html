@@ -30,155 +30,78 @@ Affiliate Landing Page Template
   <!-- ✅ Google Fonts -->
   <link href="https://fonts.googleapis.com/css2?family=Playfair+Display:wght@600&family=Quicksand:wght@400;600&display=swap" rel="stylesheet">
 
-  <!-- ✅ 外部CSSを読み込み（キャッシュ更新対策つき） -->
+  <!-- ✅ 外部CSS読み込み（キャッシュ無視バージョン） -->
   <link rel="stylesheet" href="style.css?v=20251106">
 </head>
-  
 <body>
   <header>
-    <div class="container">
-      <h1>肌が喜ぶ、自然のちから</h1>
-      <p class="lead">心と肌にやさしい、自然派の贅沢ケアで美肌・アンチエイジング。</p>
+    <h1>肌が喜ぶ、自然のちから</h1>
+    <p>心と肌にやさしい、自然派の贅沢ケアで美肌・アンチエイジング。</p>
 
-      <nav>
-        <ul>
-          <li><a href="index.html">🏠 トップ</a></li>
-          <li><a href="seasons-skin.html">🌸 季節別スキンケア</a></li>
-          <li><a href="beauty-column.html">💄 ビューティーコラム</a></li>
-          <li><a href="about.html">🌿 サイトについて</a></li>
-        </ul>
-      </nav>
-    </div>
+    <nav>
+      <ul>
+        <li><a href="index.html">🏠 トップ</a></li>
+        <li><a href="seasons-skin.html">🌸 季節別スキンケア</a></li>
+        <li><a href="beauty-column.html">💄 ビューティーコラム</a></li>
+        <li><a href="about.html">🌿 サイトについて</a></li>
+      </ul>
+    </nav>
   </header>
 
-  <main class="container">
-    <h2>おすすめのオーガニックコスメ商品</h2>
-    <p>自然由来成分にこだわったオーガニックコスメを厳選。肌本来の美しさを引き出す人気商品をご紹介します。</p>
-    <div class="grid" id="productGrid"></div>
+  <section class="hero">
+    <img src="images/header_rose.jpg" alt="自然派スキンケアのヘッダー" class="hero-image">
+  </section>
 
-    <!-- 💬 レビュー -->
-    <h2>実際に使った人のレビュー</h2>
-    <section class="reviews">
-      <div class="review-card">
-        <img src="images/30sai.jpg" alt="30代女性会社員" class="review-photo">
-        <div class="review-content">
-          <strong>30代女性 会社員：</strong>
-          <p>N Organic Basicを使い始めてから、肌のキメが整い、メイクのりが驚くほど良くなりました。自然由来の成分で毎日安心して使えるのが嬉しいです♪今は母と使ってます！</p>
-        </div>
+  <section class="products">
+    <h2>おすすめのオーガニックコスメ</h2>
+    <div class="product-grid">
+      <div class="product-card">
+        <img src="images/skin1.jpg" alt="N Organic Basic">
+        <h3>N Organic Basic</h3>
+        <p>自然由来成分で配合したスキンケア。</p>
+        <a href="https://amzn.to/479cQEZ" target="_blank" class="btn">今すぐ体験する</a>
       </div>
-      <div class="review-card">
-        <img src="images/25sai.jpg" alt="25歳女性 ジムインストラクター" class="review-photo">
-        <div class="review-content">
-          <strong>25歳女性 ジムインストラクター：</strong>
-          <p>Allna Moisturizerを使ってから肌がもちもちになり、乾燥知らずに。朝の目覚めも快適で、友人にもおすすめしています。肌が自然に潤う感覚が嬉しいです。</p>
-        </div>
+      <div class="product-card">
+        <img src="images/moist1.jpg" alt="Allna Moisturizer">
+        <h3>Allna Moisturizer</h3>
+        <p>肌本来のうるおいを守る保湿クリーム。</p>
+        <a href="https://amzn.to/3LtRo51" target="_blank" class="btn">今すぐ体験する</a>
       </div>
-    </section>
-
-<section class="seasonal-section">
-  <h2>季節のおすすめ</h2>
-  <div class="seasonal-card">
-    <a href="winter-selection.html">
-      <img src="images/winter_handcream.jpg" alt="冬のオーガニックケア ベストセレクション">
-      <div class="seasonal-card-text">
-        <h3>オーガニックケア・冬のベストセレクション</h3>
-        <p>乾燥する季節にぴったりのハンドクリームやボディケアをセレクト。<br>
-        肌にやさしく、香りも楽しめる自然派ケア。</p>
-        <span class="link-arrow">▶ 詳しく見る</span>
+      <div class="product-card">
+        <img src="images/face1.jpg" alt="Allna Organic Face Pack">
+        <h3>Allna Organic Face Pack</h3>
+        <p>自然成分を詰めた集中ケアパック。</p>
+        <a href="https://amzn.to/47czgp2" target="_blank" class="btn">今すぐ体験する</a>
       </div>
-    </a>
-  </div>
-</section>
-    
-    <!-- 🌿 記事セクション -->
-    <section class="article">
-      <h2>オーガニックコスメを選ぶ理由</h2>
-
-      <h3>自然由来成分のやさしさ</h3>
-      <div class="article-block">
-        <img src="images/article1.jpg" alt="オーガニック原料">
-        <p>自然由来の原料を使用することで、肌への刺激を最小限に。敏感肌でも安心して使えるのが魅力です。</p>
-      </div>
-
-      <h3>高い保湿力とハリのサポート</h3>
-      <div class="article-block">
-        <img src="images/article2.jpg" alt="肌への効果">
-        <p>オーガニック成分には抗酸化作用があり、肌のハリと潤いをキープ。日々のケアに欠かせません。</p>
-      </div>
-
-      <h3>体と環境へのやさしさ</h3>
-      <div class="article-block">
-        <img src="images/article3.jpg" alt="体への効果">
-        <p>化学成分を控えた製品は、肌への負担が少なく、環境にも配慮されています。</p>
-      </div>
-    </section>
-  </main>
-
-  <section class="section-alt">
-    <div class="container">
-      <h2>おすすめオーガニックケアアイテム</h2>
-      <div class="grid" id="careGrid"></div>
     </div>
   </section>
 
-  <div class="back-btn">
-    <a href="seasons-skin.html">🌸 季節別スキンケア</a>
-    <a href="beauty-column.html">💄 ビューティーコラム</a>
-  </div>
+  <!-- 🌸 季節のおすすめ -->
+  <section class="seasonal-section">
+    <h2>季節のおすすめ</h2>
+    <div class="seasonal-card">
+      <a href="winter-selection.html">
+        <img src="images/winter_handcream.jpg" alt="冬のオーガニックケア ベストセレクション">
+        <div class="seasonal-card-text">
+          <h3>オーガニックケア・冬のベストセレクション</h3>
+          <p>乾燥する季節にぴったりのハンドクリームやボディケアをセレクト。<br>肌にやさしく、香りも楽しめる自然派ケア。</p>
+          <span class="link-arrow">▶ 詳しく見る</span>
+        </div>
+      </a>
+    </div>
+  </section>
 
-  <div class="disclosure-fixed">
-    <strong>開示：</strong> 一部リンクはアフィリエイトを含みます。
-  </div>
+  <section class="benefits">
+    <h2>オーガニックを選ぶ理由</h2>
+    <ul>
+      <li>自然由来成分で肌に優しい</li>
+      <li>環境に配慮した製品づくり</li>
+      <li>高い保湿力と透明感アップ</li>
+    </ul>
+  </section>
 
-  <div class="back-btn">
-    <a href="#">⬆ ページトップへ</a>
-  </div>
-
-  <footer>© 2025 EssentialBeautyNeeds</footer>
-
-  <script>
-    const PRODUCTS=[
-      {title:'N Organic Basic',desc:'自然由来成分で配合したスキンケア。',img:'images/skin1.jpg',aff:'https://amzn.to/479cQEZ'},
-      {title:'Allna Moisturizer',desc:'肌本来のうるおいを守る保湿クリーム。',img:'images/moist1.jpg',aff:'https://amzn.to/3LtRo51'},
-      {title:'Allna Organic Face Pack',desc:'自然成分を詰めた集中ケアパック。',img:'images/face1.jpg',aff:'https://amzn.to/47czgp2'}
-    ];
-    const CARES=[
-      {title:'Eternum Lip Serum',desc:'唇に潤いと血色感を与えるリップケア。',img:'images/lip1.jpg',aff:'https://amzn.to/4qvw5jJ'},
-      {title:'Fafra Organic Hand Cream',desc:'植物由来成分91％配合のハンドケア。',img:'images/hand1.jpg',aff:'https://amzn.to/4hr6WCw'},
-      {title:'N Organic Vie アイクリーム',desc:'目元に弾力を与える植物由来クリーム。',img:'images/eye1.jpg',aff:'https://amzn.to/4oJeiUA'}
-    ];
-
-    function renderGrid(items,id){
-      const grid=document.getElementById(id);
-      items.forEach(p=>{
-        const card=document.createElement('article');
-        card.className='card';
-        card.innerHTML=`
-          <div class="thumb"><img src="${p.img}" alt="${p.title}"></div>
-          <div class="title">${p.title}</div>
-          <p class="desc">${p.desc}</p>
-          <a class="btn" href="${p.aff}" target="_blank">今すぐ体験する</a>
-        `;
-        grid.appendChild(card);
-      });
-    }
-
-    renderGrid(PRODUCTS,'productGrid');
-    renderGrid(CARES,'careGrid');
-
-    document.querySelectorAll('.review-card').forEach(card=>{
-      const obs=new IntersectionObserver((entries)=>{
-        entries.forEach(e=>{
-          if(e.isIntersecting){e.target.classList.add('visible'); obs.unobserve(e.target);}
-        });
-      },{threshold:0.1});
-      obs.observe(card);
-    });
-  </script>
+  <footer>
+    © 2025 Essential Beauty Needs
+  </footer>
 </body>
 </html>
-
-
-
-
-
