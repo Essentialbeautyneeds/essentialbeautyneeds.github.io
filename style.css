@@ -137,7 +137,65 @@ footer {
   display: block;
 }
 
+/* 季節のおすすめカード */
+.seasonal-section {
+  background: var(--section-bg);
+  padding: 60px 0;
+  margin-top: 60px;
+  text-align: center;
+}
 
+.seasonal-section h2 {
+  font-family: 'Playfair Display', serif;
+  font-size: 28px;
+  color: #503535;
+  margin-bottom: 30px;
+}
+
+.seasonal-card {
+  display: inline-block;
+  width: 80%; /* ✅ カードサイズを80%に調整 */
+  max-width: 700px;
+  background: #fff;
+  border-radius: 20px;
+  box-shadow: 0 5px 18px rgba(0, 0, 0, 0.1);
+  overflow: hidden;
+  transition: transform 0.3s ease, box-shadow 0.3s ease;
+}
+
+.seasonal-card:hover {
+  transform: translateY(-5px);
+  box-shadow: 0 8px 28px rgba(0, 0, 0, 0.15);
+}
+
+.seasonal-card img {
+  width: 100%;
+  height: auto;
+  display: block;
+}
+
+.seasonal-card-text {
+  padding: 20px;
+  text-align: left;
+}
+
+.seasonal-card-text h3 {
+  font-size: 20px;
+  color: #503535;
+  margin-bottom: 8px;
+}
+
+.seasonal-card-text p {
+  font-size: 14px;
+  color: var(--muted);
+  margin-bottom: 12px;
+  line-height: 1.6;
+}
+
+.link-arrow {
+  font-weight: 600;
+  color: var(--accent);
+}
 
 /* 商品一覧の下に少し余白を作る */
 .product-grid {
@@ -153,6 +211,7 @@ footer {
 h2 + .reviews {
   margin-top: 0.5rem; /* h2直下のレビューセクションを近づける */
 }
+
 
 
 
