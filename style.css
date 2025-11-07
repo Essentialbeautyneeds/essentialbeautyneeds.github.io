@@ -121,6 +121,24 @@ footer {
     font-size: 0.9em;
 }
 
+.seasonal-card {
+  max-width: 320px; /* ← 約80%に縮小（400px → 320px） */
+  margin: 0 auto;
+  border-radius: 15px;
+  overflow: hidden;
+  background: #fff;
+  box-shadow: 0 4px 10px rgba(0,0,0,0.1);
+  transition: transform 0.2s ease;
+}
+
+.seasonal-card img {
+  width: 100%;
+  height: auto;
+  display: block;
+}
+
+
+
 /* 商品一覧の下に少し余白を作る */
 .product-grid {
   margin-bottom: 5.5rem; /* 商品と次のセクションの間隔を広げる */
@@ -135,6 +153,7 @@ footer {
 h2 + .reviews {
   margin-top: 0.5rem; /* h2直下のレビューセクションを近づける */
 }
+
 
 
 
