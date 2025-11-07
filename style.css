@@ -213,6 +213,56 @@ h2 + .reviews {
 }
 
 
+/* 季節のおすすめカード調整 */
+.seasonal-section {
+  margin-top: 60px;
+  text-align: center;
+}
+.seasonal-card {
+  display: inline-block;
+  background: var(--card);
+  border-radius: 18px;
+  box-shadow: 0 5px 15px rgba(0,0,0,0.08);
+  overflow: hidden;
+  transition: transform .3s, box-shadow .3s;
+  text-align: left;
+  width: 80%; /* 💡 カード全体を80%に */
+  max-width: 680px;
+}
+.seasonal-card:hover {
+  transform: translateY(-5px);
+  box-shadow: 0 8px 25px rgba(0,0,0,0.15);
+}
+.seasonal-card img {
+  width: 100%;
+  height: auto;
+  display: block;
+  border-bottom: 3px solid var(--accent);
+}
+.seasonal-card-text {
+  padding: 20px;
+}
+.seasonal-card-text h3 {
+  font-size: 20px;
+  color: #503535;
+  margin-bottom: 10px;
+}
+.seasonal-card-text p {
+  font-size: 14px;
+  color: var(--muted);
+  line-height: 1.6;
+}
+.seasonal-card-text .link-arrow {
+  display: inline-block;
+  margin-top: 8px;
+  color: var(--accent);
+  font-weight: 600;
+}
+@media(max-width: 600px) {
+  .seasonal-card {
+    width: 90%;
+  }
+}
 
 
 
