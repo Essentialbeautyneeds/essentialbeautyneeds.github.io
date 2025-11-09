@@ -278,6 +278,7 @@ h2 + .reviews {
   justify-content: center;
   gap: 20px;
   flex-wrap: wrap;
+  margin-top: 40px; /* セクションとの間隔を調整 */
 }
 
 .related-links .nav-btn {
@@ -296,7 +297,7 @@ h2 + .reviews {
   background: linear-gradient(45deg, #f48b8b, #f26a6a);
   transform: translateY(-3px);
   box-shadow: 0 6px 20px rgba(0,0,0,0.25);
-}
+
 
 
 
