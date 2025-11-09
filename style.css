@@ -299,5 +299,23 @@ h2 + .reviews {
   box-shadow: 0 6px 20px rgba(0,0,0,0.25);
 
 
+.purchase-btn {
+  display: inline-block;
+  background: linear-gradient(45deg,#f48b8b,#f7a8a8);
+  color: #fff;
+  padding: 14px 30px;
+  border-radius: 30px;
+  font-weight: 600;
+  text-decoration: none;
+  font-size: 1em;
+  margin-top: 15px;
+  box-shadow: 0 4px 12px rgba(0,0,0,0.15);
+  text-align: center;
+}
+.purchase-btn:hover {
+  background: linear-gradient(45deg,#f26a6a,#f7a8a8);
+  transform: translateY(-3px);
+  box-shadow: 0 6px 20px rgba(0,0,0,0.25);
+}
 
 
