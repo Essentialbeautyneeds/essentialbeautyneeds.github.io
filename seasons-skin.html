@@ -6,10 +6,10 @@
 <meta name="viewport" content="width=device-width,initial-scale=1">
 <title>季節別オーガニックスキンケア特集｜肌が喜ぶ自然派コスメ</title>
 <link href="https://fonts.googleapis.com/css2?family=Playfair+Display:wght@600&family=Quicksand:wght@400;600&display=swap" rel="stylesheet">
-
 <style>
 :root {
   --bg: #fff8f8;
+  --card: #ffffff;
   --accent: #f7a8a8;
   --accent-hover: #f48b8b;
   --muted: #666;
@@ -22,36 +22,26 @@ p.lead { font-size: 18px; color: #5a4545; }
 .container { max-width: 1000px; margin: 0 auto; padding: 0 20px; }
 .article { margin: 80px 0; }
 .article h2 { font-family: 'Playfair Display', serif; font-size: 28px; color: #503535; text-align: center; margin-bottom: 20px; }
-.article img.hero { width: 100%; max-height: 400px; object-fit: cover; border-radius: 18px; margin-bottom: 20px; box-shadow: 0 6px 25px rgba(0,0,0,0.15); }
-
+.article img.hero { width: 100%; max-height: 400px; object-fit: cover; border-radius: 18px; margin-bottom: 30px; box-shadow: 0 6px 25px rgba(0,0,0,0.15); }
 .product-review { display:flex; gap:30px; margin-bottom:50px; }
 .product-card { flex:1; text-align:left; }
 .product-card img { width:100%; height:240px; border-radius:14px; object-fit:cover; margin-bottom:15px; }
 .product-card h3 { font-size:20px; margin-bottom:10px; }
-.product-card p { font-size:15px; color:#444; margin-bottom:10px; }
+.product-card p { font-size:15px; color:#444; margin-bottom:15px; }
 .product-card ul { font-size:14px; margin-left:18px; color:#555; }
-.btn { display:inline-block; background:var(--accent); color:#fff; padding:12px 28px; border-radius:30px; text-decoration:none; font-weight:600; transition:0.3s; }
-.btn:hover { background:var(--accent-hover); }
-
+.product-card .btn { display:inline-block; margin-top:12px; background:var(--accent); color:#fff; padding:10px 16px; border-radius:10px; text-decoration:none; font-weight:600; transition:0.3s; }
+.product-card .btn:hover { background:var(--accent-hover); }
 .review-column { flex:1; display:flex; flex-direction:column; gap:20px; }
 .review-card { background:#fff5f5; border-radius:14px; padding:20px; text-align:center; box-shadow:inset 0 0 10px rgba(0,0,0,0.05); }
 .review-card img { width:120px; height:120px; border-radius:50%; object-fit:cover; margin-bottom:10px; }
 .review-card p { font-size:14px; color:#333; margin-bottom:10px; }
 .review-card .name { font-weight:600; color:#555; margin-top:5px; }
-
-.internal-link { text-align:center; margin:20px 0; }
-.internal-link a { color:#d6336c; font-weight:600; text-decoration:none; }
-
-.related { text-align:center; margin:50px 0; }
-.related a { color:#d6336c; font-weight:600; text-decoration:none; font-size:1.1em; margin:0 12px; }
-
 footer { text-align:center; font-size:13px; color:#888; margin:60px 0 30px; }
-
-@media (max-width:768px){ .product-review{ flex-direction:column; } .review-column{ flex-direction:row; flex-wrap:wrap; justify-content:center; } }
+#affiliateNotice { position:fixed; right:12px; bottom:12px; background:rgba(255,255,255,0.8); color:#555; font-size:11px; border-radius:6px; padding:4px 8px; box-shadow:0 2px 6px rgba(0,0,0,0.1); }
+@media (max-width:768px){ .product-review{ flex-direction:column; } }
 </style>
 </head>
 <body>
-
 <header>
   <h1>季節別オーガニックスキンケア特集</h1>
   <p class="lead">春夏秋冬、それぞれの肌悩みに合った自然派コスメとリアルユーザーの声を紹介します。</p>
@@ -59,21 +49,15 @@ footer { text-align:center; font-size:13px; color:#888; margin:60px 0 30px; }
 
 <main class="container">
 
-<!-- 記事冒頭CTA -->
-<section style="text-align:center; margin:30px 0;">
-  <a href="winter-selection.html" class="btn">❄ 冬のおすすめを見る</a>
-</section>
-
 <!-- 春 -->
-<section class="article" id="spring">
+<section class="article">
   <h2>🌸 春の肌ケア</h2>
   <img src="images/spring.jpg" alt="春のスキンケア" class="hero">
-
   <div class="product-review">
     <div class="product-card">
       <img src="images/etvos.jpg" alt="ETVOS モイストバリアクリーム">
       <h3>ETVOS モイストバリアクリーム</h3>
-      <p>過酷な乾燥・アレルギーシーズンでも肌を守り、花粉やPM2.5など外的刺激から肌をバリア。</p>
+      <p>過酷な乾燥・アレルギーシーズンでも肌を守り、花粉やPM2.5など外的刺激から肌をバリア。ヒト型セラミド配合で敏感な春の肌をうるおいで包み込みます。毎日の使用で肌の赤みが落ち着き、ふっくら透明感のある肌に。メイクのノリも向上。</p>
       <ul>
         <li>うるおいベールで花粉・PM2.5対策</li>
         <li>4種のヒト型セラミド配合</li>
@@ -81,43 +65,30 @@ footer { text-align:center; font-size:13px; color:#888; margin:60px 0 30px; }
       </ul>
       <a href="https://amzn.to/4nMuJPb" class="btn" target="_blank">今すぐチェック</a>
     </div>
-
     <div class="review-column">
       <div class="review-card">
         <img src="images/etvosuser.jpg" alt="30代会社員">
-        <p>「春の花粉の季節は肌荒れに悩まされましたが、ETVOSを使ってから肌の赤みが落ち着き、1日中しっとり。」</p>
+        <p>「春の花粉の季節は肌荒れに悩まされましたが、ETVOSを使ってから肌の赤みが落ち着き、1日中しっとり。メイクのノリも良くなり、肌のキメも整いました。」</p>
         <p class="name">30代会社員</p>
       </div>
       <div class="review-card">
         <img src="images/20.1.jpg" alt="20代女性">
-        <p>「敏感肌でも安心して使える保湿力。肌がふっくらして透明感が出てきました。」</p>
+        <p>「敏感肌でも安心して使える保湿力。肌がふっくらして透明感が出てきました。毎日のスキンケアが楽しみになります。」</p>
         <p class="name">20代女性</p>
       </div>
     </div>
   </div>
-
-  <!-- レビュー短文CTA -->
-  <section style="text-align:center; margin:15px 0;">
-    <p style="font-weight:600; color:#d6336c;">「使い始めてから肌の赤みが落ち着き、しっとり感が続く！」</p>
-    <a href="https://amzn.to/4nMuJPb" class="btn" target="_blank">今すぐチェック</a>
-  </section>
-
-  <!-- 内部リンク -->
-  <div class="internal-link">
-    <a href="#summer">次の記事：☀ 夏の肌ケア →</a>
-  </div>
 </section>
 
 <!-- 夏 -->
-<section class="article" id="summer">
-  <h2>☀ 夏の肌ケア</h2>
+<section class="article">
+  <h2>☀️ 夏の肌ケア</h2>
   <img src="images/summer.jpg" alt="夏のスキンケア" class="hero">
-
   <div class="product-review">
     <div class="product-card">
       <img src="images/sunao.jpg" alt="sunao UVクリーム">
       <h3>sunao UVクリーム</h3>
-      <p>オーガニック由来の無添加日焼け止め。紫外線吸収剤不使用で敏感肌や赤ちゃんにも安心。</p>
+      <p>オーガニック由来の無添加日焼け止め。紫外線吸収剤不使用で敏感肌や赤ちゃんにも安心。さらりとした使用感で化粧下地としても活躍します。汗や水に強く、日常の外出やアウトドアにも最適です。肌への負担が少なく、毎日使える安心設計。</p>
       <ul>
         <li>紫外線吸収剤不使用で低刺激</li>
         <li>石けんで簡単オフ</li>
@@ -125,67 +96,89 @@ footer { text-align:center; font-size:13px; color:#888; margin:60px 0 30px; }
       </ul>
       <a href="https://amzn.to/3JmEMME" class="btn" target="_blank">今すぐチェック</a>
     </div>
-
     <div class="review-column">
       <div class="review-card">
         <img src="images/gym40.jpg" alt="栄養士">
-        <p>「白浮きせず軽い着け心地で汗にも強い！石けんで落とせるのも嬉しい。」</p>
+        <p>「白浮きせず軽い着け心地で汗にも強い！仕事中でも快適に使えます。石けんで落とせるのも嬉しいポイントで、肌トラブルが少なく安心して使用できました。」</p>
         <p class="name">栄養士</p>
       </div>
+      <div class="review-card">
+        <img src="images/20.2.jpg" alt="20代女性">
+        <p>「日焼け止め特有の重さやべたつきがなく、軽やかで快適。夏の外出でも肌が守られ、夕方になっても崩れにくいのが嬉しいです。」</p>
+        <p class="name">20代女性</p>
+      </div>
     </div>
-  </div>
-
-  <section style="text-align:center; margin:15px 0;">
-    <p style="font-weight:600; color:#d6336c;">「軽やかで快適、夏でも肌が守られる！」</p>
-    <a href="https://amzn.to/3JmEMME" class="btn" target="_blank">今すぐチェック</a>
-  </section>
-
-  <div class="internal-link">
-    <a href="#autumn">次の記事：🍂 秋の肌ケア →</a>
   </div>
 </section>
 
 <!-- 秋 -->
-<section class="article" id="autumn">
+<section class="article">
   <h2>🍂 秋の肌ケア</h2>
   <img src="images/autumn.jpg" alt="秋のスキンケア" class="hero">
-  <!-- 省略：商品レビュー同上 -->
-
-  <section style="text-align:center; margin:15px 0;">
-    <p style="font-weight:600; color:#d6336c;">「乾燥小じわもケア、しっとり透明感が続く！」</p>
-    <a href="https://amzn.to/3LbyAYi" class="btn" target="_blank">今すぐチェック</a>
-  </section>
-
-  <div class="internal-link">
-    <a href="#winter">次の記事：❄ 冬の肌ケア →</a>
+  <div class="product-review">
+    <div class="product-card">
+      <img src="images/naturesfor.jpg" alt="Naturesfor アドバンスクリアセラム">
+      <h3>Naturesfor アドバンスクリアセラム</h3>
+      <p>自然素材が角質層まで潤いを届け、透明感のあるクリア肌へ。植物エキスが乾燥小じわをふっくら整え、秋のゆらぎ肌にハリを与えます。毎日のケアで肌のしっとり感が持続し、健康的なツヤ肌に導きます。</p>
+      <ul>
+        <li>ヘチマ水・ロサアルバ花水など自然成分配合</li>
+        <li>乾燥小じわケア</li>
+        <li>とろみのある滑らかな使用感</li>
+      </ul>
+      <a href="https://amzn.to/3LbyAYi" class="btn" target="_blank">今すぐチェック</a>
+    </div>
+    <div class="review-column">
+      <div class="review-card">
+        <img src="images/biyoushi.jpg" alt="美容師">
+        <p>「季節の変わり目でも肌の乾燥が気にならず、使い始めてから肌がしっとり落ち着き、透明感が出ました。肌のキメも整い、メイクのりが良くなりました。」</p>
+        <p class="name">美容師</p>
+      </div>
+      <div class="review-card">
+        <img src="images/30.1.jpg" alt="30代女性">
+        <p>「乾燥やゆらぎ肌でも安心して使用でき、肌がふっくら柔らかくなりました。香りも自然で癒されます。」</p>
+        <p class="name">30代女性</p>
+      </div>
+    </div>
   </div>
 </section>
 
 <!-- 冬 -->
-<section class="article" id="winter">
-  <h2>❄ 冬の肌ケア</h2>
+<section class="article">
+  <h2>❄️ 冬の肌ケア</h2>
   <img src="images/winter.jpg" alt="冬のスキンケア" class="hero">
-  <!-- 省略：商品レビュー同上 -->
-
-  <section style="text-align:center; margin:15px 0;">
-    <p style="font-weight:600; color:#d6336c;">「乾燥の季節でも肌がしっとり、化粧ノリも良くなる！」</p>
-    <a href="https://amzn.to/4oCaXGI" class="btn" target="_blank">今すぐチェック</a>
-  </section>
-
+  <div class="product-review">
+    <div class="product-card">
+      <img src="images/alos.jpg" alt="ALOS ORGANIC ローション">
+      <h3>ALOS ORGANIC ローション</h3>
+      <p>高保湿・高浸透のオーガニック化粧水。オレンジの香りでリラックスしながら乾燥肌をやさしくケア。べたつかずしっとり感が続き、冬の乾燥も防ぎます。毎日のスキンケアで肌を守り、柔らかく健やかな肌へ導きます。</p>
+      <ul>
+        <li>ビタミンC・レチノール配合</li>
+        <li>ヒアルロン酸で高保湿</li>
+        <li>オレンジの香りで癒やしの時間を</li>
+      </ul>
+      <a href="https://amzn.to/4oCaXGI" class="btn" target="_blank">今すぐチェック</a>
+    </div>
+    <div class="review-column">
+      <div class="review-card">
+        <img src="images/50suser.jpg" alt="主婦">
+        <p>「乾燥の季節でも肌がつっぱらず、朝までしっとり感が続きます。香りが穏やかでリラックスできます。」</p>
+        <p class="name">主婦</p>
+      </div>
+      <div class="review-card">
+        <img src="images/40.1.jpg" alt="40代女性">
+        <p>「冬でも肌の乾燥を感じず、毎日のケアが楽になりました。柔らかい肌触りで化粧のりも良くなります。」</p>
+        <p class="name">40代女性</p>
+      </div>
+    </div>
+  </div>
 </section>
 
-<!-- 関連コンテンツ -->
-<div class="related">
-  <p>さらにおすすめの記事はこちら：</p>
-  <a href="index.html">🏠 トップページへ戻る</a>
-  <a href="winter-selection.html">❄ 冬のベストセレクションを見る</a>
+<div style="text-align:center;margin:40px 0;">
+  <a href="index.html" style=" display:inline-block; background:linear-gradient(45deg,#f48b8b,#f7a8a8); color:#fff; padding:12px 28px; border-radius:30px; text-decoration:none; font-weight:600; box-shadow:0 4px 12px rgba(0,0,0,0.15); transition:all .3s ease; " onmouseover="this.style.transform='translateY(-3px)'" onmouseout="this.style.transform='translateY(0)'"> ← トップページへ戻る </a>
 </div>
 
 </main>
-
-<footer>
-  © 2025 EssentialBeautyNeeds
-</footer>
-
+<footer> © 2025 EssentialBeautyNeeds </footer>
+<div id="affiliateNotice">※当サイトはアフィリエイト広告を利用しています</div>
 </body>
 </html>
