@@ -52,7 +52,7 @@ body{font-family:'Quicksand',sans-serif;background:var(--bg);color:#333;line-hei
 .section h2{font-family:'Playfair Display',serif;color:#503535;font-size:26px;text-align:center;margin-bottom:18px;}
 .block{display:flex;gap:24px;align-items:flex-start;flex-wrap:wrap;}
 .card{background:var(--card);border-radius:14px;padding:16px;box-shadow:0 6px 18px rgba(0,0,0,0.06);flex:1;min-width:280px;}
-.card img{width:100%;height:180px;object-fit:cover;border-radius:10px;margin-bottom:10px;}
+.card img{width:auto;height:120px;object-fit:cover;border-radius:10px;margin-bottom:10px;} /* 小さなサムネイル */
 .card h3{font-size:18px;color:#2f4f60;margin-bottom:8px;}
 .card p{color:#444;font-size:14px;margin-bottom:10px;}
 .card ul{color:#555;font-size:14px;margin-left:18px;margin-bottom:12px;}
@@ -86,7 +86,7 @@ body{font-family:'Quicksand',sans-serif;background:var(--bg);color:#333;line-hei
 
 @media(max-width:900px){
   .block{flex-direction:column;}
-  .card img{height:150px;}
+  .card img{height:100px;}
   .review img{width:100px;height:100px;}
 }
 </style>
@@ -129,7 +129,7 @@ body{font-family:'Quicksand',sans-serif;background:var(--bg);color:#333;line-hei
         </ul>
         <a class="btn aff" href="https://amzn.to/4oZFXR6" target="_blank" rel="noopener">実際に使ってみる</a>
 
-        <div class="reviews" aria-label="user reviews">
+        <div class="reviews">
           <div class="review">
             <img src="images/AA2.jpg" alt="20歳 学生">
             <div>
@@ -145,7 +145,6 @@ body{font-family:'Quicksand',sans-serif;background:var(--bg);color:#333;line-hei
             </div>
           </div>
         </div>
-
       </div>
     </div>
     <div style="text-align:center;margin-top:12px;"><a class="internal-link" href="#time-saving">次：忙しい日常（時短ケア） →</a></div>
@@ -183,7 +182,6 @@ body{font-family:'Quicksand',sans-serif;background:var(--bg);color:#333;line-hei
             </div>
           </div>
         </div>
-
       </div>
     </div>
     <div style="text-align:center;margin-top:12px;"><a class="internal-link" href="#active">次：アクティブ派（外出・運動） →</a></div>
@@ -221,7 +219,6 @@ body{font-family:'Quicksand',sans-serif;background:var(--bg);color:#333;line-hei
             </div>
           </div>
         </div>
-
       </div>
     </div>
     <div style="text-align:center;margin-top:12px;"><a class="internal-link" href="#night">次：夜型・不規則生活 →</a></div>
@@ -259,7 +256,6 @@ body{font-family:'Quicksand',sans-serif;background:var(--bg);color:#333;line-hei
             </div>
           </div>
         </div>
-
       </div>
     </div>
   </section>
@@ -285,6 +281,3 @@ body{font-family:'Quicksand',sans-serif;background:var(--bg);color:#333;line-hei
 
 </body>
 </html>
-</body>
-</html>
-
