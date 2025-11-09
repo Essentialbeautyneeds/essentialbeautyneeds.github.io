@@ -129,6 +129,45 @@ Affiliate Landing Page Template
           <li><a href="about.html">🌿 サイトについて</a></li>
         </ul>
       </nav>
+<!-- トップナビの直下に追加 -->
+<div class="special-link">
+  <a href="https://essentialbeautyneeds.github.io/winter-selection.html" target="_blank">
+    ❄ 冬のおすすめ！
+  </a>
+</div>
+
+<style>
+/* 点滅アニメーション */
+@keyframes blink {
+  0%, 50%, 100% { opacity: 1; }
+  25%, 75% { opacity: 0; }
+}
+
+.special-link {
+  text-align: center;
+  margin: 20px 0;
+}
+
+.special-link a {
+  display: inline-block;
+  padding: 14px 30px;
+  font-size: 1.2em;
+  font-weight: 700;
+  color: #fff;
+  background: linear-gradient(45deg, #f48b8b, #f7a8a8);
+  border-radius: 30px;
+  text-decoration: none;
+  box-shadow: 0 4px 12px rgba(0,0,0,0.15);
+  animation: blink 1s infinite;
+  transition: transform 0.3s, box-shadow 0.3s;
+}
+
+.special-link a:hover {
+  transform: translateY(-3px);
+  box-shadow: 0 6px 20px rgba(0,0,0,0.25);
+}
+</style>
+      
     </div>
   </header>
 
@@ -310,6 +349,7 @@ Affiliate Landing Page Template
   <div id="affiliateNotice">※当サイトはアフィリエイト広告を利用しています</div>
 </body>
 </html>
+
 
 
 
