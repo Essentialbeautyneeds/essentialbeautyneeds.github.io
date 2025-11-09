@@ -151,6 +151,20 @@ Affiliate Landing Page Template
   </header>
 
   <main class="container">
+
+  <!-- ランキングセクションをここに追加 -->
+  <section class="ranking-section" style="margin:60px 0; text-align:center;">
+    <h2>✨ 人気スキンケアランキング Top3 ✨</h2>
+    <p>敏感肌 / コスパ / アンチエイジング別に、厳選アイテムをご紹介！</p>
+    <div class="grid" id="rankingGrid" style="margin-top:30px; max-width:900px; margin-left:auto; margin-right:auto;"></div>
+    <p style="margin-top:20px;">
+      <a href="skin-ranking.html" class="btn" 
+         style="padding:12px 28px; border-radius:30px; background:linear-gradient(45deg,#f48b8b,#f7a8a8);">
+        ▶ ランキング全体を見る
+      </a>
+    </p>
+  </section>
+    
     <h2>おすすめのオーガニックコスメ商品</h2>
     <p>自然由来成分にこだわったオーガニックコスメを厳選。肌本来の美しさを引き出す人気商品をご紹介します。</p>
     <div class="grid" id="productGrid"></div>
@@ -346,8 +360,32 @@ Affiliate Landing Page Template
     });
   </script>
   <div id="affiliateNotice">※当サイトはアフィリエイト広告を利用しています</div>
+  <script>
+const RANKINGS = [
+  {title:'オルナ オーガニック スキンケアセット', img:'images/sensitive1.jpg', aff:'https://amzn.to/47Kdjwq', rank:1},
+  {title:'N Organic Basic スキンケアセット', img:'images/sensitive2.jpg', aff:'https://amzn.to/49aTcd9', rank:2},
+  {title:'ai 天然藍スキンケア', img:'images/sensitive3.jpg', aff:'https://amzn.to/4nPYQVQ', rank:3}
+];
+
+function renderRanking(items){
+  const grid = document.getElementById('rankingGrid');
+  items.forEach(item=>{
+    const card = document.createElement('article');
+    card.className = 'card';
+    card.innerHTML = `
+      <div class="thumb"><img src="${item.img}" alt="${item.title}"></div>
+      <div class="title">#${item.rank} ${item.title}</div>
+      <a class="btn" href="${item.aff}" target="_blank">今すぐ体験する</a>
+    `;
+    grid.appendChild(card);
+  });
+}
+
+renderRanking(RANKINGS);
+</script>
 </body>
 </html>
+
 
 
 
