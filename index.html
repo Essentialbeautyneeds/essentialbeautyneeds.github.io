@@ -134,39 +134,62 @@ Affiliate Landing Page Template
 </head>
   
 <body>
-  <header>
-    <div class="container">
-      <h1>肌が喜ぶ、自然のちから</h1>
-      <p class="lead">心と肌にやさしい、自然派の贅沢ケアで美肌・アンチエイジング。</p>
+ <header style="position:relative; text-align:center; background-image:url('images/header_rose.jpg'); background-size:cover; background-position:center; background-blend-mode:lighten; padding:80px 20px 50px; border-bottom:3px solid #e6b7b3;">
+  <!-- 背景の半透明オーバーレイ -->
+  <div style="position:absolute; top:0; left:0; right:0; bottom:0; background:rgba(255,255,255,0.6); backdrop-filter:blur(2px); z-index:1;"></div>
 
-      <nav>
-        <ul>
-          <li><a href="index.html">🏠 トップ</a></li>
-          <li><a href="seasons-skin.html">🌸 季節別スキンケア</a></li>
-          <li><a href="beauty-column.html">💄 ビューティーコラム</a></li>
-          <li><a href="about.html">🌿 サイトについて</a></li>
-        </ul>
-      </nav>
-<!-- トップナビの直下に追加 -->
-<!-- 冬のおすすめボタン -->
-<div class="special-link" style="margin-top:25px; text-align:center;"> <!-- 10px下に移動 -->
-  <a href="https://essentialbeautyneeds.github.io/winter-selection.html" target="_blank"
-     style="display:inline-block;
-            background: linear-gradient(45deg, #f7a8a8, #f48b8b);
-            color:#fff;
-            font-weight:600;
-            padding:12px 28px;
-            border-radius:30px;
-            text-decoration:none;
-            box-shadow:0 4px 12px rgba(0,0,0,0.15);
-            transition:all 0.3s ease;
-            text-align:center;">
-    ❄ 冬のおすすめ！<br>
-    <span style="font-size:0.8em; display:block; margin-top:4px;">Click !</span>
-  </a>
-</div>
+  <div class="container" style="position:relative; z-index:2;">
+    <!-- 上段：トップ -->
+    <h1 style="margin-bottom:10px; font-family:'Playfair Display',serif; font-size:38px; letter-spacing:1px;">
+      <a href="index.html" style="text-decoration:none; color:#503535;">🏠 トップ</a>
+    </h1>
 
-  </header>
+    <!-- リード文 -->
+    <p class="lead" style="font-size:17px; color:#5a4545; margin-bottom:25px;">
+      心と肌にやさしい、自然派の贅沢ケアで美肌・アンチエイジング。
+    </p>
+
+    <!-- 中段：3つリンク -->
+    <nav style="margin-bottom:15px;">
+      <a href="seasons-skin.html" class="nav-link">🌸 季節別スキンケア</a>
+      <a href="age-skincare.html" class="nav-link">👩 40代・50代向け 肌質別スキンケア</a>
+      <a href="lifestyle-skincare.html" class="nav-link">💆‍♀️ 生活リズム別スキンケア</a>
+    </nav>
+
+    <!-- 下段：2つリンク -->
+    <nav>
+      <a href="skin-ranking.html" class="nav-link">✨ ランキング</a>
+      <a href="beauty-column.html" class="nav-link">💄 ビューティーコラム</a>
+    </nav>
+
+    <!-- 冬のおすすめボタン -->
+    <div class="special-link" style="margin-top:25px;">
+      <a href="winter-selection.html" target="_blank"
+         style="display:inline-block; background: linear-gradient(45deg, #f7a8a8, #f48b8b); color:#fff; font-weight:600; padding:12px 28px; border-radius:30px; text-decoration:none; box-shadow:0 4px 12px rgba(0,0,0,0.15); transition:all 0.3s ease; text-align:center;">
+        ❄ 冬のおすすめ！<br>
+        <span style="font-size:0.8em; display:block; margin-top:4px;">Click !</span>
+      </a>
+    </div>
+  </div>
+</header>
+
+<style>
+  .nav-link {
+    display: inline-block;
+    margin: 0 12px;
+    padding: 8px 18px;
+    background: rgba(255,255,255,0.7);
+    border-radius: 8px;
+    font-weight:600;
+    text-decoration:none;
+    color:#503535;
+    transition:0.3s;
+  }
+  .nav-link:hover {
+    background: #f7a8a8;
+    color:#fff;
+  }
+</style>
 
   <main class="container">
 
@@ -454,6 +477,7 @@ renderRanking(RANKINGS);
 </script>
 </body>
 </html>
+
 
 
 
