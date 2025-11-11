@@ -3,31 +3,26 @@
 <html lang="ja">
 <head>
 <meta charset="utf-8">
-  <!-- Google Analytics 4 -->
-<script async src="https://www.googletagmanager.com/gtag/js?id=G-2HGEPHVZYY"></script>
-<script>
-  window.dataLayer = window.dataLayer || [];
-  function gtag(){dataLayer.push(arguments);}
-  gtag('js', new Date());
-  gtag('config', 'G-2HGEPHVZYY');
-</script>
-
+<!-- Google Analytics 4 + internal traffic exclusion -->
 <script>
   // internal_user クッキーが設定されているか確認
   function isInternalUser() {
     return document.cookie.split(';').some(c => c.trim().startsWith('internal_user=true'));
   }
 
-  // internal_user クッキーがある場合、Google Analyticsを読み込まない
+  // internal_user クッキーがない場合だけ、GA4を読み込む
   if (!isInternalUser()) {
-    // 通常の GA4 設定をここに書く（例）
-    // 下記 YOUR_MEASUREMENT_ID を自分の GA4 ID に置き換える
+    var gaScript = document.createElement('script');
+    gaScript.async = true;
+    gaScript.src = "https://www.googletagmanager.com/gtag/js?id=G-2HGEPHVZYY";
+    document.head.appendChild(gaScript);
+
     window.dataLayer = window.dataLayer || [];
     function gtag(){dataLayer.push(arguments);}
     gtag('js', new Date());
-    gtag('config', 'YOUR_MEASUREMENT_ID');
+    gtag('config', 'G-2HGEPHVZYY');
   } else {
-    console.log('Internal traffic excluded.');
+    console.log('✅ Internal traffic excluded.');
   }
 </script>
   
