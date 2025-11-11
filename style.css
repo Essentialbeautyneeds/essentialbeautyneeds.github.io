@@ -350,3 +350,25 @@ h2 + .reviews {
   box-shadow: 0 6px 20px rgba(0,0,0,0.25);
 }
 
+
+.top-links a {
+  display: inline-block;
+  background: #ffdcdc; /* 優しいピンク系ベース */
+  color: #d6336c;      /* 文字は鮮やかだけど落ち着いた赤 */
+  font-weight: 600;
+  font-size: 1.15em;
+  text-decoration: none;
+  padding: 10px 22px;
+  margin: 0 8px;
+  border-radius: 30px;    /* 角丸を大きめにして柔らかく */
+  box-shadow: 0 3px 8px rgba(0,0,0,0.08); /* 軽めの影で浮遊感 */
+  transition: all 0.3s ease;
+}
+
+.top-links a:hover {
+  background: linear-gradient(135deg, #fcdcdc, #f48b8b); /* ほんのりグラデーション */
+  color: #fff;  /* ホバー時に文字色を白に変えると華やか */
+  transform: translateY(-2px); /* 微妙に浮かせて動き */
+  box-shadow: 0 6px 15px rgba(0,0,0,0.12);
+}
+
