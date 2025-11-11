@@ -73,6 +73,25 @@ Affiliate Landing Page Template
     gtag('config', 'G-2HGEPHVZYY');
   </script>
 
+  <script>
+  // internal_user クッキーが設定されているか確認
+  function isInternalUser() {
+    return document.cookie.split(';').some(c => c.trim().startsWith('internal_user=true'));
+  }
+
+  // internal_user クッキーがある場合、Google Analyticsを読み込まない
+  if (!isInternalUser()) {
+    // 通常の GA4 設定をここに書く（例）
+    // 下記 YOUR_MEASUREMENT_ID を自分の GA4 ID に置き換える
+    window.dataLayer = window.dataLayer || [];
+    function gtag(){dataLayer.push(arguments);}
+    gtag('js', new Date());
+    gtag('config', 'YOUR_MEASUREMENT_ID');
+  } else {
+    console.log('Internal traffic excluded.');
+  }
+</script>
+  
   <title>オーガニック・スキンケア専門 | 季節別・敏感肌対応の自然派美容情報</title>
 <meta name="description" content="Essential Beauty Needsは、オーガニック・スキンケアの情報サイト。季節別ケアや敏感肌向けおすすめ商品、自然派美容のコツを丁寧に解説します。">
 <meta name="keywords" content="オーガニック, スキンケア, 敏感肌, 自然派, 保湿, 化粧水, 美容液, ニキビケア">
@@ -489,6 +508,7 @@ renderRanking(RANKINGS);
 </script>
 </body>
 </html>
+
 
 
 
