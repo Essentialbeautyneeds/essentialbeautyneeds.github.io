@@ -300,3 +300,77 @@ footer {
     box-shadow: 0 0 20px rgba(244, 67, 54, 0.6);
     transform: translateY(-2px);
 }
+
+/* ボタンを中央に配置するラッパー */
+.seasonal-buttons {
+    text-align: center;
+    margin-top: 20px;
+    display: flex;
+    justify-content: center;
+    gap: 20px;
+    flex-wrap: wrap; /* スマホでも折り返す */
+}
+
+/* グローボタン本体（既存の.season-btnと差し替え） */
+.season-btn {
+  /* レイアウトと配置 */
+  display: inline-flex; /* テキストとアイコンを横並びにする */
+  align-items: center; /* 垂直方向の中央揃え */
+  text-decoration: none; /* リンクの下線を削除 */
+  cursor: pointer;
+
+  /* サイズと余白 */
+  /* 上下 左右(アイコン側) 上下 テキスト側 */
+  padding: 10px 15px 10px 25px; 
+
+  /* デザイン */
+  background-color: #ffffff; /* 白い背景 */
+  border: none; /* 枠線は不要 */
+  border-radius: 50px; /* カプセル型 */
+  color: #d93a4a; /* 元画像に近い赤色 */
+
+  /* グロー（影）エフェクト */
+  box-shadow: 0 0 12px 4px rgba(255, 60, 70, 0.5); /* 赤いグロー */
+
+  /* トランジション（ホバーエフェクト用） */
+  transition: all 0.3s ease;
+}
+
+/* ホバー時のエフェクト */
+.season-btn:hover {
+  transform: scale(1.03); /* 少し拡大 */
+  box-shadow: 0 0 18px 6px rgba(255, 60, 70, 0.6); /* グローを強くする */
+}
+
+/* テキスト部分のスタイル */
+.season-btn .btn-text {
+  /* 既存のフォント（Quicksand）を継承しつつ太字に */
+  font-family: 'Quicksand', sans-serif; 
+  font-weight: bold; 
+  font-size: 16px; 
+  margin-right: 15px; /* テキストとアイコンの間隔 */
+}
+
+/* アイコンの円形背景 */
+.season-btn .btn-icon {
+  /* サイズ */
+  width: 32px;
+  height: 32px;
+
+  /* デザイン */
+  background-color: #d93a4a; /* テキストと同じ赤色 */
+  border-radius: 50%; /* 完璧な円 */
+
+  /* SVGを中央に配置 */
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  flex-shrink: 0;
+}
+
+/* アイコン（SVG）のスタイル */
+.season-btn .btn-icon svg {
+  width: 12px;
+  height: 12px;
+  fill: #ffffff; /* 白い三角 */
+}
