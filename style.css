@@ -1,0 +1,267 @@
+/* Reset & basic styling */
+body {
+    font-family: 'Quicksand', sans-serif;
+    margin: 0;
+    padding: 0;
+    line-height: 1.7;
+    color: #444;
+    background: #fffaf9;
+}
+
+header {
+    text-align: center;
+    padding: 60px 20px 40px;
+    background: linear-gradient(135deg, #ffe6e6, #ffdcdc);
+    color: #503535;
+}
+
+header h1 {
+    font-family: 'Playfair Display', serif;
+    font-size: 38px;
+    margin-bottom: 8px;
+}
+
+header p {
+    font-size: 16px;
+    color: #5a4545;
+    margin-bottom: 14px;
+}
+
+/* 上部ナビリンク（中央揃え） */
+.top-links {
+    display: flex;
+    justify-content: center; /* 中央揃え */
+    flex-wrap: wrap;         /* 小さい画面で折り返す */
+    gap: 12px;
+    margin: 20px 0 40px;
+}
+
+.top-links a {
+    display: inline-flex;
+    align-items: center;
+    justify-content: center;
+    gap: 6px;
+    background: #ffdcdc;
+    color: #d6336c;
+    font-weight: 600;
+    font-size: 1.15em;
+    text-decoration: none;
+    padding: 10px 22px;
+    border-radius: 30px;
+    box-shadow: 0 3px 8px rgba(0,0,0,0.08);
+    transition: all 0.3s ease;
+}
+
+.top-links a:hover {
+    background: linear-gradient(135deg, #fcdcdc, #f48b8b);
+    color: #fff;
+    transform: translateY(-2px);
+    box-shadow: 0 6px 15px rgba(0,0,0,0.12);
+}
+
+/* メイン */
+main {
+    max-width: 900px;
+    margin: 0 auto;
+    padding: 0 20px;
+}
+
+h2 {
+    font-family: 'Playfair Display', serif;
+    color: #503535;
+    font-size: 26px;
+    text-align: center;
+    margin: 50px 0 20px;
+}
+
+p {
+    font-size: 15px;
+    margin-bottom: 20px;
+}
+
+img {
+    width: 100%;
+    border-radius: 12px;
+    margin: 20px 0;
+}
+
+/* 商品カード */
+.card {
+    background: #fff;
+    border-radius: 14px;
+    padding: 16px;
+    box-shadow: 0 4px 16px rgba(0,0,0,0.06);
+    margin: 20px 0;
+    text-align: center;
+}
+
+.card img {
+    height: 140px;
+    width: auto;
+    margin-bottom: 12px;
+}
+
+.card h3 {
+    font-size: 18px;
+    color: #2f4f60;
+    margin-bottom: 10px;
+}
+
+.card p {
+    font-size: 14px;
+    color: #444;
+    margin-bottom: 10px;
+}
+
+.card ul {
+    font-size: 14px;
+    color: #555;
+    text-align: left;
+    margin: 10px auto 12px;
+    max-width: 500px;
+    list-style: disc;
+    padding-left: 20px;
+}
+
+.card a.btn {
+    display: inline-block;
+    background: #f48b8b;
+    color: #fff;
+    padding: 10px 24px;
+    border-radius: 28px;
+    text-decoration: none;
+    font-weight: 700;
+    box-shadow: 0 4px 12px rgba(0,0,0,0.12);
+    transition: all .25s ease;
+}
+
+.card a.btn:hover {
+    transform: translateY(-3px);
+    background: #f26a6a;
+}
+
+/* レビュー・ビフォーアフター */
+.review-box {
+    text-align: center;
+    margin: 30px 0;
+}
+
+.review-box img {
+    width: 100%;
+    max-width: 500px;
+    border-radius: 12px;
+    margin-bottom: 16px;
+}
+
+.review-box p {
+    font-size: 14px;
+    color: #333;
+    line-height: 1.6;
+    max-width: 700px;
+    margin: 0 auto;
+}
+
+.review-box p strong {
+    display: block;
+    margin-top: 6px;
+    color: #d6336c;
+}
+
+/* 最下部トップページボタン */
+.back-btn {
+    text-align: center;
+    margin: 40px 0;
+}
+
+.back-btn a {
+    display: inline-block;
+    background: #f48b8b;
+    color: #fff;
+    padding: 12px 28px;
+    border-radius: 30px;
+    text-decoration: none;
+    font-weight: 600;
+    box-shadow: 0 4px 12px rgba(0,0,0,0.15);
+    transition: all .3s ease;
+}
+
+.back-btn a:hover {
+    transform: translateY(-3px);
+    background: #f26a6a;
+}
+
+/* 季節のおすすめカード */
+.seasonal-section {
+    background: var(--section-bg);
+    padding: 60px 0;
+    margin-top: 60px;
+    text-align: center;
+}
+
+.seasonal-section h2 {
+    font-family: 'Playfair Display', serif;
+    font-size: 28px;
+    color: #503535;
+    margin-bottom: 30px;
+}
+
+.seasonal-card {
+    display: inline-block;
+    width: 80%;
+    max-width: 680px;
+    background: var(--card);
+    border-radius: 18px;
+    box-shadow: 0 5px 15px rgba(0,0,0,0.08);
+    overflow: hidden;
+    transition: transform .3s, box-shadow .3s;
+    text-align: left;
+}
+
+.seasonal-card:hover {
+    transform: translateY(-5px);
+    box-shadow: 0 8px 25px rgba(0,0,0,0.15);
+}
+
+.seasonal-card img {
+    width: 100%;
+    height: auto;
+    display: block;
+    border-bottom: 3px solid var(--accent);
+}
+
+.seasonal-card-text {
+    padding: 20px;
+}
+
+.seasonal-card-text h3 {
+    font-size: 20px;
+    color: #503535;
+    margin-bottom: 10px;
+}
+
+.seasonal-card-text p {
+    font-size: 14px;
+    color: var(--muted);
+    line-height: 1.6;
+}
+
+.seasonal-card-text .link-arrow {
+    display: inline-block;
+    margin-top: 8px;
+    color: var(--accent);
+    font-weight: 600;
+}
+
+@media(max-width: 600px) {
+    .seasonal-card {
+        width: 90%;
+    }
+}
+
+footer {
+    background: #d6336c;
+    color: #fff;
+    text-align: center;
+    padding: 20px;
+    font-size: 0.9em;
+}
