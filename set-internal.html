@@ -1,0 +1,17 @@
+
+<!DOCTYPE html>
+<html lang="ja">
+<head>
+  <meta charset="UTF-8">
+  <title>内部トラフィック除外を有効化</title>
+</head>
+<body>
+  <h1>Internal Traffic 除外を有効化しました</h1>
+  <p>このデバイスからのアクセスは今後Google Analyticsにカウントされません。</p>
+
+  <script>
+    // Cookieを365日有効に設定
+    document.cookie = "internal_user=true; path=/; max-age=" + 60*60*24*365;
+  </script>
+</body>
+</html>
