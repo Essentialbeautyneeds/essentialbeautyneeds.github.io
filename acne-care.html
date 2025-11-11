@@ -1,0 +1,206 @@
+
+
+<!doctype html>
+<html lang="ja">
+<head>
+<meta charset="utf-8" />
+<!-- Google Analytics 4 + internal traffic exclusion -->
+<script>
+  // internal_user クッキーが設定されているか確認
+  function isInternalUser() {
+    return document.cookie.split(';').some(c => c.trim().startsWith('internal_user=true'));
+  }
+
+  // internal_user クッキーがない場合だけ、GA4を読み込む
+  if (!isInternalUser()) {
+    var gaScript = document.createElement('script');
+    gaScript.async = true;
+    gaScript.src = "https://www.googletagmanager.com/gtag/js?id=G-2HGEPHVZYY";
+    document.head.appendChild(gaScript);
+
+    window.dataLayer = window.dataLayer || [];
+    function gtag(){dataLayer.push(arguments);}
+    gtag('js', new Date());
+    gtag('config', 'G-2HGEPHVZYY');
+  } else {
+    console.log('✅ Internal traffic excluded.');
+  }
+</script>
+  
+<meta name="viewport" content="width=device-width,initial-scale=1" />
+<title>ニキビ・吹き出物対策｜Essential Beauty Needs</title>
+<meta name="description" content="20代女性のニキビや吹き出物におすすめのオーガニック洗顔・スキンケアを紹介。ビフォーアフター写真付きで効果を解説。">
+<link href="https://fonts.googleapis.com/css2?family=Playfair+Display:wght@600&family=Quicksand:wght@400;600&display=swap" rel="stylesheet">
+<style>
+body{
+  font-family:'Quicksand',sans-serif;
+  line-height:1.7;
+  color:#444;
+  background:#fffaf9;
+  margin:0;
+}
+header{
+  text-align:center;
+  padding:60px 20px 40px;
+  background:linear-gradient(135deg,#ffe6e6,#ffdcdc);
+  color:#503535;
+}
+header h1{
+  font-family:'Playfair Display',serif;
+  font-size:38px;
+  margin-bottom:8px;
+}
+header p{
+  font-size:16px;
+  color:#5a4545;
+  margin-bottom:14px;
+}
+
+/* 上部ナビボタン */
+.top-links{
+  text-align:center;
+  margin:20px 0 40px;
+}
+.top-links a{
+  display:inline-block;
+  color:#d6336c;
+  font-weight:600;
+  text-decoration:none;
+  font-size:1.2em;
+  margin:0 12px; /* ボタン間隔を広げる */
+  transition:0.3s;
+}
+.top-links a:hover{opacity:0.8;}
+
+/* メイン */
+main{max-width:900px;margin:0 auto;padding:0 20px;}
+h2{font-family:'Playfair Display',serif;color:#503535;font-size:26px;text-align:center;margin:50px 0 20px;}
+p{font-size:15px;margin-bottom:20px;}
+img{width:100%;border-radius:12px;margin:20px 0;}
+
+/* 商品カード */
+.card{
+  background:#fff;
+  border-radius:14px;
+  padding:16px;
+  box-shadow:0 4px 16px rgba(0,0,0,0.06);
+  margin:20px 0;
+  text-align:center;
+}
+.card img{height:140px;width:auto;margin-bottom:12px;}
+.card h3{font-size:18px;color:#2f4f60;margin-bottom:10px;}
+.card p{font-size:14px;color:#444;margin-bottom:10px;}
+.card ul{font-size:14px;color:#555;text-align:left;margin:10px auto 12px;max-width:500px;list-style:disc;padding-left:20px;}
+.card a.btn{
+  display:inline-block;
+  background:#f48b8b;
+  color:#fff;
+  padding:10px 24px;
+  border-radius:28px;
+  text-decoration:none;
+  font-weight:700;
+  box-shadow:0 4px 12px rgba(0,0,0,0.12);
+  transition:all .25s ease;
+}
+.card a.btn:hover{transform:translateY(-3px);background:#f26a6a;}
+
+/* レビュー・ビフォーアフター */
+.review-box{text-align:center;margin:30px 0;}
+.review-box img{width:100%;max-width:500px;border-radius:12px;margin-bottom:16px;}
+.review-box p{font-size:14px;color:#333;line-height:1.6;max-width:700px;margin:0 auto;}
+.review-box p strong{display:block;margin-top:6px;color:#d6336c;}
+
+/* 最下部トップページボタン */
+.back-btn{text-align:center;margin:40px 0;}
+.back-btn a{
+  display:inline-block;
+  background:#f48b8b;
+  color:#fff;
+  padding:12px 28px;
+  border-radius:30px;
+  text-decoration:none;
+  font-weight:600;
+  box-shadow:0 4px 12px rgba(0,0,0,0.15);
+  transition:all .3s ease;
+}
+.back-btn a:hover{transform:translateY(-3px);background:#f26a6a;}
+</style>
+</head>
+<body>
+
+<header>
+  <h1>ニキビ・吹き出物対策</h1>
+  <p>20代女性の肌悩みにおすすめのオーガニックケア</p>
+</header>
+
+<div class="top-links">
+  <a href="index.html">🏠 トップ</a>
+  <a href="lifestyle-skincare.html">🕒 生活リズム別</a>
+  <a href="age-skincare.html">👩 年齢・肌質別</a>
+  <a href="seasons-skin.html">🌸 季節別</a>
+</div>
+
+<main>
+  <!-- 商品1 -->
+  <div class="card">
+    <h3>Boost Facial Wash（ブーストフェイシャルウォッシュ）</h3>
+    <img src="images/acne1.jpg" alt="ブーストフェイシャルウォッシュ">
+    <p>ハーブピーリング配合・幹細胞エキス・シワ・ハリ不足対策。泡パック可能なエイジングケア用クレイ洗顔。</p>
+    <ul>
+      <li>エイジングケア用泡洗顔／5分間泡パック</li>
+      <li>年齢肌・くすみ・乾燥・ハリ不足向け</li>
+      <li>100g／約3〜4か月分</li>
+    </ul>
+    <a class="btn" href="https://amzn.to/3JQK8zS" target="_blank" rel="noopener">実際に使ってみる</a>
+  </div>
+
+  <!-- 商品2 -->
+  <div class="card">
+    <h3>SEA-ZEN フェイスソープ 150ml</h3>
+    <img src="images/acne2.jpg" alt="SEA-ZEN フェイスソープ">
+    <p>北海道産昆布エキス使用、弱アルカリ性・無添加・敏感肌対応のオーガニック洗顔。</p>
+    <ul>
+      <li>海の栄養素で肌の潤いを保つ</li>
+      <li>敏感肌・乾燥肌にやさしい処方</li>
+      <li>毎日の洗顔に最適</li>
+    </ul>
+    <a class="btn" href="https://amzn.to/4nHddLV" target="_blank" rel="noopener">実際に使ってみる</a>
+  </div>
+
+  <!-- ビフォーアフター -->
+  <div class="review-box">
+    <img src="images/acne4.jpg" alt="ニキビ・吹き出物のビフォーアフター">
+    <p>
+      長年吹き出物に悩まされていました。海外製ピーリングや強い薬を使っても一時的に減るだけで、赤みが戻る繰り返しでした。<br>
+      皮膚科医に紹介された「ノブ A アクネフォーム洗顔料」を使い始めてから、肌の赤みが落ち着き、肌質も徐々に改善。<br>
+      人前でも恥ずかしくない程度になり、マスクで隠す必要もなくなりました。<br>
+      なかなか合う商品に出会えない方はぜひ試してみてください。<br>
+      <strong>【斎藤ようこさん (26歳・仮名)】</strong>
+    </p>
+  </div>
+
+  <!-- 商品3 -->
+  <div class="card">
+    <h3>ノブ A アクネフォーム 洗顔料 70g</h3>
+    <img src="images/acne3.jpg" alt="ノブ A アクネフォーム">
+    <p>にきびの原因となる余分な皮脂や汚れをすっきり落としつつ、肌に必要なうるおいを保持する医薬部外品。</p>
+    <ul>
+      <li>1〜2cmを泡立てて洗顔</li>
+      <li>洗顔料の残りやすい小鼻周りや髪の生え際も注意してすすぐ</li>
+      <li>にきび肌用・敏感肌向け</li>
+    </ul>
+    <a class="btn" href="https://amzn.to/3WMBwNx" target="_blank" rel="noopener">実際に使ってみる</a>
+  </div>
+
+</main>
+
+<div class="back-btn">
+  <a href="index.html">← トップページへ戻る</a>
+</div>
+
+<footer style="text-align:center;margin:40px 0 60px;color:#888;font-size:13px;">
+  © 2025 EssentialBeautyNeeds
+</footer>
+
+</body>
+</html>
