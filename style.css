@@ -278,26 +278,6 @@ footer {
 }
 
 .season-btn {
-    display: inline-block;
-    background: linear-gradient(45deg, #f7a8a8, #f48b8b);
-    color: #fff;
-    font-weight: 700;
-    font-size: 16px;
-    padding: 14px 28px;
-    border-radius: 30px;
-    text-decoration: none;
-    box-shadow: 0 5px 15px rgba(0,0,0,0.2);
-    transition: all 0.3s ease;
-}
-
-.season-btn:hover {
-    background: linear-gradient(45deg, #f48b8b, #f26a6a);
-    transform: translateY(-3px);
-    box-shadow: 0 8px 25px rgba(0,0,0,0.25);
-}
-
-
-.season-btn {
     display: inline-flex;
     align-items: center;
     justify-content: center;
