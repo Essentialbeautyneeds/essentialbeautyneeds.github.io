@@ -265,3 +265,11 @@ footer {
     padding: 20px;
     font-size: 0.9em;
 }
+
+
+.acne-skin-page .small-img {
+    width: 50%;
+    height: auto;
+    display: block;
+    margin: 0 auto;
+}
