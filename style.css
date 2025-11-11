@@ -268,39 +268,6 @@ footer {
 
 
 
-.seasonal-buttons {
-    text-align: center;
-    margin-top: 20px;
-    display: flex;
-    justify-content: center;
-    gap: 20px;
-    flex-wrap: wrap; /* スマホでも折り返す */
-}
-
-.season-btn {
-    display: inline-flex;
-    align-items: center;
-    justify-content: center;
-    gap: 8px; /* テキストと矢印の間 */
-    background: #fff; /* ボタン背景は白 */
-    color: #f44336; /* テキスト赤 */
-    font-weight: 700;
-    font-size: 16px;
-    padding: 12px 28px;
-    border-radius: 50px; /* 丸める */
-    border: 2px solid #f44336; /* 赤い枠 */
-    text-decoration: none;
-    box-shadow: 0 0 12px rgba(244, 67, 54, 0.5); /* 赤のぼかし */
-    transition: all 0.3s ease;
-}
-
-.season-btn:hover {
-    background: #f44336; /* 赤背景 */
-    color: #fff;          /* 白文字 */
-    box-shadow: 0 0 20px rgba(244, 67, 54, 0.6);
-    transform: translateY(-2px);
-}
-
 /* ボタンを中央に配置するラッパー */
 .seasonal-buttons {
     text-align: center;
