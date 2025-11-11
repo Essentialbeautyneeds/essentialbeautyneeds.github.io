@@ -4,126 +4,41 @@
 <html lang="ja">
 <head>
 <meta charset="utf-8" />
+<meta name="viewport" content="width=device-width, initial-scale=1" />
+
 <!-- Google Analytics 4 + internal traffic exclusion -->
 <script>
-  // internal_user クッキーが設定されているか確認
-  function isInternalUser() {
-    return document.cookie.split(';').some(c => c.trim().startsWith('internal_user=true'));
-  }
-
-  // internal_user クッキーがない場合だけ、GA4を読み込む
-  if (!isInternalUser()) {
-    var gaScript = document.createElement('script');
-    gaScript.async = true;
-    gaScript.src = "https://www.googletagmanager.com/gtag/js?id=G-2HGEPHVZYY";
-    document.head.appendChild(gaScript);
-
-    window.dataLayer = window.dataLayer || [];
-    function gtag(){dataLayer.push(arguments);}
-    gtag('js', new Date());
-    gtag('config', 'G-2HGEPHVZYY');
-  } else {
-    console.log('✅ Internal traffic excluded.');
-  }
+function isInternalUser() {
+  return document.cookie.split(';').some(c => c.trim().startsWith('internal_user=true'));
+}
+if (!isInternalUser()) {
+  var gaScript = document.createElement('script');
+  gaScript.async = true;
+  gaScript.src = "https://www.googletagmanager.com/gtag/js?id=G-2HGEPHVZYY";
+  document.head.appendChild(gaScript);
+  window.dataLayer = window.dataLayer || [];
+  function gtag(){dataLayer.push(arguments);}
+  gtag('js', new Date());
+  gtag('config', 'G-2HGEPHVZYY');
+} else { console.log('✅ Internal traffic excluded.'); }
 </script>
-  
-<meta name="viewport" content="width=device-width,initial-scale=1" />
-<title>ニキビ・吹き出物対策｜Essential Beauty Needs</title>
+
+<title>ニキビ・吹き出物対策 | Essential Beauty Needs</title>
 <meta name="description" content="20代女性のニキビや吹き出物におすすめのオーガニック洗顔・スキンケアを紹介。ビフォーアフター写真付きで効果を解説。">
-<link href="https://fonts.googleapis.com/css2?family=Playfair+Display:wght@600&family=Quicksand:wght@400;600&display=swap" rel="stylesheet">
+<link href="https://fonts.googleapis.com/css2?family=Quicksand:wght@400;600&family=Playfair+Display:wght@600&display=swap" rel="stylesheet">
+
 <style>
-body{
-  font-family:'Quicksand',sans-serif;
-  line-height:1.7;
-  color:#444;
-  background:#fffaf9;
-  margin:0;
-}
-header{
-  text-align:center;
-  padding:60px 20px 40px;
-  background:linear-gradient(135deg,#ffe6e6,#ffdcdc);
-  color:#503535;
-}
-header h1{
-  font-family:'Playfair Display',serif;
-  font-size:38px;
-  margin-bottom:8px;
-}
-header p{
-  font-size:16px;
-  color:#5a4545;
-  margin-bottom:14px;
-}
-
-/* 上部ナビボタン */
-.top-links{
-  text-align:center;
-  margin:20px 0 40px;
-}
-.top-links a{
-  display:inline-block;
-  color:#d6336c;
-  font-weight:600;
-  text-decoration:none;
-  font-size:1.2em;
-  margin:0 12px; /* ボタン間隔を広げる */
-  transition:0.3s;
-}
-.top-links a:hover{opacity:0.8;}
-
-/* メイン */
-main{max-width:900px;margin:0 auto;padding:0 20px;}
-h2{font-family:'Playfair Display',serif;color:#503535;font-size:26px;text-align:center;margin:50px 0 20px;}
-p{font-size:15px;margin-bottom:20px;}
-img{width:100%;border-radius:12px;margin:20px 0;}
-
-/* 商品カード */
-.card{
-  background:#fff;
-  border-radius:14px;
-  padding:16px;
-  box-shadow:0 4px 16px rgba(0,0,0,0.06);
-  margin:20px 0;
-  text-align:center;
-}
-.card img{height:140px;width:auto;margin-bottom:12px;}
-.card h3{font-size:18px;color:#2f4f60;margin-bottom:10px;}
-.card p{font-size:14px;color:#444;margin-bottom:10px;}
-.card ul{font-size:14px;color:#555;text-align:left;margin:10px auto 12px;max-width:500px;list-style:disc;padding-left:20px;}
-.card a.btn{
-  display:inline-block;
-  background:#f48b8b;
-  color:#fff;
-  padding:10px 24px;
-  border-radius:28px;
-  text-decoration:none;
-  font-weight:700;
-  box-shadow:0 4px 12px rgba(0,0,0,0.12);
-  transition:all .25s ease;
-}
-.card a.btn:hover{transform:translateY(-3px);background:#f26a6a;}
-
-/* レビュー・ビフォーアフター */
-.review-box{text-align:center;margin:30px 0;}
-.review-box img{width:100%;max-width:500px;border-radius:12px;margin-bottom:16px;}
-.review-box p{font-size:14px;color:#333;line-height:1.6;max-width:700px;margin:0 auto;}
-.review-box p strong{display:block;margin-top:6px;color:#d6336c;}
-
-/* 最下部トップページボタン */
-.back-btn{text-align:center;margin:40px 0;}
-.back-btn a{
-  display:inline-block;
-  background:#f48b8b;
-  color:#fff;
-  padding:12px 28px;
-  border-radius:30px;
-  text-decoration:none;
-  font-weight:600;
-  box-shadow:0 4px 12px rgba(0,0,0,0.15);
-  transition:all .3s ease;
-}
-.back-btn a:hover{transform:translateY(-3px);background:#f26a6a;}
+:root{--bg:#fffaf9;--accent:#f48b8b;--accent-hover:#f26a6a;}
+*{box-sizing:border-box;margin:0;padding:0;}
+body{font-family:'Quicksand',sans-serif;background:var(--bg);color:#333;line-height:1.7;}
+header{background:linear-gradient(135deg,#ffe6e6,#ffdcdc);text-align:center;padding:60px 20px 40px;color:#503535;}
+header h1{font-family:'Playfair Display',serif;font-size:36px;margin-bottom:10px;}
+header p{font-size:16px;color:#5a4545;margin-bottom:12px;}
+.nav-links{display:flex;justify-content:center;flex-wrap:wrap;gap:12px;margin-top:12px;}
+.nav-links a{background:rgba(255,255,255,0.85);padding:8px 12px;border-radius:8px;text-decoration:none;color:#503535;font-weight:600;transition:0.3s;}
+.nav-links a:hover{background:var(--accent);color:#fff;}
+.btn{display:inline-block;background:linear-gradient(45deg,var(--accent),#f48b8b);color:#fff;padding:10px 24px;border-radius:28px;text-decoration:none;font-weight:700;box-shadow:0 4px 12px rgba(0,0,0,0.12);transition:all .25s ease;}
+.btn:hover{transform:translateY(-3px);background:linear-gradient(45deg,var(--accent-hover),#f26a6a);}
 </style>
 </head>
 <body>
