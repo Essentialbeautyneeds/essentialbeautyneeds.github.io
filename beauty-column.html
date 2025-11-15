@@ -3,42 +3,32 @@
 <html lang="ja">
 <head>
   <meta charset="utf-8" />
-<!-- Google Analytics 4 + internal traffic exclusion -->
-<script>
-  // internal_user クッキーが設定されているか確認
-  function isInternalUser() {
-    return document.cookie.split(';').some(c => c.trim().startsWith('internal_user=true'));
-  }
+  <!-- Google Analytics 4 + internal traffic exclusion -->
+  <script>
+    function isInternalUser() {
+      return document.cookie.split(';').some(c => c.trim().startsWith('internal_user=true'));
+    }
+    if (!isInternalUser()) {
+      var gaScript = document.createElement('script');
+      gaScript.async = true;
+      gaScript.src = "https://www.googletagmanager.com/gtag/js?id=G-2HGEPHVZYY";
+      document.head.appendChild(gaScript);
+      window.dataLayer = window.dataLayer || [];
+      function gtag(){dataLayer.push(arguments);}
+      gtag('js', new Date());
+      gtag('config', 'G-2HGEPHVZYY');
+    } else {
+      console.log('✅ Internal traffic excluded.');
+    }
+  </script>
 
-  // internal_user クッキーがない場合だけ、GA4を読み込む
-  if (!isInternalUser()) {
-    var gaScript = document.createElement('script');
-    gaScript.async = true;
-    gaScript.src = "https://www.googletagmanager.com/gtag/js?id=G-2HGEPHVZYY";
-    document.head.appendChild(gaScript);
-
-    window.dataLayer = window.dataLayer || [];
-    function gtag(){dataLayer.push(arguments);}
-    gtag('js', new Date());
-    gtag('config', 'G-2HGEPHVZYY');
-  } else {
-    console.log('✅ Internal traffic excluded.');
-  }
-</script>
-  
   <meta name="viewport" content="width=device-width,initial-scale=1" />
   <title>美容コラム・オーガニックケア情報 | Essential Beauty Needs</title>
-<meta name="description" content="オーガニック美容の最新情報やスキンケアのコツを解説。化学成分フリーの商品レビューも掲載。">
-<meta name="keywords" content="美容コラム, オーガニック, スキンケア, 化学成分フリー, 自然派, 敏感肌, 美容液">
+  <meta name="description" content="オーガニック美容の最新情報やスキンケアのコツを解説。化学成分フリーの商品レビューも掲載。">
+  <meta name="keywords" content="美容コラム, オーガニック, スキンケア, 化学成分フリー, 自然派, 敏感肌, 美容液">
   <link href="https://fonts.googleapis.com/css2?family=Playfair+Display:wght@600&family=Quicksand:wght@400;600&display=swap" rel="stylesheet">
   <style>
-    body{
-      font-family:'Quicksand',sans-serif;
-      line-height:1.8;
-      color:#444;
-      background:#fffaf9;
-      margin:0;
-    }
+    body{ font-family:'Quicksand',sans-serif; line-height:1.8; color:#444; background:#fffaf9; margin:0; }
     header{
       background:linear-gradient(90deg,#f8dcdc,#fbeaea);
       text-align:center;
@@ -50,40 +40,17 @@
       position:relative;
       color:#503535;
     }
-    header::after{
-      content:"";
-      position:absolute;
-      top:0;left:0;right:0;bottom:0;
-      background:rgba(255,255,255,0.6);
-    }
-    header h1{
-      position:relative;
-      z-index:2;
-      font-family:'Playfair Display',serif;
-      font-size:38px;
-      margin-bottom:10px;
-    }
-    header p{
-      position:relative;
-      z-index:2;
-      font-size:16px;
-      color:#5a4545;
-    }
+    header::after{ content:""; position:absolute; top:0;left:0;right:0;bottom:0; background:rgba(255,255,255,0.6); }
+    header h1{ position:relative; z-index:2; font-family:'Playfair Display',serif; font-size:38px; margin-bottom:10px; }
+    header p{ position:relative; z-index:2; font-size:16px; color:#5a4545; }
 
     main{max-width:900px;margin:60px auto;padding:0 20px;}
-    h2{
-      font-family:'Playfair Display',serif;
-      color:#503535;
-      margin-top:60px;
-      font-size:28px;
-      text-align:center;
-    }
+    h2{ font-family:'Playfair Display',serif; color:#503535; margin-top:60px; font-size:28px; text-align:center; }
     p{margin-bottom:20px;font-size:15px;}
-    img{
-      width:100%;
-      border-radius:12px;
-      margin:25px 0;
-    }
+    img{ border-radius:12px; margin:25px 0; }
+
+    /* ✅ 画像サイズ縮小 */
+    .half-size{ width:50%; max-width:100%; display:block; margin:25px auto; }
 
     /* ✅ 専門家コメント */
     .expert-box{
@@ -96,25 +63,11 @@
       gap:16px;
       margin:40px 0;
     }
-    .expert-box img{
-      width:90px;
-      height:90px;
-      border-radius:50%;
-      object-fit:cover;
-      flex-shrink:0;
-    }
-    .expert-comment{
-      font-size:14px;
-      color:#333;
-    }
-    .expert-comment strong{display:block;margin-bottom:4px;}
+    .expert-box img{ width:90px; height:90px; border-radius:50%; object-fit:cover; flex-shrink:0; }
+    .expert-comment{ font-size:14px; color:#333; }
+    .expert-comment strong{ display:block; margin-bottom:4px; }
 
-    footer{
-      text-align:center;
-      font-size:13px;
-      color:#777;
-      margin:60px 0 30px;
-    }
+    footer{ text-align:center; font-size:13px; color:#777; margin:60px 0 30px; }
 
     @media(max-width:600px){
       header h1{font-size:30px;}
@@ -128,30 +81,23 @@
     <p>肌と心を整える、オーガニックケアの秘密</p>
   </header>
 
-<!-- 🌸 季節・冬セクションへのリンク（上部） -->
+  <!-- 🌸 季節・冬セクションへのリンク（上部） -->
   <div style="text-align:center; margin:30px 0;">
-    <a href="seasons-skin.html"
-       style="color:#d6336c; font-weight:600; text-decoration:none; font-size:1.2em; margin-right:20px;">
-      🌸 季節のおすすめを見る
-    </a>
-    <a href="winter-selection.html"
-       style="color:#d6336c; font-weight:600; text-decoration:none; font-size:1.2em;">
-      ❄ 冬のベストセレクションへ
-    </a>
+    <a href="seasons-skin.html" style="color:#d6336c; font-weight:600; text-decoration:none; font-size:1.2em; margin-right:20px;">🌸 季節のおすすめを見る</a>
+    <a href="winter-selection.html" style="color:#d6336c; font-weight:600; text-decoration:none; font-size:1.2em;">❄ 冬のベストセレクションへ</a>
   </div>
-  
+
   <main>
     <section>
       <h2>自然のリズムに寄り添うスキンケア</h2>
       <p>季節が巡るたびに、肌はその変化を敏感に感じ取っています。春には花粉や紫外線、夏には汗と皮脂、秋には乾燥、そして冬には冷気と暖房。どの季節も、肌にとっては小さな試練の連続です。</p>
       <p>オーガニックケアは、そんな肌の声を静かに聞き取るような存在です。自然の恵みを活かした植物エキスや精油は、過剰な刺激を与えずに肌を守り、ゆるやかに整えてくれます。香りや手ざわりもまた、心にやさしく寄り添う要素のひとつ。スキンケアを「癒しの時間」として感じる人が増えているのも頷けます。</p>
-      <img src="images/30s-skincare.jpg" alt="スキンケアをする女性">
+      <img src="images/30s-skincare.jpg" alt="スキンケアをする女性" class="half-size">
       <p>朝、鏡の前で肌を触れた瞬間に「今日の調子、いいかも」と感じる。そんな小さな喜びが、心を軽やかにしてくれます。オーガニックコスメは、単なる化粧品ではなく、“自分と向き合うためのツール”なのかもしれません。</p>
     </section>
 
     <section>
       <h2>皮膚科医が語る「肌の自活力」</h2>
-
       <div class="expert-box">
         <img src="images/expert-morimoto.jpg" alt="皮膚科医・藤井紗季先生">
         <div class="expert-comment">
@@ -161,61 +107,48 @@
           自然の成分で穏やかにケアすることは、肌の“自活力”を取り戻す第一歩なんです。」
         </div>
       </div>
-
       <p>藤井先生の言葉にもある通り、「与えるケア」より「育てるケア」が今の時代の主流になりつつあります。  
       毎日のクレンジングや保湿の選び方一つで、肌の未来が変わる。オーガニックアイテムを選ぶということは、  
       その選択そのものが“肌を信じる”という行為なのかもしれません。</p>
-
       <p>たとえば、オーガニックローションは保湿だけでなく、肌の水分循環をサポートします。  
       オイルやクリームは外から守るのではなく、内側の潤いを閉じ込めるように働きかけてくれます。  
       こうした小さな積み重ねが、やがて揺らぎにくい肌をつくり上げていくのです。</p>
     </section>
-    
-<!-- ★アフィリエイト特集ボックス★ -->
-<div style="
-  max-width: 900px;
-  margin: 60px auto;
-  padding: 30px 20px;
-  background: linear-gradient(135deg, #ffe3ea, #ffd6e6);
-  border-radius: 18px;
-  box-shadow: 0 6px 20px rgba(0,0,0,0.12);
-  text-align: center;
-">
-  <h2 style="
-    font-family: 'Playfair Display', serif;
-    font-size: 30px;
-    margin-bottom: 10px;
-    color:#503535;
-  ">
-    🌸 今月の特別おすすめアイテム
-  </h2>
 
-  <p style="font-size:16px; color:#444; margin-bottom:20px;">
-    年齢肌・乾燥肌の方に特に人気のアイテムをピックアップしました。<br>
-    気分が上がるケアで、毎日のスキンケア時間をもっと贅沢に。
-  </p>
+    <!-- ★アフィリエイト特集ボックス★ -->
+    <div style="
+      max-width: 900px;
+      margin: 60px auto;
+      padding: 30px 20px;
+      background: linear-gradient(135deg, #ffe3ea, #ffd6e6);
+      border-radius: 18px;
+      box-shadow: 0 6px 20px rgba(0,0,0,0.12);
+      text-align: center;
+    ">
+      <h2 style="font-family: 'Playfair Display', serif; font-size: 30px; margin-bottom: 10px; color:#503535;">
+        🌸 今月の特別おすすめアイテム
+      </h2>
 
-  <!-- アフィリエイトリンク -->
-  <a href="https://px.a8.net/svt/ejp?a8mat=45I9PD+4HCIHM+37D2+609HT" 
-     target="_blank" 
-     rel="nofollow sponsored">
-    <img border="0" width="300" height="250" 
-         alt="おすすめアイテム" 
-         style="border-radius:14px; box-shadow:0 4px 15px rgba(0,0,0,0.15);" 
-         src="https://www29.a8.net/svt/bgt?aid=251115169271&wid=002&eno=01&mid=s00000014951001009000&mc=1">
-  </a>
+      <p style="font-size:16px; color:#444; margin-bottom:20px;">
+        年齢肌・乾燥肌の方に特に人気のアイテムをピックアップしました。<br>
+        気分が上がるケアで、毎日のスキンケア時間をもっと贅沢に。
+      </p>
 
-  <img border="0" width="1" height="1" 
-       src="https://www19.a8.net/0.gif?a8mat=45I9PD+4HCIHM+37D2+609HT" 
-       alt="">
+      <!-- アフィリエイトリンク -->
+      <a href="https://px.a8.net/svt/ejp?a8mat=45I9PD+4HCIHM+37D2+609HT" target="_blank" rel="nofollow sponsored">
+        <img border="0" width="300" height="250" alt="おすすめアイテム" 
+             style="border-radius:14px; box-shadow:0 4px 15px rgba(0,0,0,0.15);" 
+             src="https://www29.a8.net/svt/bgt?aid=251115169271&wid=002&eno=01&mid=s00000014951001009000&mc=1">
+      </a>
+      <img border="0" width="1" height="1" 
+           src="https://www19.a8.net/0.gif?a8mat=45I9PD+4HCIHM+37D2+609HT" alt="">
 
-  <p style="margin-top:15px; font-size:14px; color:#777;">
-    ※ 気になる方は今すぐチェックしてみてくださいね。
-  </p>
-</div>
-<!-- ★アフィリエイト特集ボックスここまで★ -->
+      <p style="margin-top:15px; font-size:14px; color:#777;">
+        ※ 気になる方は今すぐチェックしてみてくださいね。
+      </p>
+    </div>
+    <!-- ★アフィリエイト特集ボックスここまで★ -->
 
-    
     <section>
       <h2>自分の肌を愛するということ</h2>
       <p>「オーガニック」という言葉は、ただの流行ではありません。  
@@ -226,7 +159,7 @@
       自然の香りに包まれて深呼吸をすれば、心も肌も少しずつ柔らかくほぐれていきます。  
       肌を大切にするということは、自分の生き方を丁寧に扱うことでもあるのです。</p>
 
-      <img src="images/natural-beauty.jpg" alt="自然の中でリラックスする女性">
+      <img src="images/natural-beauty.jpg" alt="自然の中でリラックスする女性" class="half-size">
 
       <p>オーガニックケアは“足す美容”ではなく、“戻す美容”。  
       自然に還るように、シンプルに、穏やかに。  
@@ -237,84 +170,79 @@
       自然のちからと、自分を信じる力を味方に、あなたらしい輝きを育てていきましょう。</p>
     </section>
   </main>
-<!-- 🌸 HALENA　アフィリエイトリンク-->
-<section style="display:flex; justify-content:center; margin:50px 0;">
-  <div style="
-      background:#fff;
-      border:1px solid #eee;
-      border-radius:12px;
-      padding:30px 20px;
-      max-width:600px;
-      text-align:center;
-      box-shadow:0 4px 12px rgba(0,0,0,0.05);
-  ">
-    <h3 style="font-weight:600; margin-bottom:12px; font-size:18px;">当サイトおすすめの一押しコスメ！</h3>
-    <p style="margin-bottom:20px; font-size:15px; color:#555;">
-      ハレナ オーガニックオールインワンジェルは敏感肌にも優しく、<br>
-      初めての方でも安心して試せます。
-    </p>
 
-    <!-- CTAボタン -->
-    <a href="https://px.a8.net/svt/ejp?a8mat=45I9PD+4GR2VU+3PSY+1BNQZ5" 
-       rel="nofollow sponsored" target="_blank"
-       style="
-         display:inline-block;
-         background:#ff79b0;
-         color:#fff;
-         font-weight:600;
-         padding:12px 28px;
-         border-radius:30px;
-         text-decoration:none;
-         margin-bottom:15px;
-         transition: all .3s ease;
-       "
-       onmouseover="this.style.background='#ff4d91'"
-       onmouseout="this.style.background='#ff79b0'">
-      今すぐ試してみる
-    </a>
+  <!-- 🌸 HALENA　アフィリエイトリンク-->
+  <section style="display:flex; justify-content:center; margin:50px 0;">
+    <div style="
+        background:#fff;
+        border:1px solid #eee;
+        border-radius:12px;
+        padding:30px 20px;
+        max-width:600px;
+        text-align:center;
+        box-shadow:0 4px 12px rgba(0,0,0,0.05);
+    ">
+      <h3 style="font-weight:600; margin-bottom:12px; font-size:18px;">当サイトおすすめの一押しコスメ！</h3>
+      <p style="margin-bottom:20px; font-size:15px; color:#555;">
+        ハレナ オーガニックオールインワンジェルは敏感肌にも優しく、<br>
+        初めての方でも安心して試せます。
+      </p>
 
-    <!-- バナー -->
-    <div style="margin-top:10px;">
+      <!-- CTAボタン -->
       <a href="https://px.a8.net/svt/ejp?a8mat=45I9PD+4GR2VU+3PSY+1BNQZ5" 
-         rel="nofollow sponsored" target="_blank">
-        <img border="0" width="320" height="50" alt="HALENA オーガニックオールインワンジェル" 
-             src="https://www20.a8.net/svt/bgt?aid=251115169270&wid=002&eno=01&mid=s00000017341008005000&mc=1">
+         rel="nofollow sponsored" target="_blank"
+         style="
+           display:inline-block;
+           background:#ff79b0;
+           color:#fff;
+           font-weight:600;
+           padding:12px 28px;
+           border-radius:30px;
+           text-decoration:none;
+           margin-bottom:15px;
+           transition: all .3s ease;
+         "
+         onmouseover="this.style.background='#ff4d91'"
+         onmouseout="this.style.background='#ff79b0'">
+        今すぐ試してみる
       </a>
-      <img border="0" width="1" height="1" 
-           src="https://www18.a8.net/0.gif?a8mat=45I9PD+4GR2VU+3PSY+1BNQZ5" alt="">
-    </div>
-  </div>
-</section>
-  
 
-    <!-- 🌸 季節・冬セクションへのリンク（下部） -->
+      <!-- バナー -->
+      <div style="margin-top:10px;">
+        <a href="https://px.a8.net/svt/ejp?a8mat=45I9PD+4GR2VU+3PSY+1BNQZ5" 
+           rel="nofollow sponsored" target="_blank">
+          <img border="0" width="320" height="50" alt="HALENA オーガニックオールインワンジェル" 
+               src="https://www20.a8.net/svt/bgt?aid=251115169270&wid=002&eno=01&mid=s00000017341008005000&mc=1">
+        </a>
+        <img border="0" width="1" height="1" 
+             src="https://www18.a8.net/0.gif?a8mat=45I9PD+4GR2VU+3PSY+1BNQZ5" alt="">
+      </div>
+    </div>
+  </section>
+
+  <!-- 🌸 季節・冬セクションへのリンク（下部） -->
   <div style="text-align:center; margin:50px 0;">
     <p style="font-size:1.1em; color:#555; margin-bottom:10px;">さらにおすすめの記事はこちら：</p>
-    <a href="seasons-skin.html"
-       style="color:#d6336c; font-weight:600; text-decoration:none; font-size:1.1em; margin-right:20px;">
-      🌸 季節のおすすめを見る
-    </a>
-    <a href="winter-selection.html"
-       style="color:#d6336c; font-weight:600; text-decoration:none; font-size:1.1em;">
-      ❄ 冬のベストセレクションへ
-    </a>
+    <a href="seasons-skin.html" style="color:#d6336c; font-weight:600; text-decoration:none; font-size:1.1em; margin-right:20px;">🌸 季節のおすすめを見る</a>
+    <a href="winter-selection.html" style="color:#d6336c; font-weight:600; text-decoration:none; font-size:1.1em;">❄ 冬のベストセレクションへ</a>
   </div>
 
   <div style="text-align:center;margin:40px 0;">
-  <a href="index.html" style="
-    display:inline-block;
-    background:linear-gradient(45deg,#f48b8b,#f7a8a8);
-    color:#fff;
-    padding:12px 28px;
-    border-radius:30px;
-    text-decoration:none;
-    font-weight:600;
-    box-shadow:0 4px 12px rgba(0,0,0,0.15);
-    transition:all .3s ease;
-  " onmouseover="this.style.transform='translateY(-3px)'" onmouseout="this.style.transform='translateY(0)'">
-    ← トップページへ戻る
-  </a>
-</div>
+    <a href="index.html" style="
+      display:inline-block;
+      background:linear-gradient(45deg,#f48b8b,#f7a8a8);
+      color:#fff;
+      padding:12px 28px;
+      border-radius:30px;
+      text-decoration:none;
+      font-weight:600;
+      box-shadow:0 4px 12px rgba(0,0,0,0.15);
+      transition:all .3s ease;
+    " onmouseover="this.style.transform='translateY(-3px)'" onmouseout="this.style.transform='translateY(0)'">
+      ← トップページへ戻る
+    </a>
+  </div>
+
   <footer>© 2025 EssentialBeautyNeeds</footer>
 </body>
 </html>
