@@ -341,3 +341,12 @@ footer {
   height: 12px;
   fill: #ffffff; /* 白い三角 */
 }
+
+body.page-beauty-column p {
+  font-size: 16px; /* 本文を少し大きく */
+}
+
+body.page-beauty-column h2 {
+  font-size: 32px; /* 見出しを少し大きく */
+}
+
