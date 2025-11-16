@@ -345,3 +345,40 @@ footer {
 body.page-beauty-column p { font-size: 18px !important; }
 body.page-beauty-column h2 { font-size: 32px !important; }
 
+/* --- 追加するCSS (トップナビゲーションのボタンデザイン) --- */
+
+/* 既存の .nav-links のスタイルを上書き/強化 */
+.nav-links {
+    display: flex;
+    justify-content: center; /* 中央揃え */
+    flex-wrap: wrap;         /* 小さい画面で折り返す */
+    gap: 12px;
+    margin: 20px auto 40px; /* 上下のマージンを調整 */
+    max-width: 1000px;
+    padding: 0 20px;
+}
+
+.nav-links a {
+    /* 以前のボタンデザインを適用 */
+    display: inline-flex;
+    align-items: center;
+    justify-content: center;
+    gap: 6px;
+    background: #ffdcdc; /* 薄い赤色の背景 */
+    color: #d6336c; /* アクセントカラーのテキスト */
+    font-weight: 600;
+    font-size: 15px; /* サイズ調整 */
+    text-decoration: none;
+    padding: 10px 22px;
+    border-radius: 30px; /* 丸い角 */
+    box-shadow: 0 3px 8px rgba(0,0,0,0.08);
+    transition: all 0.3s ease;
+}
+
+.nav-links a:hover {
+    background: linear-gradient(135deg, #fcdcdc, #f48b8b);
+    color: #fff;
+    transform: translateY(-2px);
+    box-shadow: 0 6px 15px rgba(0,0,0,0.12);
+}
+/* --- 追加するCSS ここまで --- */
