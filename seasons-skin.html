@@ -3,39 +3,38 @@
 <html lang="ja">
 <head>
 <meta charset="utf-8">
-<!-- Google Analytics 4 + internal traffic exclusion -->
 <script>
-  // internal_user クッキーが設定されているか確認
-  function isInternalUser() {
-    return document.cookie.split(';').some(c => c.trim().startsWith('internal_user=true'));
-  }
+  // internal_user クッキーが設定されているか確認
+  function isInternalUser() {
+    return document.cookie.split(';').some(c => c.trim().startsWith('internal_user=true'));
+  }
 
-  // internal_user クッキーがない場合だけ、GA4を読み込む
-  if (!isInternalUser()) {
-    var gaScript = document.createElement('script');
-    gaScript.async = true;
-    gaScript.src = "https://www.googletagmanager.com/gtag/js?id=G-2HGEPHVZYY";
-    document.head.appendChild(gaScript);
+  // internal_user クッキーがない場合だけ、GA4を読み込む
+  if (!isInternalUser()) {
+    var gaScript = document.createElement('script');
+    gaScript.async = true;
+    gaScript.src = "https://www.googletagmanager.com/gtag/js?id=G-2HGEPHVZYY";
+    document.head.appendChild(gaScript);
 
-    window.dataLayer = window.dataLayer || [];
-    function gtag(){dataLayer.push(arguments);}
-    gtag('js', new Date());
-    gtag('config', 'G-2HGEPHVZYY');
-  } else {
-    console.log('✅ Internal traffic excluded.');
-  }
+    window.dataLayer = window.dataLayer || [];
+    function gtag(){dataLayer.push(arguments);}
+    gtag('js', new Date());
+    gtag('config', 'G-2HGEPHVZYY');
+  } else {
+    console.log('✅ Internal traffic excluded.');
+  }
 </script>
-  
+  
 <meta name="viewport" content="width=device-width,initial-scale=1">
 <title>季節別オーガニックスキンケア特集｜肌が喜ぶ自然派コスメ</title>
 <link href="https://fonts.googleapis.com/css2?family=Playfair+Display:wght@600&family=Quicksand:wght@400;600&display=swap" rel="stylesheet">
 
 <style>
 :root {
-  --bg: #fff8f8;
-  --accent: #f7a8a8;
-  --accent-hover: #f48b8b;
-  --muted: #666;
+  --bg: #fff8f8;
+  --accent: #f7a8a8;
+  --accent-hover: #f48b8b;
+  --muted: #666;
 }
 * { box-sizing: border-box; margin: 0; padding: 0; }
 body { font-family: 'Quicksand', sans-serif; background: var(--bg); color: #333; line-height: 1.6; }
@@ -71,229 +70,261 @@ p.lead { font-size: 18px; color: #5a4545; }
 footer { text-align:center; font-size:13px; color:#888; margin:60px 0 30px; }
 
 #affiliateNotice {
-    position: fixed;
-    right: 12px;
-    bottom: 12px;
-    background: rgba(255, 255, 255, 0.8);
-    color: #555;
-    font-size: 11px;
-    border-radius: 6px;
-    padding: 4px 8px;
-    box-shadow: 0 2px 6px rgba(0,0,0,0.1);
-    z-index: 999;
+    position: fixed;
+    right: 12px;
+    bottom: 12px;
+    background: rgba(255, 255, 255, 0.8);
+    color: #555;
+    font-size: 11px;
+    border-radius: 6px;
+    padding: 4px 8px;
+    box-shadow: 0 2px 6px rgba(0,0,0,0.1);
+    z-index: 999;
 }
 
-@media (max-width:768px){ 
-  .product-review{ flex-direction:column; } 
-  .review-column{ flex-direction:row; flex-wrap:wrap; justify-content:center; } 
+@media (max-width:768px){ 
+  .product-review{ flex-direction:column; } 
+  .review-column{ flex-direction:row; flex-wrap:wrap; justify-content:center; } 
+}
+
+/* --- 追加: 上部ナビゲーションボタンのデザイン --- */
+.top-links {
+    display: flex;
+    justify-content: center; /* 中央揃え */
+    flex-wrap: wrap;         /* 小さい画面で折り返す */
+    gap: 12px;
+    margin: 20px auto 40px; /* 上下のマージンと中央寄せ */
+    max-width: 1000px; /* 適切な幅を設定 */
+    padding: 0 20px; /* 左右の余白 */
+}
+
+.top-links a {
+    display: inline-flex;
+    align-items: center;
+    justify-content: center;
+    gap: 6px;
+    background: #ffdcdc; /* 薄い赤色の背景 */
+    color: #d6336c; /* アクセントカラーのテキスト */
+    font-weight: 600;
+    font-size: 15px; /* サイズ調整 */
+    text-decoration: none;
+    padding: 10px 22px;
+    border-radius: 30px; /* 丸い角 */
+    box-shadow: 0 3px 8px rgba(0,0,0,0.08);
+    transition: all 0.3s ease;
+}
+
+.top-links a:hover {
+    background: linear-gradient(135deg, #fcdcdc, #f48b8b);
+    color: #fff;
+    transform: translateY(-2px);
+    box-shadow: 0 6px 15px rgba(0,0,0,0.12);
 }
 </style>
 </head>
 <body>
 
 <header>
-  <h1>季節別オーガニックスキンケア特集</h1>
-  <p class="lead">春夏秋冬、それぞれの肌悩みに合った自然派コスメとリアルユーザーの声を紹介します。</p>
+  <h1>季節別オーガニックスキンケア特集</h1>
+  <p class="lead">春夏秋冬、それぞれの肌悩みに合った自然派コスメとリアルユーザーの声を紹介します。</p>
 </header>
-  
-<div class="top-links a">
-    <a href="index.html">🏠 トップに戻る</a>
-    <a href="age-skincare.html">👩 40代・50代向け 肌質別スキンケア</a>
+  
+<div class="top-links">     <a href="index.html">🏠 トップに戻る</a>
+    <a href="seasons-skin.html">🌸 季節別スキンケア</a>     <a href="age-skincare.html">👩 40代・50代向け 肌質別スキンケア</a>
     <a href="acne-skincare.html">🧴 ニキビ・敏感肌ケア</a>
     <a href="lifestyle-skincare.html">💆‍♀️ 生活リズム別スキンケア</a>
     <a href="skin-ranking.html">✨ ランキング</a>
     <a href="beauty-column.html">💄 ビューティーコラム</a>
 </div>
-  
+  
 <main class="container">
 
-  <div style="margin: 40px 0; padding: 20px; background: #fff; border-radius: 12px; box-shadow: 0 2px 10px rgba(0,0,0,0.05); border-left: 5px solid var(--accent);">
-    <p style="font-size: 16px; color: #503535; text-align: justify; text-justify: inter-ideograph;">
-        一年を通して同じスキンケアを続けていませんか？私たちの肌は、四季の変化に非常に敏感です。<br>春は<strong>花粉や寒暖差</strong>によるゆらぎ、夏は<strong>紫外線と皮脂の過剰分泌</strong>、秋は<strong>夏のダメージの蓄積と急激な乾燥、</strong>そして冬は<strong>厳しい乾燥と血行不良</strong>。<br>季節ごとに肌が直面する課題は全く異なります。季節の変わり目にお肌の調子を崩しやすいのは、この環境の変化に適したケアができていないサインかもしれません。<br>この特集では、それぞれの季節に最適なオーガニックコスメと、お肌を守るための具体的なケアの「**気にするポイント**」をご紹介します。肌のバリア機能を高め、四季を通じて健やかな美しさを保つためのヒントを見つけましょう。
-    </p>
+  <div style="margin: 40px 0; padding: 20px; background: #fff; border-radius: 12px; box-shadow: 0 2px 10px rgba(0,0,0,0.05); border-left: 5px solid var(--accent);">
+        <p style="font-size: 16px; color: #503535; text-align: justify; text-justify: inter-ideograph;">
+        一年中同じスキンケアで満足していませんか？私たちの肌は**四季の変化に非常に敏感**です。<br><br>
+        季節ごとに肌が直面する課題は全く異なり、対策ができていないと肌のゆらぎやトラブルにつながります。
+        <ul>
+          <li>**春**：花粉や寒暖差によるゆらぎ</li>
+          <li>**夏**：紫外線と皮脂の過剰分泌</li>
+          <li>**秋**：夏のダメージ蓄積と急激な乾燥</li>
+          <li>**冬**：厳しい乾燥と血行不良</li>
+        </ul>
+        この特集では、それぞれの季節に最適なオーガニックコスメと、お肌を守るための具体的なケアの「**気にするポイント**」をご紹介します。肌のバリア機能を高め、四季を通じて健やかな美しさを保つためのヒントを見つけましょう。
+    </p>
 </div>
-  
-<!-- 春 -->
+  
 <section class="article" id="spring">
-  <h2>🌸 春の肌ケア</h2>
-  <img src="images/spring.jpg" alt="春のスキンケア" class="hero">
+  <h2>🌸 春の肌ケア</h2>
+  <img src="images/spring.jpg" alt="春のスキンケア" class="hero">
 
-  <div class="product-review">
-    <div class="product-card">
-      <img src="images/etvos.jpg" alt="ETVOS モイストバリアクリーム">
-      <h3>ETVOS モイストバリアクリーム</h3>
-      <p>敏感肌や花粉の季節に最適。ヒト型セラミド配合で肌を守ります。</p>
-      <ul>
-        <li>花粉・PM2.5対策</li>
-        <li>4種のヒト型セラミド配合</li>
-        <li>低刺激・無添加</li>
-      </ul>
-      <a href="https://amzn.to/4nMuJPb" class="btn" target="_blank">今すぐチェック</a>
-    </div>
+  <div class="product-review">
+    <div class="product-card">
+      <img src="images/etvos.jpg" alt="ETVOS モイストバリアクリーム">
+      <h3>ETVOS モイストバリアクリーム</h3>
+      <p>敏感肌や花粉の季節に最適。ヒト型セラミド配合で肌を守ります。</p>
+      <ul>
+        <li>花粉・PM2.5対策</li>
+        <li>4種のヒト型セラミド配合</li>
+        <li>低刺激・無添加</li>
+      </ul>
+      <a href="https://amzn.to/4nMuJPb" class="btn" target="_blank">今すぐチェック</a>
+    </div>
 
-    <div class="review-column">
-      <div class="review-card">
-        <img src="images/etvosuser.jpg" alt="いちかさん：30代会社員">
-        <p>「使い始めてから肌の赤みが落ち着き、しっとり感が続く！」</p>
-        <p class="name">いちかさん：30代会社員</p>
-      </div>
-      <div class="review-card">
-        <img src="images/20.1.jpg" alt="まいさん：20代エステ勤務">
-        <p>「敏感肌でも安心して使える保湿力。<br>肌がふっくらして透明感が出てきました。」</p>
-        <p class="name">まいさん：20代エステ勤務</p>
-      </div>
-    </div>
-  </div>
+    <div class="review-column">
+      <div class="review-card">
+        <img src="images/etvosuser.jpg" alt="いちかさん：30代会社員">
+        <p>「使い始めてから肌の赤みが落ち着き、しっとり感が続く！」</p>
+        <p class="name">いちかさん：30代会社員</p>
+      </div>
+      <div class="review-card">
+        <img src="images/20.1.jpg" alt="まいさん：20代エステ勤務">
+        <p>「敏感肌でも安心して使える保湿力。<br>肌がふっくらして透明感が出てきました。」</p>
+        <p class="name">まいさん：20代エステ勤務</p>
+      </div>
+    </div>
+  </div>
 
-  <div class="internal-link">
-    <a href="#summer">次の記事：☀ 夏の肌ケア →</a>
-  </div>
+  <div class="internal-link">
+    <a href="#summer">次の記事：☀ 夏の肌ケア →</a>
+  </div>
 </section>
 
-<!-- 夏 -->
 <section class="article" id="summer">
-  <h2>☀ 夏の肌ケア</h2>
-  <img src="images/summer.jpg" alt="夏のスキンケア" class="hero">
+  <h2>☀ 夏の肌ケア</h2>
+  <img src="images/summer.jpg" alt="夏のスキンケア" class="hero">
 
-  <div class="product-review">
-    <div class="product-card">
-      <img src="images/sunao.jpg" alt="sunao UVクリーム">
-      <h3>sunao UVクリーム</h3>
-      <p>オーガニック由来の無添加日焼け止め。紫外線吸収剤不使用で安心。</p>
-      <ul>
-        <li>紫外線吸収剤不使用</li>
-        <li>石けんで簡単オフ</li>
-        <li>SPF32 PA++</li>
-      </ul>
-      <a href="https://amzn.to/3JmEMME" class="btn" target="_blank">今すぐチェック</a>
-    </div>
+  <div class="product-review">
+    <div class="product-card">
+      <img src="images/sunao.jpg" alt="sunao UVクリーム">
+      <h3>sunao UVクリーム</h3>
+      <p>オーガニック由来の無添加日焼け止め。紫外線吸収剤不使用で安心。</p>
+      <ul>
+        <li>紫外線吸収剤不使用</li>
+        <li>石けんで簡単オフ</li>
+        <li>SPF32 PA++</li>
+      </ul>
+      <a href="https://amzn.to/3JmEMME" class="btn" target="_blank">今すぐチェック</a>
+    </div>
 
-    <div class="review-column">
-      <div class="review-card">
-        <img src="images/gym40.jpg" alt="ほなみさん：40代栄養士">
-        <p>「白浮きせず軽い着け心地で快適！<br>直ぐにサラサラになって残らないので気持ちいです。」</p>
-        <p class="name">ほなみさん：40代栄養士</p>
-      </div>
-      <div class="review-card">
-        <img src="images/20.2.jpg" alt="あいかさん：20代実業家">
-        <p>「日焼け止め特有の重さやべたつきがなく、軽やかで快適です。」</p>
-        <p class="name">あいかさん：20代実業家</p>
-      </div>
-    </div>
-  </div>
+    <div class="review-column">
+      <div class="review-card">
+        <img src="images/gym40.jpg" alt="ほなみさん：40代栄養士">
+        <p>「白浮きせず軽い着け心地で快適！<br>直ぐにサラサラになって残らないので気持ちいです。」</p>
+        <p class="name">ほなみさん：40代栄養士</p>
+      </div>
+      <div class="review-card">
+        <img src="images/20.2.jpg" alt="あいかさん：20代実業家">
+        <p>「日焼け止め特有の重さやべたつきがなく、軽やかで快適です。」</p>
+        <p class="name">あいかさん：20代実業家</p>
+      </div>
+    </div>
+  </div>
 
-  <div class="internal-link">
-    <a href="#autumn">次の記事：🍂 秋の肌ケア →</a>
-  </div>
+  <div class="internal-link">
+    <a href="#autumn">次の記事：🍂 秋の肌ケア →</a>
+  </div>
 </section>
 
-<!-- 秋 -->
 <section class="article" id="autumn">
-  <h2>🍂 秋の肌ケア</h2>
-  <img src="images/autumn.jpg" alt="秋のスキンケア" class="hero">
+  <h2>🍂 秋の肌ケア</h2>
+  <img src="images/autumn.jpg" alt="秋のスキンケア" class="hero">
 
-  <div class="product-review">
-    <div class="product-card">
-      <img src="images/naturesfor.jpg" alt="Naturesfor アドバンスクリアセラム">
-      <h3>Naturesfor アドバンスクリアセラム</h3>
-      <p>植物エキスで乾燥小じわケア。透明感のある肌へ導きます。</p>
-      <ul>
-        <li>ヘチマ水・ロサアルバ花水配合</li>
-        <li>乾燥小じわケア</li>
-        <li>滑らかな使用感</li>
-      </ul>
-      <a href="https://amzn.to/3LbyAYi" class="btn" target="_blank">今すぐチェック</a>
-    </div>
+  <div class="product-review">
+    <div class="product-card">
+      <img src="images/naturesfor.jpg" alt="Naturesfor アドバンスクリアセラム">
+      <h3>Naturesfor アドバンスクリアセラム</h3>
+      <p>植物エキスで乾燥小じわケア。透明感のある肌へ導きます。</p>
+      <ul>
+        <li>ヘチマ水・ロサアルバ花水配合</li>
+        <li>乾燥小じわケア</li>
+        <li>滑らかな使用感</li>
+      </ul>
+      <a href="https://amzn.to/3LbyAYi" class="btn" target="_blank">今すぐチェック</a>
+    </div>
 
-    <div class="review-column">
-      <div class="review-card">
-        <img src="images/biyoushi.jpg" alt="のり子さん：30代美容師">
-        <p>「季節の変わり目でも肌の乾燥が気にならず、透明感が出ました。」</p>
-        <p class="name">のり子さん：30代美容師</p>
-      </div>
-      <div class="review-card">
-        <img src="images/30.1.jpg" alt="ゆみさん：30代フリーター">
-        <p>「乾燥やゆらぎ肌でも安心して使用でき、<br>肌が柔らかくなった気がします！手放せません。」</p>
-        <p class="name">ゆみさん：30代フリーター</p>
-      </div>
-    </div>
-  </div>
+    <div class="review-column">
+      <div class="review-card">
+        <img src="images/biyoushi.jpg" alt="のり子さん：30代美容師">
+        <p>「季節の変わり目でも肌の乾燥が気にならず、透明感が出ました。」</p>
+        <p class="name">のり子さん：30代美容師</p>
+      </div>
+      <div class="review-card">
+        <img src="images/30.1.jpg" alt="ゆみさん：30代フリーター">
+        <p>「乾燥やゆらぎ肌でも安心して使用でき、<br>肌が柔らかくなった気がします！手放せません。」</p>
+        <p class="name">ゆみさん：30代フリーター</p>
+      </div>
+    </div>
+  </div>
 
-  <div class="internal-link">
-    <a href="#winter">次の記事：❄ 冬の肌ケア →</a>
-  </div>
+  <div class="internal-link">
+    <a href="#winter">次の記事：❄ 冬の肌ケア →</a>
+  </div>
 </section>
 
-<!-- 冬 -->
 <section class="article" id="winter">
-  <h2>❄ 冬の肌ケア</h2>
-  <img src="images/winter.jpg" alt="冬のスキンケア" class="hero">
+  <h2>❄ 冬の肌ケア</h2>
+  <img src="images/winter.jpg" alt="冬のスキンケア" class="hero">
 
-  <div class="product-review">
-    <div class="product-card">
-      <img src="images/alos.jpg" alt="ALOS ORGANIC ローション">
-      <h3>ALOS ORGANIC ローション</h3>
-      <p>高保湿・高浸透のオーガニック化粧水。乾燥肌をしっとりケア。</p>
-      <ul>
-        <li>ビタミンC・レチノール配合</li>
-        <li>ヒアルロン酸で高保湿</li>
-        <li>オレンジの香りで癒やし</li>
-      </ul>
-      <a href="https://amzn.to/4oCaXGI" class="btn" target="_blank">今すぐチェック</a>
-    </div>
+  <div class="product-review">
+    <div class="product-card">
+      <img src="images/alos.jpg" alt="ALOS ORGANIC ローション">
+      <h3>ALOS ORGANIC ローション</h3>
+      <p>高保湿・高浸透のオーガニック化粧水。乾燥肌をしっとりケア。</p>
+      <ul>
+        <li>ビタミンC・レチノール配合</li>
+        <li>ヒアルロン酸で高保湿</li>
+        <li>オレンジの香りで癒やし</li>
+      </ul>
+      <a href="https://amzn.to/4oCaXGI" class="btn" target="_blank">今すぐチェック</a>
+    </div>
 
-    <div class="review-column">
-      <div class="review-card">
-        <img src="images/50suser.jpg" alt="さなえさん：50代小児科医師">
-        <p>「乾燥の季節でも肌がつっぱらず、朝までしっとり感が続きます。<br>これだけで済むので楽です。</p>
-        <p class="name">さなえさん：50代小児科医師</p>
-      </div>
-      <div class="review-card">
-        <img src="images/40.1.jpg" alt="みどりさん：40代声優">
-        <p>「冬でも肌の乾燥を感じず、毎日のケアが楽になりました。<br>悩みだった肌の赤みもなくなりました。」</p>
-        <p class="name">みどりさん：40代声優</p>
-      </div>
-    </div>
-  </div>
+    <div class="review-column">
+      <div class="review-card">
+        <img src="images/50suser.jpg" alt="さなえさん：50代小児科医師">
+        <p>「乾燥の季節でも肌がつっぱらず、朝までしっとり感が続きます。<br>これだけで済むので楽です。</p>
+        <p class="name">さなえさん：50代小児科医師</p>
+      </div>
+      <div class="review-card">
+        <img src="images/40.1.jpg" alt="みどりさん：40代声優">
+        <p>「冬でも肌の乾燥を感じず、毎日のケアが楽になりました。<br>悩みだった肌の赤みもなくなりました。」</p>
+        <p class="name">みどりさん：40代声優</p>
+      </div>
+    </div>
+  </div>
 </section>
 <div style="margin: 80px 0 50px; padding: 30px; background: #fff5f5; border-radius: 12px; border: 1px solid var(--accent);">
-    <h2 style="font-family: 'Playfair Display', serif; font-size: 24px; color: #d6336c; text-align: center; margin-bottom: 15px;">🌿 季節に寄り添うスキンケアを</h2>
-    <p style="font-size: 16px; color: #444; text-align: justify; text-justify: inter-ideograph;">
-        春夏秋冬それぞれの環境に合わせたケアを取り入れることが、肌トラブルを防ぎ、美しさを維持する鍵となります。特に季節の変わり目は、肌の準備期間としてケアを強化することが大切です。春には**バリア機能の強化**、夏には**徹底的な紫外線対策**と**クーリング**、秋には**保湿力重視のアイテムへの移行**、冬には**高保湿**と**血行促進ケア**を意識しましょう。オーガニックコスメは、自然の力を借りて肌本来の回復力を高めてくれるため、季節のゆらぎに負けない健やかな肌づくりに最適です。ここで見つけたあなたの肌が本当に喜ぶアイテムを取り入れて、一年中自信を持って過ごせる「うるおい美肌」を目指しましょう。
-    </p>
+    <h2 style="font-family: 'Playfair Display', serif; font-size: 24px; color: #d6336c; text-align: center; margin-bottom: 15px;">🌿 季節に寄り添うスキンケアを</h2>
+    <p style="font-size: 16px; color: #444; text-align: justify; text-justify: inter-ideograph;">
+        春夏秋冬それぞれの環境に合わせたケアを取り入れることが、肌トラブルを防ぎ、美しさを維持する鍵となります。特に季節の変わり目は、肌の準備期間としてケアを強化することが大切です。春には**バリア機能の強化**、夏には**徹底的な紫外線対策**と**クーリング**、秋には**保湿力重視のアイテムへの移行**、冬には**高保湿**と**血行促進ケア**を意識しましょう。オーガニックコスメは、自然の力を借りて肌本来の回復力を高めてくれるため、季節のゆらぎに負けない健やかな肌づくりに最適です。ここで見つけたあなたの肌が本当に喜ぶアイテムを取り入れて、一年中自信を持って過ごせる「うるおい美肌」を目指しましょう。
+    </p>
 </div>
-<!-- HALENA オーガニックオールインワンジェル おすすめリンク -->
 <p style="text-align:center;">一年を通して使える最強のオーガニックジェルです。ぜひ使ってみてください！</p>
 
-<!-- テキストリンク -->
 <p style="text-align:center;">
-  <a href="https://px.a8.net/svt/ejp?a8mat=45I9PD+4GR2VU+3PSY+1BMW42" rel="nofollow sponsored">【ハレナ　オーガニックオールインワンジェル】</a>
+  <a href="https://px.a8.net/svt/ejp?a8mat=45I9PD+4GR2VU+3PSY+1BMW42" rel="nofollow sponsored">【ハレナ　オーガニックオールインワンジェル】</a>
 </p>
 <img border="0" width="1" height="1" src="https://www10.a8.net/0.gif?a8mat=45I9PD+4GR2VU+3PSY+1BMW42" alt="">
 
-<!-- バナーリンク -->
 <p style="text-align:center;">
-  <a href="https://px.a8.net/svt/ejp?a8mat=45I9PD+4GR2VU+3PSY+1BNJ9D" rel="nofollow sponsored">
-    <img border="0" width="468" height="60" alt="HALENA オーガニックオールインワンジェル" src="https://www25.a8.net/svt/bgt?aid=251115169270&wid=002&eno=01&mid=s00000017341008004000&mc=1">
-  </a>
+  <a href="https://px.a8.net/svt/ejp?a8mat=45I9PD+4GR2VU+3PSY+1BNJ9D" rel="nofollow sponsored">
+    <img border="0" width="468" height="60" alt="HALENA オーガニックオールインワンジェル" src="https://www25.a8.net/svt/bgt?aid=251115169270&wid=002&eno=01&mid=s00000017341008004000&mc=1">
+  </a>
 </p>
 <img border="0" width="1" height="1" src="https://www16.a8.net/0.gif?a8mat=45I9PD+4GR2VU+3PSY+1BNJ9D" alt="">
 
-  
-<!-- 関連コンテンツ -->
+  
 <div class="related">
-  <p>さらにおすすめの記事はこちら：</p>
-  <a href="index.html">🏠 トップページへ戻る</a>
-  <a href="winter-selection.html">❄ 冬のベストセレクションを見る</a>
+  <p>さらにおすすめの記事はこちら：</p>
+  <a href="index.html">🏠 トップページへ戻る</a>
+  <a href="winter-selection.html">❄ 冬のベストセレクションを見る</a>
 </div>
 
 </main>
 
 <footer>
-  © 2025 EssentialBeautyNeeds
+  © 2025 EssentialBeautyNeeds
 </footer>
 
-<!-- アフィリエイトお断り -->
 <div id="affiliateNotice">※当サイトはアフィリエイト広告を利用しています</div>
 
 </body>
