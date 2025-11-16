@@ -1,339 +1,598 @@
 
 <!doctype html>
+
 <html lang="ja">
+
 <head>
-<meta charset="utf-8" />
+
+<meta charset="utf-8">
+
+<!-- Google Analytics 4 + internal traffic exclusion -->
+
 <script>
-  // internal_user クッキーが設定されているか確認
-  function isInternalUser() {
-    return document.cookie.split(';').some(c => c.trim().startsWith('internal_user=true'));
-  }
 
-  // internal_user クッキーがない場合だけ、GA4を読み込む
-  if (!isInternalUser()) {
-    var gaScript = document.createElement('script');
-    gaScript.async = true;
-    gaScript.src = "https://www.googletagmanager.com/gtag/js?id=G-2HGEPHVZYY";
-    document.head.appendChild(gaScript);
+  // internal_user クッキーが設定されているか確認
 
-    window.dataLayer = window.dataLayer || [];
-    function gtag(){dataLayer.push(arguments);}
-    gtag('js', new Date());
-    gtag('config', 'G-2HGEPHVZYY');
-  } else {
-    console.log('✅ Internal traffic excluded.');
-  }
+  function isInternalUser() {
+
+    return document.cookie.split(';').some(c => c.trim().startsWith('internal_user=true'));
+
+  }
+
+
+
+  // internal_user クッキーがない場合だけ、GA4を読み込む
+
+  if (!isInternalUser()) {
+
+    var gaScript = document.createElement('script');
+
+    gaScript.async = true;
+
+    gaScript.src = "https://www.googletagmanager.com/gtag/js?id=G-2HGEPHVZYY";
+
+    document.head.appendChild(gaScript);
+
+
+
+    window.dataLayer = window.dataLayer || [];
+
+    function gtag(){dataLayer.push(arguments);}
+
+    gtag('js', new Date());
+
+    gtag('config', 'G-2HGEPHVZYY');
+
+  } else {
+
+    console.log('✅ Internal traffic excluded.');
+
+  }
+
 </script>
-  
-<meta name="viewport" content="width=device-width,initial-scale=1" />
-<title>生活リズム別スキンケア｜Essential Beauty Needs</title>
-<meta name="description" content="生活リズムに合わせたオーガニック・ナチュラルなスキンケア提案。ナチュラル派／時短派／アクティブ派／夜型の4タイプに合うおすすめ商品を紹介。">
+
+  
+
+<meta name="viewport" content="width=device-width,initial-scale=1">
+
+<title>季節別オーガニックスキンケア特集｜肌が喜ぶ自然派コスメ</title>
+
 <link href="https://fonts.googleapis.com/css2?family=Playfair+Display:wght@600&family=Quicksand:wght@400;600&display=swap" rel="stylesheet">
+
+
+
 <style>
-:root{
-  --bg:#fff8f8;
-  --accent:#f7a8a8;
-  --accent-hover:#f48b8b;
-  --muted:#666;
-  --card:#fff;
-}
-*{box-sizing:border-box;margin:0;padding:0;}
-body{font-family:'Quicksand',sans-serif;background:var(--bg);color:#333;line-height:1.7;}
-.header{
-  text-align:center;
-  padding:72px 20px 36px;
-  background:linear-gradient(135deg,#ffe6e6,#ffdcdc);
-  color:#503535;
-  position:relative;
-}
-.header h1{font-family:'Playfair Display',serif;font-size:38px;margin-bottom:8px;}
-.header p.lead{font-size:16px;color:#5a4545;margin-bottom:14px;}
-.container{max-width:1000px;margin:30px auto;padding:0 18px;}
-.nav-links{display:flex;gap:12px;justify-content:center;margin-top:12px;flex-wrap:wrap;}
-.nav-links a{background:rgba(255,255,255,0.8);padding:8px 12px;border-radius:8px;text-decoration:none;color:#503535;font-weight:600;}
-.nav-links a:hover{background:var(--accent);color:#fff;}
-.top-cta{margin-top:18px;}
-.btn{display:inline-block;background:linear-gradient(45deg,var(--accent),#f48b8b);color:#fff;padding:10px 24px;border-radius:28px;text-decoration:none;font-weight:700;box-shadow:0 4px 12px rgba(0,0,0,0.12);transition:all .25s ease;}
-.btn:hover{transform:translateY(-3px);background:linear-gradient(45deg,var(--accent-hover),#f26a6a);}
 
-/* hero画像 */
-.hero{
-  width:100%;
-  max-width:300px;
-  aspect-ratio:1/1;
-  object-fit:cover;
-  object-position:center;
-  border-radius:14px;
-  box-shadow:0 6px 24px rgba(0,0,0,0.08);
-  display:block;
-  margin:0 auto 18px;
+:root {
+
+  --bg: #fff8f8;
+
+  --accent: #f7a8a8;
+
+  --accent-hover: #f48b8b;
+
+  --muted: #666;
+
 }
 
-/* sections */
-.section{margin:56px 0;padding:0;}
-.section h2{font-family:'Playfair Display',serif;color:#503535;font-size:26px;text-align:center;margin-bottom:18px;}
-.block{display:flex;gap:24px;align-items:flex-start;flex-wrap:wrap;}
-.card{background:var(--card);border-radius:14px;padding:16px;box-shadow:0 6px 18px rgba(0,0,0,0.06);flex:1;min-width:280px;}
-.card img{width:auto;height:120px;object-fit:cover;border-radius:10px;margin-bottom:10px;}
-.card h3{font-size:18px;color:#2f4f60;margin-bottom:8px;}
-.card p{color:#444;font-size:14px;margin-bottom:10px;}
-.card ul{color:#555;font-size:14px;margin-left:18px;margin-bottom:12px;}
-.card .aff{display:inline-block;margin-top:6px;}
+* { box-sizing: border-box; margin: 0; padding: 0; }
 
-/* reviews */
-.reviews{display:flex;flex-direction:column;gap:12px;margin-top:8px;}
-.review{background:#fff5f5;border-radius:12px;padding:10px;display:flex;gap:12px;align-items:center;box-shadow:inset 0 0 8px rgba(0,0,0,0.03);}
-.review img{width:120px;height:120px;border-radius:50%;object-fit:cover;flex-shrink:0;}
-.review p{font-size:14px;color:#333;margin:0;}
-.review .who{font-weight:600;color:#555;font-size:13px;margin-top:6px;}
+body { font-family: 'Quicksand', sans-serif; background: var(--bg); color: #333; line-height: 1.6; }
 
-/* related & back-top */
-.related{ text-align:center;margin:48px 0;}
-.related a{display:inline-block;margin:6px 10px;padding:10px 20px;border-radius:26px;text-decoration:none;background:linear-gradient(45deg,#f7a8a8,#f48b8b);color:#fff;font-weight:600;box-shadow:0 4px 12px rgba(0,0,0,0.12);}
-.back-to-top{display:block;text-align:center;margin-top:20px;color:#d6336c;text-decoration:none;font-weight:700;}
+header { text-align: center; padding: 80px 20px; background: linear-gradient(135deg, #ffe6e6, #ffdcdc); color: #503535; box-shadow: 0 4px 20px rgba(0,0,0,0.1); }
 
-/* affiliate notice */
+h1 { font-family: 'Playfair Display', serif; font-size: 42px; margin-bottom: 10px; }
+
+p.lead { font-size: 18px; color: #5a4545; }
+
+.container { max-width: 1000px; margin: 0 auto; padding: 0 20px; }
+
+.article { margin: 80px 0; }
+
+.article h2 { font-family: 'Playfair Display', serif; font-size: 28px; color: #503535; text-align: center; margin-bottom: 20px; }
+
+.article img.hero { width: 100%; max-height: 400px; object-fit: cover; border-radius: 18px; margin-bottom: 20px; box-shadow: 0 6px 25px rgba(0,0,0,0.15); }
+
+
+
+.product-review { display:flex; gap:30px; margin-bottom:50px; flex-wrap:wrap; }
+
+.product-card { flex:1; min-width:280px; text-align:left; background:#fff; border-radius:14px; padding:15px; box-shadow:0 4px 12px rgba(0,0,0,0.08); }
+
+.product-card img { width:100%; height:220px; border-radius:12px; object-fit:cover; margin-bottom:12px; }
+
+.product-card h3 { font-size:18px; margin-bottom:10px; }
+
+.product-card p { font-size:15px; color:#444; margin-bottom:10px; }
+
+.product-card ul { font-size:14px; margin-left:18px; color:#555; margin-bottom:10px; }
+
+.btn { display:inline-block; background:var(--accent); color:#fff; padding:12px 28px; border-radius:30px; text-decoration:none; font-weight:600; transition:0.3s; }
+
+.btn:hover { background:var(--accent-hover); }
+
+
+
+.review-column { flex:1; display:flex; flex-direction:column; gap:20px; }
+
+.review-card { background:#fff5f5; border-radius:14px; padding:15px; text-align:center; box-shadow:inset 0 0 10px rgba(0,0,0,0.05); }
+
+.review-card img { width:100px; height:100px; border-radius:50%; object-fit:cover; margin-bottom:8px; }
+
+.review-card p { font-size:14px; color:#333; margin-bottom:6px; }
+
+.review-card .name { font-weight:600; color:#555; margin-top:2px; }
+
+
+
+.internal-link { text-align:center; margin:20px 0; }
+
+.internal-link a { color:#d6336c; font-weight:600; text-decoration:none; }
+
+
+
+.related { text-align:center; margin:50px 0; }
+
+.related a { color:#d6336c; font-weight:600; text-decoration:none; font-size:1.1em; margin:0 12px; }
+
+
+
+footer { text-align:center; font-size:13px; color:#888; margin:60px 0 30px; }
+
+
+
 #affiliateNotice {
-    position: fixed;
-    right: 12px;
-    bottom: 12px;
-    background: rgba(255, 255, 255, 0.8);
-    color: #555;
-    font-size: 11px;
-    border-radius: 6px;
-    padding: 4px 8px;
-    box-shadow: 0 2px 6px rgba(0,0,0,0.1);
-    z-index: 999;
+
+    position: fixed;
+
+    right: 12px;
+
+    bottom: 12px;
+
+    background: rgba(255, 255, 255, 0.8);
+
+    color: #555;
+
+    font-size: 11px;
+
+    border-radius: 6px;
+
+    padding: 4px 8px;
+
+    box-shadow: 0 2px 6px rgba(0,0,0,0.1);
+
+    z-index: 999;
+
 }
 
-@media(max-width:900px){
-  .block{flex-direction:column;}
-  .card img{height:100px;}
-  .review img{width:100px;height:100px;}
+
+
+@media (max-width:768px){ 
+
+  .product-review{ flex-direction:column; } 
+
+  .review-column{ flex-direction:row; flex-wrap:wrap; justify-content:center; } 
+
 }
 
-/* --- 追加: トップナビゲーションのボタンデザインを他のページと統一 --- */
-
-/* 既存の .nav-links のスタイルを上書き/強化 */
-.nav-links {
-    display: flex;
-    justify-content: center; /* 中央揃え */
-    flex-wrap: wrap;         /* 小さい画面で折り返す */
-    gap: 12px;
-    margin: 20px auto 40px; /* 上下のマージンを調整 */
-    max-width: 1000px;
-    padding: 0 20px;
-}
-
-.nav-links a {
-    /* 以前のボタンデザインを適用 */
-    display: inline-flex;
-    align-items: center;
-    justify-content: center;
-    gap: 6px;
-    background: #ffdcdc; /* 薄い赤色の背景 */
-    color: #d6336c; /* アクセントカラーのテキスト */
-    font-weight: 600;
-    font-size: 15px; /* サイズ調整 */
-    text-decoration: none;
-    padding: 10px 22px;
-    border-radius: 30px; /* 丸い角 */
-    box-shadow: 0 3px 8px rgba(0,0,0,0.08);
-    transition: all 0.3s ease;
-}
-
-.nav-links a:hover {
-    background: linear-gradient(135deg, #fcdcdc, #f48b8b);
-    color: #fff;
-    transform: translateY(-2px);
-    box-shadow: 0 6px 15px rgba(0,0,0,0.12);
-}
 </style>
+
 </head>
+
 <body>
 
-<header class="header">
-  <div class="container">
-    <h1>生活リズム別スキンケア</h1>
-    <p class="lead">日々のリズムに合わせたオーガニック＆ナチュラルなケア提案。あなたの生活スタイルに合う商品をピックアップしました。</p>
 
-    <div class="nav-links" role="navigation" aria-label="site links">
-      <a href="index.html">🏠 トップに戻る</a>
-      <a href="age-skincare.html">👩 40代・50代向け 肌質別スキンケア</a>
-      <a href="acne-care.html">🧴 ニキビ・敏感肌ケア</a>
-      <a href="lifestyle-skincare.html">💆‍♀️ 生活リズム別スキンケア</a>
-      <a href="skin-ranking.html">✨ ランキング</a>
-      <a href="beauty-column.html">💄 ビューティーコラム</a>
-    </div>
 
-    <div class="top-cta">
-      <a href="winter-selection.html" class="btn">❄ 冬のおすすめを見る</a>
-    </div>
-  </div>
+<header>
+
+  <h1>季節別オーガニックスキンケア特集</h1>
+
+  <p class="lead">春夏秋冬、それぞれの肌悩みに合った自然派コスメとリアルユーザーの声を紹介します。</p>
+
 </header>
+
+  
+
+<div class="top-links a">
+
+    <a href="index.html">🏠 トップに戻る</a>
+
+    <a href="age-skincare.html">👩 40代・50代向け 肌質別スキンケア</a>
+
+    <a href="acne-skincare.html">🧴 ニキビ・敏感肌ケア</a>
+
+    <a href="lifestyle-skincare.html">💆‍♀️ 生活リズム別スキンケア</a>
+
+    <a href="skin-ranking.html">✨ ランキング</a>
+
+    <a href="beauty-column.html">💄 ビューティーコラム</a>
+
+</div>
+
+  
 
 <main class="container">
 
-    <section class="section" id="natural">
-    <h2>🕊 ナチュラル派・家族重視（ゆったり生活）</h2>
-    <img src="images/AA1.jpg" alt="エピス 化粧水＆美容液" class="hero">
-    <div class="block">
-      <div class="card">
-        <h3>エピス EPIS 化粧水＆美容液（大容量セット）</h3>
-        <img src="images/AA1.jpg" alt="EPIS 化粧水＆美容液">
-        <p>家族みんなで使える大容量のオーガニックスキンケアセット。ナチュラルシトラスの香りで心地よく、無添加処方で敏感肌にも配慮されています。</p>
-        <ul>
-          <li>家族で使える大容量セット</li>
-          <li>無添加・植物エキス配合で高保湿</li>
-          <li>ギフトにもおすすめ</li>
-        </ul>
-        <a class="btn aff" href="https://amzn.to/4oZFXR6" target="_blank" rel="noopener">実際に使ってみる</a>
 
-        <div class="reviews">
-          <div class="review">
-            <img src="images/AA2.jpg" alt="20歳 学生">
-            <div>
-              <p>「コスパがよくて家でたっぷり使えます。敏感な肌でも刺激が少なかったです。」</p>
-              <div class="who">20代・学生</div>
-            </div>
-          </div>
-          <div class="review">
-            <img src="images/AA3.jpg" alt="30代 在宅ワーク">
-            <div>
-              <p>「朝晩たっぷり使っても減りにくいので助かります。香りも優しく家族で使っています。」</p>
-              <div class="who">30代・在宅ワーク</div>
-            </div>
-          </div>
-        </div>
-      </div>
-    </div>
-    <div style="text-align:center;margin-top:12px;"><a class="internal-link" href="#time-saving">次：忙しい日常（時短ケア） →</a></div>
-  </section>
 
-    <section class="section" id="time-saving">
-    <h2>⏱ 忙しい日常・時短ケア（ワーキングライフ）</h2>
-    <img src="images/BB1.jpg" alt="高保湿化粧水" class="hero">
-    <div class="block">
-      <div class="card">
-        <h3>高保湿・高浸透 化粧水（敏感肌向け）</h3>
-        <img src="images/BB1.jpg" alt="高保湿化粧水">
-        <p>忙しくても素早く保湿ケアできる高保湿化粧水。べたつかず浸透力が高く、オレンジの香りでリラックス効果も。</p>
-        <ul>
-          <li>高保湿・高浸透でベタつかない</li>
-          <li>敏感肌に配慮した処方</li>
-          <li>さっと使える時短アイテム</li>
-        </ul>
-        <a class="btn aff" href="https://amzn.to/4oYNhwi" target="_blank" rel="noopener">実際に使ってみる</a>
+  <div style="margin: 40px 0; padding: 20px; background: #fff; border-radius: 12px; box-shadow: 0 2px 10px rgba(0,0,0,0.05); border-left: 5px solid var(--accent);">
 
-        <div class="reviews">
-          <div class="review">
-            <img src="images/BB2.jpg" alt="30代 主婦">
-            <div>
-              <p>「忙しい朝でもさっと使えて保湿力バッチリ。香りも気に入っています。」</p>
-              <div class="who">30代・主婦</div>
-            </div>
-          </div>
-          <div class="review">
-            <img src="images/BB3.jpg" alt="30代 引っ越し業">
-            <div>
-              <p>「仕事で時間がない日でもケアが続けられる。肌荒れが落ち着きました。」</p>
-              <div class="who">30代・引っ越し業</div>
-            </div>
-          </div>
-        </div>
-      </div>
-    </div>
-    <div style="text-align:center;margin-top:12px;"><a class="internal-link" href="#active">次：アクティブ派（外出・運動） →</a></div>
-  </section>
+    <p style="font-size: 16px; color: #503535; text-align: justify; text-justify: inter-ideograph;">
 
-    <section class="section" id="active">
-    <h2>🏞 アクティブ・アウトドア（外出・運動が多い）</h2>
-    <img src="images/CC1.jpg" alt="アウトドア アロマミスト" class="hero">
-    <div class="block">
-      <div class="card">
-        <h3>ナチュラルアイランド 森の肌守り（アロマミスト）</h3>
-        <img src="images/CC1.jpg" alt="アロマミスト">
-        <p>北海道産の和ハッカをはじめ9種の天然精油をブレンドしたアロマミスト。外出やスポーツの際の肌ケアにぴったり。</p>
-        <ul>
-          <li>天然由来の虫よけ＆アロマウォーター</li>
-          <li>ディート不使用・無添加処方</li>
-          <li>持ち運びしやすいサイズ</li>
-        </ul>
-        <a class="btn aff" href="https://amzn.to/47Mxhqu" target="_blank" rel="noopener">実際に使ってみる</a>
+        一年を通して同じスキンケアを続けていませんか？私たちの肌は、四季の変化に非常に敏感です。<br>春は<strong>花粉や寒暖差</strong>によるゆらぎ、夏は<strong>紫外線と皮脂の過剰分泌</strong>、秋は<strong>夏のダメージの蓄積と急激な乾燥、</strong>そして冬は<strong>厳しい乾燥と血行不良</strong>。<br>季節ごとに肌が直面する課題は全く異なります。季節の変わり目にお肌の調子を崩しやすいのは、この環境の変化に適したケアができていないサインかもしれません。<br>この特集では、それぞれの季節に最適なオーガニックコスメと、お肌を守るための具体的なケアの「**気にするポイント**」をご紹介します。肌のバリア機能を高め、四季を通じて健やかな美しさを保つためのヒントを見つけましょう。
 
-        <div class="reviews">
-          <div class="review">
-            <img src="images/CC2.jpg" alt="30代会社員">
-            <div>
-              <p>「匂いが爽やかで自然。外遊びのときに安心して使えます。」</p>
-              <div class="who">30代・会社員</div>
-            </div>
-          </div>
-          <div class="review">
-            <img src="images/CC3.jpg" alt="30代ダイバー">
-            <div>
-              <p>「海やアウトドアで活躍。肌に直接つけても安心感がありました。」</p>
-              <div class="who">30代・ダイバー</div>
-            </div>
-          </div>
-        </div>
-      </div>
-    </div>
-    <div style="text-align:center;margin-top:12px;"><a class="internal-link" href="#night">次：夜型・不規則生活 →</a></div>
-  </section>
+    </p>
 
-    <section class="section" id="night">
-    <h2>🌙 夜型・不規則生活（夜勤／睡眠不足）</h2>
-    <img src="images/DD1.jpg" alt="サミュ セラミド ナイトケア" class="hero">
-    <div class="block">
-      <div class="card">
-        <h3>サミュ（SAMU） ナイトケア美容液</h3>
-        <img src="images/DD1.jpg" alt="SAMU ナイトケア">
-        <p>夜遅くまで働く方や睡眠のリズムが不規則な方に。セラミド・ナイアシンアミド・アデノシン配合で、眠っている間に集中保湿とハリケアを行います。</p>
-        <ul>
-          <li>セラミドで高保湿、ハリサポート</li>
-          <li>ナイアシンアミド・アデノシンでトーンアップ</li>
-          <li>寝ている間の集中ケアに最適</li>
-        </ul>
-        <a class="btn aff" href="https://amzn.to/4hPMJ9C" target="_blank" rel="noopener">実際に使ってみる</a>
+</div>
 
-        <div class="reviews">
-          <div class="review">
-            <img src="images/DD2.jpg" alt="50代主婦">
-            <div>
-              <p>「夜のスキンケアに取り入れてから朝の肌が柔らかく感じます。」</p>
-              <div class="who">50代・主婦</div>
-            </div>
-          </div>
-          <div class="review">
-            <img src="images/DD3.jpg" alt="40代自営業">
-            <div>
-              <p>「ハリ感が出てメイクのりが良くなりました。疲れた肌にもおすすめです。」</p>
-              <div class="who">40代・自営業</div>
-            </div>
-          </div>
-        </div>
-      </div>
-    </div>
-  </section>
+  
 
-    <div class="related" aria-label="related links">
-    <p style="margin-bottom:8px;color:var(--muted);">他にも参考になるページ：</p>
-    <a href="index.html">🏠 トップページへ</a>
-    <a href="seasons-skin.html">🌸 季節別スキンケア</a>
-    <a href="age-skincare.html">👩 年齢・肌質別</a>
-    <a href="winter-selection.html">❄ 冬のベストセレクション</a>
-  </div>
+<!-- 春 -->
 
-  <a href="#top" class="back-to-top" onclick="window.scrollTo({top:0,behavior:'smooth'});return false;">⬆ ページトップへ</a>
+<section class="article" id="spring">
+
+  <h2>🌸 春の肌ケア</h2>
+
+  <img src="images/spring.jpg" alt="春のスキンケア" class="hero">
+
+
+
+  <div class="product-review">
+
+    <div class="product-card">
+
+      <img src="images/etvos.jpg" alt="ETVOS モイストバリアクリーム">
+
+      <h3>ETVOS モイストバリアクリーム</h3>
+
+      <p>敏感肌や花粉の季節に最適。ヒト型セラミド配合で肌を守ります。</p>
+
+      <ul>
+
+        <li>花粉・PM2.5対策</li>
+
+        <li>4種のヒト型セラミド配合</li>
+
+        <li>低刺激・無添加</li>
+
+      </ul>
+
+      <a href="https://amzn.to/4nMuJPb" class="btn" target="_blank">今すぐチェック</a>
+
+    </div>
+
+
+
+    <div class="review-column">
+
+      <div class="review-card">
+
+        <img src="images/etvosuser.jpg" alt="いちかさん：30代会社員">
+
+        <p>「使い始めてから肌の赤みが落ち着き、しっとり感が続く！」</p>
+
+        <p class="name">いちかさん：30代会社員</p>
+
+      </div>
+
+      <div class="review-card">
+
+        <img src="images/20.1.jpg" alt="まいさん：20代エステ勤務">
+
+        <p>「敏感肌でも安心して使える保湿力。<br>肌がふっくらして透明感が出てきました。」</p>
+
+        <p class="name">まいさん：20代エステ勤務</p>
+
+      </div>
+
+    </div>
+
+  </div>
+
+
+
+  <div class="internal-link">
+
+    <a href="#summer">次の記事：☀ 夏の肌ケア →</a>
+
+  </div>
+
+</section>
+
+
+
+<!-- 夏 -->
+
+<section class="article" id="summer">
+
+  <h2>☀ 夏の肌ケア</h2>
+
+  <img src="images/summer.jpg" alt="夏のスキンケア" class="hero">
+
+
+
+  <div class="product-review">
+
+    <div class="product-card">
+
+      <img src="images/sunao.jpg" alt="sunao UVクリーム">
+
+      <h3>sunao UVクリーム</h3>
+
+      <p>オーガニック由来の無添加日焼け止め。紫外線吸収剤不使用で安心。</p>
+
+      <ul>
+
+        <li>紫外線吸収剤不使用</li>
+
+        <li>石けんで簡単オフ</li>
+
+        <li>SPF32 PA++</li>
+
+      </ul>
+
+      <a href="https://amzn.to/3JmEMME" class="btn" target="_blank">今すぐチェック</a>
+
+    </div>
+
+
+
+    <div class="review-column">
+
+      <div class="review-card">
+
+        <img src="images/gym40.jpg" alt="ほなみさん：40代栄養士">
+
+        <p>「白浮きせず軽い着け心地で快適！<br>直ぐにサラサラになって残らないので気持ちいです。」</p>
+
+        <p class="name">ほなみさん：40代栄養士</p>
+
+      </div>
+
+      <div class="review-card">
+
+        <img src="images/20.2.jpg" alt="あいかさん：20代実業家">
+
+        <p>「日焼け止め特有の重さやべたつきがなく、軽やかで快適です。」</p>
+
+        <p class="name">あいかさん：20代実業家</p>
+
+      </div>
+
+    </div>
+
+  </div>
+
+
+
+  <div class="internal-link">
+
+    <a href="#autumn">次の記事：🍂 秋の肌ケア →</a>
+
+  </div>
+
+</section>
+
+
+
+<!-- 秋 -->
+
+<section class="article" id="autumn">
+
+  <h2>🍂 秋の肌ケア</h2>
+
+  <img src="images/autumn.jpg" alt="秋のスキンケア" class="hero">
+
+
+
+  <div class="product-review">
+
+    <div class="product-card">
+
+      <img src="images/naturesfor.jpg" alt="Naturesfor アドバンスクリアセラム">
+
+      <h3>Naturesfor アドバンスクリアセラム</h3>
+
+      <p>植物エキスで乾燥小じわケア。透明感のある肌へ導きます。</p>
+
+      <ul>
+
+        <li>ヘチマ水・ロサアルバ花水配合</li>
+
+        <li>乾燥小じわケア</li>
+
+        <li>滑らかな使用感</li>
+
+      </ul>
+
+      <a href="https://amzn.to/3LbyAYi" class="btn" target="_blank">今すぐチェック</a>
+
+    </div>
+
+
+
+    <div class="review-column">
+
+      <div class="review-card">
+
+        <img src="images/biyoushi.jpg" alt="のり子さん：30代美容師">
+
+        <p>「季節の変わり目でも肌の乾燥が気にならず、透明感が出ました。」</p>
+
+        <p class="name">のり子さん：30代美容師</p>
+
+      </div>
+
+      <div class="review-card">
+
+        <img src="images/30.1.jpg" alt="ゆみさん：30代フリーター">
+
+        <p>「乾燥やゆらぎ肌でも安心して使用でき、<br>肌が柔らかくなった気がします！手放せません。」</p>
+
+        <p class="name">ゆみさん：30代フリーター</p>
+
+      </div>
+
+    </div>
+
+  </div>
+
+
+
+  <div class="internal-link">
+
+    <a href="#winter">次の記事：❄ 冬の肌ケア →</a>
+
+  </div>
+
+</section>
+
+
+
+<!-- 冬 -->
+
+<section class="article" id="winter">
+
+  <h2>❄ 冬の肌ケア</h2>
+
+  <img src="images/winter.jpg" alt="冬のスキンケア" class="hero">
+
+
+
+  <div class="product-review">
+
+    <div class="product-card">
+
+      <img src="images/alos.jpg" alt="ALOS ORGANIC ローション">
+
+      <h3>ALOS ORGANIC ローション</h3>
+
+      <p>高保湿・高浸透のオーガニック化粧水。乾燥肌をしっとりケア。</p>
+
+      <ul>
+
+        <li>ビタミンC・レチノール配合</li>
+
+        <li>ヒアルロン酸で高保湿</li>
+
+        <li>オレンジの香りで癒やし</li>
+
+      </ul>
+
+      <a href="https://amzn.to/4oCaXGI" class="btn" target="_blank">今すぐチェック</a>
+
+    </div>
+
+
+
+    <div class="review-column">
+
+      <div class="review-card">
+
+        <img src="images/50suser.jpg" alt="さなえさん：50代小児科医師">
+
+        <p>「乾燥の季節でも肌がつっぱらず、朝までしっとり感が続きます。<br>これだけで済むので楽です。</p>
+
+        <p class="name">さなえさん：50代小児科医師</p>
+
+      </div>
+
+      <div class="review-card">
+
+        <img src="images/40.1.jpg" alt="みどりさん：40代声優">
+
+        <p>「冬でも肌の乾燥を感じず、毎日のケアが楽になりました。<br>悩みだった肌の赤みもなくなりました。」</p>
+
+        <p class="name">みどりさん：40代声優</p>
+
+      </div>
+
+    </div>
+
+  </div>
+
+</section>
+
+<div style="margin: 80px 0 50px; padding: 30px; background: #fff5f5; border-radius: 12px; border: 1px solid var(--accent);">
+
+    <h2 style="font-family: 'Playfair Display', serif; font-size: 24px; color: #d6336c; text-align: center; margin-bottom: 15px;">🌿 季節に寄り添うスキンケアを</h2>
+
+    <p style="font-size: 16px; color: #444; text-align: justify; text-justify: inter-ideograph;">
+
+        春夏秋冬それぞれの環境に合わせたケアを取り入れることが、肌トラブルを防ぎ、美しさを維持する鍵となります。特に季節の変わり目は、肌の準備期間としてケアを強化することが大切です。春には**バリア機能の強化**、夏には**徹底的な紫外線対策**と**クーリング**、秋には**保湿力重視のアイテムへの移行**、冬には**高保湿**と**血行促進ケア**を意識しましょう。オーガニックコスメは、自然の力を借りて肌本来の回復力を高めてくれるため、季節のゆらぎに負けない健やかな肌づくりに最適です。ここで見つけたあなたの肌が本当に喜ぶアイテムを取り入れて、一年中自信を持って過ごせる「うるおい美肌」を目指しましょう。
+
+    </p>
+
+</div>
+
+<!-- HALENA オーガニックオールインワンジェル おすすめリンク -->
+
+<p style="text-align:center;">一年を通して使える最強のオーガニックジェルです。ぜひ使ってみてください！</p>
+
+
+
+<!-- テキストリンク -->
+
+<p style="text-align:center;">
+
+  <a href="https://px.a8.net/svt/ejp?a8mat=45I9PD+4GR2VU+3PSY+1BMW42" rel="nofollow sponsored">【ハレナ　オーガニックオールインワンジェル】</a>
+
+</p>
+
+<img border="0" width="1" height="1" src="https://www10.a8.net/0.gif?a8mat=45I9PD+4GR2VU+3PSY+1BMW42" alt="">
+
+
+
+<!-- バナーリンク -->
+
+<p style="text-align:center;">
+
+  <a href="https://px.a8.net/svt/ejp?a8mat=45I9PD+4GR2VU+3PSY+1BNJ9D" rel="nofollow sponsored">
+
+    <img border="0" width="468" height="60" alt="HALENA オーガニックオールインワンジェル" src="https://www25.a8.net/svt/bgt?aid=251115169270&wid=002&eno=01&mid=s00000017341008004000&mc=1">
+
+  </a>
+
+</p>
+
+<img border="0" width="1" height="1" src="https://www16.a8.net/0.gif?a8mat=45I9PD+4GR2VU+3PSY+1BNJ9D" alt="">
+
+
+
+  
+
+<!-- 関連コンテンツ -->
+
+<div class="related">
+
+  <p>さらにおすすめの記事はこちら：</p>
+
+  <a href="index.html">🏠 トップページへ戻る</a>
+
+  <a href="winter-selection.html">❄ 冬のベストセレクションを見る</a>
+
+</div>
+
+
 
 </main>
 
-<footer style="text-align:center;margin:40px 0 60px;color:#888;font-size:13px;">
-  © 2025 EssentialBeautyNeeds
+
+
+<footer>
+
+  © 2025 EssentialBeautyNeeds
+
 </footer>
+
+
+
+<!-- アフィリエイトお断り -->
 
 <div id="affiliateNotice">※当サイトはアフィリエイト広告を利用しています</div>
 
+
+
 </body>
+
 </html>
