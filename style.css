@@ -345,3 +345,30 @@ footer {
 body.page-beauty-column p { font-size: 18px !important; }
 body.page-beauty-column h2 { font-size: 32px !important; }
 
+/* 新しいナビゲーション用CSS */
+.main-nav {
+    display: flex;
+    flex-wrap: wrap; /* 画面幅が狭い時に折り返す */
+    justify-content: center; /* 中央寄せ */
+    padding: 15px 10px;
+    background: #fdf6f6; /* 背景色を追加 */
+    border-bottom: 2px solid var(--accent);
+    margin-bottom: 40px;
+}
+.main-nav a {
+    color: #503535;
+    text-decoration: none;
+    font-size: 14px;
+    font-weight: 600;
+    padding: 8px 15px;
+    margin: 4px 6px;
+    border: 1px solid #f0dada;
+    border-radius: 20px;
+    transition: background-color 0.3s, color 0.3s;
+}
+.main-nav a:hover {
+    background-color: var(--accent);
+    color: #fff;
+    border-color: var(--accent);
+}
+
