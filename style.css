@@ -388,7 +388,7 @@ body.page-beauty-column h2 { font-size: 32px !important; }
     max-height: 200px !important; /* 好きな高さに */
 
 .seasonal-section {
-    padding: 30px 20px; /* 60px → 30px に変更して上下スペースを半分に */
+    padding: 15px 20px; /* 60px → 30px に変更して上下スペースを半分に */
     text-align: center;
 }
 
@@ -396,7 +396,7 @@ body.page-beauty-column h2 { font-size: 32px !important; }
     font-family: 'Playfair Display', serif;
     font-size: 28px;
     color: #503535;
-    margin: 20px 0; /* 50px → 20px に減らして上下スペースを狭く */
+    margin: 10px 0; /* 50px → 20px に減らして上下スペースを狭く */
 }
 
 
