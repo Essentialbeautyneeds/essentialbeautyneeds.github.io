@@ -382,3 +382,8 @@ body.page-beauty-column h2 { font-size: 32px !important; }
     box-shadow: 0 6px 15px rgba(0,0,0,0.12);
 }
 /* --- 追加するCSS ここまで --- */
+
+/* ---- このページ専用のheroサイズ調整 ---- */
+.season-page .article img.hero {
+    max-height: 200px !important; /* 好きな高さに */
+
