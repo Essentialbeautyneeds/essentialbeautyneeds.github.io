@@ -193,6 +193,34 @@
     .back-btn a:hover {
       transform:translateY(-3px);
     }
+
+    .ranking-top3, .ranking {
+  display: flex;
+  justify-content: space-between; /* 3つ均等に並べる */
+  gap: 15px;
+  margin-top: 25px;
+}
+
+.ranking-top3 .item, .ranking .item {
+  width: 30%; /* 横3列 */
+  background: #fff1f1;
+  border: 2px solid #f4b5b5;
+  border-radius: 14px;
+  padding: 12px;
+  text-align: center;
+  position: relative;
+}
+
+@media(max-width: 700px){
+  .ranking-top3, .ranking {
+    flex-direction: column;
+    align-items: center;
+  }
+  .ranking-top3 .item, .ranking .item {
+    width: 100%;
+  }
+}
+
   </style>
 </head>
 <body>
