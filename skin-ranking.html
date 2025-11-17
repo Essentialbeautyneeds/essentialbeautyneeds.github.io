@@ -125,6 +125,55 @@
     @media(max-width:600px){
       .ranking {flex-direction:column; align-items:center;}
     }
+
+/* ランキングカード（上位3位用） */
+.ranking-top3 {
+  display: flex;
+  justify-content: space-between;
+  gap: 15px;
+  margin-top: 25px;
+}
+
+.ranking-top3 .item {
+  width: 30%;
+  background: #fff1f1;
+  border: 2px solid #f4b5b5;
+  border-radius: 14px;
+  padding: 12px;
+  text-align: center;
+  position: relative;
+}
+
+.ranking-top3 .item img {
+  width: 100%;
+  border-radius: 10px;
+}
+
+/* 順位バッジ */
+.badge {
+  position: absolute;
+  top: -10px;
+  left: -10px;
+  background: #ff6b6b;
+  color: #fff;
+  padding: 6px 12px;
+  border-radius: 20px;
+  font-weight: bold;
+  font-size: 14px;
+  box-shadow: 0 3px 8px rgba(0,0,0,0.2);
+}
+
+/* スマホ対策 */
+@media(max-width: 700px){
+  .ranking-top3 {
+    flex-direction: column;
+  }
+  .ranking-top3 .item {
+    width: 100%;
+  }
+}
+
+    
     /* トップページへ戻るボタン */
     .back-btn {
       text-align:center;
@@ -160,7 +209,31 @@
   
   <section>
     <h2>敏感肌ランキング Top3</h2>
-    <div class="ranking">
+    <div class="ranking-top3">
+  <div class="item">
+    <span class="badge">1位</span>
+    <img src="images/sensitive1.jpg" alt="">
+    <p>オルナ オーガニック 3点セット</p>
+    <p>乾燥・敏感肌に◎</p>
+    <a ...>Amazonで見る</a>
+  </div>
+  
+  <div class="item">
+    <span class="badge">2位</span>
+    <img src="images/sensitive2.jpg" alt="">
+    <p>N organic Basic セット</p>
+    <p>やさしい柑橘の香り</p>
+    <a ...>Amazonで見る</a>
+  </div>
+  
+  <div class="item">
+    <span class="badge">3位</span>
+    <img src="images/sensitive3.jpg" alt="">
+    <p>ai 天然藍スキンケア</p>
+    <p>保湿力が高いハンドメイド</p>
+    <a ...>Amazonで見る</a>
+  </div>
+</div>
       <div class="item">
         <img src="images/sensitive1.jpg" alt="オルナ オーガニック スキンケアセット">
         <p>オルナ オーガニック 化粧水 乳液 美容液 3点セット（しっとり）</p>
