@@ -153,7 +153,18 @@
     color: #355060;
     line-height: 1.7;
   }
-    
+    #affiliateNotice {
+  position: fixed;
+  right: 12px;
+  bottom: 12px;
+  background: rgba(255, 255, 255, 0.8);
+  color: #555;
+  font-size: 11px;
+  border-radius: 6px;
+  padding: 4px 8px;
+  box-shadow: 0 2px 6px rgba(0,0,0,0.1);
+  z-index: 999;
+}
   </style>
 </head>
 
@@ -251,6 +262,7 @@
     background: linear-gradient(45deg,#3f5d85,#5f97c4);
     transform: translateY(-2px);
   }
+
 </style>
 
   <main>
@@ -387,7 +399,9 @@
       <a href="index.html" class="back-btn">← トップページへ戻る</a>
     </div>
   </main>
+<div id="affiliateNotice">※当サイトはアフィリエイト広告を利用しています</div>
 
+  
   <footer>© 2025 EssentialBeautyNeeds</footer>
 </body>
 </html>
