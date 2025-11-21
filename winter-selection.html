@@ -56,7 +56,7 @@
     }
     header{
       text-align:center;
-      padding:80px 20px 40px; /* ナビゲーションスペースを考慮 */
+      padding:80px 20px 40px;
       background:linear-gradient(90deg,#e0f0f9,#f7f8fc);
       color:var(--color-primary);
     }
@@ -75,7 +75,7 @@
       max-width:1000px;
       margin:60px auto;
       padding:0 20px;
-      flex-grow: 1; /* フッターを下部に固定するため */
+      flex-grow: 1;
     }
 
     h2{
@@ -91,9 +91,9 @@
       margin-top:25px;
       text-align:center;
       display: flex;
-      flex-wrap: wrap; /* モバイルで折り返す */
+      flex-wrap: wrap;
       justify-content: center;
-      gap: 10px; /* ボタン間のスペース */
+      gap: 10px;
     }
     nav a {
       display:inline-block;
@@ -105,7 +105,7 @@
       font-weight:600;
       box-shadow: 0 2px 6px var(--color-shadow);
       transition:all .3s ease;
-      font-size: 14px; /* モバイルでの視認性を考慮 */
+      font-size: 14px;
     }
     nav a:hover {
       background: linear-gradient(45deg,#3f5d85,#5f97c4);
@@ -116,8 +116,8 @@
     @media (max-width: 768px) {
         header { padding: 60px 15px 30px; }
         header h1 { font-size: 28px; }
-        nav { flex-direction: row; } /* 768px以下でも折り返し */
-        nav a { margin: 5px 5px; } /* 間隔を狭める */
+        nav { flex-direction: row; }
+        nav a { margin: 5px 5px; }
         .back-btn { margin: 40px auto !important; }
     }
     /* product-grid */
@@ -166,7 +166,7 @@
       border-radius:30px;
       text-decoration:none;
       font-weight:600;
-      box-shadow: 0 2px 6px rgba(0,0,0,0.15); /* ボタンにもシャドウを追加 */
+      box-shadow: 0 2px 6px rgba(0,0,0,0.15);
       transition:background .3s ease;
     }
     .buy-btn:hover{
@@ -196,8 +196,8 @@
       text-align:center;
       font-size:13px;
       color:#777;
-      padding: 30px 0; /* paddingを追加 */
-      margin-top: auto; /* mainのflex-growと合わせてフッターを下部に固定 */
+      padding: 30px 0;
+      margin-top: auto;
     }
 
     .info-box {
@@ -214,14 +214,14 @@
       position: fixed;
       right: 12px;
       bottom: 12px;
-      background: rgba(255, 255, 255, 0.9); /* 背景を少し濃く */
+      background: rgba(255, 255, 255, 0.9);
       color: #555;
       font-size: 11px;
       border-radius: 6px;
       padding: 4px 8px;
       box-shadow: 0 2px 6px rgba(0,0,0,0.1);
       z-index: 999;
-      border: 1px solid #eee; /* 境界線を明確に */
+      border: 1px solid #eee;
     }
   </style>
 </head>
@@ -253,10 +253,9 @@
     <h2>・Winter Organic Essentials・</h2>
 
     <div class="product-grid">
-      <!-- 1: NALC ハンドクリーム -->
+      <!-- 1: NALC ヘパリン類似物質配合 ハンドクリーム (winter_handcream.jpg) -->
       <div class="product">
-        <!-- プレースホルダー画像を使用 (元の画像URLが不明なため) -->
-        <img src="https://placehold.co/400x220/e0f0f9/305060?text=Hand+Cream" alt="NALC 無香料 保湿クリーム">
+        <img src="https://placehold.co/400x220/e0f0f9/305060?text=NALC+Hand+Cream" alt="NALC 無香料 保湿クリーム">
         <div class="product-content">
           <h3>【NALC】ヘパリン類似物質配合 ハンドクリーム</h3>
           <p>乾燥肌の救世主とも言われるヘパリン類似物質配合。手荒れやひび割れを防ぎ、全身にも使える無香料の高保湿クリーム。</p>
@@ -264,7 +263,7 @@
         </div>
       </div>
 
-      <!-- 2: ホホバオイル -->
+      <!-- 2: SAKURA&NATURAL ゴールデンホホバオイル (winter_bodycream.jpg) -->
       <div class="product">
         <img src="https://placehold.co/400x220/f7e0e0/503030?text=Jojoba+Oil" alt="SAKURA&NATURAL ゴールデンホホバオイル">
         <div class="product-content">
@@ -274,7 +273,7 @@
         </div>
       </div>
 
-      <!-- 3: ネイルオイル -->
+      <!-- 3: Petit Femme フローラルネイルオイル (daily_nail.jpg) -->
       <div class="product">
         <img src="https://placehold.co/400x220/f9f9e0/606030?text=Nail+Oil" alt="Petit Femme ネイルオイル">
         <div class="product-content">
@@ -284,7 +283,7 @@
         </div>
       </div>
 
-      <!-- 4: くろもじミスト -->
+      <!-- 4: 木露-mokutsuyu- 満月のくろもじミスト (daily_mist.jpg) -->
       <div class="product">
         <img src="https://placehold.co/400x220/e0f9e0/306030?text=Kuromoji+Mist" alt="満月のくろもじミスト">
         <div class="product-content">
@@ -294,9 +293,9 @@
         </div>
       </div>
 
-      <!-- 5: バスソルト -->
+      <!-- 5: ROSE LABO ローズアロマバスソルト (refresh_bathsalt.jpg) -->
       <div class="product">
-        <img src="https://placehold.co/400x220/fbe0f7/60305f?text=Bath+Salt" alt="ROSE LABO ローズアロマバスソルト">
+        <img src="https://placehold.co/400x220/fbe0f7/60305f?text=Rose+Bath+Salt" alt="ROSE LABO ローズアロマバスソルト">
         <div class="product-content">
           <h3>【ROSE LABO】ローズアロマバスソルト</h3>
           <p>自家栽培の“食べられるバラ”を使用した贅沢な入浴剤。ミネラル豊富なピンク岩塩でしっとり肌に。</p>
@@ -304,9 +303,9 @@
         </div>
       </div>
 
-      <!-- 6: 能登ヒバミスト -->
+      <!-- 6: 木露-mokutsuyu- 深緑の能登ヒバミスト (refresh_spray.jpg) -->
       <div class="product">
-        <img src="https://placehold.co/400x220/e0f0f9/305060?text=Hiba+Mist" alt="深緑の能登ヒバミスト">
+        <img src="https://placehold.co/400x220/e0f0f9/305060?text=Noto+Hiba+Mist" alt="深緑の能登ヒバミスト">
         <div class="product-content">
           <h3>【木露-mokutsuyu-】深緑の能登ヒバミスト</h3>
           <p>天然ヒバ精油の木の香りで空間をリフレッシュ。防虫・除菌・消臭に使える万能アロマミスト。</p>
@@ -315,7 +314,7 @@
       </div>
     </div>
 
-    <!-- シンプルなアフィリエイト紹介ボックス -->
+    <!-- シンプルなアフィリエイト紹介ボックス (ここから下は変更なし) -->
     <div style="
       text-align:center;
       margin: 25px auto;
