@@ -142,6 +142,13 @@
       width:100%;
       height:220px;
       object-fit:cover;
+      /* 画像が読み込めなかった場合、代替のテキストと背景を表示するためのCSS */
+      background-color: #f0f0f0;
+      color: #888;
+      display: block;
+      line-height: 220px;
+      text-align: center;
+      font-style: italic;
     }
     .product-content{
       padding:20px;
@@ -253,9 +260,10 @@
     <h2>・Winter Organic Essentials・</h2>
 
     <div class="product-grid">
-      <!-- 1: NALC ヘパリン類似物質配合 ハンドクリーム (winter_handcream.jpg) -->
+      <!-- 1: NALC ヘパリン類似物質配合 ハンドクリーム -->
       <div class="product">
-        <img src="https://placehold.co/400x220/e0f0f9/305060?text=NALC+Hand+Cream" alt="NALC 無香料 保湿クリーム">
+        <!-- GitHub Pages対応パス: images/winter_handcream.jpg -->
+        <img src="images/winter_handcream.jpg" alt="NALC 無香料 保湿クリーム" onerror="this.src='https://placehold.co/280x220/305060/fff?text=HandCream';" >
         <div class="product-content">
           <h3>【NALC】ヘパリン類似物質配合 ハンドクリーム</h3>
           <p>乾燥肌の救世主とも言われるヘパリン類似物質配合。手荒れやひび割れを防ぎ、全身にも使える無香料の高保湿クリーム。</p>
@@ -263,9 +271,10 @@
         </div>
       </div>
 
-      <!-- 2: SAKURA&NATURAL ゴールデンホホバオイル (winter_bodycream.jpg) -->
+      <!-- 2: SAKURA&NATURAL ゴールデンホホバオイル -->
       <div class="product">
-        <img src="https://placehold.co/400x220/f7e0e0/503030?text=Jojoba+Oil" alt="SAKURA&NATURAL ゴールデンホホバオイル">
+        <!-- GitHub Pages対応パス: images/winter_bodycream.jpg -->
+        <img src="images/winter_bodycream.jpg" alt="SAKURA&NATURAL ゴールデンホホバオイル" onerror="this.src='https://placehold.co/280x220/4a6fa5/fff?text=JojobaOil';" >
         <div class="product-content">
           <h3>【SAKURA&NATURAL】ゴールデンホホバオイル</h3>
           <p>100％天然由来の保湿オイル。乾燥しがちな冬の肌に深いうるおいを与え、髪や全身にも使える万能アイテム。</p>
@@ -273,9 +282,10 @@
         </div>
       </div>
 
-      <!-- 3: Petit Femme フローラルネイルオイル (daily_nail.jpg) -->
+      <!-- 3: Petit Femme フローラルネイルオイル -->
       <div class="product">
-        <img src="https://placehold.co/400x220/f9f9e0/606030?text=Nail+Oil" alt="Petit Femme ネイルオイル">
+        <!-- GitHub Pages対応パス: images/daily_nail.jpg -->
+        <img src="images/daily_nail.jpg" alt="Petit Femme ネイルオイル" onerror="this.src='https://placehold.co/280x220/6aa8d4/fff?text=NailOil';" >
         <div class="product-content">
           <h3>【Petit Femme】フローラルネイルオイル</h3>
           <p>99.9％天然由来成分で爪をやさしく保湿。シアバターとスクワランでつややかな指先に。</p>
@@ -283,9 +293,10 @@
         </div>
       </div>
 
-      <!-- 4: 木露-mokutsuyu- 満月のくろもじミスト (daily_mist.jpg) -->
+      <!-- 4: 木露-mokutsuyu- 満月のくろもじミスト -->
       <div class="product">
-        <img src="https://placehold.co/400x220/e0f9e0/306030?text=Kuromoji+Mist" alt="満月のくろもじミスト">
+        <!-- GitHub Pages対応パス: images/daily_mist.jpg -->
+        <img src="images/daily_mist.jpg" alt="満月のくろもじミスト" onerror="this.src='https://placehold.co/280x220/305060/fff?text=KuromojiMist';" >
         <div class="product-content">
           <h3>【木露-mokutsuyu-】満月のくろもじミスト</h3>
           <p>満月の日に抽出された天然クロモジ精油の香り。除菌・消臭にも使える癒しのアロマスプレー。</p>
@@ -293,9 +304,10 @@
         </div>
       </div>
 
-      <!-- 5: ROSE LABO ローズアロマバスソルト (refresh_bathsalt.jpg) -->
+      <!-- 5: ROSE LABO ローズアロマバスソルト -->
       <div class="product">
-        <img src="https://placehold.co/400x220/fbe0f7/60305f?text=Rose+Bath+Salt" alt="ROSE LABO ローズアロマバスソルト">
+        <!-- GitHub Pages対応パス: images/refresh_bathsalt.jpg -->
+        <img src="images/refresh_bathsalt.jpg" alt="ROSE LABO ローズアロマバスソルト" onerror="this.src='https://placehold.co/280x220/4a6fa5/fff?text=BathSalt';" >
         <div class="product-content">
           <h3>【ROSE LABO】ローズアロマバスソルト</h3>
           <p>自家栽培の“食べられるバラ”を使用した贅沢な入浴剤。ミネラル豊富なピンク岩塩でしっとり肌に。</p>
@@ -303,9 +315,10 @@
         </div>
       </div>
 
-      <!-- 6: 木露-mokutsuyu- 深緑の能登ヒバミスト (refresh_spray.jpg) -->
+      <!-- 6: 木露-mokutsuyu- 深緑の能登ヒバミスト -->
       <div class="product">
-        <img src="https://placehold.co/400x220/e0f0f9/305060?text=Noto+Hiba+Mist" alt="深緑の能登ヒバミスト">
+        <!-- GitHub Pages対応パス: images/refresh_spray.jpg -->
+        <img src="images/refresh_spray.jpg" alt="深緑の能登ヒバミスト" onerror="this.src='https://placehold.co/280x220/6aa8d4/fff?text=HibaMist';" >
         <div class="product-content">
           <h3>【木露-mokutsuyu-】深緑の能登ヒバミスト</h3>
           <p>天然ヒバ精油の木の香りで空間をリフレッシュ。防虫・除菌・消臭に使える万能アロマミスト。</p>
@@ -314,7 +327,7 @@
       </div>
     </div>
 
-    <!-- シンプルなアフィリエイト紹介ボックス (ここから下は変更なし) -->
+    <!-- シンプルなアフィリエイト紹介ボックス -->
     <div style="
       text-align:center;
       margin: 25px auto;
