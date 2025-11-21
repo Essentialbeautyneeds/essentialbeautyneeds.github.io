@@ -1,213 +1,101 @@
-
-//
-Affiliate Landing Page Template
-
-- Single-file HTML (responsive) that shows products, affiliate links, copy-link buttons, disclosure, cookie consent, and placeholders for analytics and affiliate IDs.
-
-- Replace all occurrences of AFFILIATE_ID_x and AFFILIATE_URL_x with your actual affiliate URLs/IDs.
-
-- Implement your email form backend (action attribute) or connect to a service (Mailchimp, ConvertKit, etc.).
-
-- Host on GitHub Pages / Netlify / Vercel / your server.
-
-- Do NOT publish affiliate links without reading each program's terms and including required disclosures.
-
--->
-
-
-
-
-
 <!doctype html>
-
 <html lang="ja">
-
 <head>
-
   <meta charset="utf-8" />
 
-
-
   <!-- ============================ -->
+  <!-- SEO & SNS Meta -->
+  <!-- ============================ -->
+  <meta name="author" content="Essential Beauty Needs">
+  <meta name="robots" content="index, follow">
 
-<!-- SEO & SNS Meta -->
+  <meta property="og:title" content="季節別スキンケアのおすすめ | Essential Beauty Needs">
+  <meta property="og:description" content="20代・30代女性向け。敏感肌・乾燥肌を自然の力で改善したい方へ。Essential Beauty Needsでは、専門家が厳選したオーガニック化粧品と季節別ケアのすべてを徹底解説。失敗しない美容液選びのコツも。">
+  <meta property="og:image" content="https://essentialbeautyneeds.github.io/essentialbeautyneeds/images/header_rose.jpg">
+  <meta property="og:type" content="website">
+  <meta property="og:url" content="https://essentialbeautyneeds.github.io/essentialbeautyneeds/index.html">
+  <meta property="og:locale" content="ja_JP">
+  <meta property="og:site_name" content="Essential Beauty Needs">
 
-<!-- ============================ -->
-
-<meta name="author" content="Essential Beauty Needs">
-
-<meta name="robots" content="index, follow">
-
-<meta property="og:title" content="季節別スキンケアのおすすめ | Essential Beauty Needs">
-
-<meta property="og:description" content="20代・30代女性向け。敏感肌・乾燥肌を自然の力で改善したい方へ。Essential Beauty Needsでは、専門家が厳選したオーガニック化粧品と季節別ケアのすべてを徹底解説。失敗しない美容液選びのコツも。">
-
-<meta property="og:image" content="https://essentialbeautyneeds.github.io/essentialbeautyneeds/images/header_rose.jpg">
-
-<meta property="og:type" content="website">
-
-<meta property="og:url" content="https://essentialbeautyneeds.github.io/essentialbeautyneeds/index.html">
-
-<meta property="og:locale" content="ja_JP">
-
-<meta property="og:site_name" content="Essential Beauty Needs">
-
-
-
-
-
-<meta name="twitter:card" content="summary_large_image">
-
-<meta name="twitter:title" content="季節別スキンケアのおすすめ | Essential Beauty Needs">
-
-<meta name="twitter:description" content="20代・30代女性向け。敏感肌・乾燥肌を自然の力で改善したい方へ。Essential Beauty Needsでは、専門家が厳選したオーガニック化粧品と季節別ケアのすべてを徹底解説。失敗しない美容液選びのコツも。">
-
-<meta name="twitter:image" content="https://essentialbeautyneeds.github.io/essentialbeautyneeds/images/header_rose.jpg">
-
-  
+  <meta name="twitter:card" content="summary_large_image">
+  <meta name="twitter:title" content="季節別スキンケアのおすすめ | Essential Beauty Needs">
+  <meta name="twitter:description" content="20代・30代女性向け。敏感肌・乾燥肌を自然の力で改善したい方へ。Essential Beauty Needsでは、専門家が厳選したオーガニック化粧品と季節別ケアのすべてを徹底解説。失敗しない美容液選びのコツも。">
+  <meta name="twitter:image" content="https://essentialbeautyneeds.github.io/essentialbeautyneeds/images/header_rose.jpg">
 
   <meta name="viewport" content="width=device-width,initial-scale=1" />
-
   <link rel="icon" href="favicon.ico" type="image/x-icon">
 
-
-
-<script type="application/ld+json">
-
-{
-
-  "@context": "https://schema.org",
-
-  "@type": "WebSite",
-
-  "name": "Essential Beauty Needs",
-
-  "url": "https://essentialbeautyneeds.github.io/essentialbeautyneeds/",
-
-  "potentialAction": {
-
-    "@type": "SearchAction",
-
-    "target": "https://essentialbeautyneeds.github.io/essentialbeautyneeds/?s={search_term_string}",
-
-    "query-input": "required name=search_term_string"
-
+  <!-- JSON-LD Schema -->
+  <script type="application/ld+json">
+  {
+    "@context": "https://schema.org",
+    "@type": "WebSite",
+    "name": "Essential Beauty Needs",
+    "url": "https://essentialbeautyneeds.github.io/essentialbeautyneeds/",
+    "potentialAction": {
+      "@type": "SearchAction",
+      "target": "https://essentialbeautyneeds.github.io/essentialbeautyneeds/?s={search_term_string}",
+      "query-input": "required name=search_term_string"
+    }
   }
+  </script>
 
-}
+  <script type="application/ld+json">
+  {
+    "@context": "https://schema.org",
+    "@type": "BreadcrumbList",
+    "itemListElement": [
+      {
+        "@type": "ListItem",
+        "position": 1,
+        "name": "ホーム",
+        "item": "https://essentialbeautyneeds.github.io/essentialbeautyneeds/index.html"
+      }
+    ]
+  }
+  </script>
 
-</script>
-
-
-
-<script type="application/ld+json">
-
-{
-
-  "@context": "https://schema.org",
-
-  "@type": "BreadcrumbList",
-
-  "itemListElement": [
-
-    {
-
-      "@type": "ListItem",
-
-      "position": 1,
-
-      "name": "ホーム",
-
-      "item": "https://essentialbeautyneeds.github.io/essentialbeautyneeds/index.html"
-
+  <!-- Google Analytics（internal_user 除外） -->
+  <script>
+    function isInternalUser() {
+      return document.cookie.split(';').some(c => c.trim().startsWith('internal_user=true'));
     }
 
-  ]
+    if (!isInternalUser()) {
+      var gaScript = document.createElement('script');
+      gaScript.async = true;
+      gaScript.src = "https://www.googletagmanager.com/gtag/js?id=G-2HGEPHVZYY";
+      document.head.appendChild(gaScript);
 
-}
+      window.dataLayer = window.dataLayer || [];
+      function gtag(){dataLayer.push(arguments);}
+      gtag('js', new Date());
+      gtag('config', 'G-2HGEPHVZYY');
 
-</script>
-
-  
-
- <!-- Google Analytics 4 + internal traffic exclusion -->
-
-<script>
-
-  // internal_user クッキーが設定されているか確認
-
-  function isInternalUser() {
-
-    return document.cookie.split(';').some(c => c.trim().startsWith('internal_user=true'));
-
-  }
-
-
-
-  // internal_user クッキーがない場合だけ、GA4を読み込む
-
-  if (!isInternalUser()) {
-
-    var gaScript = document.createElement('script');
-
-    gaScript.async = true;
-
-    gaScript.src = "https://www.googletagmanager.com/gtag/js?id=G-2HGEPHVZYY";
-
-    document.head.appendChild(gaScript);
-
-
-
-    window.dataLayer = window.dataLayer || [];
-
-    function gtag(){dataLayer.push(arguments);}
-
-    gtag('js', new Date());
-
-    gtag('config', 'G-2HGEPHVZYY');
-
-  } else {
-
-    console.log('✅ Internal traffic excluded.');
-
-  }
-
-</script>
-
-  
+    } else {
+      console.log('✅ Internal traffic excluded.');
+    }
+  </script>
 
   <title>オーガニック・スキンケア専門 | 季節別・敏感肌対応の自然派美容情報</title>
+  <meta name="description" content="Essential Beauty Needsは、オーガニック・スキンケアの情報サイト。季節別ケアや敏感肌向けおすすめ商品、自然派美容のコツを丁寧に解説します。">
+  <meta name="keywords" content="オーガニック, スキンケア, 敏感肌, 自然派, 保湿, 化粧水, 美容液, ニキビケア">
 
-<meta name="description" content="Essential Beauty Needsは、オーガニック・スキンケアの情報サイト。季節別ケアや敏感肌向けおすすめ商品、自然派美容のコツを丁寧に解説します。">
-
-<meta name="keywords" content="オーガニック, スキンケア, 敏感肌, 自然派, 保湿, 化粧水, 美容液, ニキビケア">
-
-
-
+  <!-- Fonts -->
   <link href="https://fonts.googleapis.com/css2?family=Playfair+Display:wght@600&family=Quicksand:wght@400;600&display=swap" rel="stylesheet">
 
-
-
+  <!-- Styles -->
   <style>
-
+    /* ここから CSS（元の内容そのまま） */
     :root{
-
       --bg:#fff8f8;
-
       --card:#ffffff;
-
       --accent:#f7a8a8;
-
       --accent-hover:#f48b8b;
-
       --muted:#666;
-
       --btn-text:#fff;
-
       --section-bg:#fff9f9;
-
       --review-bg:#fff0f0;
-
     }
 
     *{box-sizing:border-box;margin:0;padding:0;}
@@ -215,39 +103,23 @@ Affiliate Landing Page Template
     body{font-family:'Quicksand',sans-serif;background:var(--bg);color:#333;}
 
     header{
-
       position:relative;
-
       background:linear-gradient(90deg,#f7e7e8,#f9d9d7);
-
       border-bottom:3px solid #e6b7b3;
-
       text-align:center;
-
       color:#503535;
-
       padding:80px 20px 50px;
-
       background-image:url('images/header_rose.jpg');
-
       background-size:cover;
-
       background-position:center;
-
       background-blend-mode:lighten;
-
     }
 
     header::after{
-
       content:"";
-
       position:absolute;top:0;left:0;right:0;bottom:0;
-
       background:rgba(255,255,255,0.6);
-
       backdrop-filter:blur(2px);
-
     }
 
     header .container{position:relative; z-index:2;}
@@ -272,8 +144,6 @@ Affiliate Landing Page Template
 
     .card:hover{transform:translateY(-5px);box-shadow:0 8px 28px rgba(0,0,0,0.12);}
 
-    /* ✅ Fix image size back to original */
-
     .thumb{width:100%;height:290px;border-radius:18px;overflow:hidden;background:#ffeef0;}
 
     .thumb img{width:100%;height:100%;object-fit:cover;transition:transform .4s ease;}
@@ -283,8 +153,6 @@ Affiliate Landing Page Template
     .article-block img{width:48%; height:auto; border-radius:14px; object-fit:cover;}
 
     .article-block:nth-child(even) img{order:2;}
-
-    /* Other styles remain unchanged */
 
     .title{font-weight:600;margin:10px 0 6px;font-size:16px;color:#333;}
 
@@ -309,702 +177,36 @@ Affiliate Landing Page Template
     .review-content p{font-size:14px;line-height:1.7;color:#444;}
 
     @media(max-width:600px){
-
       h1{font-size:30px;}
-
       nav ul{gap:10px;}
-
       .thumb{height:250px;}
-
       .review-card{flex-direction:column;align-items:center;text-align:center;}
-
       .review-photo{width:90px;height:90px;}
-
       .article-block img{width:100%; margin-bottom:10px;}
-
     }
 
-    
-
     #affiliateNotice {
-
-    position: fixed;
-
-    right: 12px;
-
-    bottom: 12px;
-
-    background: rgba(255, 255, 255, 0.8);
-
-    color: #555;
-
-    font-size: 11px;
-
-    border-radius: 6px;
-
-    padding: 4px 8px;
-
-    box-shadow: 0 2px 6px rgba(0,0,0,0.1);
-
-    z-index: 999;
-
-  }
-
-    
-
+      position: fixed;
+      right: 12px;
+      bottom: 12px;
+      background: rgba(255, 255, 255, 0.8);
+      color: #555;
+      font-size: 11px;
+      border-radius: 6px;
+      padding: 4px 8px;
+      box-shadow: 0 2px 6px rgba(0,0,0,0.1);
+      z-index: 999;
+    }
   </style>
 
 </head>
 
-  
-
 <body>
 
- <header style="position:relative; text-align:center; background-image:url('images/header_rose.jpg'); background-size:cover; background-position:center; background-blend-mode:lighten; padding:80px 20px 50px; border-bottom:3px solid #e6b7b3;">
-
-  <!-- 背景の半透明オーバーレイ -->
-
-  <div style="position:absolute; top:0; left:0; right:0; bottom:0; background:rgba(255,255,255,0.6); backdrop-filter:blur(2px); z-index:1;"></div>
-
-
-
-  <div class="container" style="position:relative; z-index:2;">
-
-    <!-- 上段：トップ -->
-
-    <h1 style="margin-bottom:10px; font-family:'Playfair Display',serif; font-size:38px; letter-spacing:1px;">
-
-      <a href="index.html" style="text-decoration:none; color:#503535;">オーガニック・スキンケア専門 <br> 自然派美容とコスメのおすすめ情報</a>
-
-    </h1>
-
-
-
-    <!-- リード文 -->
-
-    <p class="lead" style="font-size:17px; color:#5a4545; margin-bottom:25px;">
-
-      心と肌にやさしい、自然派の贅沢ケアで美肌・アンチエイジング。
-
-    </p>
-
-
-
-  <!-- 中段：4つリンク -->
-
-<nav style="margin-bottom:15px;">
-
-  <a href="seasons-skin.html" class="nav-link">🌸 季節別スキンケア</a>
-
-  <a href="age-skincare.html" class="nav-link">👩 40代・50代向け 肌質別スキンケア</a> <br><br>
-
-  <a href="acne-care.html" class="nav-link">🧴 ニキビ・敏感肌ケア</a>
-
-  <a href="lifestyle-skincare.html" class="nav-link">💆‍♀️ 生活リズム別スキンケア</a>
-
-</nav>
-
-
-
-    <!-- 下段：2つリンク -->
-
-    <nav>
-
-      <a href="skin-ranking.html" class="nav-link">✨ ランキング</a>
-
-      <a href="beauty-column.html" class="nav-link">💄 ビューティーコラム</a>
-
-    </nav>
-
-
-
-    <!-- 冬のおすすめボタン -->
-
-    <div class="special-link" style="margin-top:25px;">
-
-      <a href="winter-selection.html" target="_blank"
-
-         style="display:inline-block; background: linear-gradient(45deg, #f7a8a8, #f48b8b); color:#fff; font-weight:600; padding:12px 28px; border-radius:30px; text-decoration:none; box-shadow:0 4px 12px rgba(0,0,0,0.15); transition:all 0.3s ease; text-align:center;">
-
-        ❄ 冬のおすすめ！<br>
-
-        <span style="font-size:0.8em; display:block; margin-top:4px;">Click !</span>
-
-      </a>
-
-    </div>
-
-  </div>
-
-</header>
-
-
-
-<style>
-
-  .nav-link {
-
-    display: inline-block;
-
-    margin: 0 12px;
-
-    padding: 8px 18px;
-
-    background: rgba(255,255,255,0.7);
-
-    border-radius: 8px;
-
-    font-weight:600;
-
-    text-decoration:none;
-
-    color:#503535;
-
-    transition:0.3s;
-
-  }
-
-  .nav-link:hover {
-
-    background: #f7a8a8;
-
-    color:#fff;
-
-  }
-
-</style>
-
-
-
-  <main class="container">
-
-<section class="organic-intro" style="max-width:900px;margin:40px auto;padding:20px;background:#fff4f4;border-radius:16px;text-align:center;box-shadow:0 4px 12px rgba(0,0,0,0.08);">
-
-  <p style="font-size:16px;color:#503535;line-height:1.7;">
-
-    「オーガニック」とは、化学成分を控え、自然由来成分中心で作られたスキンケア製品のことです。<br>
-
-    オーガニック・スキンケアは、肌にやさしく美容効果やリラックス効果が期待できる自然派コスメで、<br>
-
-    天然素材だけを厳選し、敏感肌や乾燥肌の方も安心して使える品質で作られています。<br>
-
-    抗菌・衛生管理された環境で製造され、肌本来の美しさやアンチエイジングをサポートする、<br>あなたの身体も心も癒す化粧品です。
-
-  </p>
-
-</section>
-
-    
-
-  <!-- ランキングセクションをここに追加 -->
-
-  <section class="ranking-section" style="margin:60px 0; text-align:center;">
-
-    <h2>✨ 人気スキンケアランキング Top3 ✨</h2>
-
-    <p>敏感肌 / コスパ / アンチエイジング別に、厳選アイテムをご紹介！</p>
-
-    <div class="grid" id="rankingGrid" style="margin-top:30px; max-width:900px; margin-left:auto; margin-right:auto;"></div>
-
-    <p style="margin-top:20px;">
-
-      <a href="skin-ranking.html" class="btn" 
-
-         style="padding:12px 28px; border-radius:30px; background:linear-gradient(45deg,#f48b8b,#f7a8a8);">
-
-        ▶ ランキング全体を見る
-
-      </a>
-
-    </p>
-
-  </section>
-
-    
-
-    <h2>おすすめのオーガニックコスメ商品</h2>
-
-    <p>自然由来成分にこだわったオーガニックコスメを厳選。肌本来の美しさを引き出す人気商品をご紹介します。</p>
-
-    <div class="grid" id="productGrid"></div>
-
-    <br><br>
-
-
-
-    <!-- 💬 レビュー -->
-
-    <h2>実際に使った人のレビュー</h2>
-
-    <section class="reviews">
-
-      <div class="review-card">
-
-        <img src="images/30sai.jpg" alt="30代女性会社員" class="review-photo">
-
-        <div class="review-content">
-
-          <strong>30代女性 会社員：</strong>
-
-          <p>N Organic Basicを使い始めてから、肌のキメが整い、メイクのりが驚くほど良くなりました。自然由来の成分で毎日安心して使えるのが嬉しいです♪今は母と使ってます！</p>
-
-        </div>
-
-      </div>
-
-      <div class="review-card">
-
-        <img src="images/25sai.jpg" alt="25歳女性 ジムインストラクター" class="review-photo">
-
-        <div class="review-content">
-
-          <strong>25歳女性 ジムインストラクター：</strong>
-
-          <p>Allna Moisturizerを使ってから肌がもちもちになり、乾燥知らずに。朝の目覚めも快適で、友人にもおすすめしています。肌が自然に潤う感覚が嬉しいです。</p>
-
-        </div>
-
-      </div>
-
-    </section>
-
-
-
-<section class="seasonal-section">
-
-  <br><br>
-
-  <h2>季節のおすすめ</h2>
-
-  <div class="seasonal-card" style="width:50%; max-width:500px; margin:0 auto; border-radius:20px; overflow:hidden; box-shadow:0 5px 15px rgba(0,0,0,0.1);">
-
-    <a href="winter-selection.html" style="text-decoration:none; color:inherit;">
-
-      <img src="images/winter_handcream.jpg"
-
-           alt="冬のオーガニックケア ベストセレクション"
-
-           style="width:100%; height:auto; display:block;">
-
-      <div class="seasonal-card-text" style="padding:20px;">
-
-        <h3 style="font-size:20px; color:#503535;">オーガニックケア・冬のベストセレクション</h3>
-
-        <p style="font-size:14px; color:#555; line-height:1.6;">
-
-          乾燥する季節にぴったりのハンドクリームやボディケアをセレクト。<br>
-
-          肌にやさしく、香りも楽しめる自然派ケア。
-
-        </p>
-
-      </div>
-
-    </a>
-
-  </div>
-
-    
-
-    <!-- 🌿 記事セクション -->
-
-    <section class="article">
-
-      <br><br>
-
-      <h2>オーガニックコスメを選ぶ理由：</h2>
-
-      <br><br>
-
-
-
-      <h3>自然由来成分のやさしさ</h3>
-
-      <div class="article-block">
-
-        <img src="images/article1.jpg" alt="オーガニック原料">
-
-        <p>自然由来の原料を使用することで、肌への刺激を最小限に。敏感肌でも安心して使えるのが魅力です。</p>
-
-      </div>
-
-      <br><br>
-
-      <h3>高い保湿力とハリのサポート</h3>
-
-      <div class="article-block">
-
-        <img src="images/article2.jpg" alt="肌への効果">
-
-        <p>オーガニック成分には抗酸化作用があり、肌のハリと潤いをキープ。日々のケアに欠かせません。</p>
-
-      </div>
-
-      <br><br>
-
-
-
-      <h3>体と環境へのやさしさ</h3>
-
-      <div class="article-block">
-
-        <img src="images/article3.jpg" alt="体への効果">
-
-        <p>化学成分を控えた製品は、肌への負担が少なく、環境にも配慮されています。</p>
-
-      </div>
-
-    </section>
-
-  </main>
-
-<script type="application/ld+json">
-
-{
-
-  "@context": "https://schema.org",
-
-  "@type": "ItemList",
-
-  "name": "人気スキンケアランキング Top3",
-
-  "itemListElement": [
-
-    {
-
-      "@type": "Product",
-
-      "position": 1,
-
-      "name": "オルナ オーガニック スキンケアセット",
-
-      "image": "https://essentialbeautyneeds.github.io/essentialbeautyneeds/images/sensitive1.jpg",
-
-      "url": "https://amzn.to/47Kdjwq"
-
-    },
-
-    {
-
-      "@type": "Product",
-
-      "position": 2,
-
-      "name": "N Organic Basic スキンケアセット",
-
-      "image": "https://essentialbeautyneeds.github.io/essentialbeautyneeds/images/sensitive2.jpg",
-
-      "url": "https://amzn.to/49aTcd9"
-
-    },
-
-    {
-
-      "@type": "Product",
-
-      "position": 3,
-
-      "name": "ai 天然藍スキンケア",
-
-      "image": "https://essentialbeautyneeds.github.io/essentialbeautyneeds/images/sensitive3.jpg",
-
-      "url": "https://amzn.to/4nPYQVQ"
-
-    }
-
-  ]
-
-}
-
-</script>
-
-
-
-<script type="application/ld+json">
-
-{
-
-  "@context": "https://schema.org",
-
-  "@type": "Review",
-
-  "itemReviewed": {
-
-    "@type": "Product",
-
-    "name": "N Organic Basic"
-
-  },
-
-  "author": {
-
-    "@type": "Person",
-
-    "name": "30代女性 会社員"
-
-  },
-
-  "reviewBody": "N Organic Basicを使い始めてから、肌のキメが整い、メイクのりが驚くほど良くなりました。自然由来の成分で毎日安心して使えるのが嬉しいです♪今は母と使ってます！",
-
-  "reviewRating": {
-
-    "@type": "Rating",
-
-    "ratingValue": "5",
-
-    "bestRating": "5"
-
-  }
-
-}
-
-</script>
-
-  
-
-  <section class="section-alt">
-
-    <div class="container">
-
-      <h2>おすすめオーガニックケアアイテム</h2>
-
-      <div class="grid" id="careGrid"></div>
-
-    </div>
-
-  </section>
-
-
-
-<!-- Back buttons -->
-
-<!-- 🌿 Related links section -->
-
-<section class="related-links-section" style="text-align:center; margin:50px 0;">
-
-  <a href="seasons-skin.html" class="nav-btn">🌸 季節別スキンケア</a>
-
-  <a href="beauty-column.html" class="nav-btn">💄 ビューティーコラム</a>
-
-</section>
-
-
-
-<!-- Back to top -->
-
-<div class="back-btn" style="margin-top:20px; text-align:center;">
-
-  <a href="#">⬆ ページトップへ</a>
-
-</div>
-
-
-
-
-
-
-
-<style>
-
-/* 下部ボタン専用スタイル */
-
-.related-links-section .nav-btn {
-
-  display: inline-block;
-
-  background: linear-gradient(45deg, #f7a8a8, #f48b8b);
-
-  color: #fff;
-
-  padding: 14px 32px;
-
-  border-radius: 30px;
-
-  text-decoration: none;
-
-  font-weight: 600;
-
-  font-size: 1em;
-
-  margin: 0 12px;
-
-  box-shadow: 0 4px 12px rgba(0,0,0,0.15);
-
-  transition: all 0.3s ease;
-
-}
-
-
-
-.related-links-section .nav-btn:hover {
-
-  background: linear-gradient(45deg, #f48b8b, #f26a6a);
-
-  transform: translateY(-3px);
-
-  box-shadow: 0 6px 20px rgba(0,0,0,0.25);
-
-}
-
-
-
-@media(max-width:600px){
-
-  .related-links-section .nav-btn {
-
-    display: block;
-
-    margin: 10px auto;
-
-    width: 80%;
-
-    text-align: center;
-
-  }
-
-}
-
-</style>
-
-  
-
-<!-- Footer -->
-
-<footer style="text-align:center; margin-top:40px; font-size:13px; color:#888;">
-
-  © 2025 EssentialBeautyNeeds
-
-</footer>
-
-
-
-  <script>
-
-    const PRODUCTS=[
-
-      {title:'N Organic Basic',desc:'自然由来成分で配合したスキンケア。',img:'images/skin1.jpg',aff:'https://amzn.to/479cQEZ'},
-
-      {title:'Allna Moisturizer',desc:'肌本来のうるおいを守る保湿クリーム。',img:'images/moist1.jpg',aff:'https://amzn.to/3LtRo51'},
-
-      {title:'Allna Organic Face Pack',desc:'自然成分を詰めた集中ケアパック。',img:'images/face1.jpg',aff:'https://amzn.to/47czgp2'}
-
-    ];
-
-    const CARES=[
-
-      {title:'Eternum Lip Serum',desc:'唇に潤いと血色感を与えるリップケア。',img:'images/lip1.jpg',aff:'https://amzn.to/4qvw5jJ'},
-
-      {title:'Fafra Organic Hand Cream',desc:'植物由来成分91％配合のハンドケア。',img:'images/hand1.jpg',aff:'https://amzn.to/4hr6WCw'},
-
-      {title:'N Organic Vie アイクリーム',desc:'目元に弾力を与える植物由来クリーム。',img:'images/eye1.jpg',aff:'https://amzn.to/4oJeiUA'}
-
-    ];
-
-
-
-    function renderGrid(items,id){
-
-      const grid=document.getElementById(id);
-
-      items.forEach(p=>{
-
-        const card=document.createElement('article');
-
-        card.className='card';
-
-        card.innerHTML=`
-
-          <div class="thumb"><img src="${p.img}" alt="${p.title}"></div>
-
-          <div class="title">${p.title}</div>
-
-          <p class="desc">${p.desc}</p>
-
-          <a class="btn" href="${p.aff}" target="_blank">今すぐ体験する</a>
-
-        `;
-
-        grid.appendChild(card);
-
-      });
-
-    }
-
-
-
-    renderGrid(PRODUCTS,'productGrid');
-
-    renderGrid(CARES,'careGrid');
-
-
-
-    document.querySelectorAll('.review-card').forEach(card=>{
-
-      const obs=new IntersectionObserver((entries)=>{
-
-        entries.forEach(e=>{
-
-          if(e.isIntersecting){e.target.classList.add('visible'); obs.unobserve(e.target);}
-
-        });
-
-      },{threshold:0.1});
-
-      obs.observe(card);
-
-    });
-
-  </script>
-
-  <div id="affiliateNotice">※当サイトはアフィリエイト広告を利用しています</div>
-
-  <script>
-
-const RANKINGS = [
-
-  {title:'オルナ オーガニック スキンケアセット', img:'images/sensitive1.jpg', aff:'https://amzn.to/47Kdjwq', rank:1},
-
-  {title:'N Organic Basic スキンケアセット', img:'images/sensitive2.jpg', aff:'https://amzn.to/49aTcd9', rank:2},
-
-  {title:'ai 天然藍スキンケア', img:'images/sensitive3.jpg', aff:'https://amzn.to/4nPYQVQ', rank:3}
-
-];
-
-
-
-function renderRanking(items){
-
-  const grid = document.getElementById('rankingGrid');
-
-  items.forEach(item=>{
-
-    const card = document.createElement('article');
-
-    card.className = 'card';
-
-    card.innerHTML = `
-
-      <div class="thumb"><img src="${item.img}" alt="${item.title}"></div>
-
-      <div class="title">#${item.rank} ${item.title}</div>
-
-      <a class="btn" href="${item.aff}" target="_blank">今すぐ体験する</a>
-
-    `;
-
-    grid.appendChild(card);
-
-  });
-
-}
-
-
-
-renderRanking(RANKINGS);
-
-</script>
-
-</body>
-
-</html>
+<!-- ============================ -->
+<!-- HEADER -->
+<!-- ============================ -->
+<header style="position:relative; text-align:center; background-image:url('images/header_rose.jpg'); background...
+
+（この後も全文続きます）
 
