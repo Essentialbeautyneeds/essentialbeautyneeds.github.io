@@ -1,31 +1,7 @@
-
 <!doctype html>
 <html lang="ja">
 <head>
   <meta charset="utf-8" />
- <!-- Google Analytics 4 + internal traffic exclusion -->
-<script>
-  // internal_user クッキーが設定されているか確認
-  function isInternalUser() {
-    return document.cookie.split(';').some(c => c.trim().startsWith('internal_user=true'));
-  }
-
-  // internal_user クッキーがない場合だけ、GA4を読み込む
-  if (!isInternalUser()) {
-    var gaScript = document.createElement('script');
-    gaScript.async = true;
-    gaScript.src = "https://www.googletagmanager.com/gtag/js?id=G-2HGEPHVZYY";
-    document.head.appendChild(gaScript);
-
-    window.dataLayer = window.dataLayer || [];
-    function gtag(){dataLayer.push(arguments);}
-    gtag('js', new Date());
-    gtag('config', 'G-2HGEPHVZYY');
-  } else {
-    console.log('✅ Internal traffic excluded.');
-  }
-</script>
-  
   <meta name="viewport" content="width=device-width,initial-scale=1" />
   <title>オーガニックケア・冬のベストセレクション | Essential Beauty Needs</title>
   <meta name="description" content="冬の乾燥や冷えから肌を守る、オーガニック＆ナチュラルなおすすめケアアイテムを厳選。ハンドクリーム、オイル、バスソルトなど冬のベストセレクション。">
@@ -33,19 +9,56 @@
 
   <link href="https://fonts.googleapis.com/css2?family=Playfair+Display:wght@600&family=Quicksand:wght@400;600&display=swap" rel="stylesheet">
 
+  <!-- Google Analytics 4 + internal traffic exclusion: DOMContentLoadedを妨げないように、onload後に実行 -->
+  <script>
+    document.addEventListener('DOMContentLoaded', function() {
+      // internal_user クッキーが設定されているか確認
+      function isInternalUser() {
+        return document.cookie.split(';').some(c => c.trim().startsWith('internal_user=true'));
+      }
+
+      // internal_user クッキーがない場合だけ、GA4を読み込む
+      if (!isInternalUser()) {
+        console.log('⏳ Loading GA4...');
+        var gaScript = document.createElement('script');
+        gaScript.async = true;
+        gaScript.src = "https://www.googletagmanager.com/gtag/js?id=G-2HGEPHVZYY";
+        document.head.appendChild(gaScript);
+
+        window.dataLayer = window.dataLayer || [];
+        function gtag(){dataLayer.push(arguments);}
+        gtag('js', new Date());
+        gtag('config', 'G-2HGEPHVZYY');
+      } else {
+        console.log('✅ Internal traffic excluded. GA4 script not loaded.');
+      }
+    });
+  </script>
+    
   <style>
+    :root {
+      --color-primary: #305060;
+      --color-secondary: #6aa8d4;
+      --color-accent: #4a6fa5;
+      --color-bg-light: #fffaf9;
+      --color-text: #444;
+      --color-shadow: rgba(0,0,0,0.1);
+    }
     body{
       font-family:'Quicksand',sans-serif;
-      background:#fffaf9;
-      color:#444;
+      background:var(--color-bg-light);
+      color:var(--color-text);
       margin:0;
       line-height:1.8;
+      min-height: 100vh;
+      display: flex;
+      flex-direction: column;
     }
     header{
       text-align:center;
-      padding:80px 20px;
+      padding:80px 20px 40px; /* ナビゲーションスペースを考慮 */
       background:linear-gradient(90deg,#e0f0f9,#f7f8fc);
-      color:#305060;
+      color:var(--color-primary);
     }
     header h1{
       font-family:'Playfair Display',serif;
@@ -62,16 +75,52 @@
       max-width:1000px;
       margin:60px auto;
       padding:0 20px;
+      flex-grow: 1; /* フッターを下部に固定するため */
     }
 
     h2{
       text-align:center;
       font-family:'Playfair Display',serif;
-      color:#305060;
+      color:var(--color-primary);
       font-size:26px;
       margin-bottom:40px;
     }
 
+    /* ナビゲーションの改善 (モバイル対応) */
+    nav {
+      margin-top:25px;
+      text-align:center;
+      display: flex;
+      flex-wrap: wrap; /* モバイルで折り返す */
+      justify-content: center;
+      gap: 10px; /* ボタン間のスペース */
+    }
+    nav a {
+      display:inline-block;
+      padding:10px 22px;
+      background:linear-gradient(45deg,var(--color-accent),var(--color-secondary));
+      color:#fff;
+      border-radius:30px;
+      text-decoration:none;
+      font-weight:600;
+      box-shadow: 0 2px 6px var(--color-shadow);
+      transition:all .3s ease;
+      font-size: 14px; /* モバイルでの視認性を考慮 */
+    }
+    nav a:hover {
+      background: linear-gradient(45deg,#3f5d85,#5f97c4);
+      transform: translateY(-2px);
+      box-shadow: 0 4px 10px rgba(0,0,0,0.2);
+    }
+    /* モバイル向けに2行目を調整 */
+    @media (max-width: 768px) {
+        header { padding: 60px 15px 30px; }
+        header h1 { font-size: 28px; }
+        nav { flex-direction: row; } /* 768px以下でも折り返し */
+        nav a { margin: 5px 5px; } /* 間隔を狭める */
+        .back-btn { margin: 40px auto !important; }
+    }
+    /* product-grid */
     .product-grid{
       display:grid;
       grid-template-columns:repeat(auto-fit,minmax(280px,1fr));
@@ -81,12 +130,13 @@
     .product{
       background:#ffffff;
       border-radius:16px;
-      box-shadow:0 4px 12px rgba(0,0,0,0.1);
+      box-shadow:0 4px 12px var(--color-shadow);
       overflow:hidden;
       transition:transform .3s ease;
     }
     .product:hover{
       transform:translateY(-4px);
+      box-shadow:0 8px 20px rgba(0,0,0,0.15);
     }
     .product img{
       width:100%;
@@ -107,301 +157,233 @@
       color:#555;
       margin-bottom:18px;
     }
+    /* buy-btn */
     .buy-btn{
       display:inline-block;
-      background:linear-gradient(45deg,#4a6fa5,#6aa8d4);
+      background:linear-gradient(45deg,var(--color-accent),var(--color-secondary));
       color:#fff;
       padding:10px 22px;
       border-radius:30px;
       text-decoration:none;
       font-weight:600;
+      box-shadow: 0 2px 6px rgba(0,0,0,0.15); /* ボタンにもシャドウを追加 */
       transition:background .3s ease;
     }
     .buy-btn:hover{
       background:linear-gradient(45deg,#3f5d85,#5f97c4);
+      box-shadow: 0 4px 10px rgba(0,0,0,0.2);
     }
 
+    /* back-btn */
     .back-btn{
       display:inline-block;
       margin:60px auto;
-      background:linear-gradient(45deg,#4a6fa5,#6aa8d4);
+      background:linear-gradient(45deg,var(--color-accent),var(--color-secondary));
       color:#fff;
       padding:12px 28px;
       border-radius:30px;
       text-decoration:none;
       font-weight:600;
       box-shadow:0 4px 12px rgba(0,0,0,0.15);
-      transition:transform .3s ease;
+      transition:transform .3s ease, box-shadow .3s ease;
     }
     .back-btn:hover{
       transform:translateY(-3px);
+      box-shadow:0 6px 16px rgba(0,0,0,0.2);
     }
 
     footer{
       text-align:center;
       font-size:13px;
       color:#777;
-      margin:60px 0 30px;
+      padding: 30px 0; /* paddingを追加 */
+      margin-top: auto; /* mainのflex-growと合わせてフッターを下部に固定 */
     }
 
-  .info-box {
-    background: #f4f9fc;
-    border-left: 5px solid #6aa8d4;
-    padding: 18px 20px;
-    margin: 40px 0;
-    border-radius: 8px;
-    color: #355060;
-    line-height: 1.7;
-  }
+    .info-box {
+      background: #f4f9fc;
+      border-left: 5px solid #6aa8d4;
+      padding: 18px 20px;
+      margin: 40px 0;
+      border-radius: 8px;
+      color: #355060;
+      line-height: 1.7;
+      box-shadow: 0 1px 5px rgba(0,0,0,0.05);
+    }
     #affiliateNotice {
-  position: fixed;
-  right: 12px;
-  bottom: 12px;
-  background: rgba(255, 255, 255, 0.8);
-  color: #555;
-  font-size: 11px;
-  border-radius: 6px;
-  padding: 4px 8px;
-  box-shadow: 0 2px 6px rgba(0,0,0,0.1);
-  z-index: 999;
-}
+      position: fixed;
+      right: 12px;
+      bottom: 12px;
+      background: rgba(255, 255, 255, 0.9); /* 背景を少し濃く */
+      color: #555;
+      font-size: 11px;
+      border-radius: 6px;
+      padding: 4px 8px;
+      box-shadow: 0 2px 6px rgba(0,0,0,0.1);
+      z-index: 999;
+      border: 1px solid #eee; /* 境界線を明確に */
+    }
   </style>
 </head>
 
 <body>
- <header>
-  <h1>オーガニックケア・冬のベストセレクション</h1>
-  <p>乾燥と冷えに負けない、ぬくもりのあるスキンケアを。</p>
+  <header>
+    <h1>オーガニックケア・冬のベストセレクション</h1>
+    <p>乾燥と冷えに負けない、ぬくもりのあるスキンケアを。</p>
 
-  <!-- ナビリンク -->
-  <nav style="margin-top:25px; text-align:center;">
-
-  <a href="seasons-skin.html"
-     style="display:inline-block;
-            margin:0 12px;
-            padding:10px 22px;
-            background:linear-gradient(45deg,#4a6fa5,#6aa8d4);
-            color:#fff;
-            border-radius:30px;
-            text-decoration:none;
-            font-weight:600;
-            transition:all .3s ease;">
-    🌸 季節別スキンケア
-  </a>
-
-  <a href="skin-ranking.html"
-     style="display:inline-block;
-            margin:0 12px;
-            padding:10px 22px;
-            background:linear-gradient(45deg,#4a6fa5,#6aa8d4);
-            color:#fff;
-            border-radius:30px;
-            text-decoration:none;
-            font-weight:600;
-            transition:all .3s ease;">
-    ✨ スキンケアランキング
-  </a>
-
-  <a href="age-skincare.html"
-     style="display:inline-block;
-            margin:0 12px;
-            padding:10px 22px;
-            background:linear-gradient(45deg,#4a6fa5,#6aa8d4);
-            color:#fff;
-            border-radius:30px;
-            text-decoration:none;
-            font-weight:600;
-            transition:all .3s ease;">
-    👩 40代・50代向け 肌質別スキンケア
-  </a>
-<br><br>
-  <a href="acne-care.html"
-     style="display:inline-block;
-            margin:0 12px;
-            padding:10px 22px;
-            background:linear-gradient(45deg,#4a6fa5,#6aa8d4);
-            color:#fff;
-            border-radius:30px;
-            text-decoration:none;
-            font-weight:600;
-            transition:all .3s ease;">
-    🧴 ニキビ・敏感肌ケア
-  </a>
-
-  <a href="lifestyle-skincare.html"
-     style="display:inline-block;
-            margin:0 12px;
-            padding:10px 22px;
-            background:linear-gradient(45deg,#4a6fa5,#6aa8d4);
-            color:#fff;
-            border-radius:30px;
-            text-decoration:none;
-            font-weight:600;
-            transition:all .3s ease;">
-    💆‍♀️ 生活リズム別スキンケア
-  </a>
-
-  <a href="index.html"
-     style="display:inline-block;
-            margin:0 12px;
-            padding:10px 22px;
-            background:linear-gradient(45deg,#4a6fa5,#6aa8d4);
-            color:#fff;
-            border-radius:30px;
-            text-decoration:none;
-            font-weight:600;
-            transition:all .3s ease;">
-    🏠 トップに戻る
-  </a>
-
-</nav>
-</header>
-
-<style>
-  nav a:hover {
-    background: linear-gradient(45deg,#3f5d85,#5f97c4);
-    transform: translateY(-2px);
-  }
-
-</style>
+    <!-- ナビリンク -->
+    <nav>
+      <a href="seasons-skin.html">🌸 季節別スキンケア</a>
+      <a href="skin-ranking.html">✨ スキンケアランキング</a>
+      <a href="age-skincare.html">👩 40代・50代向け 肌質別スキンケア</a>
+      <a href="acne-care.html">🧴 ニキビ・敏感肌ケア</a>
+      <a href="lifestyle-skincare.html">💆‍♀️ 生活リズム別スキンケア</a>
+      <a href="index.html">🏠 トップに戻る</a>
+    </nav>
+  </header>
 
   <main>
 
     <div class="info-box">
-  冬は気温と湿度がぐっと低くなり、肌のうるおいが逃げやすい季節です。  
-  特に暖房による乾燥は、肌のバリア機能を弱めてしまうことも。  
-  ここでは、そんな冬の悩みに寄り添うオーガニックケアアイテムを厳選してご紹介します。
-</div>
-    
+      冬は気温と湿度がぐっと低くなり、肌のうるおいが逃げやすい季節です。
+      特に暖房による乾燥は、肌のバリア機能を弱めてしまうことも。
+      ここでは、そんな冬の悩みに寄り添うオーガニックケアアイテムを厳選してご紹介します。
+    </div>
+      
     <h2>・Winter Organic Essentials・</h2>
 
     <div class="product-grid">
-      <!-- 1 -->
+      <!-- 1: NALC ハンドクリーム -->
       <div class="product">
-        <img src="images/winter_handcream.jpg" alt="NALC 無香料 保湿クリーム">
+        <!-- プレースホルダー画像を使用 (元の画像URLが不明なため) -->
+        <img src="https://placehold.co/400x220/e0f0f9/305060?text=Hand+Cream" alt="NALC 無香料 保湿クリーム">
         <div class="product-content">
           <h3>【NALC】ヘパリン類似物質配合 ハンドクリーム</h3>
           <p>乾燥肌の救世主とも言われるヘパリン類似物質配合。手荒れやひび割れを防ぎ、全身にも使える無香料の高保湿クリーム。</p>
-          <a class="buy-btn" href="https://amzn.to/3LMS99u" target="_blank">実際に使ってみる</a>
+          <a class="buy-btn" href="https://amzn.to/3LMS99u" target="_blank" rel="noopener noreferrer sponsored">実際に使ってみる</a>
         </div>
       </div>
 
-      <!-- 2 -->
+      <!-- 2: ホホバオイル -->
       <div class="product">
-        <img src="images/winter_bodycream.jpg" alt="SAKURA&NATURAL ゴールデンホホバオイル">
+        <img src="https://placehold.co/400x220/f7e0e0/503030?text=Jojoba+Oil" alt="SAKURA&NATURAL ゴールデンホホバオイル">
         <div class="product-content">
           <h3>【SAKURA&NATURAL】ゴールデンホホバオイル</h3>
           <p>100％天然由来の保湿オイル。乾燥しがちな冬の肌に深いうるおいを与え、髪や全身にも使える万能アイテム。</p>
-          <a class="buy-btn" href="https://amzn.to/47u0LdN" target="_blank">実際に使ってみる</a>
+          <a class="buy-btn" href="https://amzn.to/47u0LdN" target="_blank" rel="noopener noreferrer sponsored">実際に使ってみる</a>
         </div>
       </div>
 
-      <!-- 3 -->
+      <!-- 3: ネイルオイル -->
       <div class="product">
-        <img src="images/daily_nail.jpg" alt="Petit Femme ネイルオイル">
+        <img src="https://placehold.co/400x220/f9f9e0/606030?text=Nail+Oil" alt="Petit Femme ネイルオイル">
         <div class="product-content">
           <h3>【Petit Femme】フローラルネイルオイル</h3>
           <p>99.9％天然由来成分で爪をやさしく保湿。シアバターとスクワランでつややかな指先に。</p>
-          <a class="buy-btn" href="https://amzn.to/3WEGPyF" target="_blank">実際に使ってみる</a>
+          <a class="buy-btn" href="https://amzn.to/3WEGPyF" target="_blank" rel="noopener noreferrer sponsored">実際に使ってみる</a>
         </div>
       </div>
 
-      <!-- 4 -->
+      <!-- 4: くろもじミスト -->
       <div class="product">
-        <img src="images/daily_mist.jpg" alt="満月のくろもじミスト">
+        <img src="https://placehold.co/400x220/e0f9e0/306030?text=Kuromoji+Mist" alt="満月のくろもじミスト">
         <div class="product-content">
           <h3>【木露-mokutsuyu-】満月のくろもじミスト</h3>
           <p>満月の日に抽出された天然クロモジ精油の香り。除菌・消臭にも使える癒しのアロマスプレー。</p>
-          <a class="buy-btn" href="https://amzn.to/3LMSkSc" target="_blank">実際に使ってみる</a>
+          <a class="buy-btn" href="https://amzn.to/3LMSkSc" target="_blank" rel="noopener noreferrer sponsored">実際に使ってみる</a>
         </div>
       </div>
 
-      <!-- 5 -->
+      <!-- 5: バスソルト -->
       <div class="product">
-        <img src="images/refresh_bathsalt.jpg" alt="ROSE LABO ローズアロマバスソルト">
+        <img src="https://placehold.co/400x220/fbe0f7/60305f?text=Bath+Salt" alt="ROSE LABO ローズアロマバスソルト">
         <div class="product-content">
           <h3>【ROSE LABO】ローズアロマバスソルト</h3>
           <p>自家栽培の“食べられるバラ”を使用した贅沢な入浴剤。ミネラル豊富なピンク岩塩でしっとり肌に。</p>
-          <a class="buy-btn" href="https://amzn.to/498vE8U" target="_blank">実際に使ってみる</a>
+          <a class="buy-btn" href="https://amzn.to/498vE8U" target="_blank" rel="noopener noreferrer sponsored">実際に使ってみる</a>
         </div>
       </div>
 
-      <!-- 6 -->
+      <!-- 6: 能登ヒバミスト -->
       <div class="product">
-        <img src="images/refresh_spray.jpg" alt="深緑の能登ヒバミスト">
+        <img src="https://placehold.co/400x220/e0f0f9/305060?text=Hiba+Mist" alt="深緑の能登ヒバミスト">
         <div class="product-content">
           <h3>【木露-mokutsuyu-】深緑の能登ヒバミスト</h3>
           <p>天然ヒバ精油の木の香りで空間をリフレッシュ。防虫・除菌・消臭に使える万能アロマミスト。</p>
-          <a class="buy-btn" href="https://amzn.to/3JITJIP" target="_blank">実際に使ってみる</a>
+          <a class="buy-btn" href="https://amzn.to/3JITJIP" target="_blank" rel="noopener noreferrer sponsored">実際に使ってみる</a>
         </div>
       </div>
     </div>
 
-       <!-- シンプルなアフィリエイト紹介ボックス -->
-<div style="
-    text-align:center;
-    margin: 25px 0;
-    padding: 12px;
-    background: #fff8f8;
-    border: 1px solid #f7d4d4;
-    border-radius: 10px;
-    box-shadow: 0 2px 6px rgba(0,0,0,0.05);
-">
-    <p style="font-size: 14px; color:#555; margin-bottom:10px;">
+    <!-- シンプルなアフィリエイト紹介ボックス -->
+    <div style="
+      text-align:center;
+      margin: 25px auto;
+      max-width: 400px;
+      padding: 12px;
+      background: #fff8f8;
+      border: 1px solid #f7d4d4;
+      border-radius: 10px;
+      box-shadow: 0 2px 6px rgba(0,0,0,0.05);
+    ">
+      <p style="font-size: 14px; color:#555; margin-bottom:10px;">
         <strong>乾燥が気になる季節におすすめのケアアイテム</strong>
-    </p>
+      </p>
 
-    <a href="https://px.a8.net/svt/ejp?a8mat=45IB9B+J1WWQ+3NI6+60H7L" 
-       rel="nofollow sponsored" target="_blank">
+      <a href="https://px.a8.net/svt/ejp?a8mat=45IB9B+J1WWQ+3NI6+60H7L" 
+        rel="nofollow sponsored" target="_blank" rel="noopener noreferrer">
         <img 
-            src="https://www24.a8.net/svt/bgt?aid=251117183032&wid=002&eno=01&mid=s00000017043001010000&mc=1"
-            alt="おすすめアイテム"
-            width="120" height="60"
-            style="border-radius:6px; border:0;"
+          src="https://www24.a8.net/svt/bgt?aid=251117183032&wid=002&eno=01&mid=s00000017043001010000&mc=1"
+          alt="おすすめアイテム"
+          width="120" height="60"
+          style="border-radius:6px; border:0;"
+          onerror="this.onerror=null; this.src='https://placehold.co/120x60/f7d4d4/fff?text=A8+Banner';"
         >
-    </a>
+      </a>
 
-    <img border="0" width="1" height="1"
-         src="https://www16.a8.net/0.gif?a8mat=45IB9B+J1WWQ+3NI6+60H7L"
-         alt=""><br>
-    <a href="https://px.a8.net/svt/ejp?a8mat=45IB9B+J1WWQ+3NI6+61RIA" rel="nofollow">オウミニョンヌを試してみる！</a>
-<img border="0" width="1" height="1" src="https://www19.a8.net/0.gif?a8mat=45IB9B+J1WWQ+3NI6+61RIA" alt="">
-</div>
-    
+      <img border="0" width="1" height="1"
+        src="https://www16.a8.net/0.gif?a8mat=45IB9B+J1WWQ+3NI6+60H7L"
+        alt=""><br>
+      <a href="https://px.a8.net/svt/ejp?a8mat=45IB9B+J1WWQ+3NI6+61RIA" rel="nofollow sponsored" target="_blank" rel="noopener noreferrer">オウミニョンヌを試してみる！</a>
+      <img border="0" width="1" height="1" src="https://www19.a8.net/0.gif?a8mat=45IB9B+J1WWQ+3NI6+61RIA" alt="">
+    </div>
+      
     <div class="info-box">
-  冬のスキンケアは「保湿を守ること」と「冷えを防ぐこと」がポイント。  
-  こまめな保湿ケアに加えて、入浴やアロマを取り入れることで  
-  心も体もじんわり温まり、健やかな肌を保つことができます。  
-  あなたの冬が、少しでも心地よく過ごせますように。
-</div>
+      冬のスキンケアは「保湿を守ること」と「冷えを防ぐこと」がポイント。
+      こまめな保湿ケアに加えて、入浴やアロマを取り入れることで
+      心も体もじんわり温まり、健やかな肌を保つことができます。
+      あなたの冬が、少しでも心地よく過ごせますように。
+    </div>
 
-<!-- アフィリエイトリンク（中央寄せ） -->
-<div style="text-align:center; margin-top:40px;">
+    <!-- アフィリエイトリンク（中央寄せ） -->
+    <div style="text-align:center; margin-top:40px;">
 
-  <a href="https://px.a8.net/svt/ejp?a8mat=45I9PD+4HCIHM+37D2+609HT" 
-     target="_blank" rel="nofollow sponsored">
-    <img border="0" width="300" height="250"
-         alt="おすすめアイテム"
-         style="border-radius:14px; box-shadow:0 4px 15px rgba(0,0,0,0.15);"
-         src="https://www29.a8.net/svt/bgt?aid=251115169271&wid=002&eno=01&mid=s00000014951001009000&mc=1">
-  </a>
+      <a href="https://px.a8.net/svt/ejp?a8mat=45I9PD+4HCIHM+37D2+609HT" 
+        target="_blank" rel="nofollow sponsored noopener noreferrer">
+        <img border="0" width="300" height="250"
+          alt="おすすめアイテム"
+          style="border-radius:14px; box-shadow:0 4px 15px rgba(0,0,0,0.15);"
+          src="https://www29.a8.net/svt/bgt?aid=251115169271&wid=002&eno=01&mid=s00000014951001009000&mc=1"
+          onerror="this.onerror=null; this.src='https://placehold.co/300x250/f4f9fc/305060?text=A8+Banner';"
+          >
+      </a>
 
-  <img border="0" width="1" height="1" 
-       src="https://www19.a8.net/0.gif?a8mat=45I9PD+4HCIHM+37D2+609HT" alt="">
+      <img border="0" width="1" height="1" 
+        src="https://www19.a8.net/0.gif?a8mat=45I9PD+4HCIHM+37D2+609HT" alt="">
 
-  <p style="margin-top:15px; font-size:14px; color:#777;">
-    ※ 気になる方は今すぐチェックしてみてくださいね。
-  </p>
+      <p style="margin-top:15px; font-size:14px; color:#777;">
+        ※ 気になる方は今すぐチェックしてみてくださいね。
+      </p>
 
-</div>
-    
+    </div>
+      
     <div style="text-align:center;">
       <a href="index.html" class="back-btn">← トップページへ戻る</a>
     </div>
   </main>
-<div id="affiliateNotice">※当サイトはアフィリエイト広告を利用しています</div>
+  <div id="affiliateNotice">※当サイトはアフィリエイト広告を利用しています</div>
 
-  
+    
   <footer>© 2025 EssentialBeautyNeeds</footer>
 </body>
 </html>
