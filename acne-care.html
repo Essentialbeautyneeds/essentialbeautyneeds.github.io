@@ -10,7 +10,27 @@
     <meta name="description" content="20代女性のニキビや吹き出物におすすめのオーガニック洗顔・スキンケアを紹介。ビフォーアフター写真付きで効果を解説。">
     
     <link href="https://fonts.googleapis.com/css2?family=Playfair+Display:wght@600&family=Quicksand:wght@400;600&display=swap" rel="stylesheet">
- 
+ <script>
+  // internal_user クッキーが設定されているか確認
+  function isInternalUser() {
+    return document.cookie.split(';').some(c => c.trim().startsWith('internal_user=true'));
+  }
+
+  // internal_user クッキーがない場合だけ、GA4を読み込む
+  if (!isInternalUser()) {
+    var gaScript = document.createElement('script');
+    gaScript.async = true;
+    gaScript.src = "https://www.googletagmanager.com/gtag/js?id=G-2HGEPHVZYY";
+    document.head.appendChild(gaScript);
+
+    window.dataLayer = window.dataLayer || [];
+    function gtag(){dataLayer.push(arguments);}
+    gtag('js', new Date());
+    gtag('config', 'G-2HGEPHVZYY');
+  } else {
+    console.log('✅ Internal traffic excluded.');
+  }
+</script>
 <style>
 /* Reset & basic styling */
 body {
