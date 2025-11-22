@@ -1,4 +1,4 @@
 User-agent: *
 Allow: /
 
-Sitemap: https://essentialbeautyneeds.github.io/sitemap.xml
+Sitemap: https://essential-beauty-needs.com/sitemap.xml
