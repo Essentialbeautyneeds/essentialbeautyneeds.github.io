@@ -6,13 +6,10 @@ Affiliate Landing Page Template
 - Host on GitHub Pages / Netlify / Vercel / your server.
 - Do NOT publish affiliate links without reading each program's terms and including required disclosures.
 -->
-
-
 <!doctype html>
 <html lang="ja">
 <head>
   <meta charset="utf-8" />
-
   <!-- ============================ -->
 <!-- SEO & SNS Meta -->
 <!-- ============================ -->
@@ -25,8 +22,6 @@ Affiliate Landing Page Template
 <meta property="og:url" content="https://essentialbeautyneeds.github.io/essentialbeautyneeds/index.html">
 <meta property="og:locale" content="ja_JP">
 <meta property="og:site_name" content="Essential Beauty Needs">
-
-
 <meta name="twitter:card" content="summary_large_image">
 <meta name="twitter:title" content="季節別スキンケアのおすすめ | Essential Beauty Needs">
 <meta name="twitter:description" content="20代・30代女性向け。敏感肌・乾燥肌を自然の力で改善したい方へ。Essential Beauty Needsでは、専門家が厳選したオーガニック化粧品と季節別ケアのすべてを徹底解説。失敗しない美容液選びのコツも。">
@@ -34,7 +29,6 @@ Affiliate Landing Page Template
   
   <meta name="viewport" content="width=device-width,initial-scale=1" />
   <link rel="icon" href="favicon.ico" type="image/x-icon">
-
 <script type="application/ld+json">
 {
   "@context": "https://schema.org",
@@ -116,22 +110,18 @@ Affiliate Landing Page Template
   ]
 }
 </script>
-  
-
  <!-- Google Analytics 4 + internal traffic exclusion -->
 <script>
   // internal_user クッキーが設定されているか確認
   function isInternalUser() {
     return document.cookie.split(';').some(c => c.trim().startsWith('internal_user=true'));
   }
-
   // internal_user クッキーがない場合だけ、GA4を読み込む
   if (!isInternalUser()) {
     var gaScript = document.createElement('script');
     gaScript.async = true;
     gaScript.src = "https://www.googletagmanager.com/gtag/js?id=G-2HGEPHVZYY";
     document.head.appendChild(gaScript);
-
     window.dataLayer = window.dataLayer || [];
     function gtag(){dataLayer.push(arguments);}
     gtag('js', new Date());
@@ -140,16 +130,13 @@ Affiliate Landing Page Template
     console.log('✅ Internal traffic excluded.');
   }
 </script>
-  
-  <title>オーガニック・スキンケア専門 | 季節別・敏感肌対応の自然派美容情報</title>
+    <title>オーガニック・スキンケア専門 | 季節別・敏感肌対応の自然派美容情報</title>
 <meta name="description" content="Essential Beauty Needsは、オーガニック・スキンケアの情報サイト。季節別ケアや敏感肌向けおすすめ商品、自然派美容のコツを丁寧に解説します。">
 <meta name="keywords" content="オーガニック, スキンケア, 敏感肌, 自然派, 保湿, 化粧水, 美容液, ニキビケア">
 
   <link href="https://fonts.googleapis.com/css2?family=Playfair+Display:wght@600&family=Quicksand:wght@400;600&display=swap" rel="stylesheet">
-
   <link rel="canonical" href="https://essential-beauty-needs.com/index.html" />
-  
-  <style>
+    <style>
     :root{
       --bg:#fff8f8;
       --card:#ffffff;
@@ -217,8 +204,7 @@ Affiliate Landing Page Template
       .review-photo{width:90px;height:90px;}
       .article-block img{width:100%; margin-bottom:10px;}
     }
-    
-    #affiliateNotice {
+        #affiliateNotice {
     position: fixed;
     right: 12px;
     bottom: 12px;
@@ -230,11 +216,9 @@ Affiliate Landing Page Template
     box-shadow: 0 2px 6px rgba(0,0,0,0.1);
     z-index: 999;
   }
-    
   </style>
 </head>
-  
-<body>
+  <body>
  <header style="position:relative; text-align:center; background-image:url('images/header_rose.jpg'); background-size:cover; background-position:center; background-blend-mode:lighten; padding:80px 20px 50px; border-bottom:3px solid #e6b7b3;">
   <!-- 背景の半透明オーバーレイ -->
   <div style="position:absolute; top:0; left:0; right:0; bottom:0; background:rgba(255,255,255,0.6); backdrop-filter:blur(2px); z-index:1;"></div>
@@ -244,15 +228,12 @@ Affiliate Landing Page Template
     <h1 style="margin-bottom:10px; font-family:'Playfair Display',serif; font-size:38px; letter-spacing:1px;">
       <a href="index.html" style="text-decoration:none; color:#503535;">オーガニック・スキンケア専門 <br> 自然派美容とコスメのおすすめ情報</a>
     </h1>
-
     <!-- リード文 -->
     <p class="lead" style="font-size:17px; color:#5a4545; margin-bottom:25px;">
       心と肌にやさしい、自然派の贅沢ケアで美肌・アンチエイジング。
     </p>
-
   <!-- 中段：4つリンク -->
     <div style= "text-align:center; position:relative; font-color:#C71585;">
-      
       <nav style="margin-bottom:15px;">
         <a href="seasons-skin.html" class="nav-link">🌸 季節別スキンケア</a>
         <a href="age-skincare.html" class="nav-link">👩 40代・50代向け 肌質別スキンケア</a> <br><br>
@@ -265,7 +246,6 @@ Affiliate Landing Page Template
       <a href="skin-ranking.html" class="nav-link">✨ ランキング</a>
       <a href="beauty-column.html" class="nav-link">💄 ビューティーコラム</a>
     </nav>
-
     <!-- 冬のおすすめボタン -->
     <div class="special-link" style="margin-top:25px;">
       <a href="winter-selection.html" target="_blank"
@@ -276,7 +256,6 @@ Affiliate Landing Page Template
     </div>
   </div>
 </header>
-
 <style>
   .nav-link {
     display: inline-block;
@@ -294,7 +273,6 @@ Affiliate Landing Page Template
     color:#fff;
   }
 </style>
-
   <main class="container">
 <section class="organic-intro" style="max-width:900px;margin:40px auto;padding:20px;background:#fff4f4;border-radius:16px;text-align:center;box-shadow:0 4px 12px rgba(0,0,0,0.08);">
   <p style="font-size:16px;color:#503535;line-height:1.7;">
@@ -305,7 +283,6 @@ Affiliate Landing Page Template
 植物の生命力が肌のコンディションを整え、肌本来の再生力を引き出す“根本ケア” ができる点にあります。
   </p>
 </section>
-    
   <!-- ランキングセクションをここに追加 -->
   <section class="ranking-section" style="margin:60px 0; text-align:center;">
     <h2>✨ 人気スキンケアランキング Top3 ✨</h2>
@@ -318,19 +295,15 @@ Affiliate Landing Page Template
       </a>
     </p>
   </section>
-    
     <h2>おすすめのオーガニックコスメ商品</h2>
     <p>自然由来成分にこだわったオーガニックコスメを厳選。肌本来の美しさを引き出す人気商品をご紹介します。</p>
     <div class="grid" id="productGrid"></div>
     <br><br>
-
 <section class="organic-intro" style="max-width:900px;margin:40px auto;padding:20px;background:#fff4f4;border-radius:16px;text-align:center;box-shadow:0 4px 12px rgba(0,0,0,0.08);">
   <p style="font-size:16px;color:#503535;line-height:1.7;">
     <strong>オーガニックスキンケアがもたらす美容・アンチエイジング効果</strong><br><br>
-
 🍃植物由来成分はビタミン、ポリフェノール、必須脂肪酸などを豊富に含み<br>
     次のような効果を期待できます✨<br>
-    
 <div style="margin-left: 280px; text-align: left;">
    <ul> 
      <li>乾燥、肌荒れを防ぎバリア機能を高める</li>
@@ -348,7 +321,6 @@ Affiliate Landing Page Template
       </p>
   </div>
 </section>
-    
     <!-- 💬 レビュー -->
     <h2>実際に使った人のレビュー</h2>
     <section class="reviews">
@@ -367,7 +339,6 @@ Affiliate Landing Page Template
         </div>
       </div>
     </section>
-
 <section class="seasonal-section">
   <br><br>
   <h2>季節のおすすめ</h2>
@@ -385,29 +356,23 @@ Affiliate Landing Page Template
       </div>
     </a>
   </div>
-
 <nav style="margin-bottom:15px; text-align:center;">
-
   <a href="seasons-skin.html"
      style="display:inline-block; margin:6px 10px; text-decoration:none;">
      🌸 季節別スキンケア
   </a>
-
   <a href="beatuy-column.html"
      style="display:inline-block; margin:6px 10px; text-decoration:none;">
      🌹ビューティーコラム
   </a>
-
   <a href="age-skincare.html"
      style="display:inline-block; margin:6px 10px; text-decoration:none;">
      👩 40代・50代向け 肌質別スキンケア
   </a>
-
   <a href="acne-care.html"
      style="display:inline-block; margin:6px 10px; text-decoration:none;">
      🧴 ニキビ・敏感肌ケア
   </a>
-
   <a href="lifestyle-skincare.html"
      style="display:inline-block; margin:6px 10px; text-decoration:none;">
      💆‍♀️ 生活リズム別スキンケア
@@ -417,16 +382,12 @@ Affiliate Landing Page Template
      style="display:inline-block; margin:6px 10px; text-decoration:none;">
      ⛄ 冬のおすすめスキンケア
   </a>
-
 </nav>
-    
   <!-- 🌿 記事セクション -->
 <section class="article" style="text-align:center;">
-
   <br><br>
   <h2>オーガニックコスメを選ぶ理由：</h2>
   <br><br>
-
   <h3>自然由来成分のやさしさ</h3>
   <div class="article-block" 
        style="display:inline-block; text-align:left; max-width:500px; margin-bottom:30px;">
@@ -434,7 +395,6 @@ Affiliate Landing Page Template
          style="width:100%; border-radius:8px; margin-bottom:10px;">
     <p>自然由来の原料を使用することで、肌への刺激を最小限に。敏感肌でも安心して使えるのが魅力です。</p>
   </div>
-
   <h3>高い保湿力とハリのサポート</h3>
   <div class="article-block" 
        style="display:inline-block; text-align:left; max-width:500px; margin-bottom:30px;">
@@ -442,7 +402,6 @@ Affiliate Landing Page Template
          style="width:100%; border-radius:8px; margin-bottom:10px;">
     <p>オーガニック成分には抗酸化作用があり、肌のハリと潤いをキープ。日々のケアに欠かせません。</p>
   </div>
-
   <h3>体と環境へのやさしさ</h3>
   <div class="article-block" 
        style="display:inline-block; text-align:left; max-width:500px; margin-bottom:30px;">
@@ -450,49 +409,34 @@ Affiliate Landing Page Template
          style="width:100%; border-radius:8px; margin-bottom:10px;">
     <p>化学成分を控えた製品は、肌への負担が少なく、環境にも配慮されています。</p>
   </div>
-
 </section>
-  
   <section class="section-alt">
     <div class="container">
       <h2 style="text-align:center;" >おすすめオーガニックケアアイテム</h2>
       <div class="grid" id="careGrid"></div>
     </div>
   </section>
-
-
 <div style="text-align:center; margin:20px 0;">
-
   <a href="https://px.a8.net/svt/ejp?a8mat=45I9PD+448Z6I+51ZO+1NJZN5" rel="nofollow sponsored">
     <img border="0" width="100" height="60" alt="" src="https://www26.a8.net/svt/bgt?aid=251115169249&wid=002&eno=01&mid=s00000023586010003000&mc=1">
   </a>
   <img border="0" width="1" height="1" src="https://www10.a8.net/0.gif?a8mat=45I9PD+448Z6I+51ZO+1NJZN5" alt="">
-
   <br><br>
-
   <a href="https://px.a8.net/svt/ejp?a8mat=45I9PD+4HXY3E+51ZO+1HLVB5" rel="nofollow sponsored">
     <img border="0" width="468" height="60" alt="" src="https://www21.a8.net/svt/bgt?aid=251115169272&wid=002&eno=01&mid=s00000023586009004000&mc=1">
   </a>
   <img border="0" width="1" height="1" src="https://www16.a8.net/0.gif?a8mat=45I9PD+4HXY3E+51ZO+1HLVB5" alt="">
-
 </div>
-  
 <!-- Back buttons -->
 <!-- 🌿 Related links section -->
 <section class="related-links-section" style="text-align:center; margin:50px 0;">
-  
   <a href="seasons-skin.html" class="nav-btn">🌸 季節別スキンケア</a>
   <a href="beauty-column.html" class="nav-btn">💄 ビューティーコラム</a>
-
 </section>
-
 <!-- Back to top -->
 <div class="nav-btn" style="margin-top:20px; text-align:center;">
   <a href="#">⬆ ページトップへ</a>
 </div>
-
-
-
 <style>
 /* 下部ボタン専用スタイル */
 .related-links-section .nav-btn {
@@ -508,13 +452,11 @@ Affiliate Landing Page Template
   box-shadow: 0 4px 12px rgba(0,0,0,0.15);
   transition: all 0.3s ease;
 }
-
 .related-links-section .nav-btn:hover {
   background: linear-gradient(45deg, #f48b8b, #f26a6a);
   transform: translateY(-3px);
   box-shadow: 0 6px 20px rgba(0,0,0,0.25);
 }
-
 @media(max-width:600px){
   .related-links-section .nav-btn {
     display: block;
@@ -524,12 +466,10 @@ Affiliate Landing Page Template
   }
 }
 </style>
-  
 <!-- Footer -->
 <footer style="text-align:center; margin-top:40px; font-size:13px; color:#888;">
   © 2025 EssentialBeautyNeeds
 </footer>
-
   <script>
     const PRODUCTS=[
       {title:'N Organic Basic',desc:'自然由来成分で配合したスキンケア。',img:'images/skin1.jpg',aff:'https://amzn.to/479cQEZ'},
@@ -541,7 +481,6 @@ Affiliate Landing Page Template
       {title:'Fafra Organic Hand Cream',desc:'植物由来成分91％配合のハンドケア。',img:'images/hand1.jpg',aff:'https://amzn.to/4hr6WCw'},
       {title:'N Organic Vie アイクリーム',desc:'目元に弾力を与える植物由来クリーム。',img:'images/eye1.jpg',aff:'https://amzn.to/4oJeiUA'}
     ];
-
     function renderGrid(items,id){
       const grid=document.getElementById(id);
       items.forEach(p=>{
@@ -556,10 +495,8 @@ Affiliate Landing Page Template
         grid.appendChild(card);
       });
     }
-
     renderGrid(PRODUCTS,'productGrid');
     renderGrid(CARES,'careGrid');
-
     document.querySelectorAll('.review-card').forEach(card=>{
       const obs=new IntersectionObserver((entries)=>{
         entries.forEach(e=>{
@@ -576,7 +513,6 @@ const RANKINGS = [
   {title:'N Organic Basic スキンケアセット', img:'images/sensitive2.jpg', aff:'https://amzn.to/49aTcd9', rank:2},
   {title:'ai 天然藍スキンケア', img:'images/sensitive3.jpg', aff:'https://amzn.to/4nPYQVQ', rank:3}
 ];
-
 function renderRanking(items){
   const grid = document.getElementById('rankingGrid');
   items.forEach(item=>{
@@ -590,10 +526,7 @@ function renderRanking(items){
     grid.appendChild(card);
   });
 }
-
 renderRanking(RANKINGS);
 </script>
 </body>
 </html>
-
-
