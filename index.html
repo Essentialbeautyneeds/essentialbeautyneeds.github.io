@@ -40,11 +40,12 @@ Affiliate Landing Page Template
   "@context": "https://schema.org",
   "@type": "WebSite",
   "name": "Essential Beauty Needs",
-  "url": "https://essential-beauty-needs.com/index.html", 
+  "url": "https://essential-beauty-needs.com/index.html",
   /* 💡 URLを他のスキーマと統一 */
   "potentialAction": {
     "@type": "SearchAction",
     "target": "https://essential-beauty-needs.com/?s={search_term_string}",
+    /* 💡 SearchActionのtargetもドメインを統一 */
     "query-input": "required name=search_term_string"
   }
 }
@@ -52,75 +53,72 @@ Affiliate Landing Page Template
 
 <script type="application/ld+json">
 {
-  "@context": "https://schema.org",
-  "@type": "BreadcrumbList",
-  "itemListElement": [
-    {
-      "@type": "ListItem",
-      "position": 1,
-      "name": "ホーム",
-      "item": "https://essentialbeautyneeds.github.io/essentialbeautyneeds/index.html"
-    }
-  ]
+  "@context": "https://schema.org",
+  "@type": "BreadcrumbList",
+  "itemListElement": [
+    {
+      "@type": "ListItem",
+      "position": 1,
+      "name": "ホーム",
+      "item": "https://essential-beauty-needs.com/index.html"
+      /* 💡 新しいドメインに統一 */
+    }
+  ]
 }
 </script>
-
-HTML
 
 
 
 <script type="application/ld+json">
 {
   "@context": "https://schema.org",
-  "@type": "ItemList",
+  "@type": "OfferCatalog", 
+  /* 💡 OfferCatalogに変更することでカルーセル警告を回避 */
   "name": "人気スキンケアランキング Top3",
+  "url": "https://essential-beauty-needs.com/index.html",
+  "image": "https://essential-beauty-needs.com/images/header_rose.jpg",
+  "numberOfItems": 3,
   "itemListElement": [
     {
-      "@type": "ListItem",
-      "position": 1,
-      "item": {
+      "@type": "Offer", /* 💡 ItemListのOffer Catalog内のアイテム */
+      "itemOffered": {
         "@type": "Product",
         "name": "オルナ オーガニック スキンケアセット",
         "url": "https://essential-beauty-needs.com/index.html",
-        "image": "images/sensitive1.jpg",
-        "description": "敏感肌・乾燥肌向け。自然由来成分90%以上配合のスキンケアセット。",
-        "aggregateRating": {
-          "@type": "AggregateRating",
-          "ratingValue": "4.9",
-          "reviewCount": "120"
-        }
+        "image": "images/sensitive1.jpg"
+      },
+      "aggregateRating": {
+        "@type": "AggregateRating",
+        "ratingValue": "4.9",
+        "reviewCount": "120"
       }
     },
     {
-      "@type": "ListItem",
-      "position": 2,
-      "item": {
+      "@type": "Offer",
+      "itemOffered": {
         "@type": "Product",
         "name": "N Organic Basic スキンケアセット",
         "url": "https://essential-beauty-needs.com/index.html",
-        "image": "images/sensitive2.jpg",
-        "description": "話題のN Organic。肌のゆらぎを整え、潤いをキープ。",
-        "aggregateRating": {
-          "@type": "AggregateRating",
-          "ratingValue": "4.7",
-          "reviewCount": "95"
-        }
+        "image": "images/sensitive2.jpg"
+      },
+      "aggregateRating": {
+        "@type": "AggregateRating",
+        "ratingValue": "4.7",
+        "reviewCount": "95"
       }
     },
     {
-      "@type": "ListItem",
-      "position": 3,
-      "item": {
+      "@type": "Offer",
+      "itemOffered": {
         "@type": "Product",
         "name": "ai 天然藍スキンケア",
         "url": "https://essential-beauty-needs.com/index.html",
-        "image": "images/sensitive3.jpg",
-        "description": "天然藍を使用。特にニキビ・肌荒れケアに特化したスキンケア。",
-        "aggregateRating": {
-          "@type": "AggregateRating",
-          "ratingValue": "4.6",
-          "reviewCount": "88"
-        }
+        "image": "images/sensitive3.jpg"
+      },
+      "aggregateRating": {
+        "@type": "AggregateRating",
+        "ratingValue": "4.6",
+        "reviewCount": "88"
       }
     }
   ]
@@ -605,6 +603,7 @@ renderRanking(RANKINGS);
 </script>
 </body>
 </html>
+
 
 
 
