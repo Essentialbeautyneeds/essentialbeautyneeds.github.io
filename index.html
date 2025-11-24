@@ -41,11 +41,9 @@ Affiliate Landing Page Template
   "@type": "WebSite",
   "name": "Essential Beauty Needs",
   "url": "https://essential-beauty-needs.com/index.html",
-  /* 💡 URLを他のスキーマと統一 */
   "potentialAction": {
     "@type": "SearchAction",
     "target": "https://essential-beauty-needs.com/?s={search_term_string}",
-    /* 💡 SearchActionのtargetもドメインを統一 */
     "query-input": "required name=search_term_string"
   }
 }
@@ -61,7 +59,6 @@ Affiliate Landing Page Template
       "position": 1,
       "name": "ホーム",
       "item": "https://essential-beauty-needs.com/index.html"
-      /* 💡 新しいドメインに統一 */
     }
   ]
 }
@@ -71,57 +68,56 @@ Affiliate Landing Page Template
 
 <script type="application/ld+json">
 {
-  "@context": "https://schema.org",
-  "@type": "OfferCatalog", 
-  /* 💡 OfferCatalogに変更することでカルーセル警告を回避 */
-  "name": "人気スキンケアランキング Top3",
-  "url": "https://essential-beauty-needs.com/index.html",
-  "image": "https://essential-beauty-needs.com/images/header_rose.jpg",
-  "numberOfItems": 3,
-  "itemListElement": [
-    {
-      "@type": "Offer", /* 💡 ItemListのOffer Catalog内のアイテム */
-      "itemOffered": {
-        "@type": "Product",
-        "name": "オルナ オーガニック スキンケアセット",
-        "url": "https://essential-beauty-needs.com/index.html",
-        "image": "images/sensitive1.jpg"
-      },
-      "aggregateRating": {
-        "@type": "AggregateRating",
-        "ratingValue": "4.9",
-        "reviewCount": "120"
-      }
-    },
-    {
-      "@type": "Offer",
-      "itemOffered": {
-        "@type": "Product",
-        "name": "N Organic Basic スキンケアセット",
-        "url": "https://essential-beauty-needs.com/index.html",
-        "image": "images/sensitive2.jpg"
-      },
-      "aggregateRating": {
-        "@type": "AggregateRating",
-        "ratingValue": "4.7",
-        "reviewCount": "95"
-      }
-    },
-    {
-      "@type": "Offer",
-      "itemOffered": {
-        "@type": "Product",
-        "name": "ai 天然藍スキンケア",
-        "url": "https://essential-beauty-needs.com/index.html",
-        "image": "images/sensitive3.jpg"
-      },
-      "aggregateRating": {
-        "@type": "AggregateRating",
-        "ratingValue": "4.6",
-        "reviewCount": "88"
-      }
-    }
-  ]
+  "@context": "https://schema.org",
+  "@type": "OfferCatalog",
+  "name": "人気スキンケアランキング Top3",
+  "url": "https://essential-beauty-needs.com/index.html",
+  "image": "https://essential-beauty-needs.com/images/header_rose.jpg",
+  "numberOfItems": 3,
+  "itemListElement": [
+    {
+      "@type": "Offer",
+      "itemOffered": {
+        "@type": "Product",
+        "name": "オルナ オーガニック スキンケアセット",
+        "url": "https://essential-beauty-needs.com/index.html",
+        "image": "images/sensitive1.jpg"
+      },
+      "aggregateRating": {
+        "@type": "AggregateRating",
+        "ratingValue": "4.9",
+        "reviewCount": "120"
+      }
+    },
+    {
+      "@type": "Offer",
+      "itemOffered": {
+        "@type": "Product",
+        "name": "N Organic Basic スキンケアセット",
+        "url": "https://essential-beauty-needs.com/index.html",
+        "image": "images/sensitive2.jpg"
+      },
+      "aggregateRating": {
+        "@type": "AggregateRating",
+        "ratingValue": "4.7",
+        "reviewCount": "95"
+      }
+    },
+    {
+      "@type": "Offer",
+      "itemOffered": {
+        "@type": "Product",
+        "name": "ai 天然藍スキンケア",
+        "url": "https://essential-beauty-needs.com/index.html",
+        "image": "images/sensitive3.jpg"
+      },
+      "aggregateRating": {
+        "@type": "AggregateRating",
+        "ratingValue": "4.6",
+        "reviewCount": "88"
+      }
+    }
+  ]
 }
 </script>
   
@@ -603,6 +599,7 @@ renderRanking(RANKINGS);
 </script>
 </body>
 </html>
+
 
 
 
