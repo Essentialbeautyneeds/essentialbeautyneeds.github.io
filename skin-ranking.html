@@ -1,32 +1,110 @@
 <!doctype html>
 <html lang="ja">
 <head>
-  <meta charset="utf-8" />
-  <meta name="viewport" content="width=device-width,initial-scale=1" />
-  <title>スキンケアランキング | Essential Beauty Needs</title>
-  <meta name="description" content="敏感肌・コスパ・アンチエイジング別のおすすめスキンケアランキング。オーガニックコスメ中心に紹介。">
-  <meta name="keywords" content="スキンケアランキング, 敏感肌, コスパ, アンチエイジング, オーガニック, 美容">
-  <link href="https://fonts.googleapis.com/css2?family=Quicksand:wght@400;600&family=Playfair+Display:wght@600&display=swap" rel="stylesheet">
+  <meta charset="utf-8" />
+  <meta name="viewport" content="width=device-width,initial-scale=1" />
+  <title>スキンケアランキング | Essential Beauty Needs</title>
+  <meta name="description" content="敏感肌・コスパ・アンチエイジング別のおすすめスキンケアランキング。オーガニックコスメ中心に紹介。">
+  <meta name="keywords" content="スキンケアランキング, 敏感肌, コスパ, アンチエイジング, オーガニック, 美容">
+  <link href="https://fonts.googleapis.com/css2?family=Quicksand:wght@400;600&family=Playfair+Display:wght@600&display=swap" rel="stylesheet">
+  <link rel="canonical" href="https://essential-beauty-needs.com/skin-ranking.html" />
 
-<link rel="canonical" href="https://essential-beauty-needs.com/skin-ranking.html" />
 <script type="application/ld+json">
 {
   "@context": "https://schema.org",
-  "@type": "OfferCatalog",
+  "@type": "ItemList",
   "name": "スキンケア人気ランキング",
   "url": "https://essential-beauty-needs.com/skin-ranking.html",
-  "image": "images/header_rose.jpg",
   "numberOfItems": 9,
   "itemListElement": [
     {
-      "@type": "Offer",
-      "itemOffered": {
+      "@type": "ListItem",
+      "position": 1,
+      "item": {
         "@type": "Product",
-        "name": "オルナ オーガニック 化粧水 乳液 美容液 3点セット",
-        "url": "https://amzn.to/47Kdjwq",
+        "name": "オルナ オーガニック 3点セット",
         "image": "images/sensitive1.jpg",
-        "offers": { "@type": "Offer", "priceCurrency": "JPY", "price": "3490" },
-        "aggregateRating": { "@type": "AggregateRating", "ratingValue": "4.8", "reviewCount": "95" }
+        "url": "https://amzn.to/47Kdjwq"
+      }
+    },
+    {
+      "@type": "ListItem",
+      "position": 2,
+      "item": {
+        "@type": "Product",
+        "name": "N organic Basic スキンケアセット",
+        "image": "images/sensitive2.jpg",
+        "url": "https://amzn.to/49aTcd9"
+      }
+    },
+    {
+      "@type": "ListItem",
+      "position": 3,
+      "item": {
+        "@type": "Product",
+        "name": "ai 天然藍スキンケア",
+        "image": "images/sensitive3.jpg",
+        "url": "https://amzn.to/4nPYQVQ"
+      }
+    },
+    {
+      "@type": "ListItem",
+      "position": 4,
+      "item": {
+        "@type": "Product",
+        "name": "オルナ オーガニック 化粧水",
+        "image": "images/costp1.jpg",
+        "url": "https://amzn.to/4qO3beD"
+      }
+    },
+    {
+      "@type": "ListItem",
+      "position": 5,
+      "item": {
+        "@type": "Product",
+        "name": "ドクターブロナー オーガニックバーム",
+        "image": "images/costp2.jpg",
+        "url": "https://amzn.to/4qPyoOB"
+      }
+    },
+    {
+      "@type": "ListItem",
+      "position": 6,
+      "item": {
+        "@type": "Product",
+        "name": "アンレーベル モイストボタニカル",
+        "image": "images/costp3.jpg",
+        "url": "https://amzn.to/47CHJR2"
+      }
+    },
+    {
+      "@type": "ListItem",
+      "position": 7,
+      "item": {
+        "@type": "Product",
+        "name": "ミューノアージュ セット",
+        "image": "images/antiage1.jpg",
+        "url": "https://amzn.to/3Lv7LhZ"
+      }
+    },
+    {
+      "@type": "ListItem",
+      "position": 8,
+      "item": {
+        "@type": "Product",
+        "name": "マニフィーク オールインワン",
+        "image": "images/antiage2.jpg",
+        "url": "https://amzn.to/3JEvY4Q"
+      }
+    },
+    {
+      "@type": "ListItem",
+      "position": 9,
+      "item": {
+        "@type": "Product",
+        "name": "N organic Plenum クリーム",
+        "image": "images/antiage3.jpg",
+        "url": "https://amzn.to/47INaOr"
       }
     }
   ]
@@ -34,353 +112,393 @@
 </script>
 
 <script>
-  // internal_user クッキーが設定されているか確認
-  function isInternalUser() {
-    return document.cookie.split(';').some(c => c.trim().startsWith('internal_user=true'));
-  }
-
-  // internal_user クッキーがない場合だけ、GA4を読み込む
-  if (!isInternalUser()) {
-    var gaScript = document.createElement('script');
-    gaScript.async = true;
-    gaScript.src = "https://www.googletagmanager.com/gtag/js?id=G-2HGEPHVZYY";
-    document.head.appendChild(gaScript);
-
-    window.dataLayer = window.dataLayer || [];
-    function gtag(){dataLayer.push(arguments);}
-    gtag('js', new Date());
-    gtag('config', 'G-2HGEPHVZYY');
-  } else {
-    console.log('✅ Internal traffic excluded.');
-  }
+  function isInternalUser() {
+    return document.cookie.split(';').some(c => c.trim().startsWith('internal_user=true'));
+  }
+  if (!isInternalUser()) {
+    var gaScript = document.createElement('script');
+    gaScript.async = true;
+    gaScript.src = "https://www.googletagmanager.com/gtag/js?id=G-2HGEPHVZYY";
+    document.head.appendChild(gaScript);
+    window.dataLayer = window.dataLayer || [];
+    function gtag(){dataLayer.push(arguments);}
+    gtag('js', new Date());
+    gtag('config', 'G-2HGEPHVZYY');
+  }
 </script>
-<style>
-  body {
-      font-family:'Quicksand',sans-serif;
-      margin:0;
-      background:#fffaf9;
-      color:#444;
-    }
-    header {
-      background:linear-gradient(90deg,#f8dcdc,#fbeaea);
-      text-align:center;
-      padding:60px 20px;
-      color:#503535;
-    }
-    header h1 {
-      font-family:'Playfair Display',serif;
-      font-size:38px;
-      margin:0;
-      color:#d6336c;
-    }
-    header p {
-      font-size:17px;
-      margin-top:10px;
-      color:#503535;
-      font-weight:600;
-    }
-    main {
-      max-width:1000px;
-      margin:40px auto;
-      padding:0 20px;
-    }
-    h2 {
-      font-family:'Playfair Display',serif;
-      color:#503535;
-      font-size:28px;
-      text-align:center;
-      margin-top:50px;
-    }
 
-    /* ランキング共通 */
+<style>
+  :root {
+    --bg: #fffaf9;
+    --text-main: #503535;
+    --accent: #f48b8b;
+    --header-grad-start: #f8dcdc;
+    --header-grad-end: #fbeaea;
+  }
+  
+  *, *::before, *::after { box-sizing: border-box; }
+
+  body {
+    font-family: 'Quicksand', sans-serif;
+    margin: 0;
+    background: var(--bg);
+    color: #444;
+  }
+
+  header {
+    background: linear-gradient(90deg, var(--header-grad-start), var(--header-grad-end));
+    text-align: center;
+    padding: 60px 20px;
+    color: var(--text-main);
+    border-bottom: 3px solid #e6b7b3;
+  }
+  header h1 {
+    font-family: 'Playfair Display', serif;
+    font-size: 38px;
+    margin: 0;
+    color: #d6336c;
+    text-shadow: 1px 1px 2px rgba(255,255,255,0.8);
+  }
+  header p {
+    font-size: 17px;
+    margin-top: 10px;
+    color: var(--text-main);
+    font-weight: 600;
+  }
+
+  /* ナビゲーションボタン */
+  .nav-btn {
+    display: inline-block;
+    margin: 6px 10px;
+    padding: 10px 22px;
+    background: linear-gradient(45deg, #4a6fa5, #6aa8d4);
+    color: #fff;
+    border-radius: 30px;
+    text-decoration: none;
+    font-weight: 600;
+    transition: all .3s ease;
+    box-shadow: 0 4px 10px rgba(0,0,0,0.1);
+  }
+  .nav-btn:hover {
+    transform: translateY(-2px);
+    box-shadow: 0 6px 15px rgba(0,0,0,0.15);
+    opacity: 0.9;
+  }
+
+  main {
+    max-width: 1000px;
+    margin: 40px auto;
+    padding: 0 20px;
+  }
+
+  h2 {
+    font-family: 'Playfair Display', serif;
+    color: var(--text-main);
+    font-size: 28px;
+    text-align: center;
+    margin-top: 60px;
+    margin-bottom: 20px;
+    position: relative;
+  }
+  h2::after {
+    content: "";
+    display: block;
+    width: 60px;
+    height: 3px;
+    background: var(--accent);
+    margin: 10px auto 0;
+  }
+
+  /* ランキングカード */
+  .ranking {
+    display: flex;
+    justify-content: space-between;
+    gap: 20px;
+    margin-top: 25px;
+    flex-wrap: wrap;
+  }
+  .ranking .item {
+    width: 31%; /* 3列 */
+    background: #fff;
+    border: 2px solid #fceeee;
+    border-radius: 16px;
+    padding: 20px 15px;
+    text-align: center;
+    position: relative;
+    transition: transform .3s ease, box-shadow .3s ease;
+    box-shadow: 0 5px 15px rgba(0,0,0,0.05);
+  }
+  .ranking .item:hover {
+    transform: translateY(-5px);
+    box-shadow: 0 8px 25px rgba(0,0,0,0.1);
+    border-color: var(--accent);
+  }
+  .ranking .item img {
+    width: 100%;
+    height: auto;
+    border-radius: 10px;
+    margin-bottom: 12px;
+    object-fit: cover;
+  }
+  
+  /* 商品情報テキスト */
+  .item-title {
+    font-weight: bold;
+    color: #333;
+    margin-bottom: 8px;
+    min-height: 48px; /* 高さ揃え */
+    display: flex;
+    align-items: center;
+    justify-content: center;
+  }
+  .item-desc {
+    font-size: 13px;
+    color: #666;
+    margin-bottom: 8px;
+    background: #f9f9f9;
+    padding: 4px;
+    border-radius: 4px;
+    display: inline-block;
+  }
+  .item-price {
+    font-size: 18px;
+    color: #d6336c;
+    font-weight: bold;
+    margin: 10px 0 15px;
+  }
+
+  /* Amazonボタン */
+  .amazon-btn {
+    display: inline-block;
+    width: 100%;
+    background: linear-gradient(45deg, #f48b8b, #f7a8a8);
+    color: #fff;
+    padding: 12px;
+    border-radius: 30px;
+    text-decoration: none;
+    font-weight: 600;
+    transition: all .3s ease;
+    box-shadow: 0 4px 10px rgba(244, 139, 139, 0.4);
+  }
+  .amazon-btn:hover {
+    background: linear-gradient(45deg, #f26a6a, #f48b8b);
+    transform: translateY(-2px);
+    box-shadow: 0 6px 15px rgba(244, 139, 139, 0.6);
+  }
+  .amazon-btn::after {
+    content: " ➔";
+    font-size: 0.9em;
+  }
+
+  /* 順位バッジ */
+  .badge {
+    position: absolute;
+    top: -10px;
+    left: -10px;
+    background: #ff6b6b;
+    color: #fff;
+    padding: 8px 16px;
+    border-radius: 20px;
+    font-weight: bold;
+    font-size: 16px;
+    box-shadow: 0 3px 8px rgba(0,0,0,0.2);
+    z-index: 10;
+  }
+  /* 1位だけ金色にするなど */
+  .badge.rank1 { background: linear-gradient(45deg, #FFD700, #FDB931); }
+
+  /* レスポンシブ */
+  @media(max-width: 700px){
     .ranking {
-      display: flex;
-      justify-content: space-between;
-      gap: 15px;
-      margin-top: 25px;
-      flex-wrap: wrap;
+      flex-direction: column;
+      align-items: center;
     }
     .ranking .item {
-      width: 30%;
-      background: #fff1f1;
-      border: 2px solid #f4b5b5;
-      border-radius: 14px;
-      padding: 12px;
-      text-align: center;
-      position: relative;
-      transition: transform .3s ease, box-shadow .3s ease;
-    }
-    .ranking .item img {
       width: 100%;
-      border-radius: 10px;
-      margin-bottom:12px;
+      max-width: 400px;
+      margin-bottom: 20px;
     }
-    .ranking .item a {
-      display:inline-block;
-      margin-top:8px;
-      background:linear-gradient(45deg,#f48b8b,#f7a8a8);
-      color:#fff;
-      padding:10px 18px;
-      border-radius:30px;
-      text-decoration:none;
-      font-weight:600;
-      transition: all .3s ease;
-    }
-    .ranking .item a:hover {
-      transform:translateY(-3px);
-      background:linear-gradient(45deg,#f26a6a,#f48b8b);
-    }
-    .ranking .item:hover {
-      transform: translateY(-5px);
-      box-shadow: 0 6px 20px rgba(0,0,0,0.15);
-    }
-
-    /* 順位バッジ */
-    .badge {
-      position: absolute;
-      top: -10px;
-      left: -10px;
-      background: #ff6b6b;
-      color: #fff;
-      padding: 6px 12px;
-      border-radius: 20px;
-      font-weight: bold;
-      font-size: 14px;
-      box-shadow: 0 3px 8px rgba(0,0,0,0.2);
-    }
-
-    /* レスポンシブ */
-    @media(max-width: 700px){
-      .ranking {
-        flex-direction: column;
-        align-items: center;
-      }
-      .ranking .item {
-        width: 100%;
-      }
-    }
-
-    footer {
-      text-align:center;
-      color:#777;
-      font-size:13px;
-      margin:60px 0;
-    }
-    .note {
-      margin-top:30px;
-      font-size:11px;
-      color:#555;
-      text-align:center;
-    }
-    .back-btn {
-      text-align:center;
-      margin:50px 0;
-    }
-    .back-btn a {
-      display:inline-block;
-      background:#f48b8b;
-      color:#fff;
-      padding:12px 28px;
-      border-radius:30px;
-      text-decoration:none;
-      font-weight:600;
-      box-shadow:0 4px 12px rgba(0,0,0,0.15);
-      transition:all .3s ease;
-    }
-    .back-btn a:hover {
-      transform:translateY(-3px);
-    }
-
-    /* 全体に border と padding を幅に含める */
-*,
-*::before,
-*::after {
-  box-sizing: border-box;
-}
-
-.ranking,
-.ranking-top3 {
-  display: flex;
-  justify-content: space-between; /* 3列均等に並べる */
-  gap: 20px; /* 列間の余白 */
-  flex-wrap: wrap;
-  margin-top: 25px;
-}
-
-.ranking .item,
-.ranking-top3 .item {
-  width: 30%; /* 3列の基本幅 */
-  background: #fff1f1;
-  border: 2px solid #f4b5b5;
-  border-radius: 14px;
-  padding: 12px;
-  text-align: center;
-  position: relative;
-}
-
-@media(max-width: 700px){
-  .ranking,
-  .ranking-top3 {
-    flex-direction: column;
-    align-items: center;
+    header h1 { font-size: 28px; }
   }
-  .ranking .item,
-  .ranking-top3 .item {
-    width: 100%;
+
+  footer {
+    text-align: center;
+    color: #777;
+    font-size: 13px;
+    margin: 60px 0;
+    border-top: 1px solid #eee;
+    padding-top: 40px;
   }
-}
-  </style>
+  .note {
+    margin-top: 30px;
+    font-size: 11px;
+    color: #888;
+    text-align: center;
+    background: #f9f9f9;
+    padding: 10px;
+    border-radius: 8px;
+  }
+  .back-btn { text-align: center; margin: 50px 0; }
+  .back-btn a {
+    color: #777;
+    text-decoration: none;
+    border-bottom: 1px solid #ccc;
+    padding-bottom: 2px;
+  }
+</style>
 </head>
 <body>
 
 <header>
   <h1>💖 スキンケアランキング</h1>
-  <p>敏感肌・コスパ・アンチエイジング別に<br>おすすめアイテムを元気いっぱいにご紹介！</p>
+  <p>敏感肌・コスパ・アンチエイジング別に<br>おすすめアイテムを厳選しました！</p>
 </header>
-<!-- ナビゲーションリンク -->
-<nav style="margin-top:25px; text-align:center;">
-  <a href="seasons-skin.html"
-     style="display:inline-block; margin:0 12px; padding:10px 22px; background:linear-gradient(45deg,#4a6fa5,#6aa8d4); color:#fff; border-radius:30px; text-decoration:none; font-weight:600; transition:all .3s ease;">
-    🌸 季節別スキンケア
-  </a>
-  
-  <a href="age-skincare.html"
-     style="display:inline-block; margin:0 12px; padding:10px 22px; background:linear-gradient(45deg,#4a6fa5,#6aa8d4); color:#fff; border-radius:30px; text-decoration:none; font-weight:600; transition:all .3s ease;">
-    👩 40代・50代向け 肌質別スキンケア
-  </a>
 
-  <br><br>
-  
-  <a href="acne-care.html"
-     style="display:inline-block; margin:0 12px; padding:10px 22px; background:linear-gradient(45deg,#4a6fa5,#6aa8d4); color:#fff; border-radius:30px; text-decoration:none; font-weight:600; transition:all .3s ease;">
-    🧴 ニキビ・敏感肌ケア
-  </a>
-  <a href="lifestyle-skincare.html"
-     style="display:inline-block; margin:0 12px; padding:10px 22px; background:linear-gradient(45deg,#4a6fa5,#6aa8d4); color:#fff; border-radius:30px; text-decoration:none; font-weight:600; transition:all .3s ease;">
-    💆‍♀️ 生活リズム別スキンケア
-  </a>
-  <a href="index.html"
-     style="display:inline-block; margin:0 12px; padding:10px 22px; background:linear-gradient(45deg,#4a6fa5,#6aa8d4); color:#fff; border-radius:30px; text-decoration:none; font-weight:600; transition:all .3s ease;">
-    🏠 トップに戻る
-  </a>
+<nav style="margin-top:30px; text-align:center;">
+  <a href="seasons-skin.html" class="nav-btn">🌸 季節別ケア</a>
+  <a href="age-skincare.html" class="nav-btn">👩 年代・肌質別</a>
+  <br class="sp-only">
+  <a href="acne-care.html" class="nav-btn">🧴 悩み別ケア</a>
+  <a href="index.html" class="nav-btn" style="background: linear-gradient(45deg, #888, #aaa);">🏠 トップへ</a>
 </nav>
 
 <main>
-  <p style="text-align:center;">今現在流行中で、当サイトがおすすめするオーガニックスキンケアアイテムをピックアップしました。</p>
-  <p style="text-align:center;">各ジャンルごとにランキング形式でご紹介していますので、あなたに合ったアイテムがきっと見つかります。</p>
-  <p style="text-align:center;">人気の商品画像とリンクから、すぐに詳細をチェックできます！</p>
+  <p style="text-align:center; margin-top:30px;">
+    自然派スキンケアの専門家が選んだ、今使うべきアイテム。<br>
+    画像をクリックするとAmazonの詳細ページへ移動します。
+  </p>
   
-  <!-- 敏感肌ランキング -->
   <section>
-    <h2>敏感肌ランキング Top3</h2>
+    <h2>🌿 敏感肌ランキング</h2>
+    <div class="ranking">
+      
+      <div class="item">
+        <span class="badge rank1">1位</span>
+        <a href="https://amzn.to/47Kdjwq" target="_blank" rel="nofollow sponsored">
+            <img src="images/sensitive1.jpg" alt="オルナ オーガニック セット">
+        </a>
+        <div class="item-title">オルナ オーガニック<br>3点セット</div>
+        <div class="item-desc">CICA配合 / 乾燥・敏感肌</div>
+        <div class="item-price">￥3,490</div>
+        <a href="https://amzn.to/47Kdjwq" class="amazon-btn" target="_blank" rel="nofollow sponsored">Amazonで見る</a>
+      </div>
+
+      <div class="item">
+        <span class="badge">2位</span>
+        <a href="https://amzn.to/49aTcd9" target="_blank" rel="nofollow sponsored">
+            <img src="images/sensitive2.jpg" alt="N organic Basic">
+        </a>
+        <div class="item-title">N organic Basic<br>スキンケアセット</div>
+        <div class="item-desc">肌荒れ予防 / 柑橘系の香り</div>
+        <div class="item-price">￥8,554</div>
+        <a href="https://amzn.to/49aTcd9" class="amazon-btn" target="_blank" rel="nofollow sponsored">Amazonで見る</a>
+      </div>
+
+      <div class="item">
+        <span class="badge">3位</span>
+        <a href="https://amzn.to/4nPYQVQ" target="_blank" rel="nofollow sponsored">
+            <img src="images/sensitive3.jpg" alt="ai 天然藍">
+        </a>
+        <div class="item-title">ai 天然藍<br>スキンケアブランド</div>
+        <div class="item-desc">完全手作り / 高保湿</div>
+        <div class="item-price">￥3,350</div>
+        <a href="https://amzn.to/4nPYQVQ" class="amazon-btn" target="_blank" rel="nofollow sponsored">Amazonで見る</a>
+      </div>
+
+    </div>
+  </section>
+
+  <section>
+    <h2>💰 コスパランキング</h2>
     <div class="ranking">
       <div class="item">
-        <span class="badge">1位</span>
-        <img src="images/sensitive1.jpg" alt="">
-        <p>オルナ オーガニック 化粧水 乳液 <br>美容液 3点セット</p>
-        <p>乾燥・敏感肌向け、CICA配合</p>
-        <p>￥3,490(税込)</p>
-        <a href="https://amzn.to/47Kdjwq" target="_blank" rel="nofollow noopener">Amazonで見る</a>
+        <span class="badge rank1">1位</span>
+        <a href="https://amzn.to/4qO3beD" target="_blank" rel="nofollow sponsored">
+            <img src="images/costp1.jpg" alt="オルナ オーガニック 化粧水">
+        </a>
+        <div class="item-title">オルナ オーガニック<br>化粧水 200ml</div>
+        <div class="item-desc">さっぱり / 脂性・混合肌</div>
+        <div class="item-price">￥1,352</div>
+        <a href="https://amzn.to/4qO3beD" class="amazon-btn" target="_blank" rel="nofollow sponsored">Amazonで見る</a>
       </div>
       <div class="item">
         <span class="badge">2位</span>
-        <img src="images/sensitive2.jpg" alt="">
-        <p>N organic Basic スキンケアセット</p>
-        <p>肌荒れ予防、柑橘系の香り</p>
-        <p>￥8,554(税込)</p>
-        <a href="https://amzn.to/49aTcd9" target="_blank" rel="nofollow noopener">Amazonで見る</a>
+        <a href="https://amzn.to/4qPyoOB" target="_blank" rel="nofollow sponsored">
+            <img src="images/costp2.jpg" alt="ドクターブロナー バーム">
+        </a>
+        <div class="item-title">ドクターブロナー<br>オーガニックバーム</div>
+        <div class="item-desc">全身に使える / 携帯便利</div>
+        <div class="item-price">￥1,500</div>
+        <a href="https://amzn.to/4qPyoOB" class="amazon-btn" target="_blank" rel="nofollow sponsored">Amazonで見る</a>
       </div>
       <div class="item">
         <span class="badge">3位</span>
-        <img src="images/sensitive3.jpg" alt="">
-        <p>ai 天然藍スキンケアブランド</p>
-        <p>保湿力◎、完全手作り</p>
-        <p>￥3,350(税込)</p>
-        <a href="https://amzn.to/4nPYQVQ" target="_blank" rel="nofollow noopener">Amazonで見る</a>
+        <a href="https://amzn.to/47CHJR2" target="_blank" rel="nofollow sponsored">
+            <img src="images/costp3.jpg" alt="アンレーベル">
+        </a>
+        <div class="item-title">アンレーベル<br>モイストボタニカル</div>
+        <div class="item-desc">大容量500ml / 弱酸性</div>
+        <div class="item-price">￥958</div>
+        <a href="https://amzn.to/47CHJR2" class="amazon-btn" target="_blank" rel="nofollow sponsored">Amazonで見る</a>
       </div>
     </div>
   </section>
 
-  <!-- コスパランキング -->
   <section>
-    <h2>コスパランキング Top3</h2>
+    <h2>✨ アンチエイジングランキング</h2>
     <div class="ranking">
       <div class="item">
-        <span class="badge">1位</span>
-        <img src="images/costp1.jpg" alt="">
-        <p>オルナ オーガニック 化粧水 <br>さっぱり 200ml</p>
-        <p>脂性・混合肌向け、<br>ベタつかない保湿</p>
-        <p>￥1,352(税込)</p>
-        <a href="https://amzn.to/4qO3beD" target="_blank" rel="nofollow noopener">Amazonで見る</a>
+        <span class="badge rank1">1位</span>
+        <a href="https://amzn.to/3Lv7LhZ" target="_blank" rel="nofollow sponsored">
+            <img src="images/antiage1.jpg" alt="ミューノアージュ">
+        </a>
+        <div class="item-title">ミューノアージュ<br>化粧水&クリーム</div>
+        <div class="item-desc">ペプチド配合 / ハリ感UP</div>
+        <div class="item-price">￥13,062</div>
+        <a href="https://amzn.to/3Lv7LhZ" class="amazon-btn" target="_blank" rel="nofollow sponsored">Amazonで見る</a>
       </div>
       <div class="item">
         <span class="badge">2位</span>
-        <img src="images/costp2.jpg" alt="">
-        <p>ドクターブロナー<br> オーガニックバーム RO 18g</p>
-        <p>全肌質対応、保湿力◎、<br>携帯に便利</p>
-        <p>￥1,500(税込)</p>
-        <a href="https://amzn.to/4qPyoOB" target="_blank" rel="nofollow noopener">Amazonで見る</a>
+        <a href="https://amzn.to/3JEvY4Q" target="_blank" rel="nofollow sponsored">
+            <img src="images/antiage2.jpg" alt="マニフィーク">
+        </a>
+        <div class="item-title">マニフィーク<br>オールインワンジェル</div>
+        <div class="item-desc">シワ改善 / メンズにも</div>
+        <div class="item-price">￥2,970</div>
+        <a href="https://amzn.to/3JEvY4Q" class="amazon-btn" target="_blank" rel="nofollow sponsored">Amazonで見る</a>
       </div>
       <div class="item">
         <span class="badge">3位</span>
-        <img src="images/costp3.jpg" alt="">
-        <p>アンレーベル unlabel<br> モイストボタニカル 500mL</p>
-        <p>敏感肌対応、濃密保湿、弱酸性</p>
-        <p>￥958(税込)</p>
-        <a href="https://amzn.to/47CHJR2" target="_blank" rel="nofollow noopener">Amazonで見る</a>
+        <a href="https://amzn.to/47INaOr" target="_blank" rel="nofollow sponsored">
+            <img src="images/antiage3.jpg" alt="N organic Plenum">
+        </a>
+        <div class="item-title">N organic Plenum<br>クリーム 47g</div>
+        <div class="item-desc">濃厚保湿 / エイジングケア</div>
+        <div class="item-price">￥8,910</div>
+        <a href="https://amzn.to/47INaOr" class="amazon-btn" target="_blank" rel="nofollow sponsored">Amazonで見る</a>
       </div>
     </div>
   </section>
 
-  <!-- アンチエイジングランキング -->
-  <section>
-    <h2>アンチエイジングランキング Top3</h2>
-    <div class="ranking">
-      <div class="item">
-        <span class="badge">1位</span>
-        <img src="images/antiage1.jpg" alt="">
-        <p>ミューノアージュ 化粧水<br> & 保湿クリームセット</p>
-        <p>ペプチド＆ビタミンE配合で<br>ハリ感UP</p>
-        <p>￥13,062(税込)</p>
-        <a href="https://amzn.to/3Lv7LhZ" target="_blank" rel="nofollow noopener">Amazonで見る</a>
-      </div>
-      <div class="item">
-        <span class="badge">2位</span>
-        <img src="images/antiage2.jpg" alt="">
-        <p>マニフィーク オールインワン<br>ジェルクリーム 100g</p>
-        <p>シワ改善、アンチエイジング、<br>メンズ対応</p>
-        <p>￥2,970(税込)</p>
-        <a href="https://amzn.to/3JEvY4Q" target="_blank" rel="nofollow noopener">Amazonで見る</a>
-      </div>
-      <div class="item">
-        <span class="badge">3位</span>
-        <img src="images/antiage3.jpg" alt="">
-        <p>N organic Plenum クリーム 47g</p>
-        <p>エイジングケア、保湿力◎、<br>シトラスフローラルの香り</p>
-        <p>￥8,910(税込)</p>
-        <a href="https://amzn.to/47INaOr" target="_blank" rel="nofollow noopener">Amazonで見る</a>
-      </div>
+  <div style="margin: 60px 0; background: #fff4f4; padding: 30px; border-radius: 16px; text-align: center;">
+    <h3 style="margin-top:0; color:#d6336c;">👑 スタッフ一押しアイテム</h3>
+    <p style="margin-bottom:20px;">一年を通して使える最強のオーガニックジェルです。<br>迷ったらまずはコレ！</p>
+
+    <div style="display:inline-block;">
+      <a href="https://px.a8.net/svt/ejp?a8mat=45I9PD+4GR2VU+3PSY+1BNJ9D" rel="nofollow sponsored" target="_blank">
+        <img border="0" width="468" height="60" alt="HALENA オーガニックオールインワンジェル" src="https://www25.a8.net/svt/bgt?aid=251115169270&wid=002&eno=01&mid=s00000017341008004000&mc=1" style="max-width:100%; height:auto;">
+      </a>
+      <img border="0" width="1" height="1" src="https://www16.a8.net/0.gif?a8mat=45I9PD+4GR2VU+3PSY+1BNJ9D" alt="">
     </div>
-  </section>
+    
+    <div style="margin-top:10px;">
+        <a href="https://px.a8.net/svt/ejp?a8mat=45I9PD+4GR2VU+3PSY+1BMW42" rel="nofollow sponsored" target="_blank" style="font-weight:bold; color:#d6336c; text-decoration:underline;">
+            【ハレナ オーガニックオールインワンジェル】詳細はこちら
+        </a>
+        <img border="0" width="1" height="1" src="https://www10.a8.net/0.gif?a8mat=45I9PD+4GR2VU+3PSY+1BMW42" alt="">
+    </div>
+  </div>
 
-  
-<div>
- <p style="text-align:center;">一年を通して使える最強のオーガニックジェルです。ぜひ使ってみてください！</p>
-
-<p style="text-align:center;">
-  <a href="https://px.a8.net/svt/ejp?a8mat=45I9PD+4GR2VU+3PSY+1BMW42" rel="nofollow sponsored">【ハレナ　オーガニックオールインワンジェル】</a>
-</p>
-<img border="0" width="1" height="1" src="https://www10.a8.net/0.gif?a8mat=45I9PD+4GR2VU+3PSY+1BMW42" alt="">
-
-<p style="text-align:center;">
-  <a href="https://px.a8.net/svt/ejp?a8mat=45I9PD+4GR2VU+3PSY+1BNJ9D" rel="nofollow sponsored">
-    <img border="0" width="468" height="60" alt="HALENA オーガニックオールインワンジェル" src="https://www25.a8.net/svt/bgt?aid=251115169270&wid=002&eno=01&mid=s00000017341008004000&mc=1">
-  </a>
-</p>
-<img border="0" width="1" height="1" src="https://www16.a8.net/0.gif?a8mat=45I9PD+4GR2VU+3PSY+1BNJ9D" alt="">
-</div>
-
-  
   <div class="back-btn">
     <a href="index.html">← トップページへ戻る</a>
   </div>
