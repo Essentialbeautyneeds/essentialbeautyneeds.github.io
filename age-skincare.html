@@ -44,36 +44,58 @@ p.lead { font-size: 18px; color: #5a4545; }
 .container { max-width: 1000px; margin: 0 auto; padding: 0 20px; }
 .article { margin: 80px 0; }
 .article h2 { font-family: 'Playfair Display', serif; font-size:28px; color:#503535; text-align:center; margin-bottom:20px; }
-.article img.hero { width:100%; max-height:400px; object-fit:cover; border-radius:18px; margin-bottom:20px; box-shadow:0 6px 25px rgba(0,0,0,0.15); }
+
+/* 2. ヒーロー画像を商品カードと同じ最大幅に設定 */
+.article img.hero { 
+    width:100%; 
+    max-width: 600px; /* カードリンクと同じ幅 */
+    display: block; /* 中央寄せのためにブロック要素に */
+    margin: 0 auto 20px; /* 中央寄せ + 下マージン */
+    height:400px; 
+    object-fit:cover; 
+    border-radius:18px; 
+    box-shadow:0 6px 25px rgba(0,0,0,0.15); 
+}
 
 /* レイアウトを縦長（シングルカラム）に変更 */
 .product-review { 
-    /* display:flex; を削除し、縦に積む */
     gap:30px; 
     margin-bottom:50px; 
-    /* flex-wrap:wrap; を削除 */
+    max-width: 600px; /* 全体の幅を600pxに制限 */
+    margin-left: auto;
+    margin-right: auto;
 }
-/* product-cardの flex 設定を解除（幅は親要素の幅100%になる） */
 .product-card { 
-    /* flex:1; min-width:280px; を削除 */
     text-align:left; 
     background:#fff; 
     border-radius:14px; 
     padding:15px; 
     box-shadow:0 4px 12px rgba(0,0,0,0.08); 
-    margin-bottom: 30px; /* カード下の余白追加 */
+    margin-bottom: 30px; 
 }
 .product-card img { width:100%; height:220px; border-radius:12px; object-fit:cover; margin-bottom:12px; }
 .product-card h3 { font-size:18px; margin-bottom:10px; }
 .product-card p { font-size:15px; color:#444; margin-bottom:10px; }
 .product-card ul { font-size:14px; margin-left:18px; color:#555; margin-bottom:10px; }
-.btn { display:inline-block; background:var(--accent); color:#fff; padding:12px 28px; border-radius:30px; text-decoration:none; font-weight:600; transition:0.3s; }
+
+/* 1. 3. ボタンとレビューカラムのスタイルを統一 */
+.btn { 
+    display:inline-block; 
+    background:var(--accent); 
+    color:#fff; 
+    padding:12px 28px; 
+    border-radius:30px; 
+    text-decoration:none; 
+    font-weight:600; 
+    transition:0.3s; 
+}
 .btn:hover { background:var(--accent-hover); }
 
-/* レビューカラムも縦に積むよう変更 */
+/* 3. レビューカラムも中央寄せ・最大幅600pxに調整 */
 .review-column { 
-    /* flex:1; display:flex; flex-direction:column; を削除 */
     gap:20px; 
+    max-width: 600px; 
+    margin: 0 auto; 
 }
 .review-card { background:#fff5f5; border-radius:14px; padding:15px; text-align:center; box-shadow:inset 0 0 10px rgba(0,0,0,0.05); }
 .review-card img { width:100px; height:100px; border-radius:50%; object-fit:cover; margin-bottom:8px; }
@@ -83,8 +105,21 @@ p.lead { font-size: 18px; color: #5a4545; }
 .internal-link { text-align:center; margin:20px 0; }
 .internal-link a { color:#d6336c; font-weight:600; text-decoration:none; }
 
+/* 1. トップの関連記事リンクをボタン化 */
 .related { text-align:center; margin:20px 0 0; }
-.related a { color:#d6336c; font-weight:600; text-decoration:none; font-size:1.1em; margin:0 12px; }
+.related a { /* ここでボタンのスタイルを適用 */
+    display: inline-block;
+    background: var(--accent);
+    color: #fff;
+    padding: 8px 18px; /* 少し小さめに調整 */
+    border-radius: 30px;
+    text-decoration: none;
+    font-weight: 600;
+    transition: 0.3s;
+    font-size: 1em; /* デフォルトサイズに戻す */
+    margin: 5px 6px; /* 余白調整 */
+}
+.related a:hover { background:var(--accent-hover); }
 
 footer { text-align:center; font-size:13px; color:#888; margin:60px 0 30px; }
 
@@ -102,8 +137,8 @@ footer { text-align:center; font-size:13px; color:#888; margin:60px 0 30px; }
 }
 
 @media (max-width:768px){ 
-  .product-review{ flex-direction:column; } 
-  .review-column{ flex-direction:column; } /* レビューカードも縦に積む */
+  .review-column{ flex-direction:column; } 
+  .article img.hero { max-height: 250px; } /* スマホでの高さを調整 */
 }
 </style>
 </head>
@@ -115,9 +150,9 @@ footer { text-align:center; font-size:13px; color:#888; margin:60px 0 30px; }
 
   <div class="related">
   <p style="margin-bottom:10px;">関連記事はこちら：</p>
-  <a href="winter-selection.html" class="btn">❄ 冬のベストセレクションを見る</a>
-  <a href="acne-care.html" class="btn">💧 ニキビ・肌荒れケアを見る</a><br><br>
-  <a href="index.html" class="btn"> 🏠　トップに戻る</a>
+    <a href="winter-selection.html">❄ 冬のベストセレクションを見る</a>
+  <a href="acne-care.html">💧 ニキビ・肌荒れケアを見る</a>
+  <a href="index.html"> 🏠 トップに戻る</a>
 </div>
 
   <div class="container" style="margin-top:40px; max-width:820px; text-align:center;">
@@ -138,7 +173,7 @@ footer { text-align:center; font-size:13px; color:#888; margin:60px 0 30px; }
 
 <section class="article">
   <h2>40代 の肌ケア</h2>
-  <img src="images/40s1.jpg" alt="40代主婦のスキンケア" class="hero">
+    <img src="images/40s1.jpg" alt="40代主婦のスキンケア" class="hero">
   <div class="product-review">
         <script type="text/javascript">
 (function(b,c,f,g,a,d,e){b.MoshimoAffiliateObject=a;
@@ -151,7 +186,7 @@ msmaflink({"n":"【初回限定50%OFFクーポン配布中】【天然由来成�
 </script>
 <div id="msmaflink-1Y2Ut" style="max-width: 600px; margin: 30px auto;">リンク</div>
     
-    <div class="review-column">
+        <div class="review-column">
       <div class="review-card">
         <img src="images/40s1.jpg" alt="40代主婦">
         <p>「使い始めてから手荒れが減り、肌のしっとり感が続きます！控えていた洗い物も最近は苦になりません。」</p>
@@ -168,7 +203,7 @@ msmaflink({"n":"【初回限定50%OFFクーポン配布中】【天然由来成�
 
 <section class="article">
   <h2>50代の肌ケア</h2>
-  <img src="images/50s1.jpg" alt="50代のスキンケア" class="hero">
+    <img src="images/50s1.jpg" alt="50代のスキンケア" class="hero">
   <div class="product-review">
         <script type="text/javascript">
 (function(b,c,f,g,a,d,e){b.MoshimoAffiliateObject=a;
@@ -181,7 +216,7 @@ msmaflink({"n":"ローズアロマバスソルト |ROSE LABO ローズラボ 300
 </script>
 <div id="msmaflink-a01FK" style="max-width: 600px; margin: 30px auto;">リンク</div>
     
-    <div class="review-column">
+        <div class="review-column">
       <div class="review-card">
         <img src="images/50s1.jpg" alt="50代販売員">
         <p>「バスソルトで入浴後の肌が柔らかく、香りも優しく癒されます。肌の潤いが自然に戻りつつあり嬉しいです。」</p>
@@ -196,7 +231,7 @@ msmaflink({"n":"ローズアロマバスソルト |ROSE LABO ローズラボ 300
   </div>
 </section>
 
-<div style="border:1px solid #e0e0e0; padding:15px; margin:20px 0; border-radius:8px; text-align:center; background-color:#fff;">
+<div style="border:1px solid #e0e0e0; padding:15px; margin:20px auto; border-radius:8px; text-align:center; background-color:#fff; max-width:600px;">
   <h3>当サイトおすすめの一押しコスメ！</h3>
   <p>今回ご紹介するのは、オーガニックなスキンケアブランド「<strong>たかくらとくらす</strong>」。<br>敏感肌にも優しく、初めての方でも安心して試せます。</p>
   
@@ -214,7 +249,16 @@ msmaflink({"n":"ローズアロマバスソルト |ROSE LABO ローズラボ 300
   <img border="0" width="1" height="1" src="https://www17.a8.net/0.gif?a8mat=45I9PD+4UG1SQ+4F9W+5Z6WX" alt="">
 </div>
 
-<div class="container" style="margin:60px auto; max-width:860px; text-align:center;">
+<div style="
+  margin:60px auto; 
+  max-width:860px; 
+  text-align:center;
+  padding: 30px;
+  border: 2px solid var(--accent); /* 枠線を追加 */
+  background-color: #fffafb; /* 薄い背景色を追加 */
+  border-radius: 12px;
+  box-shadow: 0 4px 10px rgba(0,0,0,0.05);
+">
   <h2 style="font-family:'Playfair Display',serif; font-size:26px; color:#503535; margin-bottom:18px;">
     年齢に合ったスキンケアで、肌はもっと変わる
   </h2>
@@ -240,7 +284,7 @@ msmaflink({"n":"ローズアロマバスソルト |ROSE LABO ローズラボ 300
   background: linear-gradient(135deg, #ffe3ea, #ffd6e6);
   border-radius: 18px;
   box-shadow: 0 6px 20px rgba(0,0,0,0.12);
-  text-align: center;
+  text-align: center; /* このブロック全体を中央寄せ */
 ">
   <h2 style="
     font-family: 'Playfair Display', serif;
@@ -256,7 +300,7 @@ msmaflink({"n":"ローズアロマバスソルト |ROSE LABO ローズラボ 300
     気分が上がるケアで、毎日のスキンケア時間をもっと贅沢に。
   </p>
 
-    <a href="https://px.a8.net/svt/ejp?a8mat=45I9PD+4HCIHM+37D2+609HT" target="_blank" rel="nofollow sponsored">
+    <a href="https://px.a8.net/svt/ejp?a8mat=45I9PD+4HCIHM+37D2+609HT" target="_blank" rel="nofollow sponsored" style="display:inline-block;">
     <img border="0" width="300" height="250" alt="おすすめアイテム" 
          style="border-radius:14px; box-shadow:0 4px 15px rgba(0,0,0,0.15);" 
          src="https://www29.a8.net/svt/bgt?aid=251115169271&wid=002&eno=01&mid=s00000014951001009000&mc=1">
@@ -271,7 +315,7 @@ msmaflink({"n":"ローズアロマバスソルト |ROSE LABO ローズラボ 300
  
 <div class="related" style="margin-top:50px;">
   <p>さらにおすすめの記事はこちら：</p>
-  <a href="index.html">🏠 トップページへ戻る</a>
+    <a href="index.html">🏠 トップページへ戻る</a>
   <a href="winter-selection.html">❄ 冬のベストセレクションを見る</a>
 </div>
 
