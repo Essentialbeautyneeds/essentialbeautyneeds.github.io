@@ -2,40 +2,39 @@
 <html lang="ja">
 <head>
 <link rel="canonical" href="https://essential-beauty-needs.com/age-skincare.html" />
- 
+ 
 <meta charset="utf-8">
- <!-- Google Analytics 4 + internal traffic exclusion -->
-<script>
-  // internal_user クッキーが設定されているか確認
-  function isInternalUser() {
-    return document.cookie.split(';').some(c => c.trim().startsWith('internal_user=true'));
-  }
+ <script>
+  // internal_user クッキーが設定されているか確認
+  function isInternalUser() {
+    return document.cookie.split(';').some(c => c.trim().startsWith('internal_user=true'));
+  }
 
-  // internal_user クッキーがない場合だけ、GA4を読み込む
-  if (!isInternalUser()) {
-    var gaScript = document.createElement('script');
-    gaScript.async = true;
-    gaScript.src = "https://www.googletagmanager.com/gtag/js?id=G-2HGEPHVZYY";
-    document.head.appendChild(gaScript);
+  // internal_user クッキーがない場合だけ、GA4を読み込む
+  if (!isInternalUser()) {
+    var gaScript = document.createElement('script');
+    gaScript.async = true;
+    gaScript.src = "https://www.googletagmanager.com/gtag/js?id=G-2HGEPHVZYY";
+    document.head.appendChild(gaScript);
 
-    window.dataLayer = window.dataLayer || [];
-    function gtag(){dataLayer.push(arguments);}
-    gtag('js', new Date());
-    gtag('config', 'G-2HGEPHVZYY');
-  } else {
-    console.log('✅ Internal traffic excluded.');
-  }
+    window.dataLayer = window.dataLayer || [];
+    function gtag(){dataLayer.push(arguments);}
+    gtag('js', new Date());
+    gtag('config', 'G-2HGEPHVZYY');
+  } else {
+    console.log('✅ Internal traffic excluded.');
+  }
 </script>
-    
+    
 <meta name="viewport" content="width=device-width,initial-scale=1">
 <title>40代・50代向け 年齢・肌質別オーガニックスキンケア｜肌が喜ぶ自然派コスメ</title>
 <link href="https://fonts.googleapis.com/css2?family=Playfair+Display:wght@600&family=Quicksand:wght@400;600&display=swap" rel="stylesheet">
 <style>
 :root {
-  --bg: #fff8f8;
-  --accent: #f7a8a8;
-  --accent-hover: #f48b8b;
-  --muted: #666;
+  --bg: #fff8f8;
+  --accent: #f7a8a8;
+  --accent-hover: #f48b8b;
+  --muted: #666;
 }
 * { box-sizing: border-box; margin: 0; padding: 0; }
 body { font-family: 'Quicksand', sans-serif; background: var(--bg); color: #333; line-height: 1.6; }
@@ -47,8 +46,23 @@ p.lead { font-size: 18px; color: #5a4545; }
 .article h2 { font-family: 'Playfair Display', serif; font-size:28px; color:#503535; text-align:center; margin-bottom:20px; }
 .article img.hero { width:100%; max-height:400px; object-fit:cover; border-radius:18px; margin-bottom:20px; box-shadow:0 6px 25px rgba(0,0,0,0.15); }
 
-.product-review { display:flex; gap:30px; margin-bottom:50px; flex-wrap:wrap; }
-.product-card { flex:1; min-width:280px; text-align:left; background:#fff; border-radius:14px; padding:15px; box-shadow:0 4px 12px rgba(0,0,0,0.08); }
+/* レイアウトを縦長（シングルカラム）に変更 */
+.product-review { 
+    /* display:flex; を削除し、縦に積む */
+    gap:30px; 
+    margin-bottom:50px; 
+    /* flex-wrap:wrap; を削除 */
+}
+/* product-cardの flex 設定を解除（幅は親要素の幅100%になる） */
+.product-card { 
+    /* flex:1; min-width:280px; を削除 */
+    text-align:left; 
+    background:#fff; 
+    border-radius:14px; 
+    padding:15px; 
+    box-shadow:0 4px 12px rgba(0,0,0,0.08); 
+    margin-bottom: 30px; /* カード下の余白追加 */
+}
 .product-card img { width:100%; height:220px; border-radius:12px; object-fit:cover; margin-bottom:12px; }
 .product-card h3 { font-size:18px; margin-bottom:10px; }
 .product-card p { font-size:15px; color:#444; margin-bottom:10px; }
@@ -56,7 +70,11 @@ p.lead { font-size: 18px; color: #5a4545; }
 .btn { display:inline-block; background:var(--accent); color:#fff; padding:12px 28px; border-radius:30px; text-decoration:none; font-weight:600; transition:0.3s; }
 .btn:hover { background:var(--accent-hover); }
 
-.review-column { flex:1; display:flex; flex-direction:column; gap:20px; }
+/* レビューカラムも縦に積むよう変更 */
+.review-column { 
+    /* flex:1; display:flex; flex-direction:column; を削除 */
+    gap:20px; 
+}
 .review-card { background:#fff5f5; border-radius:14px; padding:15px; text-align:center; box-shadow:inset 0 0 10px rgba(0,0,0,0.05); }
 .review-card img { width:100px; height:100px; border-radius:50%; object-fit:cover; margin-bottom:8px; }
 .review-card p { font-size:14px; color:#333; margin-bottom:6px; }
@@ -65,215 +83,204 @@ p.lead { font-size: 18px; color: #5a4545; }
 .internal-link { text-align:center; margin:20px 0; }
 .internal-link a { color:#d6336c; font-weight:600; text-decoration:none; }
 
-.related { text-align:center; margin:50px 0; }
+.related { text-align:center; margin:20px 0 0; }
 .related a { color:#d6336c; font-weight:600; text-decoration:none; font-size:1.1em; margin:0 12px; }
 
 footer { text-align:center; font-size:13px; color:#888; margin:60px 0 30px; }
 
 #affiliateNotice {
-    position: fixed;
-    right: 12px;
-    bottom: 12px;
-    background: rgba(255, 255, 255, 0.8);
-    color: #555;
-    font-size: 11px;
-    border-radius: 6px;
-    padding: 4px 8px;
-    box-shadow: 0 2px 6px rgba(0,0,0,0.1);
-    z-index: 999;
+    position: fixed;
+    right: 12px;
+    bottom: 12px;
+    background: rgba(255, 255, 255, 0.8);
+    color: #555;
+    font-size: 11px;
+    border-radius: 6px;
+    padding: 4px 8px;
+    box-shadow: 0 2px 6px rgba(0,0,0,0.1);
+    z-index: 999;
 }
 
-@media (max-width:768px){ 
-  .product-review{ flex-direction:column; } 
-  .review-column{ flex-direction:row; flex-wrap:wrap; justify-content:center; } 
+@media (max-width:768px){ 
+  .product-review{ flex-direction:column; } 
+  .review-column{ flex-direction:column; } /* レビューカードも縦に積む */
 }
 </style>
 </head>
 <body>
 
 <header>
-  <h1>40代・50代向け 年齢・肌質別オーガニックスキンケア</h1>
-  <p class="lead">乾燥・ハリ不足・敏感肌にも対応した自然派コスメとリアルユーザーの声を紹介します。</p>
+  <h1>40代・50代向け 年齢・肌質別オーガニックスキンケア</h1>
+  <p class="lead">乾燥・ハリ不足・敏感肌にも対応した自然派コスメとリアルユーザーの声を紹介します。</p>
 
-  <!-- トップCTA -->
-<div class="related">
-  <p>関連記事はこちら：</p><br>
-  <a href="winter-selection.html" class="btn">❄ 冬のベストセレクションを見る</a>
-  <a href="acne-care.html" class="btn">💧 ニキビ・肌荒れケアを見る</a><br><br>
-  <a href="index.html" class="btn"> 🏠　トップに戻る</a>
+  <div class="related">
+  <p style="margin-bottom:10px;">関連記事はこちら：</p>
+  <a href="winter-selection.html" class="btn">❄ 冬のベストセレクションを見る</a>
+  <a href="acne-care.html" class="btn">💧 ニキビ・肌荒れケアを見る</a><br><br>
+  <a href="index.html" class="btn"> 🏠　トップに戻る</a>
 </div>
 
- <div class="container" style="margin-top:40px; text-align:center; max-width:820px;">
-  <p style="font-size:17px; color:#5a4545; margin-bottom:20px;">
-    40代・50代の肌は、乾燥・ハリ不足・敏感化など「年齢特有の変化」が現れやすい時期です。  
-    本ページでは、無理なく続けられる自然派スキンケアを軸に、年齢に合わせたケア方法と実際の愛用者レビューをまとめています。
-  </p>
+  <div class="container" style="margin-top:40px; max-width:820px; text-align:center;">
+  <p style="font-size:17px; color:#5a4545; margin-bottom:20px;">
+    40代・50代の肌は、乾燥・ハリ不足・敏感化など「年齢特有の変化」が現れやすい時期です。  
+    本ページでは、無理なく続けられる自然派スキンケアを軸に、年齢に合わせたケア方法と実際の愛用者レビューをまとめています。
+  </p>
 
-  <p style="font-size:16px; color:#5a4545;">
-    肌に優しいアイテムを選びたいけれど、どれを選べばいいかわからない…  
-    そんな方のために、肌質別のポイントやおすすめ成分もわかりやすく紹介しています。
-  </p>
+  <p style="font-size:16px; color:#5a4545;">
+    肌に優しいアイテムを選びたいけれど、どれを選べばいいかわからない…  
+    そんな方のために、肌質別のポイントやおすすめ成分もわかりやすく紹介しています。
+  </p>
 </div>
- 
+ 
 </header>
 
 <main class="container">
 
-<!-- 40代 主婦 -->
 <section class="article">
-  <h2>40代 の肌ケア</h2>
-  <img src="images/40s1.jpg" alt="40代主婦のスキンケア" class="hero">
-  <div class="product-review">
-    <div class="product-card">
-      <img src="images/winter_handcream.jpg" alt="NALC ハンドクリーム">
-      <h3>NALC ヘパリン類似物質配合 ハンドクリーム</h3>
-      <p>乾燥・手荒れに悩む40代女性向け。全身に使える高保湿無香料クリーム。</p>
-      <ul>
-        <li>ヘパリン類似物質配合</li>
-        <li>手荒れ・ひび割れ防止</li>
-        <li>無香料・全身OK</li>
-      </ul>
-      <a href="https://amzn.to/3LMS99u" class="btn" target="_blank">今すぐチェック</a>
-    </div>
-    <div class="review-column">
-      <div class="review-card">
-        <img src="images/40s1.jpg" alt="40代主婦">
-        <p>「使い始めてから手荒れが減り、肌のしっとり感が続きます！控えていた洗い物も最近は苦になりません。」</p>
-        <p class="name">まいかさん：40代主婦</p>
-      </div>
-      <div class="review-card">
-        <img src="images/40s2.jpg" alt="40代看護師">
-        <p>「敏感肌でも安心して使える保湿力。肌の柔らかさが戻りました。手間がかからないので助かります。」</p>
-        <p class="name">きょうこさん：40代看護師</p>
-      </div>
-    </div>
-  </div>
+  <h2>40代 の肌ケア</h2>
+  <img src="images/40s1.jpg" alt="40代主婦のスキンケア" class="hero">
+  <div class="product-review">
+        <script type="text/javascript">
+(function(b,c,f,g,a,d,e){b.MoshimoAffiliateObject=a;
+b[a]=b[a]||function(){arguments.currentScript=c.currentScript
+||c.scripts[c.scripts.length-2];(b[a].q=b[a].q||[]).push(arguments)};
+c.getElementById(a)||(d=c.createElement(f),d.src=g,
+d.id=a,e=c.getElementsByTagName("body")[0],e.appendChild(d))})
+(window,document,"script","//dn.msmstatic.com/site/cardlink/bundle.js?20220329","msmaflink");
+msmaflink({"n":"【初回限定50%OFFクーポン配布中】【天然由来成分99％】ギフト プレゼント フルボ酸 ラウブ フルボーテ ミネラルハンドクリーム | ベタつかない オーガニック 植物性 低刺激性 敏感肌 保湿 エイジングケア アルコールフリー 贈り物 プレゼント 手荒れ","b":"","t":"","d":"https:\/\/thumbnail.image.rakuten.co.jp","c_p":"\/@0_mall\/raub\/cabinet","p":["\/fulbesh\/m_hand\/th_m_hand_01.jpg","\/10775727\/imgrc0128513782.jpg","\/fulbesh\/m_hand\/th_m_hand_02.jpg"],"u":{"u":"https:\/\/item.rakuten.co.jp\/raub\/10000024\/","t":"rakuten","r_v":""},"v":"2.1","b_l":[{"id":1,"u_tx":"楽天市場で見る","u_bc":"#87c209","u_url":"https:\/\/item.rakuten.co.jp\/raub\/10000024\/","a_id":5267359,"p_id":54,"pl_id":27059,"pc_id":54,"s_n":"rakuten","u_so":1},{"id":5,"u_tx":"Amazonで見る","u_bc":"#bf0000","u_url":"https:\/\/amzn.to\/4ooBrep","a_id":0,"p_id":0,"pl_id":0,"pc_id":0,"s_n":"custom_10","u_so":2},{"id":4,"u_tx":"Yahoo!ショッピングで見る","u_bc":"#0054ff","u_url":"https:\/\/shopping.yahoo.co.jp\/search?first=1\u0026p=%E3%80%90%E5%88%9D%E5%9B%9E%E9%99%90%E5%AE%9A50%25OFF%E3%82%AF%E3%83%BC%E3%83%9D%E3%83%B3%E9%85%8D%E5%B8%83%E4%B8%AD%E3%80%91%E3%80%90%E5%A4%A9%E7%84%B6%E7%94%B1%E6%9D%A5%E6%88%90%E5%88%8699%EF%BC%85%E3%80%91%E3%82%AE%E3%83%95%E3%83%88%20%E3%83%97%E3%83%AC%E3%82%BC%E3%83%B3%E3%83%88%20%E3%83%95%E3%83%AB%E3%83%9C%E9%85%B8%20%E3%83%A9%E3%82%A6%E3%83%96%20%E3%83%95%E3%83%AB%E3%83%9C%E3%83%BC%E3%83%86%20%E3%83%9F%E3%83%8D%E3%83%A9%E3%83%AB%E3%83%8F%E3%83%B3%E3%83%89%E3%82%AF%E3%83%AA%E3%83%BC%E3%83%A0%20%7C%20%E3%83%99%E3%82%BF%E3%81%A4%E3%81%8B%E3%81%AA%E3%81%84%20%E3%82%AA%E3%83%BC%E3%82%AC%E3%83%8B%E3%83%83%E3%82%AF%20%E6%A4%8D%E7%89%A9%E6%80%A7%20%E4%BD%8E%E5%88%BA%E6%BF%80%E6%80%A7%20%E6%95%8F%E6%84%9F%E8%82%8C%20%E4%BF%9D%E6%B9%BF%20%E3%82%A8%E3%82%A4%E3%82%B8%E3%83%B3%E3%82%B0%E3%82%B1%E3%82%A2%20%E3%82%A2%E3%83%AB%E3%82%B3%E3%83%BC%E3%83%AB%E3%83%95%E3%83%AA%E3%83%BC%20%E8%B4%88%E3%82%8A%E7%89%A9%20%E3%83%97%E3%83%AC%E3%82%BC%E3%83%B3%E3%83%88%20%E6%89%8B%E8%8D%92%E3%82%8C","a_id":5267465,"p_id":1225,"pl_id":27061,"pc_id":1925,"s_n":"yahoo","u_so":3}],"eid":"1Y2Ut","s":"s"});
+</script>
+<div id="msmaflink-1Y2Ut" style="max-width: 600px; margin: 30px auto;">リンク</div>
+    
+    <div class="review-column">
+      <div class="review-card">
+        <img src="images/40s1.jpg" alt="40代主婦">
+        <p>「使い始めてから手荒れが減り、肌のしっとり感が続きます！控えていた洗い物も最近は苦になりません。」</p>
+        <p class="name">まいかさん：40代主婦</p>
+      </div>
+      <div class="review-card">
+        <img src="images/40s2.jpg" alt="40代看護師">
+        <p>「敏感肌でも安心して使える保湿力。肌の柔らかさが戻りました。手間がかからないので助かります。」</p>
+        <p class="name">きょうこさん：40代看護師</p>
+      </div>
+    </div>
+  </div>
 </section>
 
-<!-- 50代 販売員 -->
 <section class="article">
-  <h2>50代の肌ケア</h2>
-  <img src="images/50s1.jpg" alt="50代のスキンケア" class="hero">
-  <div class="product-review">
-    <div class="product-card">
-      <img src="images/refresh_bathsalt.jpg" alt="ROSE LABO バスソルト">
-      <h3>ROSE LABO ローズアロマバスソルト</h3>
-      <p>50代の乾燥肌向け、入浴でしっとり肌に。バラの香りでリラックス効果も。</p>
-      <ul>
-        <li>自家栽培バラ使用</li>
-        <li>ミネラル豊富な岩塩で保湿</li>
-        <li>癒しのバスタイム</li>
-      </ul>
-      <a href="https://amzn.to/498vE8U" class="btn" target="_blank">今すぐチェック</a>
-    </div>
-    <div class="review-column">
-      <div class="review-card">
-        <img src="images/50s1.jpg" alt="50代販売員">
-        <p>「バスソルトで入浴後の肌が柔らかく、香りも優しく癒されます。肌の潤いが自然に戻りつつあり嬉しいです。」</p>
-        <p class="name">あけみさん：50代販売員</p>
-      </div>
-      <div class="review-card">
-        <img src="images/50s2.jpg" alt="50代アルバイト">
-        <p>「簡単に高保湿ケアでき、毎日のバスタイムが楽しみになりました。香りのリラックス効果もあり、夜もスッキリ眠れるようになりました。」</p>
-        <p class="name">さえさん：50代飲食店</p>
-      </div>
-    </div>
-  </div>
+  <h2>50代の肌ケア</h2>
+  <img src="images/50s1.jpg" alt="50代のスキンケア" class="hero">
+  <div class="product-review">
+        <script type="text/javascript">
+(function(b,c,f,g,a,d,e){b.MoshimoAffiliateObject=a;
+b[a]=b[a]||function(){arguments.currentScript=c.currentScript
+||c.scripts[c.scripts.length-2];(b[a].q=b[a].q||[]).push(arguments)};
+c.getElementById(a)||(d=c.createElement(f),d.src=g,
+d.id=a,e=c.getElementsByTagName("body")[0],e.appendChild(d))})
+(window,document,"script","//dn.msmstatic.com/site/cardlink/bundle.js?20220329","msmaflink");
+msmaflink({"n":"ローズアロマバスソルト |ROSE LABO ローズラボ 300g（約15回分）|バスソルト 入浴剤 岩塩 ばら バラ ローズ バラの香り 乾燥 保湿 冷え 無添加 ギフト バスソルト プレゼント 入浴 塩 プチギフト 女性 バスソルト 高級 【あす楽対応】","b":"","t":"","d":"https:\/\/thumbnail.image.rakuten.co.jp","c_p":"\/@0_mall\/roselabo\/cabinet\/item\/beauty","p":["\/btbp000004_0.jpg","\/btbp000004_2.jpg","\/btbp000004_3.jpg"],"u":{"u":"https:\/\/item.rakuten.co.jp\/roselabo\/btbp000004\/","t":"rakuten","r_v":""},"v":"2.1","b_l":[{"id":1,"u_tx":"楽天市場で見る","u_bc":"#87c209","u_url":"https:\/\/item.rakuten.co.jp\/roselabo\/btbp000004\/","a_id":5267359,"p_id":54,"pl_id":27059,"pc_id":54,"s_n":"rakuten","u_so":1},{"id":5,"u_tx":"Amazonで見る","u_bc":"#bf0000","u_url":"https:\/\/amzn.to\/4ooBrep","a_id":0,"p_id":0,"pl_id":0,"pc_id":0,"s_n":"custom_10","u_so":2},{"id":4,"u_tx":"Yahoo!ショッピングで見る","u_bc":"#0054ff","u_url":"https:\/\/shopping.yahoo.co.jp\/search?first=1\u0026p=%E3%83%AD%E3%83%BC%E3%82%BA%E3%82%A2%E3%83%AD%E3%83%9E%E3%83%90%E3%82%B9%E3%82%BD%E3%83%AB%E3%83%88%20%7CROSE%20LABO%20%E3%83%AD%E3%83%BC%E3%82%BA%E3%83%A9%E3%83%9C%20300g%EF%BC%88%E7%B4%8415%E5%9B%9E%E5%88%86%EF%BC%89%7C%E3%83%90%E3%82%B9%E3%82%BD%E3%83%AB%E3%83%88%20%E5%85%A5%E6%B5%B4%E5%89%A4%20%E5%B2%A9%E5%A1%A9%20%E3%81%B0%E3%82%89%20%E3%83%90%E3%83%A9%20%E3%83%AD%E3%83%BC%E3%82%BA%20%E3%83%90%E3%83%A9%E3%81%AE%E9%A6%99%E3%82%8A%20%E4%B9%BE%E7%87%A5%20%E4%BF%9D%E6%B9%BF%20%E5%86%B7%E3%81%88%20%E7%84%A1%E6%B7%BB%E5%8A%A0%20%E3%82%AE%E3%83%95%E3%83%88%20%E3%83%90%E3%82%B9%E3%82%BD%E3%83%AB%E3%83%88%20%E3%83%97%E3%83%AC%E3%82%BC%E3%83%B3%E3%83%88%20%E5%85%A5%E6%B5%B4%20%E5%A1%A9%20%E3%83%97%E3%83%81%E3%82%AE%E3%83%95%E3%83%88%20%E5%A5%B3%E6%80%A7%20%E3%83%90%E3%82%B9%E3%82%BD%E3%83%AB%E3%83%88%20%E9%AB%98%E7%B4%9A%20%E3%80%90%E3%81%82%E3%81%99%E6%A5%BD%E5%AF%BE%E5%BF%9C%E3%80%91","a_id":5267465,"p_id":1225,"pl_id":27061,"pc_id":1925,"s_n":"yahoo","u_so":3}],"eid":"a01FK","s":"s"});
+</script>
+<div id="msmaflink-a01FK" style="max-width: 600px; margin: 30px auto;">リンク</div>
+    
+    <div class="review-column">
+      <div class="review-card">
+        <img src="images/50s1.jpg" alt="50代販売員">
+        <p>「バスソルトで入浴後の肌が柔らかく、香りも優しく癒されます。肌の潤いが自然に戻りつつあり嬉しいです。」</p>
+        <p class="name">あけみさん：50代販売員</p>
+      </div>
+      <div class="review-card">
+        <img src="images/50s2.jpg" alt="50代アルバイト">
+        <p>「簡単に高保湿ケアでき、毎日のバスタイムが楽しみになりました。香りのリラックス効果もあり、夜もスッキリ眠れるようになりました。」</p>
+        <p class="name">さえさん：50代飲食店</p>
+      </div>
+    </div>
+  </div>
 </section>
 
-<!-- たかくらとくらす コスメ紹介ブロック -->
 <div style="border:1px solid #e0e0e0; padding:15px; margin:20px 0; border-radius:8px; text-align:center; background-color:#fff;">
-  <h3>当サイトおすすめの一押しコスメ！</h3>
-  <p>今回ご紹介するのは、オーガニックなスキンケアブランド「<strong>たかくらとくらす</strong>」。<br>敏感肌にも優しく、初めての方でも安心して試せます。</p>
-  
-  <!-- テキストリンクCTA -->
-  <a href="https://px.a8.net/svt/ejp?a8mat=45I9PD+4UG1SQ+4F9W+5YRHE" 
-     target="_blank" rel="nofollow sponsored" 
-     style="display:inline-block; padding:12px 25px; background-color:#ff69b4; color:#fff; text-decoration:none; border-radius:6px; font-weight:bold; margin-bottom:10px;">
-    今すぐ試してみる
-  </a>
+  <h3>当サイトおすすめの一押しコスメ！</h3>
+  <p>今回ご紹介するのは、オーガニックなスキンケアブランド「<strong>たかくらとくらす</strong>」。<br>敏感肌にも優しく、初めての方でも安心して試せます。</p>
+  
+    <a href="https://px.a8.net/svt/ejp?a8mat=45I9PD+4UG1SQ+4F9W+5YRHE" 
+     target="_blank" rel="nofollow sponsored" 
+     style="display:inline-block; padding:12px 25px; background-color:#ff69b4; color:#fff; text-decoration:none; border-radius:6px; font-weight:bold; margin-bottom:10px;">
+    今すぐ試してみる
+  </a>
 
-  <br>
+  <br>
 
-  <!-- バナーリンク -->
-  <a href="https://px.a8.net/svt/ejp?a8mat=45I9PD+4UG1SQ+4F9W+5Z6WX" target="_blank" rel="nofollow sponsored">
-    <img border="0" width="468" height="60" alt="たかくらとくらす" src="https://www28.a8.net/svt/bgt?aid=251115169293&wid=002&eno=01&mid=s00000020642001004000&mc=1">
-  </a>
-  <img border="0" width="1" height="1" src="https://www17.a8.net/0.gif?a8mat=45I9PD+4UG1SQ+4F9W+5Z6WX" alt="">
+    <a href="https://px.a8.net/svt/ejp?a8mat=45I9PD+4UG1SQ+4F9W+5Z6WX" target="_blank" rel="nofollow sponsored">
+    <img border="0" width="468" height="60" alt="たかくらとくらす" src="https://www28.a8.net/svt/bgt?aid=251115169293&wid=002&eno=01&mid=s00000020642001004000&mc=1">
+  </a>
+  <img border="0" width="1" height="1" src="https://www17.a8.net/0.gif?a8mat=45I9PD+4UG1SQ+4F9W+5Z6WX" alt="">
 </div>
 
 <div class="container" style="margin:60px auto; max-width:860px; text-align:center;">
-  <h2 style="font-family:'Playfair Display',serif; font-size:26px; color:#503535; margin-bottom:18px;">
-    年齢に合ったスキンケアで、肌はもっと変わる
-  </h2>
+  <h2 style="font-family:'Playfair Display',serif; font-size:26px; color:#503535; margin-bottom:18px;">
+    年齢に合ったスキンケアで、肌はもっと変わる
+  </h2>
 
-  <p style="font-size:16px; color:#444; margin-bottom:14px;">
-    40代・50代は、過度なアンチエイジングよりも「保湿・めぐり・低刺激」の3つを大切にしたケアが効果的です。
-  </p>
+  <p style="font-size:16px; color:#444; margin-bottom:14px;">
+    40代・50代は、過度なアンチエイジングよりも「保湿・めぐり・低刺激」の3つを大切にしたケアが効果的です。
+  </p>
 
-  <p style="font-size:16px; color:#444; margin-bottom:14px;">
-    無理なく続けられる自然派アイテムを取り入れることで、<br>
-    肌本来の力が整い、乾燥やハリ不足といった悩みもやわらいでいきます。
-  </p>
+  <p style="font-size:16px; color:#444; margin-bottom:14px;">
+    無理なく続けられる自然派アイテムを取り入れることで、<br>
+    肌本来の力が整い、乾燥やハリ不足といった悩みもやわらいでいきます。
+  </p>
 
-  <p style="font-size:16px; color:#444;">
-    このページが、あなたの毎日のスキンケア選びの参考になれば幸いです。
-  </p>
+  <p style="font-size:16px; color:#444;">
+    このページが、あなたの毎日のスキンケア選びの参考になれば幸いです。
+  </p>
 </div>
 
-<!-- ★アフィリエイト特集ボックス（最後尾）★ -->
 <div style="
-  max-width: 900px;
-  margin: 60px auto;
-  padding: 30px 20px;
-  background: linear-gradient(135deg, #ffe3ea, #ffd6e6);
-  border-radius: 18px;
-  box-shadow: 0 6px 20px rgba(0,0,0,0.12);
-  text-align: center;
+  max-width: 900px;
+  margin: 60px auto;
+  padding: 30px 20px;
+  background: linear-gradient(135deg, #ffe3ea, #ffd6e6);
+  border-radius: 18px;
+  box-shadow: 0 6px 20px rgba(0,0,0,0.12);
+  text-align: center;
 ">
-  <h2 style="
-    font-family: 'Playfair Display', serif;
-    font-size: 30px;
-    margin-bottom: 10px;
-    color:#503535;
-  ">
-    🌸 今月の特別おすすめアイテム
-  </h2>
+  <h2 style="
+    font-family: 'Playfair Display', serif;
+    font-size: 30px;
+    margin-bottom: 10px;
+    color:#503535;
+  ">
+    🌸 今月の特別おすすめアイテム
+  </h2>
 
-  <p style="font-size:16px; color:#444; margin-bottom:20px;">
-    年齢肌・乾燥肌の方に特に人気のアイテムをピックアップしました。<br>
-    気分が上がるケアで、毎日のスキンケア時間をもっと贅沢に。
-  </p>
+  <p style="font-size:16px; color:#444; margin-bottom:20px;">
+    年齢肌・乾燥肌の方に特に人気のアイテムをピックアップしました。<br>
+    気分が上がるケアで、毎日のスキンケア時間をもっと贅沢に。
+  </p>
 
-  <!-- アフィリエイトリンク -->
-  <a href="https://px.a8.net/svt/ejp?a8mat=45I9PD+4HCIHM+37D2+609HT" target="_blank" rel="nofollow sponsored">
-    <img border="0" width="300" height="250" alt="おすすめアイテム" 
-         style="border-radius:14px; box-shadow:0 4px 15px rgba(0,0,0,0.15);" 
-         src="https://www29.a8.net/svt/bgt?aid=251115169271&wid=002&eno=01&mid=s00000014951001009000&mc=1">
-  </a>
-  <img border="0" width="1" height="1" 
-       src="https://www19.a8.net/0.gif?a8mat=45I9PD+4HCIHM+37D2+609HT" alt="">
+    <a href="https://px.a8.net/svt/ejp?a8mat=45I9PD+4HCIHM+37D2+609HT" target="_blank" rel="nofollow sponsored">
+    <img border="0" width="300" height="250" alt="おすすめアイテム" 
+         style="border-radius:14px; box-shadow:0 4px 15px rgba(0,0,0,0.15);" 
+         src="https://www29.a8.net/svt/bgt?aid=251115169271&wid=002&eno=01&mid=s00000014951001009000&mc=1">
+  </a>
+  <img border="0" width="1" height="1" 
+       src="https://www19.a8.net/0.gif?a8mat=45I9PD+4HCIHM+37D2+609HT" alt="">
 
-  <p style="margin-top:15px; font-size:14px; color:#777;">
-    ※ 気になる方は今すぐチェックしてみてくださいね。
-  </p>
+  <p style="margin-top:15px; font-size:14px; color:#777;">
+    ※ 気になる方は今すぐチェックしてみてくださいね。
+  </p>
 </div>
-<!-- ★アフィリエイト特集ボックスここまで★ -->
- 
-<!-- 関連コンテンツ -->
-<div class="related">
-  <p>さらにおすすめの記事はこちら：</p>
-  <a href="index.html">🏠 トップページへ戻る</a>
-  <a href="winter-selection.html">❄ 冬のベストセレクションを見る</a>
+ 
+<div class="related" style="margin-top:50px;">
+  <p>さらにおすすめの記事はこちら：</p>
+  <a href="index.html">🏠 トップページへ戻る</a>
+  <a href="winter-selection.html">❄ 冬のベストセレクションを見る</a>
 </div>
 
 </main>
 
 <footer>
-  © 2025 EssentialBeautyNeeds
+  © 2025 EssentialBeautyNeeds
 </footer>
 
-<!-- アフィリエイトお断り -->
 <div id="affiliateNotice">※当サイトはアフィリエイト広告（Amazonアソシエイト含む）を利用しています</div>
 
 </body>
