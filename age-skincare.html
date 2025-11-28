@@ -44,15 +44,28 @@ p.lead { font-size: 18px; color: #5a4545; }
 .container { max-width: 1000px; margin: 0 auto; padding: 0 20px; }
 .article { margin: 80px 0; }
 .article h2 { font-family: 'Playfair Display', serif; font-size:28px; color:#503535; text-align:center; margin-bottom:20px; }
-.article img.hero { width:100%; max-height:400px; object-fit:cover; border-radius:18px; margin-bottom:20px; box-shadow:0 6px 25px rgba(0,0,0,0.15); }
-
-/* レイアウトを縦長（シングルカラム）に変更 */
-.product-review { 
-    /* display:flex; を削除し、縦に積む */
-    gap:30px; 
-    margin-bottom:50px; 
-    /* flex-wrap:wrap; を削除 */
+/* 修正後 (ヒーロー画像のサイズと中央寄せを設定) */
+.article img.hero { 
+    width:100%; 
+    max-width: 600px; /* ★追加: 最大幅を600pxに設定 */
+    display: block; /* ★追加: 中央寄せのためにブロック要素に */
+    margin: 0 auto 20px; /* ★修正: 中央寄せ + 下マージン */
+    max-height:400px; 
+    object-fit:cover; 
+    border-radius:18px; 
+    box-shadow:0 6px 25px rgba(0,0,0,0.15); 
 }
+    
+/* レイアウトを縦長（シングルカラム）に変更 */
+/* 修正後 (レビュー全体（商品リンクとレビューカラムを含む）の幅と中央寄せを設定) */
+.product-review { 
+    gap:30px; 
+    margin-bottom:50px; 
+    max-width: 600px; /* ★追加: 最大幅を600pxに設定 */
+    margin-left: auto; /* ★追加: 中央寄せ */
+    margin-right: auto; /* ★追加: 中央寄せ */
+}
+    
 /* product-cardの flex 設定を解除（幅は親要素の幅100%になる） */
 .product-card { 
     /* flex:1; min-width:280px; を削除 */
