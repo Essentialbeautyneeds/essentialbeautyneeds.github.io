@@ -156,36 +156,75 @@ footer { text-align:center; font-size:13px; color:#888; margin:60px 0 30px; }
       transform: translateY(-3px);
       box-shadow: 0 6px 18px rgba(0,0,0,0.2);
     }
+<style>
+:root {
+  --bg: #fff8f8;
+  --accent: #f7a8a8;
+  --accent-hover: #f48b8b;
+  --muted: #666;
+}
+* { box-sizing: border-box; margin: 0; padding: 0; }
+body { font-family: 'Quicksand', sans-serif; background: var(--bg); color: #333; line-height: 1.6; }
+
+/* 変更点: header全体の背景とpaddingを削除 */
+header { text-align: center; padding: 0; background: none; color:#503535; box-shadow:none;}
+
+/* 変更点: ピンク背景のヘッダー部分を定義 */
+.pink-header-box {
+    padding: 80px 20px 40px; /* 上下のpaddingを設定 */
+    background: linear-gradient(135deg,#ffe6e6,#ffdcdc);
+    box-shadow:0 4px 20px rgba(0,0,0,0.1);
+}
+
+/* 変更点: 説明文のボックス（白背景 + ピンク枠）を定義 */
+.description-box {
+    max-width: 600px;
+    /* 負のマージンでピンクの背景に少し被せるデザインに */
+    margin: -30px auto 30px; 
+    padding: 25px 20px;
+    background: #ffffff; /* 白背景 */
+    border: 2px solid var(--accent); /* ピンク枠線 */
+    border-radius: 12px;
+    box-shadow: 0 4px 15px rgba(0,0,0,0.1);
+    text-align: center;
+    position: relative;
+    z-index: 2; /* 他の要素の上に表示 */
+}
+
+h1 { font-family: 'Playfair Display', serif; font-size: 42px; margin-bottom: 10px; }
+p.lead { font-size: 18px; color: #5a4545; }
+.container { max-width: 1000px; margin: 0 auto; padding: 0 20px; }
+.article { margin: 80px 0; }
+.article h2 { font-family: 'Playfair Display', serif; font-size:28px; color:#503535; text-align:center; margin-bottom:20px; }
     
 </style>
 </head>
 <body>
 
 <header>
-  <h1>40代・50代向け 年齢・肌質別オーガニックスキンケア</h1>
-  <p class="lead">乾燥・ハリ不足・敏感肌にも対応した自然派コスメとリアルユーザーの声を紹介します。</p>
+    <div class="pink-header-box">
+        <h1>40代・50代向け 年齢・肌質別オーガニックスキンケア</h1>
+        <p class="lead">乾燥・ハリ不足・敏感肌にも対応した自然派コスメとリアルユーザーの声を紹介します。</p>
 
-   <div style="margin-top: 30px;">
-      <nav>
-        <a href="seasons-skin.html" class="nav-link">🌸 季節別ケア</a>
-        <a href="age-skincare.html" class="nav-link">👩 年代別・肌質別</a>
-        <a href="acne-care.html" class="nav-link">🧴 悩み別ケア</a>
-        <a href="skin-ranking.html" class="nav-link">✨ 厳選アイテム</a>
-      </nav>
+        <div style="margin-top: 30px;">
+            <nav>
+                <a href="seasons-skin.html" class="nav-link">🌸 季節別ケア</a>
+                <a href="age-skincare.html" class="nav-link">👩 年代別・肌質別</a>
+                <a href="acne-care.html" class="nav-link">🧴 悩み別ケア</a>
+                <a href="skin-ranking.html" class="nav-link">✨ 厳選アイテム</a>
+            </nav>
+        </div>
+    </div> <div class="description-box">
+        <p style="font-size:17px; color:#5a4545; margin-bottom:10px;">
+            40代・50代の肌は、乾燥・ハリ不足・敏感化など「年齢特有の変化」が現れやすい時期です。<br>
+            本ページでは、無理なく続けられる自然派スキンケアを軸に、<br>年齢に合わせたケア方法と実際の愛用者レビューをまとめています。
+        </p>
+
+        <p style="font-size:16px; color:#5a4545;">
+            <strong></strong>肌に優しいアイテムを選びたいけれど、どれを選べばいいかわからない…<br> 
+            そんな方のために、肌質別のポイントやおすすめ成分もわかりやすく紹介しています。</strong>
+        </p>
     </div>
-
-  <div class="container" style="margin-top:10px; max-width:600px; text-align:center;">
-  <p style="font-size:17px; color:#5a4545; margin-bottom:10px;">
-    40代・50代の肌は、乾燥・ハリ不足・敏感化など「年齢特有の変化」が現れやすい時期です。<br>
-    本ページでは、無理なく続けられる自然派スキンケアを軸に、<br>年齢に合わせたケア方法と実際の愛用者レビューをまとめています。
-  </p>
-
-  <p style="font-size:16px; color:#5a4545;">
-    <strong></strong>肌に優しいアイテムを選びたいけれど、どれを選べばいいかわからない…<br> 
-    そんな方のために、肌質別のポイントやおすすめ成分もわかりやすく紹介しています。</strong>
-  </p>
-</div>
- 
 </header>
 
 <main class="container">
