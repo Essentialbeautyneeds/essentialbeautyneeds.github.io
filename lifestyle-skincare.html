@@ -1,55 +1,52 @@
-
-
 <!doctype html>
 <html lang="ja">
 <head>
 <meta charset="utf-8" />
-<!-- Google Analytics 4 + internal traffic exclusion -->
 <script>
-  // internal_user クッキーが設定されているか確認
-  function isInternalUser() {
-    return document.cookie.split(';').some(c => c.trim().startsWith('internal_user=true'));
-  }
+  // internal_user クッキーが設定されているか確認
+  function isInternalUser() {
+    return document.cookie.split(';').some(c => c.trim().startsWith('internal_user=true'));
+  }
 
-  // internal_user クッキーがない場合だけ、GA4を読み込む
-  if (!isInternalUser()) {
-    var gaScript = document.createElement('script');
-    gaScript.async = true;
-    gaScript.src = "https://www.googletagmanager.com/gtag/js?id=G-2HGEPHVZYY";
-    document.head.appendChild(gaScript);
+  // internal_user クッキーがない場合だけ、GA4を読み込む
+  if (!isInternalUser()) {
+    var gaScript = document.createElement('script');
+    gaScript.async = true;
+    gaScript.src = "[https://www.googletagmanager.com/gtag/js?id=G-2HGEPHVZYY](https://www.googletagmanager.com/gtag/js?id=G-2HGEPHVZYY)";
+    document.head.appendChild(gaScript);
 
-    window.dataLayer = window.dataLayer || [];
-    function gtag(){dataLayer.push(arguments);}
-    gtag('js', new Date());
-    gtag('config', 'G-2HGEPHVZYY');
-  } else {
-    console.log('✅ Internal traffic excluded.');
-  }
+    window.dataLayer = window.dataLayer || [];
+    function gtag(){dataLayer.push(arguments);}
+    gtag('js', new Date());
+    gtag('config', 'G-2HGEPHVZYY');
+  } else {
+    console.log('✅ Internal traffic excluded.');
+  }
 </script>
-  
+  
 <meta name="viewport" content="width=device-width,initial-scale=1" />
 <title>生活リズム別スキンケア｜Essential Beauty Needs</title>
 <meta name="description" content="生活リズムに合わせたオーガニック・ナチュラルなスキンケア提案。ナチュラル派／時短派／アクティブ派／夜型の4タイプに合うおすすめ商品を紹介。">
-  
-<link rel="canonical" href="https://essential-beauty-needs.com/lifestyle-skincare.html" />
-  
-<link href="https://fonts.googleapis.com/css2?family=Playfair+Display:wght@600&family=Quicksand:wght@400;600&display=swap" rel="stylesheet">
+  
+<link rel="canonical" href="[https://essential-beauty-needs.com/lifestyle-skincare.html](https://essential-beauty-needs.com/lifestyle-skincare.html)" />
+  
+<link href="[https://fonts.googleapis.com/css2?family=Playfair+Display:wght@600&family=Quicksand:wght@400;600&display=swap](https://fonts.googleapis.com/css2?family=Playfair+Display:wght@600&family=Quicksand:wght@400;600&display=swap)" rel="stylesheet">
 <style>
 :root{
-  --bg:#fff8f8;
-  --accent:#f7a8a8;
-  --accent-hover:#f48b8b;
-  --muted:#666;
-  --card:#fff;
+  --bg:#fff8f8;
+  --accent:#f7a8a8;
+  --accent-hover:#f48b8b;
+  --muted:#666;
+  --card:#fff;
 }
 *{box-sizing:border-box;margin:0;padding:0;}
 body{font-family:'Quicksand',sans-serif;background:var(--bg);color:#333;line-height:1.7;}
 .header{
-  text-align:center;
-  padding:72px 20px 36px;
-  background:linear-gradient(135deg,#ffe6e6,#ffdcdc);
-  color:#503535;
-  position:relative;
+  text-align:center;
+  padding:72px 20px 36px;
+  background:linear-gradient(135deg,#ffe6e6,#ffdcdc);
+  color:#503535;
+  position:relative;
 }
 .header h1{font-family:'Playfair Display',serif;font-size:38px;margin-bottom:8px;}
 .header p.lead{font-size:16px;color:#5a4545;margin-bottom:14px;}
@@ -63,15 +60,15 @@ body{font-family:'Quicksand',sans-serif;background:var(--bg);color:#333;line-hei
 
 /* hero画像 */
 .hero{
-  width:100%;
-  max-width:300px;
-  aspect-ratio:1/1;
-  object-fit:cover;
-  object-position:center;
-  border-radius:14px;
-  box-shadow:0 6px 24px rgba(0,0,0,0.08);
-  display:block;
-  margin:0 auto 18px;
+  width:100%;
+  max-width:300px;
+  aspect-ratio:1/1;
+  object-fit:cover;
+  object-position:center;
+  border-radius:14px;
+  box-shadow:0 6px 24px rgba(0,0,0,0.08);
+  display:block;
+  margin:0 auto 18px;
 }
 
 /* sections */
@@ -99,278 +96,277 @@ body{font-family:'Quicksand',sans-serif;background:var(--bg);color:#333;line-hei
 
 /* affiliate notice */
 #affiliateNotice {
-    position: fixed;
-    right: 12px;
-    bottom: 12px;
-    background: rgba(255, 255, 255, 0.8);
-    color: #555;
-    font-size: 11px;
-    border-radius: 6px;
-    padding: 4px 8px;
-    box-shadow: 0 2px 6px rgba(0,0,0,0.1);
-    z-index: 999;
+    position: fixed;
+    right: 12px;
+    bottom: 12px;
+    background: rgba(255, 255, 255, 0.8);
+    color: #555;
+    font-size: 11px;
+    border-radius: 6px;
+    padding: 4px 8px;
+    box-shadow: 0 2px 6px rgba(0,0,0,0.1);
+    z-index: 999;
 }
 
 @media(max-width:900px){
-  .block{flex-direction:column;}
-  .card img{height:100px;}
-  .review img{width:100px;height:100px;}
+  .block{flex-direction:column;}
+  .card img{height:100px;}
+  .review img{width:100px;height:100px;}
 }
 </style>
 </head>
 <body>
 
 <header class="header">
-  <div class="container">
-    <h1>生活リズム別スキンケア</h1>
-    <p class="lead">日々のリズムに合わせたオーガニック＆ナチュラルなケア提案。あなたの生活スタイルに合う商品をピックアップしました。</p>
+  <div class="container">
+    <h1>生活リズム別スキンケア</h1>
+    <p class="lead">日々のリズムに合わせたオーガニック＆ナチュラルなケア提案。あなたの生活スタイルに合う商品をピックアップしました。</p>
 
-    <div class="nav-links" role="navigation" aria-label="site links">
-      <a href="index.html">🏠 トップ</a>
-      <a href="seasons-skin.html">🌸 季節別スキンケア</a>
-      <a href="age-skincare.html">🍁 年齢・肌質別</a>
-      <a href="acne-care.html">👩 肌荒れケア</a>
-    </div>
+    <div class="nav-links" role="navigation" aria-label="site links">
+      <a href="index.html">🏠 トップ</a>
+      <a href="seasons-skin.html">🌸 季節別スキンケア</a>
+      <a href="age-skincare.html">🍁 年齢・肌質別</a>
+      <a href="acne-care.html">👩 肌荒れケア</a>
+    </div>
 
-    <div class="top-cta">
-      <a href="winter-selection.html" class="btn">❄ 冬のおすすめを見る</a>
-    </div>
-  </div>
+    <div class="top-cta">
+      <a href="winter-selection.html" class="btn">❄ 冬のおすすめを見る</a>
+    </div>
+  </div>
 </header>
 
-<!-- ページ冒頭の文章（中央に寄せて幅50%） -->
 <div style="border:2px solid #f4b5b5; border-radius:12px; padding:20px; margin:25px auto; background:#fff1f1; color:#503535; font-size:16px; line-height:1.6; width:50%;">
-  日々の生活リズムに合わせたスキンケアは、肌の健康や美容に直結する非常に重要なポイントです。朝は一日の中で最も慌ただしい時間帯で、スキンケアに多くの時間を割けない人も多いですが、その分「短時間でしっかり潤うか」が鍵になります。洗顔後すぐに使えるオールインワンジェルや、軽いテクスチャーで浸透の早い化粧水を選ぶことで、忙しい朝でも肌に必要な水分を素早く補給できます。また、紫外線対策は日中の肌ダメージを防ぐための必須ステップ。外出前には日焼け止めを忘れずに取り入れることで、シミや乾燥を未然に防ぐことができます。
+  日々の生活リズムに合わせたスキンケアは、肌の健康や美容に直結する非常に重要なポイントです。朝は一日の中で最も慌ただしい時間帯で、スキンケアに多くの時間を割けない人も多いですが、その分「短時間でしっかり潤うか」が鍵になります。洗顔後すぐに使えるオールインワンジェルや、軽いテクスチャーで浸透の早い化粧水を選ぶことで、忙しい朝でも肌に必要な水分を素早く補給できます。また、紫外線対策は日中の肌ダメージを防ぐための必須ステップ。外出前には日焼け止めを忘れずに取り入れることで、シミや乾燥を未然に防ぐことができます。
 </div>
-  
+  
 <main class="container">
 
-  <!-- 1. ナチュラル派 -->
-  <section class="section" id="natural">
-    <h2>🕊 ナチュラル派・家族重視（ゆったり生活）</h2>
-    <div class="block">
-      <div class="card">
-        <h3>エピス EPIS 化粧水＆美容液（大容量セット）</h3>
-        <img src="images/AA1.jpg" alt="EPIS 化粧水＆美容液">
-        <p>家族みんなで使える大容量のオーガニックスキンケアセット。ナチュラルシトラスの香りで心地よく、無添加処方で敏感肌にも配慮されています。</p>
-        <ul>
-          <li>家族で使える大容量セット</li>
-          <li>無添加・植物エキス配合で高保湿</li>
-          <li>ギフトにもおすすめ</li>
-        </ul>
-        <a class="btn aff" href="https://amzn.to/4oZFXR6" target="_blank" rel="nofollow sponsored noopener">実際に使ってみる</a>
+    <section class="section" id="natural">
+    <h2>🕊 ナチュラル派・家族重視（ゆったり生活）</h2>
+    <div class="block">
+      <div class="card" style="min-width: 280px; flex: 1;">
+                <div style="text-align:center; margin: 0 auto; max-width: 400px;">
+                    <script type="text/javascript">
+(function(b,c,f,g,a,d,e){b.MoshimoAffiliateObject=a;
+b[a]=b[a]||function(){arguments.currentScript=c.currentScript
+||c.scripts[c.scripts.length-2];(b[a].q=b[a].q||[]).push(arguments)};
+c.getElementById(a)||(d=c.createElement(f),d.src=g,
+d.id=a,e=c.getElementsByTagName("body")[0],e.appendChild(d))})
+(window,document,"script","//[dn.msmstatic.com/site/cardlink/bundle.js?20220329](https://dn.msmstatic.com/site/cardlink/bundle.js?20220329)","msmaflink");
+msmaflink({"n":"エピス EPIS 化粧水 500ml ＆ 美容液 300ml オーガニック 2点セット 大容量 ナチュラルシトラスの香り 乳液 スキンケア 化粧水乳液セット メンズ レディース","b":"","t":"","d":"https:\/\/thumbnail.image.rakuten.co.jp","c_p":"\/@0_mall\/salonedolce\/cabinet\/r_2025092242","p":["\/20250923001005_108_1.jpg","\/20250923001005_108_2.jpg","\/20250923001005_108_3.jpg"],"u":{"u":"https:\/\/item.rakuten.co.jp\/salonedolce\/20250923001005_108\/","t":"rakuten","r_v":""},"v":"2.1","b_l":[{"id":1,"u_tx":"楽天市場で見る","u_bc":"#87c209","u_url":"https:\/\/item.rakuten.co.jp\/salonedolce\/20250923001005_108\/","a_id":5267359,"p_id":54,"pl_id":27059,"pc_id":54,"s_n":"rakuten","u_so":1},{"id":5,"u_tx":"Amazonで見る","u_bc":"#184f5c","u_url":"https:\/\/amzn.to\/4ooBrep","a_id":0,"p_id":0,"pl_id":0,"pc_id":0,"s_n":"custom_10","u_so":2},{"id":4,"u_tx":"Yahoo!ショッピングで見る","u_bc":"#bf0000","u_url":"https:\/\/shopping.yahoo.co.jp\/search?first=1\u0026p=%E3%82%A8%E3%83%94%E3%82%B9%20EPIS%20%E5%8C%96%E7%B2%A7%E6%B0%B4%20500ml%20%EF%BC%86%20%E7%BE%8E%E5%AE%B9%E6%B6%B2%20300ml%20%E3%82%AA%E3%83%BC%E3%82%AC%E3%83%8B%E3%83%83%E3%82%AF%202%E7%82%B9%E3%82%BB%E3%83%83%E3%83%88%20%E5%A4%A7%E5%AE%B9%E9%87%8F%20%E3%83%8A%E3%83%81%E3%83%A5%E3%83%A9%E3%83%AB%E3%82%B7%E3%83%88%E3%83%A9%E3%82%B9%E3%81%AE%E9%A6%99%E3%82%8A%20%E4%B9%B3%E6%B6%B2%20%E3%82%B9%E3%82%AD%E3%83%B3%E3%82%B1%E3%82%A2%20%E5%8C%96%E7%B2%A7%E6%B0%B4%E4%B9%B3%E6%B6%B2%E3%82%BB%E3%83%83%E3%83%88%20%E3%83%A1%E3%83%B3%E3%82%BA%20%E3%83%AC%E3%83%87%E3%82%A3%E3%83%BC%E3%82%B9","a_id":5267465,"p_id":1225,"pl_id":27061,"pc_id":1925,"s_n":"yahoo","u_so":3}],"eid":"aLL8J","s":"s"});
+          </script>
+          <div id="msmaflink-aLL8J">リンク</div>
+                  </div>
+                <div class="reviews">
+          <div class="review">
+            <img src="images/AA2.jpg" alt="20歳 学生">
+            <div>
+              <p>「コスパがよくて家でたっぷり使えます。敏感な肌でも刺激が少なかったです。」</p>
+              <div class="who">ゆうなさん：20代 学生</div>
+            </div>
+          </div>
+          <div class="review">
+            <img src="images/AA3.jpg" alt="30代 在宅ワーク">
+            <div>
+              <p>「朝晩たっぷり使っても減りにくいので助かります。香りも優しく家族で使っています。」</p>
+              <div class="who">わかなさん：40代 在宅ワーク</div>
+            </div>
+          </div>
+        </div>
+      </div>
+    </div>
+    <div style="text-align:center;margin-top:12px;"><a class="internal-link" href="#time-saving">次：忙しい日常（時短ケア） →</a></div>
+  </section>
 
-        <div class="reviews">
-          <div class="review">
-            <img src="images/AA2.jpg" alt="20歳 学生">
-            <div>
-              <p>「コスパがよくて家でたっぷり使えます。敏感な肌でも刺激が少なかったです。」</p>
-              <div class="who">ゆうなさん：20代 学生</div>
-            </div>
-          </div>
-          <div class="review">
-            <img src="images/AA3.jpg" alt="30代 在宅ワーク">
-            <div>
-              <p>「朝晩たっぷり使っても減りにくいので助かります。香りも優しく家族で使っています。」</p>
-              <div class="who">わかなさん：40代 在宅ワーク</div>
-            </div>
-          </div>
-        </div>
-      </div>
-    </div>
-    <div style="text-align:center;margin-top:12px;"><a class="internal-link" href="#time-saving">次：忙しい日常（時短ケア） →</a></div>
-  </section>
-
-  <!-- 2. 忙しい日常 -->
-  <section class="section" id="time-saving">
-    <h2>⏱ 忙しい日常・時短ケア（ワーキングライフ）</h2>
-    <div class="block">
-      <div class="card">
-        <h3>高保湿・高浸透 化粧水（敏感肌向け）</h3>
-        <img src="images/BB1.jpg" alt="高保湿化粧水">
-        <p>忙しくても素早く保湿ケアできる高保湿化粧水。べたつかず浸透力が高く、オレンジの香りでリラックス効果も。</p>
-        <ul>
-          <li>高保湿・高浸透でベタつかない</li>
-          <li>敏感肌に配慮した処方</li>
-          <li>さっと使える時短アイテム</li>
-        </ul>
-        <a class="btn aff" href="https://amzn.to/4oYNhwi" target="_blank" rel="nofollow sponsored noopener">実際に使ってみる</a>
-
-        <div class="reviews">
-          <div class="review">
-            <img src="images/BB2.jpg" alt="30代 主婦">
-            <div>
-              <p>「忙しい朝でもさっと使えて保湿力バッチリ。香りも気に入っています。」</p>
-              <div class="who">せりなさん：30代 主婦</div>
-            </div>
-          </div>
-          <div class="review">
-            <img src="images/BB3.jpg" alt="30代 引っ越し業">
-            <div>
-              <p>「仕事で時間がない日でもケアが続けられる。肌荒れが落ち着きました。」</p>
-              <div class="who">まきさん：30代 引っ越し業</div>
-            </div>
-          </div>
-        </div>
-      </div>
-    </div>
-    <div style="text-align:center;margin-top:12px;"><a class="internal-link" href="#active">次：アクティブ派（外出・運動） →</a></div>
-  </section>
+    <section class="section" id="time-saving">
+    <h2>⏱ 忙しい日常・時短ケア（ワーキングライフ）</h2>
+    <div class="block">
+      <div class="card" style="min-width: 280px; flex: 1;">
+                <div style="text-align:center; margin: 0 auto; max-width: 400px;">
+                    <script type="text/javascript">
+(function(b,c,f,g,a,d,e){b.MoshimoAffiliateObject=a;
+b[a]=b[a]||function(){arguments.currentScript=c.currentScript
+||c.scripts[c.scripts.length-2];(b[a].q=b[a].q||[]).push(arguments)};
+c.getElementById(a)||(d=c.createElement(f),d.src=g,
+d.id=a,e=c.getElementsByTagName("body")[0],e.appendChild(d))})
+(window,document,"script","//[dn.msmstatic.com/site/cardlink/bundle.js?20220329](https://dn.msmstatic.com/site/cardlink/bundle.js?20220329)","msmaflink");
+msmaflink({"n":"［無添加 化粧水］母袋有機農場 美百水 150mL スキンケア オーガニック 敏感肌 ヘチマ水 ネオナチュラル 毛穴 乾燥肌 保湿ケア 混合肌 へちま化粧水 美容 ヘチマ 保湿ローション 保湿化粧水 全身ケア 自然派 へちま水","b":"","t":"","d":"https:\/\/thumbnail.image.rakuten.co.jp","c_p":"\/@0_mall\/neo-natural\/cabinet\/shohin","p":["\/motai_bh2_rakuten.jpg","\/bhk\/bh\/lotion-main-features.jpg","\/bhk\/bh\/lotion-recommend-c1.jpg"],"u":{"u":"https:\/\/item.rakuten.co.jp\/neo-natural\/bh\/","t":"rakuten","r_v":""},"v":"2.1","b_l":[{"id":1,"u_tx":"楽天市場で見る","u_bc":"#87c209","u_url":"https:\/\/item.rakuten.co.jp\/neo-natural\/bh\/","a_id":5267359,"p_id":54,"pl_id":27059,"pc_id":54,"s_n":"rakuten","u_so":1},{"id":5,"u_tx":"Amazonで見る","u_bc":"#184f5c","u_url":"https:\/\/amzn.to\/4ooBrep","a_id":0,"p_id":0,"pl_id":0,"pc_id":0,"s_n":"custom_10","u_so":2},{"id":4,"u_tx":"Yahoo!ショッピングで見る","u_bc":"#bf0000","u_url":"https:\/\/shopping.yahoo.co.jp\/search?first=1\u0026p=%EF%BC%BB%E7%84%A1%E6%B7%BB%E5%8A%A0%20%E5%8C%96%E7%B2%A7%E6%B0%B4%EF%BC%BD%E6%AF%8D%E8%A2%8B%E6%9C%89%E6%A9%9F%E8%BE%B2%E5%A0%B4%20%E7%BE%8E%E7%99%BE%E6%B0%B4%20150mL%20%E3%82%B9%E3%82%AD%E3%83%B3%E3%82%B1%E3%82%A2%20%E3%82%AA%E3%83%BC%E3%82%AC%E3%83%8B%E3%83%83%E3%82%AF%20%E6%95%8F%E6%84%9F%E8%82%8C%20%E3%83%98%E3%83%81%E3%83%9E%E6%B0%B4%20%E3%83%8D%E3%82%AA%E3%83%8A%E3%83%81%E3%83%A5%E3%83%A9%E3%83%AB%20%E6%AF%9B%E7%A9%B4%20%E4%B9%BE%E7%87%A5%E8%82%8C%20%E4%BF%9D%E6%B9%BF%E3%82%B1%E3%82%A2%20%E6%B7%B7%E5%90%88%E8%82%8C%20%E3%81%B8%E3%81%A1%E3%81%BE%E5%8C%96%E7%B2%A7%E6%B0%B4%20%E7%BE%8E%E5%AE%B9%20%E3%83%98%E3%83%81%E3%83%9E%20%E4%BF%9D%E6%B9%BF%E3%83%AD%E3%83%BC%E3%82%B7%E3%83%A7%E3%83%B3%20%E4%BF%9D%E6%B9%BF%E5%8C%96%E7%B2%A7%E6%B0%B4%20%E5%85%A8%E8%BA%AB%E3%82%B1%E3%82%A2%20%E8%87%AA%E7%84%B6%E6%B4%BE%20%E3%81%B8%E3%81%A1%E3%81%BE%E6%B0%B4","a_id":5267465,"p_id":1225,"pl_id":27061,"pc_id":1925,"s_n":"yahoo","u_so":3}],"eid":"57Djo","s":"s"});
+          </script>
+          <div id="msmaflink-57Djo">リンク</div>
+                  </div>
+                <div class="reviews">
+          <div class="review">
+            <img src="images/BB2.jpg" alt="30代 主婦">
+            <div>
+              <p>「忙しい朝でもさっと使えて保湿力バッチリ。香りも気に入っています。」</p>
+              <div class="who">せりなさん：30代 主婦</div>
+            </div>
+          </div>
+          <div class="review">
+            <img src="images/BB3.jpg" alt="30代 引っ越し業">
+            <div>
+              <p>「仕事で時間がない日でもケアが続けられる。肌荒れが落ち着きました。」</p>
+              <div class="who">まきさん：30代 引っ越し業</div>
+            </div>
+          </div>
+        </div>
+      </div>
+    </div>
+    <div style="text-align:center;margin-top:12px;"><a class="internal-link" href="#active">次：アクティブ派（外出・運動） →</a></div>
+  </section>
 
 <div style="text-align:center;">
 
-  <a href="https://px.a8.net/svt/ejp?a8mat=45I9PD+44UESA+5DYS+BXYE9" rel="nofollow sponsored">
-    <img border="0" width="468" height="60" alt="" src="https://www27.a8.net/svt/bgt?aid=251115169250&wid=002&eno=01&mid=s00000025138002006000&mc=1">
-  </a>
-  <img border="0" width="1" height="1" src="https://www18.a8.net/0.gif?a8mat=45I9PD+44UESA+5DYS+BXYE9" alt="">
+  <a href="[https://px.a8.net/svt/ejp?a8mat=45I9PD+44UESA+5DYS+BXYE9](https://px.a8.net/svt/ejp?a8mat=45I9PD+44UESA+5DYS+BXYE9)" rel="nofollow sponsored">
+    <img border="0" width="468" height="60" alt="" src="[https://www27.a8.net/svt/bgt?aid=251115169250&wid=002&eno=01&mid=s00000025138002006000&mc=1](https://www27.a8.net/svt/bgt?aid=251115169250&wid=002&eno=01&mid=s00000025138002006000&mc=1)">
+  </a>
+  <img border="0" width="1" height="1" src="[https://www18.a8.net/0.gif?a8mat=45I9PD+44UESA+5DYS+BXYE9](https://www18.a8.net/0.gif?a8mat=45I9PD+44UESA+5DYS+BXYE9)" alt="">
 
-  <br><br>
+  <br><br>
 
-  <a href="https://px.a8.net/svt/ejp?a8mat=45I9PD+4GR2VU+3PSY+1BNJ9D" rel="nofollow sponsored">
-    <img border="0" width="468" height="60" alt="" src="https://www27.a8.net/svt/bgt?aid=251115169270&wid=002&eno=01&mid=s00000017341008004000&mc=1">
-  </a>
-  <img border="0" width="1" height="1" src="https://www11.a8.net/0.gif?a8mat=45I9PD+4GR2VU+3PSY+1BNJ9D" alt="">
+  <a href="[https://px.a8.net/svt/ejp?a8mat=45I9PD+4GR2VU+3PSY+1BNJ9D](https://px.a8.net/svt/ejp?a8mat=45I9PD+4GR2VU+3PSY+1BNJ9D)" rel="nofollow sponsored">
+    <img border="0" width="468" height="60" alt="" src="[https://www27.a8.net/svt/bgt?aid=251115169270&wid=002&eno=01&mid=s00000017341008004000&mc=1](https://www27.a8.net/svt/bgt?aid=251115169270&wid=002&eno=01&mid=s00000017341008004000&mc=1)">
+  </a>
+  <img border="0" width="1" height="1" src="[https://www11.a8.net/0.gif?a8mat=45I9PD+4GR2VU+3PSY+1BNJ9D](https://www11.a8.net/0.gif?a8mat=45I9PD+4GR2VU+3PSY+1BNJ9D)" alt="">
 
 </div>
-  
+  
 
-  <!-- 3. アクティブ -->
-  <section class="section" id="active">
-    <h2>🏞 アクティブ・アウトドア（外出・運動が多い）</h2>
-    <div class="block">
-      <div class="card">
-        <h3>ナチュラルアイランド 森の肌守り（アロマミスト）</h3>
-        <img src="images/CC1.jpg" alt="アロマミスト">
-        <p>北海道産の和ハッカをはじめ9種の天然精油をブレンドしたアロマミスト。外出やスポーツの際の肌ケアにぴったり。</p>
-        <ul>
-          <li>天然由来の虫よけ＆アロマウォーター</li>
-          <li>ディート不使用・無添加処方</li>
-          <li>持ち運びしやすいサイズ</li>
-        </ul>
-        <a class="btn aff" href="https://amzn.to/47Mxhqu" target="_blank" rel="nofollow sponsored noopener">実際に使ってみる</a>
+    <section class="section" id="active">
+    <h2>🏞 アクティブ・アウトドア（外出・運動が多い）</h2>
+    <div class="block">
+      <div class="card" style="min-width: 280px; flex: 1;">
+                <div style="text-align:center; margin: 0 auto; max-width: 400px;">
+                    <script type="text/javascript">
+(function(b,c,f,g,a,d,e){b.MoshimoAffiliateObject=a;
+b[a]=b[a]||function(){arguments.currentScript=c.currentScript
+||c.scripts[c.scripts.length-2];(b[a].q=b[a].q||[]).push(arguments)};
+c.getElementById(a)||(d=c.createElement(f),d.src=g,
+d.id=a,e=c.getElementsByTagName("body")[0],e.appendChild(d))})
+(window,document,"script","//[dn.msmstatic.com/site/cardlink/bundle.js?20220329](https://dn.msmstatic.com/site/cardlink/bundle.js?20220329)","msmaflink");
+msmaflink({"n":"ナチュール オーガニック アウトドア アロマミスト 100ml 【送料無料】 【 お出かけ オーガニック アロマスプレー ディート不使用 アウトドア ラナチュール 虫除け 山 川 】","b":"","t":"","d":"https:\/\/thumbnail.image.rakuten.co.jp","c_p":"\/@0_mall\/nagomisabo\/cabinet","p":["\/img_cosme\/new_mist\/na-aromamist_new.jpg","\/img_cosme\/new_mist\/aromamist_001_new.jpg","\/img_aroma\/other\/la-aromamist_2.jpg"],"u":{"u":"https:\/\/item.rakuten.co.jp\/nagomisabo\/na-aromamist\/","t":"rakuten","r_v":""},"v":"2.1","b_l":[{"id":1,"u_tx":"楽天市場で見る","u_bc":"#87c209","u_url":"https:\/\/item.rakuten.co.jp\/nagomisabo\/na-aromamist\/","a_id":5267359,"p_id":54,"pl_id":27059,"pc_id":54,"s_n":"rakuten","u_so":1},{"id":5,"u_tx":"Amazonで見る","u_bc":"#184f5c","u_url":"https:\/\/amzn.to\/4ooBrep","a_id":0,"p_id":0,"pl_id":0,"pc_id":0,"s_n":"custom_10","u_so":2},{"id":4,"u_tx":"Yahoo!ショッピングで見る","u_bc":"#bf0000","u_url":"https:\/\/shopping.yahoo.co.jp\/search?first=1\u0026p=%E3%83%8A%E3%83%81%E3%83%A5%E3%83%BC%E3%83%AB%20%E3%82%AA%E3%83%BC%E3%82%AC%E3%83%8B%E3%83%83%E3%82%AF%20%E3%82%A2%E3%82%A6%E3%83%88%E3%83%89%E3%82%A2%20%E3%82%A2%E3%83%AD%E3%83%9E%E3%83%9F%E3%82%B9%E3%83%88%20100ml%20%E3%80%90%E9%80%81%E6%96%99%E7%84%A1%E6%96%99%E3%80%91%20%E3%80%90%20%E3%81%8A%E5%87%BA%E3%81%8B%E3%81%91%20%E3%82%AA%E3%83%BC%E3%82%AC%E3%83%8B%E3%83%83%E3%82%AF%20%E3%82%A2%E3%83%AD%E3%83%9E%E3%82%B9%E3%83%97%E3%83%AC%E3%83%BC%20%E3%83%87%E3%82%A3%E3%83%BC%E3%83%88%E4%B8%8D%E4%BD%BF%E7%94%A8%20%E3%82%A2%E3%82%A6%E3%83%88%E3%83%89%E3%82%A2%20%E3%83%A9%E3%83%8A%E3%83%81%E3%83%A5%E3%83%BC%E3%83%AB%20%E8%99%AB%E9%99%A4%E3%81%91%20%E5%B1%B1%20%E5%B7%9D%20%E3%80%91","a_id":5267465,"p_id":1225,"pl_id":27061,"pc_id":1925,"s_n":"yahoo","u_so":3}],"eid":"RiUf0","s":"s"});
+          </script>
+          <div id="msmaflink-RiUf0">リンク</div>
+                  </div>
+                <div class="reviews">
+          <div class="review">
+            <img src="images/CC2.jpg" alt="30代会社員">
+            <div>
+              <p>「匂いが爽やかで自然。外遊びのときに安心して使えます。」</p>
+              <div class="who">みほさん：30代 会社員</div>
+            </div>
+          </div>
+          <div class="review">
+            <img src="images/CC3.jpg" alt="30代ダイバー">
+            <div>
+              <p>「海やアウトドアで活躍。肌に直接つけても安心感がありました。」</p>
+              <div class="who">さくらさん：30代 ダイバー</div>
+            </div>
+          </div>
+        </div>
+      </div>
+    </div>
+    <div style="text-align:center;margin-top:12px;"><a class="internal-link" href="#night">次：夜型・不規則生活 →</a></div>
+  </section>
 
-        <div class="reviews">
-          <div class="review">
-            <img src="images/CC2.jpg" alt="30代会社員">
-            <div>
-              <p>「匂いが爽やかで自然。外遊びのときに安心して使えます。」</p>
-              <div class="who">みほさん：30代 会社員</div>
-            </div>
-          </div>
-          <div class="review">
-            <img src="images/CC3.jpg" alt="30代ダイバー">
-            <div>
-              <p>「海やアウトドアで活躍。肌に直接つけても安心感がありました。」</p>
-              <div class="who">さくらさん：30代 ダイバー</div>
-            </div>
-          </div>
-        </div>
-      </div>
-    </div>
-    <div style="text-align:center;margin-top:12px;"><a class="internal-link" href="#night">次：夜型・不規則生活 →</a></div>
-  </section>
+    <section class="section" id="night">
+    <h2>🌙 夜型・不規則生活（夜勤／睡眠不足）</h2>
 
-  <!-- 4. 夜型 -->
-  <section class="section" id="night">
-    <h2>🌙 夜型・不規則生活（夜勤／睡眠不足）</h2>
-
-    <div style="border:2px solid #f4b5b5; border-radius:12px; padding:20px; margin:25px auto; background:#fff1f1; color:#503535; font-size:16px; line-height:1.6; width:50%;">
+    <div style="border:2px solid #f4b5b5; border-radius:12px; padding:20px; margin:25px auto; background:#fff1f1; color:#503535; font-size:16px; line-height:1.6; width:50%;">
 夜は一日の疲れを癒し、肌を集中ケアする絶好の時間です。メイクや皮脂汚れをしっかり落とした後、肌が最も吸収しやすいタイミングに美容液やクリームで栄養を届けることで、翌朝の肌の調子が大きく変わります。特に乾燥が気になる方は、保湿力の高いクリームやナイトパックを使うのがおすすめです。さらに、オーガニックやナチュラル成分にこだわることで、敏感肌の方でも負担を抑えながら心地よくケアを続けられます。</div>
 
-  
-    
-    <div class="block">
-      <div class="card">
-        <h3>サミュ（SAMU） ナイトケア美容液</h3>
-        <img src="images/DD1.jpg" alt="SAMU ナイトケア">
-        <p>夜遅くまで働く方や睡眠のリズムが不規則な方に。セラミド・ナイアシンアミド・アデノシン配合で、眠っている間に集中保湿とハリケアを行います。</p>
-        <ul>
-          <li>セラミドで高保湿、ハリサポート</li>
-          <li>ナイアシンアミド・アデノシンでトーンアップ</li>
-          <li>寝ている間の集中ケアに最適</li>
-        </ul>
-        <a class="btn aff" href="https://amzn.to/4hPMJ9C" target="_blank" rel="nofollow sponsored noopener">実際に使ってみる</a>
-
-        <div class="reviews">
-          <div class="review">
-            <img src="images/DD2.jpg" alt="50代主婦">
-            <div>
-              <p>「夜のスキンケアに取り入れてから朝の肌が柔らかく感じます。」</p>
-              <div class="who">あきこさん：50代 主婦</div>
-            </div>
-          </div>
-          <div class="review">
-            <img src="images/DD3.jpg" alt="40代自営業">
-            <div>
-              <p>「ハリ感が出てメイクのりが良くなりました。疲れた肌にもおすすめです。」</p>
-              <div class="who">めいさん：40代 自営業</div>
-            </div>
-          </div>
-        </div>
-      </div>
-    </div>
-  </section>
+    <div class="block">
+      <div class="card" style="min-width: 280px; flex: 1;">
+                <div style="text-align:center; margin: 0 auto; max-width: 400px;">
+                    <script type="text/javascript">
+(function(b,c,f,g,a,d,e){b.MoshimoAffiliateObject=a;
+b[a]=b[a]||function(){arguments.currentScript=c.currentScript
+||c.scripts[c.scripts.length-2];(b[a].q=b[a].q||[]).push(arguments)};
+c.getElementById(a)||(d=c.createElement(f),d.src=g,
+d.id=a,e=c.getElementsByTagName("body")[0],e.appendChild(d))})
+(window,document,"script","//[dn.msmstatic.com/site/cardlink/bundle.js?20220329](https://dn.msmstatic.com/site/cardlink/bundle.js?20220329)","msmaflink");
+msmaflink({"n":"公式 正規品　ナイトセラム スキンケア ナイトケア　ジェル 美容液 水分保持　オイルフリー　界面活性剤フリー 洗顔料　保水力　認証オーガニック　ドクターハウシュカ　100％ナチュラル　無添加　ノンケミカル　セラム　美容液|ハリ たるみ おすすめ 送料無料　さっぱり","b":"","t":"","d":"https:\/\/thumbnail.image.rakuten.co.jp","c_p":"\/@0_mall\/inter-cosme\/cabinet","p":["\/compass1573632708.jpg","\/compass1573632721.jpg","\/compass1573632736.jpg"],"u":{"u":"https:\/\/item.rakuten.co.jp\/inter-cosme\/4020829062627\/","t":"rakuten","r_v":""},"v":"2.1","b_l":[{"id":1,"u_tx":"楽天市場で見る","u_bc":"#87c209","u_url":"https:\/\/item.rakuten.co.jp\/inter-cosme\/4020829062627\/","a_id":5267359,"p_id":54,"pl_id":27059,"pc_id":54,"s_n":"rakuten","u_so":1},{"id":5,"u_tx":"Amazonで見る","u_bc":"#184f5c","u_url":"https:\/\/amzn.to\/4ooBrep","a_id":0,"p_id":0,"pl_id":0,"pc_id":0,"s_n":"custom_10","u_so":2},{"id":4,"u_tx":"Yahoo!ショッピングで見る","u_bc":"#bf0000","u_url":"https:\/\/shopping.yahoo.co.jp\/search?first=1\u0026p=%E5%85%AC%E5%BC%8F%20%E6%AD%A3%E8%A6%8F%E5%93%81%E3%80%80%E3%83%8A%E3%82%A4%E3%83%88%E3%82%BB%E3%83%A9%E3%83%A0%20%E3%82%B9%E3%82%AD%E3%83%B3%E3%82%B1%E3%82%A2%20%E3%83%8A%E3%82%A4%E3%83%88%E3%82%B1%E3%82%A2%E3%80%80%E3%82%B8%E3%82%A7%E3%83%AB%20%E7%BE%8E%E5%AE%B9%E6%B6%B2%20%E6%B0%B4%E5%88%86%E4%BF%9D%E6%8C%81%E3%80%80%E3%82%AA%E3%82%A4%E3%83%AB%E3%83%95%E3%83%AA%E3%83%BC%E3%80%80%E7%95%8C%E9%9D%A2%E6%B4%BB%E6%80%A7%E5%89%A4%E3%83%95%E3%83%AA%E3%83%BC%20%E6%B4%97%E9%A1%94%E6%96%99%E3%80%80%E4%BF%9D%E6%B0%B4%E5%8A%9B%E3%80%80%E8%AA%8D%E8%A8%BC%E3%82%AA%E3%83%BC%E3%82%AC%E3%83%8B%E3%83%83%E3%82%AF%E3%80%80%E3%83%89%E3%82%AF%E3%82%BF%E3%83%BC%E3%83%8F%E3%82%A6%E3%82%B7%E3%83%A5%E3%82%AB%E3%80%80100%EF%BC%85%E3%83%8A%E3%83%81%E3%83%A5%E3%83%A9%E3%83%AB%E3%80%80%E7%84%A1%E6%B7%BB%E5%8A%A0%E3%80%80%E3%83%8E%E3%83%B3%E3%82%B1%E3%83%9F%E3%82%AB%E3%83%AB%E3%80%80%E3%82%BB%E3%83%A9%E3%83%A0%E3%80%80%E7%BE%8E%E5%AE%B9%E6%B6%B2%7C%E3%83%8F%E3%83%AA%20%E3%81%9F%E3%82%8B%E3%81%BF%20%E3%81%8A%E3%81%99%E3%81%99%E3%82%81%20%E9%80%81%E6%96%99%E7%84%A1%E6%96%99%E3%80%80%E3%81%95%E3%81%A3%E3%81%B1%E3%82%8A","a_id":5267465,"p_id":1225,"pl_id":27061,"pc_id":1925,"s_n":"yahoo","u_so":3}],"eid":"VHuYv","s":"s"});
+          </script>
+          <div id="msmaflink-VHuYv">リンク</div>
+                  </div>
+                <div class="reviews">
+          <div class="review">
+            <img src="images/DD2.jpg" alt="50代主婦">
+            <div>
+              <p>「夜のスキンケアに取り入れてから朝の肌が柔らかく感じます。」</p>
+              <div class="who">あきこさん：50代 主婦</div>
+            </div>
+          </div>
+          <div class="review">
+            <img src="images/DD3.jpg" alt="40代自営業">
+            <div>
+              <p>「ハリ感が出てメイクのりが良くなりました。疲れた肌にもおすすめです。」</p>
+              <div class="who">めいさん：40代 自営業</div>
+            </div>
+          </div>
+        </div>
+      </div>
+    </div>
+  </section>
 
 <div style="border:2px solid #f4b5b5; border-radius:12px; padding:20px; margin:25px auto; background:#fff1f1; color:#503535; font-size:16px; line-height:1.6; width:50%;">
 朝と夜の役割を意識し、生活リズムに合ったアイテムを選びましょう。無理なく続けられるスキンケア習慣が身につきます。
-  毎日の小さな積み重ねが、長期的な美肌づくりにつながるのです。</div>
-  
-  <div style="text-align:center; margin:20px 0;">
+  毎日の小さな積み重ねが、長期的な美肌づくりにつながるのです。</div>
+  
+  <div style="text-align:center; margin:20px 0;">
 
-  <a href="https://px.a8.net/svt/ejp?a8mat=45I9PD+448Z6I+51ZO+1NJZN5" rel="nofollow sponsored">
-    <img border="0" width="100" height="60" alt="" src="https://www26.a8.net/svt/bgt?aid=251115169249&wid=002&eno=01&mid=s00000023586010003000&mc=1">
-  </a>
-  <img border="0" width="1" height="1" src="https://www10.a8.net/0.gif?a8mat=45I9PD+448Z6I+51ZO+1NJZN5" alt="">
+  <a href="[https://px.a8.net/svt/ejp?a8mat=45I9PD+448Z6I+51ZO+1NJZN5](https://px.a8.net/svt/ejp?a8mat=45I9PD+448Z6I+51ZO+1NJZN5)" rel="nofollow sponsored">
+    <img border="0" width="100" height="60" alt="" src="[https://www26.a8.net/svt/bgt?aid=251115169249&wid=002&eno=01&mid=s00000023586010003000&mc=1](https://www26.a8.net/svt/bgt?aid=251115169249&wid=002&eno=01&mid=s00000023586010003000&mc=1)">
+  </a>
+  <img border="0" width="1" height="1" src="[https://www10.a8.net/0.gif?a8mat=45I9PD+448Z6I+51ZO+1NJZN5](https://www10.a8.net/0.gif?a8mat=45I9PD+448Z6I+51ZO+1NJZN5)" alt="">
 
-  <br><br>
+  <br><br>
 
-  <a href="https://px.a8.net/svt/ejp?a8mat=45I9PD+4HXY3E+51ZO+1HLVB5" rel="nofollow sponsored">
-    <img border="0" width="468" height="60" alt="" src="https://www21.a8.net/svt/bgt?aid=251115169272&wid=002&eno=01&mid=s00000023586009004000&mc=1">
-  </a>
-  <img border="0" width="1" height="1" src="https://www16.a8.net/0.gif?a8mat=45I9PD+4HXY3E+51ZO+1HLVB5" alt="">
+  <a href="[https://px.a8.net/svt/ejp?a8mat=45I9PD+4HXY3E+51ZO+1HLVB5](https://px.a8.net/svt/ejp?a8mat=45I9PD+4HXY3E+51ZO+1HLVB5)" rel="nofollow sponsored">
+    <img border="0" width="468" height="60" alt="" src="[https://www21.a8.net/svt/bgt?aid=251115169272&wid=002&eno=01&mid=s00000023586009004000&mc=1](https://www21.a8.net/svt/bgt?aid=251115169272&wid=002&eno=01&mid=s00000023586009004000&mc=1)">
+  </a>
+  <img border="0" width="1" height="1" src="[https://www16.a8.net/0.gif?a8mat=45I9PD+4HXY3E+51ZO+1HLVB5](https://www16.a8.net/0.gif?a8mat=45I9PD+4HXY3E+51ZO+1HLVB5)" alt="">
 
 </div>
-  
-<!-- ページ最後の文章（同じく中央寄せ） -->
+  
 <div style="border:2px solid #f4b5b5; border-radius:12px; padding:20px; margin:25px auto; background:#fffaf9; color:#503535; font-size:16px; line-height:1.6; width:50%;">
-  生活スタイルに合ったスキンケアを取り入れることで、肌トラブルを防ぎつつ、心地よい毎日を過ごせます。朝晩の習慣、週末のスペシャルケアなど、自分に合ったリズムでケアを楽しむことが大切です。
-  家族と一緒に使えるアイテムや持ち運びしやすい商品を選ぶと、忙しい日常でも続けやすく、自然由来成分で肌にも優しいケアが可能です。
+  生活スタイルに合ったスキンケアを取り入れることで、肌トラブルを防ぎつつ、心地よい毎日を過ごせます。朝晩の習慣、週末のスペシャルケアなど、自分に合ったリズムでケアを楽しむことが大切です。
+  家族と一緒に使えるアイテムや持ち運びしやすい商品を選ぶと、忙しい日常でも続けやすく、自然由来成分で肌にも優しいケアが可能です。
 </div>
 
 <div>
 <p style="text-align:center;">一年を通して使える最強のオーガニックジェルです。ぜひ使ってみてください！</p>
 
 <p style="text-align:center;">
-  <a href="https://px.a8.net/svt/ejp?a8mat=45I9PD+4GR2VU+3PSY+1BMW42" rel="nofollow sponsored noopener">【ハレナ　オーガニックオールインワンジェル】</a>
+  <a href="[https://px.a8.net/svt/ejp?a8mat=45I9PD+4GR2VU+3PSY+1BMW42](https://px.a8.net/svt/ejp?a8mat=45I9PD+4GR2VU+3PSY+1BMW42)" rel="nofollow sponsored noopener">【ハレナ　オーガニックオールインワンジェル】</a>
 </p>
-<img border="0" width="1" height="1" src="https://www10.a8.net/0.gif?a8mat=45I9PD+4GR2VU+3PSY+1BMW42" alt="">
+<img border="0" width="1" height="1" src="[https://www10.a8.net/0.gif?a8mat=45I9PD+4GR2VU+3PSY+1BMW42](https://www10.a8.net/0.gif?a8mat=45I9PD+4GR2VU+3PSY+1BMW42)" alt="">
 
 <p style="text-align:center;">
-  <a href="https://px.a8.net/svt/ejp?a8mat=45I9PD+4GR2VU+3PSY+1BNJ9D" rel="nofollow sponsored noopener">
-    <img border="0" width="468" height="60" alt="HALENA オーガニックオールインワンジェル" src="https://www25.a8.net/svt/bgt?aid=251115169270&wid=002&eno=01&mid=s00000017341008004000&mc=1">
+  <a href="[https://px.a8.net/svt/ejp?a8mat=45I9PD+4GR2VU+3PSY+1BNJ9D](https://px.a8.net/svt/ejp?a8mat=45I9PD+4GR2VU+3PSY+1BNJ9D)" rel="nofollow sponsored noopener">
+    <img border="0" width="468" height="60" alt="HALENA オーガニックオールインワンジェル" src="[https://www25.a8.net/svt/bgt?aid=251115169270&wid=002&eno=01&mid=s00000017341008004000&mc=1](https://www25.a8.net/svt/bgt?aid=251115169270&wid=002&eno=01&mid=s00000017341008004000&mc=1)">
   </a>
 </p>
-<img border="0" width="1" height="1" src="https://www16.a8.net/0.gif?a8mat=45I9PD+4GR2VU+3PSY+1BNJ9D" alt="">
-  
+<img border="0" width="1" height="1" src="[https://www16.a8.net/0.gif?a8mat=45I9PD+4GR2VU+3PSY+1BNJ9D](https://www16.a8.net/0.gif?a8mat=45I9PD+4GR2VU+3PSY+1BNJ9D)" alt="">
+  
 </div>
-  
-  <!-- related -->
-  <div class="related" aria-label="related links">
-    <p style="margin-bottom:8px;color:var(--muted);">他にも参考になるページ：</p>
-    <a href="index.html">🏠 トップページへ</a>
-    <a href="seasons-skin.html">🌸 季節別スキンケア</a>
-    <a href="age-skincare.html">🍁 年齢・肌質別</a>
-    <a href="acne-care.html">👩 肌荒れケア</a>
-    <br>
-    <a href="winter-selection.html">❄ 冬のベストセレクション</a>
-  </div>
+  
+    <div class="related" aria-label="related links">
+    <p style="margin-bottom:8px;color:var(--muted);">他にも参考になるページ：</p>
+    <a href="index.html">🏠 トップページへ</a>
+    <a href="seasons-skin.html">🌸 季節別スキンケア</a>
+    <a href="age-skincare.html">🍁 年齢・肌質別</a>
+    <a href="acne-care.html">👩 肌荒れケア</a>
+    <br>
+    <a href="winter-selection.html">❄ 冬のベストセレクション</a>
+  </div>
 
-  <a href="#top" class="back-to-top" onclick="window.scrollTo({top:0,behavior:'smooth'});return false;">⬆ ページトップへ</a>
+  <a href="#top" class="back-to-top" onclick="window.scrollTo({top:0,behavior:'smooth'});return false;">⬆ ページトップへ</a>
 
 </main>
 
 <footer style="text-align:center;margin:40px 0 60px;color:#888;font-size:13px;">
-  © 2025 EssentialBeautyNeeds
+  © 2025 EssentialBeautyNeeds
 </footer>
 
 <div id="affiliateNotice">※当サイトはアフィリエイト広告（Amazonアソシエイト含む）を利用しています</div>
