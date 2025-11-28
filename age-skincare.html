@@ -105,6 +105,45 @@ footer { text-align:center; font-size:13px; color:#888; margin:60px 0 30px; }
   .product-review{ flex-direction:column; } 
   .review-column{ flex-direction:column; } /* レビューカードも縦に積む */
 }
+  /* Navigation */
+    nav{position:relative; z-index:3; margin-top:25px;}
+    .nav-link {
+      display: inline-block;
+      margin: 6px 12px;
+      padding: 8px 18px;
+      background: rgba(255,255,255,0.8);
+      border-radius: 8px;
+      font-weight:600;
+      text-decoration:none;
+      color:var(--text-main);
+      transition:0.3s;
+      box-shadow: 0 2px 5px rgba(0,0,0,0.05);
+    }
+    .nav-link:hover {
+      background: var(--accent);
+      color:#fff;
+      transform: translateY(-2px);
+    }
+
+    .container{max-width:980px;margin:0 auto;padding:0 16px;}
+
+     /* Common Buttons */
+    .btn-main {
+      display:inline-block;
+      padding:14px 32px;
+      border-radius:30px;
+      background:linear-gradient(45deg,#f48b8b,#f7a8a8);
+      color: #fff;
+      text-decoration: none;
+      font-weight: bold;
+      box-shadow: 0 4px 12px rgba(0,0,0,0.15);
+      transition: 0.3s;
+    }
+    .btn-main:hover {
+      transform: translateY(-3px);
+      box-shadow: 0 6px 18px rgba(0,0,0,0.2);
+    }
+    
 </style>
 </head>
 <body>
@@ -113,12 +152,14 @@ footer { text-align:center; font-size:13px; color:#888; margin:60px 0 30px; }
   <h1>40代・50代向け 年齢・肌質別オーガニックスキンケア</h1>
   <p class="lead">乾燥・ハリ不足・敏感肌にも対応した自然派コスメとリアルユーザーの声を紹介します。</p>
 
-  <div class="related">
-  <p style="margin-bottom:10px;">関連記事はこちら：</p>
-  <a href="winter-selection.html" class="btn">❄ 冬のベストセレクションを見る</a>
-  <a href="acne-care.html" class="btn">💧 ニキビ・肌荒れケアを見る</a><br><br>
-  <a href="index.html" class="btn"> 🏠　トップに戻る</a>
-</div>
+   <div style="margin-top: 30px;">
+      <nav>
+        <a href="seasons-skin.html" class="nav-link">🌸 季節別ケア</a>
+        <a href="age-skincare.html" class="nav-link">👩 年代別・肌質別</a>
+        <a href="acne-care.html" class="nav-link">🧴 悩み別ケア</a>
+        <a href="skin-ranking.html" class="nav-link">✨ 厳選アイテム</a>
+      </nav>
+    </div>
 
   <div class="container" style="margin-top:40px; max-width:820px; text-align:center;">
   <p style="font-size:17px; color:#5a4545; margin-bottom:20px;">
