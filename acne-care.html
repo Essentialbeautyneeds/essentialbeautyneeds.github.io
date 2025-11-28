@@ -1,4 +1,3 @@
-
 <!doctype html>
 <html lang="ja">
 <head>
@@ -10,26 +9,41 @@
     <meta name="description" content="20代女性のニキビや吹き出物におすすめのオーガニック洗顔・スキンケアを紹介。ビフォーアフター写真付きで効果を解説。">
     
     <link href="https://fonts.googleapis.com/css2?family=Playfair+Display:wght@600&family=Quicksand:wght@400;600&display=swap" rel="stylesheet">
- <script>
-  // internal_user クッキーが設定されているか確認
-  function isInternalUser() {
-    return document.cookie.split(';').some(c => c.trim().startsWith('internal_user=true'));
-  }
+<script>
+    // internal_user クッキーが設定されているか確認
+    function isInternalUser() {
+        return document.cookie.split(';').some(c => c.trim().startsWith('internal_user=true'));
+    }
 
-  // internal_user クッキーがない場合だけ、GA4を読み込む
-  if (!isInternalUser()) {
-    var gaScript = document.createElement('script');
-    gaScript.async = true;
-    gaScript.src = "https://www.googletagmanager.com/gtag/js?id=G-2HGEPHVZYY";
-    document.head.appendChild(gaScript);
+    // internal_user クッキーがない場合だけ、GA4を読み込む
+    if (!isInternalUser()) {
+        var gaScript = document.createElement('script');
+        gaScript.async = true;
+        // GA4 ID: G-2HGEPHVZYY
+        gaScript.src = "https://www.googletagmanager.com/gtag/js?id=G-2HGEPHVZYY";
+        document.head.appendChild(gaScript);
 
-    window.dataLayer = window.dataLayer || [];
-    function gtag(){dataLayer.push(arguments);}
-    gtag('js', new Date());
-    gtag('config', 'G-2HGEPHVZYY');
-  } else {
-    console.log('✅ Internal traffic excluded.');
-  }
+        window.dataLayer = window.dataLayer || [];
+        function gtag(){dataLayer.push(arguments);}
+        gtag('js', new Date());
+        gtag('config', 'G-2HGEPHVZYY');
+    } else {
+        console.log('✅ Internal traffic excluded.');
+    }
+
+    /**
+     * 画像読み込みエラー時のフォールバック処理。
+     * 読み込みエラー時にプレースホルダー画像に置き換えます。
+     * @param {HTMLElement} imgElement - エラーが発生したimg要素
+     * @param {number} width - プレースホルダーの幅
+     * @param {number} height - プレースホルダーの高さ
+     * @param {string} text - プレースホルダーに表示するテキスト
+     */
+    function handleImageError(imgElement, width, height, text) {
+        imgElement.onerror = null; // エラーが再帰的に発生するのを防ぐ
+        // プレースホルダーのテキストを日本語から英語に変更（プレースホルダー生成の仕様に合わせるため）
+        imgElement.src = `https://placehold.co/${width}x${height}/f48b8b/ffffff?text=${encodeURIComponent(text)}`;
+    }
 </script>
 <style>
 /* Reset & basic styling */
@@ -68,7 +82,7 @@ header p {
     flex-wrap: wrap;
     gap: 12px;
     margin: 20px 0 40px;
-    width: 100%;       /* 幅を100%にして中央揃えを安定 */
+    width: 100%;
     box-sizing: border-box;
 }
 
@@ -131,11 +145,12 @@ img {
     max-width: 500px;  /* 幅を制限 */
 }
 
-.card img {
+/* .card img {
     height: 140px;
     width: auto;
     margin-bottom: 12px;
-}
+} */
+/* かんたんリンク用に画像スタイルを一時的に無効化または調整 */
 
 .card h3 {
     font-size: 18px;
@@ -159,22 +174,7 @@ img {
     padding-left: 20px;
 }
 
-.card a.btn {
-    display: inline-block;
-    background: #f48b8b;
-    color: #fff;
-    padding: 10px 24px;
-    border-radius: 28px;
-    text-decoration: none;
-    font-weight: 700;
-    box-shadow: 0 4px 12px rgba(0,0,0,0.12);
-    transition: all .25s ease;
-}
-
-.card a.btn:hover {
-    transform: translateY(-3px);
-    background: #f26a6a;
-}
+/* .card a.btn を削除し、かんたんリンクの表示に任せる */
 
 /* レビュー・ビフォーアフター */
 .review-box {
@@ -303,25 +303,25 @@ footer {
 }
 
 .review-box p {
-    border: 2px solid #f4b5b5;      /* 優しいピンクの枠線 */
-    background: #fff7f7;            /* うっすらピンク背景 */
+    border: 2px solid #f4b5b5;
+    background: #fff7f7;
     padding: 18px;
-    border-radius: 12px;            /* やわらかい角丸 */
-    display: inline-block;          /* 枠が文章にフィットする */
-    text-align: left;               /* 自然に左寄せ */
+    border-radius: 12px;
+    display: inline-block;
+    text-align: left;
     line-height: 1.7;
 }
     #affiliateNotice {
-  position: fixed;
-  right: 12px;
-  bottom: 12px;
-  background: rgba(255, 255, 255, 0.8);
-  color: #555;
-  font-size: 11px;
-  border-radius: 6px;
-  padding: 4px 8px;
-  box-shadow: 0 2px 6px rgba(0,0,0,0.1);
-  z-index: 999;
+    position: fixed;
+    right: 12px;
+    bottom: 12px;
+    background: rgba(255, 255, 255, 0.8);
+    color: #555;
+    font-size: 11px;
+    border-radius: 6px;
+    padding: 4px 8px;
+    box-shadow: 0 2px 6px rgba(0,0,0,0.1);
+    z-index: 999;
 }
     
 </style>
@@ -330,133 +330,150 @@ footer {
 <body class="acne-skin-page">
     
 <header>
-  <h1>ニキビ・吹き出物対策</h1>
-  <p>20代女性の肌悩みにおすすめのオーガニックケア</p>
+    <h1>ニキビ・吹き出物対策</h1>
+    <p>20代女性の肌悩みにおすすめのオーガニックケア</p>
 </header>
 
 <div class="top-links">
-  <a href="index.html">🏠 トップ</a>
-  <a href="lifestyle-skincare.html">🕒 生活リズム別スキンケア</a>
+    <a href="index.html">🏠 トップ</a>
+    <a href="lifestyle-skincare.html">🕒 生活リズム別スキンケア</a>
     </div>
     <div class="top-links">
-  <a href="age-skincare.html">👩 年齢・肌質別スキンケア</a>
-  <a href="seasons-skin.html">🌸 季節別スキンケア</a>
+    <a href="age-skincare.html">👩 年齢・肌質別スキンケア</a>
+    <a href="seasons-skin.html">🌸 季節別スキンケア</a>
 </div>
 
-<!-- ページ冒頭文章 -->
 <div style="border:2px solid #f4b5b5; border-radius:12px; padding:20px; margin:25px auto; background:##ffffff; color:#503535; font-size:15px; line-height:1.7; width:60%;">
-  <h2>季節ごとのオーガニックスキンケアで健やかな肌に</h2>
-  季節の変わり目は肌の調子が揺らぎやすく、乾燥や脂性肌、敏感肌のトラブルが増えやすい時期です。オーガニックやナチュラル成分を取り入れたスキンケアで、肌に優しく潤いを与えることが大切です。朝晩の洗顔や保湿、週末の集中ケアなど生活リズムに合わせた使い方を心がけることで、季節に左右されない健やかな肌を育てましょう。
+    <h2>季節ごとのオーガニックスキンケアで健やかな肌に</h2>
+    季節の変わり目は肌の調子が揺らぎやすく、乾燥や脂性肌、敏感肌のトラブルが増えやすい時期です。オーガニックやナチュラル成分を取り入れたスキンケアで、肌に優しく潤いを与えることが大切です。朝晩の洗顔や保湿、週末の集中ケアなど生活リズムに合わせた使い方を心がけることで、季節に左右されない健やかな肌を育てましょう。
 </div>
     
 <main>
-  <!-- 商品1 -->
-  <div class="card">
-    <h3>Boost Facial Wash（ブーストフェイシャルウォッシュ）</h3>
-    <img src="images/acne1.jpg" alt="ブーストフェイシャルウォッシュ">
-    <p>ハーブピーリング配合・幹細胞エキス・シワ・ハリ不足対策。<br>泡パック可能なエイジングケア用クレイ洗顔。</p>
-    <ul>
-      <li>エイジングケア用泡洗顔／5分間泡パック</li>
-      <li>年齢肌・くすみ・乾燥・ハリ不足向け</li>
-      <li>100g／約3〜4か月分</li>
-    </ul>
-    <a class="btn" href="https://amzn.to/3JQK8zS" target="_blank" rel="noopener">実際に使ってみる</a>
-  </div>
+    <div class="card">
+        <h3>Boost Facial Wash（ブーストフェイシャルウォッシュ）</h3>
+        <p style="color:#f26a6a; font-weight: bold;">【代替品: ニュートロジーナ ハイドロブースト フェイシャルクレンザー】</p>
+        <script type="text/javascript">
+        (function(b,c,f,g,a,d,e){b.MoshimoAffiliateObject=a;
+        b[a]=b[a]||function(){arguments.currentScript=c.currentScript
+        ||c.scripts[c.scripts.length-2];(b[a].q=b[a].q||[]).push(arguments)};
+        c.getElementById(a)||(d=c.createElement(f),d.src=g,
+        d.id=a,e=c.getElementsByTagName("body")[0],e.appendChild(d))})
+        (window,document,"script","//dn.msmstatic.com/site/cardlink/bundle.js?20220329","msmaflink");
+        msmaflink({"n":"【アメリカウォルマート品】ニュートロジーナ ハイドロブースト ヒアルロン酸ジェル フェイシャルクレンザー＆フェイスウォッシュ 221ml Neutrogena Hydro Boost Hyaluronic Acid Gel Facial Cleanser and Face Wash, 7.8 oz 【お取り寄せ商品】【合わせて買いたい】","b":"","t":"","d":"https:\/\/thumbnail.image.rakuten.co.jp","c_p":"\/@0_mall\/cmga\/cabinet\/item","p":["\/wm_06001-08000\/wm-06424.jpg","\/wm_06001-08000\/sub_01\/wm-06424_1.jpg","\/00_sub-common\/whatiscmg.jpg"],"u":{"u":"https:\/\/item.rakuten.co.jp\/cmga\/wm-06424\/","t":"rakuten","r_v":""},"v":"2.1","b_l":[{"id":1,"u_tx":"楽天市場で見る","u_bc":"#87c209","u_url":"https:\/\/item.rakuten.co.jp\/cmga\/wm-06424\/","a_id":5267359,"p_id":54,"pl_id":27059,"pc_id":54,"s_n":"rakuten","u_so":1},{"id":5,"u_tx":"Amazonで見る","u_bc":"#bf0000","u_url":"https:\/\/amzn.to\/4ooBrep","a_id":0,"p_id":0,"pl_id":0,"pc_id":0,"s_n":"custom_10","u_so":2},{"id":4,"u_tx":"Yahoo!ショッピングで見る","u_bc":"#0054ff","u_url":"https:\/\/shopping.yahoo.co.jp\/search?first=1\u0026p=%E3%80%90%E3%82%A2%E3%83%A1%E3%83%AA%E3%82%AB%E3%82%A6%E3%82%A9%E3%83%AB%E3%83%9E%E3%83%BC%E3%83%88%E5%93%81%E3%80%91%E3%83%8B%E3%83%A5%E3%83%BC%E3%83%88%E3%83%AD%E3%82%B8%E3%83%BC%E3%83%8A%20%E3%83%8F%E3%82%A4%E3%83%89%E3%83%AD%E3%83%96%E3%83%BC%E3%82%B9%E3%83%88%20%E3%83%92%E3%82%A2%E3%83%AB%E3%83%AD%E3%83%B3%E9%85%B8%E3%82%B8%E3%82%A7%E3%83%AB%20%E3%83%95%E3%82%A7%E3%82%A4%E3%82%B7%E3%83%A3%E3%83%AB%E3%82%AF%E3%83%AC%E3%83%B3%E3%82%B6%E3%83%BC%EF%BC%86%E3%83%95%E3%82%A7%E3%82%A4%E3%82%B9%E3%82%A6%E3%82%A9%E3%83%83%E3%82%B7%E3%83%A5%20221ml%20Neutrogena%20Hydro%20Boost%20Hyaluronic%20Acid%20Gel%20Facial%20Cleanser%20and%20Face%20Wash%2C%207.8%20oz%20%E3%80%90%E3%81%8A%E5%8F%96%E3%82%8A%E5%AF%84%E3%81%9B%E5%95%86%E5%93%81%E3%80%91%E3%80%90%E5%90%88%E3%82%8F%E3%81%9B%E3%81%A6%E8%B2%B7%E3%81%84%E3%81%9F%E3%81%84%E3%80%91","a_id":5267465,"p_id":1225,"pl_id":27061,"pc_id":1925,"s_n":"yahoo","u_so":3}],"eid":"Ivj2h","s":"s"});
+        </script>
+        <div id="msmaflink-Ivj2h">リンク</div>
+        <p>ハーブピーリング配合・幹細胞エキス・シワ・ハリ不足対策。<br>泡パック可能なエイジングケア用クレイ洗顔。</p>
+        <ul>
+            <li>エイジングケア用泡洗顔／5分間泡パック</li>
+            <li>年齢肌・くすみ・乾燥・ハリ不足向け</li>
+            <li>100g／約3〜4か月分</li>
+        </ul>
+    </div>
 
-  <!-- 商品2 -->
-  <div class="card">
-    <h3>SEA-ZEN フェイスソープ 150ml</h3>
-    <img src="images/acne2.jpg" alt="SEA-ZEN フェイスソープ">
-    <p>北海道産昆布エキス使用、弱アルカリ性・無添加<br>敏感肌対応のオーガニック洗顔。</p>
-    <ul>
-      <li>海の栄養素で肌の潤いを保つ</li>
-      <li>敏感肌・乾燥肌にやさしい処方</li>
-      <li>毎日の洗顔に最適</li>
-    </ul>
-    <a class="btn" href="https://amzn.to/4nHddLV" target="_blank" rel="noopener">実際に使ってみる</a>
-  </div>
+    <div class="card">
+        <h3>SEA-ZEN フェイスソープ 150ml</h3>
+        <script type="text/javascript">
+        (function(b,c,f,g,a,d,e){b.MoshimoAffiliateObject=a;
+        b[a]=b[a]||function(){arguments.currentScript=c.currentScript
+        ||c.scripts[c.scripts.length-2];(b[a].q=b[a].q||[]).push(arguments)};
+        c.getElementById(a)||(d=c.createElement(f),d.src=g,
+        d.id=a,e=c.getElementsByTagName("body")[0],e.appendChild(d))})
+        (window,document,"script","//dn.msmstatic.com/site/cardlink/bundle.js?20220329","msmaflink");
+        msmaflink({"n":"【SEA-ZEN】フェイスソープ 150ml 弱アルカリ性 ポンプ 液体石鹸 洗顔 オーガニック グリセリンフリー 無添加 フコイダン がごめ昆布 プチプラ 保湿 敏感肌 乾燥肌 低刺激 脂性肌 くすみ さっぱ","b":"","t":"","d":"https:\/\/thumbnail.image.rakuten.co.jp","c_p":"\/@0_mall\/achiivu\/cabinet\/12199957","p":["\/31291146_1.jpg","\/31291146_2.jpg","\/31291146_3.jpg"],"u":{"u":"https:\/\/item.rakuten.co.jp\/achiivu\/4uzdikmcmghtij7agypy5yjhni\/","t":"rakuten","r_v":""},"v":"2.1","b_l":[{"id":1,"u_tx":"楽天市場で見る","u_bc":"#87c209","u_url":"https:\/\/item.rakuten.co.jp\/achiivu\/4uzdikmcmghtij7agypy5yjhni\/","a_id":5267359,"p_id":54,"pl_id":27059,"pc_id":54,"s_n":"rakuten","u_so":1},{"id":5,"u_tx":"Amazonで見る","u_bc":"#bf0000","u_url":"https:\/\/amzn.to\/4ooBrep","a_id":0,"p_id":0,"pl_id":0,"pc_id":0,"s_n":"custom_10","u_so":2},{"id":4,"u_tx":"Yahoo!ショッピングで見る","u_bc":"#0054ff","u_url":"https:\/\/shopping.yahoo.co.jp\/search?first=1\u0026p=%E3%80%90SEA-ZEN%E3%80%91%E3%83%95%E3%82%A7%E3%82%A4%E3%82%B9%E3%82%BD%E3%83%BC%E3%83%97%20150ml%20%E5%BC%B1%E3%82%A2%E3%83%AB%E3%82%AB%E3%83%AA%E6%80%A7%20%E3%83%9D%E3%83%B3%E3%83%97%20%E6%B6%B2%E4%BD%93%E7%9F%B3%E9%B9%B8%20%E6%B4%97%E9%A1%9C%20%E3%82%AA%E3%83%BC%E3%82%AC%E3%83%8B%E3%83%83%E3%82%AF%20%E3%82%B0%E3%83%AA%E3%82%BB%E3%83%AA%E3%83%B3%E3%83%95%E3%83%AA%E3%83%BC%20%E7%84%A1%E6%B7%BB%E5%8A%A0%20%E3%83%95%E3%82%B3%E3%82%A4%E3%83%80%E3%83%B3%20%E3%81%8C%E3%81%94%E3%82%81%E6%98%86%E5%B8%83%20%E3%83%97%E3%83%81%E3%83%97%E3%83%A9%20%E4%BF%9D%E6%B9%BF%20%E6%95%8F%E6%84%9F%E8%82%8C%20%E4%B9%BE%E7%87%A5%E8%82%8C%20%E4%BD%8E%E5%88%BA%E6%BF%80%20%E8%84%82%E6%80%A7%E8%82%8C%20%E3%81%8F%E3%81%99%E3%81%BF%20%E3%81%95%E3%81%A3%E3%81%B1","a_id":5267465,"p_id":1225,"pl_id":27061,"pc_id":1925,"s_n":"yahoo","u_so":3}],"eid":"Bid3V","s":"s"});
+        </script>
+        <div id="msmaflink-Bid3V">リンク</div>
+        <p>北海道産昆布エキス使用、弱アルカリ性・無添加<br>敏感肌対応のオーガニック洗顔。</p>
+        <ul>
+            <li>海の栄養素で肌の潤いを保つ</li>
+            <li>敏感肌・乾燥肌にやさしい処方</li>
+            <li>毎日の洗顔に最適</li>
+        </ul>
+    </div>
 
-  <!-- ビフォーアフター -->
-  <div class="review-box">
-    <img src="images/acne4.jpg" alt="ニキビ・吹き出物のビフォーアフター">
-    <p>
-      長年吹き出物に悩まされていました。海外製ピーリングや強い薬を使っても<br>一時的に減るだけで、赤みが戻る繰り返しでした。<br>
-      皮膚科医に紹介された「ノブ A アクネフォーム洗顔料」を使い始めてから<br>肌の赤みが落ち着き、肌質も徐々に改善。<br>
-      人前でも恥ずかしくない程度になり、マスクで隠す必要もなくなりました。<br>
-      なかなか合う商品に出会えない方はぜひ試してみてください。<br>
-      <strong>【斎藤ようこさん (26歳・仮名)】</strong>
-    </p>
-  </div>
+    <div class="review-box">
+        <img src="images/acne4.jpg" alt="ニキビ・吹き出物のビフォーアフター"
+             onerror="handleImageError(this, 500, 300, 'Acne Before After')">
+        <p>
+            長年吹き出物に悩まされていました。海外製ピーリングや強い薬を使っても<br>一時的に減るだけで、赤みが戻る繰り返しでした。<br>
+            皮膚科医に紹介された「ノブ A アクネフォーム洗顔料」を使い始めてから<br>肌の赤みが落ち着き、肌質も徐々に改善。<br>
+            人前でも恥ずかしくない程度になり、マスクで隠す必要もなくなりました。<br>
+            なかなか合う商品に出会えない方はぜひ試してみてください。<br>
+            <strong>【斎藤ようこさん (26歳・仮名)】</strong>
+        </p>
+    </div>
 
-  <!-- 商品3 -->
-  <div class="card">
-    <h3>ノブ A アクネフォーム 洗顔料 70g</h3>
-    <img src="images/acne3.jpg" alt="ノブ A アクネフォーム">
-    <p>にきびの原因となる余分な皮脂や汚れをすっきり落としつつ、<br>肌に必要なうるおいを保持する医薬部外品。</p>
-    <ul>
-      <li>1〜2cmを泡立てて洗顔</li>
-      <li>洗顔料の残りやすい小鼻周りや髪の生え際も注意してすすぐ</li>
-      <li>にきび肌用・敏感肌向け</li>
-    </ul>
-    <a class="btn" href="https://amzn.to/3WMBwNx" target="_blank" rel="noopener">実際に使ってみる</a>
-  </div>
+    <div class="card">
+        <h3>ノブ A アクネフォーム 洗顔料 70g</h3>
+        <p style="color:#f26a6a; font-weight: bold;">【代替品: ティーツリー ニキビケアクリーム】</p>
+        <script type="text/javascript">
+        (function(b,c,f,g,a,d,e){b.MoshimoAffiliateObject=a;
+        b[a]=b[a]||function(){arguments.currentScript=c.currentScript
+        ||c.scripts[c.scripts.length-2];(b[a].q=b[a].q||[]).push(arguments)};
+        c.getElementById(a)||(d=c.createElement(f),d.src=g,
+        d.id=a,e=c.getElementsByTagName("body")[0],e.appendChild(d))})
+        (window,document,"script","//dn.msmstatic.com/site/cardlink/bundle.js?20220329","msmaflink");
+        msmaflink({"n":"ニキビ 肌【楽天ランキング1位！】 ケア ティーツリーオイル 肌荒れ 予防 クリーム オーガニック ティートリークリーム ティーツリークリーム 大人ニキビ 子供 思春期 更年期 スキンケア アトピー 保湿クリーム 背中ニキビ 敏感肌 乾燥 かゆみ ボディケア","b":"","t":"","d":"https:\/\/thumbnail.image.rakuten.co.jp","c_p":"\/@0_mall\/mahou-soap\/cabinet\/fresh_aroma\/teatree_cream","p":["\/product\/1p.jpg","\/slide\/24-01.jpg","\/slide\/24-02.jpg"],"u":{"u":"https:\/\/item.rakuten.co.jp\/mahou-soap\/340890\/","t":"rakuten","r_v":""},"v":"2.1","b_l":[{"id":1,"u_tx":"楽天市場で見る","u_bc":"#87c209","u_url":"https:\/\/item.rakuten.co.jp\/mahou-soap\/340890\/","a_id":5267359,"p_id":54,"pl_id":27059,"pc_id":54,"s_n":"rakuten","u_so":1},{"id":5,"u_tx":"Amazonで見る","u_bc":"#bf0000","u_url":"https:\/\/amzn.to\/4ooBrep","a_id":0,"p_id":0,"pl_id":0,"pc_id":0,"s_n":"custom_10","u_so":2},{"id":4,"u_tx":"Yahoo!ショッピングで見る","u_bc":"#0054ff","u_url":"https:\/\/shopping.yahoo.co.jp\/search?first=1\u0026p=%E3%83%8B%E3%82%AD%E3%83%93%20%E8%82%8C%E3%80%90%E6%A5%BD%E5%A4%A9%E3%83%A9%E3%83%B3%E3%82%AD%E3%83%B3%E3%82%B01%E4%BD%8D%EF%BC%81%E3%80%91%20%E3%82%B1%E3%82%A2%20%E3%83%86%E3%82%A3%E3%83%BC%E3%83%84%E3%83%AA%E3%83%BC%E3%82%AA%E3%82%A4%E3%83%AB%20%E8%82%8C%E8%8D%92%E3%82%8C%20%E4%BA%88%E9%98%B2%20%E3%82%AF%E3%83%AA%E3%83%BC%E3%83%A0%20%E3%82%AA%E3%83%BC%E3%82%AC%E3%83%8B%E3%83%83%E3%82%AF%20%E3%83%86%E3%82%A3%E3%83%BC%E3%83%88%E3%83%AA%E3%83%BC%E3%82%AF%E3%83%AA%E3%83%BC%E3%83%A0%20%E3%83%86%E3%82%A3%E3%83%BC%E3%83%84%E3%83%AA%E3%83%BC%E3%82%AF%E3%83%AA%E3%83%BC%E3%83%A0%20%E5%A4%A7%E4%BA%BA%E3%83%8B%E3%82%AD%E3%83%93%20%E5%AD%90%E4%BE%9B%20%E6%80%9D%E6%98%A5%E6%9C%9F%20%E6%9B%B4%E5%B9%B4%E6%9C%9F%20%E3%82%B9%E3%82%AD%E3%83%B3%E3%82%B1%E3%82%A2%20%E3%82%A2%E3%83%88%E3%83%94%E3%83%BC%20%E4%BF%9D%E6%B9%BF%E3%82%AF%E3%83%AA%E3%83%BC%E3%83%A0%20%E8%83%8C%E4%B8%AD%E3%83%8B%E3%82%AD%E3%83%93%20%E6%95%8F%E6%84%9F%E8%82%8C%20%E4%B9%BE%E7%87%A5%20%E3%81%8B%E3%82%86%E3%81%BF%20%E3%83%9C%E3%83%87%E3%82%A3%E3%82%B1%E3%82%A2","a_id":5267465,"p_id":1225,"pl_id":27061,"pc_id":1925,"s_n":"yahoo","u_so":3}],"eid":"ICvwU","s":"s"});
+        </script>
+        <div id="msmaflink-ICvwU">リンク</div>
+        <p>にきびの原因となる余分な皮脂や汚れをすっきり落としつつ、<br>肌に必要なうるおいを保持する医薬部外品。</p>
+        <ul>
+            <li>1〜2cmを泡立てて洗顔</li>
+            <li>洗顔料の残りやすい小鼻周りや髪の生え際も注意してすすぐ</li>
+            <li>にきび肌用・敏感肌向け</li>
+        </ul>
+    </div>
 
-<!-- アルファピニ28 おすすめリンク -->
 <div style="text-align:center; margin:20px 0;">
-  <p><strong>当サイトお勧めする敏感肌に最適なオーガニックスキンケア!</strong></p>
-  <p>「シェルゥーム」<br>敏感肌でも使える国産ボタニカルスキンケア【アルファピニ28】トライアルセット</p>
+    <p><strong>当サイトお勧めする敏感肌に最適なオーガニックスキンケア!</strong></p>
+    <p>「シェルゥーム」<br>敏感肌でも使える国産ボタニカルスキンケア【アルファピニ28】トライアルセット</p>
     
-  <!-- テキストリンク -->
-  <p>早速試してみる!!➡
-    <a href="https://px.a8.net/svt/ejp?a8mat=45I9PD+3YW1YQ+2Y0E+5YZ76" rel="nofollow sponsored">
-      世界初の植物エキス「アオノクマタケラン」配合スキンケア【アルファピニ28】
+    <p>早速試してみる!!➡
+        <a href="https://px.a8.net/svt/ejp?a8mat=45I9PD+3YW1YQ+2Y0E+5YZ76" rel="nofollow sponsored">
+            世界初の植物エキス「アオノクマタケラン」配合スキンケア【アルファピニ28】
+        </a>
+    </p>
+    <img border="0" width="1" height="1" src="https://www15.a8.net/0.gif?a8mat=45I9PD+3YW1YQ+2Y0E+5YZ76" alt="">
+
+    <p>
+    <a href="https://px.a8.net/svt/ejp?a8mat=45I9PD+3YW1YQ+2Y0E+609HT" rel="nofollow sponsored">
+        <img src="https://www22.a8.net/svt/bgt?aid=251115169240&wid=001&eno=01&mid=s00000013739001009000&mc=1"
+              alt="アルファピニ28"
+              style="width:300px; height:180px; display:inline-block;">
     </a>
-  </p>
-  <img border="0" width="1" height="1" src="https://www15.a8.net/0.gif?a8mat=45I9PD+3YW1YQ+2Y0E+5YZ76" alt="">
-
-  <!-- バナーリンク -->
-  <p>
-  <a href="https://px.a8.net/svt/ejp?a8mat=45I9PD+3YW1YQ+2Y0E+609HT" rel="nofollow sponsored">
-    <img src="https://www22.a8.net/svt/bgt?aid=251115169240&wid=001&eno=01&mid=s00000013739001009000&mc=1" 
-         alt="アルファピニ28" 
-         style="width:300px; height:180px; display:inline-block;">
-  </a>
-  </p>
+    </p>
 </div>
     
-<!-- ページ最後文章 -->
 <div style="border:2px solid #f4b5b5; border-radius:12px; padding:20px; margin:40px auto; background:#fffaf9; color:#503535; font-size:15px; line-height:1.7; width:60%;">
-  <h2>毎日の習慣で肌本来の美しさを保つ<br>オーガニックスキンケア</h2>
-  季節ごとの肌状態を見極めながら、オーガニック成分を活かしたスキンケアを取り入れることで、ニキビや吹き出物の予防に繋がります。敏感肌の方も安心して使える洗顔料や美容液を選ぶことが大切です。朝晩の簡単なケアでも継続することで、肌のバリア機能を守り、潤いとハリのある健康的な肌を育てられます。季節の変化に負けない肌を目指しましょう。
+    <h2>毎日の習慣で肌本来の美しさを保つ<br>オーガニックスキンケア</h2>
+    季節ごとの肌状態を見極めながら、オーガニック成分を活かしたスキンケアを取り入れることで、ニキビや吹き出物の予防に繋がります。敏感肌の方も安心して使える洗顔料や美容液を選ぶことが大切です。朝晩の簡単なケアでも継続することで、肌のバリア機能を守り、潤いとハリのある健康的な肌を育てられます。季節の変化に負けない肌を目指しましょう。
 </div>
 
- 
     
     <div class="seasonal-section">
     <h2>季節のおすすめスキンケア</h2>
 
 </div>
- 
+    
 </main>
 <div id="affiliateNotice">※当サイトはアフィリエイト広告（Amazonアソシエイト含む）を利用しています</div>
 
 <div class="back-btn">
     <div class="back-btn">
-      <a href="seasons-skin.html">🌸 季節別スキンケアを見る </a> 
-      <a href="skin-ranking.html">🏆 スキンケアランキングを見る </a>
-     
-  </div>
-     <div class="back-btn">
-     
-      <a href="age-skincare.html"> 👩 40代・50代向けスキンケアを見る </a> 
-      <a href="lifestyle-skincare.html">💆‍♀️ 生活リズム別スキンケアを見る </a> 
+        <a href="seasons-skin.html">🌸 季節別スキンケアを見る </a>
+        <a href="skin-ranking.html">🏆 スキンケアランキングを見る </a>
+        
+    </div>
+        <div class="back-btn">
+        
+        <a href="age-skincare.html"> 👩 40代・50代向けスキンケアを見る </a>
+        <a href="lifestyle-skincare.html">💆‍♀️ 生活リズム別スキンケアを見る </a>
 
-  </div>
-  <a href="index.html">← トップページへ戻る</a>
+    </div>
+    <a href="index.html">← トップページへ戻る</a>
 </div>
 
 <footer>
-  © 2025 EssentialBeautyNeeds
+    © 2025 EssentialBeautyNeeds
 </footer>
 
 </body>
