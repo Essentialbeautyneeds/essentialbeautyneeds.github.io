@@ -35,7 +35,6 @@
      */
     function handleImageError(imgElement, width, height, text) {
         imgElement.onerror = null; // エラーが再帰的に発生するのを防ぐ
-        // プレースホルダーのテキストを日本語から英語に変更（プレースホルダー生成の仕様に合わせるため）
         imgElement.src = `https://placehold.co/${width}x${height}/f7a8a8/ffffff?text=${encodeURIComponent(text)}`;
     }
 </script>
@@ -137,24 +136,16 @@ footer { text-align:center; font-size:13px; color:#888; margin:60px 0 30px; }
          onerror="handleImageError(this, 900, 400, '40s Skincare')">
   <div class="product-review">
     <div class="product-card">
-      <h3>NALC ヘパリン類似物質配合 ハンドクリーム</h3>
-        <p style="color:#f48b8b; font-weight: bold;">【代替品: ラウブ フルボーテ ミネラルハンドクリーム】</p>
-      <script type="text/javascript">
-        (function(b,c,f,g,a,d,e){b.MoshimoAffiliateObject=a;
-        b[a]=b[a]||function(){arguments.currentScript=c.currentScript
-        ||c.scripts[c.scripts.length-2];(b[a].q=b[a].q||[]).push(arguments)};
-        c.getElementById(a)||(d=c.createElement(f),d.src=g,
-        d.id=a,e=c.getElementsByTagName("body")[0],e.appendChild(d))})
-        (window,document,"script","//dn.msmstatic.com/site/cardlink/bundle.js?20220329","msmaflink");
-        msmaflink({"n":"【初回限定50%OFFクーポン配布中】【天然由来成分99％】ギフト プレゼント フルボ酸 ラウブ フルボーテ ミネラルハンドクリーム | ベタつかない オーガニック 植物性 低刺激性 敏感肌 保湿 エイジングケア アルコールフリー 贈り物 プレゼント 手荒れ","b":"","t":"","d":"https:\/\/thumbnail.image.rakuten.co.jp","c_p":"\/@0_mall\/raub\/cabinet","p":["\/fulbesh\/m_hand\/th_m_hand_01.jpg","\/10775727\/imgrc0128513782.jpg","\/fulbesh\/m_hand\/th_m_hand_02.jpg"],"u":{"u":"https:\/\/item.rakuten.co.jp\/raub\/10000024\/","t":"rakuten","r_v":""},"v":"2.1","b_l":[{"id":1,"u_tx":"楽天市場で見る","u_bc":"#87c209","u_url":"https:\/\/item.rakuten.co.jp\/raub\/10000024\/","a_id":5267359,"p_id":54,"pl_id":27059,"pc_id":54,"s_n":"rakuten","u_so":1},{"id":5,"u_tx":"Amazonで見る","u_bc":"#bf0000","u_url":"https:\/\/amzn.to\/4ooBrep","a_id":0,"p_id":0,"pl_id":0,"pc_id":0,"s_n":"custom_10","u_so":2},{"id":4,"u_tx":"Yahoo!ショッピングで見る","u_bc":"#0054ff","u_url":"https:\/\/shopping.yahoo.co.jp\/search?first=1\u0026p=%E3%80%90%E5%88%9D%E5%9B%9E%E9%99%90%E5%AE%9A50%25OFF%E3%82%AF%E3%83%BC%E3%83%9D%E3%83%B3%E9%85%8D%E5%B8%83%E4%B8%AD%E3%80%91%E3%80%90%E5%A4%A9%E7%84%B6%E7%94%B1%E6%9D%A5%E6%88%90%E5%88%8699%EF%BC%85%E3%80%91%E3%82%AE%E3%83%95%E3%83%88%20%E3%83%97%E3%83%AC%E3%82%BC%E3%83%B3%E3%83%88%20%E3%83%95%E3%83%AB%E3%83%9C%E9%85%B8%20%E3%83%A9%E3%82%A6%E3%83%96%20%E3%83%95%E3%83%AB%E3%83%9C%E3%83%BC%E3%83%86%20%E3%83%9F%E3%83%8D%E3%83%A9%E3%83%AB%E3%83%8F%E3%83%B3%E3%83%89%E3%82%AF%E3%83%AA%E3%83%BC%E3%83%A0%20%7C%20%E3%83%99%E3%82%BF%E3%81%A4%E3%81%8B%E3%81%AA%E3%81%84%20%E3%82%AA%E3%83%BC%E3%82%AC%E3%83%8B%E3%83%83%E3%82%AF%20%E6%A4%8D%E7%89%A9%E6%80%A7%20%E4%BD%8E%E5%88%BA%E6%BF%80%E6%80%A7%20%E6%95%8F%E6%84%9F%E8%82%8C%20%E4%BF%9D%E6%B9%BF%20%E3%82%A8%E3%82%A4%E3%82%B8%E3%83%B3%E3%82%B0%E3%82%B1%E3%82%A2%20%E3%82%A2%E3%83%AB%E3%82%B3%E3%83%BC%E3%83%AB%E3%83%95%E3%83%AA%E3%83%BC%20%E8%B4%88%E3%82%8A%E7%89%A9%20%E3%83%97%E3%83%AC%E3%82%BC%E3%83%B3%E3%83%88%20%E6%89%8B%E8%8D%92%E3%82%8C","a_id":5267465,"p_id":1225,"pl_id":27061,"pc_id":1925,"s_n":"yahoo","u_so":3}],"eid":"WIgYT","s":"s"});
-        </script>
-        <div id="msmaflink-WIgYT">リンク</div>
-              <p>乾燥・手荒れに悩む40代女性向け。全身に使える高保湿無香料クリーム。</p>
+            <img src="images/fulbeaute_handcream.jpg" alt="ラウブ フルボーテ ミネラルハンドクリーム"
+           onerror="handleImageError(this, 280, 220, 'Hand Cream')">
+      <h3>ラウブ フルボーテ ミネラルハンドクリーム</h3>
+      <p>天然由来成分99％。ベタつかず、手荒れ・敏感肌を優しくケアするオーガニックハンドクリームです。</p>
       <ul>
-        <li>ヘパリン類似物質配合 (※代替品はフルボ酸など天然成分)</li>
-        <li>手荒れ・ひび割れ防止</li>
-        <li>無香料・全身OK</li>
+        <li>フルボ酸・植物性エキス配合</li>
+        <li>低刺激性・アルコールフリー</li>
+        <li>ギフトにも最適</li>
       </ul>
+            <a href="https://item.rakuten.co.jp/raub/10000024/" class="btn" target="_blank" rel="nofollow sponsored">今すぐチェック (楽天市場)</a>
     </div>
     <div class="review-column">
       <div class="review-card">
@@ -179,24 +170,16 @@ footer { text-align:center; font-size:13px; color:#888; margin:60px 0 30px; }
          onerror="handleImageError(this, 900, 400, '50s Skincare')">
   <div class="product-review">
     <div class="product-card">
+      <img src="images/refresh_bathsalt.jpg" alt="ROSE LABO バスソルト"
+           onerror="handleImageError(this, 280, 220, 'Bath Salt')">
       <h3>ROSE LABO ローズアロマバスソルト</h3>
-      <script type="text/javascript">
-        (function(b,c,f,g,a,d,e){b.MoshimoAffiliateObject=a;
-        b[a]=b[a]||function(){arguments.currentScript=c.currentScript
-        ||c.scripts[c.scripts.length-2];(b[a].q=b[a].q||[]).push(arguments)};
-        c.getElementById(a)||(d=c.createElement(f),d.src=g,
-        d.id=a,e=c.getElementsByTagName("body")[0],e.appendChild(d))})
-        (window,document,"script","//dn.msmstatic.com/site/cardlink/bundle.js?20220329","msmaflink");
-        msmaflink({"n":"ローズアロマバスソルト |ROSE LABO ローズラボ 300g（約15回分）|バスソルト 入浴剤 岩塩 ばら バラ ローズ バラの香り 乾燥 保湿 冷え 無添加 ギフト バスソルト プレゼント 入浴 塩 プチギフト 女性 バスソルト 高級 【あす楽対応】","b":"","t":"","d":"https:\/\/thumbnail.image.rakuten.co.jp","c_p":"\/@0_mall\/roselabo\/cabinet\/item\/beauty","p":["\/btbp000004_0.jpg","\/btbp000004_2.jpg","\/btbp000004_3.jpg"],"u":{"u":"https:\/\/item.rakuten.co.jp\/roselabo\/btbp000004\/","t":"rakuten","r_v":""},"v":"2.1","b_l":[{"id":1,"u_tx":"楽天市場で見る","u_bc":"#87c209","u_url":"https:\/\/item.rakuten.co.jp\/roselabo\/btbp000004\/","a_id":5267359,"p_id":54,"pl_id":27059,"pc_id":54,"s_n":"rakuten","u_so":1},{"id":5,"u_tx":"Amazonで見る","u_bc":"#bf0000","u_url":"https:\/\/amzn.to\/4ooBrep","a_id":0,"p_id":0,"pl_id":0,"pc_id":0,"s_n":"custom_10","u_so":2},{"id":4,"u_tx":"Yahoo!ショッピングで見る","u_bc":"#0054ff","u_url":"https:\/\/shopping.yahoo.co.jp\/search?first=1\u0026p=%E3%83%AD%E3%83%BC%E3%82%BA%E3%82%A2%E3%83%AD%E3%83%9E%E3%83%90%E3%82%B9%E3%82%BD%E3%83%AB%E3%83%88%20%7CROSE%20LABO%20%E3%83%AD%E3%83%BC%E3%82%BA%E3%83%A9%E3%83%9C%20300g%EF%BC%88%E7%B4%8415%E5%9B%9E%E5%88%86%EF%BC%89%7C%E3%83%90%E3%82%B9%E3%82%BD%E3%83%AB%E3%83%88%20%E5%85%A5%E6%B5%B4%E5%89%A4%20%E5%B2%A9%E5%A1%A9%20%E3%81%B0%E3%82%89%20%E3%83%90%E3%83%A9%20%E3%83%AD%E3%83%BC%E3%82%BA%20%E3%83%90%E3%83%A9%E3%81%AE%E9%A6%99%E3%82%8A%20%E4%B9%BE%E7%87%A5%20%E4%BF%9D%E6%B9%BF%20%E5%86%B7%E3%81%88%20%E7%84%A1%E6%B7%BB%E5%8A%A0%20%E3%82%AE%E3%83%95%E3%83%88%20%E3%83%90%E3%82%B9%E3%82%BD%E3%83%AB%E3%83%88%20%E3%83%97%E3%83%AC%E3%82%BC%E3%83%B3%E3%83%88%20%E5%85%A5%E6%B5%B4%20%E5%A1%A9%20%E3%83%97%E3%83%81%E3%82%AE%E3%83%95%E3%83%88%20%E5%A5%B3%E6%80%A7%20%E3%83%90%E3%82%B9%E3%82%BD%E3%83%AB%E3%83%88%20%E9%AB%98%E7%B4%9A%20%E3%80%90%E3%81%82%E3%81%99%E6%A5%BD%E5%AF%BE%E5%BF%9C%E3%80%91","a_id":5267465,"p_id":1225,"pl_id":27061,"pc_id":1925,"s_n":"yahoo","u_so":3}],"eid":"a01FK","s":"s"});
-        </script>
-        <div id="msmaflink-a01FK">リンク</div>
-              
       <p>50代の乾燥肌向け、入浴でしっとり肌に。バラの香りでリラックス効果も。</p>
       <ul>
         <li>自家栽培バラ使用</li>
         <li>ミネラル豊富な岩塩で保湿</li>
         <li>癒しのバスタイム</li>
       </ul>
+            <a href="https://item.rakuten.co.jp/roselabo/btbp000004/" class="btn" target="_blank" rel="nofollow sponsored">今すぐチェック (楽天市場)</a>
     </div>
     <div class="review-column">
       <div class="review-card">
