@@ -89,7 +89,25 @@
       box-shadow: 0 2px 6px rgba(0,0,0,0.1);
       z-index: 999;
     }
-  
+
+ .nav-link {
+      display: inline-block;
+      margin: 6px 12px;
+      padding: 8px 18px;
+      background: rgba(255,255,255,0.8);
+      border-radius: 8px;
+      font-weight:600;
+      text-decoration:none;
+      color:var(--text-main);
+      transition:0.3s;
+      box-shadow: 0 2px 5px rgba(0,0,0,0.05);
+    }
+    .nav-link:hover {
+      background: var(--accent);
+      color:#fff;
+      transform: translateY(-2px);
+    }
+    
   </style>
 </head>
 <body class="page-beauty-column">
@@ -99,10 +117,14 @@
   </header>
 
   <!-- 🌸 季節・冬セクションへのリンク（上部） -->
-  <div style="text-align:center; margin:30px 0;">
-    <a href="seasons-skin.html" style="color:#d6336c; font-weight:600; text-decoration:none; font-size:1.2em; margin-right:20px;">🌸 季節のおすすめを見る</a>
-    <a href="winter-selection.html" style="color:#d6336c; font-weight:600; text-decoration:none; font-size:1.2em;">❄ 冬のベストセレクションへ</a>
-  </div>
+   <div style="margin-top: 30px;">
+      <nav>
+        <a href="seasons-skin.html" class="nav-link">🌸 季節別ケア</a>
+        <a href="age-skincare.html" class="nav-link">👩 年代別・肌質別</a>
+        <a href="acne-care.html" class="nav-link">🧴 悩み別ケア</a>
+        <a href="skin-ranking.html" class="nav-link">✨ 厳選アイテム</a>
+      </nav>
+    </div>
 
   <main>
     <section>
