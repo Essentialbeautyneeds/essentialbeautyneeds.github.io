@@ -30,328 +30,75 @@
 <title>40代・50代向け 年齢・肌質別オーガニックスキンケア｜肌が喜ぶ自然派コスメ</title>
 <link href="https://fonts.googleapis.com/css2?family=Playfair+Display:wght@600&family=Quicksand:wght@400;600&display=swap" rel="stylesheet">
 <style>
-:root {
-  --bg: #fff8f8;
-  --accent: #f7a8a8;
-  --accent-hover: #f48b8b;
-  --muted: #666;
-}
-* { box-sizing: border-box; margin: 0; padding: 0; }
-body { font-family: 'Quicksand', sans-serif; background: var(--bg); color: #333; line-height: 1.6; }
-header { text-align: center; padding: 80px 20px; background: linear-gradient(135deg,#ffe6e6,#ffdcdc); color:#503535; box-shadow:0 4px 20px rgba(0,0,0,0.1);}
-h1 { font-family: 'Playfair Display', serif; font-size: 42px; margin-bottom: 10px; }
-p.lead { font-size: 18px; color: #5a4545; }
-.container { max-width: 1000px; margin: 0 auto; padding: 0 20px; }
-.article { margin: 80px 0; }
-.article h2 { font-family: 'Playfair Display', serif; font-size:28px; color:#503535; text-align:center; margin-bottom:20px; }
-/* 修正後 (ヒーロー画像のサイズと中央寄せを設定) */
-.article img.hero { 
-    width:100%; 
-    max-width: 600px; /* ★追加: 最大幅を600pxに設定 */
-    display: block; /* ★追加: 中央寄せのためにブロック要素に */
-    margin: 0 auto 20px; /* ★修正: 中央寄せ + 下マージン */
-    max-height:400px; 
-    object-fit:cover; 
-    border-radius:18px; 
-    box-shadow:0 6px 25px rgba(0,0,0,0.15); 
-}
-    
-/* レイアウトを縦長（シングルカラム）に変更 */
-/* 修正後 (レビュー全体（商品リンクとレビューカラムを含む）の幅と中央寄せを設定) */
-.product-review { 
-    gap:30px; 
-    margin-bottom:50px; 
-    margin-left: auto; /* ★追加: 中央寄せ */
-    margin-right: auto; /* ★追加: 中央寄せ */
-}
-    
-/* product-cardの flex 設定を解除（幅は親要素の幅100%になる） */
-.product-card { 
-    /* flex:1; min-width:280px; を削除 */
-    text-align:left; 
-    background:#fff; 
-    border-radius:14px; 
-    padding:15px; 
-    box-shadow:0 4px 12px rgba(0,0,0,0.08); 
-    margin-bottom: 30px; /* カード下の余白追加 */
-}
-.product-card img { width:100%; height:220px; border-radius:12px; object-fit:cover; margin-bottom:12px; }
-.product-card h3 { font-size:18px; margin-bottom:10px; }
-.product-card p { font-size:15px; color:#444; margin-bottom:10px; }
-.product-card ul { font-size:14px; margin-left:18px; color:#555; margin-bottom:10px; }
-.btn { display:inline-block; background:var(--accent); color:#fff; padding:12px 28px; border-radius:30px; text-decoration:none; font-weight:600; transition:0.3s; }
-.btn:hover { background:var(--accent-hover); }
+/* ... :root, *, body, h1, p.lead, .container, .article, .article h2 ... */
 
-/* レビューカラムも縦に積むよう変更 */
-.review-column { 
-    gap:20px; 
-    max-width: 600px; /* 最大幅を設定 */
-    margin: 0 auto;  /* 中央寄せ */
-    display: flex; /* ★追加 */
-    flex-direction: column; /* ★追加 */
-}
-.review-card { background:#fff5f5; border-radius:14px; padding:15px; text-align:center; box-shadow:inset 0 0 10px rgba(0,0,0,0.05); }
-.review-card img { width:100px; height:100px; border-radius:50%; object-fit:cover; margin-bottom:8px; }
-.review-card p { font-size:14px; color:#333; margin-bottom:6px; }
-.review-card .name { font-weight:600; color:#555; margin-top:2px; }
-
-.internal-link { text-align:center; margin:20px 0; }
-.internal-link a { color:#d6336c; font-weight:600; text-decoration:none; }
-
-.related { text-align:center; margin:20px 0 0; }
-.related a { color:#d6336c; font-weight:600; text-decoration:none; font-size:1.1em; margin:0 12px; }
-
-footer { text-align:center; font-size:13px; color:#888; margin:60px 0 30px; }
-
-#affiliateNotice {
-    position: fixed;
-    right: 12px;
-    bottom: 12px;
-    background: rgba(255, 255, 255, 0.8);
-    color: #555;
-    font-size: 11px;
-    border-radius: 6px;
-    padding: 4px 8px;
-    box-shadow: 0 2px 6px rgba(0,0,0,0.1);
-    z-index: 999;
-}
-
-@media (max-width:768px){ 
-  .product-review{ flex-direction:column; } 
-  .review-column{ flex-direction:column; } /* レビューカードも縦に積む */
-}
-  /* Navigation */
-    nav{position:relative; z-index:3; margin-top:25px;}
-    .nav-link {
-      display: inline-block;
-      margin: 6px 12px;
-      padding: 8px 18px;
-      background: rgba(255,255,255,0.8);
-      border-radius: 8px;
-      font-weight:600;
-      text-decoration:none;
-      color:var(--text-main);
-      transition:0.3s;
-      box-shadow: 0 2px 5px rgba(0,0,0,0.05);
-    }
-    .nav-link:hover {
-      background: var(--accent);
-      color:#fff;
-      transform: translateY(-2px);
-    }
-
-    .container{max-width:980px;margin:0 auto;padding:0 16px;}
-
-     /* Common Buttons */
-    .btn-main {
-      display:inline-block;
-      padding:14px 32px;
-      border-radius:30px;
-      background:linear-gradient(45deg,#f48b8b,#f7a8a8);
-      color: #fff;
-      text-decoration: none;
-      font-weight: bold;
-      box-shadow: 0 4px 12px rgba(0,0,0,0.15);
-      transition: 0.3s;
-    }
-    .btn-main:hover {
-      transform: translateY(-3px);
-      box-shadow: 0 6px 18px rgba(0,0,0,0.2);
-    }
-<style>
-:root {
-  --bg: #fff8f8;
-  --accent: #f7a8a8;
-  --accent-hover: #f48b8b;
-  --muted: #666;
-}
-* { box-sizing: border-box; margin: 0; padding: 0; }
-body { font-family: 'Quicksand', sans-serif; background: var(--bg); color: #333; line-height: 1.6; }
-
-/* 変更点: header全体の背景とpaddingを削除 */
+/* 1. ヘッダー関連の修正（前回） */
 header { text-align: center; padding: 0; background: none; color:#503535; box-shadow:none;}
-
-/* 変更点: ピンク背景のヘッダー部分を定義 */
 .pink-header-box {
-    padding: 80px 20px 40px; /* 上下のpaddingを設定 */
-    background: linear-gradient(135deg,#ffe6e6,#ffdcdc);
-    box-shadow:0 4px 20px rgba(0,0,0,0.1);
+    padding: 80px 20px 40px; 
+    background: linear-gradient(135deg,#ffe6e6,#ffdcdc);
+    box-shadow:0 4px 20px rgba(0,0,0,0.1);
 }
-
-/* 変更点: 説明文のボックス（白背景 + ピンク枠）を定義 */
 .description-box {
-    max-width: 600px;
-    /* 負のマージンでピンクの背景に少し被せるデザインに */
-    margin: -30px auto 30px; 
-    padding: 25px 20px;
-    background: #ffffff; /* 白背景 */
-    border: 2px solid #e91e63; 
-    border-radius: 12px;
-    box-shadow: 0 4px 15px rgba(0,0,0,0.1);
-    text-align: center;
-    position: relative;
-    z-index: 2; /* 他の要素の上に表示 */
+    max-width: 600px;
+    margin: -30px auto 30px; 
+    padding: 25px 20px;
+    background: #ffffff; 
+    border: 2px solid #e91e63; /* 濃いピンク枠 */ 
+    border-radius: 12px;
+    box-shadow: 0 4px 15px rgba(0,0,0,0.1);
+    text-align: center;
+    position: relative;
+    z-index: 2; 
 }
+/* /1. ヘッダー関連の修正 */
 
-h1 { font-family: 'Playfair Display', serif; font-size: 42px; margin-bottom: 10px; }
-p.lead { font-size: 18px; color: #5a4545; }
-.container { max-width: 1000px; margin: 0 auto; padding: 0 20px; }
-.article { margin: 80px 0; }
-.article h2 { font-family: 'Playfair Display', serif; font-size:28px; color:#503535; text-align:center; margin-bottom:20px; }
-    
-</style><style>
-:root {
-  --bg: #fff8f8;
-  --accent: #f7a8a8;
-  --accent-hover: #f48b8b;
-  --muted: #666;
-}
-* { box-sizing: border-box; margin: 0; padding: 0; }
-body { font-family: 'Quicksand', sans-serif; background: var(--bg); color: #333; line-height: 1.6; }
-
-/* 変更点: header全体の背景とpaddingを削除 */
-header { text-align: center; padding: 0; background: none; color:#503535; box-shadow:none;}
-
-/* 変更点: ピンク背景のヘッダー部分を定義 */
-.pink-header-box {
-    padding: 80px 20px 40px; /* 上下のpaddingを設定 */
-    background: linear-gradient(135deg,#ffe6e6,#ffdcdc);
-    box-shadow:0 4px 20px rgba(0,0,0,0.1);
-}
-
-/* 変更点: 説明文のボックス（白背景 + ピンク枠）を定義 */
-.description-box {
-    max-width: 600px;
-    margin: -30px auto 30px; 
-    padding: 25px 20px;
-    background: #ffffff; /* 白背景 */
-    border: 2px solid var(--accent); /* ピンク枠線 */
-    border-radius: 12px;
-    box-shadow: 0 4px 15px rgba(0,0,0,0.1);
-    text-align: center;
-    position: relative;
-    z-index: 2; /* 他の要素の上に表示 */
-}
-
-h1 { font-family: 'Playfair Display', serif; font-size: 42px; margin-bottom: 10px; }
-p.lead { font-size: 18px; color: #5a4545; }
-.container { max-width: 1000px; margin: 0 auto; padding: 0 20px; }
-.article { margin: 80px 0; }
-.article h2 { font-family: 'Playfair Display', serif; font-size:28px; color:#503535; text-align:center; margin-bottom:20px; }
-/* 修正後 (ヒーロー画像のサイズと中央寄せを設定) */
+/* ヒーロー画像の幅設定 */
 .article img.hero { 
     width:100%; 
-    max-width: 600px; /* ★追加: 最大幅を600pxに設定 */
-    display: block; /* ★追加: 中央寄せのためにブロック要素に */
-    margin: 0 auto 20px; /* ★修正: 中央寄せ + 下マージン */
+    max-width: 600px; 
+    display: block; 
+    margin: 0 auto 20px; 
     max-height:400px; 
     object-fit:cover; 
     border-radius:18px; 
     box-shadow:0 6px 25px rgba(0,0,0,0.15); 
 }
     
-/* レイアウトを縦長（シングルカラム）に変更 */
-/* 修正後 (レビュー全体（商品リンクとレビューカラムを含む）の幅と中央寄せを設定) */
+/* 2. レビュー関連の修正 */
+/* ★重要: max-width を削除し、中の要素に幅を指定します */
 .product-review { 
     gap:30px; 
     margin-bottom:50px; 
-    margin-left: auto; 
-    margin-right: auto; 
+    /* max-width: 600px; の行を削除しました */
+    margin-left: auto; 
+    margin-right: auto; 
 }
-    
-/* product-cardの flex 設定を解除（幅は親要素の幅100%になる） */
 .product-card { 
-    /* flex:1; min-width:280px; を削除 */
+    /* flex:1; min-width:280px; を削除済 */
     text-align:left; 
     background:#fff; 
-    border-radius:14px; 
-    padding:15px; 
-    box-shadow:0 4px 12px rgba(0,0,0,0.08); 
-    margin-bottom: 30px; /* カード下の余白追加 */
+    /* ... */
 }
-.product-card img { width:100%; height:220px; border-radius:12px; object-fit:cover; margin-bottom:12px; }
-.product-card h3 { font-size:18px; margin-bottom:10px; }
-.product-card p { font-size:15px; color:#444; margin-bottom:10px; }
-.product-card ul { font-size:14px; margin-left:18px; color:#555; margin-bottom:10px; }
-.btn { display:inline-block; background:var(--accent); color:#fff; padding:12px 28px; border-radius:30px; text-decoration:none; font-weight:600; transition:0.3s; }
-.btn:hover { background:var(--accent-hover); }
 
-/* レビューカラムも縦に積むよう変更 */
+/* ★重要: レビューカードのコンテナに幅と中央寄せ、縦並びを設定 */
 .review-column { 
     gap:20px; 
     max-width: 600px; /* 最大幅を600pxに設定 */
     margin: 0 auto;  /* 中央寄せ */
-    display: flex; /* ★追加: flexboxを適用 */
-    flex-direction: column; /* ★追加: 子要素を縦に並べる */
+    display: flex; 
+    flex-direction: column; 
 }
-.review-card { background:#fff5f5; border-radius:14px; padding:15px; text-align:center; box-shadow:inset 0 0 10px rgba(0,0,0,0.05); }
-.review-card img { width:100px; height:100px; border-radius:50%; object-fit:cover; margin-bottom:8px; }
-.review-card p { font-size:14px; color:#333; margin-bottom:6px; }
-.review-card .name { font-weight:600; color:#555; margin-top:2px; }
+/* /2. レビュー関連の修正 */
 
-.internal-link { text-align:center; margin:20px 0; }
-.internal-link a { color:#d6336c; font-weight:600; text-decoration:none; }
-
-.related { text-align:center; margin:20px 0 0; }
-.related a { color:#d6336c; font-weight:600; text-decoration:none; font-size:1.1em; margin:0 12px; }
-
-footer { text-align:center; font-size:13px; color:#888; margin:60px 0 30px; }
-
-#affiliateNotice {
-    position: fixed;
-    right: 12px;
-    bottom: 12px;
-    background: rgba(255, 255, 255, 0.8);
-    color: #555;
-    font-size: 11px;
-    border-radius: 6px;
-    padding: 4px 8px;
-    box-shadow: 0 2px 6px rgba(0,0,0,0.1);
-    z-index: 999;
-}
+/* ... .review-card, .internal-link, .related, footer, #affiliateNotice ... */
 
 @media (max-width:768px){ 
   .product-review{ flex-direction:column; } 
-  .review-column{ flex-direction:column; } /* レビューカードも縦に積む */
+  .review-column{ flex-direction:column; }
 }
-  /* Navigation */
-    nav{position:relative; z-index:3; margin-top:25px;}
-    .nav-link {
-      display: inline-block;
-      margin: 6px 12px;
-      padding: 8px 18px;
-      background: rgba(255,255,255,0.8);
-      border-radius: 8px;
-      font-weight:600;
-      text-decoration:none;
-      color:var(--text-main);
-      transition:0.3s;
-      box-shadow: 0 2px 5px rgba(0,0,0,0.05);
-    }
-    .nav-link:hover {
-      background: var(--accent);
-      color:#fff;
-      transform: translateY(-2px);
-    }
 
-    .container{max-width:980px;margin:0 auto;padding:0 16px;}
-
-     /* Common Buttons */
-    .btn-main {
-      display:inline-block;
-      padding:14px 32px;
-      border-radius:30px;
-      background:linear-gradient(45deg,#f48b8b,#f7a8a8);
-      color: #fff;
-      text-decoration: none;
-      font-weight: bold;
-      box-shadow: 0 4px 12px rgba(0,0,0,0.15);
-      transition: 0.3s;
-    }
-    .btn-main:hover {
-      transform: translateY(-3px);
-      box-shadow: 0 6px 18px rgba(0,0,0,0.2);
-    }
+/* ... Navigation, .nav-link, .container, .btn-main ... */
 </style>
     
 </head>
