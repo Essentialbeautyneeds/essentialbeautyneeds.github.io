@@ -24,19 +24,6 @@
   } else {
     console.log('✅ Internal traffic excluded.');
   }
-
-    /**
-     * 画像読み込みエラー時のフォールバック処理。
-     * 読み込みエラー時にプレースホルダー画像に置き換えます。
-     * @param {HTMLElement} imgElement - エラーが発生したimg要素
-     * @param {number} width - プレースホルダーの幅
-     * @param {number} height - プレースホルダーの高さ
-     * @param {string} text - プレースホルダーに表示するテキスト
-     */
-    function handleImageError(imgElement, width, height, text) {
-        imgElement.onerror = null; // エラーが再帰的に発生するのを防ぐ
-        imgElement.src = `https://placehold.co/${width}x${height}/f7a8a8/ffffff?text=${encodeURIComponent(text)}`;
-    }
 </script>
     
 <meta name="viewport" content="width=device-width,initial-scale=1">
@@ -132,31 +119,27 @@ footer { text-align:center; font-size:13px; color:#888; margin:60px 0 30px; }
 
 <section class="article">
   <h2>40代 の肌ケア</h2>
-  <img src="images/40s1.jpg" alt="40代主婦のスキンケア" class="hero"
-         onerror="handleImageError(this, 900, 400, '40s Skincare')">
+  <img src="images/40s1.jpg" alt="40代主婦のスキンケア" class="hero">
   <div class="product-review">
     <div class="product-card">
-            <img src="images/fulbeaute_handcream.jpg" alt="ラウブ フルボーテ ミネラルハンドクリーム"
-           onerror="handleImageError(this, 280, 220, 'Hand Cream')">
-      <h3>ラウブ フルボーテ ミネラルハンドクリーム</h3>
+            <img src="images/winter_handcream.jpg" alt="ラウブ フルボーテ ミネラルハンドクリーム">
+            <h3>ラウブ フルボーテ ミネラルハンドクリーム</h3>
       <p>天然由来成分99％。ベタつかず、手荒れ・敏感肌を優しくケアするオーガニックハンドクリームです。</p>
       <ul>
         <li>フルボ酸・植物性エキス配合</li>
         <li>低刺激性・アルコールフリー</li>
         <li>ギフトにも最適</li>
       </ul>
-            <a href="https://item.rakuten.co.jp/raub/10000024/" class="btn" target="_blank" rel="nofollow sponsored">今すぐチェック (楽天市場)</a>
+            <a href="https://item.rakuten.co.jp/raub/10000024/" class="btn" target="_blank" rel="nofollow sponsored">今すぐチェック</a>
     </div>
     <div class="review-column">
       <div class="review-card">
-        <img src="images/40s1.jpg" alt="40代主婦"
-                 onerror="handleImageError(this, 100, 100, '40s Housewife')">
+        <img src="images/40s1.jpg" alt="40代主婦">
         <p>「使い始めてから手荒れが減り、肌のしっとり感が続きます！控えていた洗い物も最近は苦になりません。」</p>
         <p class="name">まいかさん：40代主婦</p>
       </div>
       <div class="review-card">
-        <img src="images/40s2.jpg" alt="40代看護師"
-                 onerror="handleImageError(this, 100, 100, '40s Nurse')">
+        <img src="images/40s2.jpg" alt="40代看護師">
         <p>「敏感肌でも安心して使える保湿力。肌の柔らかさが戻りました。手間がかからないので助かります。」</p>
         <p class="name">きょうこさん：40代看護師</p>
       </div>
@@ -166,12 +149,10 @@ footer { text-align:center; font-size:13px; color:#888; margin:60px 0 30px; }
 
 <section class="article">
   <h2>50代の肌ケア</h2>
-  <img src="images/50s1.jpg" alt="50代のスキンケア" class="hero"
-         onerror="handleImageError(this, 900, 400, '50s Skincare')">
+  <img src="images/50s1.jpg" alt="50代のスキンケア" class="hero">
   <div class="product-review">
     <div class="product-card">
-      <img src="images/refresh_bathsalt.jpg" alt="ROSE LABO バスソルト"
-           onerror="handleImageError(this, 280, 220, 'Bath Salt')">
+      <img src="images/refresh_bathsalt.jpg" alt="ROSE LABO バスソルト">
       <h3>ROSE LABO ローズアロマバスソルト</h3>
       <p>50代の乾燥肌向け、入浴でしっとり肌に。バラの香りでリラックス効果も。</p>
       <ul>
@@ -179,18 +160,16 @@ footer { text-align:center; font-size:13px; color:#888; margin:60px 0 30px; }
         <li>ミネラル豊富な岩塩で保湿</li>
         <li>癒しのバスタイム</li>
       </ul>
-            <a href="https://item.rakuten.co.jp/roselabo/btbp000004/" class="btn" target="_blank" rel="nofollow sponsored">今すぐチェック (楽天市場)</a>
+            <a href="https://item.rakuten.co.jp/roselabo/btbp000004/" class="btn" target="_blank" rel="nofollow sponsored">今すぐチェック</a>
     </div>
     <div class="review-column">
       <div class="review-card">
-        <img src="images/50s1.jpg" alt="50代販売員"
-                 onerror="handleImageError(this, 100, 100, '50s Sales')">
+        <img src="images/50s1.jpg" alt="50代販売員">
         <p>「バスソルトで入浴後の肌が柔らかく、香りも優しく癒されます。肌の潤いが自然に戻りつつあり嬉しいです。」</p>
         <p class="name">あけみさん：50代販売員</p>
       </div>
       <div class="review-card">
-        <img src="images/50s2.jpg" alt="50代アルバイト"
-                 onerror="handleImageError(this, 100, 100, '50s Part-time')">
+        <img src="images/50s2.jpg" alt="50代アルバイト">
         <p>「簡単に高保湿ケアでき、毎日のバスタイムが楽しみになりました。香りのリラックス効果もあり、夜もスッキリ眠れるようになりました。」</p>
         <p class="name">さえさん：50代飲食店</p>
       </div>
