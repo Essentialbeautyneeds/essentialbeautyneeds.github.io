@@ -107,7 +107,12 @@
       color:#f5abe6;
       transform: translateY(-2px);
     }
-    
+         .nav-break {
+    /* flexコンテナ内で、次の行に要素を移動させる */
+    flex-basis: 100%;
+    height: 0; /* 高さは不要 */
+    margin: 10px 0; /* 上下に少しスペースを開ける */
+}
   </style>
 </head>
 <body class="page-beauty-column">
@@ -120,8 +125,12 @@
    <div style="margin-top: 30px; text-align:center">
       <nav>
         <a href="seasons-skin.html" class="nav-link">🌸 季節別ケア</a>
-        <a href="age-skincare.html" class="nav-link">👩 年代別・肌質別</a>
+        <a href="age-skincare.html" class="nav-link">👩 年代別・肌質別ケア</a>
+        <a href="diet-beauty.html" class="nav-link">🍃 ダイエット効果インナービューティー</a>
+            <div class="nav-break"></div> 
         <a href="acne-care.html" class="nav-link">🧴 肌荒れ・悩み別ケア</a>
+        <a href="lifestyle-skincare.html" class="nav-link"> 💆‍♀️生活リズム別スキンケア</a>
+
         <a href="skin-ranking.html" class="nav-link">✨ スキンケアランキング</a>
       </nav>
     </div>
