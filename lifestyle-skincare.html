@@ -94,8 +94,25 @@ body{font-family:'Quicksand',sans-serif;background:var(--bg);color:#333;line-hei
     /* flexコンテナ内で、次の行に要素を移動させる */
     flex-basis: 100%;
     height: 0; /* 高さは不要 */
-    margin: 10px 0; /* 上下に少しスペースを開ける */
+    margin: 5px 0; /* 上下に少しスペースを開ける */
 }
+   /* Special Link Button */
+    .special-link a {
+      display:inline-block; 
+      background: linear-gradient(45deg, #f7a8a8, #807eed); 
+      color:#fff; 
+      font-weight:600; 
+      padding:12px 28px; 
+      border-radius:30px; 
+      text-decoration:none; 
+      box-shadow:0 4px 12px rgba(0,0,0,0.15); 
+      transition:all 0.3s ease; 
+      text-align:center;
+    }
+    .special-link a:hover {
+      transform: translateY(-3px);
+      box-shadow: 0 6px 15px rgba(0,0,0,0.2);
+    }
 </style>
 </head>
 <body>
@@ -116,8 +133,11 @@ body{font-family:'Quicksand',sans-serif;background:var(--bg);color:#333;line-hei
     　<a href="beauty-column.html">💄 ビューティーコラム</a>
     </div>
 
-    <div class="top-cta">
-      <a href="winter-selection.html" class="btn">❄ 冬のおすすめを見る</a>
+     <div class="special-link" style="margin-top:25px;">
+      <a href="winter-selection.html" target="_blank">
+        ❄ 冬の乾燥対策ベストセレクション
+        <span style="font-size:0.8em; display:block; margin-top:4px;">今すぐチェック</span>
+      </a>
     </div>
   </div>
 </header>
