@@ -12,73 +12,70 @@
     
     <style>
       /* 既存のCSSスタイルを全てここにペーストしてください */
-      :root { --color-primary:#fcc0f6; --color-secondary: #f571f2; --color-accent: #ffa1fa; --color-bg-light: #fffaf9; --color-text: #474747; --color-shadow: rgba(0,0,0,0.1); }
+      /* カラー変数：ピンク系を強調 */
+      :root { 
+          --color-primary: #d46a8b; /* メインカラー (少し落ち着いたピンク/ボルドー系) */
+          --color-secondary: #f5a9bc; /* アクセントカラー (明るいピンク) */
+          --color-accent: #f7ccd9; /* サブアクセントカラー (薄いピンク) */
+          --color-bg-light: #fffaf9; 
+          --color-text: #474747; 
+          --color-shadow: rgba(0,0,0,0.1); 
+      }
       body{ font-family:'Quicksand',sans-serif; background:var(--color-bg-light); color:var(--color-text); margin:0; line-height:1.8; min-height: 100vh; display: flex; flex-direction: column; }
-      header{ text-align:center; padding:80px 20px 40px; background:linear-gradient(90deg,#e0f0f9,#f7f8fc); color:#eb3be8; }
-      header h1{ font-family:'Playfair Display',serif; font-size:36px; margin-bottom:10px; letter-spacing:1px; }
-      header p{ font-size:16px; color#ab229d; }
+      
+      /* ★★★ トップエリアの変更点 ★★★ */
+      header{ 
+          text-align:center; 
+          padding:80px 20px 40px; 
+          /* ピンク系のグラデーションに変更 */
+          background: linear-gradient(90deg, #fcebeb, #fff0f5); 
+          color: var(--color-primary); /* メインカラーを適用 */
+      }
+      header h1{ 
+          font-family:'Playfair Display',serif; 
+          font-size:36px; 
+          margin-bottom:10px; 
+          letter-spacing:1px; 
+      }
+      header p{ 
+          font-size:16px; 
+          color: #a0526a; /* 少し濃いピンクで文字を見やすく */
+      }
+      /* ★★★ トップエリアの変更点 ここまで ★★★ */
+      
       main{ max-width:900px; margin:60px auto; padding:0 20px; flex-grow: 1; }
-      h2, h3{ text-align:center; font-family:'Playfair Display',serif; color:#eb3be8; margin-bottom:20px; position: relative; }
+      
+      /* 見出しの色も変更 */
+      h2, h3{ text-align:center; font-family:'Playfair Display',serif; color:var(--color-primary); margin-bottom:20px; position: relative; }
       h2{ font-size:26px; margin-bottom:40px; }
       h2::after { content: ""; display: block; width: 60px; height: 3px; background: var(--color-secondary); margin: 15px auto 0; opacity: 0.6; }
-      h3 { font-size: 22px; text-align: left; border-left: 5px solid var(--color-accent); padding-left: 10px; margin-top: 50px; }
+      h3 { font-size: 22px; text-align: left; border-left: 5px solid var(--color-secondary); /* h3の縦線をアクセントカラーに */ padding-left: 10px; margin-top: 50px; }
+      
       nav { margin-top:25px; text-align:center; display: flex; flex-wrap: wrap; justify-content: center; gap: 10px; }
-      nav a { display:inline-block; padding:10px 22px; background:linear-gradient(45deg,var(--color-accent),var(--color-secondary)); color:#fff; border-radius:30px; text-decoration:none; font-weight:600; box-shadow: 0 2px 6px var(--color-shadow); transition:all .3s ease; font-size: 14px; }
-      .back-btn{ display:inline-block; margin:60px auto; background:linear-gradient(45deg,var(--color-accent),var(--color-secondary)); color:#fff; padding:12px 28px; border-radius:30px; text-decoration:none; font-weight:600; box-shadow:0 4px 12px rgba(0,0,0,0.15); transition:transform .3s ease, box-shadow .3s ease; }
+      nav a { display:inline-block; padding:10px 22px; background:linear-gradient(45deg,var(--color-secondary),var(--color-primary)); /* ナビボタンのグラデーション */ color:#fff; border-radius:30px; text-decoration:none; font-weight:600; box-shadow: 0 2px 6px var(--color-shadow); transition:all .3s ease; font-size: 14px; }
+      .back-btn{ display:inline-block; margin:60px auto; background:linear-gradient(45deg,var(--color-secondary),var(--color-primary)); /* 戻るボタンのグラデーション */ color:#fff; padding:12px 28px; border-radius:30px; text-decoration:none; font-weight:600; box-shadow:0 4px 12px rgba(0,0,0,0.15); transition:transform .3s ease, box-shadow .3s ease; }
       footer{ text-align:center; font-size:13px; color:#777; padding: 30px 0; margin-top: auto; border-top: 1px solid #eee; }
       .content-section { margin-bottom: 50px; }
       .content-section p { margin-bottom: 1.5em; }
       .content-box { background: #fcfcfc; border: 1px solid #eee; padding: 25px; border-radius: 8px; margin: 30px 0; }
+      
+      /* ★★★ 導入文の枠線の変更点 ★★★ */
+      /* ページ内のcontent-boxのデフォルト色 */
+      .intro-box { background: #fff8fb !important; border-left: 5px solid #f2c8d6 !important; }
+
       .list-check li { list-style: none; position: relative; padding-left: 25px; margin-bottom: 8px; }
       .list-check li::before { content: "✅"; position: absolute; left: 0; font-size: 16px; }
 
-<style>
-  /* 既存のCSSスタイルは省略せずそのままペーストしてください */
-  /* --- 新しく追加するスタイル --- */
-  .product-section { 
-    margin: 40px 0; 
-    padding: 20px; 
-    border-radius: 10px; 
-    background: #fdfdfd; 
-    border: 1px solid #e0e0e0;
-    text-align: center;
-  }
-  .product-section h4 {
-    font-size: 18px;
-    color: var(--color-accent);
-    margin-bottom: 20px;
-    border-bottom: 2px dashed #e5f0f5;
-    padding-bottom: 10px;
-  }
-  .product-card { 
-    display: flex; 
-    flex-wrap: wrap; /* スマホで縦に並べる */
-    gap: 20px; 
-    justify-content: space-around; 
-    margin-top: 20px;
-  }
-  .product-item {
-    width: 45%; /* PC表示で2列に */
-    min-width: 250px; /* スマホで1列になるように調整 */
-    padding: 15px;
-    border: 1px solid #f0f0f0;
-    border-radius: 8px;
-    box-shadow: 0 4px 8px rgba(0,0,0,0.05);
-    background: #ffffff;
-  }
-  .product-item p { font-size: 14px; margin: 5px 0; }
-
-  @media (max-width: 768px) {
-    .product-item {
-      width: 100%; /* スマホでは全幅 */
-    }
-    .product-card {
-      flex-direction: column;
-    }
-  }
-  /* ------------------------------ */
-</style>
-
+      /* --- 商品カードのスタイルはそのまま維持します --- */
+      .product-section { margin: 40px 0; padding: 20px; border-radius: 10px; background: #fdfdfd; border: 1px solid #e0e0e0; text-align: center; }
+      .product-section h4 { font-size: 18px; color: var(--color-primary); /* ここもメインカラーに */ margin-bottom: 20px; border-bottom: 2px dashed #fcdfe8; /* ピンク系の点線に */ padding-bottom: 10px; }
+      .product-card { display: flex; flex-wrap: wrap; gap: 20px; justify-content: space-around; margin-top: 20px; }
+      .product-item { width: 45%; min-width: 250px; padding: 15px; border: 1px solid #f0f0f0; border-radius: 8px; box-shadow: 0 4px 8px rgba(0,0,0,0.05); background: #ffffff; }
+      .product-item p { font-size: 14px; margin: 5px 0; }
+      @media (max-width: 768px) {
+        .product-item { width: 100%; }
+        .product-card { flex-direction: column; }
+      }
     </style>
 </head>
 
