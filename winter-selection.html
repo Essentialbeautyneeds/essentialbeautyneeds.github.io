@@ -8,18 +8,13 @@
   <meta name="keywords" content="オーガニック, 冬, スキンケア, ハンドクリーム, 保湿, アロマ, ナチュラルコスメ">
 
   <link href="https://fonts.googleapis.com/css2?family=Playfair+Display:wght@600&family=Quicksand:wght@400;600&display=swap" rel="stylesheet">
-
-<link rel="canonical" href="https://essential-beauty-needs.com/winter-selection.html" />
+  <link rel="canonical" href="https://essential-beauty-needs.com/winter-selection.html" />
   
-  <!-- Google Analytics 4 + internal traffic exclusion: DOMContentLoadedを妨げないように、onload後に実行 -->
   <script>
     document.addEventListener('DOMContentLoaded', function() {
-      // internal_user クッキーが設定されているか確認
       function isInternalUser() {
         return document.cookie.split(';').some(c => c.trim().startsWith('internal_user=true'));
       }
-
-      // internal_user クッキーがない場合だけ、GA4を読み込む
       if (!isInternalUser()) {
         console.log('⏳ Loading GA4...');
         var gaScript = document.createElement('script');
@@ -74,7 +69,7 @@
     }
 
     main{
-      max-width:1000px;
+      max-width:900px; /* アフィリエイトリンクが見やすい幅に調整 */
       margin:60px auto;
       padding:0 20px;
       flex-grow: 1;
@@ -86,9 +81,20 @@
       color:var(--color-primary);
       font-size:26px;
       margin-bottom:40px;
+      position: relative;
+    }
+    /* 装飾線 */
+    h2::after {
+        content: "";
+        display: block;
+        width: 60px;
+        height: 3px;
+        background: var(--color-secondary);
+        margin: 15px auto 0;
+        opacity: 0.6;
     }
 
-    /* ナビゲーションの改善 (モバイル対応) */
+    /* ナビゲーション */
     nav {
       margin-top:25px;
       text-align:center;
@@ -114,73 +120,20 @@
       transform: translateY(-2px);
       box-shadow: 0 4px 10px rgba(0,0,0,0.2);
     }
-    /* モバイル向けに2行目を調整 */
-    @media (max-width: 768px) {
-        header { padding: 60px 15px 30px; }
-        header h1 { font-size: 28px; }
-        nav { flex-direction: row; }
-        nav a { margin: 5px 5px; }
-        .back-btn { margin: 40px auto !important; }
-    }
-    /* product-grid */
-    .product-grid{
-      display:grid;
-      grid-template-columns:repeat(auto-fit,minmax(280px,1fr));
-      gap:30px;
+
+    /* 商品リストエリア（縦並び） */
+    .selection-list {
+      display: flex;
+      flex-direction: column;
+      gap: 50px; /* 商品ごとの間隔 */
     }
 
-    .product{
-      background:#ffffff;
-      border-radius:16px;
-      box-shadow:0 4px 12px var(--color-shadow);
-      overflow:hidden;
-      transition:transform .3s ease;
-    }
-    .product:hover{
-      transform:translateY(-4px);
-      box-shadow:0 8px 20px rgba(0,0,0,0.15);
-    }
-    .product img{
-      width:100%;
-      height:220px;
-      object-fit:cover;
-      /* 画像が読み込めなかった場合、代替のテキストと背景を表示するためのCSS */
-      background-color: #f0f0f0;
-      color: #888;
-      display: block;
-      line-height: 220px;
-      text-align: center;
-      font-style: italic;
-    }
-    .product-content{
-      padding:20px;
-    }
-    .product-content h3{
-      color:#2f4f60;
-      font-size:18px;
-      margin-bottom:10px;
-      line-height:1.4;
-    }
-    .product-content p{
-      font-size:14px;
-      color:#555;
-      margin-bottom:18px;
-    }
-    /* buy-btn */
-    .buy-btn{
-      display:inline-block;
-      background:linear-gradient(45deg,var(--color-accent),var(--color-secondary));
-      color:#fff;
-      padding:10px 22px;
-      border-radius:30px;
-      text-decoration:none;
-      font-weight:600;
-      box-shadow: 0 2px 6px rgba(0,0,0,0.15);
-      transition:background .3s ease;
-    }
-    .buy-btn:hover{
-      background:linear-gradient(45deg,#3f5d85,#5f97c4);
-      box-shadow: 0 4px 10px rgba(0,0,0,0.2);
+    .item-wrapper {
+        background: #fff;
+        padding: 10px; /* 内部余白 */
+        border-radius: 8px;
+        /* もしもアフィリエイト自体が枠を持っているので、
+           外枠はあえてシンプルにするか、無しにします */
     }
 
     /* back-btn */
@@ -207,6 +160,7 @@
       color:#777;
       padding: 30px 0;
       margin-top: auto;
+      border-top: 1px solid #eee;
     }
 
     .info-box {
@@ -232,6 +186,13 @@
       z-index: 999;
       border: 1px solid #eee;
     }
+    
+    @media (max-width: 768px) {
+        header { padding: 60px 15px 30px; }
+        header h1 { font-size: 28px; }
+        nav { flex-direction: row; }
+        nav a { margin: 5px 5px; }
+    }
   </style>
 </head>
 
@@ -240,13 +201,12 @@
     <h1>オーガニックケア・冬のベストセレクション</h1>
     <p>乾燥と冷えに負けない、ぬくもりのあるスキンケアを。</p>
 
-    <!-- ナビリンク -->
     <nav>
       <a href="seasons-skin.html">🌸 季節別スキンケア</a>
       <a href="skin-ranking.html">✨ スキンケアランキング</a>
-      <a href="age-skincare.html">👩 40代・50代向け 肌質別スキンケア</a>
+      <a href="age-skincare.html">👩 40代・50代向け 肌質別</a>
       <a href="acne-care.html">🧴 ニキビ・敏感肌ケア</a>
-      <a href="lifestyle-skincare.html">💆‍♀️ 生活リズム別スキンケア</a>
+      <a href="lifestyle-skincare.html">💆‍♀️ 生活リズム別</a>
       <a href="index.html">🏠 トップに戻る</a>
     </nav>
   </header>
@@ -261,87 +221,50 @@
       
     <h2>・Winter Organic Essentials・</h2>
 
-    <div class="product-grid">
-      <!-- 1: NALC ヘパリン類似物質配合 ハンドクリーム -->
-      <div class="product">
-        <!-- GitHub Pages対応パス: images/winter_handcream.jpg -->
-        <img src="images/winter_handcream.jpg" alt="NALC 無香料 保湿クリーム" onerror="this.src='https://placehold.co/280x220/305060/fff?text=HandCream';" >
-        <div class="product-content">
-          <h3>【NALC】ヘパリン類似物質配合 ハンドクリーム</h3>
-          <p>乾燥肌の救世主とも言われるヘパリン類似物質配合。手荒れやひび割れを防ぎ、全身にも使える無香料の高保湿クリーム。</p>
-          <a class="buy-btn" href="https://amzn.to/3LMS99u" target="_blank" rel="noopener noreferrer sponsored">実際に使ってみる</a>
-        </div>
-      </div>
+    <div class="selection-list">
+        
+        <div class="item-wrapper">
+            <script type="text/javascript">
+            (function(b,c,f,g,a,d,e){b.MoshimoAffiliateObject=a;
+            b[a]=b[a]||function(){arguments.currentScript=c.currentScript
+            ||c.scripts[c.scripts.length-2];(b[a].q=b[a].q||[]).push(arguments)};
+            c.getElementById(a)||(d=c.createElement(f),d.src=g,
+            d.id=a,e=c.getElementsByTagName("body")[0],e.appendChild(d))})
+            (window,document,"script","//dn.msmstatic.com/site/cardlink/bundle.js?20220329","msmaflink");
+            msmaflink({"n":"オルナ オーガニック 化粧水 乳液 美容液(白) 200\/150\/47ml 3点セット スキンケア さっぱり x0016mj2rn *","b":"","t":"","d":"https:\/\/thumbnail.image.rakuten.co.jp","c_p":"","p":["\/@0_mall\/minnanokurashikan\/cabinet\/goq001\/2287_1.jpg"],"u":{"u":"https:\/\/item.rakuten.co.jp\/minnanokurashikan\/a1121-070521-jmj2rn-s1\/","t":"rakuten","r_v":""},"v":"2.1","b_l":[{"id":1,"u_tx":"楽天市場で見る","u_bc":"#87c209","u_url":"https:\/\/item.rakuten.co.jp\/minnanokurashikan\/a1121-070521-jmj2rn-s1\/","a_id":5267359,"p_id":54,"pl_id":27059,"pc_id":54,"s_n":"rakuten","u_so":1},{"id":5,"u_tx":"Amazonで見る","u_bc":"#184f5c","u_url":"https:\/\/amzn.to\/3MtyZFX","a_id":0,"p_id":0,"pl_id":0,"pc_id":0,"s_n":"custom_10","u_so":2},{"id":4,"u_tx":"Yahoo!ショッピングで見る","u_bc":"#bf0000","u_url":"https:\/\/shopping.yahoo.co.jp\/search?first=1\u0026p=%E3%82%AA%E3%83%AB%E3%83%8A%20%E3%82%AA%E3%83%BC%E3%82%AC%E3%83%8B%E3%83%83%E3%82%AF%20%E5%8C%96%E7%B2%A7%E6%B0%B4%20%E4%B9%B3%E6%B6%B2%20%E7%BE%8E%E5%AE%B9%E6%B6%B2(%E7%99%BD)%20200%2F150%2F47ml%203%E7%82%B9%E3%82%BB%E3%83%83%E3%83%88%20%E3%82%B9%E3%82%AD%E3%83%B3%E3%82%B1%E3%82%A2%20%E3%81%95%E3%81%A3%E3%81%B1%E3%82%8A%20x0016mj2rn%20*","a_id":5267465,"p_id":1225,"pl_id":27061,"pc_id":1925,"s_n":"yahoo","u_so":3}],"eid":"AGxjm","s":"s"});
+            </script>
+            <div id="msmaflink-AGxjm">リンク</div>
+            </div>
 
-      <!-- 2: SAKURA&NATURAL ゴールデンホホバオイル -->
-      <div class="product">
-        <!-- GitHub Pages対応パス: images/winter_bodycream.jpg -->
-        <img src="images/winter_bodycream.jpg" alt="SAKURA&NATURAL ゴールデンホホバオイル" onerror="this.src='https://placehold.co/280x220/4a6fa5/fff?text=JojobaOil';" >
-        <div class="product-content">
-          <h3>【SAKURA&NATURAL】ゴールデンホホバオイル</h3>
-          <p>100％天然由来の保湿オイル。乾燥しがちな冬の肌に深いうるおいを与え、髪や全身にも使える万能アイテム。</p>
-          <a class="buy-btn" href="https://amzn.to/47u0LdN" target="_blank" rel="noopener noreferrer sponsored">実際に使ってみる</a>
-        </div>
-      </div>
+        <div class="item-wrapper">
+             </div>
 
-      <!-- 3: Petit Femme フローラルネイルオイル -->
-      <div class="product">
-        <!-- GitHub Pages対応パス: images/daily_nail.jpg -->
-        <img src="images/daily_nail.jpg" alt="Petit Femme ネイルオイル" onerror="this.src='https://placehold.co/280x220/6aa8d4/fff?text=NailOil';" >
-        <div class="product-content">
-          <h3>【Petit Femme】フローラルネイルオイル</h3>
-          <p>99.9％天然由来成分で爪をやさしく保湿。シアバターとスクワランでつややかな指先に。</p>
-          <a class="buy-btn" href="https://amzn.to/3WEGPyF" target="_blank" rel="noopener noreferrer sponsored">実際に使ってみる</a>
-        </div>
-      </div>
+        <div class="item-wrapper">
+             </div>
 
-      <!-- 4: 木露-mokutsuyu- 満月のくろもじミスト -->
-      <div class="product">
-        <!-- GitHub Pages対応パス: images/daily_mist.jpg -->
-        <img src="images/daily_mist.jpg" alt="満月のくろもじミスト" onerror="this.src='https://placehold.co/280x220/305060/fff?text=KuromojiMist';" >
-        <div class="product-content">
-          <h3>【木露-mokutsuyu-】満月のくろもじミスト</h3>
-          <p>満月の日に抽出された天然クロモジ精油の香り。除菌・消臭にも使える癒しのアロマスプレー。</p>
-          <a class="buy-btn" href="https://amzn.to/3LMSkSc" target="_blank" rel="noopener noreferrer sponsored">実際に使ってみる</a>
-        </div>
-      </div>
+        <div class="item-wrapper">
+             </div>
 
-      <!-- 5: ROSE LABO ローズアロマバスソルト -->
-      <div class="product">
-        <!-- GitHub Pages対応パス: images/refresh_bathsalt.jpg -->
-        <img src="images/refresh_bathsalt.jpg" alt="ROSE LABO ローズアロマバスソルト" onerror="this.src='https://placehold.co/280x220/4a6fa5/fff?text=BathSalt';" >
-        <div class="product-content">
-          <h3>【ROSE LABO】ローズアロマバスソルト</h3>
-          <p>自家栽培の“食べられるバラ”を使用した贅沢な入浴剤。ミネラル豊富なピンク岩塩でしっとり肌に。</p>
-          <a class="buy-btn" href="https://amzn.to/498vE8U" target="_blank" rel="noopener noreferrer sponsored">実際に使ってみる</a>
-        </div>
-      </div>
+        <div class="item-wrapper">
+             </div>
 
-      <!-- 6: 木露-mokutsuyu- 深緑の能登ヒバミスト -->
-      <div class="product">
-        <!-- GitHub Pages対応パス: images/refresh_spray.jpg -->
-        <img src="images/refresh_spray.jpg" alt="深緑の能登ヒバミスト" onerror="this.src='https://placehold.co/280x220/6aa8d4/fff?text=HibaMist';" >
-        <div class="product-content">
-          <h3>【木露-mokutsuyu-】深緑の能登ヒバミスト</h3>
-          <p>天然ヒバ精油の木の香りで空間をリフレッシュ。防虫・除菌・消臭に使える万能アロマミスト。</p>
-          <a class="buy-btn" href="https://amzn.to/3JITJIP" target="_blank" rel="noopener noreferrer sponsored">実際に使ってみる</a>
-        </div>
-      </div>
+        <div class="item-wrapper">
+             </div>
+
     </div>
 
-    <!-- シンプルなアフィリエイト紹介ボックス -->
     <div style="
       text-align:center;
-      margin: 25px auto;
+      margin: 60px auto 30px;
       max-width: 400px;
-      padding: 12px;
+      padding: 15px;
       background: #fff8f8;
       border: 1px solid #f7d4d4;
       border-radius: 10px;
       box-shadow: 0 2px 6px rgba(0,0,0,0.05);
     ">
-      <p style="font-size: 14px; color:#555; margin-bottom:10px;">
-        <strong>乾燥が気になる季節におすすめのケアアイテム</strong>
+      <p style="font-size: 14px; color:#555; margin-bottom:15px;">
+        <strong>乾燥が気になる季節におすすめ</strong>
       </p>
 
       <a href="https://px.a8.net/svt/ejp?a8mat=45IB9B+J1WWQ+3NI6+60H7L" 
@@ -369,7 +292,6 @@
       あなたの冬が、少しでも心地よく過ごせますように。
     </div>
 
-    <!-- アフィリエイトリンク（中央寄せ） -->
     <div style="text-align:center; margin-top:40px;">
 
       <a href="https://px.a8.net/svt/ejp?a8mat=45I9PD+4HCIHM+37D2+609HT" 
@@ -395,8 +317,8 @@
       <a href="index.html" class="back-btn">← トップページへ戻る</a>
     </div>
   </main>
+  
   <div id="affiliateNotice">※当サイトはアフィリエイト広告（Amazonアソシエイト含む）を利用しています</div>
-
     
   <footer>© 2025 EssentialBeautyNeeds</footer>
 </body>
