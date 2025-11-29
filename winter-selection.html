@@ -69,7 +69,7 @@
     }
 
     main{
-      max-width:900px; /* アフィリエイトリンクが見やすい幅に調整 */
+      max-width:900px;
       margin:60px auto;
       padding:0 20px;
       flex-grow: 1;
@@ -83,7 +83,6 @@
       margin-bottom:40px;
       position: relative;
     }
-    /* 装飾線 */
     h2::after {
         content: "";
         display: block;
@@ -94,7 +93,6 @@
         opacity: 0.6;
     }
 
-    /* ナビゲーション */
     nav {
       margin-top:25px;
       text-align:center;
@@ -121,22 +119,18 @@
       box-shadow: 0 4px 10px rgba(0,0,0,0.2);
     }
 
-    /* 商品リストエリア（縦並び） */
     .selection-list {
       display: flex;
       flex-direction: column;
-      gap: 50px; /* 商品ごとの間隔 */
+      gap: 50px;
     }
 
     .item-wrapper {
         background: #fff;
-        padding: 10px; /* 内部余白 */
+        padding: 10px;
         border-radius: 8px;
-        /* もしもアフィリエイト自体が枠を持っているので、
-           外枠はあえてシンプルにするか、無しにします */
     }
 
-    /* back-btn */
     .back-btn{
       display:inline-block;
       margin:60px auto;
@@ -163,16 +157,26 @@
       border-top: 1px solid #eee;
     }
 
+    /* 記事エリアのスタイル（長文対応） */
     .info-box {
       background: #f4f9fc;
       border-left: 5px solid #6aa8d4;
-      padding: 18px 20px;
+      padding: 25px 30px;
       margin: 40px 0;
       border-radius: 8px;
       color: #355060;
-      line-height: 1.7;
-      box-shadow: 0 1px 5px rgba(0,0,0,0.05);
+      line-height: 1.8;
+      box-shadow: 0 2px 8px rgba(0,0,0,0.05);
+      font-size: 15px;
     }
+    /* 段落ごとの余白 */
+    .info-box p {
+      margin-bottom: 1.5em;
+    }
+    .info-box p:last-child {
+      margin-bottom: 0;
+    }
+
     #affiliateNotice {
       position: fixed;
       right: 12px;
@@ -192,6 +196,7 @@
         header h1 { font-size: 28px; }
         nav { flex-direction: row; }
         nav a { margin: 5px 5px; }
+        .info-box { padding: 20px; font-size: 14px; }
     }
   </style>
 </head>
@@ -214,9 +219,10 @@
   <main>
 
     <div class="info-box">
-      冬は気温と湿度がぐっと低くなり、肌のうるおいが逃げやすい季節です。
-      特に暖房による乾燥は、肌のバリア機能を弱めてしまうことも。
-      ここでは、そんな冬の悩みに寄り添うオーガニックケアアイテムを厳選してご紹介します。
+      <p>冬は一年の中で最も肌にとって過酷な季節です。冷たい外気と室内の暖房によるダブルパンチで、湿度は極端に低下し、肌の水分は驚くべき速さで奪われていきます。</p>
+      <p>「少し乾燥しているだけだから」とケアを怠ってしまうと、肌のバリア機能は低下し続け、そのダメージは蓄積されていきます。恐ろしいのは、そのツケが春になってから回ってくること。春の強い紫外線や花粉などの刺激に耐えられない、ゆらぎ肌の原因となってしまうのです。</p>
+      <p>一度壊れたバリア機能を回復させるには、長い時間がかかります。だからこそ、ダメージが深刻化する前の「冬の入念なケア」が、未来の美肌を守る鍵となります。</p>
+      <p>ここでは、ただ保湿するだけでなく、心まで満たされるようなオーガニックアイテムを厳選しました。濃厚なクリームや芳醇なオイルで肌を包み込み、春を笑顔で迎えるための準備を始めましょう。</p>
     </div>
       
     <h2>・Winter Organic Essentials・</h2>
@@ -234,82 +240,72 @@
             msmaflink({"n":"オルナ オーガニック 化粧水 乳液 美容液(白) 200\/150\/47ml 3点セット スキンケア さっぱり x0016mj2rn *","b":"","t":"","d":"https:\/\/thumbnail.image.rakuten.co.jp","c_p":"","p":["\/@0_mall\/minnanokurashikan\/cabinet\/goq001\/2287_1.jpg"],"u":{"u":"https:\/\/item.rakuten.co.jp\/minnanokurashikan\/a1121-070521-jmj2rn-s1\/","t":"rakuten","r_v":""},"v":"2.1","b_l":[{"id":1,"u_tx":"楽天市場で見る","u_bc":"#87c209","u_url":"https:\/\/item.rakuten.co.jp\/minnanokurashikan\/a1121-070521-jmj2rn-s1\/","a_id":5267359,"p_id":54,"pl_id":27059,"pc_id":54,"s_n":"rakuten","u_so":1},{"id":5,"u_tx":"Amazonで見る","u_bc":"#184f5c","u_url":"https:\/\/amzn.to\/3MtyZFX","a_id":0,"p_id":0,"pl_id":0,"pc_id":0,"s_n":"custom_10","u_so":2},{"id":4,"u_tx":"Yahoo!ショッピングで見る","u_bc":"#bf0000","u_url":"https:\/\/shopping.yahoo.co.jp\/search?first=1\u0026p=%E3%82%AA%E3%83%AB%E3%83%8A%20%E3%82%AA%E3%83%BC%E3%82%AC%E3%83%8B%E3%83%83%E3%82%AF%20%E5%8C%96%E7%B2%A7%E6%B0%B4%20%E4%B9%B3%E6%B6%B2%20%E7%BE%8E%E5%AE%B9%E6%B6%B2(%E7%99%BD)%20200%2F150%2F47ml%203%E7%82%B9%E3%82%BB%E3%83%83%E3%83%88%20%E3%82%B9%E3%82%AD%E3%83%B3%E3%82%B1%E3%82%A2%20%E3%81%95%E3%81%A3%E3%81%B1%E3%82%8A%20x0016mj2rn%20*","a_id":5267465,"p_id":1225,"pl_id":27061,"pc_id":1925,"s_n":"yahoo","u_so":3}],"eid":"AGxjm","s":"s"});
             </script>
             <div id="msmaflink-AGxjm">リンク</div>
-            </div>
+        </div>
 
         <div class="item-wrapper">
-          <!-- START MoshimoAffiliateEasyLink -->
-<script type="text/javascript">
-(function(b,c,f,g,a,d,e){b.MoshimoAffiliateObject=a;
-b[a]=b[a]||function(){arguments.currentScript=c.currentScript
-||c.scripts[c.scripts.length-2];(b[a].q=b[a].q||[]).push(arguments)};
-c.getElementById(a)||(d=c.createElement(f),d.src=g,
-d.id=a,e=c.getElementsByTagName("body")[0],e.appendChild(d))})
-(window,document,"script","//dn.msmstatic.com/site/cardlink/bundle.js?20220329","msmaflink");
-msmaflink({"n":"RUHAKU （琉白） 月桃エンリッチクリーミーシートマスク 1箱 5枚入り フェイスマスク 保湿 敏感肌 乾燥肌 セラミド配合 オーガニック 無添加 冬の乾燥対策 ご褒美マスク ナイトケア ギフトにも最適","b":"","t":"","d":"https:\/\/thumbnail.image.rakuten.co.jp","c_p":"\/@0_mall\/ruhaku\/cabinet\/gettou_sheet_mask5","p":["\/imgrc0120403415.jpg","\/gt-ecsm_thum-2.jpg","\/gt-ecsm_thum-3.jpg"],"u":{"u":"https:\/\/item.rakuten.co.jp\/ruhaku\/ss_gettou_sheet_mask5\/","t":"rakuten","r_v":""},"v":"2.1","b_l":[{"id":1,"u_tx":"楽天市場で見る","u_bc":"#87c209","u_url":"https:\/\/item.rakuten.co.jp\/ruhaku\/ss_gettou_sheet_mask5\/","a_id":5267359,"p_id":54,"pl_id":27059,"pc_id":54,"s_n":"rakuten","u_so":1},{"id":5,"u_tx":"Amazonで見る","u_bc":"#184f5c","u_url":"https:\/\/amzn.to\/43VXnpM","a_id":0,"p_id":0,"pl_id":0,"pc_id":0,"s_n":"custom_10","u_so":2},{"id":4,"u_tx":"Yahoo!ショッピングで見る","u_bc":"#bf0000","u_url":"https:\/\/shopping.yahoo.co.jp\/search?first=1\u0026p=RUHAKU%20%EF%BC%88%E7%90%89%E7%99%BD%EF%BC%89%20%E6%9C%88%E6%A1%83%E3%82%A8%E3%83%B3%E3%83%AA%E3%83%83%E3%83%81%E3%82%AF%E3%83%AA%E3%83%BC%E3%83%9F%E3%83%BC%E3%82%B7%E3%83%BC%E3%83%88%E3%83%9E%E3%82%B9%E3%82%AF%201%E7%AE%B1%205%E6%9E%9A%E5%85%A5%E3%82%8A%20%E3%83%95%E3%82%A7%E3%82%A4%E3%82%B9%E3%83%9E%E3%82%B9%E3%82%AF%20%E4%BF%9D%E6%B9%BF%20%E6%95%8F%E6%84%9F%E8%82%8C%20%E4%B9%BE%E7%87%A5%E8%82%8C%20%E3%82%BB%E3%83%A9%E3%83%9F%E3%83%89%E9%85%8D%E5%90%88%20%E3%82%AA%E3%83%BC%E3%82%AC%E3%83%8B%E3%83%83%E3%82%AF%20%E7%84%A1%E6%B7%BB%E5%8A%A0%20%E5%86%AC%E3%81%AE%E4%B9%BE%E7%87%A5%E5%AF%BE%E7%AD%96%20%E3%81%94%E8%A4%92%E7%BE%8E%E3%83%9E%E3%82%B9%E3%82%AF%20%E3%83%8A%E3%82%A4%E3%83%88%E3%82%B1%E3%82%A2%20%E3%82%AE%E3%83%95%E3%83%88%E3%81%AB%E3%82%82%E6%9C%80%E9%81%A9","a_id":5267465,"p_id":1225,"pl_id":27061,"pc_id":1925,"s_n":"yahoo","u_so":3}],"eid":"lhSB9","s":"s"});
-</script>
-<div id="msmaflink-lhSB9">リンク</div>
-<!-- MoshimoAffiliateEasyLink END -->
-             </div>
+          <script type="text/javascript">
+          (function(b,c,f,g,a,d,e){b.MoshimoAffiliateObject=a;
+          b[a]=b[a]||function(){arguments.currentScript=c.currentScript
+          ||c.scripts[c.scripts.length-2];(b[a].q=b[a].q||[]).push(arguments)};
+          c.getElementById(a)||(d=c.createElement(f),d.src=g,
+          d.id=a,e=c.getElementsByTagName("body")[0],e.appendChild(d))})
+          (window,document,"script","//dn.msmstatic.com/site/cardlink/bundle.js?20220329","msmaflink");
+          msmaflink({"n":"RUHAKU （琉白） 月桃エンリッチクリーミーシートマスク 1箱 5枚入り フェイスマスク 保湿 敏感肌 乾燥肌 セラミド配合 オーガニック 無添加 冬の乾燥対策 ご褒美マスク ナイトケア ギフトにも最適","b":"","t":"","d":"https:\/\/thumbnail.image.rakuten.co.jp","c_p":"\/@0_mall\/ruhaku\/cabinet\/gettou_sheet_mask5","p":["\/imgrc0120403415.jpg","\/gt-ecsm_thum-2.jpg","\/gt-ecsm_thum-3.jpg"],"u":{"u":"https:\/\/item.rakuten.co.jp\/ruhaku\/ss_gettou_sheet_mask5\/","t":"rakuten","r_v":""},"v":"2.1","b_l":[{"id":1,"u_tx":"楽天市場で見る","u_bc":"#87c209","u_url":"https:\/\/item.rakuten.co.jp\/ruhaku\/ss_gettou_sheet_mask5\/","a_id":5267359,"p_id":54,"pl_id":27059,"pc_id":54,"s_n":"rakuten","u_so":1},{"id":5,"u_tx":"Amazonで見る","u_bc":"#184f5c","u_url":"https:\/\/amzn.to\/43VXnpM","a_id":0,"p_id":0,"pl_id":0,"pc_id":0,"s_n":"custom_10","u_so":2},{"id":4,"u_tx":"Yahoo!ショッピングで見る","u_bc":"#bf0000","u_url":"https:\/\/shopping.yahoo.co.jp\/search?first=1\u0026p=RUHAKU%20%EF%BC%88%E7%90%89%E7%99%BD%EF%BC%89%20%E6%9C%88%E6%A1%83%E3%82%A8%E3%83%B3%E3%83%AA%E3%83%83%E3%83%81%E3%82%AF%E3%83%AA%E3%83%BC%E3%83%9F%E3%83%BC%E3%82%B7%E3%83%BC%E3%83%88%E3%83%9E%E3%82%B9%E3%82%AF%201%E7%AE%B1%205%E6%9E%9A%E5%85%A5%E3%82%8A%20%E3%83%95%E3%82%A7%E3%82%A4%E3%82%B9%E3%83%9E%E3%82%B9%E3%82%AF%20%E4%BF%9D%E6%B9%BF%20%E6%95%8F%E6%84%9F%E8%82%8C%20%E4%B9%BE%E7%87%A5%E8%82%8C%20%E3%82%BB%E3%83%A9%E3%83%9F%E3%83%89%E9%85%8D%E5%90%88%20%E3%82%AA%E3%83%BC%E3%82%AC%E3%83%8B%E3%83%83%E3%82%AF%20%E7%84%A1%E6%B7%BB%E5%8A%A0%20%E5%86%AC%E3%81%AE%E4%B9%BE%E7%87%A5%E5%AF%BE%E7%AD%96%20%E3%81%94%E8%A4%92%E7%BE%8E%E3%83%9E%E3%82%B9%E3%82%AF%20%E3%83%8A%E3%82%A4%E3%83%88%E3%82%B1%E3%82%A2%20%E3%82%AE%E3%83%95%E3%83%88%E3%81%AB%E3%82%82%E6%9C%80%E9%81%A9","a_id":5267465,"p_id":1225,"pl_id":27061,"pc_id":1925,"s_n":"yahoo","u_so":3}],"eid":"lhSB9","s":"s"});
+          </script>
+          <div id="msmaflink-lhSB9">リンク</div>
+        </div>
 
         <div class="item-wrapper">
-          <!-- START MoshimoAffiliateEasyLink -->
-<script type="text/javascript">
-(function(b,c,f,g,a,d,e){b.MoshimoAffiliateObject=a;
-b[a]=b[a]||function(){arguments.currentScript=c.currentScript
-||c.scripts[c.scripts.length-2];(b[a].q=b[a].q||[]).push(arguments)};
-c.getElementById(a)||(d=c.createElement(f),d.src=g,
-d.id=a,e=c.getElementsByTagName("body")[0],e.appendChild(d))})
-(window,document,"script","//dn.msmstatic.com/site/cardlink/bundle.js?20220329","msmaflink");
-msmaflink({"n":"Torriden セルメイジングコラーゲンファーミングクリーム(韓国コスメ)／トリデン（Torriden）","b":"","t":"","d":"https:\/\/thumbnail.image.rakuten.co.jp","c_p":"\/@0_mall\/0101marui\/cabinet\/cf019\/962","p":["\/198809784603795.jpg","\/198809784603795_2.jpg","\/198809784603795_3.jpg"],"u":{"u":"https:\/\/item.rakuten.co.jp\/0101marui\/cf019962190101\/","t":"rakuten","r_v":""},"v":"2.1","b_l":[{"id":1,"u_tx":"楽天市場で見る","u_bc":"#87c209","u_url":"https:\/\/item.rakuten.co.jp\/0101marui\/cf019962190101\/","a_id":5267359,"p_id":54,"pl_id":27059,"pc_id":54,"s_n":"rakuten","u_so":1},{"id":5,"u_tx":"Amazonで見る","u_bc":"#184f5c","u_url":"https:\/\/amzn.to\/48noDit","a_id":0,"p_id":0,"pl_id":0,"pc_id":0,"s_n":"custom_10","u_so":2},{"id":4,"u_tx":"Yahoo!ショッピングで見る","u_bc":"#bf0000","u_url":"https:\/\/shopping.yahoo.co.jp\/search?first=1\u0026p=Torriden%20%E3%82%BB%E3%83%AB%E3%83%A1%E3%82%A4%E3%82%B8%E3%83%B3%E3%82%B0%E3%82%B3%E3%83%A9%E3%83%BC%E3%82%B2%E3%83%B3%E3%83%95%E3%82%A1%E3%83%BC%E3%83%9F%E3%83%B3%E3%82%B0%E3%82%AF%E3%83%AA%E3%83%BC%E3%83%A0(%E9%9F%93%E5%9B%BD%E3%82%B3%E3%82%B9%E3%83%A1)%EF%BC%8F%E3%83%88%E3%83%AA%E3%83%87%E3%83%B3%EF%BC%88Torriden%EF%BC%89","a_id":5267465,"p_id":1225,"pl_id":27061,"pc_id":1925,"s_n":"yahoo","u_so":3}],"eid":"8G1Pa","s":"s"});
-</script>
-<div id="msmaflink-8G1Pa">リンク</div>
-<!-- MoshimoAffiliateEasyLink END -->
-             </div>
+          <script type="text/javascript">
+          (function(b,c,f,g,a,d,e){b.MoshimoAffiliateObject=a;
+          b[a]=b[a]||function(){arguments.currentScript=c.currentScript
+          ||c.scripts[c.scripts.length-2];(b[a].q=b[a].q||[]).push(arguments)};
+          c.getElementById(a)||(d=c.createElement(f),d.src=g,
+          d.id=a,e=c.getElementsByTagName("body")[0],e.appendChild(d))})
+          (window,document,"script","//dn.msmstatic.com/site/cardlink/bundle.js?20220329","msmaflink");
+          msmaflink({"n":"Torriden セルメイジングコラーゲンファーミングクリーム(韓国コスメ)／トリデン（Torriden）","b":"","t":"","d":"https:\/\/thumbnail.image.rakuten.co.jp","c_p":"\/@0_mall\/0101marui\/cabinet\/cf019\/962","p":["\/198809784603795.jpg","\/198809784603795_2.jpg","\/198809784603795_3.jpg"],"u":{"u":"https:\/\/item.rakuten.co.jp\/0101marui\/cf019962190101\/","t":"rakuten","r_v":""},"v":"2.1","b_l":[{"id":1,"u_tx":"楽天市場で見る","u_bc":"#87c209","u_url":"https:\/\/item.rakuten.co.jp\/0101marui\/cf019962190101\/","a_id":5267359,"p_id":54,"pl_id":27059,"pc_id":54,"s_n":"rakuten","u_so":1},{"id":5,"u_tx":"Amazonで見る","u_bc":"#184f5c","u_url":"https:\/\/amzn.to\/48noDit","a_id":0,"p_id":0,"pl_id":0,"pc_id":0,"s_n":"custom_10","u_so":2},{"id":4,"u_tx":"Yahoo!ショッピングで見る","u_bc":"#bf0000","u_url":"https:\/\/shopping.yahoo.co.jp\/search?first=1\u0026p=Torriden%20%E3%82%BB%E3%83%AB%E3%83%A1%E3%82%A4%E3%82%B8%E3%83%B3%E3%82%B0%E3%82%B3%E3%83%A9%E3%83%BC%E3%82%B2%E3%83%B3%E3%83%95%E3%82%A1%E3%83%BC%E3%83%9F%E3%83%B3%E3%82%B0%E3%82%AF%E3%83%AA%E3%83%BC%E3%83%A0(%E9%9F%93%E5%9B%BD%E3%82%B3%E3%82%B9%E3%83%A1)%EF%BC%8F%E3%83%88%E3%83%AA%E3%83%87%E3%83%B3%EF%BC%88Torriden%EF%BC%89","a_id":5267465,"p_id":1225,"pl_id":27061,"pc_id":1925,"s_n":"yahoo","u_so":3}],"eid":"8G1Pa","s":"s"});
+          </script>
+          <div id="msmaflink-8G1Pa">リンク</div>
+        </div>
 
         <div class="item-wrapper">
-          <!-- START MoshimoAffiliateEasyLink -->
-<script type="text/javascript">
-(function(b,c,f,g,a,d,e){b.MoshimoAffiliateObject=a;
-b[a]=b[a]||function(){arguments.currentScript=c.currentScript
-||c.scripts[c.scripts.length-2];(b[a].q=b[a].q||[]).push(arguments)};
-c.getElementById(a)||(d=c.createElement(f),d.src=g,
-d.id=a,e=c.getElementsByTagName("body")[0],e.appendChild(d))})
-(window,document,"script","//dn.msmstatic.com/site/cardlink/bundle.js?20220329","msmaflink");
-msmaflink({"n":"ゴールデンホホバオイル 300ml ホホバオイル 未精製 キャリアオイル マッサージオイル ボディオイル 業務用 ホホバ ゴールデン 頭皮 クレンジング 肌 未精製ホホバ マッサージ オイル 妊娠線 顔 オイル 無添加 ポンプ付き 送料無料 ポンプボトル","b":"","t":"","d":"https:\/\/thumbnail.image.rakuten.co.jp","c_p":"\/@0_mall\/virginbeautyshop\/cabinet","p":["\/04226192\/sn\/10251920\/ta-jjb-300.jpg","\/04226192\/sn\/10251920\/ta-jjb-300_sq_01.jpg","\/img-up_1_568\/900_k1_154057_42.jpg"],"u":{"u":"https:\/\/item.rakuten.co.jp\/virginbeautyshop\/ta-jjb-300\/","t":"rakuten","r_v":""},"v":"2.1","b_l":[{"id":1,"u_tx":"楽天市場で見る","u_bc":"#87c209","u_url":"https:\/\/item.rakuten.co.jp\/virginbeautyshop\/ta-jjb-300\/","a_id":5267359,"p_id":54,"pl_id":27059,"pc_id":54,"s_n":"rakuten","u_so":1},{"id":5,"u_tx":"Amazonで見る","u_bc":"#184f5c","u_url":"https:\/\/amzn.to\/4iolGCC","a_id":0,"p_id":0,"pl_id":0,"pc_id":0,"s_n":"custom_10","u_so":2},{"id":4,"u_tx":"Yahoo!ショッピングで見る","u_bc":"#bf0000","u_url":"https:\/\/shopping.yahoo.co.jp\/search?first=1\u0026p=%E3%82%B4%E3%83%BC%E3%83%AB%E3%83%87%E3%83%B3%E3%83%9B%E3%83%9B%E3%83%90%E3%82%AA%E3%82%A4%E3%83%AB%20300ml%20%E3%83%9B%E3%83%9B%E3%83%90%E3%82%AA%E3%82%A4%E3%83%AB%20%E6%9C%AA%E7%B2%BE%E8%A3%BD%20%E3%82%AD%E3%83%A3%E3%83%AA%E3%82%A2%E3%82%AA%E3%82%A4%E3%83%AB%20%E3%83%9E%E3%83%83%E3%82%B5%E3%83%BC%E3%82%B8%E3%82%AA%E3%82%A4%E3%83%AB%20%E3%83%9C%E3%83%87%E3%82%A3%E3%82%AA%E3%82%A4%E3%83%AB%20%E6%A5%AD%E5%8B%99%E7%94%A8%20%E3%83%9B%E3%83%9B%E3%83%90%20%E3%82%B4%E3%83%BC%E3%83%AB%E3%83%87%E3%83%B3%20%E9%A0%AD%E7%9A%AE%20%E3%82%AF%E3%83%AC%E3%83%B3%E3%82%B8%E3%83%B3%E3%82%B0%20%E8%82%8C%20%E6%9C%AA%E7%B2%BE%E8%A3%BD%E3%83%9B%E3%83%9B%E3%83%90%20%E3%83%9E%E3%83%83%E3%82%B5%E3%83%BC%E3%82%B8%20%E3%82%AA%E3%82%A4%E3%83%AB%20%E5%A6%8A%E5%A8%A0%E7%B7%9A%20%E9%A1%94%20%E3%82%AA%E3%82%A4%E3%83%AB%20%E7%84%A1%E6%B7%BB%E5%8A%A0%20%E3%83%9D%E3%83%B3%E3%83%97%E4%BB%98%E3%81%8D%20%E9%80%81%E6%96%99%E7%84%A1%E6%96%99%20%E3%83%9D%E3%83%B3%E3%83%97%E3%83%9C%E3%83%88%E3%83%AB","a_id":5267465,"p_id":1225,"pl_id":27061,"pc_id":1925,"s_n":"yahoo","u_so":3}],"eid":"IFpRy","s":"s"});
-</script>
-<div id="msmaflink-IFpRy">リンク</div>
-<!-- MoshimoAffiliateEasyLink END -->
-             </div>
+          <script type="text/javascript">
+          (function(b,c,f,g,a,d,e){b.MoshimoAffiliateObject=a;
+          b[a]=b[a]||function(){arguments.currentScript=c.currentScript
+          ||c.scripts[c.scripts.length-2];(b[a].q=b[a].q||[]).push(arguments)};
+          c.getElementById(a)||(d=c.createElement(f),d.src=g,
+          d.id=a,e=c.getElementsByTagName("body")[0],e.appendChild(d))})
+          (window,document,"script","//dn.msmstatic.com/site/cardlink/bundle.js?20220329","msmaflink");
+          msmaflink({"n":"ゴールデンホホバオイル 300ml ホホバオイル 未精製 キャリアオイル マッサージオイル ボディオイル 業務用 ホホバ ゴールデン 頭皮 クレンジング 肌 未精製ホホバ マッサージ オイル 妊娠線 顔 オイル 無添加 ポンプ付き 送料無料 ポンプボトル","b":"","t":"","d":"https:\/\/thumbnail.image.rakuten.co.jp","c_p":"\/@0_mall\/virginbeautyshop\/cabinet","p":["\/04226192\/sn\/10251920\/ta-jjb-300.jpg","\/04226192\/sn\/10251920\/ta-jjb-300_sq_01.jpg","\/img-up_1_568\/900_k1_154057_42.jpg"],"u":{"u":"https:\/\/item.rakuten.co.jp\/virginbeautyshop\/ta-jjb-300\/","t":"rakuten","r_v":""},"v":"2.1","b_l":[{"id":1,"u_tx":"楽天市場で見る","u_bc":"#87c209","u_url":"https:\/\/item.rakuten.co.jp\/virginbeautyshop\/ta-jjb-300\/","a_id":5267359,"p_id":54,"pl_id":27059,"pc_id":54,"s_n":"rakuten","u_so":1},{"id":5,"u_tx":"Amazonで見る","u_bc":"#184f5c","u_url":"https:\/\/amzn.to\/4iolGCC","a_id":0,"p_id":0,"pl_id":0,"pc_id":0,"s_n":"custom_10","u_so":2},{"id":4,"u_tx":"Yahoo!ショッピングで見る","u_bc":"#bf0000","u_url":"https:\/\/shopping.yahoo.co.jp\/search?first=1\u0026p=%E3%82%B4%E3%83%BC%E3%83%AB%E3%83%87%E3%83%B3%E3%83%9B%E3%83%9B%E3%83%90%E3%82%AA%E3%82%A4%E3%83%AB%20300ml%20%E3%83%9B%E3%83%9B%E3%83%90%E3%82%AA%E3%82%A4%E3%83%AB%20%E6%9C%AA%E7%B2%BE%E8%A3%BD%20%E3%82%AD%E3%83%A3%E3%83%AA%E3%82%A2%E3%82%AA%E3%82%A4%E3%83%AB%20%E3%83%9E%E3%83%83%E3%82%B5%E3%83%BC%E3%82%B8%E3%82%AA%E3%82%A4%E3%83%AB%20%E3%83%9C%E3%83%87%E3%82%A3%E3%82%AA%E3%82%A4%E3%83%AB%20%E6%A5%AD%E5%8B%99%E7%94%A8%20%E3%83%9B%E3%83%9B%E3%83%90%20%E3%82%B4%E3%83%BC%E3%83%AB%E3%83%87%E3%83%B3%20%E9%A0%AD%E7%9A%AE%20%E3%82%AF%E3%83%AC%E3%83%B3%E3%82%B8%E3%83%B3%E3%82%B0%20%E8%82%8C%20%E6%9C%AA%E7%B2%BE%E8%A3%BD%E3%83%9B%E3%83%9B%E3%83%90%20%E3%83%9E%E3%83%83%E3%82%B5%E3%83%BC%E3%82%B8%20%E3%82%AA%E3%82%A4%E3%83%AB%20%E5%A6%8A%E5%A8%A0%E7%B7%9A%20%E9%A1%94%20%E3%82%AA%E3%82%A4%E3%83%AB%20%E7%84%A1%E6%B7%BB%E5%8A%A0%20%E3%83%9D%E3%83%B3%E3%83%97%E4%BB%98%E3%81%8D%20%E9%80%81%E6%96%99%E7%84%A1%E6%96%99%20%E3%83%9D%E3%83%B3%E3%83%97%E3%83%9C%E3%83%88%E3%83%AB","a_id":5267465,"p_id":1225,"pl_id":27061,"pc_id":1925,"s_n":"yahoo","u_so":3}],"eid":"IFpRy","s":"s"});
+          </script>
+          <div id="msmaflink-IFpRy">リンク</div>
+        </div>
 
         <div class="item-wrapper">
-          <!-- START MoshimoAffiliateEasyLink -->
-<script type="text/javascript">
-(function(b,c,f,g,a,d,e){b.MoshimoAffiliateObject=a;
-b[a]=b[a]||function(){arguments.currentScript=c.currentScript
-||c.scripts[c.scripts.length-2];(b[a].q=b[a].q||[]).push(arguments)};
-c.getElementById(a)||(d=c.createElement(f),d.src=g,
-d.id=a,e=c.getElementsByTagName("body")[0],e.appendChild(d))})
-(window,document,"script","//dn.msmstatic.com/site/cardlink/bundle.js?20220329","msmaflink");
-msmaflink({"n":"【楽天4冠達成 超保湿】CBD バーム モイスチャー 70g 15g クリーム ボディバター 保湿 roun ラウン cbdクリーム cbdスポーツバーム 大容量 cbd スキンケア 天然 植物由来 100％ cbdオイル 国産 日本製 ボディバーム 高濃度 保湿 乾燥肌 肌荒れ 肩","b":"","t":"","d":"https:\/\/thumbnail.image.rakuten.co.jp","c_p":"\/@0_mall\/leep\/cabinet\/roun\/moisturizing-balm","p":["\/mois_balm_15.jpg","\/attention_package.jpg","\/moist-balm-01.jpg"],"u":{"u":"https:\/\/item.rakuten.co.jp\/leep\/moisturizing-balm-roun\/","t":"rakuten","r_v":""},"v":"2.1","b_l":[{"id":1,"u_tx":"楽天市場で見る","u_bc":"#87c209","u_url":"https:\/\/item.rakuten.co.jp\/leep\/moisturizing-balm-roun\/","a_id":5267359,"p_id":54,"pl_id":27059,"pc_id":54,"s_n":"rakuten","u_so":1},{"id":5,"u_tx":"Amazonで見る","u_bc":"#184f5c","u_url":"https:\/\/amzn.to\/3Xor53e","a_id":0,"p_id":0,"pl_id":0,"pc_id":0,"s_n":"custom_10","u_so":2},{"id":4,"u_tx":"Yahoo!ショッピングで見る","u_bc":"#bf0000","u_url":"https:\/\/shopping.yahoo.co.jp\/search?first=1\u0026p=%E3%80%90%E6%A5%BD%E5%A4%A94%E5%86%A0%E9%81%94%E6%88%90%20%E8%B6%85%E4%BF%9D%E6%B9%BF%E3%80%91CBD%20%E3%83%90%E3%83%BC%E3%83%A0%20%E3%83%A2%E3%82%A4%E3%82%B9%E3%83%81%E3%83%A3%E3%83%BC%2070g%2015g%20%E3%82%AF%E3%83%AA%E3%83%BC%E3%83%A0%20%E3%83%9C%E3%83%87%E3%82%A3%E3%83%90%E3%82%BF%E3%83%BC%20%E4%BF%9D%E6%B9%BF%20roun%20%E3%83%A9%E3%82%A6%E3%83%B3%20cbd%E3%82%AF%E3%83%AA%E3%83%BC%E3%83%A0%20cbd%E3%82%B9%E3%83%9D%E3%83%BC%E3%83%84%E3%83%90%E3%83%BC%E3%83%A0%20%E5%A4%A7%E5%AE%B9%E9%87%8F%20cbd%20%E3%82%B9%E3%82%AD%E3%83%B3%E3%82%B1%E3%82%A2%20%E5%A4%A9%E7%84%B6%20%E6%A4%8D%E7%89%A9%E7%94%B1%E6%9D%A5%20100%EF%BC%85%20cbd%E3%82%AA%E3%82%A4%E3%83%AB%20%E5%9B%BD%E7%94%A3%20%E6%97%A5%E6%9C%AC%E8%A3%BD%20%E3%83%9C%E3%83%87%E3%82%A3%E3%83%90%E3%83%BC%E3%83%A0%20%E9%AB%98%E6%BF%83%E5%BA%A6%20%E4%BF%9D%E6%B9%BF%20%E4%B9%BE%E7%87%A5%E8%82%8C%20%E8%82%8C%E8%8D%92%E3%82%8C%20%E8%82%A9","a_id":5267465,"p_id":1225,"pl_id":27061,"pc_id":1925,"s_n":"yahoo","u_so":3}],"eid":"ZkM27","s":"s"});
-</script>
-<div id="msmaflink-ZkM27">リンク</div>
-<!-- MoshimoAffiliateEasyLink END -->
-             </div>
+          <script type="text/javascript">
+          (function(b,c,f,g,a,d,e){b.MoshimoAffiliateObject=a;
+          b[a]=b[a]||function(){arguments.currentScript=c.currentScript
+          ||c.scripts[c.scripts.length-2];(b[a].q=b[a].q||[]).push(arguments)};
+          c.getElementById(a)||(d=c.createElement(f),d.src=g,
+          d.id=a,e=c.getElementsByTagName("body")[0],e.appendChild(d))})
+          (window,document,"script","//dn.msmstatic.com/site/cardlink/bundle.js?20220329","msmaflink");
+          msmaflink({"n":"【楽天4冠達成 超保湿】CBD バーム モイスチャー 70g 15g クリーム ボディバター 保湿 roun ラウン cbdクリーム cbdスポーツバーム 大容量 cbd スキンケア 天然 植物由来 100％ cbdオイル 国産 日本製 ボディバーム 高濃度 保湿 乾燥肌 肌荒れ 肩","b":"","t":"","d":"https:\/\/thumbnail.image.rakuten.co.jp","c_p":"\/@0_mall\/leep\/cabinet\/roun\/moisturizing-balm","p":["\/mois_balm_15.jpg","\/attention_package.jpg","\/moist-balm-01.jpg"],"u":{"u":"https:\/\/item.rakuten.co.jp\/leep\/moisturizing-balm-roun\/","t":"rakuten","r_v":""},"v":"2.1","b_l":[{"id":1,"u_tx":"楽天市場で見る","u_bc":"#87c209","u_url":"https:\/\/item.rakuten.co.jp\/leep\/moisturizing-balm-roun\/","a_id":5267359,"p_id":54,"pl_id":27059,"pc_id":54,"s_n":"rakuten","u_so":1},{"id":5,"u_tx":"Amazonで見る","u_bc":"#184f5c","u_url":"https:\/\/amzn.to\/3Xor53e","a_id":0,"p_id":0,"pl_id":0,"pc_id":0,"s_n":"custom_10","u_so":2},{"id":4,"u_tx":"Yahoo!ショッピングで見る","u_bc":"#bf0000","u_url":"https:\/\/shopping.yahoo.co.jp\/search?first=1\u0026p=%E3%80%90%E6%A5%BD%E5%A4%A94%E5%86%A0%E9%81%94%E6%88%90%20%E8%B6%85%E4%BF%9D%E6%B9%BF%E3%80%91CBD%20%E3%83%90%E3%83%BC%E3%83%A0%20%E3%83%A2%E3%82%A4%E3%82%B9%E3%83%81%E3%83%A3%E3%83%BC%2070g%2015g%20%E3%82%AF%E3%83%AA%E3%83%BC%E3%83%A0%20%E3%83%9C%E3%83%87%E3%82%A3%E3%83%90%E3%82%BF%E3%83%BC%20%E4%BF%9D%E6%B9%BF%20roun%20%E3%83%A9%E3%82%A6%E3%83%B3%20cbd%E3%82%AF%E3%83%AA%E3%83%BC%E3%83%A0%20cbd%E3%82%B9%E3%83%9D%E3%83%BC%E3%83%84%E3%83%90%E3%83%BC%E3%83%A0%20%E5%A4%A7%E5%AE%B9%E9%87%8F%20cbd%20%E3%82%B9%E3%82%AD%E3%83%B3%E3%82%B1%E3%82%A2%20%E5%A4%A9%E7%84%B6%20%E6%A4%8D%E7%89%A9%E7%94%B1%E6%9D%A5%20100%EF%BC%85%20cbd%E3%82%AA%E3%82%A4%E3%83%AB%20%E5%9B%BD%E7%94%A3%20%E6%97%A5%E6%9C%AC%E8%A3%BD%20%E3%83%9C%E3%83%87%E3%82%A3%E3%83%90%E3%83%BC%E3%83%A0%20%E9%AB%98%E6%BF%83%E5%BA%A6%20%E4%BF%9D%E6%B9%BF%20%E4%B9%BE%E7%87%A5%E8%82%8C%20%E8%82%8C%E8%8D%92%E3%82%8C%20%E8%82%A9","a_id":5267465,"p_id":1225,"pl_id":27061,"pc_id":1925,"s_n":"yahoo","u_so":3}],"eid":"ZkM27","s":"s"});
+          </script>
+          <div id="msmaflink-ZkM27">リンク</div>
+        </div>
 
         <div class="item-wrapper">
-          <!-- START MoshimoAffiliateEasyLink -->
-<script type="text/javascript">
-(function(b,c,f,g,a,d,e){b.MoshimoAffiliateObject=a;
-b[a]=b[a]||function(){arguments.currentScript=c.currentScript
-||c.scripts[c.scripts.length-2];(b[a].q=b[a].q||[]).push(arguments)};
-c.getElementById(a)||(d=c.createElement(f),d.src=g,
-d.id=a,e=c.getElementsByTagName("body")[0],e.appendChild(d))})
-(window,document,"script","//dn.msmstatic.com/site/cardlink/bundle.js?20220329","msmaflink");
-msmaflink({"n":"【12\/1限定！抽選で最大100%ポイントバック】アムリターラ(amritara) ライス＆グレープラディエンスクリーム SPF12 PA++ 30g | サンスクリーン 日焼け止め 美容クリーム UVケア 紫外線 オーガニックスキンケア 日焼け止めクリーム 日焼け","b":"","t":"","d":"https:\/\/thumbnail.image.rakuten.co.jp","c_p":"\/@0_mall\/aimere\/cabinet\/05981471","p":["\/imgrc0113471491.jpg","\/imgrc0113392181.jpg","\/imgrc0113516780.jpg"],"u":{"u":"https:\/\/item.rakuten.co.jp\/aimere\/a0360033\/","t":"rakuten","r_v":""},"v":"2.1","b_l":[{"id":1,"u_tx":"楽天市場で見る","u_bc":"#87c209","u_url":"https:\/\/item.rakuten.co.jp\/aimere\/a0360033\/","a_id":5267359,"p_id":54,"pl_id":27059,"pc_id":54,"s_n":"rakuten","u_so":1},{"id":5,"u_tx":"Amazonで見る","u_bc":"#184f5c","u_url":"https:\/\/amzn.to\/49MsJTE","a_id":0,"p_id":0,"pl_id":0,"pc_id":0,"s_n":"custom_10","u_so":2},{"id":4,"u_tx":"Yahoo!ショッピングで見る","u_bc":"#bf0000","u_url":"https:\/\/shopping.yahoo.co.jp\/search?first=1\u0026p=%E3%80%9012%2F1%E9%99%90%E5%AE%9A%EF%BC%81%E6%8A%BD%E9%81%B8%E3%81%A7%E6%9C%80%E5%A4%A7100%25%E3%83%9D%E3%82%A4%E3%83%B3%E3%83%88%E3%83%90%E3%83%83%E3%82%AF%E3%80%91%E3%82%A2%E3%83%A0%E3%83%AA%E3%82%BF%E3%83%BC%E3%83%A9(amritara)%20%E3%83%A9%E3%82%A4%E3%82%B9%EF%BC%86%E3%82%B0%E3%83%AC%E3%83%BC%E3%83%97%E3%83%A9%E3%83%87%E3%82%A3%E3%82%A8%E3%83%B3%E3%82%B9%E3%82%AF%E3%83%AA%E3%83%BC%E3%83%A0%20SPF12%20PA%2B%2B%2030g%20%7C%20%E3%82%B5%E3%83%B3%E3%82%B9%E3%82%AF%E3%83%AA%E3%83%BC%E3%83%B3%20%E6%97%A5%E7%84%BC%E3%81%91%E6%AD%A2%E3%82%81%20%E7%BE%8E%E5%AE%B9%E3%82%AF%E3%83%AA%E3%83%BC%E3%83%A0%20UV%E3%82%B1%E3%82%A2%20%E7%B4%AB%E5%A4%96%E7%B7%9A%20%E3%82%AA%E3%83%BC%E3%82%AC%E3%83%8B%E3%83%83%E3%82%AF%E3%82%B9%E3%82%AD%E3%83%B3%E3%82%B1%E3%82%A2%20%E6%97%A5%E7%84%BC%E3%81%91%E6%AD%A2%E3%82%81%E3%82%AF%E3%83%AA%E3%83%BC%E3%83%A0%20%E6%97%A5%E7%84%BC%E3%81%91","a_id":5267465,"p_id":1225,"pl_id":27061,"pc_id":1925,"s_n":"yahoo","u_so":3}],"eid":"Im1i0","s":"s"});
-</script>
-<div id="msmaflink-Im1i0">リンク</div>
-<!-- MoshimoAffiliateEasyLink END -->
-             </div>
+          <script type="text/javascript">
+          (function(b,c,f,g,a,d,e){b.MoshimoAffiliateObject=a;
+          b[a]=b[a]||function(){arguments.currentScript=c.currentScript
+          ||c.scripts[c.scripts.length-2];(b[a].q=b[a].q||[]).push(arguments)};
+          c.getElementById(a)||(d=c.createElement(f),d.src=g,
+          d.id=a,e=c.getElementsByTagName("body")[0],e.appendChild(d))})
+          (window,document,"script","//dn.msmstatic.com/site/cardlink/bundle.js?20220329","msmaflink");
+          msmaflink({"n":"【12\/1限定！抽選で最大100%ポイントバック】アムリターラ(amritara) ライス＆グレープラディエンスクリーム SPF12 PA++ 30g | サンスクリーン 日焼け止め 美容クリーム UVケア 紫外線 オーガニックスキンケア 日焼け止めクリーム 日焼け","b":"","t":"","d":"https:\/\/thumbnail.image.rakuten.co.jp","c_p":"\/@0_mall\/aimere\/cabinet\/05981471","p":["\/imgrc0113471491.jpg","\/imgrc0113392181.jpg","\/imgrc0113516780.jpg"],"u":{"u":"https:\/\/item.rakuten.co.jp\/aimere\/a0360033\/","t":"rakuten","r_v":""},"v":"2.1","b_l":[{"id":1,"u_tx":"楽天市場で見る","u_bc":"#87c209","u_url":"https:\/\/item.rakuten.co.jp\/aimere\/a0360033\/","a_id":5267359,"p_id":54,"pl_id":27059,"pc_id":54,"s_n":"rakuten","u_so":1},{"id":5,"u_tx":"Amazonで見る","u_bc":"#184f5c","u_url":"https:\/\/amzn.to\/49MsJTE","a_id":0,"p_id":0,"pl_id":0,"pc_id":0,"s_n":"custom_10","u_so":2},{"id":4,"u_tx":"Yahoo!ショッピングで見る","u_bc":"#bf0000","u_url":"https:\/\/shopping.yahoo.co.jp\/search?first=1\u0026p=%E3%80%9012%2F1%E9%99%90%E5%AE%9A%EF%BC%81%E6%8A%BD%E9%81%B8%E3%81%A7%E6%9C%80%E5%A4%A7100%25%E3%83%9D%E3%82%A4%E3%83%B3%E3%83%88%E3%83%90%E3%83%83%E3%82%AF%E3%80%91%E3%82%A2%E3%83%A0%E3%83%AA%E3%82%BF%E3%83%BC%E3%83%A9(amritara)%20%E3%83%A9%E3%82%A4%E3%82%B9%EF%BC%86%E3%82%B0%E3%83%AC%E3%83%BC%E3%83%97%E3%83%A9%E3%83%87%E3%82%A3%E3%82%A8%E3%83%B3%E3%82%B9%E3%82%AF%E3%83%AA%E3%83%BC%E3%83%A0%20SPF12%20PA%2B%2B%2030g%20%7C%20%E3%82%B5%E3%83%B3%E3%82%B9%E3%82%AF%E3%83%AA%E3%83%BC%E3%83%B3%20%E6%97%A5%E7%84%BC%E3%81%91%E6%AD%A2%E3%82%81%20%E7%BE%8E%E5%AE%B9%E3%82%AF%E3%83%AA%E3%83%BC%E3%83%A0%20UV%E3%82%B1%E3%82%A2%20%E7%B4%AB%E5%A4%96%E7%B7%9A%20%E3%82%AA%E3%83%BC%E3%82%AC%E3%83%8B%E3%83%83%E3%82%AF%E3%82%B9%E3%82%AD%E3%83%B3%E3%82%B1%E3%82%A2%20%E6%97%A5%E7%84%BC%E3%81%91%E6%AD%A2%E3%82%81%E3%82%AF%E3%83%AA%E3%83%BC%E3%83%A0%20%E6%97%A5%E7%84%BC%E3%81%91","a_id":5267465,"p_id":1225,"pl_id":27061,"pc_id":1925,"s_n":"yahoo","u_so":3}],"eid":"Im1i0","s":"s"});
+          </script>
+          <div id="msmaflink-Im1i0">リンク</div>
+        </div>
 
     </div>
 
@@ -346,10 +342,10 @@ msmaflink({"n":"【12\/1限定！抽選で最大100%ポイントバック】ア�
     </div>
       
     <div class="info-box">
-      冬のスキンケアは「保湿を守ること」と「冷えを防ぐこと」がポイント。
-      こまめな保湿ケアに加えて、入浴やアロマを取り入れることで
-      心も体もじんわり温まり、健やかな肌を保つことができます。
-      あなたの冬が、少しでも心地よく過ごせますように。
+      <p>最後までご覧いただき、ありがとうございます。あなたのライフスタイルや肌の悩みにフィットするアイテムは見つかりましたでしょうか？</p>
+      <p>冬のスキンケアは、寒さで強張った心と体をほぐす、大切なリラックスタイムでもあります。義務感で行うのではなく、「心地よい香り」「肌に吸い付くようなテクスチャー」を楽しみながら、自分自身をいたわってあげてください。</p>
+      <p>温かいお風呂にゆっくり浸かったり、好きなアロマの香りに包まれたりすることは、自律神経を整え、肌の再生力を高めることにも繋がります。</p>
+      <p>厳しい冬を乗り越えた先には、暖かく美しい春が待っています。その時、あなたの肌が自信に満ちた輝きを放っているように。そして何より、あなた自身が健康で笑顔でいられるように。ぜひ、今日から少しだけ贅沢な保湿ケアを取り入れてみてください。あなたの冬が、温もりと潤いに満ちた素晴らしい季節になりますように。</p>
     </div>
 
     <div style="text-align:center; margin-top:40px;">
