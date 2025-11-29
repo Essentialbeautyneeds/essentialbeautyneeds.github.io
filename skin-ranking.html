@@ -183,6 +183,33 @@
     border-bottom: 1px solid #ccc;
     padding-bottom: 2px;
   }
+    .nav-break {
+    /* flexコンテナ内で、次の行に要素を移動させる */
+    flex-basis: 100%;
+    height: 0; /* 高さは不要 */
+    margin: 5px 0; /* 上下に少しスペースを開ける */
+}
+   /* Special Link Button */
+    .special-link a {
+      display:inline-block; 
+      background: linear-gradient(45deg, #f7a8a8, #807eed); 
+      color:#fff; 
+      font-weight:600; 
+      padding:12px 28px; 
+      border-radius:30px; 
+      text-decoration:none; 
+      box-shadow:0 4px 12px rgba(0,0,0,0.15); 
+      transition:all 0.3s ease; 
+      text-align:center;
+    }
+    .special-link a:hover {
+      transform: translateY(-3px);
+      box-shadow: 0 6px 15px rgba(0,0,0,0.2);
+    }
+  .nav-links{display:flex;gap:12px;justify-content:center;margin-top:12px;flex-wrap:wrap;}
+.nav-links a{background:rgba(255,255,255,0.8);padding:8px 12px;border-radius:8px;text-decoration:none;color:#503535;font-weight:600;}
+.nav-links a:hover{background:var(--accent);color:#fff;}
+  
 </style>
 </head>
 <body>
@@ -192,14 +219,23 @@
   <p>敏感肌・コスパ・アンチエイジング別に<br>おすすめアイテムを厳選しました！</p>
 </header>
 
-<nav style="margin-top:30px; text-align:center;">
-  <a href="seasons-skin.html" class="nav-btn">🌸 季節別ケア</a>
-  <a href="age-skincare.html" class="nav-btn">👩 年代・肌質別</a>
-  <br class="sp-only">
-  <a href="acne-care.html" class="nav-btn">🧴 悩み別ケア</a>
-  <a href="index.html" class="nav-btn" style="background: linear-gradient(45deg, #888, #aaa);">🏠 トップへ</a>
-</nav>
-
+   <div class="nav-links" role="navigation" aria-label="site links">
+           <a href="seasons-skin.html">🌸 季節別スキンケア</a>
+      <a href="age-skincare.html">🍁 年齢・肌質別</a>
+      <a href="diet-beauty.html">🍃 ダイエット効果：インナービューティー</a>
+  <div class="nav-break"></div>
+      <a href="acne-care.html">👩 肌荒れケア</a>
+      <a href="lifestyle-skincare.html">💆‍♀️ 生活リズム別スキンケア</a>
+    　<a href="beauty-column.html">💄 ビューティーコラム</a>
+      <a href="index.html">🏠 トップ</a>
+    </div>
+ <div class="special-link" style="margin-top:25px;">
+      <a href="winter-selection.html" target="_blank">
+         2025 冬のベストセレクション
+        <span style="font-size:0.8em; display:block; margin-top:4px;">今すぐチェック!</span>
+      </a>
+    </div>
+  
 <main>
   <p style="text-align:center; margin-top:30px;">
     自然派スキンケアの専門家が選んだ、今使うべきアイテム。<br>
@@ -406,9 +442,16 @@ msmaflink({"n":"Herbivore Botanicals 【公式】フェイスオイル(オーキ
     </div>
   </div>
 
-  <div class="back-btn">
-    <a href="index.html">← トップページへ戻る</a>
-  </div>
+   <div class="nav-links" role="navigation" aria-label="site links">
+           <a href="seasons-skin.html">🌸 季節別スキンケア</a>
+      <a href="age-skincare.html">🍁 年齢・肌質別</a>
+      <a href="diet-beauty.html">🍃 ダイエット効果：インナービューティー</a>
+  <div class="nav-break"></div>
+      <a href="acne-care.html">👩 肌荒れケア</a>
+      <a href="lifestyle-skincare.html">💆‍♀️ 生活リズム別スキンケア</a>
+    　<a href="beauty-column.html">💄 ビューティーコラム</a>
+      <a href="index.html">🏠 トップ</a>
+    </div>
 
   <p class="note">
     ※当サイトはアフィリエイトプログラム（Amazonアソシエイト含む）を利用しています。
