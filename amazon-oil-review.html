@@ -129,6 +129,34 @@
             z-index: 999;
         }
 
+ /* Common Buttons */
+    .btn-main {
+      display:inline-block;
+      padding:14px 32px;
+      border-radius:30px;
+      background:linear-gradient(45deg,#f48b8b,#f7a8a8);
+      color: #fff;
+      text-decoration: none;
+      font-weight: bold;
+      box-shadow: 0 4px 12px rgba(0,0,0,0.15);
+      transition: 0.3s;
+    }
+    .btn-main:hover {
+      transform: translateY(-3px);
+      box-shadow: 0 6px 18px rgba(0,0,0,0.2);
+    }
+  .nav-link:hover {
+      background: var(--accent);
+      color:#f5abe6;
+      transform: translateY(-2px);
+    }
+    .nav-break {
+    /* flexコンテナ内で、次の行に要素を移動させる */
+    flex-basis: 100%;
+    height: 0; /* 高さは不要 */
+    margin: 10px 0; /* 上下に少しスペースを開ける */
+}
+        
     </style>
 </head>
 <body>
@@ -137,7 +165,7 @@
     <div class="container">
         <h1>
             【Amazonで高評価】本当に効く🔥<br>
-            <span style="font-size:0.8em; display:block; margin-top:5px;">オーガニックフェイスオイル3選徹底レビュー</span>
+            <span style="font-size:0.8em; display:block; margin-top:5px;">オーガニックフェイスオイル３選徹底レビュー</span>
         </h1>
         <p class="lead" style="font-size:17px;color:#5a4545; margin-bottom: 25px;">
             乾燥やハリ不足を感じ始めたら。Amazonで手軽に買える、成分にこだわった良質な植物オイルを専門的に比較します。
@@ -174,10 +202,7 @@
     <section class="article-section">
         <h2>🥇 レビュー1: ホホバオイル（万能性と安定性No.1）</h2>
         <div class="oil-review-card">
-            <div class="oil-image-area">
-                <img src="images/jojoba_oil_ex.jpg" alt="オーガニックホホバオイルのボトル画像" 
-                    onerror="handleImageError(this, 150, 150, 'Jojoba Oil')">
-            </div>
+            
             <div class="oil-detail-area">
                 <h3>ホホバオイルの特徴とメリット</h3>
                 <ul class="point-list">
