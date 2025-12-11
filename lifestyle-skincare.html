@@ -51,22 +51,50 @@ body{font-family:'Quicksand',sans-serif;background:var(--bg);color:#333;line-hei
 .nav-links a{background:rgba(255,255,255,0.8);padding:8px 12px;border-radius:8px;text-decoration:none;color:#503535;font-weight:600;}
 .nav-links a:hover{background:var(--accent);color:#fff;}
 .top-cta{margin-top:18px;}
-.btn{display:inline-block;background:linear-gradient(45deg,var(--accent),#f48b8b);color:#fff;padding:10px 24px;border-radius:28px;text-decoration:none;font-weight:700;box-shadow:0 4px 12px rgba(0,0,0,0.12);transition:all .25s ease;}
-.btn:hover{transform:translateY(-3px);background:linear-gradient(45deg,var(--accent-hover),#f26a6a);}
 
 /* sections */
 .section{margin:56px 0;padding:0;}
 .section h2{font-family:'Playfair Display',serif;color:#503535;font-size:26px;text-align:center;margin-bottom:18px;}
 .block{display:flex;gap:24px;align-items:flex-start;flex-wrap:wrap;}
-/* もしもアフィリエイト用にカードのスタイルを調整 */
 .card{background:var(--card);border-radius:14px;padding:20px;box-shadow:0 6px 18px rgba(0,0,0,0.06);flex:1;min-width:280px;}
 
-/* reviews */
-.reviews{display:flex;flex-direction:column;gap:12px;margin-top:25px; border-top:1px dashed #eee; padding-top:20px;}
-.review{background:#fff5f5;border-radius:12px;padding:15px;display:flex;gap:12px;align-items:center;box-shadow:inset 0 0 8px rgba(0,0,0,0.03);}
-.review img{width:70px;height:70px;border-radius:50%;object-fit:cover;flex-shrink:0;}
-.review p{font-size:14px;color:#333;margin:0;}
-.review .who{font-weight:600;color:#555;font-size:13px;margin-top:6px;}
+/* ▼▼▼ 修正箇所：口コミの代わりのポイントBOX ▼▼▼ */
+.point-box {
+    background: #fff;
+    border: 1px dashed var(--accent);
+    border-radius: 12px;
+    padding: 15px;
+    margin-top: 20px;
+}
+.point-title {
+    font-weight: bold;
+    color: #d6336c;
+    margin-bottom: 8px;
+    display: flex;
+    align-items: center;
+    gap: 5px;
+    font-size: 15px;
+}
+.point-list {
+    list-style: none;
+    padding: 0;
+    margin: 0;
+    font-size: 14px;
+    color: #444;
+}
+.point-list li {
+    position: relative;
+    padding-left: 20px;
+    margin-bottom: 5px;
+}
+.point-list li::before {
+    content: "✔";
+    color: var(--accent);
+    position: absolute;
+    left: 0;
+    font-weight: bold;
+}
+/* ▲▲▲ 修正箇所ここまで ▲▲▲ */
 
 /* related & back-top */
 .related{ text-align:center;margin:48px 0;}
@@ -90,29 +118,41 @@ body{font-family:'Quicksand',sans-serif;background:var(--bg);color:#333;line-hei
 @media(max-width:900px){
   .block{flex-direction:column;}
 }
-      .nav-break {
-    /* flexコンテナ内で、次の行に要素を移動させる */
+.nav-break {
     flex-basis: 100%;
-    height: 0; /* 高さは不要 */
-    margin: 5px 0; /* 上下に少しスペースを開ける */
+    height: 0;
+    margin: 5px 0;
 }
-   /* Special Link Button */
-    .special-link a {
-      display:inline-block; 
-      background: linear-gradient(45deg, #f7a8a8, #807eed); 
-      color:#fff; 
-      font-weight:600; 
-      padding:12px 28px; 
-      border-radius:30px; 
-      text-decoration:none; 
-      box-shadow:0 4px 12px rgba(0,0,0,0.15); 
-      transition:all 0.3s ease; 
-      text-align:center;
-    }
-    .special-link a:hover {
-      transform: translateY(-3px);
-      box-shadow: 0 6px 15px rgba(0,0,0,0.2);
-    }
+.special-link a {
+    display:inline-block; 
+    background: linear-gradient(45deg, #f7a8a8, #807eed); 
+    color:#fff; 
+    font-weight:600; 
+    padding:12px 28px; 
+    border-radius:30px; 
+    text-decoration:none; 
+    box-shadow:0 4px 12px rgba(0,0,0,0.15); 
+    transition:all 0.3s ease; 
+    text-align:center;
+}
+.special-link a:hover {
+    transform: translateY(-3px);
+    box-shadow: 0 6px 15px rgba(0,0,0,0.2);
+}
+.internal-link {
+    display: inline-block;
+    color: var(--accent-hover);
+    font-weight: 600;
+    text-decoration: none;
+    padding: 10px;
+    border: 1px solid var(--accent);
+    border-radius: 20px;
+    transition: 0.3s;
+}
+.internal-link:hover {
+    background: var(--accent);
+    color: #fff;
+}
 </style>
 </head>
 <body>
@@ -126,19 +166,19 @@ body{font-family:'Quicksand',sans-serif;background:var(--bg);color:#333;line-hei
       <a href="index.html">🏠 トップ</a>
       <a href="seasons-skin.html">🌸 季節別スキンケア</a>
       <a href="age-skincare.html">🍁 年齢・肌質別</a>
-      <a href="diet-beauty.html">🍃 ダイエット効果：インナービューティー</a>
+      <a href="diet-beauty.html">🍃 インナービューティー</a>
   <div class="nav-break"></div>
       <a href="amazon-oil-review.html" class="nav-link">本当に効く！オイルレビュー🔥</a>
       <a href="acne-care.html">👩 肌荒れケア</a>
       <a href="skin-ranking.html">✨ ランキング</a>
     　<a href="beauty-column.html">💄 ビューティーコラム</a>
-              <a href="organic-science.html" class="nav-link">🔬 オーガニック成分の科学</a>
+      <a href="organic-science.html" class="nav-link">🔬 オーガニック成分の科学</a>
 
     </div>
 
      <div class="special-link" style="margin-top:25px;">
       <a href="winter-selection.html" target="_blank">
-         2025 冬のベストセレクション
+          2025 冬のベストセレクション
         <span style="font-size:0.8em; display:block; margin-top:4px;">今すぐチェック!</span>
       </a>
     </div>
@@ -146,7 +186,7 @@ body{font-family:'Quicksand',sans-serif;background:var(--bg);color:#333;line-hei
 </header>
 
 <div style="border:2px solid #f4b5b5; border-radius:12px; padding:20px; margin:25px auto; background:#fff1f1; color:#503535; font-size:16px; line-height:1.6; width:90%; max-width:600px;">
-  日々の生活リズムに合わせたスキンケアは、肌の健康や美容に直結する非常に重要なポイントです。朝は一日の中で最も慌ただしい時間帯で、スキンケアに多くの時間を割けない人も多いですが、その分「短時間でしっかり潤うか」が鍵になります。洗顔後すぐに使えるオールインワンジェルや、軽いテクスチャーで浸透の早い化粧水を選ぶことで、忙しい朝でも肌に必要な水分を素早く補給できます。
+  日々の生活リズムに合わせたスキンケアは、肌の健康や美容に直結する非常に重要なポイントです。朝は一日の中で最も慌ただしい時間帯で、スキンケアに多くの時間を割けない人も多いですが、その分「短時間でしっかり潤うか」が鍵になります。
 </div>
   
 <main class="container">
@@ -156,36 +196,26 @@ body{font-family:'Quicksand',sans-serif;background:var(--bg);color:#333;line-hei
     <div class="block">
       <div class="card">
         
-     <!-- START MoshimoAffiliateEasyLink -->
-<script type="text/javascript">
-(function(b,c,f,g,a,d,e){b.MoshimoAffiliateObject=a;
-b[a]=b[a]||function(){arguments.currentScript=c.currentScript
-||c.scripts[c.scripts.length-2];(b[a].q=b[a].q||[]).push(arguments)};
-c.getElementById(a)||(d=c.createElement(f),d.src=g,
-d.id=a,e=c.getElementsByTagName("body")[0],e.appendChild(d))})
-(window,document,"script","//dn.msmstatic.com/site/cardlink/bundle.js?20220329","msmaflink");
-msmaflink({"n":"【送料弊社負担+15％OFF】【公式】ルアモ ベーシック　スキンケアセット｜全ての肌質　乾燥肌　敏感肌　ゆらぎ肌　スキンケア　天然由来　オーガニックスキンケア　保湿　ナチュラル　洗顔　クレンジング　化粧水　乳液　家族で使える","b":"","t":"","d":"https:\/\/thumbnail.image.rakuten.co.jp","c_p":"\/@0_mall\/logona-friends\/cabinet\/10730211","p":["\/imgrc0101466929.jpg","\/imgrc0091988957.jpg","\/imgrc0091990037.jpg"],"u":{"u":"https:\/\/item.rakuten.co.jp\/logona-friends\/3s05011\/","t":"rakuten","r_v":""},"v":"2.1","b_l":[{"id":1,"u_tx":"楽天市場で見る","u_bc":"#87c209","u_url":"https:\/\/item.rakuten.co.jp\/logona-friends\/3s05011\/","a_id":5267359,"p_id":54,"pl_id":27059,"pc_id":54,"s_n":"rakuten","u_so":1},{"id":5,"u_tx":"Amazonで見る","u_bc":"#184f5c","u_url":"https:\/\/amzn.to\/3M4H4Rw","a_id":0,"p_id":0,"pl_id":0,"pc_id":0,"s_n":"custom_10","u_so":2},{"id":4,"u_tx":"Yahoo!ショッピングで見る","u_bc":"#bf0000","u_url":"https:\/\/shopping.yahoo.co.jp\/search?first=1\u0026p=%E3%80%90%E9%80%81%E6%96%99%E5%BC%8A%E7%A4%BE%E8%B2%A0%E6%8B%85%2B15%EF%BC%85OFF%E3%80%91%E3%80%90%E5%85%AC%E5%BC%8F%E3%80%91%E3%83%AB%E3%82%A2%E3%83%A2%20%E3%83%99%E3%83%BC%E3%82%B7%E3%83%83%E3%82%AF%E3%80%80%E3%82%B9%E3%82%AD%E3%83%B3%E3%82%B1%E3%82%A2%E3%82%BB%E3%83%83%E3%83%88%EF%BD%9C%E5%85%A8%E3%81%A6%E3%81%AE%E8%82%8C%E8%B3%AA%E3%80%80%E4%B9%BE%E7%87%A5%E8%82%8C%E3%80%80%E6%95%8F%E6%84%9F%E8%82%8C%E3%80%80%E3%82%86%E3%82%89%E3%81%8E%E8%82%8C%E3%80%80%E3%82%B9%E3%82%AD%E3%83%B3%E3%82%B1%E3%82%A2%E3%80%80%E5%A4%A9%E7%84%B6%E7%94%B1%E6%9D%A5%E3%80%80%E3%82%AA%E3%83%BC%E3%82%AC%E3%83%8B%E3%83%83%E3%82%AF%E3%82%B9%E3%82%AD%E3%83%B3%E3%82%B1%E3%82%A2%E3%80%80%E4%BF%9D%E6%B9%BF%E3%80%80%E3%83%8A%E3%83%81%E3%83%A5%E3%83%A9%E3%83%AB%E3%80%80%E6%B4%97%E9%A1%94%E3%80%80%E3%82%AF%E3%83%AC%E3%83%B3%E3%82%B8%E3%83%B3%E3%82%B0%E3%80%80%E5%8C%96%E7%B2%A7%E6%B0%B4%E3%80%80%E4%B9%B3%E6%B6%B2%E3%80%80%E5%AE%B6%E6%97%8F%E3%81%A7%E4%BD%BF%E3%81%88%E3%82%8B","a_id":5267465,"p_id":1225,"pl_id":27061,"pc_id":1925,"s_n":"yahoo","u_so":3}],"eid":"FcPsw","s":"s"});
-</script>
-<div id="msmaflink-FcPsw">リンク</div>
-<!-- MoshimoAffiliateEasyLink END -->
-        <div class="reviews">
-          <div class="review">
-            <img src="images/AA2.jpg" alt="ユーザーアイコン">
-            <div>
-              <p>「コスパが良くて、家族みんなでバシャバシャ使っています。香りも爽やかで気に入りました！」</p>
-              <div class="who">（30代 女性）</div>
-            </div>
-          </div>
-          <div class="review">
-            <img src="images/AA3.jpg" alt="ユーザーアイコン">
-            <div>
-              <p>「大容量なので全身に使っています。オーガニックでこの価格は嬉しい。」</p>
-              <div class="who">（20代 学生）</div>
-            </div>
-          </div>
-        </div>
+        <script type="text/javascript">
+        (function(b,c,f,g,a,d,e){b.MoshimoAffiliateObject=a;
+        b[a]=b[a]||function(){arguments.currentScript=c.currentScript
+        ||c.scripts[c.scripts.length-2];(b[a].q=b[a].q||[]).push(arguments)};
+        c.getElementById(a)||(d=c.createElement(f),d.src=g,
+        d.id=a,e=c.getElementsByTagName("body")[0],e.appendChild(d))})
+        (window,document,"script","//dn.msmstatic.com/site/cardlink/bundle.js?20220329","msmaflink");
+        msmaflink({"n":"【送料弊社負担+15％OFF】【公式】ルアモ ベーシック　スキンケアセット｜全ての肌質　乾燥肌　敏感肌　ゆらぎ肌　スキンケア　天然由来　オーガニックスキンケア　保湿　ナチュラル　洗顔　クレンジング　化粧水　乳液　家族で使える","b":"","t":"","d":"https:\/\/thumbnail.image.rakuten.co.jp","c_p":"\/@0_mall\/logona-friends\/cabinet\/10730211","p":["\/imgrc0101466929.jpg","\/imgrc0091988957.jpg","\/imgrc0091990037.jpg"],"u":{"u":"https:\/\/item.rakuten.co.jp\/logona-friends\/3s05011\/","t":"rakuten","r_v":""},"v":"2.1","b_l":[{"id":1,"u_tx":"楽天市場で見る","u_bc":"#87c209","u_url":"https:\/\/item.rakuten.co.jp\/logona-friends\/3s05011\/","a_id":5267359,"p_id":54,"pl_id":27059,"pc_id":54,"s_n":"rakuten","u_so":1},{"id":5,"u_tx":"Amazonで見る","u_bc":"#184f5c","u_url":"https:\/\/amzn.to\/3M4H4Rw","a_id":0,"p_id":0,"pl_id":0,"pc_id":0,"s_n":"custom_10","u_so":2},{"id":4,"u_tx":"Yahoo!ショッピングで見る","u_bc":"#bf0000","u_url":"https:\/\/shopping.yahoo.co.jp\/search?first=1\u0026p=%E3%80%90%E9%80%81%E6%96%99%E5%BC%8A%E7%A4%BE%E8%B2%A0%E6%8B%85%2B15%EF%BC%85OFF%E3%80%91%E3%80%90%E5%85%AC%E5%BC%8F%E3%80%91%E3%83%AB%E3%82%A2%E3%83%A2%20%E3%83%99%E3%83%BC%E3%82%B7%E3%83%83%E3%82%AF%E3%80%80%E3%82%B9%E3%82%AD%E3%83%B3%E3%82%B1%E3%82%A2%E3%82%BB%E3%83%83%E3%83%88%EF%BD%9C%E5%85%A8%E3%81%A6%E3%81%AE%E8%82%8C%E8%B3%AA%E3%80%80%E4%B9%BE%E7%87%A5%E8%82%8C%E3%80%80%E6%95%8F%E6%84%9F%E8%82%8C%E3%80%80%E3%82%86%E3%82%89%E3%81%8E%E8%82%8C%E3%80%80%E3%82%B9%E3%82%AD%E3%83%B3%E3%82%B1%E3%82%A2%E3%80%80%E5%A4%A9%E7%84%B6%E7%94%B1%E6%9D%A5%E3%80%80%E3%82%AA%E3%83%BC%E3%82%AC%E3%83%8B%E3%83%83%E3%82%AF%E3%82%B9%E3%82%AD%E3%83%B3%E3%82%B1%E3%82%A2%E3%80%80%E4%BF%9D%E6%B9%BF%E3%80%80%E3%83%8A%E3%83%81%E3%83%A5%E3%83%A9%E3%83%AB%E3%80%80%E6%B4%97%E9%A1%94%E3%80%80%E3%82%AF%E3%83%AC%E3%83%B3%E3%82%B8%E3%83%B3%E3%82%B0%E3%80%80%E5%8C%96%E7%B2%A7%E6%B0%B4%E3%80%80%E4%B9%B3%E6%B6%B2%E3%80%80%E5%AE%B6%E6%97%8F%E3%81%A7%E4%BD%BF%E3%81%88%E3%82%8B","a_id":5267465,"p_id":1225,"pl_id":27061,"pc_id":1925,"s_n":"yahoo","u_so":3}],"eid":"FcPsw","s":"s"});
+        </script>
+        <div id="msmaflink-FcPsw">リンク</div>
 
-      </div>
+        <div class="point-box">
+            <div class="point-title">💡 おすすめポイント</div>
+            <ul class="point-list">
+                <li><strong>家族で使えるやさしさ：</strong> 年齢や性別を問わず使えるベーシックな処方。</li>
+                <li><strong>天然由来成分100%：</strong> 合成保存料や香料不使用で、敏感肌の方にもおすすめ。</li>
+                <li><strong>高コスパ：</strong> 毎日たっぷり使える容量と価格のバランスが魅力。</li>
+            </ul>
+        </div>
+        </div>
     </div>
     <div style="text-align:center;margin-top:12px;"><a class="internal-link" href="#time-saving">次：忙しい日常（時短ケア） →</a></div>
   </section>
@@ -195,51 +225,41 @@ msmaflink({"n":"【送料弊社負担+15％OFF】【公式】ルアモ ベーシ
     <div class="block">
       <div class="card">
         
-       <!-- START MoshimoAffiliateEasyLink -->
-<script type="text/javascript">
-(function(b,c,f,g,a,d,e){b.MoshimoAffiliateObject=a;
-b[a]=b[a]||function(){arguments.currentScript=c.currentScript
-||c.scripts[c.scripts.length-2];(b[a].q=b[a].q||[]).push(arguments)};
-c.getElementById(a)||(d=c.createElement(f),d.src=g,
-d.id=a,e=c.getElementsByTagName("body")[0],e.appendChild(d))})
-(window,document,"script","//dn.msmstatic.com/site/cardlink/bundle.js?20220329","msmaflink");
-msmaflink({"n":"［無添加 化粧水］母袋有機農場 美百水 150mL スキンケア オーガニック 敏感肌 ヘチマ水 ネオナチュラル 毛穴 乾燥肌 保湿ケア 混合肌 へちま化粧水 美容 ヘチマ 保湿ローション 保湿化粧水 全身ケア 自然派 へちま水","b":"","t":"","d":"https:\/\/thumbnail.image.rakuten.co.jp","c_p":"\/@0_mall\/neo-natural\/cabinet\/shohin","p":["\/motai_bh2_rakuten.jpg","\/bhk\/bh\/lotion-main-features.jpg","\/bhk\/bh\/lotion-recommend-c1.jpg"],"u":{"u":"https:\/\/item.rakuten.co.jp\/neo-natural\/bh\/","t":"rakuten","r_v":""},"v":"2.1","b_l":[{"id":1,"u_tx":"楽天市場で見る","u_bc":"#87c209","u_url":"https:\/\/item.rakuten.co.jp\/neo-natural\/bh\/","a_id":5267359,"p_id":54,"pl_id":27059,"pc_id":54,"s_n":"rakuten","u_so":1},{"id":5,"u_tx":"Amazonで見る","u_bc":"#184f5c","u_url":"https:\/\/amzn.to\/48ayKbq","a_id":0,"p_id":0,"pl_id":0,"pc_id":0,"s_n":"custom_10","u_so":2},{"id":4,"u_tx":"Yahoo!ショッピングで見る","u_bc":"#bf0000","u_url":"https:\/\/shopping.yahoo.co.jp\/search?first=1\u0026p=%EF%BC%BB%E7%84%A1%E6%B7%BB%E5%8A%A0%20%E5%8C%96%E7%B2%A7%E6%B0%B4%EF%BC%BD%E6%AF%8D%E8%A2%8B%E6%9C%89%E6%A9%9F%E8%BE%B2%E5%A0%B4%20%E7%BE%8E%E7%99%BE%E6%B0%B4%20150mL%20%E3%82%B9%E3%82%AD%E3%83%B3%E3%82%B1%E3%82%A2%20%E3%82%AA%E3%83%BC%E3%82%AC%E3%83%8B%E3%83%83%E3%82%AF%20%E6%95%8F%E6%84%9F%E8%82%8C%20%E3%83%98%E3%83%81%E3%83%9E%E6%B0%B4%20%E3%83%8D%E3%82%AA%E3%83%8A%E3%83%81%E3%83%A5%E3%83%A9%E3%83%AB%20%E6%AF%9B%E7%A9%B4%20%E4%B9%BE%E7%87%A5%E8%82%8C%20%E4%BF%9D%E6%B9%BF%E3%82%B1%E3%82%A2%20%E6%B7%B7%E5%90%88%E8%82%8C%20%E3%81%B8%E3%81%A1%E3%81%BE%E5%8C%96%E7%B2%A7%E6%B0%B4%20%E7%BE%8E%E5%AE%B9%20%E3%83%98%E3%83%81%E3%83%9E%20%E4%BF%9D%E6%B9%BF%E3%83%AD%E3%83%BC%E3%82%B7%E3%83%A7%E3%83%B3%20%E4%BF%9D%E6%B9%BF%E5%8C%96%E7%B2%A7%E6%B0%B4%20%E5%85%A8%E8%BA%AB%E3%82%B1%E3%82%A2%20%E8%87%AA%E7%84%B6%E6%B4%BE%20%E3%81%B8%E3%81%A1%E3%81%BE%E6%B0%B4","a_id":5267465,"p_id":1225,"pl_id":27061,"pc_id":1925,"s_n":"yahoo","u_so":3}],"eid":"0CX0q","s":"s"});
-</script>
-<div id="msmaflink-0CX0q">リンク</div>
-<!-- MoshimoAffiliateEasyLink END -->
-        <div class="reviews">
-          <div class="review">
-            <img src="images/BB2.jpg" alt="ユーザーアイコン">
-            <div>
-              <p>「ヘチマ水ならではの自然な潤いが好きです。忙しい時もこれ一本で落ち着きます。」</p>
-              <div class="who">（40代 会社員）</div>
-            </div>
-          </div>
-          <div class="review">
-            <img src="images/BB3.jpg" alt="ユーザーアイコン">
-            <div>
-              <p>「余計なものが入っていないので、肌が疲れている時でも安心して使えます。」</p>
-              <div class="who">（30代 主婦）</div>
-            </div>
-          </div>
-        </div>
+       <script type="text/javascript">
+        (function(b,c,f,g,a,d,e){b.MoshimoAffiliateObject=a;
+        b[a]=b[a]||function(){arguments.currentScript=c.currentScript
+        ||c.scripts[c.scripts.length-2];(b[a].q=b[a].q||[]).push(arguments)};
+        c.getElementById(a)||(d=c.createElement(f),d.src=g,
+        d.id=a,e=c.getElementsByTagName("body")[0],e.appendChild(d))})
+        (window,document,"script","//dn.msmstatic.com/site/cardlink/bundle.js?20220329","msmaflink");
+        msmaflink({"n":"［無添加 化粧水］母袋有機農場 美百水 150mL スキンケア オーガニック 敏感肌 ヘチマ水 ネオナチュラル 毛穴 乾燥肌 保湿ケア 混合肌 へちま化粧水 美容 ヘチマ 保湿ローション 保湿化粧水 全身ケア 自然派 へちま水","b":"","t":"","d":"https:\/\/thumbnail.image.rakuten.co.jp","c_p":"\/@0_mall\/neo-natural\/cabinet\/shohin","p":["\/motai_bh2_rakuten.jpg","\/bhk\/bh\/lotion-main-features.jpg","\/bhk\/bh\/lotion-recommend-c1.jpg"],"u":{"u":"https:\/\/item.rakuten.co.jp\/neo-natural\/bh\/","t":"rakuten","r_v":""},"v":"2.1","b_l":[{"id":1,"u_tx":"楽天市場で見る","u_bc":"#87c209","u_url":"https:\/\/item.rakuten.co.jp\/neo-natural\/bh\/","a_id":5267359,"p_id":54,"pl_id":27059,"pc_id":54,"s_n":"rakuten","u_so":1},{"id":5,"u_tx":"Amazonで見る","u_bc":"#184f5c","u_url":"https:\/\/amzn.to\/48ayKbq","a_id":0,"p_id":0,"pl_id":0,"pc_id":0,"s_n":"custom_10","u_so":2},{"id":4,"u_tx":"Yahoo!ショッピングで見る","u_bc":"#bf0000","u_url":"https:\/\/shopping.yahoo.co.jp\/search?first=1\u0026p=%EF%BC%BB%E7%84%A1%E6%B7%BB%E5%8A%A0%20%E5%8C%96%E7%B2%A7%E6%B0%B4%EF%BC%BD%E6%AF%8D%E8%A2%8B%E6%9C%89%E6%A9%9F%E8%BE%B2%E5%A0%B4%20%E7%BE%8E%E7%99%BE%E6%B0%B4%20150mL%20%E3%82%B9%E3%82%AD%E3%83%B3%E3%82%B1%E3%82%A2%20%E3%82%AA%E3%83%BC%E3%82%AC%E3%83%8B%E3%83%83%E3%82%AF%20%E6%95%8F%E6%84%9F%E8%82%8C%20%E3%83%98%E3%83%81%E3%83%9E%E6%B0%B4%20%E3%83%8D%E3%82%AA%E3%83%8A%E3%83%81%E3%83%A5%E3%83%A9%E3%83%AB%20%E6%AF%9B%E7%A9%B4%20%E4%B9%BE%E7%87%A5%E8%82%8C%20%E4%BF%9D%E6%B9%BF%E3%82%B1%E3%82%A2%20%E6%B7%B7%E5%90%88%E8%82%8C%20%E3%81%B8%E3%81%A1%E3%81%BE%E5%8C%96%E7%B2%A7%E6%B0%B4%20%E7%BE%8E%E5%AE%B9%20%E3%83%98%E3%83%81%E3%83%9E%20%E4%BF%9D%E6%B9%BF%E3%83%AD%E3%83%BC%E3%82%B7%E3%83%A7%E3%83%B3%20%E4%BF%9D%E6%B9%BF%E5%8C%96%E7%B2%A7%E6%B0%B4%20%E5%85%A8%E8%BA%AB%E3%82%B1%E3%82%A2%20%E8%87%AA%E7%84%B6%E6%B4%BE%20%E3%81%B8%E3%81%A1%E3%81%BE%E6%B0%B4","a_id":5267465,"p_id":1225,"pl_id":27061,"pc_id":1925,"s_n":"yahoo","u_so":3}],"eid":"0CX0q","s":"s"});
+        </script>
+        <div id="msmaflink-0CX0q">リンク</div>
 
-      </div>
+        <div class="point-box">
+            <div class="point-title">💡 おすすめポイント</div>
+            <ul class="point-list">
+                <li><strong>水を使わずヘチマ水100%：</strong> 自然の恵みがそのまま詰まった、濃厚な潤い化粧水。</li>
+                <li><strong>シンプルケア：</strong> 肌本来の力を引き出す設計で、忙しい時もこれ一本で満足感。</li>
+                <li><strong>全身ローションとしても：</strong> 顔だけでなく、お風呂上がりのボディケアにも最適。</li>
+            </ul>
+        </div>
+        </div>
     </div>
     <div style="text-align:center;margin-top:12px;"><a class="internal-link" href="#active">次：アクティブ派（外出・運動） →</a></div>
   </section>
 
-<div style="text-align:center;">
-  <a href="https://px.a8.net/svt/ejp?a8mat=45I9PD+44UESA+5DYS+BXYE9" rel="nofollow sponsored">
-    <img border="0" width="468" height="60" alt="" src="https://www27.a8.net/svt/bgt?aid=251115169250&wid=002&eno=01&mid=s00000025138002006000&mc=1">
-  </a>
-  <img border="0" width="1" height="1" src="https://www18.a8.net/0.gif?a8mat=45I9PD+44UESA+5DYS+BXYE9" alt="">
-  <br><br>
-  <a href="https://px.a8.net/svt/ejp?a8mat=45I9PD+4GR2VU+3PSY+1BNJ9D" rel="nofollow sponsored">
-    <img border="0" width="468" height="60" alt="" src="https://www27.a8.net/svt/bgt?aid=251115169270&wid=002&eno=01&mid=s00000017341008004000&mc=1">
-  </a>
-  <img border="0" width="1" height="1" src="https://www11.a8.net/0.gif?a8mat=45I9PD+4GR2VU+3PSY+1BNJ9D" alt="">
-</div>
+  <div style="text-align:center; margin: 40px 0;">
+    <a href="https://px.a8.net/svt/ejp?a8mat=45I9PD+44UESA+5DYS+BXYE9" rel="nofollow sponsored">
+      <img border="0" width="468" height="60" alt="" src="https://www27.a8.net/svt/bgt?aid=251115169250&wid=002&eno=01&mid=s00000025138002006000&mc=1">
+    </a>
+    <img border="0" width="1" height="1" src="https://www18.a8.net/0.gif?a8mat=45I9PD+44UESA+5DYS+BXYE9" alt="">
+    <br><br>
+    <a href="https://px.a8.net/svt/ejp?a8mat=45I9PD+4GR2VU+3PSY+1BNJ9D" rel="nofollow sponsored">
+      <img border="0" width="468" height="60" alt="" src="https://www27.a8.net/svt/bgt?aid=251115169270&wid=002&eno=01&mid=s00000017341008004000&mc=1">
+    </a>
+    <img border="0" width="1" height="1" src="https://www11.a8.net/0.gif?a8mat=45I9PD+4GR2VU+3PSY+1BNJ9D" alt="">
+  </div>
   
 
   <section class="section" id="active">
@@ -247,36 +267,26 @@ msmaflink({"n":"［無添加 化粧水］母袋有機農場 美百水 150mL ス�
     <div class="block">
       <div class="card">
         
-          <!-- START MoshimoAffiliateEasyLink -->
-<script type="text/javascript">
-(function(b,c,f,g,a,d,e){b.MoshimoAffiliateObject=a;
-b[a]=b[a]||function(){arguments.currentScript=c.currentScript
-||c.scripts[c.scripts.length-2];(b[a].q=b[a].q||[]).push(arguments)};
-c.getElementById(a)||(d=c.createElement(f),d.src=g,
-d.id=a,e=c.getElementsByTagName("body")[0],e.appendChild(d))})
-(window,document,"script","//dn.msmstatic.com/site/cardlink/bundle.js?20220329","msmaflink");
-msmaflink({"n":"ナチュール オーガニック アウトドア アロマミスト 100ml 【送料無料】 【 お出かけ オーガニック アロマスプレー ディート不使用 アウトドア ラナチュール 虫除け 山 川 】","b":"","t":"","d":"https:\/\/thumbnail.image.rakuten.co.jp","c_p":"\/@0_mall\/nagomisabo\/cabinet","p":["\/img_cosme\/new_mist\/na-aromamist_new.jpg","\/img_cosme\/new_mist\/aromamist_001_new.jpg","\/img_aroma\/other\/la-aromamist_2.jpg"],"u":{"u":"https:\/\/item.rakuten.co.jp\/nagomisabo\/na-aromamist\/","t":"rakuten","r_v":""},"v":"2.1","b_l":[{"id":1,"u_tx":"楽天市場で見る","u_bc":"#87c209","u_url":"https:\/\/item.rakuten.co.jp\/nagomisabo\/na-aromamist\/","a_id":5267359,"p_id":54,"pl_id":27059,"pc_id":54,"s_n":"rakuten","u_so":1},{"id":5,"u_tx":"Amazonで見る","u_bc":"#184f5c","u_url":"https:\/\/amzn.to\/48CagYN","a_id":0,"p_id":0,"pl_id":0,"pc_id":0,"s_n":"custom_10","u_so":2},{"id":4,"u_tx":"Yahoo!ショッピングで見る","u_bc":"#bf0000","u_url":"https:\/\/shopping.yahoo.co.jp\/search?first=1\u0026p=%E3%83%8A%E3%83%81%E3%83%A5%E3%83%BC%E3%83%AB%20%E3%82%AA%E3%83%BC%E3%82%AC%E3%83%8B%E3%83%83%E3%82%AF%20%E3%82%A2%E3%82%A6%E3%83%88%E3%83%89%E3%82%A2%20%E3%82%A2%E3%83%AD%E3%83%9E%E3%83%9F%E3%82%B9%E3%83%88%20100ml%20%E3%80%90%E9%80%81%E6%96%99%E7%84%A1%E6%96%99%E3%80%91%20%E3%80%90%20%E3%81%8A%E5%87%BA%E3%81%8B%E3%81%91%20%E3%82%AA%E3%83%BC%E3%82%AC%E3%83%8B%E3%83%83%E3%82%AF%20%E3%82%A2%E3%83%AD%E3%83%9E%E3%82%B9%E3%83%97%E3%83%AC%E3%83%BC%20%E3%83%87%E3%82%A3%E3%83%BC%E3%83%88%E4%B8%8D%E4%BD%BF%E7%94%A8%20%E3%82%A2%E3%82%A6%E3%83%88%E3%83%89%E3%82%A2%20%E3%83%A9%E3%83%8A%E3%83%81%E3%83%A5%E3%83%BC%E3%83%AB%20%E8%99%AB%E9%99%A4%E3%81%91%20%E5%B1%B1%20%E5%B7%9D%20%E3%80%91","a_id":5267465,"p_id":1225,"pl_id":27061,"pc_id":1925,"s_n":"yahoo","u_so":3}],"eid":"yWCJk","s":"s"});
-</script>
-<div id="msmaflink-yWCJk">リンク</div>
-<!-- MoshimoAffiliateEasyLink END -->
-        <div class="reviews">
-          <div class="review">
-            <img src="images/CC2.jpg" alt="ユーザーアイコン">
-            <div>
-              <p>「キャンプの必需品です。嫌な匂いもしないし、子どもにも安心して使えます。」</p>
-              <div class="who">（30代 ママ）</div>
-            </div>
-          </div>
-          <div class="review">
-            <img src="images/CC3.jpg" alt="ユーザーアイコン">
-            <div>
-              <p>「持ち運びに便利なサイズで、外出先でもサッとリフレッシュできます。」</p>
-              <div class="who">（20代 男性）</div>
-            </div>
-          </div>
-        </div>
+         <script type="text/javascript">
+        (function(b,c,f,g,a,d,e){b.MoshimoAffiliateObject=a;
+        b[a]=b[a]||function(){arguments.currentScript=c.currentScript
+        ||c.scripts[c.scripts.length-2];(b[a].q=b[a].q||[]).push(arguments)};
+        c.getElementById(a)||(d=c.createElement(f),d.src=g,
+        d.id=a,e=c.getElementsByTagName("body")[0],e.appendChild(d))})
+        (window,document,"script","//dn.msmstatic.com/site/cardlink/bundle.js?20220329","msmaflink");
+        msmaflink({"n":"ナチュール オーガニック アウトドア アロマミスト 100ml 【送料無料】 【 お出かけ オーガニック アロマスプレー ディート不使用 アウトドア ラナチュール 虫除け 山 川 】","b":"","t":"","d":"https:\/\/thumbnail.image.rakuten.co.jp","c_p":"\/@0_mall\/nagomisabo\/cabinet","p":["\/img_cosme\/new_mist\/na-aromamist_new.jpg","\/img_cosme\/new_mist\/aromamist_001_new.jpg","\/img_aroma\/other\/la-aromamist_2.jpg"],"u":{"u":"https:\/\/item.rakuten.co.jp\/nagomisabo\/na-aromamist\/","t":"rakuten","r_v":""},"v":"2.1","b_l":[{"id":1,"u_tx":"楽天市場で見る","u_bc":"#87c209","u_url":"https:\/\/item.rakuten.co.jp\/nagomisabo\/na-aromamist\/","a_id":5267359,"p_id":54,"pl_id":27059,"pc_id":54,"s_n":"rakuten","u_so":1},{"id":5,"u_tx":"Amazonで見る","u_bc":"#184f5c","u_url":"https:\/\/amzn.to\/48CagYN","a_id":0,"p_id":0,"pl_id":0,"pc_id":0,"s_n":"custom_10","u_so":2},{"id":4,"u_tx":"Yahoo!ショッピングで見る","u_bc":"#bf0000","u_url":"https:\/\/shopping.yahoo.co.jp\/search?first=1\u0026p=%E3%83%8A%E3%83%81%E3%83%A5%E3%83%BC%E3%83%AB%20%E3%82%AA%E3%83%BC%E3%82%AC%E3%83%8B%E3%83%83%E3%82%AF%20%E3%82%A2%E3%82%A6%E3%83%88%E3%83%89%E3%82%A2%20%E3%82%A2%E3%83%AD%E3%83%9E%E3%83%9F%E3%82%B9%E3%83%88%20100ml%20%E3%80%90%E9%80%81%E6%96%99%E7%84%A1%E6%96%99%E3%80%91%20%E3%80%90%20%E3%81%8A%E5%87%BA%E3%81%8B%E3%81%91%20%E3%82%AA%E3%83%BC%E3%82%AC%E3%83%8B%E3%83%83%E3%82%AF%20%E3%82%A2%E3%83%AD%E3%83%9E%E3%82%B9%E3%83%97%E3%83%AC%E3%83%BC%20%E3%83%87%E3%82%A3%E3%83%BC%E3%83%88%E4%B8%8D%E4%BD%BF%E7%94%A8%20%E3%82%A2%E3%82%A6%E3%83%88%E3%83%89%E3%82%A2%20%E3%83%A9%E3%83%8A%E3%83%81%E3%83%A5%E3%83%BC%E3%83%AB%20%E8%99%AB%E9%99%A4%E3%81%91%20%E5%B1%B1%20%E5%B7%9D%20%E3%80%91","a_id":5267465,"p_id":1225,"pl_id":27061,"pc_id":1925,"s_n":"yahoo","u_so":3}],"eid":"yWCJk","s":"s"});
+        </script>
+        <div id="msmaflink-yWCJk">リンク</div>
 
-      </div>
+        <div class="point-box">
+            <div class="point-title">💡 おすすめポイント</div>
+            <ul class="point-list">
+                <li><strong>ディート不使用：</strong> 強い薬剤を使わず、天然精油の香りでガード。お子様にも安心。</li>
+                <li><strong>爽やかなアロマ：</strong> 虫が嫌がる香りと人間が癒やされる香りを両立。</li>
+                <li><strong>持ち運びサイズ：</strong> キャンプや公園遊びにサッとバッグに入れておけます。</li>
+            </ul>
+        </div>
+        </div>
     </div>
     <div style="text-align:center;margin-top:12px;"><a class="internal-link" href="#night">次：夜型・不規則生活 →</a></div>
   </section>
@@ -291,44 +301,33 @@ msmaflink({"n":"ナチュール オーガニック アウトドア アロマミ�
     <div class="block">
       <div class="card">
         
-       <!-- START MoshimoAffiliateEasyLink -->
-<script type="text/javascript">
-(function(b,c,f,g,a,d,e){b.MoshimoAffiliateObject=a;
-b[a]=b[a]||function(){arguments.currentScript=c.currentScript
-||c.scripts[c.scripts.length-2];(b[a].q=b[a].q||[]).push(arguments)};
-c.getElementById(a)||(d=c.createElement(f),d.src=g,
-d.id=a,e=c.getElementsByTagName("body")[0],e.appendChild(d))})
-(window,document,"script","//dn.msmstatic.com/site/cardlink/bundle.js?20220329","msmaflink");
-msmaflink({"n":"RUHAKU （琉白） 月桃モイストクリームS 30g 保湿クリーム フェイスクリーム 敏感肌 乾燥肌 セラミド配合 シア脂 オーガニック 無添加 冬の乾燥対策 ナイトケア ギフトにも最適","b":"","t":"","d":"https:\/\/thumbnail.image.rakuten.co.jp","c_p":"\/@0_mall\/ruhaku\/cabinet\/day_moist_cream_s","p":["\/imgrc0112859665.jpg","\/imgrc0113170227.jpg","\/02.jpg"],"u":{"u":"https:\/\/item.rakuten.co.jp\/ruhaku\/ss_gettou_day_moist_cream\/","t":"rakuten","r_v":""},"v":"2.1","b_l":[{"id":1,"u_tx":"楽天市場で見る","u_bc":"#87c209","u_url":"https:\/\/item.rakuten.co.jp\/ruhaku\/ss_gettou_day_moist_cream\/","a_id":5267359,"p_id":54,"pl_id":27059,"pc_id":54,"s_n":"rakuten","u_so":1},{"id":5,"u_tx":"Amazonで見る","u_bc":"#184f5c","u_url":"https:\/\/amzn.to\/48au19G","a_id":0,"p_id":0,"pl_id":0,"pc_id":0,"s_n":"custom_10","u_so":2},{"id":4,"u_tx":"Yahoo!ショッピングで見る","u_bc":"#bf0000","u_url":"https:\/\/shopping.yahoo.co.jp\/search?first=1\u0026p=RUHAKU%20%EF%BC%88%E7%90%89%E7%99%BD%EF%BC%89%20%E6%9C%88%E6%A1%83%E3%83%A2%E3%82%A4%E3%82%B9%E3%83%88%E3%82%AF%E3%83%AA%E3%83%BC%E3%83%A0S%2030g%20%E4%BF%9D%E6%B9%BF%E3%82%AF%E3%83%AA%E3%83%BC%E3%83%A0%20%E3%83%95%E3%82%A7%E3%82%A4%E3%82%B9%E3%82%AF%E3%83%AA%E3%83%BC%E3%83%A0%20%E6%95%8F%E6%84%9F%E8%82%8C%20%E4%B9%BE%E7%87%A5%E8%82%8C%20%E3%82%BB%E3%83%A9%E3%83%9F%E3%83%89%E9%85%8D%E5%90%88%20%E3%82%B7%E3%82%A2%E8%84%82%20%E3%82%AA%E3%83%BC%E3%82%AC%E3%83%8B%E3%83%83%E3%82%AF%20%E7%84%A1%E6%B7%BB%E5%8A%A0%20%E5%86%AC%E3%81%AE%E4%B9%BE%E7%87%A5%E5%AF%BE%E7%AD%96%20%E3%83%8A%E3%82%A4%E3%83%88%E3%82%B1%E3%82%A2%20%E3%82%AE%E3%83%95%E3%83%88%E3%81%AB%E3%82%82%E6%9C%80%E9%81%A9","a_id":5267465,"p_id":1225,"pl_id":27061,"pc_id":1925,"s_n":"yahoo","u_so":3}],"eid":"r9mo3","s":"s"});
-</script>
-<div id="msmaflink-r9mo3">リンク</div>
-<!-- MoshimoAffiliateEasyLink END -->
-        
-        <div class="reviews">
-          <div class="review">
-            <img src="images/DD2.jpg" alt="ユーザーアイコン">
-            <div>
-              <p>「夜使うと翌朝の肌が全然違います。オイルフリーなのにしっかり潤うのが不思議。」</p>
-              <div class="who">（50代 自営業）</div>
-            </div>
-          </div>
-          <div class="review">
-            <img src="images/DD3.jpg" alt="ユーザーアイコン">
-            <div>
-              <p>「香りに癒やされます。ベタつかないので、寝る直前に使っても枕につきません。」</p>
-              <div class="who">（40代 会社員）</div>
-            </div>
-          </div>
-        </div>
+       <script type="text/javascript">
+        (function(b,c,f,g,a,d,e){b.MoshimoAffiliateObject=a;
+        b[a]=b[a]||function(){arguments.currentScript=c.currentScript
+        ||c.scripts[c.scripts.length-2];(b[a].q=b[a].q||[]).push(arguments)};
+        c.getElementById(a)||(d=c.createElement(f),d.src=g,
+        d.id=a,e=c.getElementsByTagName("body")[0],e.appendChild(d))})
+        (window,document,"script","//dn.msmstatic.com/site/cardlink/bundle.js?20220329","msmaflink");
+        msmaflink({"n":"RUHAKU （琉白） 月桃モイストクリームS 30g 保湿クリーム フェイスクリーム 敏感肌 乾燥肌 セラミド配合 シア脂 オーガニック 無添加 冬の乾燥対策 ナイトケア ギフトにも最適","b":"","t":"","d":"https:\/\/thumbnail.image.rakuten.co.jp","c_p":"\/@0_mall\/ruhaku\/cabinet\/day_moist_cream_s","p":["\/imgrc0112859665.jpg","\/imgrc0113170227.jpg","\/02.jpg"],"u":{"u":"https:\/\/item.rakuten.co.jp\/ruhaku\/ss_gettou_day_moist_cream\/","t":"rakuten","r_v":""},"v":"2.1","b_l":[{"id":1,"u_tx":"楽天市場で見る","u_bc":"#87c209","u_url":"https:\/\/item.rakuten.co.jp\/ruhaku\/ss_gettou_day_moist_cream\/","a_id":5267359,"p_id":54,"pl_id":27059,"pc_id":54,"s_n":"rakuten","u_so":1},{"id":5,"u_tx":"Amazonで見る","u_bc":"#184f5c","u_url":"https:\/\/amzn.to\/48au19G","a_id":0,"p_id":0,"pl_id":0,"pc_id":0,"s_n":"custom_10","u_so":2},{"id":4,"u_tx":"Yahoo!ショッピングで見る","u_bc":"#bf0000","u_url":"https:\/\/shopping.yahoo.co.jp\/search?first=1\u0026p=RUHAKU%20%EF%BC%88%E7%90%89%E7%99%BD%EF%BC%89%20%E6%9C%88%E6%A1%83%E3%83%A2%E3%82%A4%E3%82%B9%E3%83%88%E3%82%AF%E3%83%AA%E3%83%BC%E3%83%A0S%2030g%20%E4%BF%9D%E6%B9%BF%E3%82%AF%E3%83%AA%E3%83%BC%E3%83%A0%20%E3%83%95%E3%82%A7%E3%82%A4%E3%82%B9%E3%82%AF%E3%83%AA%E3%83%BC%E3%83%A0%20%E6%95%8F%E6%84%9F%E8%82%8C%20%E4%B9%BE%E7%87%A5%E8%82%8C%20%E3%82%BB%E3%83%A9%E3%83%9F%E3%83%89%E9%85%8D%E5%90%88%20%E3%82%B7%E3%82%A2%E8%84%82%20%E3%82%AA%E3%83%BC%E3%82%AC%E3%83%8B%E3%83%83%E3%82%AF%20%E7%84%A1%E6%B7%BB%E5%8A%A0%20%E5%86%AC%E3%81%AE%E4%B9%BE%E7%87%A5%E5%AF%BE%E7%AD%96%20%E3%83%8A%E3%82%A4%E3%83%88%E3%82%B1%E3%82%A2%20%E3%82%AE%E3%83%95%E3%83%88%E3%81%AB%E3%82%82%E6%9C%80%E9%81%A9","a_id":5267465,"p_id":1225,"pl_id":27061,"pc_id":1925,"s_n":"yahoo","u_so":3}],"eid":"r9mo3","s":"s"});
+        </script>
+        <div id="msmaflink-r9mo3">リンク</div>
 
-      </div>
+        <div class="point-box">
+            <div class="point-title">💡 おすすめポイント</div>
+            <ul class="point-list">
+                <li><strong>月桃（ゲットウ）の抗酸化力：</strong> 沖縄の伝統ハーブが、寝ている間に肌ダメージをケア。</li>
+                <li><strong>ベタつかない高保湿：</strong> シアバター配合なのに軽やかな使い心地で、枕への付着も気になりません。</li>
+                <li><strong>リラックスアロマ：</strong> 深い呼吸を誘う香りで、良質な睡眠をサポートします。</li>
+            </ul>
+        </div>
+        </div>
     </div>
   </section>
 
-<div style="border:2px solid #f4b5b5; border-radius:12px; padding:20px; margin:25px auto; background:#fff1f1; color:#503535; font-size:16px; line-height:1.6; width:90%; max-width:600px;">
-  朝と夜の役割を意識し、生活リズムに合ったアイテムを選びましょう。無理なく続けられるスキンケア習慣が身につきます。
-  毎日の小さな積み重ねが、長期的な美肌づくりにつながるのです。
-</div>
+  <div style="border:2px solid #f4b5b5; border-radius:12px; padding:20px; margin:25px auto; background:#fff1f1; color:#503535; font-size:16px; line-height:1.6; width:90%; max-width:600px;">
+    朝と夜の役割を意識し、生活リズムに合ったアイテムを選びましょう。無理なく続けられるスキンケア習慣が身につきます。
+    毎日の小さな積み重ねが、長期的な美肌づくりにつながるのです。
+  </div>
   
   <div style="text-align:center; margin:20px 0;">
 
@@ -346,33 +345,32 @@ msmaflink({"n":"RUHAKU （琉白） 月桃モイストクリームS 30g 保湿�
 
 </div>
   
-<div style="border:2px solid #f4b5b5; border-radius:12px; padding:20px; margin:25px auto; background:#fffaf9; color:#503535; font-size:16px; line-height:1.6; width:90%; max-width:600px;">
-  生活スタイルに合ったスキンケアを取り入れることで、肌トラブルを防ぎつつ、心地よい毎日を過ごせます。朝晩の習慣、週末のスペシャルケアなど、自分に合ったリズムでケアを楽しむことが大切です。
-  家族と一緒に使えるアイテムや持ち運びしやすい商品を選ぶと、忙しい日常でも続けやすく、自然由来成分で肌にも優しいケアが可能です。
-</div>
+  <div style="border:2px solid #f4b5b5; border-radius:12px; padding:20px; margin:25px auto; background:#fffaf9; color:#503535; font-size:16px; line-height:1.6; width:90%; max-width:600px;">
+    生活スタイルに合ったスキンケアを取り入れることで、肌トラブルを防ぎつつ、心地よい毎日を過ごせます。朝晩の習慣、週末のスペシャルケアなど、自分に合ったリズムでケアを楽しむことが大切です。
+    家族と一緒に使えるアイテムや持ち運びしやすい商品を選ぶと、忙しい日常でも続けやすく、自然由来成分で肌にも優しいケアが可能です。
+  </div>
 
-<div>
-<p style="text-align:center;">一年を通して使える最強のオーガニックジェルです。ぜひ使ってみてください！</p>
+  <div>
+    <p style="text-align:center;">一年を通して使える最強のオーガニックジェルです。ぜひ使ってみてください！</p>
 
-<p style="text-align:center;">
-  <a href="https://px.a8.net/svt/ejp?a8mat=45I9PD+4GR2VU+3PSY+1BMW42" rel="nofollow sponsored noopener">【ハレナ　オーガニックオールインワンジェル】</a>
-</p>
-<img border="0" width="1" height="1" src="https://www10.a8.net/0.gif?a8mat=45I9PD+4GR2VU+3PSY+1BMW42" alt="">
+    <p style="text-align:center;">
+      <a href="https://px.a8.net/svt/ejp?a8mat=45I9PD+4GR2VU+3PSY+1BMW42" rel="nofollow sponsored noopener">【ハレナ　オーガニックオールインワンジェル】</a>
+    </p>
+    <img border="0" width="1" height="1" src="https://www10.a8.net/0.gif?a8mat=45I9PD+4GR2VU+3PSY+1BMW42" alt="">
 
-<p style="text-align:center;">
-  <a href="https://px.a8.net/svt/ejp?a8mat=45I9PD+4GR2VU+3PSY+1BNJ9D" rel="nofollow sponsored noopener">
-    <img border="0" width="468" height="60" alt="HALENA オーガニックオールインワンジェル" src="https://www25.a8.net/svt/bgt?aid=251115169270&wid=002&eno=01&mid=s00000017341008004000&mc=1">
-  </a>
-</p>
-<img border="0" width="1" height="1" src="https://www16.a8.net/0.gif?a8mat=45I9PD+4GR2VU+3PSY+1BNJ9D" alt="">
-  
-</div>
+    <p style="text-align:center;">
+      <a href="https://px.a8.net/svt/ejp?a8mat=45I9PD+4GR2VU+3PSY+1BNJ9D" rel="nofollow sponsored noopener">
+        <img border="0" width="468" height="60" alt="HALENA オーガニックオールインワンジェル" src="https://www25.a8.net/svt/bgt?aid=251115169270&wid=002&eno=01&mid=s00000017341008004000&mc=1">
+      </a>
+    </p>
+    <img border="0" width="1" height="1" src="https://www16.a8.net/0.gif?a8mat=45I9PD+4GR2VU+3PSY+1BNJ9D" alt="">
+  </div>
   
   <div class="related" aria-label="related links">
     <p style="margin-bottom:8px;color:var(--muted);">他にも参考になるページ：</p>
     <a href="index.html">🏠 トップページへ</a>
     <a href="seasons-skin.html">🌸 季節別スキンケア</a>
-    <a href="diet-beauty.html">🍃 ダイエット効果インナービューティー</a>
+    <a href="diet-beauty.html">🍃 インナービューティー</a>
     <a href="age-skincare.html">🍁 年齢・肌質別</a>
     <a href="acne-care.html">👩 肌荒れケア</a>
     <br>
@@ -385,7 +383,7 @@ msmaflink({"n":"RUHAKU （琉白） 月桃モイストクリームS 30g 保湿�
 
 <footer style="text-align:center; padding:40px 0; background:#fff; font-size:13px; color:#888; border-top:1px solid #eee;">
   © 2025 Essential Beauty Needs
-          <a href="privacy-policy.html" style="color: #777; text-decoration: none; margin-left: 15px;">プライバシーポリシー</a>
+          <a href="privacy-policy.html" style="color: #777; text-decoration: none; margin-left: 15px;">プライバシーポリシー</a>
 </footer>
 <div id="affiliateNotice">※当サイトはアフィリエイト広告（Amazonアソシエイト含む）を利用しています</div>
 
