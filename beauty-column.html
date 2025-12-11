@@ -1,7 +1,6 @@
 <!doctype html>
 <html lang="ja">
 <head>
-  
   <meta charset="utf-8" />
   <script>
     function isInternalUser() {
@@ -20,23 +19,25 @@
       console.log('✅ Internal traffic excluded.');
     }
   </script>
-<meta name="viewport" content="width=device-width,initial-scale=1" />
+  
+  <meta name="viewport" content="width=device-width,initial-scale=1" />
   <title>美容コラム・オーガニックケア情報 | Essential Beauty Needs</title>
   <meta name="description" content="オーガニック美容の最新情報やスキンケアのコツを解説。化学成分フリーの商品レビューも掲載。">
   <meta name="keywords" content="美容コラム, オーガニック, スキンケア, 化学成分フリー, 自然派, 敏感肌, 美容液">
-
-  <meta name="viewport" content="width=device-width,initial-scale=1.0">
   
-<link rel="canonical" href="https://essential-beauty-needs.com/beauty-column.html" />
-  
+  <link rel="canonical" href="https://essential-beauty-needs.com/beauty-column.html" />
   <link href="https://fonts.googleapis.com/css2?family=Playfair+Display:wght@600&family=Quicksand:wght@400;600&display=swap" rel="stylesheet">
  
   <style>
     body{ font-family:'Quicksand',sans-serif; line-height:1.8; color:#444; background:#fffaf9; margin:0; }
+    
     header{
       background:linear-gradient(90deg,#f8dcdc,#fbeaea);
       text-align:center;
       padding:80px 20px;
+      /* 背景画像がない場合のフォールバック色を設定 */
+      background-color: #fbeaea;
+      /* 画像がある場合は以下が適用されます */
       background-image:url('images/organic-care.jpg');
       background-size:cover;
       background-position:center;
@@ -51,34 +52,37 @@
     main{max-width:900px;margin:60px auto;padding:0 20px;}
     h2{ font-family:'Playfair Display',serif; color:#503535; margin-top:60px; font-size:28px; text-align:center; }
     p{margin-bottom:20px;font-size:18px;}
-    img{ border-radius:12px; margin:25px 0; }
+    img{ border-radius:12px; margin:25px 0; max-width: 100%; height: auto; }
 
-    /* ✅ 画像サイズ縮小 */
+    /* 画像サイズ縮小 */
     .half-size{ width:50%; max-width:100%; display:block; margin:25px auto; }
 
-    /* ✅ 専門家コメント */
-    .expert-box{
+    /* 専門家コメント風ボックス（修正後：編集部メモ） */
+    .editorial-box {
       background:#fff3f3;
       border-left:5px solid #f7a8a8;
       padding:20px;
       border-radius:12px;
-      display:flex;
-      align-items:center;
-      gap:16px;
       margin:40px 0;
     }
-    .expert-box img{ width:90px; height:90px; border-radius:50%; object-fit:cover; flex-shrink:0; }
-    .expert-comment{ font-size:16px; color:#333; }
-    .expert-comment strong{ display:block; margin-bottom:4px; }
+    .editorial-title {
+        font-weight: bold;
+        color: #d6336c;
+        margin-bottom: 10px;
+        display: flex;
+        align-items: center;
+        gap: 10px;
+    }
+    .editorial-content { font-size:16px; color:#333; }
 
     footer{ text-align:center; font-size:13px; color:#777; margin:60px 0 30px; }
 
     @media(max-width:600px){
       header h1{font-size:30px;}
-      .expert-box{flex-direction:column;text-align:center;}
+      .half-size{ width: 100%; }
     }
 
-   /* Footer & Others */
+    /* Footer & Others */
     #affiliateNotice {
       position: fixed; right: 12px; bottom: 12px;
       background: rgba(255, 255, 255, 0.8);
@@ -88,7 +92,8 @@
       z-index: 999;
     }
 
- .nav-link {
+    /* Navigation */
+    .nav-link {
       display: inline-block;
       margin: 6px 12px;
       padding: 8px 18px;
@@ -96,24 +101,40 @@
       border-radius: 8px;
       font-weight:600;
       text-decoration:none;
-      color:var(--text-main);
+      color:#503535; /* 変数未定義のため直接色指定 */
       transition:0.3s;
       box-shadow: 0 2px 5px rgba(0,0,0,0.05);
     }
     .nav-link:hover {
-      background: var(--accent);
-      color:#f5abe6;
+      background: #f7a8a8; /* 変数未定義のため直接色指定 */
+      color:#fff;
       transform: translateY(-2px);
     }
     .nav-break {
-    /* flexコンテナ内で、次の行に要素を移動させる */
-    flex-basis: 100%;
-    height: 0; /* 高さは不要 */
-    margin: 10px 0; /* 上下に少しスペースを開ける */
-}
+      flex-basis: 100%;
+      height: 0;
+      margin: 10px 0;
+    }
+    
+    /* ボタン共通 */
+    .btn-main {
+      display:inline-block;
+      background:linear-gradient(45deg,#f48b8b,#f7a8a8);
+      color:#fff;
+      padding:12px 28px;
+      border-radius:30px;
+      text-decoration:none;
+      font-weight:600;
+      box-shadow:0 4px 12px rgba(0,0,0,0.15);
+      transition:all .3s ease;
+    }
+    .btn-main:hover {
+      transform:translateY(-3px);
+    }
   </style>
 </head>
 <body class="page-beauty-column">
+
   <header>
     <h1>ビューティーコラム</h1>
     <p>肌と心を整える、オーガニックケアの秘密</p>
@@ -123,15 +144,14 @@
       <nav>
         <a href="seasons-skin.html" class="nav-link">🌸 季節別ケア</a>
         <a href="age-skincare.html" class="nav-link">👩 年代別・肌質別ケア</a>
-        <a href="diet-beauty.html" class="nav-link">🍃 ダイエット効果インナービューティー</a>
+        <a href="diet-beauty.html" class="nav-link">🍃 インナービューティー</a>
             <div class="nav-break"></div>
         <a href="amazon-oil-review.html" class="nav-link">本当に効く！オイルレビュー🔥</a>
         <a href="acne-care.html" class="nav-link">🧴 肌荒れ・悩み別ケア</a>
-        <a href="lifestyle-skincare.html" class="nav-link"> 💆‍♀️生活リズム別スキンケア</a>
-
-        <a href="skin-ranking.html" class="nav-link">✨ スキンケアランキング</a>
+        <a href="lifestyle-skincare.html" class="nav-link"> 💆‍♀️ 生活リズム別ケア</a>
+        <a href="skin-ranking.html" class="nav-link">✨ おすすめランキング</a>
       </nav>
-    </div>
+  </div>
 
   <main>
     
@@ -156,28 +176,33 @@
                 </a>がシェアした投稿
             </p>
         </blockquote>
-        </div>
+    </div>
     <script async src="//www.instagram.com/embed.js"></script>
+
     <section>
       <h2>自然のリズムに寄り添うスキンケア</h2>
       <p>季節が巡るたびに、肌はその変化を敏感に感じ取っています。春には花粉や紫外線、夏には汗と皮脂、秋には乾燥、そして冬には冷気と暖房。どの季節も、肌にとっては小さな試練の連続です。</p>
       <p>オーガニックケアは、そんな肌の声を静かに聞き取るような存在です。自然の恵みを活かした植物エキスや精油は、過剰な刺激を与えずに肌を守り、ゆるやかに整えてくれます。香りや手ざわりもまた、心にやさしく寄り添う要素のひとつ。スキンケアを「癒しの時間」として感じる人が増えているのも頷けます。</p>
-      <img src="images/30s-skincare.jpg" alt="スキンケアをする女性" class="half-size">
+      
+      <img src="images/30s-skincare.jpg" alt="スキンケアをする女性" class="half-size" onerror="this.style.display='none'">
+      
       <p>朝、鏡の前で肌を触れた瞬間に「今日の調子、いいかも」と感じる。そんな小さな喜びが、心を軽やかにしてくれます。オーガニックコスメは、単なる化粧品ではなく、“自分と向き合うためのツール”なのかもしれません。</p>
     </section>
 
     <section>
-      <h2>皮膚科医が語る「肌の自活力」</h2>
-      <div class="expert-box">
-        <img src="images/expert-morimoto.jpg" alt="皮膚科医・藤井紗季先生">
-        <div class="expert-comment">
-          <strong>皮膚科医・藤井紗季先生 コメント</strong>
-          「オーガニック成分は“肌のバリア機能”をサポートする点で非常に優れています。  
-          肌は本来、自分で潤いを保ち、傷を修復する力を持っていますが、過剰な化学成分や摩擦がその働きを弱めてしまうことがあります。  
-          自然の成分で穏やかにケアすることは、肌の“自活力”を取り戻す第一歩なんです。」
+      <h2>「肌の自活力」を引き出すには？</h2>
+      
+      <div class="editorial-box">
+        <div class="editorial-title">
+            <span>💡</span> <strong>編集部メモ：バリア機能とオーガニック</strong>
+        </div>
+        <div class="editorial-content">
+          「オーガニック成分」の大きなメリットは、肌が本来持っている<strong>バリア機能</strong>を邪魔せずにサポートできる点です。<br>
+          洗浄力が強すぎる洗顔料や、過剰な化学成分は、時に肌を守るための常在菌や皮脂膜まで洗い流してしまうことがあります。<br>
+          自然由来の穏やかな成分でケアすることは、肌が自ら潤う力＝<strong>自活力</strong>を守るための第一歩と言えます。
         </div>
       </div>
-      <p>藤井先生の言葉にもある通り、「与えるケア」より「育てるケア」が今の時代の主流になりつつあります。  
+      <p>「与えるケア」より「育てるケア」が今の時代の主流になりつつあります。  
       毎日のクレンジングや保湿の選び方一つで、肌の未来が変わる。オーガニックアイテムを選ぶということは、  
       その選択そのものが“肌を信じる”という行為なのかもしれません。</p>
       <p>たとえば、オーガニックローションは保湿だけでなく、肌の水分循環をサポートします。  
@@ -194,7 +219,7 @@
       box-shadow: 0 6px 20px rgba(0,0,0,0.12);
       text-align: center;
     ">
-      <h2 style="font-family: 'Playfair Display', serif; font-size: 30px; margin-bottom: 10px; color:#503535;">
+      <h2 style="font-family: 'Playfair Display', serif; font-size: 30px; margin-bottom: 10px; color:#503535; margin-top:0;">
         🌸 今月の特別おすすめアイテム
       </h2>
 
@@ -208,25 +233,28 @@
              style="border-radius:14px; box-shadow:0 4px 15px rgba(0,0,0,0.15);" 
              src="https://www29.a8.net/svt/bgt?aid=251115169271&wid=002&eno=01&mid=s00000014951001009000&mc=1">
       </a>
-      <img border="0" width="1" height="1" 
-           src="https://www19.a8.net/0.gif?a8mat=45I9PD+4HCIHM+37D2+609HT" alt="">
+      <img border="0" width="1" height="1" src="https://www19.a8.net/0.gif?a8mat=45I9PD+4HCIHM+37D2+609HT" alt="">
 
       <p style="margin-top:15px; font-size:14px; color:#777;">
         ※ 気になる方は今すぐチェックしてみてくださいね。
       </p>
+      
+      <div style="margin-top:20px;">
+        <script type="text/javascript">
+        (function(b,c,f,g,a,d,e){b.MoshimoAffiliateObject=a;
+        b[a]=b[a]||function(){arguments.currentScript=c.currentScript
+        ||c.scripts[c.scripts.length-2];(b[a].q=b[a].q||[]).push(arguments)};
+        c.getElementById(a)||(d=c.createElement(f),d.src=g,
+        d.id=a,e=c.getElementsByTagName("body")[0],e.appendChild(d))})
+        (window,document,"script","//dn.msmstatic.com/site/cardlink/bundle.js?20220329","msmaflink");
+        msmaflink({"n":"【mirari organic】トリートメントモイスチャークリーム | ミラリ 保湿クリーム 顔 スキンケア クリーム 保湿 うるおい 乾燥肌 敏感肌 ツヤ肌 しっとり ハリ コスメ 化粧品 ギフト プレゼント","b":"","t":"","d":"https:\/\/thumbnail.image.rakuten.co.jp","c_p":"\/@0_mall\/cosmekitchen\/cabinet\/09090634a\/shohin04","p":["\/imgrc0094573450.jpg","\/imgrc0094573447.jpg","\/imgrc0094573448.jpg"],"u":{"u":"https:\/\/item.rakuten.co.jp\/cosmekitchen\/4570073620307\/","t":"rakuten","r_v":""},"v":"2.1","b_l":[{"id":1,"u_tx":"楽天市場で見る","u_bc":"#87c209","u_url":"https:\/\/item.rakuten.co.jp\/cosmekitchen\/4570073620307\/","a_id":5267359,"p_id":54,"pl_id":27059,"pc_id":54,"s_n":"rakuten","u_so":1},{"id":5,"u_tx":"Amazonで見る","u_bc":"#184f5c","u_url":"https:\/\/amzn.to\/4ooBrep","a_id":0,"p_id":0,"pl_id":0,"pc_id":0,"s_n":"custom_10","u_so":2},{"id":4,"u_tx":"Yahoo!ショッピングで見る","u_bc":"#bf0000","u_url":"https:\/\/shopping.yahoo.co.jp\/search?first=1\u0026p=%E3%80%90mirari%20organic%E3%80%91%E3%83%88%E3%83%AA%E3%83%BC%E3%83%88%E3%83%A1%E3%83%B3%E3%83%88%E3%83%A2%E3%82%A4%E3%82%B9%E3%83%81%E3%83%A3%E3%83%BC%E3%82%AF%E3%83%AA%E3%83%BC%E3%83%A0%20%7C%20%E3%83%9F%E3%83%A9%E3%83%AA%20%E4%BF%9D%E6%B9%BF%E3%82%AF%E3%83%AA%E3%83%BC%E3%83%A0%20%E9%A1%94%20%E3%82%B9%E3%82%AD%E3%83%B3%E3%82%B1%E3%82%A2%20%E3%82%AF%E3%83%AA%E3%83%BC%E3%83%A0%20%E4%BF%9D%E6%B9%BF%20%E3%81%86%E3%82%8B%E3%81%8A%E3%81%84%20%E4%B9%BE%E7%87%A5%E8%82%8C%20%E6%95%8F%E6%84%9F%E8%82%8C%20%E3%83%84%E3%83%A4%E8%82%8C%20%E3%81%97%E3%81%A3%E3%81%A8%E3%82%8A%20%E3%83%8F%E3%83%AA%20%E3%82%B3%E3%82%B9%E3%83%A1%20%E5%8C%96%E7%B2%A7%E5%93%81%20%E3%82%AE%E3%83%95%E3%83%88%20%E3%83%97%E3%83%AC%E3%82%BC%E3%83%B3%E3%83%88","a_id":5267465,"p_id":1225,"pl_id":27061,"pc_id":1925,"s_n":"yahoo","u_so":3}],"eid":"XxmrA","s":"s"});
+        </script>
+        <div id="msmaflink-XxmrA">リンク</div>
+      </div>
     </div>
-    <div style="text-align:center;">
-<script type="text/javascript">
-(function(b,c,f,g,a,d,e){b.MoshimoAffiliateObject=a;
-b[a]=b[a]||function(){arguments.currentScript=c.currentScript
-||c.scripts[c.scripts.length-2];(b[a].q=b[a].q||[]).push(arguments)};
-c.getElementById(a)||(d=c.createElement(f),d.src=g,
-d.id=a,e=c.getElementsByTagName("body")[0],e.appendChild(d))})
-(window,document,"script","//dn.msmstatic.com/site/cardlink/bundle.js?20220329","msmaflink");
-msmaflink({"n":"【mirari organic】トリートメントモイスチャークリーム | ミラリ 保湿クリーム 顔 スキンケア クリーム 保湿 うるおい 乾燥肌 敏感肌 ツヤ肌 しっとり ハリ コスメ 化粧品 ギフト プレゼント","b":"","t":"","d":"https:\/\/thumbnail.image.rakuten.co.jp","c_p":"\/@0_mall\/cosmekitchen\/cabinet\/09090634a\/shohin04","p":["\/imgrc0094573450.jpg","\/imgrc0094573447.jpg","\/imgrc0094573448.jpg"],"u":{"u":"https:\/\/item.rakuten.co.jp\/cosmekitchen\/4570073620307\/","t":"rakuten","r_v":""},"v":"2.1","b_l":[{"id":1,"u_tx":"楽天市場で見る","u_bc":"#87c209","u_url":"https:\/\/item.rakuten.co.jp\/cosmekitchen\/4570073620307\/","a_id":5267359,"p_id":54,"pl_id":27059,"pc_id":54,"s_n":"rakuten","u_so":1},{"id":5,"u_tx":"Amazonで見る","u_bc":"#184f5c","u_url":"https:\/\/amzn.to\/4ooBrep","a_id":0,"p_id":0,"pl_id":0,"pc_id":0,"s_n":"custom_10","u_so":2},{"id":4,"u_tx":"Yahoo!ショッピングで見る","u_bc":"#bf0000","u_url":"https:\/\/shopping.yahoo.co.jp\/search?first=1\u0026p=%E3%80%90mirari%20organic%E3%80%91%E3%83%88%E3%83%AA%E3%83%BC%E3%83%88%E3%83%A1%E3%83%B3%E3%83%88%E3%83%A2%E3%82%A4%E3%82%B9%E3%83%81%E3%83%A3%E3%83%BC%E3%82%AF%E3%83%AA%E3%83%BC%E3%83%A0%20%7C%20%E3%83%9F%E3%83%A9%E3%83%AA%20%E4%BF%9D%E6%B9%BF%E3%82%AF%E3%83%AA%E3%83%BC%E3%83%A0%20%E9%A1%94%20%E3%82%B9%E3%82%AD%E3%83%B3%E3%82%B1%E3%82%A2%20%E3%82%AF%E3%83%AA%E3%83%BC%E3%83%A0%20%E4%BF%9D%E6%B9%BF%20%E3%81%86%E3%82%8B%E3%81%8A%E3%81%84%20%E4%B9%BE%E7%87%A5%E8%82%8C%20%E6%95%8F%E6%84%9F%E8%82%8C%20%E3%83%84%E3%83%A4%E8%82%8C%20%E3%81%97%E3%81%A3%E3%81%A8%E3%82%8A%20%E3%83%8F%E3%83%AA%20%E3%82%B3%E3%82%B9%E3%83%A1%20%E5%8C%96%E7%B2%A7%E5%93%81%20%E3%82%AE%E3%83%95%E3%83%88%20%E3%83%97%E3%83%AC%E3%82%BC%E3%83%B3%E3%83%88","a_id":5267465,"p_id":1225,"pl_id":27061,"pc_id":1925,"s_n":"yahoo","u_so":3}],"eid":"XxmrA","s":"s"});
-</script>
-<div id="msmaflink-XxmrA">リンク</div></div>
-<section>
+
+
+    <section>
       <h2>自分の肌を愛するということ</h2>
       <p>「オーガニック」という言葉は、ただの流行ではありません。  
       それは、肌や地球と“共に生きる”という考え方に近いものです。  
@@ -236,7 +264,7 @@ msmaflink({"n":"【mirari organic】トリートメントモイスチャーク�
       自然の香りに包まれて深呼吸をすれば、心も肌も少しずつ柔らかくほぐれていきます。  
       肌を大切にするということは、自分の生き方を丁寧に扱うことでもあるのです。</p>
 
-      <img src="images/natural-beauty.jpg" alt="自然の中でリラックスする女性" class="half-size">
+      <img src="images/natural-beauty.jpg" alt="自然の中でリラックスする女性" class="half-size" onerror="this.style.display='none'">
 
       <p>オーガニックケアは“足す美容”ではなく、“戻す美容”。  
       自然に還るように、シンプルに、穏やかに。  
@@ -248,17 +276,18 @@ msmaflink({"n":"【mirari organic】トリートメントモイスチャーク�
     </section>
   </main>
 
-  <section style="display:flex; justify-content:center; margin:50px 0;">
+  <section style="display:flex; justify-content:center; margin:50px 0; padding:0 20px;">
     <div style="
         background:#fff;
         border:1px solid #eee;
         border-radius:12px;
         padding:30px 20px;
         max-width:600px;
+        width: 100%;
         text-align:center;
         box-shadow:0 4px 12px rgba(0,0,0,0.05);
     ">
-      <h3 style="font-weight:600; margin-bottom:12px; font-size:18px;">当サイトおすすめの一押しコスメ！</h3>
+      <h3 style="font-weight:600; margin-bottom:12px; font-size:18px; margin-top:0;">当サイトおすすめの一押しコスメ！</h3>
       <p style="margin-bottom:20px; font-size:15px; color:#555;">
         ハレナ オーガニックオールインワンジェルは敏感肌にも優しく、<br>
         初めての方でも安心して試せます。
@@ -286,63 +315,45 @@ msmaflink({"n":"【mirari organic】トリートメントモイスチャーク�
         <a href="https://px.a8.net/svt/ejp?a8mat=45I9PD+4GR2VU+3PSY+1BNQZ5" 
            rel="nofollow sponsored" target="_blank">
           <img border="0" width="320" height="50" alt="HALENA オーガニックオールインワンジェル" 
-               src="https://www20.a8.net/svt/bgt?aid=251115169270&wid=002&eno=01&mid=s00000017341008005000&mc=1">
+               src="https://www20.a8.net/svt/bgt?aid=251115169270&wid=002&eno=01&mid=s00000017341008005000&mc=1"
+               style="max-width:100%; height:auto;">
         </a>
-        <img border="0" width="1" height="1" 
-             src="https://www18.a8.net/0.gif?a8mat=45I9PD+4GR2VU+3PSY+1BNQZ5" alt="">
+        <img border="0" width="1" height="1" src="https://www18.a8.net/0.gif?a8mat=45I9PD+4GR2VU+3PSY+1BNQZ5" alt="">
       </div>
     </div>
   </section>
   
-<div style="text-align:center;margin: 10px auto;max-width: 450px;">
-<script type="text/javascript">
-(function(b,c,f,g,a,d,e){b.MoshimoAffiliateObject=a;
-b[a]=b[a]||function(){arguments.currentScript=c.currentScript
-||c.scripts[c.scripts.length-2];(b[a].q=b[a].q||[]).push(arguments)};
-c.getElementById(a)||(d=c.createElement(f),d.src=g,
-d.id=a,e=c.getElementsByTagName("body")[0],e.appendChild(d))})
-(window,document,"script","//dn.msmstatic.com/site/cardlink/bundle.js?20220329","msmaflink");
-msmaflink({"n":"【mirari organic】トリートメントモイスチャークリーム | ミラリ 保湿クリーム 顔 スキンケア クリーム 保湿 うるおい 乾燥肌 敏感肌 ツヤ肌 しっとり ハリ コスメ 化粧品 ギフト プレゼント","b":"","t":"","d":"https:\/\/thumbnail.image.rakuten.co.jp","c_p":"\/@0_mall\/cosmekitchen\/cabinet\/09090634a\/shohin04","p":["\/imgrc0094573450.jpg","\/imgrc0094573447.jpg","\/imgrc0094573448.jpg"],"u":{"u":"https:\/\/item.rakuten.co.jp\/cosmekitchen\/4570073620307\/","t":"rakuten","r_v":""},"v":"2.1","b_l":[{"id":1,"u_tx":"楽天市場で見る","u_bc":"#87c209","u_url":"https:\/\/item.rakuten.co.jp\/cosmekitchen\/4570073620307\/","a_id":5267359,"p_id":54,"pl_id":27059,"pc_id":54,"s_n":"rakuten","u_so":1},{"id":5,"u_tx":"Amazonで見る","u_bc":"#184f5c","u_url":"https:\/\/amzn.to\/4ooBrep","a_id":0,"p_id":0,"pl_id":0,"pc_id":0,"s_n":"custom_10","u_so":2},{"id":4,"u_tx":"Yahoo!ショッピングで見る","u_bc":"#bf0000","u_url":"https:\/\/shopping.yahoo.co.jp\/search?first=1\u0026p=%E3%80%90mirari%20organic%E3%80%91%E3%83%88%E3%83%AA%E3%83%BC%E3%83%88%E3%83%A1%E3%83%B3%E3%83%88%E3%83%A2%E3%82%A4%E3%82%B9%E3%83%81%E3%83%A3%E3%83%BC%E3%82%AF%E3%83%AA%E3%83%BC%E3%83%A0%20%7C%20%E3%83%9F%E3%83%A9%E3%83%AA%20%E4%BF%9D%E6%B9%BF%E3%82%AF%E3%83%AA%E3%83%BC%E3%83%A0%20%E9%A1%94%20%E3%82%B9%E3%82%AD%E3%83%B3%E3%82%B1%E3%82%A2%20%E3%82%AF%E3%83%AA%E3%83%BC%E3%83%A0%20%E4%BF%9D%E6%B9%BF%20%E3%81%86%E3%82%8B%E3%81%8A%E3%81%84%20%E4%B9%BE%E7%87%A5%E8%82%8C%20%E6%95%8F%E6%84%9F%E8%82%8C%20%E3%83%84%E3%83%A4%E8%82%8C%20%E3%81%97%E3%81%A3%E3%81%A8%E3%82%8A%20%E3%83%8F%E3%83%AA%20%E3%82%B3%E3%82%B9%E3%83%A1%20%E5%8C%96%E7%B2%A7%E5%93%81%20%E3%82%AE%E3%83%95%E3%83%88%20%E3%83%97%E3%83%AC%E3%82%BC%E3%83%B3%E3%83%88","a_id":5267465,"p_id":1225,"pl_id":27061,"pc_id":1925,"s_n":"yahoo","u_so":3}],"eid":"XxmrA","s":"s"});
-</script>
-<div id="msmaflink-XxmrA">リンク</div></div>
-<p style="text-align:center;"><strong>【モリンガオイル】</strong></style></p>
-  <div style="text-align:center;margin: 10px auto;max-width: 450px;">
-<script type="text/javascript">
-(function(b,c,f,g,a,d,e){b.MoshimoAffiliateObject=a;
-b[a]=b[a]||function(){arguments.currentScript=c.currentScript
-||c.scripts[c.scripts.length-2];(b[a].q=b[a].q||[]).push(arguments)};
-c.getElementById(a)||(d=c.createElement(f),d.src=g,
-d.id=a,e=c.getElementsByTagName("body")[0],e.appendChild(d))})
-(window,document,"script","//dn.msmstatic.com/site/cardlink/bundle.js?20220329","msmaflink");
-msmaflink({"n":"【12月3日20時スタート】高保湿 乳液 保湿 敏感肌 モリンガ 導入化粧品 保湿オイル配合 ホワイトデー スキンケア モリンガオイル オーガニック オイル ヒアルロン酸コラーゲン コスメ 美容液オイル グリチルリチン 有機モリンガオイル 美白 アルコールフリー","b":"","t":"","d":"https:\/\/thumbnail.image.rakuten.co.jp","c_p":"\/@0_mall\/jagvillunte\/cabinet\/07921155","p":["\/10244523\/imgrc0117163603.jpg","\/10244523\/imgrc0117163605.jpg","\/10235493\/imgrc0117132978.jpg"],"u":{"u":"https:\/\/item.rakuten.co.jp\/jagvillunte\/10000002\/","t":"rakuten","r_v":""},"v":"2.1","b_l":[{"id":1,"u_tx":"楽天市場で見る","u_bc":"#87c209","u_url":"https:\/\/item.rakuten.co.jp\/jagvillunte\/10000002\/","a_id":5267359,"p_id":54,"pl_id":27059,"pc_id":54,"s_n":"rakuten","u_so":1},{"id":5,"u_tx":"Amazonで見る","u_bc":"#184f5c","u_url":"https:\/\/amzn.to\/4ooBrep","a_id":0,"p_id":0,"pl_id":0,"pc_id":0,"s_n":"custom_10","u_so":2},{"id":4,"u_tx":"Yahoo!ショッピングで見る","u_bc":"#bf0000","u_url":"https:\/\/shopping.yahoo.co.jp\/search?first=1\u0026p=%E3%80%9012%E6%9C%883%E6%97%A520%E6%99%82%E3%82%B9%E3%82%BF%E3%83%BC%E3%83%88%E3%80%91%E9%AB%98%E4%BF%9D%E6%B9%BF%E3%80%80%E4%B9%B3%E6%B6%B2%20%E4%BF%9D%E6%B9%BF%E3%80%80%E6%95%8F%E6%84%9F%E8%82%8C%E3%80%80%E3%83%A2%E3%83%AA%E3%83%B3%E3%82%AC%E3%80%80%E5%B0%8E%E5%85%A5%E5%8C%96%E7%B2%A7%E5%93%81%20%E4%BF%9D%E6%B9%BF%E3%82%AA%E3%82%A4%E3%83%AB%E9%85%8D%E5%90%88%20%E3%83%9B%E3%83%AF%E3%82%A4%E3%83%88%E3%83%87%E3%83%BC%20%E3%82%B9%E3%82%AD%E3%83%B3%E3%82%B1%E3%82%A2%20%E3%83%A2%E3%83%AA%E3%83%B3%E3%82%AC%E3%82%AA%E3%82%A4%E3%83%AB%20%E3%82%AA%E3%83%BC%E3%82%AC%E3%83%8B%E3%83%83%E3%82%AF%20%E3%82%AA%E3%82%A4%E3%83%AB%20%E3%83%92%E3%82%A2%E3%83%AB%E3%83%AD%E3%83%B3%E9%85%B8%E3%82%B3%E3%83%A9%E3%83%BC%E3%82%B2%E3%83%B3%E3%80%80%E3%82%B3%E3%82%B9%E3%83%A1%20%E7%BE%8E%E5%AE%B9%E6%B6%B2%E3%82%AA%E3%82%A4%E3%83%AB%20%E3%82%B0%E3%83%AA%E3%83%81%E3%83%AB%E3%83%AA%E3%83%81%E3%83%B3%20%E6%9C%89%E6%A9%9F%E3%83%A2%E3%83%AA%E3%83%B3%E3%82%AC%E3%82%AA%E3%82%A4%E3%83%AB%20%E7%BE%8E%E7%99%BD%20%E3%82%A2%E3%83%AB%E3%82%B3%E3%83%BC%E3%83%AB%E3%83%95%E3%83%AA%E3%83%BC","a_id":5267465,"p_id":1225,"pl_id":27061,"pc_id":1925,"s_n":"yahoo","u_so":3}],"eid":"Wm0gy","s":"s"});
-</script>
-<div id="msmaflink-Wm0gy">リンク</div></div>
-<div style="text-align:center; margin:50px 0;">
+  <div style="text-align:center; margin: 50px auto; max-width: 450px;">
+    <p style="text-align:center; margin-bottom:10px;"><strong>【保湿にはこちらもおすすめ：モリンガオイル】</strong></p>
+    <script type="text/javascript">
+    (function(b,c,f,g,a,d,e){b.MoshimoAffiliateObject=a;
+    b[a]=b[a]||function(){arguments.currentScript=c.currentScript
+    ||c.scripts[c.scripts.length-2];(b[a].q=b[a].q||[]).push(arguments)};
+    c.getElementById(a)||(d=c.createElement(f),d.src=g,
+    d.id=a,e=c.getElementsByTagName("body")[0],e.appendChild(d))})
+    (window,document,"script","//dn.msmstatic.com/site/cardlink/bundle.js?20220329","msmaflink");
+    msmaflink({"n":"【12月3日20時スタート】高保湿 乳液 保湿 敏感肌 モリンガ 導入化粧品 保湿オイル配合 ホワイトデー スキンケア モリンガオイル オーガニック オイル ヒアルロン酸コラーゲン コスメ 美容液オイル グリチルリチン 有機モリンガオイル 美白 アルコールフリー","b":"","t":"","d":"https:\/\/thumbnail.image.rakuten.co.jp","c_p":"\/@0_mall\/jagvillunte\/cabinet\/07921155","p":["\/10244523\/imgrc0117163603.jpg","\/10244523\/imgrc0117163605.jpg","\/10235493\/imgrc0117132978.jpg"],"u":{"u":"https:\/\/item.rakuten.co.jp\/jagvillunte\/10000002\/","t":"rakuten","r_v":""},"v":"2.1","b_l":[{"id":1,"u_tx":"楽天市場で見る","u_bc":"#87c209","u_url":"https:\/\/item.rakuten.co.jp\/jagvillunte\/10000002\/","a_id":5267359,"p_id":54,"pl_id":27059,"pc_id":54,"s_n":"rakuten","u_so":1},{"id":5,"u_tx":"Amazonで見る","u_bc":"#184f5c","u_url":"https:\/\/amzn.to\/4ooBrep","a_id":0,"p_id":0,"pl_id":0,"pc_id":0,"s_n":"custom_10","u_so":2},{"id":4,"u_tx":"Yahoo!ショッピングで見る","u_bc":"#bf0000","u_url":"https:\/\/shopping.yahoo.co.jp\/search?first=1\u0026p=%E3%80%9012%E6%9C%883%E6%97%A520%E6%99%82%E3%82%B9%E3%82%BF%E3%83%BC%E3%83%88%E3%80%91%E9%AB%98%E4%BF%9D%E6%B9%BF%E3%80%80%E4%B9%B3%E6%B6%B2%20%E4%BF%9D%E6%B9%BF%E3%80%80%E6%95%8F%E6%84%9F%E8%82%8C%E3%80%80%E3%83%A2%E3%83%AA%E3%83%B3%E3%82%AC%E3%80%80%E5%B0%8E%E5%85%A5%E5%8C%96%E7%B2%A7%E5%93%81%20%E4%BF%9D%E6%B9%BF%E3%82%AA%E3%82%A4%E3%83%AB%E9%85%8D%E5%90%88%20%E3%83%9B%E3%83%AF%E3%82%A4%E3%83%88%E3%83%87%E3%83%BC%20%E3%82%B9%E3%82%AD%E3%83%B3%E3%82%B1%E3%82%A2%20%E3%83%A2%E3%83%AA%E3%83%B3%E3%82%AC%E3%82%AA%E3%82%A4%E3%83%AB%20%E3%82%AA%E3%83%BC%E3%82%AC%E3%83%8B%E3%83%83%E3%82%AF%20%E3%82%AA%E3%82%A4%E3%83%AB%20%E3%83%92%E3%82%A2%E3%83%AB%E3%83%AD%E3%83%B3%E9%85%B8%E3%82%B3%E3%83%A9%E3%83%BC%E3%82%B2%E3%83%B3%E3%80%80%E3%82%B3%E3%82%B9%E3%83%A1%20%E7%BE%8E%E5%AE%B9%E6%B6%B2%E3%82%AA%E3%82%A4%E3%83%AB%20%E3%82%B0%E3%83%AA%E3%83%81%E3%83%AB%E3%83%AA%E3%83%81%E3%83%B3%20%E6%9C%89%E6%A9%9F%E3%83%A2%E3%83%AA%E3%83%B3%E3%82%AC%E3%82%AA%E3%82%A4%E3%83%AB%20%E7%BE%8E%E7%99%BD%20%E3%82%A2%E3%83%AB%E3%82%B3%E3%83%BC%E3%83%AB%E3%83%95%E3%83%AA%E3%83%BC","a_id":5267465,"p_id":1225,"pl_id":27061,"pc_id":1925,"s_n":"yahoo","u_so":3}],"eid":"Wm0gy","s":"s"});
+    </script>
+    <div id="msmaflink-Wm0gy">リンク</div>
+  </div>
+
+  <div style="text-align:center; margin:50px 0;">
     <p style="font-size:1.1em; color:#555; margin-bottom:10px;">さらにおすすめの記事はこちら：</p>
     <a href="seasons-skin.html" style="color:#d6336c; font-weight:600; text-decoration:none; font-size:1.1em; margin-right:20px;">🌸 季節のおすすめを見る</a>
     <a href="winter-selection.html" style="color:#d6336c; font-weight:600; text-decoration:none; font-size:1.1em;">❄ 冬のベストセレクションへ</a>
   </div>
 
   <div style="text-align:center;margin:40px 0;">
-    <a href="index.html" style="
-      display:inline-block;
-      background:linear-gradient(45deg,#f48b8b,#f7a8a8);
-      color:#fff;
-      padding:12px 28px;
-      border-radius:30px;
-      text-decoration:none;
-      font-weight:600;
-      box-shadow:0 4px 12px rgba(0,0,0,0.15);
-      transition:all .3s ease;
-    " onmouseover="this.style.transform='translateY(-3px)'" onmouseout="this.style.transform='translateY(0)'">
+    <a href="index.html" class="btn-main">
       ← トップページへ戻る
     </a>
   </div>
-<div id="affiliateNotice">※当サイトはアフィリエイト広告（Amazonアソシエイト含む）を利用しています</div>
+
+  <div id="affiliateNotice">※当サイトはアフィリエイト広告（Amazonアソシエイト含む）を利用しています</div>
   
- <footer style="text-align:center; padding:40px 0; background:#fff; font-size:13px; color:#888; border-top:1px solid #eee;">
-  © 2025 Essential Beauty Needs
-          <a href="privacy-policy.html" style="color: #777; text-decoration: none; margin-left: 15px;">プライバシーポリシー</a>
-</footer>
+  <footer style="text-align:center; padding:40px 0; background:#fff; font-size:13px; color:#888; border-top:1px solid #eee;">
+    © 2025 Essential Beauty Needs
+    <a href="privacy-policy.html" style="color: #777; text-decoration: none; margin-left: 15px;">プライバシーポリシー</a>
+  </footer>
 </body>
 </html>
