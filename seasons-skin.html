@@ -3,19 +3,17 @@
 <head>
 <meta charset="utf-8">
 <script>
-    // internal_user クッキーが設定されているか確認
+    // 1. 内部トラフィック除外設定
     function isInternalUser() {
         return document.cookie.split(';').some(c => c.trim().startsWith('internal_user=true'));
     }
 
-    // internal_user クッキーがない場合だけ、GA4を読み込む
+    // 2. GA4読み込み
     if (!isInternalUser()) {
         var gaScript = document.createElement('script');
         gaScript.async = true;
-        // GA4 ID: G-2HGEPHVZYY
         gaScript.src = "https://www.googletagmanager.com/gtag/js?id=G-2HGEPHVZYY";
         document.head.appendChild(gaScript);
-
         window.dataLayer = window.dataLayer || [];
         function gtag(){dataLayer.push(arguments);}
         gtag('js', new Date());
@@ -24,16 +22,9 @@
         console.log('✅ 内部トラフィックとして除外されました。');
     }
 
-    /**
-     * 画像読み込みエラー時のフォールバック処理。
-     * 読み込みエラー時にプレースホルダー画像に置き換えます。
-     * @param {HTMLElement} imgElement - エラーが発生したimg要素
-     * @param {number} width - プレースホルダーの幅
-     * @param {number} height - プレースホルダーの高さ
-     * @param {string} text - プレースホルダーに表示するテキスト
-     */
+    // 3. 画像読み込みエラー時のフォールバック処理
     function handleImageError(imgElement, width, height, text) {
-        imgElement.onerror = null; // エラーが再帰的に発生するのを防ぐ
+        imgElement.onerror = null; 
         imgElement.src = `https://placehold.co/${width}x${height}/f7a8a8/ffffff?text=${encodeURIComponent(text)}`;
     }
 </script>
@@ -62,19 +53,35 @@ p.lead { font-size: 18px; color: #5a4545; }
 .article img.hero { width: 100%; max-height: 400px; object-fit: cover; border-radius: 18px; margin-bottom: 20px; box-shadow: 0 6px 25px rgba(0,0,0,0.15); }
 
 .product-review { display:flex; gap:30px; margin-bottom:50px; flex-wrap:wrap; }
-.product-card { flex:1; min-width:280px; text-align:left; background:#fff; border-radius:14px; padding:15px; box-shadow:0 4px 12px rgba(0,0,0,0.08); }
-.product-card img { width:100%; height:220px; border-radius:12px; object-fit:cover; margin-bottom:12px; }
-.product-card h3 { font-size:18px; margin-bottom:10px; }
-.product-card p { font-size:15px; color:#444; margin-bottom:10px; }
-.product-card ul { font-size:14px; margin-left:18px; color:#555; margin-bottom:10px; }
-.btn { display:inline-block; background:var(--accent); color:#fff; padding:12px 28px; border-radius:30px; text-decoration:none; font-weight:600; transition:0.3s; }
-.btn:hover { background:var(--accent-hover); }
+/* カード幅を少し調整 */
+.product-card { flex:1; min-width:300px; text-align:center; background:#fff; border-radius:14px; padding:20px; box-shadow:0 4px 12px rgba(0,0,0,0.08); margin: 0 auto; }
 
-.review-column { flex:1; display:flex; flex-direction:column; gap:20px; }
-.review-card { background:#fff5f5; border-radius:14px; padding:15px; text-align:center; box-shadow:inset 0 0 10px rgba(0,0,0,0.05); }
-.review-card img { width:100px; height:100px; border-radius:50%; object-fit:cover; margin-bottom:8px; }
-.review-card p { font-size:14px; color:#333; margin-bottom:6px; }
-.review-card .name { font-weight:600; color:#555; margin-top:2px; }
+/* ▼▼▼ 修正箇所：季節の悩みチェックリスト ▼▼▼ */
+.season-check {
+    background: #fff;
+    border: 1px dashed var(--accent);
+    border-radius: 12px;
+    padding: 20px;
+    margin-top: 20px;
+    text-align: left;
+}
+.season-check h4 {
+    color: #d6336c;
+    margin-bottom: 10px;
+    font-size: 16px;
+    border-bottom: 1px solid #eee;
+    padding-bottom: 5px;
+}
+.season-check ul {
+    padding-left: 20px;
+    margin: 0;
+    font-size: 14px;
+}
+.season-check li {
+    margin-bottom: 5px;
+    color: #555;
+}
+/* ▲▲▲ 修正箇所ここまで ▲▲▲ */
 
 .internal-link { text-align:center; margin:20px 0; }
 .internal-link a { color:#d6336c; font-weight:600; text-decoration:none; }
@@ -100,10 +107,10 @@ footer { text-align:center; font-size:13px; color:#888; margin:60px 0 30px; }
 /* --- トップナビゲーションのボタンデザイン --- */
 .top-links {
     display: flex;
-    justify-content: center; /* 中央揃え */
-    flex-wrap: wrap;        /* 小さい画面で折り返す */
+    justify-content: center; 
+    flex-wrap: wrap;        
     gap: 12px;
-    margin: -20px auto 40px; /* headerから少し引き上げる */
+    margin: -20px auto 40px; 
     max-width: 1000px;
     padding: 0 20px;
 }
@@ -113,13 +120,13 @@ footer { text-align:center; font-size:13px; color:#888; margin:60px 0 30px; }
     align-items: center;
     justify-content: center;
     gap: 6px;
-    background: #ffdcdc; /* 薄い赤色の背景 */
-    color: #d6336c; /* アクセントカラーのテキスト */
+    background: #ffdcdc; 
+    color: #d6336c; 
     font-weight: 600;
-    font-size: 15px; /* サイズ調整 */
+    font-size: 15px; 
     text-decoration: none;
     padding: 10px 22px;
-    border-radius: 30px; /* 丸い角 */
+    border-radius: 30px; 
     box-shadow: 0 3px 8px rgba(0,0,0,0.08);
     transition: all 0.3s ease;
 }
@@ -133,8 +140,6 @@ footer { text-align:center; font-size:13px; color:#888; margin:60px 0 30px; }
 
 @media (max-width:768px){ 
     .product-review{ flex-direction:column; } 
-    .review-column{ flex-direction:row; flex-wrap:wrap; justify-content:center; } 
-    .review-card { min-width: 150px; flex: 1; }
 }
 </style>
 </head>
@@ -154,7 +159,6 @@ footer { text-align:center; font-size:13px; color:#888; margin:60px 0 30px; }
     <a href="diet-beauty.html">🍃 ダイエット効果：インナービューティー</a>
     <a href="beauty-column.html">💄 ビューティーコラム</a>
     <a href="skin-ranking.html">✨ ランキング</a>
-
 </div>
     
 <main class="container">
@@ -167,12 +171,11 @@ footer { text-align:center; font-size:13px; color:#888; margin:60px 0 30px; }
     
     <section class="article" id="spring">
         <h2>🌸 春の肌ケア</h2>
-        <img src="images/spring.jpg" alt="春の穏やかな日の屋外で、自然素材のスキンケア製品を使っているイメージ" class="hero"
-             onerror="handleImageError(this, 960, 400, 'Spring Skincare Image')">
+        <img src="images/spring.jpg" alt="春のスキンケア" class="hero" onerror="handleImageError(this, 960, 400, 'Spring Skincare Image')">
 
         <div class="product-review">
             
-            <div class="product-card" style="flex:1; min-width:280px;">
+            <div class="product-card">
                 <p style="font-weight:600; margin-bottom:10px;">【ピックアップ商品】</p>
                 <script type="text/javascript">
                 (function(b,c,f,g,a,d,e){b.MoshimoAffiliateObject=a;
@@ -184,166 +187,100 @@ footer { text-align:center; font-size:13px; color:#888; margin:60px 0 30px; }
                 msmaflink({"n":"エトヴォス 公式( ETVOS ) 「 モイストバリアクリーム 」 30g 【30日間返品保証】","b":"","t":"","d":"https:\/\/thumbnail.image.rakuten.co.jp","c_p":"\/@0_mall\/etvos\/cabinet\/product\/10167338","p":["\/imgrc0096967181.jpg","\/imgrc0096967115.jpg","\/imgrc0096967116.jpg"],"u":{"u":"https:\/\/item.rakuten.co.jp\/etvos\/cr1-0064\/","t":"rakuten","r_v":""},"v":"2.1","b_l":[{"id":1,"u_tx":"楽天市場で見る","u_bc":"#f76956","u_url":"https:\/\/item.rakuten.co.jp\/etvos\/cr1-0064\/","a_id":5267359,"p_id":54,"pl_id":27059,"pc_id":54,"s_n":"rakuten","u_so":0},{"u_bc":"#bf0000","u_tx":"Amazonで見る","u_url":"https:\/\/amzn.to\/4ooBrep","s_n":"custom_10","u_so":1,"a_id":0,"p_id":0,"pc_id":0,"pl_id":0,"id":5},{"u_bc":"#66a7ff","u_tx":"Yahoo!ショッピングで見る","u_url":"https:\/\/shopping.yahoo.co.jp\/search?first=1\u0026p=%E3%82%A8%E3%83%88%E3%83%B4%E3%82%A9%E3%82%B9%20%E5%85%AC%E5%BC%8F(%20ETVOS%20)%20%E3%80%8C%20%E3%83%A2%E3%82%A4%E3%82%B9%E3%83%88%E3%83%90%E3%83%AA%E3%82%A2%E3%82%AF%E3%83%AA%E3%83%BC%E3%83%A0%20%E3%80%8D%2030g%20%E3%80%9030%E6%97%A5%E9%96%93%E8%BF%94%E5%93%81%E4%BF%9D%E8%A8%BC%E3%80%91","s_n":"yahoo","u_so":2,"a_id":5267465,"p_id":1225,"pc_id":1925,"pl_id":27061,"id":4}],"eid":"9tFYL","s":"s"});
                 </script>
                 <div id="msmaflink-9tFYL">リンク</div>
+                
+                <div class="season-check">
+                    <h4>💡 春のゆらぎ肌チェック</h4>
+                    <ul>
+                        <li>花粉やほこりで肌がむずがゆい</li>
+                        <li>紫外線が強くなり始め、赤みが出やすい</li>
+                        <li><strong>対策：</strong> バリア機能をサポートするクリームで、外部刺激をブロックしましょう。</li>
+                    </ul>
                 </div>
-            
-            <div class="review-column">
-                <div class="review-card">
-                    <img src="images/etvosuser.jpg" alt="いちかさん：30代会社員"
-                         onerror="handleImageError(this, 100, 100, 'User: Ichika')">
-                    <p>「使い始めてから肌の赤みが落ち着きました<br>しっとり感が続いてもちもち肌！」</p>
-                    <p class="name">いちかさん：30代会社員</p>
                 </div>
-                <div class="review-card">
-                    <img src="images/20.1.jpg" alt="まいさん：20代エステ勤務"
-                         onerror="handleImageError(this, 100, 100, 'User: Mai')">
-                    <p>「敏感肌でも安心して使える保湿力。<br>肌がふっくらして透明感が出てきました。」</p>
-                    <p class="name">まいさん：20代エステ勤務</p>
-                </div>
-            </div>
         </div>
     </section>
 
     <section class="article" id="summer">
         <h2>☀ 夏の肌ケア</h2>
-        <img src="images/summer.jpg" alt="夏の強い日差しの下、さっぱりとした日焼け止めを塗るイメージ" class="hero"
-             onerror="handleImageError(this, 960, 400, 'Summer Skincare Image')">
+        <img src="images/summer.jpg" alt="夏のスキンケア" class="hero" onerror="handleImageError(this, 960, 400, 'Summer Skincare Image')">
 
         <div class="product-review">
             <div class="product-card">
-                <!-- START MoshimoAffiliateEasyLink -->
-<script type="text/javascript">
-(function(b,c,f,g,a,d,e){b.MoshimoAffiliateObject=a;
-b[a]=b[a]||function(){arguments.currentScript=c.currentScript
-||c.scripts[c.scripts.length-2];(b[a].q=b[a].q||[]).push(arguments)};
-c.getElementById(a)||(d=c.createElement(f),d.src=g,
-d.id=a,e=c.getElementsByTagName("body")[0],e.appendChild(d))})
-(window,document,"script","//dn.msmstatic.com/site/cardlink/bundle.js?20220329","msmaflink");
-msmaflink({"n":"＼ 紫外線吸収剤不使用 ／ オーガニック 無添加 UVクリーム 日焼け止め 化粧下地 顔 敏感肌 赤ちゃん ベビー メンズ 用にも sunao 京都 UV 30g デイリープロテクト シミ・シワ改善 さらさら 白くならない スナオ 完全無添加日焼け止め","b":"","t":"","d":"https:\/\/thumbnail.image.rakuten.co.jp","c_p":"\/@0_mall\/sunaoshop\/cabinet\/11202427","p":["\/imgrc0104506412.jpg","\/imgrc0104506413.jpg","\/imgrc0104506414.jpg"],"u":{"u":"https:\/\/item.rakuten.co.jp\/sunaoshop\/uvcream\/","t":"rakuten","r_v":""},"v":"2.1","b_l":[{"id":1,"u_tx":"楽天市場で見る","u_bc":"#87c209","u_url":"https:\/\/item.rakuten.co.jp\/sunaoshop\/uvcream\/","a_id":5267359,"p_id":54,"pl_id":27059,"pc_id":54,"s_n":"rakuten","u_so":1},{"id":5,"u_tx":"Amazonで見る","u_bc":"#184f5c","u_url":"https:\/\/amzn.to\/4a4gP7R","a_id":0,"p_id":0,"pl_id":0,"pc_id":0,"s_n":"custom_10","u_so":2},{"id":4,"u_tx":"Yahoo!ショッピングで見る","u_bc":"#bf0000","u_url":"https:\/\/shopping.yahoo.co.jp\/search?first=1\u0026p=%EF%BC%BC%20%E7%B4%AB%E5%A4%96%E7%B7%9A%E5%90%B8%E5%8F%8E%E5%89%A4%E4%B8%8D%E4%BD%BF%E7%94%A8%20%EF%BC%8F%20%E3%82%AA%E3%83%BC%E3%82%AC%E3%83%8B%E3%83%83%E3%82%AF%20%E7%84%A1%E6%B7%BB%E5%8A%A0%20UV%E3%82%AF%E3%83%AA%E3%83%BC%E3%83%A0%20%E6%97%A5%E7%84%BC%E3%81%91%E6%AD%A2%E3%82%81%20%E5%8C%96%E7%B2%A7%E4%B8%8B%E5%9C%B0%20%E9%A1%94%20%E6%95%8F%E6%84%9F%E8%82%8C%20%E8%B5%A4%E3%81%A1%E3%82%83%E3%82%93%20%E3%83%99%E3%83%93%E3%83%BC%20%E3%83%A1%E3%83%B3%E3%82%BA%20%E7%94%A8%E3%81%AB%E3%82%82%20sunao%20%E4%BA%AC%E9%83%BD%20UV%2030g%20%E3%83%87%E3%82%A4%E3%83%AA%E3%83%BC%E3%83%97%E3%83%AD%E3%83%86%E3%82%AF%E3%83%88%20%E3%82%B7%E3%83%9F%E3%83%BB%E3%82%B7%E3%83%AF%E6%94%B9%E5%96%84%20%E3%81%95%E3%82%89%E3%81%95%E3%82%89%20%E7%99%BD%E3%81%8F%E3%81%AA%E3%82%89%E3%81%AA%E3%81%84%20%E3%82%B9%E3%83%8A%E3%82%AA%20%E5%AE%8C%E5%85%A8%E7%84%A1%E6%B7%BB%E5%8A%A0%E6%97%A5%E7%84%BC%E3%81%91%E6%AD%A2%E3%82%81","a_id":5267465,"p_id":1225,"pl_id":27061,"pc_id":1925,"s_n":"yahoo","u_so":3}],"eid":"Hh2e5","s":"s"});
-</script>
-<div id="msmaflink-Hh2e5">リンク</div>
-<!-- MoshimoAffiliateEasyLink END -->
+                <script type="text/javascript">
+                (function(b,c,f,g,a,d,e){b.MoshimoAffiliateObject=a;
+                b[a]=b[a]||function(){arguments.currentScript=c.currentScript
+                ||c.scripts[c.scripts.length-2];(b[a].q=b[a].q||[]).push(arguments)};
+                c.getElementById(a)||(d=c.createElement(f),d.src=g,
+                d.id=a,e=c.getElementsByTagName("body")[0],e.appendChild(d))})
+                (window,document,"script","//dn.msmstatic.com/site/cardlink/bundle.js?20220329","msmaflink");
+                msmaflink({"n":"＼ 紫外線吸収剤不使用 ／ オーガニック 無添加 UVクリーム 日焼け止め 化粧下地 顔 敏感肌 赤ちゃん ベビー メンズ 用にも sunao 京都 UV 30g デイリープロテクト シミ・シワ改善 さらさら 白くならない スナオ 完全無添加日焼け止め","b":"","t":"","d":"https:\/\/thumbnail.image.rakuten.co.jp","c_p":"\/@0_mall\/sunaoshop\/cabinet\/11202427","p":["\/imgrc0104506412.jpg","\/imgrc0104506413.jpg","\/imgrc0104506414.jpg"],"u":{"u":"https:\/\/item.rakuten.co.jp\/sunaoshop\/uvcream\/","t":"rakuten","r_v":""},"v":"2.1","b_l":[{"id":1,"u_tx":"楽天市場で見る","u_bc":"#87c209","u_url":"https:\/\/item.rakuten.co.jp\/sunaoshop\/uvcream\/","a_id":5267359,"p_id":54,"pl_id":27059,"pc_id":54,"s_n":"rakuten","u_so":1},{"id":5,"u_tx":"Amazonで見る","u_bc":"#184f5c","u_url":"https:\/\/amzn.to\/4a4gP7R","a_id":0,"p_id":0,"pl_id":0,"pc_id":0,"s_n":"custom_10","u_so":2},{"id":4,"u_tx":"Yahoo!ショッピングで見る","u_bc":"#bf0000","u_url":"https:\/\/shopping.yahoo.co.jp\/search?first=1\u0026p=%EF%BC%BC%20%E7%B4%AB%E5%A4%96%E7%B7%9A%E5%90%B8%E5%8F%8E%E5%89%A4%E4%B8%8D%E4%BD%BF%E7%94%A8%20%EF%BC%8F%20%E3%82%AA%E3%83%BC%E3%82%AC%E3%83%8B%E3%83%83%E3%82%AF%20%E7%84%A1%E6%B7%BB%E5%8A%A0%20UV%E3%82%AF%E3%83%AA%E3%83%BC%E3%83%A0%20%E6%97%A5%E7%84%BC%E3%81%91%E6%AD%A2%E3%82%81%20%E5%8C%96%E7%B2%A7%E4%B8%8B%E5%9C%B0%20%E9%A1%94%20%E6%95%8F%E6%84%9F%E8%82%8C%20%E8%B5%A4%E3%81%A1%E3%82%83%E3%82%93%20%E3%83%99%E3%83%93%E3%83%BC%20%E3%83%A1%E3%83%B3%E3%82%BA%20%E7%94%A8%E3%81%AB%E3%82%82%20sunao%20%E4%BA%AC%E9%83%BD%20UV%2030g%20%E3%83%87%E3%82%A4%E3%83%AA%E3%83%BC%E3%83%97%E3%83%AD%E3%83%86%E3%82%AF%E3%83%88%20%E3%82%B7%E3%83%9F%E3%83%BB%E3%82%B7%E3%83%AF%E6%94%B9%E5%96%84%20%E3%81%95%E3%82%89%E3%81%95%E3%82%89%20%E7%99%BD%E3%81%8F%E3%81%AA%E3%82%89%E3%81%AA%E3%81%84%20%E3%82%B9%E3%83%8A%E3%82%AA%20%E5%AE%8C%E5%85%A8%E7%84%A1%E6%B7%BB%E5%8A%A0%E6%97%A5%E7%84%BC%E3%81%91%E6%AD%A2%E3%82%81","a_id":5267465,"p_id":1225,"pl_id":27061,"pc_id":1925,"s_n":"yahoo","u_so":3}],"eid":"Hh2e5","s":"s"});
+                </script>
+                <div id="msmaflink-Hh2e5">リンク</div>
+                <div class="season-check">
+                    <h4>💡 夏のダメージ対策</h4>
+                    <ul>
+                        <li>エアコンによる隠れ乾燥に注意</li>
+                        <li>汗と皮脂で毛穴が詰まりやすい</li>
+                        <li><strong>対策：</strong> 紫外線吸収剤不使用の優しいUVケアと、帰宅後の丁寧な保湿がカギです。</li>
+                    </ul>
                 </div>
-
-            <div class="review-column">
-                <div class="review-card">
-                    <img src="images/gym40.jpg" alt="ほなみさん：40代栄養士"
-                         onerror="handleImageError(this, 100, 100, 'User: Honami')">
-                    <p>「白浮きせず軽い着け心地で快適！<br>直ぐにサラサラになって残らないので気持ちいです。」</p>
-                    <p class="name">ほなみさん：40代栄養士</p>
                 </div>
-                <div class="review-card">
-                    <img src="images/20.2.jpg" alt="あいかさん：20代実業家"
-                         onerror="handleImageError(this, 100, 100, 'User: Aika')">
-                    <p>「日焼け止め特有の重さやべたつきがなく、<br>軽やかで快適！普通に毎日使ってます(笑)」</p>
-                    <p class="name">あいかさん：20代実業家</p>
-                </div>
-            </div>
         </div>
     </section>
 
-    <div style="
-        text-align:center;
-        margin: 25px 0;
-        padding: 12px;
-        background: #fff8f8;
-        border: 1px solid #f7d4d4;
-        border-radius: 10px;
-        box-shadow: 0 2px 6px rgba(0,0,0,0.05);
-    ">
-        <p style="font-size: 14px; color:#555; margin-bottom:10px;">
-            <strong>乾燥が気になる季節におすすめのケアアイテム</strong>
-        </p>
-
-        <a href="https://px.a8.net/svt/ejp?a8mat=45IB9B+J1WWQ+3NI6+60H7L" 
-            rel="nofollow sponsored noopener" target="_blank">
-            <img 
-                src="https://www24.a8.net/svt/bgt?aid=251117183032&wid=002&eno=01&mid=s00000017043001010000&mc=1"
-                alt="おすすめアイテム：オウミニョンヌ"
-                width="120" height="60"
-                style="border-radius:6px; border:0;"
-            >
-        </a>
-        <img border="0" width="1" height="1"
-            src="https://www16.a8.net/0.gif?a8mat=45IB9B+J1WWQ+3NI6+60H7L"
-            alt=""><br>
-        <a href="https://px.a8.net/svt/ejp?a8mat=45IB9B+J1WWQ+3NI6+61RIA" rel="nofollow noopener">オウミニョンヌを試してみる！</a>
-        <img border="0" width="1" height="1" src="https://www19.a8.net/0.gif?a8mat=45IB9B+J1WWQ+3NI6+61RIA" alt="">
-    </div>
-        
     <section class="article" id="autumn">
         <h2>🍂 秋の肌ケア</h2>
-        <img src="images/autumn.jpg" alt="紅葉と落ち着いた色合いの美容液をイメージ" class="hero"
-             onerror="handleImageError(this, 960, 400, 'Autumn Skincare Image')">
+        <img src="images/autumn.jpg" alt="秋のスキンケア" class="hero" onerror="handleImageError(this, 960, 400, 'Autumn Skincare Image')">
 
         <div class="product-review">
             <div class="product-card">
-               <!-- START MoshimoAffiliateEasyLink -->
-<script type="text/javascript">
-(function(b,c,f,g,a,d,e){b.MoshimoAffiliateObject=a;
-b[a]=b[a]||function(){arguments.currentScript=c.currentScript
-||c.scripts[c.scripts.length-2];(b[a].q=b[a].q||[]).push(arguments)};
-c.getElementById(a)||(d=c.createElement(f),d.src=g,
-d.id=a,e=c.getElementsByTagName("body")[0],e.appendChild(d))})
-(window,document,"script","//dn.msmstatic.com/site/cardlink/bundle.js?20220329","msmaflink");
-msmaflink({"n":"エッフェオーガニック F ORGANICS ディープモイスチャー ローション 150ml | 保湿化粧水 保湿 エイジング 化粧水質 乾燥肌 敏感肌 化粧品 女性 メンズ","b":"","t":"","d":"https:\/\/thumbnail.image.rakuten.co.jp","c_p":"\/@0_mall\/eth-santelabo\/cabinet\/10681054\/10871544","p":["\/imgrc0089204503.jpg","\/btn_imgrc0127148064.jpg","\/btn_imgrc0127154896.jpg"],"u":{"u":"https:\/\/item.rakuten.co.jp\/eth-santelabo\/f0330003\/","t":"rakuten","r_v":""},"v":"2.1","b_l":[{"id":1,"u_tx":"楽天市場で見る","u_bc":"#87c209","u_url":"https:\/\/item.rakuten.co.jp\/eth-santelabo\/f0330003\/","a_id":5267359,"p_id":54,"pl_id":27059,"pc_id":54,"s_n":"rakuten","u_so":1},{"id":5,"u_tx":"Amazonで見る","u_bc":"#184f5c","u_url":"https:\/\/amzn.to\/4p27Ich","a_id":0,"p_id":0,"pl_id":0,"pc_id":0,"s_n":"custom_10","u_so":2},{"id":4,"u_tx":"Yahoo!ショッピングで見る","u_bc":"#bf0000","u_url":"https:\/\/shopping.yahoo.co.jp\/search?first=1\u0026p=%E3%82%A8%E3%83%83%E3%83%95%E3%82%A7%E3%82%AA%E3%83%BC%E3%82%AC%E3%83%8B%E3%83%83%E3%82%AF%20F%20ORGANICS%20%E3%83%87%E3%82%A3%E3%83%BC%E3%83%97%E3%83%A2%E3%82%A4%E3%82%B9%E3%83%81%E3%83%A3%E3%83%BC%20%E3%83%AD%E3%83%BC%E3%82%B7%E3%83%A7%E3%83%B3%20150ml%20%7C%20%E4%BF%9D%E6%B9%BF%E5%8C%96%E7%B2%A7%E6%B0%B4%20%E4%BF%9D%E6%B9%BF%20%E3%82%A8%E3%82%A4%E3%82%B8%E3%83%B3%E3%82%B0%20%E5%8C%96%E7%B2%A7%E6%B0%B4%E8%B3%AA%20%E4%B9%BE%E7%87%A5%E8%82%8C%20%E6%95%8F%E6%84%9F%E8%82%8C%20%E5%8C%96%E7%B2%A7%E5%93%81%20%E5%A5%B3%E6%80%A7%20%E3%83%A1%E3%83%B3%E3%82%BA","a_id":5267465,"p_id":1225,"pl_id":27061,"pc_id":1925,"s_n":"yahoo","u_so":3}],"eid":"iJcSq","s":"s"});
-</script>
-<div id="msmaflink-iJcSq">リンク</div>
-<!-- MoshimoAffiliateEasyLink END -->
+                <script type="text/javascript">
+                (function(b,c,f,g,a,d,e){b.MoshimoAffiliateObject=a;
+                b[a]=b[a]||function(){arguments.currentScript=c.currentScript
+                ||c.scripts[c.scripts.length-2];(b[a].q=b[a].q||[]).push(arguments)};
+                c.getElementById(a)||(d=c.createElement(f),d.src=g,
+                d.id=a,e=c.getElementsByTagName("body")[0],e.appendChild(d))})
+                (window,document,"script","//dn.msmstatic.com/site/cardlink/bundle.js?20220329","msmaflink");
+                msmaflink({"n":"エッフェオーガニック F ORGANICS ディープモイスチャー ローション 150ml | 保湿化粧水 保湿 エイジング 化粧水質 乾燥肌 敏感肌 化粧品 女性 メンズ","b":"","t":"","d":"https:\/\/thumbnail.image.rakuten.co.jp","c_p":"\/@0_mall\/eth-santelabo\/cabinet\/10681054\/10871544","p":["\/imgrc0089204503.jpg","\/btn_imgrc0127148064.jpg","\/btn_imgrc0127154896.jpg"],"u":{"u":"https:\/\/item.rakuten.co.jp\/eth-santelabo\/f0330003\/","t":"rakuten","r_v":""},"v":"2.1","b_l":[{"id":1,"u_tx":"楽天市場で見る","u_bc":"#87c209","u_url":"https:\/\/item.rakuten.co.jp\/eth-santelabo\/f0330003\/","a_id":5267359,"p_id":54,"pl_id":27059,"pc_id":54,"s_n":"rakuten","u_so":1},{"id":5,"u_tx":"Amazonで見る","u_bc":"#184f5c","u_url":"https:\/\/amzn.to\/4p27Ich","a_id":0,"p_id":0,"pl_id":0,"pc_id":0,"s_n":"custom_10","u_so":2},{"id":4,"u_tx":"Yahoo!ショッピングで見る","u_bc":"#bf0000","u_url":"https:\/\/shopping.yahoo.co.jp\/search?first=1\u0026p=%E3%82%A8%E3%83%83%E3%83%95%E3%82%A7%E3%82%AA%E3%83%BC%E3%82%AC%E3%83%8B%E3%83%83%E3%82%AF%20F%20ORGANICS%20%E3%83%87%E3%82%A3%E3%83%BC%E3%83%97%E3%83%A2%E3%82%A4%E3%82%B9%E3%83%81%E3%83%A3%E3%83%BC%20%E3%83%AD%E3%83%BC%E3%82%B7%E3%83%A7%E3%83%B3%20150ml%20%7C%20%E4%BF%9D%E6%B9%BF%E5%8C%96%E7%B2%A7%E6%B0%B4%20%E4%BF%9D%E6%B9%BF%20%E3%82%A8%E3%82%A4%E3%82%B8%E3%83%B3%E3%82%B0%20%E5%8C%96%E7%B2%A7%E6%B0%B4%E8%B3%AA%20%E4%B9%BE%E7%87%A5%E8%82%8C%20%E6%95%8F%E6%84%9F%E8%82%8C%20%E5%8C%96%E7%B2%A7%E5%93%81%20%E5%A5%B3%E6%80%A7%20%E3%83%A1%E3%83%B3%E3%82%BA","a_id":5267465,"p_id":1225,"pl_id":27061,"pc_id":1925,"s_n":"yahoo","u_so":3}],"eid":"iJcSq","s":"s"});
+                </script>
+                <div id="msmaflink-iJcSq">リンク</div>
+                <div class="season-check">
+                    <h4>💡 秋のリカバリーケア</h4>
+                    <ul>
+                        <li>夏の紫外線ダメージがシミ・くすみとして現れる</li>
+                        <li>急激な湿度低下で乾燥が進む</li>
+                        <li><strong>対策：</strong> 高保湿な化粧水で、角質層の水分バランスを整えることが最優先です。</li>
+                    </ul>
                 </div>
-
-            <div class="review-column">
-                <div class="review-card">
-                    <img src="images/biyoushi.jpg" alt="のり子さん：30代美容師"
-                         onerror="handleImageError(this, 100, 100, 'User: Noriko')">
-                    <p>「季節の変わり目でも肌の乾燥が気にならず、<br>透明感が出ました。」</p>
-                    <p class="name">のり子さん：30代美容師</p>
                 </div>
-                <div class="review-card">
-                    <img src="images/30.1.jpg" alt="ゆみさん：30代フリーター"
-                         onerror="handleImageError(this, 100, 100, 'User: Yumi')">
-                    <p>「乾燥やゆらぎ肌でも安心して使用でき、<br>肌が柔らかくなった気がします！手放せません。」</p>
-                    <p class="name">ゆみさん：30代フリーター</p>
-                </div>
-            </div>
         </div>
     </section>
-
 
     <section class="article" id="winter">
         <h2>❄ 冬の肌ケア</h2>
-        <img src="images/winter.jpg" alt="雪の結晶と濃厚な保湿クリームをイメージ" class="hero"
-             onerror="handleImageError(this, 960, 400, 'Winter Skincare Image')">
+        <img src="images/winter.jpg" alt="冬のスキンケア" class="hero" onerror="handleImageError(this, 960, 400, 'Winter Skincare Image')">
 
         <div class="product-review">
             <div class="product-card">
-                <!-- START MoshimoAffiliateEasyLink -->
-<script type="text/javascript">
-(function(b,c,f,g,a,d,e){b.MoshimoAffiliateObject=a;
-b[a]=b[a]||function(){arguments.currentScript=c.currentScript
-||c.scripts[c.scripts.length-2];(b[a].q=b[a].q||[]).push(arguments)};
-c.getElementById(a)||(d=c.createElement(f),d.src=g,
-d.id=a,e=c.getElementsByTagName("body")[0],e.appendChild(d))})
-(window,document,"script","//dn.msmstatic.com/site/cardlink/bundle.js?20220329","msmaflink");
-msmaflink({"n":"【公式】オルナオーガニック 美容液 くすみ 対策 スキンケア 潤い コラーゲン 3種 ヒアルロン酸 4種 ビタミンC 4種 セラミド 配合 47ml","b":"","t":"","d":"https:\/\/thumbnail.image.rakuten.co.jp","c_p":"\/@0_mall\/tsurunishi\/cabinet\/allna","p":["\/top\/905b01n0arfgp.jpg","\/em\/905b01n0arfgp_1.jpg","\/em\/905b01n0arfgp_3.jpg"],"u":{"u":"https:\/\/item.rakuten.co.jp\/tsurunishi\/905b01n0arfgp\/","t":"rakuten","r_v":""},"v":"2.1","b_l":[{"id":1,"u_tx":"楽天市場で見る","u_bc":"#87c209","u_url":"https:\/\/item.rakuten.co.jp\/tsurunishi\/905b01n0arfgp\/","a_id":5267359,"p_id":54,"pl_id":27059,"pc_id":54,"s_n":"rakuten","u_so":1},{"id":5,"u_tx":"Amazonで見る","u_bc":"#184f5c","u_url":"https:\/\/amzn.to\/4isxvba","a_id":0,"p_id":0,"pl_id":0,"pc_id":0,"s_n":"custom_10","u_so":2},{"id":4,"u_tx":"Yahoo!ショッピングで見る","u_bc":"#bf0000","u_url":"https:\/\/shopping.yahoo.co.jp\/search?first=1\u0026p=%E3%80%90%E5%85%AC%E5%BC%8F%E3%80%91%E3%82%AA%E3%83%AB%E3%83%8A%E3%82%AA%E3%83%BC%E3%82%AC%E3%83%8B%E3%83%83%E3%82%AF%20%E7%BE%8E%E5%AE%B9%E6%B6%B2%20%E3%81%8F%E3%81%99%E3%81%BF%20%E5%AF%BE%E7%AD%96%20%E3%82%B9%E3%82%AD%E3%83%B3%E3%82%B1%E3%82%A2%20%E6%BD%A4%E3%81%84%20%E3%82%B3%E3%83%A9%E3%83%BC%E3%82%B2%E3%83%B3%203%E7%A8%AE%20%E3%83%92%E3%82%A2%E3%83%AB%E3%83%AD%E3%83%B3%E9%85%B8%204%E7%A8%AE%20%E3%83%93%E3%82%BF%E3%83%9F%E3%83%B3C%204%E7%A8%AE%20%E3%82%BB%E3%83%A9%E3%83%9F%E3%83%89%20%E9%85%8D%E5%90%88%2047ml","a_id":5267465,"p_id":1225,"pl_id":27061,"pc_id":1925,"s_n":"yahoo","u_so":3}],"eid":"oN0OR","s":"s"});
-</script>
-<div id="msmaflink-oN0OR">リンク</div>
-<!-- MoshimoAffiliateEasyLink END -->
+                <script type="text/javascript">
+                (function(b,c,f,g,a,d,e){b.MoshimoAffiliateObject=a;
+                b[a]=b[a]||function(){arguments.currentScript=c.currentScript
+                ||c.scripts[c.scripts.length-2];(b[a].q=b[a].q||[]).push(arguments)};
+                c.getElementById(a)||(d=c.createElement(f),d.src=g,
+                d.id=a,e=c.getElementsByTagName("body")[0],e.appendChild(d))})
+                (window,document,"script","//dn.msmstatic.com/site/cardlink/bundle.js?20220329","msmaflink");
+                msmaflink({"n":"【公式】オルナオーガニック 美容液 くすみ 対策 スキンケア 潤い コラーゲン 3種 ヒアルロン酸 4種 ビタミンC 4種 セラミド 配合 47ml","b":"","t":"","d":"https:\/\/thumbnail.image.rakuten.co.jp","c_p":"\/@0_mall\/tsurunishi\/cabinet\/allna","p":["\/top\/905b01n0arfgp.jpg","\/em\/905b01n0arfgp_1.jpg","\/em\/905b01n0arfgp_3.jpg"],"u":{"u":"https:\/\/item.rakuten.co.jp\/tsurunishi\/905b01n0arfgp\/","t":"rakuten","r_v":""},"v":"2.1","b_l":[{"id":1,"u_tx":"楽天市場で見る","u_bc":"#87c209","u_url":"https:\/\/item.rakuten.co.jp\/tsurunishi\/905b01n0arfgp\/","a_id":5267359,"p_id":54,"pl_id":27059,"pc_id":54,"s_n":"rakuten","u_so":1},{"id":5,"u_tx":"Amazonで見る","u_bc":"#184f5c","u_url":"https:\/\/amzn.to\/4isxvba","a_id":0,"p_id":0,"pl_id":0,"pc_id":0,"s_n":"custom_10","u_so":2},{"id":4,"u_tx":"Yahoo!ショッピングで見る","u_bc":"#bf0000","u_url":"https:\/\/shopping.yahoo.co.jp\/search?first=1\u0026p=%E3%80%90%E5%85%AC%E5%BC%8F%E3%80%91%E3%82%AA%E3%83%AB%E3%83%8A%E3%82%AA%E3%83%BC%E3%82%AC%E3%83%8B%E3%83%83%E3%82%AF%20%E7%BE%8E%E5%AE%B9%E6%B6%B2%20%E3%81%8F%E3%81%99%E3%81%BF%20%E5%AF%BE%E7%AD%96%20%E3%82%B9%E3%82%AD%E3%83%B3%E3%82%B1%E3%82%A2%20%E6%BD%A4%E3%81%84%20%E3%82%B3%E3%83%A9%E3%83%BC%E3%82%B2%E3%83%B3%203%E7%A8%AE%20%E3%83%92%E3%82%A2%E3%83%AB%E3%83%AD%E3%83%B3%E9%85%B8%204%E7%A8%AE%20%E3%83%93%E3%82%BF%E3%83%9F%E3%83%B3C%204%E7%A8%AE%20%E3%82%BB%E3%83%A9%E3%83%9F%E3%83%89%20%E9%85%8D%E5%90%88%2047ml","a_id":5267465,"p_id":1225,"pl_id":27061,"pc_id":1925,"s_n":"yahoo","u_so":3}],"eid":"oN0OR","s":"s"});
+                </script>
+                <div id="msmaflink-oN0OR">リンク</div>
+                <div class="season-check">
+                    <h4>💡 冬の集中保湿</h4>
+                    <ul>
+                        <li>血行不良による顔色の悪さ</li>
+                        <li>粉を吹くほどの深刻な乾燥</li>
+                        <li><strong>対策：</strong> セラミドやヒアルロン酸など、保湿成分が濃厚な美容液をプラスしましょう。</li>
+                    </ul>
                 </div>
-
-            <div class="review-column">
-                <div class="review-card">
-                    <img src="images/50suser.jpg" alt="さなえさん：50代小児科医師"
-                         onerror="handleImageError(this, 100, 100, 'User: Sanae')">
-                    <p>「乾燥の季節でも肌がつっぱらず、朝までしっと。<br>これだけで済むのでとても楽です。</p>
-                    <p class="name">さなえさん：50代小児科医師</p>
                 </div>
-                <div class="review-card">
-                    <img src="images/40.1.jpg" alt="みどりさん：40代声優"
-                         onerror="handleImageError(this, 100, 100, 'User: Midori')">
-                    <p>「冬でも肌の乾燥を感じず、毎日のケアが楽に。<br>悩みだった肌の赤みもなくなりました。」</p>
-                    <p class="name">みどりさん：40代声優</p>
-                </div>
-            </div>
         </div>
     </section>
     
@@ -372,13 +309,13 @@ msmaflink({"n":"【公式】オルナオーガニック 美容液 くすみ 対�
     <div class="related">
         <p>さらにおすすめの記事はこちら：</p>
         <a href="index.html">🏠 トップページへ戻る</a>
-        </div>
+    </div>
 
 </main>
 
 <footer style="text-align:center; padding:40px 0; background:#fff; font-size:13px; color:#888; border-top:1px solid #eee;">
-  © 2025 Essential Beauty Needs
-          <a href="privacy-policy.html" style="color: #777; text-decoration: none; margin-left: 15px;">プライバシーポリシー</a>
+    © 2025 Essential Beauty Needs
+    <a href="privacy-policy.html" style="color: #777; text-decoration: none; margin-left: 15px;">プライバシーポリシー</a>
 </footer>
 
 <div id="affiliateNotice">※当サイトはアフィリエイト広告（Amazonアソシエイト含む）を利用しています</div>
