@@ -2,16 +2,6 @@
 <html lang="ja">
 <head>
     <meta charset="utf-8">
-    <script>
-        // GA4読み込みと画像エラー処理の関数は既存ファイルから継承（省略）
-        function isInternalUser() { /* ... */ }
-        if (!isInternalUser()) { /* ... */ }
-        function handleImageError(imgElement, width, height, text) { 
-             imgElement.onerror = null; 
-             imgElement.src = `https://placehold.co/${width}x${height}/f7a8a8/ffffff?text=${encodeURIComponent(text)}`;
-        }
-    </script>
-    
     <meta name="viewport" content="width=device-width,initial-scale=1">
     <title>オーガニック成分の科学：なぜ植物由来成分が肌に効くのか？</title>
     <meta name="description" content="オーガニックコスメに含まれる主要成分（植物オイル、エキス）の構造と、肌のバリア機能、エイジングケアに作用する科学的根拠を解説します。">
@@ -20,8 +10,31 @@
     <link href="https://fonts.googleapis.com/css2?family=Playfair+Display:wght@600&family=Quicksand:wght@400;600&display=swap" rel="stylesheet">
     <link rel="canonical" href="https://essential-beauty-needs.com/organic-science.html" />
     
+    <script>
+        function isInternalUser() {
+            return document.cookie.split(';').some(c => c.trim().startsWith('internal_user=true'));
+        }
+        if (!isInternalUser()) {
+            var gaScript = document.createElement('script');
+            gaScript.async = true;
+            gaScript.src = "https://www.googletagmanager.com/gtag/js?id=G-2HGEPHVZYY";
+            document.head.appendChild(gaScript);
+            window.dataLayer = window.dataLayer || [];
+            function gtag(){dataLayer.push(arguments);}
+            gtag('js', new Date());
+            gtag('config', 'G-2HGEPHVZYY');
+        } else {
+            console.log('✅ Internal traffic excluded.');
+        }
+
+        function handleImageError(imgElement, width, height, text) { 
+             imgElement.onerror = null; 
+             imgElement.src = `https://placehold.co/${width}x${height}/f7a8a8/ffffff?text=${encodeURIComponent(text)}`;
+        }
+    </script>
+    
     <style>
-        /* 既存のstyle.cssまたはインラインスタイルから継承 */
+        /* 基本スタイル */
         :root {
             --bg: #fff8f8;
             --accent: #f7a8a8;
@@ -32,6 +45,8 @@
         * { box-sizing: border-box; margin: 0; padding: 0; }
         body { font-family: 'Quicksand', sans-serif; background: var(--bg); color: #333; line-height: 1.8; }
         .container { max-width: 980px; margin: 0 auto; padding: 0 16px; }
+        
+        /* ヘッダー */
         header { 
             text-align: center; padding: 80px 20px 50px; 
             background: linear-gradient(135deg, #fceeee, #fff8f8); 
@@ -41,9 +56,14 @@
         h1 { font-family: 'Playfair Display', serif; font-size: 38px; margin-bottom: 8px; }
         h2 { font-family: 'Playfair Display', serif; text-align: left; color: var(--text-main); margin: 50px 0 20px; font-size: 28px; border-left: 5px solid var(--accent); padding-left: 15px; }
         h3 { color: var(--text-main); margin: 30px 0 15px; font-size: 20px; border-bottom: 1px dotted #fceeee; padding-bottom: 5px; }
-        .nav-links { /* index.htmlのスタイルを継承 */ } 
         
-        /* ページ固有のスタイル */
+        /* ナビゲーション */
+        .nav-links{display:flex;gap:12px;justify-content:center;margin-top:12px;flex-wrap:wrap;}
+        .nav-links a{background:rgba(255,255,255,0.8);padding:8px 12px;border-radius:8px;text-decoration:none;color:#503535;font-weight:600;}
+        .nav-links a:hover{background:var(--accent);color:#fff;}
+        .nav-break { flex-basis: 100%; height: 0; margin: 5px 0; }
+        
+        /* ページ固有スタイル */
         .article-section { 
             background: #fff; 
             padding: 30px; 
@@ -61,16 +81,16 @@
         }
         .key-point strong { color: #d6336c; }
 
-        .list-component { margin-top: 15px; }
+        .list-component { margin-top: 15px; list-style: none; padding-left: 0; }
         .list-component li { 
             margin-bottom: 10px; 
-            padding-left: 10px; 
+            padding-left: 25px; 
             position: relative;
         }
         .list-component li::before {
             content: "🌿"; 
             position: absolute; 
-            left: -10px; 
+            left: 0; 
             color: var(--accent);
         }
 
@@ -90,26 +110,23 @@
             box-shadow: 0 6px 18px rgba(0,0,0,0.2);
         }
         
+        /* テーブルのスマホ対応ラッパー */
+        .table-wrapper {
+            overflow-x: auto;
+            -webkit-overflow-scrolling: touch;
+            margin-top: 20px;
+        }
+        
         /* Footer & Others */
         footer { text-align:center; padding:40px 0; background:#fff; font-size:13px; color:#888; border-top:1px solid #eee; }
-        #affiliateNotice { /* style.cssから継承 */ }
-
-        /* nav-links, nav-break のスタイルも必要に応じて継承 */
-        .nav-links{display:flex;gap:12px;justify-content:center;margin-top:12px;flex-wrap:wrap;}
-        .nav-links a{background:rgba(255,255,255,0.8);padding:8px 12px;border-radius:8px;text-decoration:none;color:#503535;font-weight:600;}
-        .nav-links a:hover{background:var(--accent);color:#fff;}
-        .nav-break { flex-basis: 100%; height: 0; margin: 5px 0; }
-
-        /* Footer & Others */
-    #affiliateNotice {
-      position: fixed; right: 12px; bottom: 12px;
-      background: rgba(255, 255, 255, 0.8);
-      color: #555; font-size: 11px;
-      border-radius: 6px; padding: 4px 8px;
-      box-shadow: 0 2px 6px rgba(0,0,0,0.1);
-      z-index: 999;
-    }
-    
+        #affiliateNotice {
+            position: fixed; right: 12px; bottom: 12px;
+            background: rgba(255, 255, 255, 0.8);
+            color: #555; font-size: 11px;
+            border-radius: 6px; padding: 4px 8px;
+            box-shadow: 0 2px 6px rgba(0,0,0,0.1);
+            z-index: 999;
+        }
     </style>
 </head>
 <body>
@@ -163,31 +180,25 @@
         <div class="key-point">
             <strong>【注目成分】オメガ3（α-リノレン酸）</strong><br>
             必須脂肪酸であるオメガ3は、体内で生成できません。代表的なのは<strong>亜麻仁油（フラックスシードオイル）</strong>や<strong>チアシードオイル</strong>です。肌の炎症を抑え、バリア機能の柔軟性を保つ役割を果たします。不足すると乾燥や肌荒れの原因になります。
-
-
         </div>
         
-<!-- START MoshimoAffiliateEasyLink -->
-<script type="text/javascript">
-(function(b,c,f,g,a,d,e){b.MoshimoAffiliateObject=a;
-b[a]=b[a]||function(){arguments.currentScript=c.currentScript
-||c.scripts[c.scripts.length-2];(b[a].q=b[a].q||[]).push(arguments)};
-c.getElementById(a)||(d=c.createElement(f),d.src=g,
-d.id=a,e=c.getElementsByTagName("body")[0],e.appendChild(d))})
-(window,document,"script","//dn.msmstatic.com/site/cardlink/bundle.js?20220329","msmaflink");
-msmaflink({"n":"【公式店】マルラオイル 純度100％ 国内製造 エイジングケア 高品質 美容オイル ナチュラル オーガニック オイル 敏感肌 18ml 60日分 Marula Oil 防腐剤 香料 着色料すべて無添加 無香料 乾燥肌 ごわつき マルーラ フェイスオイル 導入美容液 VIRCHE ヴァーチェ","b":"","t":"","d":"https:\/\/thumbnail.image.rakuten.co.jp","c_p":"\/@0_mall\/virche\/cabinet\/shouhingazou\/marulaoil\/2024rn","p":["\/item001a_01b.jpg","\/item001a_02_africa.jpg","\/item001a_03_nayami-2.jpg"],"u":{"u":"https:\/\/item.rakuten.co.jp\/virche\/v0001-001\/","t":"rakuten","r_v":""},"v":"2.1","b_l":[{"id":1,"u_tx":"楽天市場で見る","u_bc":"#87c209","u_url":"https:\/\/item.rakuten.co.jp\/virche\/v0001-001\/","a_id":5267359,"p_id":54,"pl_id":27059,"pc_id":54,"s_n":"rakuten","u_so":1},{"id":5,"u_tx":"Amazonで見る","u_bc":"#184f5c","u_url":"https:\/\/amzn.to\/447npqh","a_id":0,"p_id":0,"pl_id":0,"pc_id":0,"s_n":"custom_10","u_so":2},{"id":4,"u_tx":"Yahoo!ショッピングで見る","u_bc":"#bf0000","u_url":"https:\/\/shopping.yahoo.co.jp\/search?first=1\u0026p=%E3%80%90%E5%85%AC%E5%BC%8F%E5%BA%97%E3%80%91%E3%83%9E%E3%83%AB%E3%83%A9%E3%82%AA%E3%82%A4%E3%83%AB%20%E7%B4%94%E5%BA%A6100%EF%BC%85%20%E5%9B%BD%E5%86%85%E8%A3%BD%E9%80%A0%20%E3%82%A8%E3%82%A4%E3%82%B8%E3%83%B3%E3%82%B0%E3%82%B1%E3%82%A2%20%E9%AB%98%E5%93%81%E8%B3%AA%20%E7%BE%8E%E5%AE%B9%E3%82%AA%E3%82%A4%E3%83%AB%20%E3%83%8A%E3%83%81%E3%83%A5%E3%83%A9%E3%83%AB%20%E3%82%AA%E3%83%BC%E3%82%AC%E3%83%8B%E3%83%83%E3%82%AF%20%E3%82%AA%E3%82%A4%E3%83%AB%20%E6%95%8F%E6%84%9F%E8%82%8C%2018ml%2060%E6%97%A5%E5%88%86%20Marula%20Oil%20%E9%98%B2%E8%85%90%E5%89%A4%20%E9%A6%99%E6%96%99%20%E7%9D%80%E8%89%B2%E6%96%99%E3%81%99%E3%81%B9%E3%81%A6%E7%84%A1%E6%B7%BB%E5%8A%A0%20%E7%84%A1%E9%A6%99%E6%96%99%20%E4%B9%BE%E7%87%A5%E8%82%8C%20%E3%81%94%E3%82%8F%E3%81%A4%E3%81%8D%20%E3%83%9E%E3%83%AB%E3%83%BC%E3%83%A9%20%E3%83%95%E3%82%A7%E3%82%A4%E3%82%B9%E3%82%AA%E3%82%A4%E3%83%AB%20%E5%B0%8E%E5%85%A5%E7%BE%8E%E5%AE%B9%E6%B6%B2%20VIRCHE%20%E3%83%B4%E3%82%A1%E3%83%BC%E3%83%81%E3%82%A7","a_id":5267465,"p_id":1225,"pl_id":27061,"pc_id":1925,"s_n":"yahoo","u_so":3}],"eid":"EeUpv","s":"s"});
-</script>
-<div id="msmaflink-EeUpv">リンク</div>
-<!-- MoshimoAffiliateEasyLink END -->
+        <script type="text/javascript">
+        (function(b,c,f,g,a,d,e){b.MoshimoAffiliateObject=a;
+        b[a]=b[a]||function(){arguments.currentScript=c.currentScript
+        ||c.scripts[c.scripts.length-2];(b[a].q=b[a].q||[]).push(arguments)};
+        c.getElementById(a)||(d=c.createElement(f),d.src=g,
+        d.id=a,e=c.getElementsByTagName("body")[0],e.appendChild(d))})
+        (window,document,"script","//dn.msmstatic.com/site/cardlink/bundle.js?20220329","msmaflink");
+        msmaflink({"n":"【公式店】マルラオイル 純度100％ 国内製造 エイジングケア 高品質 美容オイル ナチュラル オーガニック オイル 敏感肌 18ml 60日分 Marula Oil 防腐剤 香料 着色料すべて無添加 無香料 乾燥肌 ごわつき マルーラ フェイスオイル 導入美容液 VIRCHE ヴァーチェ","b":"","t":"","d":"https:\/\/thumbnail.image.rakuten.co.jp","c_p":"\/@0_mall\/virche\/cabinet\/shouhingazou\/marulaoil\/2024rn","p":["\/item001a_01b.jpg","\/item001a_02_africa.jpg","\/item001a_03_nayami-2.jpg"],"u":{"u":"https:\/\/item.rakuten.co.jp\/virche\/v0001-001\/","t":"rakuten","r_v":""},"v":"2.1","b_l":[{"id":1,"u_tx":"楽天市場で見る","u_bc":"#87c209","u_url":"https:\/\/item.rakuten.co.jp\/virche\/v0001-001\/","a_id":5267359,"p_id":54,"pl_id":27059,"pc_id":54,"s_n":"rakuten","u_so":1},{"id":5,"u_tx":"Amazonで見る","u_bc":"#184f5c","u_url":"https:\/\/amzn.to\/447npqh","a_id":0,"p_id":0,"pl_id":0,"pc_id":0,"s_n":"custom_10","u_so":2},{"id":4,"u_tx":"Yahoo!ショッピングで見る","u_bc":"#bf0000","u_url":"https:\/\/shopping.yahoo.co.jp\/search?first=1\u0026p=%E3%80%90%E5%85%AC%E5%BC%8F%E5%BA%97%E3%80%91%E3%83%9E%E3%83%AB%E3%83%A9%E3%82%AA%E3%82%A4%E3%83%AB%20%E7%B4%94%E5%BA%A6100%EF%BC%85%20%E5%9B%BD%E5%86%85%E8%A3%BD%E9%80%A0%20%E3%82%A8%E3%82%A4%E3%82%B8%E3%83%B3%E3%82%B0%E3%82%B1%E3%82%A2%20%E9%AB%98%E5%93%81%E8%B3%AA%20%E7%BE%8E%E5%AE%B9%E3%82%AA%E3%82%A4%E3%83%AB%20%E3%83%8A%E3%83%81%E3%83%A5%E3%83%A9%E3%83%AB%20%E3%82%AA%E3%83%BC%E3%82%AC%E3%83%8B%E3%83%83%E3%82%AF%20%E3%82%AA%E3%82%A4%E3%83%AB%20%E6%95%8F%E6%84%9F%E8%82%8C%2018ml%2060%E6%97%A5%E5%88%86%20Marula%20Oil%20%E9%98%B2%E8%85%90%E5%89%A4%20%E9%A6%99%E6%96%99%20%E7%9D%80%E8%89%B2%E6%96%99%E3%81%99%E3%81%B9%E3%81%A6%E7%84%A1%E6%B7%BB%E5%8A%A0%20%E7%84%A1%E9%A6%99%E6%96%99%20%E4%B9%BE%E7%87%A5%E8%82%8C%20%E3%81%94%E3%82%8F%E3%81%A4%E3%81%8D%20%E3%83%9E%E3%83%AB%E3%83%BC%E3%83%A9%20%E3%83%95%E3%82%A7%E3%82%A4%E3%82%B9%E3%82%AA%E3%82%A4%E3%83%AB%20%E5%B0%8E%E5%85%A5%E7%BE%8E%E5%AE%B9%E6%B6%B2%20VIRCHE%20%E3%83%B4%E3%82%A1%E3%83%BC%E3%83%81%E3%82%A7","a_id":5267465,"p_id":1225,"pl_id":27061,"pc_id":1925,"s_n":"yahoo","u_so":3}],"eid":"EeUpv","s":"s"});
+        </script>
+        <div id="msmaflink-EeUpv">リンク</div>
+        
         <br>
         <p>
             良質な植物オイル（例：アルガンオイル、ホホバオイル）は、肌の角質層のラメラ構造を整え、外部刺激から肌を守る強固な<strong>バリアフィルム</strong>を形成します。
         </p>
-
     </section>
 
-
-    
     <section class="article-section">
         <h2>✨ 2. エイジングケアの主役「フィトケミカル」の力</h2>
         <p>
@@ -206,18 +217,16 @@ msmaflink({"n":"【公式店】マルラオイル 純度100％ 国内製造 エ�
             オーガニック成分は、人工的に抽出・合成された単一成分ではなく、植物が持つ様々な成分が<strong>相互作用</strong>（シナジー効果）することで、単体以上の効果を発揮すると考えられています。
         </div>
         
-<!-- START MoshimoAffiliateEasyLink -->
-<script type="text/javascript">
-(function(b,c,f,g,a,d,e){b.MoshimoAffiliateObject=a;
-b[a]=b[a]||function(){arguments.currentScript=c.currentScript
-||c.scripts[c.scripts.length-2];(b[a].q=b[a].q||[]).push(arguments)};
-c.getElementById(a)||(d=c.createElement(f),d.src=g,
-d.id=a,e=c.getElementsByTagName("body")[0],e.appendChild(d))})
-(window,document,"script","//dn.msmstatic.com/site/cardlink/bundle.js?20220329","msmaflink");
-msmaflink({"n":"有機JAS認証 クコの実ジュース 300mL ＆ クコの実 100g セット ゴジベリー オーガニック ゴジベリージュース 無添加 枸杞 枸杞子 枸杞の実 ゼアキサンチン 瞳 目の疲れ ケア 抗酸化 くこのみ クコジュース Natruly ナトゥリー","b":"","t":"","d":"https:\/\/thumbnail.image.rakuten.co.jp","c_p":"\/","p":["@0_mall\/hands-web\/cabinet\/07424107\/goji300_kuko100_setc.jpg","@0_gold\/hands-web\/gojiberry\/gojiberry_01.jpg","@0_gold\/hands-web\/gojiberry\/gojiberry_05s.jpg"],"u":{"u":"https:\/\/item.rakuten.co.jp\/hands-web\/goji300-kuko100\/","t":"rakuten","r_v":""},"v":"2.1","b_l":[{"id":1,"u_tx":"楽天市場で見る","u_bc":"#87c209","u_url":"https:\/\/item.rakuten.co.jp\/hands-web\/goji300-kuko100\/","a_id":5267359,"p_id":54,"pl_id":27059,"pc_id":54,"s_n":"rakuten","u_so":1},{"id":5,"u_tx":"Amazonで見る","u_bc":"#184f5c","u_url":"https:\/\/amzn.to\/3XxnrEe","a_id":0,"p_id":0,"pl_id":0,"pc_id":0,"s_n":"custom_10","u_so":2},{"id":4,"u_tx":"Yahoo!ショッピングで見る","u_bc":"#bf0000","u_url":"https:\/\/shopping.yahoo.co.jp\/search?first=1\u0026p=%E6%9C%89%E6%A9%9FJAS%E8%AA%8D%E8%A8%BC%20%E3%82%AF%E3%82%B3%E3%81%AE%E5%AE%9F%E3%82%B8%E3%83%A5%E3%83%BC%E3%82%B9%20300mL%20%EF%BC%86%20%E3%82%AF%E3%82%B3%E3%81%AE%E5%AE%9F%20100g%20%E3%82%BB%E3%83%83%E3%83%88%20%E3%82%B4%E3%82%B8%E3%83%99%E3%83%AA%E3%83%BC%20%E3%82%AA%E3%83%BC%E3%82%AC%E3%83%8B%E3%83%83%E3%82%AF%20%E3%82%B4%E3%82%B8%E3%83%99%E3%83%AA%E3%83%BC%E3%82%B8%E3%83%A5%E3%83%BC%E3%82%B9%20%E7%84%A1%E6%B7%BB%E5%8A%A0%20%E6%9E%B8%E6%9D%9E%20%E6%9E%B8%E6%9D%9E%E5%AD%90%20%E6%9E%B8%E6%9D%9E%E3%81%AE%E5%AE%9F%20%E3%82%BC%E3%82%A2%E3%82%AD%E3%82%B5%E3%83%B3%E3%83%81%E3%83%B3%20%E7%9E%B3%20%E7%9B%AE%E3%81%AE%E7%96%B2%E3%82%8C%20%E3%82%B1%E3%82%A2%20%E6%8A%97%E9%85%B8%E5%8C%96%20%E3%81%8F%E3%81%93%E3%81%AE%E3%81%BF%20%E3%82%AF%E3%82%B3%E3%82%B8%E3%83%A5%E3%83%BC%E3%82%B9%20Natruly%20%E3%83%8A%E3%83%88%E3%82%A5%E3%83%AA%E3%83%BC","a_id":5267465,"p_id":1225,"pl_id":27061,"pc_id":1925,"s_n":"yahoo","u_so":3}],"eid":"zyvhX","s":"s"});
-</script>
-<div id="msmaflink-zyvhX">リンク</div>
-<!-- MoshimoAffiliateEasyLink END -->
+        <script type="text/javascript">
+        (function(b,c,f,g,a,d,e){b.MoshimoAffiliateObject=a;
+        b[a]=b[a]||function(){arguments.currentScript=c.currentScript
+        ||c.scripts[c.scripts.length-2];(b[a].q=b[a].q||[]).push(arguments)};
+        c.getElementById(a)||(d=c.createElement(f),d.src=g,
+        d.id=a,e=c.getElementsByTagName("body")[0],e.appendChild(d))})
+        (window,document,"script","//dn.msmstatic.com/site/cardlink/bundle.js?20220329","msmaflink");
+        msmaflink({"n":"有機JAS認証 クコの実ジュース 300mL ＆ クコの実 100g セット ゴジベリー オーガニック ゴジベリージュース 無添加 枸杞 枸杞子 枸杞の実 ゼアキサンチン 瞳 目の疲れ ケア 抗酸化 くこのみ クコジュース Natruly ナトゥリー","b":"","t":"","d":"https:\/\/thumbnail.image.rakuten.co.jp","c_p":"\/","p":["@0_mall\/hands-web\/cabinet\/07424107\/goji300_kuko100_setc.jpg","@0_gold\/hands-web\/gojiberry\/gojiberry_01.jpg","@0_gold\/hands-web\/gojiberry\/gojiberry_05s.jpg"],"u":{"u":"https:\/\/item.rakuten.co.jp\/hands-web\/goji300-kuko100\/","t":"rakuten","r_v":""},"v":"2.1","b_l":[{"id":1,"u_tx":"楽天市場で見る","u_bc":"#87c209","u_url":"https:\/\/item.rakuten.co.jp\/hands-web\/goji300-kuko100\/","a_id":5267359,"p_id":54,"pl_id":27059,"pc_id":54,"s_n":"rakuten","u_so":1},{"id":5,"u_tx":"Amazonで見る","u_bc":"#184f5c","u_url":"https:\/\/amzn.to\/3XxnrEe","a_id":0,"p_id":0,"pl_id":0,"pc_id":0,"s_n":"custom_10","u_so":2},{"id":4,"u_tx":"Yahoo!ショッピングで見る","u_bc":"#bf0000","u_url":"https:\/\/shopping.yahoo.co.jp\/search?first=1\u0026p=%E6%9C%89%E6%A9%9FJAS%E8%AA%8D%E8%A8%BC%20%E3%82%AF%E3%82%B3%E3%81%AE%E5%AE%9F%E3%82%B8%E3%83%A5%E3%83%BC%E3%82%B9%20300mL%20%EF%BC%86%20%E3%82%AF%E3%82%B3%E3%81%AE%E5%AE%9F%20100g%20%E3%82%BB%E3%83%83%E3%83%88%20%E3%82%B4%E3%82%B8%E3%83%99%E3%83%AA%E3%83%BC%20%E3%82%AA%E3%83%BC%E3%82%AC%E3%83%8B%E3%83%83%E3%82%AF%20%E3%82%B4%E3%82%B8%E3%83%99%E3%83%AA%E3%83%BC%E3%82%B8%E3%83%A5%E3%83%BC%E3%82%B9%20%E7%84%A1%E6%B7%BB%E5%8A%A0%20%E6%9E%B8%E6%9D%9E%20%E6%9E%B8%E6%9D%9E%E5%AD%90%20%E6%9E%B8%E6%9D%9E%E3%81%AE%E5%AE%9F%20%E3%82%BC%E3%82%A2%E3%82%AD%E3%82%B5%E3%83%B3%E3%83%81%E3%83%B3%20%E7%9E%B3%20%E7%9B%AE%E3%81%AE%E7%96%B2%E3%82%8C%20%E3%82%B1%E3%82%A2%20%E6%8A%97%E9%85%B8%E5%8C%96%20%E3%81%8F%E3%81%93%E3%81%AE%E3%81%BF%20%E3%82%AF%E3%82%B3%E3%82%B8%E3%83%A5%E3%83%BC%E3%82%B9%20Natruly%20%E3%83%8A%E3%83%88%E3%82%A5%E3%83%AA%E3%83%BC","a_id":5267465,"p_id":1225,"pl_id":27061,"pc_id":1925,"s_n":"yahoo","u_so":3}],"eid":"zyvhX","s":"s"});
+        </script>
+        <div id="msmaflink-zyvhX">リンク</div>
         
     </section>
 
@@ -227,32 +236,34 @@ msmaflink({"n":"有機JAS認証 クコの実ジュース 300mL ＆ クコの実 
             オーガニックコスメの大きなメリットは、肌に負担をかける可能性のある成分を避けている点です。ここでは、特に注意したい成分とその自然派代替品を比較します。
         </p>
         
-        <table style="width:100%; border-collapse:collapse; margin-top:20px; font-size:15px;">
-            <thead>
-                <tr style="background:#f7a8a8; color:#fff;">
-                    <th style="padding:10px; border:1px solid #fceeee;">注意すべき<br>化学成分</th>
-                    <th style="padding:10px; border:1px solid #fceeee;">役割/肌への影響</th>
-                    <th style="padding:10px; border:1px solid #fceeee;">オーガニック代替成分</th>
-                </tr>
-            </thead>
-            <tbody>
-                <tr style="background:#fff;">
-                    <td style="padding:10px; border:1px solid #eee;"><strong>石油系界面活性剤</strong></td>
-                    <td style="padding:10px; border:1px solid #eee;">洗浄力が高すぎる場合、肌のバリア機能を壊し、<br>乾燥や敏感肌の原因に。</td>
-                    <td style="padding:10px; border:1px solid #eee;"><strong>アミノ酸系、植物由来の石けん素地</strong><br>（ココイルグルタミン酸など）</td>
-                </tr>
-                <tr style="background:#f9f9f9;">
-                    <td style="padding:10px; border:1px solid #eee;"><strong>合成防腐剤<br>（パラベンなど）</strong></td>
-                    <td style="padding:10px; border:1px solid #eee;">強力な殺菌作用で製品の品質を保つが、<br>人によってはアレルギーや刺激の原因に。</td>
-                    <td style="padding:10px; border:1px solid #eee;"><strong>天然由来のアルコール、ハーブエキス</strong><br>（ローズマリー、ラベンダーなど）</td>
-                </tr>
-                <tr style="background:#fff;">
-                    <td style="padding:10px; border:1px solid #eee;"><strong>合成香料・<br>合成着色料</strong></td>
-                    <td style="padding:10px; border:1px solid #eee;">製品に匂いや色を付けるが、アレルギー誘発や<br>色素沈着のリスクが指摘されることも。</td>
-                    <td style="padding:10px; border:1px solid #eee;"><strong>天然精油（エッセンシャルオイル）、<br>植物エキス</strong></td>
-                </tr>
-            </tbody>
-        </table>
+        <div class="table-wrapper">
+            <table style="width:100%; border-collapse:collapse; margin-top:20px; font-size:15px; min-width: 600px;">
+                <thead>
+                    <tr style="background:#f7a8a8; color:#fff;">
+                        <th style="padding:10px; border:1px solid #fceeee;">注意すべき<br>化学成分</th>
+                        <th style="padding:10px; border:1px solid #fceeee;">役割/肌への影響</th>
+                        <th style="padding:10px; border:1px solid #fceeee;">オーガニック代替成分</th>
+                    </tr>
+                </thead>
+                <tbody>
+                    <tr style="background:#fff;">
+                        <td style="padding:10px; border:1px solid #eee;"><strong>石油系界面活性剤</strong></td>
+                        <td style="padding:10px; border:1px solid #eee;">洗浄力が高すぎる場合、肌のバリア機能を壊し、<br>乾燥や敏感肌の原因に。</td>
+                        <td style="padding:10px; border:1px solid #eee;"><strong>アミノ酸系、植物由来の石けん素地</strong><br>（ココイルグルタミン酸など）</td>
+                    </tr>
+                    <tr style="background:#f9f9f9;">
+                        <td style="padding:10px; border:1px solid #eee;"><strong>合成防腐剤<br>（パラベンなど）</strong></td>
+                        <td style="padding:10px; border:1px solid #eee;">強力な殺菌作用で製品の品質を保つが、<br>人によってはアレルギーや刺激の原因に。</td>
+                        <td style="padding:10px; border:1px solid #eee;"><strong>天然由来のアルコール、ハーブエキス</strong><br>（ローズマリー、ラベンダーなど）</td>
+                    </tr>
+                    <tr style="background:#fff;">
+                        <td style="padding:10px; border:1px solid #eee;"><strong>合成香料・<br>合成着色料</strong></td>
+                        <td style="padding:10px; border:1px solid #eee;">製品に匂いや色を付けるが、アレルギー誘発や<br>色素沈着のリスクが指摘されることも。</td>
+                        <td style="padding:10px; border:1px solid #eee;"><strong>天然精油（エッセンシャルオイル）、<br>植物エキス</strong></td>
+                    </tr>
+                </tbody>
+            </table>
+        </div>
 
         <div style="text-align:center; margin: 40px 0;">
             <p style="margin-bottom:20px; font-weight:600;">
@@ -266,19 +277,16 @@ msmaflink({"n":"有機JAS認証 クコの実ジュース 300mL ＆ クコの実 
 
     </section>
 
-    <!-- START MoshimoAffiliateEasyLink -->
-<script type="text/javascript">
-(function(b,c,f,g,a,d,e){b.MoshimoAffiliateObject=a;
-b[a]=b[a]||function(){arguments.currentScript=c.currentScript
-||c.scripts[c.scripts.length-2];(b[a].q=b[a].q||[]).push(arguments)};
-c.getElementById(a)||(d=c.createElement(f),d.src=g,
-d.id=a,e=c.getElementsByTagName("body")[0],e.appendChild(d))})
-(window,document,"script","//dn.msmstatic.com/site/cardlink/bundle.js?20220329","msmaflink");
-msmaflink({"n":"フレッシュ ハンド＆キューティクルクリーム 60g FRESH スキンケアシリーズ 無添加 シアバター 爪 かかと ひじ ひざ 角質 ネイルケア オーガニック ターンオーバー ホホバ油 レモンオイル ハンドクリーム ひび割れ 植物由来 保湿 シアバター 潤い 手荒れ 乾燥 修復","b":"","t":"","d":"https:\/\/thumbnail.image.rakuten.co.jp","c_p":"\/@0_mall\/nc-bar\/cabinet\/fresh","p":["\/300-300-hand-hp.jpg","\/550-550-hand2.jpg","\/550-550-hand01.jpg"],"u":{"u":"https:\/\/item.rakuten.co.jp\/nc-bar\/fresh-hc-cream\/","t":"rakuten","r_v":""},"v":"2.1","b_l":[{"id":1,"u_tx":"楽天市場で見る","u_bc":"#87c209","u_url":"https:\/\/item.rakuten.co.jp\/nc-bar\/fresh-hc-cream\/","a_id":5267359,"p_id":54,"pl_id":27059,"pc_id":54,"s_n":"rakuten","u_so":1},{"id":5,"u_tx":"Amazonで見る","u_bc":"#184f5c","u_url":"https:\/\/www.amazon.co.jp\/Fresh-00hk-FRESH-%E3%83%8F%E3%83%B3%E3%83%89%EF%BC%86%E3%82%AD%E3%83%A5%E3%83%BC%E3%83%86%E3%82%A3%E3%82%AF%E3%83%AB%E3%82%AF%E3%83%AA%E3%83%BC%E3%83%A0-%EF%BC%88%E6%97%A7%E3%82%B3%E3%83%BC%E3%83%A9%E3%83%AB%E3%83%A0%E3%83%BC%E3%83%B3%EF%BC%89-60%EF%BD%87\/dp\/B00CHEXVP8?__mk_ja_JP=%E3%82%AB%E3%82%BF%E3%82%AB%E3%83%8A\u0026amp;crid=ZU8L9ZV6EF0G\u0026amp;dib=eyJ2IjoiMSJ9.fWW8PuYGa74_frfV50FnNQj0H_Zo6NLsXXp-qOoHqx8ivx40QDSr4nA3Fnqb60jQ.mO9SHOpC72gMGcCc-Wt4Dyp3LQGahlEoX8lzr_tNObw\u0026amp;dib_tag=se\u0026amp;keywords=%E3%83%95%E3%83%AC%E3%83%83%E3%82%B7%E3%83%A5+%E3%83%8F%E3%83%B3%E3%83%89%EF%BC%86%E3%82%AD%E3%83%A5%E3%83%BC%E3%83%86%E3%82%A3%E3%82%AF%E3%83%AB%E3%82%AF%E3%83%AA%E3%83%BC%E3%83%A0+60g+FRESH+%E3%82%B9%E3%82%AD%E3%83%B3%E3%82%B1%E3%82%A2%E3%82%B7%E3%83%AA%E3%83%BC%E3%82%BA+%E7%84%A1%E6%B7%BB%E5%8A%A0+%E3%82%B7%E3%82%A2%E3%83%90%E3%82%BF%E3%83%BC+%E7%88%AA+%E3%81%8B%E3%81%8B%E3%81%A8+%E3%81%B2%E3%81%98+%E3%81%B2%E3%81%96+%E8%A7%92%E8%B3%AA+%E3%83%8D%E3%82%A4%E3%83%AB%E3%82%B1%E3%82%A2+%E3%82%AA%E3%83%BC%E3%82%AC%E3%83%8B%E3%83%83%E3%82%AF+%E3%82%BF%E3%83%BC%E3%83%B3%E3%82%AA%E3%83%BC%E3%83%90%E3%83%BC+%E3%83%9B%E3%83%9B%E3%83%90%E6%B2%B9+%E3%83%AC%E3%83%A2%E3%83%B3%E3%82%AA%E3%82%A4%E3%83%AB+%E3%83%8F%E3%83%B3%E3%83%89%E3%82%AF%E3%83%AA%E3%83%BC%E3%83%A0+%E3%81%B2%E3%81%B3%E5%89%B2%E3%82%8C+%E6%A4%8D%E7%89%A9%E7%94%B1%E6%9D%A5+%E4%BF%9D%E6%B9%BF+%E3%82%B7%E3%82%A2%E3%83%90%E3%82%BF%E3%83%BC+%E6%BD%A4%E3%81%84+%E6%89%8B%E8%8D%92%E3%82%8C+%E4%B9%BE%E7%87%A5+%E4%BF%AE%E5%BE%A9\u0026amp;qid=1764769779\u0026amp;sprefix=%E3%83%95%E3%83%AC%E3%83%83%E3%82%B7%E3%83%A5+%E3%83%8F%E3%83%B3%E3%83%89+%E3%82%AD%E3%83%A5%E3%83%BC%E3%83%86%E3%82%A3%E3%82%AF%E3%83%AB%E3%82%AF%E3%83%AA%E3%83%BC%E3%83%A0+60g+fresh+%E3%82%B9%E3%82%AD%E3%83%B3%E3%82%B1%E3%82%A2%E3%82%B7%E3%83%AA%E3%83%BC%E3%82%BA+%E7%84%A1%E6%B7%BB%E5%8A%A0+%E3%82%B7%E3%82%A2%E3%83%90%E3%82%BF%E3%83%BC+%E7%88%AA+%E3%81%8B%E3%81%8B%E3%81%A8+%E3%81%B2%E3%81%98+%E3%81%B2%E3%81%96+%E8%A7%92%E8%B3%AA+%E3%83%8D%E3%82%A4%E3%83%AB%E3%82%B1%E3%82%A2+%E3%82%AA%E3%83%BC%E3%82%AC%E3%83%8B%E3%83%83%E3%82%AF+%E3%82%BF%E3%83%BC%E3%83%B3%E3%82%AA%E3%83%BC%E3%83%90%E3%83%BC+%E3%83%9B%E3%83%9B%E3%83%90%E6%B2%B9+%E3%83%AC%E3%83%A2%E3%83%B3%E3%82%AA%E3%82%A4%E3%83%AB+%E3%83%8F%E3%83%B3%E3%83%89%E3%82%AF%E3%83%AA%E3%83%BC%E3%83%A0+%E3%81%B2%E3%81%B3%E5%89%B2%E3%82%8C+%E6%A4%8D%E7%89%A9%E7%94%B1%E6%9D%A5+%E4%BF%9D%E6%B9%BF+%E3%82%B7%E3%82%A2%E3%83%90%E3%82%BF%E3%83%BC+%E6%BD%A4%E3%81%84+%E6%89%8B%E8%8D%92%E3%82%8C+%E4%B9%BE%E7%87%A5+%E4%BF%AE%E5%BE%A9%2Caps%2C211\u0026amp;sr=8-1\u0026amp;linkCode=sl1\u0026amp;tag=essentialbeau-22\u0026amp;linkId=de50fc347b1e668dbfd6cfe68790c989\u0026amp;language=ja_JP\u0026amp;ref_=as_li_ss_tl","a_id":0,"p_id":0,"pl_id":0,"pc_id":0,"s_n":"custom_10","u_so":2},{"id":4,"u_tx":"Yahoo!ショッピングで見る","u_bc":"#bf0000","u_url":"https:\/\/shopping.yahoo.co.jp\/search?first=1\u0026p=%E3%83%95%E3%83%AC%E3%83%83%E3%82%B7%E3%83%A5%20%E3%83%8F%E3%83%B3%E3%83%89%EF%BC%86%E3%82%AD%E3%83%A5%E3%83%BC%E3%83%86%E3%82%A3%E3%82%AF%E3%83%AB%E3%82%AF%E3%83%AA%E3%83%BC%E3%83%A0%2060g%20FRESH%20%E3%82%B9%E3%82%AD%E3%83%B3%E3%82%B1%E3%82%A2%E3%82%B7%E3%83%AA%E3%83%BC%E3%82%BA%20%E7%84%A1%E6%B7%BB%E5%8A%A0%20%E3%82%B7%E3%82%A2%E3%83%90%E3%82%BF%E3%83%BC%20%E7%88%AA%20%E3%81%8B%E3%81%8B%E3%81%A8%20%E3%81%B2%E3%81%98%20%E3%81%B2%E3%81%96%20%E8%A7%92%E8%B3%AA%20%E3%83%8D%E3%82%A4%E3%83%AB%E3%82%B1%E3%82%A2%20%E3%82%AA%E3%83%BC%E3%82%AC%E3%83%8B%E3%83%83%E3%82%AF%20%E3%82%BF%E3%83%BC%E3%83%B3%E3%82%AA%E3%83%BC%E3%83%90%E3%83%BC%20%E3%83%9B%E3%83%9B%E3%83%90%E6%B2%B9%20%E3%83%AC%E3%83%A2%E3%83%B3%E3%82%AA%E3%82%A4%E3%83%AB%20%E3%83%8F%E3%83%B3%E3%83%89%E3%82%AF%E3%83%AA%E3%83%BC%E3%83%A0%20%E3%81%B2%E3%81%B3%E5%89%B2%E3%82%8C%20%E6%A4%8D%E7%89%A9%E7%94%B1%E6%9D%A5%20%E4%BF%9D%E6%B9%BF%20%E3%82%B7%E3%82%A2%E3%83%90%E3%82%BF%E3%83%BC%20%E6%BD%A4%E3%81%84%20%E6%89%8B%E8%8D%92%E3%82%8C%20%E4%B9%BE%E7%87%A5%20%E4%BF%AE%E5%BE%A9","a_id":5267465,"p_id":1225,"pl_id":27061,"pc_id":1925,"s_n":"yahoo","u_so":3}],"eid":"nCxKb","s":"s"});
-</script>
-<div id="msmaflink-nCxKb">リンク</div>
-<!-- MoshimoAffiliateEasyLink END -->
-    
+    <script type="text/javascript">
+    (function(b,c,f,g,a,d,e){b.MoshimoAffiliateObject=a;
+    b[a]=b[a]||function(){arguments.currentScript=c.currentScript
+    ||c.scripts[c.scripts.length-2];(b[a].q=b[a].q||[]).push(arguments)};
+    c.getElementById(a)||(d=c.createElement(f),d.src=g,
+    d.id=a,e=c.getElementsByTagName("body")[0],e.appendChild(d))})
+    (window,document,"script","//dn.msmstatic.com/site/cardlink/bundle.js?20220329","msmaflink");
+    msmaflink({"n":"フレッシュ ハンド＆キューティクルクリーム 60g FRESH スキンケアシリーズ 無添加 シアバター 爪 かかと ひじ ひざ 角質 ネイルケア オーガニック ターンオーバー ホホバ油 レモンオイル ハンドクリーム ひび割れ 植物由来 保湿 シアバター 潤い 手荒れ 乾燥 修復","b":"","t":"","d":"https:\/\/thumbnail.image.rakuten.co.jp","c_p":"\/@0_mall\/nc-bar\/cabinet\/fresh","p":["\/300-300-hand-hp.jpg","\/550-550-hand2.jpg","\/550-550-hand01.jpg"],"u":{"u":"https:\/\/item.rakuten.co.jp\/nc-bar\/fresh-hc-cream\/","t":"rakuten","r_v":""},"v":"2.1","b_l":[{"id":1,"u_tx":"楽天市場で見る","u_bc":"#87c209","u_url":"https:\/\/item.rakuten.co.jp\/nc-bar\/fresh-hc-cream\/","a_id":5267359,"p_id":54,"pl_id":27059,"pc_id":54,"s_n":"rakuten","u_so":1},{"id":5,"u_tx":"Amazonで見る","u_bc":"#184f5c","u_url":"https:\/\/amzn.to\/4im3J8N","a_id":0,"p_id":0,"pl_id":0,"pc_id":0,"s_n":"custom_10","u_so":2},{"id":4,"u_tx":"Yahoo!ショッピングで見る","u_bc":"#bf0000","u_url":"https:\/\/shopping.yahoo.co.jp\/search?first=1\u0026p=%E3%83%95%E3%83%AC%E3%83%83%E3%82%B7%E3%83%A5%20%E3%83%8F%E3%83%B3%E3%83%89%EF%BC%86%E3%82%AD%E3%83%A5%E3%83%BC%E3%83%86%E3%82%A3%E3%82%AF%E3%83%AB%E3%82%AF%E3%83%AA%E3%83%BC%E3%83%A0%2060g%20FRESH%20%E3%82%B9%E3%82%AD%E3%83%B3%E3%82%B1%E3%82%A2%E3%82%B7%E3%83%AA%E3%83%BC%E3%82%BA%20%E7%84%A1%E6%B7%BB%E5%8A%A0%20%E3%82%B7%E3%82%A2%E3%83%90%E3%82%BF%E3%83%BC%20%E7%88%AA%20%E3%81%8B%E3%81%8B%E3%81%A8%20%E3%81%B2%E3%81%98%20%E3%81%B2%E3%81%96%20%E8%A7%92%E8%B3%AA%20%E3%83%8D%E3%82%A4%E3%83%AB%E3%82%B1%E3%82%A2%20%E3%82%AA%E3%83%BC%E3%82%AC%E3%83%8B%E3%83%83%E3%82%AF%20%E3%82%BF%E3%83%BC%E3%83%B3%E3%82%AA%E3%83%BC%E3%83%90%E3%83%BC%20%E3%83%9B%E3%83%9B%E3%83%9B%E6%B2%B9%20%E3%83%AC%E3%83%A2%E3%83%B3%E3%82%AA%E3%82%A4%E3%83%AB%20%E3%83%8F%E3%83%B3%E3%83%89%E3%82%AF%E3%83%AA%E3%83%BC%E3%83%A0%20%E3%81%B2%E3%81%B3%E5%89%B2%E3%82%8C%20%E6%A4%8D%E7%89%A9%E7%94%B1%E6%9D%A5%20%E4%BF%9D%E6%B9%BF%20%E3%82%B7%E3%82%A2%E3%83%90%E3%82%BF%E3%83%BC%20%E6%BD%A4%E3%81%84%20%E6%89%8B%E8%8D%92%E3%82%8C%20%E4%B9%BE%E7%87%A5%20%E4%BF%AE%E5%BE%A9","a_id":5267465,"p_id":1225,"pl_id":27061,"pc_id":1925,"s_n":"yahoo","u_so":3}],"eid":"nCxKb","s":"s"});
+    </script>
+    <div id="msmaflink-nCxKb">リンク</div>
     <div class="nav-links" style="text-align:center; margin: 40px 0;">
         <a href="#" style="color:var(--muted); text-decoration:none;">⬆ ページトップへ</a>
         <div class="nav-break"></div>
