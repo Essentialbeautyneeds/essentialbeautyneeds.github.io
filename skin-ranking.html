@@ -9,187 +9,74 @@
   <link href="https://fonts.googleapis.com/css2?family=Quicksand:wght@400;600&family=Playfair+Display:wght@600&display=swap" rel="stylesheet">
   <link rel="canonical" href="https://essential-beauty-needs.com/skin-ranking.html" />
 
-<script>
-  function isInternalUser() {
-    return document.cookie.split(';').some(c => c.trim().startsWith('internal_user=true'));
-  }
-  if (!isInternalUser()) {
-    var gaScript = document.createElement('script');
-    gaScript.async = true;
-    gaScript.src = "https://www.googletagmanager.com/gtag/js?id=G-2HGEPHVZYY";
-    document.head.appendChild(gaScript);
-    window.dataLayer = window.dataLayer || [];
-    function gtag(){dataLayer.push(arguments);}
-    gtag('js', new Date());
-    gtag('config', 'G-2HGEPHVZYY');
-  }
-</script>
+  <script>
+    function isInternalUser() {
+      return document.cookie.split(';').some(c => c.trim().startsWith('internal_user=true'));
+    }
+    if (!isInternalUser()) {
+      var gaScript = document.createElement('script');
+      gaScript.async = true;
+      gaScript.src = "https://www.googletagmanager.com/gtag/js?id=G-2HGEPHVZYY";
+      document.head.appendChild(gaScript);
+      window.dataLayer = window.dataLayer || [];
+      function gtag(){dataLayer.push(arguments);}
+      gtag('js', new Date());
+      gtag('config', 'G-2HGEPHVZYY');
+    } else {
+        console.log('✅ Internal traffic excluded.');
+    }
 
-<style>
-  :root {
-    --bg: #f7e7e4;
-    --text-main: #503535;
-    --accent: #f48b8b;
-    --header-grad-start: #f8dcdc;
-    --header-grad-end: #fbeaea;
-  }
-  
-  *, *::before, *::after { box-sizing: border-box; }
+    function handleImageError(imgElement, width, height, text) { 
+         imgElement.onerror = null; 
+         imgElement.src = `https://placehold.co/${width}x${height}/f7a8a8/ffffff?text=${encodeURIComponent(text)}`;
+    }
+  </script>
 
-  body {
-    font-family: 'Quicksand', sans-serif;
-    margin: 0;
-    background: var(--bg);
-    color: #f7e7e4;
-  }
+  <style>
+    :root {
+      --bg: #f7e7e4;
+      --text-main: #503535;
+      --accent: #f48b8b;
+      --header-grad-start: #f8dcdc;
+      --header-grad-end: #fbeaea;
+    }
+    *, *::before, *::after { box-sizing: border-box; }
 
-  header {
-    background: linear-gradient(90deg, var(--header-grad-start), var(--header-grad-end));
-    text-align: center;
-    padding: 60px 20px;
-    color: var(--text-main);
-    border-bottom: 3px solid #e6b7b3;
-  }
-  header h1 {
-    font-family: 'Playfair Display', serif;
-    font-size: 38px;
-    margin: 0;
-    color: #d6336c;
-    text-shadow: 1px 1px 2px rgba(255,255,255,0.8);
-  }
-  header p {
-    font-size: 17px;
-    margin-top: 10px;
-    color: var(--text-main);
-    font-weight: 600;
-  }
+    body {
+      font-family: 'Quicksand', sans-serif;
+      margin: 0;
+      background: var(--bg);
+      color: #555; /* テキスト色を少し濃く修正 */
+    }
 
-  /* ナビゲーションボタン */
-  .nav-btn {
-    display: inline-block;
-    margin: 6px 10px;
-    padding: 10px 22px;
-    background: linear-gradient(45deg, #4a6fa5, #6aa8d4);
-    color: #fff;
-    border-radius: 30px;
-    text-decoration: none;
-    font-weight: 600;
-    transition: all .3s ease;
-    box-shadow: 0 4px 10px rgba(0,0,0,0.1);
-  }
-  .nav-btn:hover {
-    transform: translateY(-2px);
-    box-shadow: 0 6px 15px rgba(0,0,0,0.15);
-    opacity: 0.9;
-  }
+    header {
+      background: linear-gradient(90deg, var(--header-grad-start), var(--header-grad-end));
+      text-align: center;
+      padding: 60px 20px 40px;
+      color: var(--text-main);
+      border-bottom: 3px solid #e6b7b3;
+    }
+    header h1 {
+      font-family: 'Playfair Display', serif;
+      font-size: 38px;
+      margin: 0;
+      color: #d6336c;
+      text-shadow: 1px 1px 2px rgba(255,255,255,0.8);
+    }
+    header p {
+      font-size: 17px;
+      margin-top: 10px;
+      color: var(--text-main);
+      font-weight: 600;
+    }
 
-  main {
-    max-width: 900px; /* もしもリンクが見やすい幅 */
-    margin: 40px auto;
-    padding: 0 20px;
-  }
+    /* ナビゲーション（共通スタイル） */
+    .nav-links{display:flex;gap:12px;justify-content:center;margin-top:25px;flex-wrap:wrap;}
+    .nav-links a{background:rgba(255,255,255,0.6);padding:8px 12px;border-radius:20px;text-decoration:none;color:#503535;font-weight:600; font-size:14px; box-shadow: 0 2px 5px rgba(0,0,0,0.05);}
+    .nav-links a:hover{background:var(--accent);color:#fff;}
+    .nav-break { flex-basis: 100%; height: 0; margin: 5px 0; }
 
-  h2 {
-    font-family: 'Playfair Display', serif;
-    color: var(--text-main);
-    font-size: 28px;
-    text-align: center;
-    margin-top: 20px;
-    margin-bottom: 30px;
-    position: relative;
-    background: #fff;
-    padding: 15px;
-    border-radius: 10px;
-    box-shadow: 0 4px 10px rgba(0,0,0,0.05);
-  }
-
-  /* ランキング導入文 ★NEW★ */
-  .rank-intro {
-    background: #fff;
-    padding: 20px;
-    border-radius: 12px;
-    line-height: 1.8;
-    color: #555;
-    margin-bottom: 40px;
-    text-align: left; /* 長文のため左寄せにする */
-    font-size: 15px;
-    box-shadow: 0 2px 8px rgba(0,0,0,0.05);
-  }
-
-  /* ランキングリスト用のスタイル */
-  .ranking-list {
-    display: flex;
-    flex-direction: column;
-    gap: 40px; /* 商品ごとの間隔 */
-  }
-
-  .rank-item {
-    position: relative;
-    background: #fff;
-    /* もしもアフィリエイトのカードは見栄えが良いのでborder等は控えめに */
-    padding-top: 20px; 
-  }
-
-  /* 順位バッジ */
-  .badge {
-    position: absolute;
-    top: -15px;
-    left: 0;
-    background: #ff6b6b;
-    color: #fff;
-    padding: 8px 20px;
-    border-radius: 20px;
-    font-weight: bold;
-    font-size: 18px;
-    box-shadow: 0 4px 10px rgba(0,0,0,0.2);
-    z-index: 10;
-  }
-  .badge.rank1 { 
-    background: linear-gradient(45deg, #FFD700, #FDB931); 
-    font-size: 20px;
-    padding: 10px 25px;
-  }
-  .badge.rank2 { background: linear-gradient(45deg, #C0C0C0, #E0E0E0); color: #555; }
-  .badge.rank3 { background: linear-gradient(45deg, #CD7F32, #E8A668); }
-
-  /* レスポンシブ */
-  @media(max-width: 700px){
-    header h1 { font-size: 28px; }
-    .badge { left: 50%; transform: translateX(-50%); top: -20px;} /* スマホではバッジを中央に */
-    .rank-item { margin-top: 20px; }
-  }
-
-  footer {
-    text-align: center;
-    color: #777;
-    font-size: 13px;
-    margin: 60px 0;
-    border-top: 1px solid #eee;
-    padding-top: 40px;
-  }
-  .note {
-    margin-top: 30px;
-    font-size: 11px;
-    color: #888;
-    text-align: center;
-    background: #f9f9f9;
-    padding: 10px;
-    border-radius: 8px;
-  }
-  .back-btn { text-align: center; margin: 50px 0; }
-  .back-btn a {
-    color: #777;
-    text-decoration: none;
-    border-bottom: 1px solid #ccc;
-    padding-bottom: 2px;
-  }
-    .nav-break {
-    /* flexコンテナ内で、次の行に要素を移動させる */
-    flex-basis: 100%;
-    height: 0; /* 高さは不要 */
-    margin: 5px 0; /* 上下に少しスペースを開ける */
-}
-   /* Special Link Button */
+    /* Special Link Button */
     .special-link a {
       display:inline-block; 
       background: linear-gradient(45deg, #f7a8a8, #807eed); 
@@ -207,37 +94,136 @@
       box-shadow: 0 6px 15px rgba(0,0,0,0.2);
     }
 
-  .nav-links{display:flex;gap:12px;justify-content:center;margin-top:12px;flex-wrap:wrap;}
-.nav-links a{background:rgba(255,255,255,0.8);padding:8px 12px;border-radius:8px;text-decoration:none;color:#503535;font-weight:600;}
-.nav-links a:hover{background:var(--accent);color:#fff;}
-  
-</style>
+    main {
+      max-width: 900px;
+      margin: 40px auto;
+      padding: 0 20px;
+    }
+
+    /* 見出しスタイル */
+    h2 {
+      font-family: 'Playfair Display', serif;
+      color: var(--text-main);
+      font-size: 28px;
+      text-align: center;
+      margin-top: 60px;
+      margin-bottom: 30px;
+      position: relative;
+      background: #fff;
+      padding: 15px;
+      border-radius: 10px;
+      box-shadow: 0 4px 10px rgba(0,0,0,0.05);
+    }
+
+    /* ランキング導入文 */
+    .rank-intro {
+      background: #fff;
+      padding: 25px;
+      border-radius: 12px;
+      line-height: 1.8;
+      color: #555;
+      margin-bottom: 40px;
+      text-align: left;
+      font-size: 15px;
+      box-shadow: 0 2px 8px rgba(0,0,0,0.05);
+    }
+
+    /* ランキングリスト */
+    .ranking-list {
+      display: flex;
+      flex-direction: column;
+      gap: 40px;
+    }
+    .rank-item {
+      position: relative;
+      background: #fff;
+      padding-top: 20px; 
+      border-radius: 10px; /* 角丸追加 */
+    }
+
+    /* 順位バッジ */
+    .badge {
+      position: absolute;
+      top: -15px;
+      left: 0;
+      background: #ff6b6b;
+      color: #fff;
+      padding: 8px 20px;
+      border-radius: 20px;
+      font-weight: bold;
+      font-size: 18px;
+      box-shadow: 0 4px 10px rgba(0,0,0,0.2);
+      z-index: 10;
+    }
+    .badge.rank1 { 
+      background: linear-gradient(45deg, #FFD700, #FDB931); 
+      font-size: 20px;
+      padding: 10px 25px;
+    }
+    .badge.rank2 { background: linear-gradient(45deg, #C0C0C0, #E0E0E0); color: #555; }
+    .badge.rank3 { background: linear-gradient(45deg, #CD7F32, #E8A668); }
+
+    /* スタッフ一押しエリア */
+    .staff-push-box {
+        margin: 60px 0; 
+        background: #fff4f4; 
+        padding: 30px; 
+        border-radius: 16px; 
+        text-align: center;
+        border: 2px dashed #f48b8b;
+    }
+
+    /* レスポンシブ */
+    @media(max-width: 700px){
+      header h1 { font-size: 28px; }
+      .badge { left: 50%; transform: translateX(-50%); top: -20px;}
+      .rank-item { margin-top: 25px; }
+    }
+
+    footer {
+      text-align: center;
+      color: #777;
+      font-size: 13px;
+      margin: 60px 0;
+      border-top: 1px solid #eee;
+      padding-top: 40px;
+    }
+    #affiliateNotice {
+      position: fixed; right: 12px; bottom: 12px;
+      background: rgba(255, 255, 255, 0.8);
+      color: #555; font-size: 11px;
+      border-radius: 6px; padding: 4px 8px;
+      box-shadow: 0 2px 6px rgba(0,0,0,0.1);
+      z-index: 999;
+    }
+  </style>
 </head>
 <body>
 
 <header>
   <h1>💖 スキンケアランキング</h1>
   <p>敏感肌・コスパ・アンチエイジング別に<br>おすすめアイテムを厳選しました！</p>
-</header>
 
-   <div class="nav-links" role="navigation" aria-label="site links">
-           <a href="seasons-skin.html">🌸 季節別スキンケア</a>
-      <a href="age-skincare.html">🍁 年齢・肌質別</a>
-      <a href="diet-beauty.html">🍃 ダイエット効果：インナービューティー</a>
-  <div class="nav-break"></div>
-      <a href="acne-care.html">👩 肌荒れケア</a>
-      <a href="organic-science.html" class="nav-link">🔬 オーガニック成分の科学</a>
-    　<a href="beauty-column.html">💄 ビューティーコラム</a>
+  <div class="nav-links" role="navigation" aria-label="site links">
       <a href="index.html">🏠 トップ</a>
-    </div>
+      <a href="seasons-skin.html">🌸 季節別スキンケア</a>
+      <a href="age-skincare.html">🍁 年齢・肌質別</a>
+      <a href="diet-beauty.html">🍃 インナービューティー</a>
+      <div class="nav-break"></div>
+      <a href="acne-care.html">👩 肌荒れケア</a>
+      <a href="amazon-oil-review.html">🔥 オイルレビュー</a>
+      <a href="organic-science.html">🔬 成分の科学</a>
+      <a href="beauty-column.html">💄 コラム</a>
+  </div>
   
- <div class="special-link" style="margin-top:25px;text-align:center;">
+  <div class="special-link" style="margin-top:25px;">
       <a href="winter-selection.html" target="_blank">
         2025 冬のベストセレクション
         <span style="font-size:0.8em; display:block; margin-top:4px;">今すぐチェック!</span>
       </a>
-    </div>
-  
+  </div>
+</header>
+
 <main>
   <p style="text-align:center; margin-top:30px;">
     自然派スキンケアの専門家が選んだ、今使うべきアイテム。<br>
@@ -247,10 +233,8 @@
   <section>
     <h2>🌿 敏感肌ランキング</h2>
     <div class="rank-intro">
-      お肌が敏感な方にとって、新しいスキンケアアイテムの選択は、喜びよりも不安が先に立つ、非常に難しい問題ではないでしょうか。<br><br>
-      「敏感肌」と一言で言っても、その原因や状態は人それぞれ異なります。季節の変わり目に一時的に荒れる方、特定成分に反応してしまう方、<strong>慢性的に赤みや乾燥に悩まされている方</strong>など様々です。<br><br>
-      適切な製品を選ばなければ、保湿やエイジングケアどころか、かゆみや赤み、さらなる肌荒れの原因や悪化につながりかねません。特にアフィリエイトサイトで紹介されている商品は、誰もが安心して使えるものなのか不安に感じるかもしれません。<br><br>
-      そこで、このランキングでは、<strong>「肌への優しさ」と「確かな効果」</strong>の両立を最も重視して選定しました。実際に敏感肌を持つスタッフが試用し、安心して長く使い続けられると評価したものだけを厳選しています。肌荒れとサヨナラし、自信の持てる健やかな肌へ。さっそく、厳選されたアイテムをご覧ください。
+      お肌が敏感な方にとって、新しいスキンケアアイテムの選択は、喜びよりも不安が先に立つ難しい問題です。<br><br>
+      このランキングでは、<strong>「肌への優しさ」と「確かな効果」</strong>の両立を最も重視して選定しました。実際に敏感肌を持つスタッフが試用し、安心して長く使い続けられると評価したものだけを厳選しています。
     </div>
     <div class="ranking-list">
       
@@ -266,38 +250,34 @@
         msmaflink({"n":"オルナ オーガニック 化粧水 乳液 美容液3点 セット スキンケアセット","b":"","t":"","d":"https:\/\/thumbnail.image.rakuten.co.jp","c_p":"\/@0_mall\/kcrize\/cabinet","p":["\/imgrc0166033802.jpg","\/imgrc0166033803.jpg","\/imgrc0166033804.jpg"],"u":{"u":"https:\/\/item.rakuten.co.jp\/kcrize\/10000222\/","t":"rakuten","r_v":""},"v":"2.1","b_l":[{"id":1,"u_tx":"楽天市場で見る","u_bc":"#87c209","u_url":"https:\/\/item.rakuten.co.jp\/kcrize\/10000222\/","a_id":5267359,"p_id":54,"pl_id":27059,"pc_id":54,"s_n":"rakuten","u_so":1},{"id":5,"u_tx":"Amazonで見る","u_bc":"#184f5c","u_url":"https:\/\/amzn.to\/4rswNyA","a_id":0,"p_id":0,"pl_id":0,"pc_id":0,"s_n":"custom_10","u_so":2},{"id":4,"u_tx":"Yahoo!ショッピングで見る","u_bc":"#bf0000","u_url":"https:\/\/shopping.yahoo.co.jp\/search?first=1\u0026p=%E3%82%AA%E3%83%AB%E3%83%8A%20%E3%82%AA%E3%83%BC%E3%82%AC%E3%83%8B%E3%83%83%E3%82%AF%20%E5%8C%96%E7%B2%A7%E6%B0%B4%20%E4%B9%B3%E6%B6%B2%20%E7%BE%8E%E5%AE%B9%E6%B6%B23%E7%82%B9%20%E3%82%BB%E3%83%83%E3%83%88%20%E3%82%B9%E3%82%AD%E3%83%B3%E3%82%B1%E3%82%A2%E3%82%BB%E3%83%83%E3%83%88","a_id":5267465,"p_id":1225,"pl_id":27061,"pc_id":1925,"s_n":"yahoo","u_so":3}],"eid":"84U1G","s":"s"});
         </script>
         <div id="msmaflink-84U1G">リンク</div>
-        </div>
+      </div>
 
       <div class="rank-item">
         <span class="badge rank2">2位</span>
-        <!-- START MoshimoAffiliateEasyLink -->
-<script type="text/javascript">
-(function(b,c,f,g,a,d,e){b.MoshimoAffiliateObject=a;
-b[a]=b[a]||function(){arguments.currentScript=c.currentScript
-||c.scripts[c.scripts.length-2];(b[a].q=b[a].q||[]).push(arguments)};
-c.getElementById(a)||(d=c.createElement(f),d.src=g,
-d.id=a,e=c.getElementsByTagName("body")[0],e.appendChild(d))})
-(window,document,"script","//dn.msmstatic.com/site/cardlink/bundle.js?20220329","msmaflink");
-msmaflink({"n":"Nオーガニック　Basic　バランシングローション　100mL","b":"","t":"","d":"https:\/\/thumbnail.image.rakuten.co.jp","c_p":"","p":["\/@0_mall\/ladydrugplus\/cabinet\/gazo140\/4589795143278_2.jpg"],"u":{"u":"https:\/\/item.rakuten.co.jp\/ladydrugplus\/4589795143278\/","t":"rakuten","r_v":""},"v":"2.1","b_l":[{"id":1,"u_tx":"楽天市場で見る","u_bc":"#87c209","u_url":"https:\/\/item.rakuten.co.jp\/ladydrugplus\/4589795143278\/","a_id":5267359,"p_id":54,"pl_id":27059,"pc_id":54,"s_n":"rakuten","u_so":1},{"id":5,"u_tx":"Amazonで見る","u_bc":"#184f5c","u_url":"https:\/\/amzn.to\/44EQxVV","a_id":0,"p_id":0,"pl_id":0,"pc_id":0,"s_n":"custom_10","u_so":2},{"id":4,"u_tx":"Yahoo!ショッピングで見る","u_bc":"#bf0000","u_url":"https:\/\/shopping.yahoo.co.jp\/search?first=1\u0026p=N%E3%82%AA%E3%83%BC%E3%82%AC%E3%83%8B%E3%83%83%E3%82%AF%E3%80%80Basic%E3%80%80%E3%83%90%E3%83%A9%E3%83%B3%E3%82%B7%E3%83%B3%E3%82%B0%E3%83%AD%E3%83%BC%E3%82%B7%E3%83%A7%E3%83%B3%E3%80%80100mL","a_id":5267465,"p_id":1225,"pl_id":27061,"pc_id":1925,"s_n":"yahoo","u_so":3}],"eid":"GlM0O","s":"s"});
-</script>
-<div id="msmaflink-GlM0O">リンク</div>
-<!-- MoshimoAffiliateEasyLink END -->
+        <script type="text/javascript">
+        (function(b,c,f,g,a,d,e){b.MoshimoAffiliateObject=a;
+        b[a]=b[a]||function(){arguments.currentScript=c.currentScript
+        ||c.scripts[c.scripts.length-2];(b[a].q=b[a].q||[]).push(arguments)};
+        c.getElementById(a)||(d=c.createElement(f),d.src=g,
+        d.id=a,e=c.getElementsByTagName("body")[0],e.appendChild(d))})
+        (window,document,"script","//dn.msmstatic.com/site/cardlink/bundle.js?20220329","msmaflink");
+        msmaflink({"n":"Nオーガニック　Basic　バランシングローション　100mL","b":"","t":"","d":"https:\/\/thumbnail.image.rakuten.co.jp","c_p":"","p":["\/@0_mall\/ladydrugplus\/cabinet\/gazo140\/4589795143278_2.jpg"],"u":{"u":"https:\/\/item.rakuten.co.jp\/ladydrugplus\/4589795143278\/","t":"rakuten","r_v":""},"v":"2.1","b_l":[{"id":1,"u_tx":"楽天市場で見る","u_bc":"#87c209","u_url":"https:\/\/item.rakuten.co.jp\/ladydrugplus\/4589795143278\/","a_id":5267359,"p_id":54,"pl_id":27059,"pc_id":54,"s_n":"rakuten","u_so":1},{"id":5,"u_tx":"Amazonで見る","u_bc":"#184f5c","u_url":"https:\/\/amzn.to\/44EQxVV","a_id":0,"p_id":0,"pl_id":0,"pc_id":0,"s_n":"custom_10","u_so":2},{"id":4,"u_tx":"Yahoo!ショッピングで見る","u_bc":"#bf0000","u_url":"https:\/\/shopping.yahoo.co.jp\/search?first=1\u0026p=N%E3%82%AA%E3%83%BC%E3%82%AC%E3%83%8B%E3%83%83%E3%82%AF%E3%80%80Basic%E3%80%80%E3%83%90%E3%83%A9%E3%83%B3%E3%82%B7%E3%83%B3%E3%82%B0%E3%83%AD%E3%83%BC%E3%82%B7%E3%83%A7%E3%83%B3%E3%80%80100mL","a_id":5267465,"p_id":1225,"pl_id":27061,"pc_id":1925,"s_n":"yahoo","u_so":3}],"eid":"GlM0O","s":"s"});
+        </script>
+        <div id="msmaflink-GlM0O">リンク</div>
         </div>
 
       <div class="rank-item">
         <span class="badge rank3">3位</span>
-        <!-- START MoshimoAffiliateEasyLink -->
-<script type="text/javascript">
-(function(b,c,f,g,a,d,e){b.MoshimoAffiliateObject=a;
-b[a]=b[a]||function(){arguments.currentScript=c.currentScript
-||c.scripts[c.scripts.length-2];(b[a].q=b[a].q||[]).push(arguments)};
-c.getElementById(a)||(d=c.createElement(f),d.src=g,
-d.id=a,e=c.getElementsByTagName("body")[0],e.appendChild(d))})
-(window,document,"script","//dn.msmstatic.com/site/cardlink/bundle.js?20220329","msmaflink");
-msmaflink({"n":"アロエのチカラ スキンローション＋オイルイン 2本セット｜無添加・オーガニック保湿ケア 敏感肌にやさしく 396円お得なまとめ買い","b":"","t":"","d":"https:\/\/thumbnail.image.rakuten.co.jp","c_p":"\/@0_mall\/kotokara\/cabinet\/aloe","p":["\/lotion_oil\/osj_looil2410a.jpg","\/lotion_oil\/looil_lokakakunew.jpg","\/alotion\/osj_lo01new2401.jpg"],"u":{"u":"https:\/\/item.rakuten.co.jp\/kotokara\/osj-ol030\/","t":"rakuten","r_v":""},"v":"2.1","b_l":[{"id":1,"u_tx":"楽天市場で見る","u_bc":"#87c209","u_url":"https:\/\/item.rakuten.co.jp\/kotokara\/osj-ol030\/","a_id":5267359,"p_id":54,"pl_id":27059,"pc_id":54,"s_n":"rakuten","u_so":1},{"id":5,"u_tx":"Amazonで見る","u_bc":"#184f5c","u_url":"https:\/\/amzn.to\/49HimQX","a_id":0,"p_id":0,"pl_id":0,"pc_id":0,"s_n":"custom_10","u_so":2},{"id":4,"u_tx":"Yahoo!ショッピングで見る","u_bc":"#bf0000","u_url":"https:\/\/shopping.yahoo.co.jp\/search?first=1\u0026p=%E3%82%A2%E3%83%AD%E3%82%A8%E3%81%AE%E3%83%81%E3%82%AB%E3%83%A9%20%E3%82%B9%E3%82%AD%E3%83%B3%E3%83%AD%E3%83%BC%E3%82%B7%E3%83%A7%E3%83%B3%EF%BC%8B%E3%82%AA%E3%82%A4%E3%83%AB%E3%82%A4%E3%83%B3%202%E6%9C%AC%E3%82%BB%E3%83%83%E3%83%88%EF%BD%9C%E7%84%A1%E6%B7%BB%E5%8A%A0%E3%83%BB%E3%82%AA%E3%83%BC%E3%82%AC%E3%83%8B%E3%83%83%E3%82%AF%E4%BF%9D%E6%B9%BF%E3%82%B1%E3%82%A2%20%E6%95%8F%E6%84%9F%E8%82%8C%E3%81%AB%E3%82%84%E3%81%95%E3%81%97%E3%81%8F%20396%E5%86%86%E3%81%8A%E5%BE%97%E3%81%AA%E3%81%BE%E3%81%A8%E3%82%81%E8%B2%B7%E3%81%84","a_id":5267465,"p_id":1225,"pl_id":27061,"pc_id":1925,"s_n":"yahoo","u_so":3}],"eid":"bZzFH","s":"s"});
-</script>
-<div id="msmaflink-bZzFH">リンク</div>
-<!-- MoshimoAffiliateEasyLink END -->
+        <script type="text/javascript">
+        (function(b,c,f,g,a,d,e){b.MoshimoAffiliateObject=a;
+        b[a]=b[a]||function(){arguments.currentScript=c.currentScript
+        ||c.scripts[c.scripts.length-2];(b[a].q=b[a].q||[]).push(arguments)};
+        c.getElementById(a)||(d=c.createElement(f),d.src=g,
+        d.id=a,e=c.getElementsByTagName("body")[0],e.appendChild(d))})
+        (window,document,"script","//dn.msmstatic.com/site/cardlink/bundle.js?20220329","msmaflink");
+        msmaflink({"n":"アロエのチカラ スキンローション＋オイルイン 2本セット｜無添加・オーガニック保湿ケア 敏感肌にやさしく 396円お得なまとめ買い","b":"","t":"","d":"https:\/\/thumbnail.image.rakuten.co.jp","c_p":"\/@0_mall\/kotokara\/cabinet\/aloe","p":["\/lotion_oil\/osj_looil2410a.jpg","\/lotion_oil\/looil_lokakakunew.jpg","\/alotion\/osj_lo01new2401.jpg"],"u":{"u":"https:\/\/item.rakuten.co.jp\/kotokara\/osj-ol030\/","t":"rakuten","r_v":""},"v":"2.1","b_l":[{"id":1,"u_tx":"楽天市場で見る","u_bc":"#87c209","u_url":"https:\/\/item.rakuten.co.jp\/kotokara\/osj-ol030\/","a_id":5267359,"p_id":54,"pl_id":27059,"pc_id":54,"s_n":"rakuten","u_so":1},{"id":5,"u_tx":"Amazonで見る","u_bc":"#184f5c","u_url":"https:\/\/amzn.to\/49HimQX","a_id":0,"p_id":0,"pl_id":0,"pc_id":0,"s_n":"custom_10","u_so":2},{"id":4,"u_tx":"Yahoo!ショッピングで見る","u_bc":"#bf0000","u_url":"https:\/\/shopping.yahoo.co.jp\/search?first=1\u0026p=%E3%82%A2%E3%83%AD%E3%82%A8%E3%81%AE%E3%83%81%E3%82%AB%E3%83%A9%20%E3%82%B9%E3%82%AD%E3%83%B3%E3%83%AD%E3%83%BC%E3%82%B7%E3%83%A7%E3%83%B3%EF%BC%8B%E3%82%AA%E3%82%A4%E3%83%AB%E3%82%A4%E3%83%B3%202%E6%9C%AC%E3%82%BB%E3%83%83%E3%83%88%EF%BD%9C%E7%84%A1%E6%B7%BB%E5%8A%A0%E3%83%BB%E3%82%AA%E3%83%BC%E3%82%AC%E3%83%8B%E3%83%83%E3%82%AF%E4%BF%9D%E6%B9%BF%E3%82%B1%E3%82%A2%20%E6%95%8F%E6%84%9F%E8%82%8C%E3%81%AB%E3%82%84%E3%81%95%E3%81%97%E3%81%8F%20396%E5%86%86%E3%81%8A%E5%BE%97%E3%81%AA%E3%81%BE%E3%81%A8%E3%82%81%E8%B2%B7%E3%81%84","a_id":5267465,"p_id":1225,"pl_id":27061,"pc_id":1925,"s_n":"yahoo","u_so":3}],"eid":"bZzFH","s":"s"});
+        </script>
+        <div id="msmaflink-bZzFH">リンク</div>
         </div>
 
     </div>
@@ -306,59 +286,51 @@ msmaflink({"n":"アロエのチカラ スキンローション＋オイルイン
   <section>
     <h2>💰 コスパランキング</h2>
     <div class="rank-intro">
-      スキンケアは「続けること」が最も大切です。どんなに高機能な化粧品でも、価格が高すぎて継続できなければ、肌が安定することはありません。<br><br>
-      実際、スキンケア全体に対して「高価なイメージ」を持っている方は多いのではないでしょうか。しかし、探せば<strong>値段の割に非常に優秀な「お宝アイテム」</strong>は必ず見つかります。<br><br>
-      この<strong>コスパランキング</strong>では、単に価格が安いというだけでなく、流通コストの削減や大容量化といった企業努力により、<strong>品質と価格のバランス</strong>が取れた製品のみを選びました。<br><br>
-      容量と単価のバランス、必須成分の配合、多機能性などを重視。賢く、効率的に、そして美しく肌を保つための最適なアイテムを、このランキングで見つけてください。
+      スキンケアは「続けること」が最も大切です。<br>
+      このランキングでは、流通コストの削減や大容量化といった企業努力により、<strong>品質と価格のバランス</strong>が取れた製品のみを選びました。
     </div>
     <div class="ranking-list">
       
       <div class="rank-item">
         <span class="badge rank1">1位</span>
-        <!-- START MoshimoAffiliateEasyLink -->
-<script type="text/javascript">
-(function(b,c,f,g,a,d,e){b.MoshimoAffiliateObject=a;
-b[a]=b[a]||function(){arguments.currentScript=c.currentScript
-||c.scripts[c.scripts.length-2];(b[a].q=b[a].q||[]).push(arguments)};
-c.getElementById(a)||(d=c.createElement(f),d.src=g,
-d.id=a,e=c.getElementsByTagName("body")[0],e.appendChild(d))})
-(window,document,"script","//dn.msmstatic.com/site/cardlink/bundle.js?20220329","msmaflink");
-msmaflink({"n":"yaetoco 甘夏なめらかバーム 5g || ヤエトコ オーガニック スキンケア ボディケア 顔 爪 髪 全身 バーム 日本製 日本 愛媛 無茶々園 人気 可愛い 子供 家族 無農薬 肌荒れ","b":"","t":"","d":"https:\/\/thumbnail.image.rakuten.co.jp","c_p":"\/@0_mall\/amasia\/cabinet","p":["\/product6\/1086_l.jpg","\/product6\/1086sub2_l.jpg","\/product4\/yaetoco1.jpg"],"u":{"u":"https:\/\/item.rakuten.co.jp\/amasia\/1086\/","t":"rakuten","r_v":""},"v":"2.1","b_l":[{"id":1,"u_tx":"楽天市場で見る","u_bc":"#87c209","u_url":"https:\/\/item.rakuten.co.jp\/amasia\/1086\/","a_id":5267359,"p_id":54,"pl_id":27059,"pc_id":54,"s_n":"rakuten","u_so":1},{"id":5,"u_tx":"Amazonで見る","u_bc":"#184f5c","u_url":"https:\/\/amzn.to\/48960zW","a_id":0,"p_id":0,"pl_id":0,"pc_id":0,"s_n":"custom_10","u_so":2},{"id":4,"u_tx":"Yahoo!ショッピングで見る","u_bc":"#bf0000","u_url":"https:\/\/shopping.yahoo.co.jp\/search?first=1\u0026p=yaetoco%20%E7%94%98%E5%A4%8F%E3%81%AA%E3%82%81%E3%82%89%E3%81%8B%E3%83%90%E3%83%BC%E3%83%A0%205g%20%7C%7C%20%E3%83%A4%E3%82%A8%E3%83%88%E3%82%B3%20%E3%82%AA%E3%83%BC%E3%82%AC%E3%83%8B%E3%83%83%E3%82%AF%20%E3%82%B9%E3%82%AD%E3%83%B3%E3%82%B1%E3%82%A2%20%E3%83%9C%E3%83%87%E3%82%A3%E3%82%B1%E3%82%A2%20%E9%A1%94%20%E7%88%AA%20%E9%AB%AA%20%E5%85%A8%E8%BA%AB%20%E3%83%90%E3%83%BC%E3%83%A0%20%E6%97%A5%E6%9C%AC%E8%A3%BD%20%E6%97%A5%E6%9C%AC%20%E6%84%9B%E5%AA%9B%20%E7%84%A1%E8%8C%B6%E3%80%85%E5%9C%92%20%E4%BA%BA%E6%B0%97%20%E5%8F%AF%E6%84%9B%E3%81%84%20%E5%AD%90%E4%BE%9B%20%E5%AE%B6%E6%97%8F%20%E7%84%A1%E8%BE%B2%E8%96%AC%20%E8%82%8C%E8%8D%92%E3%82%8C","a_id":5267465,"p_id":1225,"pl_id":27061,"pc_id":1925,"s_n":"yahoo","u_so":3}],"eid":"XzMou","s":"s"});
-</script>
-<div id="msmaflink-XzMou">リンク</div>
-<!-- MoshimoAffiliateEasyLink END -->
+        <script type="text/javascript">
+        (function(b,c,f,g,a,d,e){b.MoshimoAffiliateObject=a;
+        b[a]=b[a]||function(){arguments.currentScript=c.currentScript
+        ||c.scripts[c.scripts.length-2];(b[a].q=b[a].q||[]).push(arguments)};
+        c.getElementById(a)||(d=c.createElement(f),d.src=g,
+        d.id=a,e=c.getElementsByTagName("body")[0],e.appendChild(d))})
+        (window,document,"script","//dn.msmstatic.com/site/cardlink/bundle.js?20220329","msmaflink");
+        msmaflink({"n":"yaetoco 甘夏なめらかバーム 5g || ヤエトコ オーガニック スキンケア ボディケア 顔 爪 髪 全身 バーム 日本製 日本 愛媛 無茶々園 人気 可愛い 子供 家族 無農薬 肌荒れ","b":"","t":"","d":"https:\/\/thumbnail.image.rakuten.co.jp","c_p":"\/@0_mall\/amasia\/cabinet","p":["\/product6\/1086_l.jpg","\/product6\/1086sub2_l.jpg","\/product4\/yaetoco1.jpg"],"u":{"u":"https:\/\/item.rakuten.co.jp\/amasia\/1086\/","t":"rakuten","r_v":""},"v":"2.1","b_l":[{"id":1,"u_tx":"楽天市場で見る","u_bc":"#87c209","u_url":"https:\/\/item.rakuten.co.jp\/amasia\/1086\/","a_id":5267359,"p_id":54,"pl_id":27059,"pc_id":54,"s_n":"rakuten","u_so":1},{"id":5,"u_tx":"Amazonで見る","u_bc":"#184f5c","u_url":"https:\/\/amzn.to\/48960zW","a_id":0,"p_id":0,"pl_id":0,"pc_id":0,"s_n":"custom_10","u_so":2},{"id":4,"u_tx":"Yahoo!ショッピングで見る","u_bc":"#bf0000","u_url":"https:\/\/shopping.yahoo.co.jp\/search?first=1\u0026p=yaetoco%20%E7%94%98%E5%A4%8F%E3%81%AA%E3%82%81%E3%82%89%E3%81%8B%E3%83%90%E3%83%BC%E3%83%A0%205g%20%7C%7C%20%E3%83%A4%E3%82%A8%E3%83%88%E3%82%B3%20%E3%82%AA%E3%83%BC%E3%82%AC%E3%83%8B%E3%83%83%E3%82%AF%20%E3%82%B9%E3%82%AD%E3%83%B3%E3%82%B1%E3%82%A2%20%E3%83%9C%E3%83%87%E3%82%A3%E3%82%B1%E3%82%A2%20%E9%A1%94%20%E7%88%AA%20%E9%AB%AA%20%E5%85%A8%E8%BA%AB%20%E3%83%90%E3%83%BC%E3%83%A0%20%E6%97%A5%E6%9C%AC%E8%A3%BD%20%E6%97%A5%E6%9C%AC%20%E6%84%9B%E5%AA%9B%20%E7%84%A1%E8%8C%B6%E3%80%85%E5%9C%92%20%E4%BA%BA%E6%B0%97%20%E5%8F%AF%E6%84%9B%E3%81%84%20%E5%AD%90%E4%BE%9B%20%E5%AE%B6%E6%97%8F%20%E7%84%A1%E8%BE%B2%E8%96%AC%20%E8%82%8C%E8%8D%92%E3%82%8C","a_id":5267465,"p_id":1225,"pl_id":27061,"pc_id":1925,"s_n":"yahoo","u_so":3}],"eid":"XzMou","s":"s"});
+        </script>
+        <div id="msmaflink-XzMou">リンク</div>
         </div>
       
       <div class="rank-item">
         <span class="badge rank2">2位</span>
-        <!-- START MoshimoAffiliateEasyLink -->
-<script type="text/javascript">
-(function(b,c,f,g,a,d,e){b.MoshimoAffiliateObject=a;
-b[a]=b[a]||function(){arguments.currentScript=c.currentScript
-||c.scripts[c.scripts.length-2];(b[a].q=b[a].q||[]).push(arguments)};
-c.getElementById(a)||(d=c.createElement(f),d.src=g,
-d.id=a,e=c.getElementsByTagName("body")[0],e.appendChild(d))})
-(window,document,"script","//dn.msmstatic.com/site/cardlink/bundle.js?20220329","msmaflink");
-msmaflink({"n":"ココナッツオイル 保湿 美容 スキンケア オイル 有機バージンココナッツオイル100％ 化粧品","b":"","t":"","d":"https:\/\/thumbnail.image.rakuten.co.jp","c_p":"\/@0_mall\/peacehair\/cabinet\/ef\/item\/coconuts","p":["\/coconuts_01.jpg","\/coconuts_02.jpg","\/coconuts_03.jpg"],"u":{"u":"https:\/\/item.rakuten.co.jp\/peacehair\/coconuts\/","t":"rakuten","r_v":""},"v":"2.1","b_l":[{"id":1,"u_tx":"楽天市場で見る","u_bc":"#87c209","u_url":"https:\/\/item.rakuten.co.jp\/peacehair\/coconuts\/","a_id":5267359,"p_id":54,"pl_id":27059,"pc_id":54,"s_n":"rakuten","u_so":1},{"id":5,"u_tx":"Amazonで見る","u_bc":"#184f5c","u_url":"https:\/\/amzn.to\/4onkYXE","a_id":0,"p_id":0,"pl_id":0,"pc_id":0,"s_n":"custom_10","u_so":2},{"id":4,"u_tx":"Yahoo!ショッピングで見る","u_bc":"#bf0000","u_url":"https:\/\/shopping.yahoo.co.jp\/search?first=1\u0026p=%E3%82%B3%E3%82%B3%E3%83%8A%E3%83%83%E3%83%84%E3%82%AA%E3%82%A4%E3%83%AB%20%E4%BF%9D%E6%B9%BF%20%E7%BE%8E%E5%AE%B9%20%E3%82%B9%E3%82%AD%E3%83%B3%E3%82%B1%E3%82%A2%20%E3%82%AA%E3%82%A4%E3%83%AB%20%E6%9C%89%E6%A9%9F%E3%83%90%E3%83%BC%E3%82%B8%E3%83%B3%E3%82%B3%E3%82%B3%E3%83%8A%E3%83%83%E3%83%84%E3%82%AA%E3%82%A4%E3%83%AB100%EF%BC%85%20%E5%8C%96%E7%B2%A7%E5%93%81","a_id":5267465,"p_id":1225,"pl_id":27061,"pc_id":1925,"s_n":"yahoo","u_so":3}],"eid":"JO5d3","s":"s"});
-</script>
-<div id="msmaflink-JO5d3">リンク</div>
-<!-- MoshimoAffiliateEasyLink END -->
+        <script type="text/javascript">
+        (function(b,c,f,g,a,d,e){b.MoshimoAffiliateObject=a;
+        b[a]=b[a]||function(){arguments.currentScript=c.currentScript
+        ||c.scripts[c.scripts.length-2];(b[a].q=b[a].q||[]).push(arguments)};
+        c.getElementById(a)||(d=c.createElement(f),d.src=g,
+        d.id=a,e=c.getElementsByTagName("body")[0],e.appendChild(d))})
+        (window,document,"script","//dn.msmstatic.com/site/cardlink/bundle.js?20220329","msmaflink");
+        msmaflink({"n":"ココナッツオイル 保湿 美容 スキンケア オイル 有機バージンココナッツオイル100％ 化粧品","b":"","t":"","d":"https:\/\/thumbnail.image.rakuten.co.jp","c_p":"\/@0_mall\/peacehair\/cabinet\/ef\/item\/coconuts","p":["\/coconuts_01.jpg","\/coconuts_02.jpg","\/coconuts_03.jpg"],"u":{"u":"https:\/\/item.rakuten.co.jp\/peacehair\/coconuts\/","t":"rakuten","r_v":""},"v":"2.1","b_l":[{"id":1,"u_tx":"楽天市場で見る","u_bc":"#87c209","u_url":"https:\/\/item.rakuten.co.jp\/peacehair\/coconuts\/","a_id":5267359,"p_id":54,"pl_id":27059,"pc_id":54,"s_n":"rakuten","u_so":1},{"id":5,"u_tx":"Amazonで見る","u_bc":"#184f5c","u_url":"https:\/\/amzn.to\/4onkYXE","a_id":0,"p_id":0,"pl_id":0,"pc_id":0,"s_n":"custom_10","u_so":2},{"id":4,"u_tx":"Yahoo!ショッピングで見る","u_bc":"#bf0000","u_url":"https:\/\/shopping.yahoo.co.jp\/search?first=1\u0026p=%E3%82%B3%E3%82%B3%E3%83%8A%E3%83%83%E3%83%84%E3%82%AA%E3%82%A4%E3%83%AB%20%E4%BF%9D%E6%B9%BF%20%E7%BE%8E%E5%AE%B9%20%E3%82%B9%E3%82%AD%E3%83%B3%E3%82%B1%E3%82%A2%20%E3%82%AA%E3%82%A4%E3%83%AB%20%E6%9C%89%E6%A9%9F%E3%83%90%E3%83%BC%E3%82%B8%E3%83%B3%E3%82%B3%E3%82%B3%E3%83%8A%E3%83%83%E3%83%84%E3%82%AA%E3%82%A4%E3%83%AB100%EF%BC%85%20%E5%8C%96%E7%B2%A7%E5%93%81","a_id":5267465,"p_id":1225,"pl_id":27061,"pc_id":1925,"s_n":"yahoo","u_so":3}],"eid":"JO5d3","s":"s"});
+        </script>
+        <div id="msmaflink-JO5d3">リンク</div>
         </div>
 
       <div class="rank-item">
         <span class="badge rank3">3位</span>
-        <!-- START MoshimoAffiliateEasyLink -->
-<script type="text/javascript">
-(function(b,c,f,g,a,d,e){b.MoshimoAffiliateObject=a;
-b[a]=b[a]||function(){arguments.currentScript=c.currentScript
-||c.scripts[c.scripts.length-2];(b[a].q=b[a].q||[]).push(arguments)};
-c.getElementById(a)||(d=c.createElement(f),d.src=g,
-d.id=a,e=c.getElementsByTagName("body")[0],e.appendChild(d))})
-(window,document,"script","//dn.msmstatic.com/site/cardlink/bundle.js?20220329","msmaflink");
-msmaflink({"n":"【送料無料】エピス EPIS 美容液 乳液 オーガニック 300ml 大容量 無添加 シトラスの香り 保湿 サイズ：300ミリリットル (x 1)","b":"","t":"","d":"https:\/\/thumbnail.image.rakuten.co.jp","c_p":"\/@0_mall\/sakulife\/cabinet","p":["\/rakub200_0034\/b08ydy59rp00.jpg","\/haisou.jpg"],"u":{"u":"https:\/\/item.rakuten.co.jp\/sakulife\/b08ydy59rp\/","t":"rakuten","r_v":""},"v":"2.1","b_l":[{"id":1,"u_tx":"楽天市場で見る","u_bc":"#87c209","u_url":"https:\/\/item.rakuten.co.jp\/sakulife\/b08ydy59rp\/","a_id":5267359,"p_id":54,"pl_id":27059,"pc_id":54,"s_n":"rakuten","u_so":1},{"id":5,"u_tx":"Amazonで見る","u_bc":"#184f5c","u_url":"https:\/\/amzn.to\/43XXfpN","a_id":0,"p_id":0,"pl_id":0,"pc_id":0,"s_n":"custom_10","u_so":2},{"id":4,"u_tx":"Yahoo!ショッピングで見る","u_bc":"#bf0000","u_url":"https:\/\/shopping.yahoo.co.jp\/search?first=1\u0026p=%E3%80%90%E9%80%81%E6%96%99%E7%84%A1%E6%96%99%E3%80%91%E3%82%A8%E3%83%94%E3%82%B9%20EPIS%20%E7%BE%8E%E5%AE%B9%E6%B6%B2%20%E4%B9%B3%E6%B6%B2%20%E3%82%AA%E3%83%BC%E3%82%AC%E3%83%8B%E3%83%83%E3%82%AF%20300ml%20%E5%A4%A7%E5%AE%B9%E9%87%8F%20%E7%84%A1%E6%B7%BB%E5%8A%A0%20%E3%82%B7%E3%83%88%E3%83%A9%E3%82%B9%E3%81%AE%E9%A6%99%E3%82%8A%20%E4%BF%9D%E6%B9%BF%20%E3%82%B5%E3%82%A4%E3%82%BA%EF%BC%9A300%E3%83%9F%E3%83%AA%E3%83%AA%E3%83%83%E3%83%88%E3%83%AB%20(x%201)","a_id":5267465,"p_id":1225,"pl_id":27061,"pc_id":1925,"s_n":"yahoo","u_so":3}],"eid":"dXeMR","s":"s"});
-</script>
-<div id="msmaflink-dXeMR">リンク</div>
-<!-- MoshimoAffiliateEasyLink END -->
+        <script type="text/javascript">
+        (function(b,c,f,g,a,d,e){b.MoshimoAffiliateObject=a;
+        b[a]=b[a]||function(){arguments.currentScript=c.currentScript
+        ||c.scripts[c.scripts.length-2];(b[a].q=b[a].q||[]).push(arguments)};
+        c.getElementById(a)||(d=c.createElement(f),d.src=g,
+        d.id=a,e=c.getElementsByTagName("body")[0],e.appendChild(d))})
+        (window,document,"script","//dn.msmstatic.com/site/cardlink/bundle.js?20220329","msmaflink");
+        msmaflink({"n":"【送料無料】エピス EPIS 美容液 乳液 オーガニック 300ml 大容量 無添加 シトラスの香り 保湿 サイズ：300ミリリットル (x 1)","b":"","t":"","d":"https:\/\/thumbnail.image.rakuten.co.jp","c_p":"\/@0_mall\/sakulife\/cabinet","p":["\/rakub200_0034\/b08ydy59rp00.jpg","\/haisou.jpg"],"u":{"u":"https:\/\/item.rakuten.co.jp\/sakulife\/b08ydy59rp\/","t":"rakuten","r_v":""},"v":"2.1","b_l":[{"id":1,"u_tx":"楽天市場で見る","u_bc":"#87c209","u_url":"https:\/\/item.rakuten.co.jp\/sakulife\/b08ydy59rp\/","a_id":5267359,"p_id":54,"pl_id":27059,"pc_id":54,"s_n":"rakuten","u_so":1},{"id":5,"u_tx":"Amazonで見る","u_bc":"#184f5c","u_url":"https:\/\/amzn.to\/43XXfpN","a_id":0,"p_id":0,"pl_id":0,"pc_id":0,"s_n":"custom_10","u_so":2},{"id":4,"u_tx":"Yahoo!ショッピングで見る","u_bc":"#bf0000","u_url":"https:\/\/shopping.yahoo.co.jp\/search?first=1\u0026p=%E3%80%90%E9%80%81%E6%96%99%E7%84%A1%E6%96%99%E3%80%91%E3%82%A8%E3%83%94%E3%82%B9%20EPIS%20%E7%BE%8E%E5%AE%B9%E6%B6%B2%20%E4%B9%B3%E6%B6%B2%20%E3%82%AA%E3%83%BC%E3%82%AC%E3%83%8B%E3%83%83%E3%82%AF%20300ml%20%E5%A4%A7%E5%AE%B9%E9%87%8F%20%E7%84%A1%E6%B7%BB%E5%8A%A0%20%E3%82%B7%E3%83%88%E3%83%A9%E3%82%B9%E3%81%AE%E9%A6%99%E3%82%8A%20%E4%BF%9D%E6%B9%BF%20%E3%82%B5%E3%82%A4%E3%82%BA%EF%BC%9A300%E3%83%9F%E3%83%AA%E3%83%AA%E3%83%83%E3%83%88%E3%83%AB%20(x%201)","a_id":5267465,"p_id":1225,"pl_id":27061,"pc_id":1925,"s_n":"yahoo","u_so":3}],"eid":"dXeMR","s":"s"});
+        </script>
+        <div id="msmaflink-dXeMR">リンク</div>
         </div>
 
     </div>
@@ -367,65 +339,57 @@ msmaflink({"n":"【送料無料】エピス EPIS 美容液 乳液 オーガニ�
   <section>
     <h2>✨ アンチエイジングランキング</h2>
     <div class="rank-intro">
-      鏡を見るたびに感じる「ハリのなさ」「乾燥による小じわ」「くすみ」——これらは、誰にでも訪れる肌の自然な変化ですが、<strong>30代を過ぎると、本格的なエイジングケア（年齢に応じたケア）は必須</strong>になってきます。<br><br>
-      アンチエイジングと聞くと、高機能な成分が必要なため「高額」というイメージが強いかもしれません。実際、商品によっては非常に高額なものもあります。しかし、大切なのは、<strong>自分の肌の状態や悩みに合った成分を、無理のない予算で継続して取り入れること</strong>です。<br><br>
-      このランキングでは、ただ高価な商品を紹介するのではなく、<strong>「自分の予算と状態にあわせて」</strong>選べるように、効果と価格のバランスが取れたアイテムを厳選しました。有効成分の浸透力、無理なく続けられる価格帯、肌へのやさしさを重視しています。<br><br>
-      賢く予算を使い、美しく年を重ねるためのパートナーを、ここから見つけましょう。
+      鏡を見るたびに感じる「ハリのなさ」「乾燥による小じわ」——。<br>
+      このランキングでは、ただ高価な商品を紹介するのではなく、<strong>「自分の予算と状態にあわせて」</strong>選べるように、効果と価格のバランスが取れたアイテムを厳選しました。
     </div>
     <div class="ranking-list">
       
       <div class="rank-item">
         <span class="badge rank1">1位</span>
-        <!-- START MoshimoAffiliateEasyLink -->
-<script type="text/javascript">
-(function(b,c,f,g,a,d,e){b.MoshimoAffiliateObject=a;
-b[a]=b[a]||function(){arguments.currentScript=c.currentScript
-||c.scripts[c.scripts.length-2];(b[a].q=b[a].q||[]).push(arguments)};
-c.getElementById(a)||(d=c.createElement(f),d.src=g,
-d.id=a,e=c.getElementsByTagName("body")[0],e.appendChild(d))})
-(window,document,"script","//dn.msmstatic.com/site/cardlink/bundle.js?20220329","msmaflink");
-msmaflink({"n":"【送料無料】JINO ジーノ アテナ アミノエッセンシャル 敏感肌 色：青","b":"","t":"","d":"https:\/\/thumbnail.image.rakuten.co.jp","c_p":"\/@0_mall\/beautygoodsnld\/cabinet","p":["\/rakub200_0017\/b0dhc8dp1z00.jpg","\/haisou.jpg"],"u":{"u":"https:\/\/item.rakuten.co.jp\/beautygoodsnld\/b0dhc8dp1z\/","t":"rakuten","r_v":""},"v":"2.1","b_l":[{"id":1,"u_tx":"楽天市場で見る","u_bc":"#87c209","u_url":"https:\/\/item.rakuten.co.jp\/beautygoodsnld\/b0dhc8dp1z\/","a_id":5267359,"p_id":54,"pl_id":27059,"pc_id":54,"s_n":"rakuten","u_so":1},{"id":5,"u_tx":"Amazonで見る","u_bc":"#184f5c","u_url":"https:\/\/amzn.to\/48wK0xY","a_id":0,"p_id":0,"pl_id":0,"pc_id":0,"s_n":"custom_10","u_so":2},{"id":4,"u_tx":"Yahoo!ショッピングで見る","u_bc":"#bf0000","u_url":"https:\/\/shopping.yahoo.co.jp\/search?first=1\u0026p=%E3%80%90%E9%80%81%E6%96%99%E7%84%A1%E6%96%99%E3%80%91JINO%20%E3%82%B8%E3%83%BC%E3%83%8E%20%E3%82%A2%E3%83%86%E3%83%8A%20%E3%82%A2%E3%83%9F%E3%83%8E%E3%82%A8%E3%83%83%E3%82%BB%E3%83%B3%E3%82%B7%E3%83%A3%E3%83%AB%20%E6%95%8F%E6%84%9F%E8%82%8C%20%E8%89%B2%EF%BC%9A%E9%9D%92","a_id":5267465,"p_id":1225,"pl_id":27061,"pc_id":1925,"s_n":"yahoo","u_so":3}],"eid":"Uynoj","s":"s"});
-</script>
-<div id="msmaflink-Uynoj">リンク</div>
-<!-- MoshimoAffiliateEasyLink END -->
+        <script type="text/javascript">
+        (function(b,c,f,g,a,d,e){b.MoshimoAffiliateObject=a;
+        b[a]=b[a]||function(){arguments.currentScript=c.currentScript
+        ||c.scripts[c.scripts.length-2];(b[a].q=b[a].q||[]).push(arguments)};
+        c.getElementById(a)||(d=c.createElement(f),d.src=g,
+        d.id=a,e=c.getElementsByTagName("body")[0],e.appendChild(d))})
+        (window,document,"script","//dn.msmstatic.com/site/cardlink/bundle.js?20220329","msmaflink");
+        msmaflink({"n":"【送料無料】JINO ジーノ アテナ アミノエッセンシャル 敏感肌 色：青","b":"","t":"","d":"https:\/\/thumbnail.image.rakuten.co.jp","c_p":"\/@0_mall\/beautygoodsnld\/cabinet","p":["\/rakub200_0017\/b0dhc8dp1z00.jpg","\/haisou.jpg"],"u":{"u":"https:\/\/item.rakuten.co.jp\/beautygoodsnld\/b0dhc8dp1z\/","t":"rakuten","r_v":""},"v":"2.1","b_l":[{"id":1,"u_tx":"楽天市場で見る","u_bc":"#87c209","u_url":"https:\/\/item.rakuten.co.jp\/beautygoodsnld\/b0dhc8dp1z\/","a_id":5267359,"p_id":54,"pl_id":27059,"pc_id":54,"s_n":"rakuten","u_so":1},{"id":5,"u_tx":"Amazonで見る","u_bc":"#184f5c","u_url":"https:\/\/amzn.to\/48wK0xY","a_id":0,"p_id":0,"pl_id":0,"pc_id":0,"s_n":"custom_10","u_so":2},{"id":4,"u_tx":"Yahoo!ショッピングで見る","u_bc":"#bf0000","u_url":"https:\/\/shopping.yahoo.co.jp\/search?first=1\u0026p=%E3%80%90%E9%80%81%E6%96%99%E7%84%A1%E6%96%99%E3%80%91JINO%20%E3%82%B8%E3%83%BC%E3%83%8E%20%E3%82%A2%E3%83%86%E3%83%8A%20%E3%82%A2%E3%83%9F%E3%83%8E%E3%82%A8%E3%83%83%E3%82%BB%E3%83%B3%E3%82%B7%E3%83%A3%E3%83%AB%20%E6%95%8F%E6%84%9F%E8%82%8C%20%E8%89%B2%EF%BC%9A%E9%9D%92","a_id":5267465,"p_id":1225,"pl_id":27061,"pc_id":1925,"s_n":"yahoo","u_so":3}],"eid":"Uynoj","s":"s"});
+        </script>
+        <div id="msmaflink-Uynoj">リンク</div>
         </div>
 
       <div class="rank-item">
         <span class="badge rank2">2位</span>
-        <!-- START MoshimoAffiliateEasyLink -->
-<script type="text/javascript">
-(function(b,c,f,g,a,d,e){b.MoshimoAffiliateObject=a;
-b[a]=b[a]||function(){arguments.currentScript=c.currentScript
-||c.scripts[c.scripts.length-2];(b[a].q=b[a].q||[]).push(arguments)};
-c.getElementById(a)||(d=c.createElement(f),d.src=g,
-d.id=a,e=c.getElementsByTagName("body")[0],e.appendChild(d))})
-(window,document,"script","//dn.msmstatic.com/site/cardlink/bundle.js?20220329","msmaflink");
-msmaflink({"n":"【医薬部外品】くれえる シルバーアンメラン ペアセット（化粧水＆クリーム） | 薬用化粧水 薬用クリーム 保湿クリーム 保湿 化粧品 コスメ 基礎化粧品 フェイスケア 保湿化粧水 エイジングケア フェイスクリーム 美容クリーム スキンケアセット 肌ケア 医薬部外品","b":"","t":"","d":"https:\/\/thumbnail.image.rakuten.co.jp","c_p":"\/@0_mall\/naturalbeauty\/cabinet\/syohin","p":["\/1stpic\/silver_set_02.jpg","\/t-nail\/09453927\/silver_set02.jpg","\/t-nail\/09453927\/silver_02.jpg"],"u":{"u":"https:\/\/item.rakuten.co.jp\/naturalbeauty\/silver_pair\/","t":"rakuten","r_v":""},"v":"2.1","b_l":[{"id":1,"u_tx":"楽天市場で見る","u_bc":"#87c209","u_url":"https:\/\/item.rakuten.co.jp\/naturalbeauty\/silver_pair\/","a_id":5267359,"p_id":54,"pl_id":27059,"pc_id":54,"s_n":"rakuten","u_so":1},{"id":5,"u_tx":"Amazonで見る","u_bc":"#184f5c","u_url":"https:\/\/amzn.to\/4p81F5S","a_id":0,"p_id":0,"pl_id":0,"pc_id":0,"s_n":"custom_10","u_so":2},{"id":4,"u_tx":"Yahoo!ショッピングで見る","u_bc":"#bf0000","u_url":"https:\/\/shopping.yahoo.co.jp\/search?first=1\u0026p=%E3%80%90%E5%8C%BB%E8%96%AC%E9%83%A8%E5%A4%96%E5%93%81%E3%80%91%E3%81%8F%E3%82%8C%E3%81%88%E3%82%8B%20%E3%82%B7%E3%83%AB%E3%83%90%E3%83%BC%E3%82%A2%E3%83%B3%E3%83%A1%E3%83%A9%E3%83%B3%20%E3%83%9A%E3%82%A2%E3%82%BB%E3%83%83%E3%83%88%EF%BC%88%E5%8C%96%E7%B2%A7%E6%B0%B4%EF%BC%86%E3%82%AF%E3%83%AA%E3%83%BC%E3%83%A0%EF%BC%89%20%7C%20%E8%96%AC%E7%94%A8%E5%8C%96%E7%B2%A7%E6%B0%B4%20%E8%96%AC%E7%94%A8%E3%82%AF%E3%83%AA%E3%83%BC%E3%83%A0%20%E4%BF%9D%E6%B9%BF%E3%82%AF%E3%83%AA%E3%83%BC%E3%83%A0%20%E4%BF%9D%E6%B9%BF%20%E5%8C%96%E7%B2%A7%E5%93%81%20%E3%82%B3%E3%82%B9%E3%83%A1%20%E5%9F%BA%E7%A4%8E%E5%8C%96%E7%B2%A7%E5%93%81%20%E3%83%95%E3%82%A7%E3%82%A4%E3%82%B9%E3%82%B1%E3%82%A2%20%E4%BF%9D%E6%B9%BF%E5%8C%96%E7%B2%A7%E6%B0%B4%20%E3%82%A8%E3%82%A4%E3%82%B8%E3%83%B3%E3%82%B0%E3%82%B1%E3%82%A2%20%E3%83%95%E3%82%A7%E3%82%A4%E3%82%B9%E3%82%AF%E3%83%AA%E3%83%BC%E3%83%A0%20%E7%BE%8E%E5%AE%B9%E3%82%AF%E3%83%AA%E3%83%BC%E3%83%A0%20%E3%82%B9%E3%82%AD%E3%83%B3%E3%82%B1%E3%82%A2%E3%82%BB%E3%83%83%E3%83%88%20%E8%82%8C%E3%82%B1%E3%82%A2%20%E5%8C%BB%E8%96%AC%E9%83%A8%E5%A4%96%E5%93%81","a_id":5267465,"p_id":1225,"pl_id":27061,"pc_id":1925,"s_n":"yahoo","u_so":3}],"eid":"kp33i","s":"s"});
-</script>
-<div id="msmaflink-kp33i">リンク</div>
-<!-- MoshimoAffiliateEasyLink END -->
+        <script type="text/javascript">
+        (function(b,c,f,g,a,d,e){b.MoshimoAffiliateObject=a;
+        b[a]=b[a]||function(){arguments.currentScript=c.currentScript
+        ||c.scripts[c.scripts.length-2];(b[a].q=b[a].q||[]).push(arguments)};
+        c.getElementById(a)||(d=c.createElement(f),d.src=g,
+        d.id=a,e=c.getElementsByTagName("body")[0],e.appendChild(d))})
+        (window,document,"script","//dn.msmstatic.com/site/cardlink/bundle.js?20220329","msmaflink");
+        msmaflink({"n":"【医薬部外品】くれえる シルバーアンメラン ペアセット（化粧水＆クリーム） | 薬用化粧水 薬用クリーム 保湿クリーム 保湿 化粧品 コスメ 基礎化粧品 フェイスケア 保湿化粧水 エイジングケア フェイスクリーム 美容クリーム スキンケアセット 肌ケア 医薬部外品","b":"","t":"","d":"https:\/\/thumbnail.image.rakuten.co.jp","c_p":"\/@0_mall\/naturalbeauty\/cabinet\/syohin","p":["\/1stpic\/silver_set_02.jpg","\/t-nail\/09453927\/silver_set02.jpg","\/t-nail\/09453927\/silver_02.jpg"],"u":{"u":"https:\/\/item.rakuten.co.jp\/naturalbeauty\/silver_pair\/","t":"rakuten","r_v":""},"v":"2.1","b_l":[{"id":1,"u_tx":"楽天市場で見る","u_bc":"#87c209","u_url":"https:\/\/item.rakuten.co.jp\/naturalbeauty\/silver_pair\/","a_id":5267359,"p_id":54,"pl_id":27059,"pc_id":54,"s_n":"rakuten","u_so":1},{"id":5,"u_tx":"Amazonで見る","u_bc":"#184f5c","u_url":"https:\/\/amzn.to\/4p81F5S","a_id":0,"p_id":0,"pl_id":0,"pc_id":0,"s_n":"custom_10","u_so":2},{"id":4,"u_tx":"Yahoo!ショッピングで見る","u_bc":"#bf0000","u_url":"https:\/\/shopping.yahoo.co.jp\/search?first=1\u0026p=%E3%80%90%E5%8C%BB%E8%96%AC%E9%83%A8%E5%A4%96%E5%93%81%E3%80%91%E3%81%8F%E3%82%8C%E3%81%88%E3%82%8B%20%E3%82%B7%E3%83%AB%E3%83%90%E3%83%BC%E3%82%A2%E3%83%B3%E3%83%A1%E3%83%A9%E3%83%B3%20%E3%83%9A%E3%82%A2%E3%82%BB%E3%83%83%E3%83%88%EF%BC%88%E5%8C%96%E7%B2%A7%E6%B0%B4%EF%BC%86%E3%82%AF%E3%83%AA%E3%83%BC%E3%83%A0%EF%BC%89%20%7C%20%E8%96%AC%E7%94%A8%E5%8C%96%E7%B2%A7%E6%B0%B4%20%E8%96%AC%E7%94%A8%E3%82%AF%E3%83%AA%E3%83%BC%E3%83%A0%20%E4%BF%9D%E6%B9%BF%E3%82%AF%E3%83%AA%E3%83%BC%E3%83%A0%20%E4%BF%9D%E6%B9%BF%20%E5%8C%96%E7%B2%A7%E5%93%81%20%E3%82%B3%E3%82%B9%E3%83%A1%20%E5%9F%BA%E7%A4%8E%E5%8C%96%E7%B2%A7%E5%93%81%20%E3%83%95%E3%82%A7%E3%82%A4%E3%82%B9%E3%82%B1%E3%82%A2%20%E4%BF%9D%E6%B9%BF%E5%8C%96%E7%B2%A7%E6%B0%B4%20%E3%82%A8%E3%82%A4%E3%82%B8%E3%83%B3%E3%82%B0%E3%82%B1%E3%82%A2%20%E3%83%95%E3%82%A7%E3%82%A4%E3%82%B9%E3%82%AF%E3%83%AA%E3%83%BC%E3%83%A0%20%E7%BE%8E%E5%AE%B9%E3%82%AF%E3%83%AA%E3%83%BC%E3%83%A0%20%E3%82%B9%E3%82%AD%E3%83%B3%E3%82%B1%E3%82%A2%E3%82%BB%E3%83%83%E3%83%88%20%E8%82%8C%E3%82%B1%E3%82%A2%20%E5%8C%BB%E8%96%AC%E9%83%A8%E5%A4%96%E5%93%81","a_id":5267465,"p_id":1225,"pl_id":27061,"pc_id":1925,"s_n":"yahoo","u_so":3}],"eid":"kp33i","s":"s"});
+        </script>
+        <div id="msmaflink-kp33i">リンク</div>
         </div>
 
       <div class="rank-item">
         <span class="badge rank3">3位</span>
-        <!-- START MoshimoAffiliateEasyLink -->
-<script type="text/javascript">
-(function(b,c,f,g,a,d,e){b.MoshimoAffiliateObject=a;
-b[a]=b[a]||function(){arguments.currentScript=c.currentScript
-||c.scripts[c.scripts.length-2];(b[a].q=b[a].q||[]).push(arguments)};
-c.getElementById(a)||(d=c.createElement(f),d.src=g,
-d.id=a,e=c.getElementsByTagName("body")[0],e.appendChild(d))})
-(window,document,"script","//dn.msmstatic.com/site/cardlink/bundle.js?20220329","msmaflink");
-msmaflink({"n":"Herbivore Botanicals 【公式】フェイスオイル(オーキッド) 50ML\/オーガニック 植物由来 ヴィーガン美容液 ハービヴォア ボタニカルズ スキンケア 美容液・オイル・クリーム【送料無料】","b":"","t":"","d":"https:\/\/thumbnail.image.rakuten.co.jp","c_p":"\/@0_mall\/stylife\/cabinet\/item\/501","p":["\/jh1501-01_1.jpg","\/jh1501-01_2.jpg","\/jh1501-01_3.jpg"],"u":{"u":"https:\/\/item.rakuten.co.jp\/stylife\/jh1501\/","t":"rakuten","r_v":""},"v":"2.1","b_l":[{"id":1,"u_tx":"楽天市場で見る","u_bc":"#87c209","u_url":"https:\/\/item.rakuten.co.jp\/stylife\/jh1501\/","a_id":5267359,"p_id":54,"pl_id":27059,"pc_id":54,"s_n":"rakuten","u_so":1},{"id":5,"u_tx":"Amazonで見る","u_bc":"#184f5c","u_url":"https:\/\/amzn.to\/44DIEA1","a_id":0,"p_id":0,"pl_id":0,"pc_id":0,"s_n":"custom_10","u_so":2},{"id":4,"u_tx":"Yahoo!ショッピングで見る","u_bc":"#bf0000","u_url":"https:\/\/shopping.yahoo.co.jp\/search?first=1\u0026p=Herbivore%20Botanicals%20%E3%80%90%E5%85%AC%E5%BC%8F%E3%80%91%E3%83%95%E3%82%A7%E3%82%A4%E3%82%B9%E3%82%AA%E3%82%A4%E3%83%AB(%E3%82%AA%E3%83%BC%E3%82%AD%E3%83%83%E3%83%89)%2050ML%2F%E3%82%AA%E3%83%BC%E3%82%AC%E3%83%8B%E3%83%83%E3%82%AF%20%E6%A4%8D%E7%89%A9%E7%94%B1%E6%9D%A5%20%E3%83%B4%E3%82%A3%E3%83%BC%E3%82%AC%E3%83%B3%E7%BE%8E%E5%AE%B9%E6%B6%B2%20%E3%83%8F%E3%83%BC%E3%83%93%E3%83%B4%E3%82%A9%E3%82%A2%20%E3%83%9C%E3%82%BF%E3%83%8B%E3%82%AB%E3%83%AB%E3%82%BA%20%E3%82%B9%E3%82%AD%E3%83%B3%E3%82%B1%E3%82%A2%20%E7%BE%8E%E5%AE%B9%E6%B6%B2%E3%83%BB%E3%82%AA%E3%82%A4%E3%83%AB%E3%83%BB%E3%82%AF%E3%83%AA%E3%83%BC%E3%83%A0%E3%80%90%E9%80%81%E6%96%99%E7%84%A1%E6%96%99%E3%80%91","a_id":5267465,"p_id":1225,"pl_id":27061,"pc_id":1925,"s_n":"yahoo","u_so":3}],"eid":"gK9wP","s":"s"});
-</script>
-<div id="msmaflink-gK9wP">リンク</div>
-<!-- MoshimoAffiliateEasyLink END -->
+        <script type="text/javascript">
+        (function(b,c,f,g,a,d,e){b.MoshimoAffiliateObject=a;
+        b[a]=b[a]||function(){arguments.currentScript=c.currentScript
+        ||c.scripts[c.scripts.length-2];(b[a].q=b[a].q||[]).push(arguments)};
+        c.getElementById(a)||(d=c.createElement(f),d.src=g,
+        d.id=a,e=c.getElementsByTagName("body")[0],e.appendChild(d))})
+        (window,document,"script","//dn.msmstatic.com/site/cardlink/bundle.js?20220329","msmaflink");
+        msmaflink({"n":"Herbivore Botanicals 【公式】フェイスオイル(オーキッド) 50ML\/オーガニック 植物由来 ヴィーガン美容液 ハービヴォア ボタニカルズ スキンケア 美容液・オイル・クリーム【送料無料】","b":"","t":"","d":"https:\/\/thumbnail.image.rakuten.co.jp","c_p":"\/@0_mall\/stylife\/cabinet\/item\/501","p":["\/jh1501-01_1.jpg","\/jh1501-01_2.jpg","\/jh1501-01_3.jpg"],"u":{"u":"https:\/\/item.rakuten.co.jp\/stylife\/jh1501\/","t":"rakuten","r_v":""},"v":"2.1","b_l":[{"id":1,"u_tx":"楽天市場で見る","u_bc":"#87c209","u_url":"https:\/\/item.rakuten.co.jp\/stylife\/jh1501\/","a_id":5267359,"p_id":54,"pl_id":27059,"pc_id":54,"s_n":"rakuten","u_so":1},{"id":5,"u_tx":"Amazonで見る","u_bc":"#184f5c","u_url":"https:\/\/amzn.to\/44DIEA1","a_id":0,"p_id":0,"pl_id":0,"pc_id":0,"s_n":"custom_10","u_so":2},{"id":4,"u_tx":"Yahoo!ショッピングで見る","u_bc":"#bf0000","u_url":"https:\/\/shopping.yahoo.co.jp\/search?first=1\u0026p=Herbivore%20Botanicals%20%E3%80%90%E5%85%AC%E5%BC%8F%E3%80%91%E3%83%95%E3%82%A7%E3%82%A4%E3%82%B9%E3%82%AA%E3%82%A4%E3%83%AB(%E3%82%AA%E3%83%BC%E3%82%AD%E3%83%83%E3%83%89)%2050ML%2F%E3%82%AA%E3%83%BC%E3%82%AC%E3%83%8B%E3%83%83%E3%82%AF%20%E6%A4%8D%E7%89%A9%E7%94%B1%E6%9D%A5%20%E3%83%B4%E3%82%A1%E3%83%BC%E3%82%AC%E3%83%B3%E7%BE%8E%E5%AE%B9%E6%B6%B2%20%E3%83%8F%E3%83%BC%E3%83%93%E3%83%B4%E3%82%A9%E3%82%A2%20%E3%83%9C%E3%82%BF%E3%83%8B%E3%82%AB%E3%83%AB%E3%82%BA%20%E3%82%B9%E3%82%AD%E3%83%B3%E3%82%B1%E3%82%A2%20%E7%BE%8E%E5%AE%B9%E6%B6%B2%E3%83%BB%E3%82%AA%E3%82%A4%E3%83%AB%E3%83%BB%E3%82%AF%E3%83%AA%E3%83%BC%E3%83%A0%E3%80%90%E9%80%81%E6%96%99%E7%84%A1%E6%96%99%E3%80%91","a_id":5267465,"p_id":1225,"pl_id":27061,"pc_id":1925,"s_n":"yahoo","u_so":3}],"eid":"gK9wP","s":"s"});
+        </script>
+        <div id="msmaflink-gK9wP">リンク</div>
         </div>
 
     </div>
   </section>
 
-  <div style="margin: 60px 0; background: #fff4f4; padding: 30px; border-radius: 16px; text-align: center;">
+  <div class="staff-push-box">
     <h3 style="margin-top:0; color:#d6336c;">👑 スタッフ一押しアイテム</h3>
     <p style="margin-bottom:20px;color:#d6336c;">一年を通して使える最強のオーガニックジェルです。<br>迷ったらまずはコレ！</p>
 
@@ -444,27 +408,30 @@ msmaflink({"n":"Herbivore Botanicals 【公式】フェイスオイル(オーキ
     </div>
   </div>
 
-   <div class="nav-links" role="navigation" aria-label="site links">
-           <a href="seasons-skin.html">🌸 季節別スキンケア</a>
+  <div class="nav-links" style="margin-top:40px;">
+      <a href="index.html">🏠 トップ</a>
+      <a href="seasons-skin.html">🌸 季節別スキンケア</a>
       <a href="age-skincare.html">🍁 年齢・肌質別</a>
-      <a href="diet-beauty.html">🍃 ダイエット効果：インナービューティー</a>
-  <div class="nav-break"></div>
+      <a href="diet-beauty.html">🍃 インナービューティー</a>
+      <div class="nav-break"></div>
       <a href="acne-care.html">👩 肌荒れケア</a>
       <a href="lifestyle-skincare.html">💆‍♀️ 生活リズム別スキンケア</a>
-    　<a href="beauty-column.html">💄 ビューティーコラム</a>
-      <a href="index.html">🏠 トップ</a>
-    </div>
+      <a href="beauty-column.html">💄 ビューティーコラム</a>
+  </div>
 
-  <p class="note">
-    ※当サイトはアフィリエイトプログラム（Amazonアソシエイト含む）を利用しています。
-  </p>
-  
+  <div class="back-btn">
+    <a href="#top" onclick="window.scrollTo({top:0,behavior:'smooth'});return false;">⬆ ページトップへ戻る</a>
+  </div>
+
 </main>
 
-<footer style="text-align:center; padding:40px 0; background:#fff; font-size:13px; color:#888; border-top:1px solid #eee;">
+<footer>
   © 2025 Essential Beauty Needs
-          <a href="privacy-policy.html" style="color: #777; text-decoration: none; margin-left: 15px;">プライバシーポリシー</a>
+  <br><br>
+  <a href="privacy-policy.html" style="color: #777; text-decoration: none; border-bottom: 1px solid #ccc;">プライバシーポリシー</a>
 </footer>
+
+<div id="affiliateNotice">※当サイトはアフィリエイト広告（Amazonアソシエイト含む）を利用しています</div>
 
 </body>
 </html>
