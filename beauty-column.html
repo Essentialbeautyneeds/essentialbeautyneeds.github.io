@@ -16,7 +16,7 @@
       gtag('js', new Date());
       gtag('config', 'G-2HGEPHVZYY');
     } else {
-      console.log('✅ Internal traffic excluded.');
+        console.log('✅ Internal traffic excluded.');
     }
   </script>
   
@@ -35,10 +35,9 @@
       background:linear-gradient(90deg,#f8dcdc,#fbeaea);
       text-align:center;
       padding:80px 20px;
-      /* 背景画像がない場合のフォールバック色を設定 */
       background-color: #fbeaea;
-      /* 画像がある場合は以下が適用されます */
-      background-image:url('images/organic-care.jpg');
+      /* 画像がある場合は以下が適用されます。なければグラデーション背景になります */
+      /* background-image:url('images/organic-care.jpg'); */
       background-size:cover;
       background-position:center;
       background-blend-mode:lighten;
@@ -55,7 +54,7 @@
     img{ border-radius:12px; margin:25px 0; max-width: 100%; height: auto; }
 
     /* 画像サイズ縮小 */
-    .half-size{ width:50%; max-width:100%; display:block; margin:25px auto; }
+    .half-size{ width:50%; max-width:100%; display:block; margin:25px auto; box-shadow: 0 4px 15px rgba(0,0,0,0.1); }
 
     /* 専門家コメント風ボックス（修正後：編集部メモ） */
     .editorial-box {
@@ -101,12 +100,12 @@
       border-radius: 8px;
       font-weight:600;
       text-decoration:none;
-      color:#503535; /* 変数未定義のため直接色指定 */
+      color:#503535;
       transition:0.3s;
       box-shadow: 0 2px 5px rgba(0,0,0,0.05);
     }
     .nav-link:hover {
-      background: #f7a8a8; /* 変数未定義のため直接色指定 */
+      background: #f7a8a8;
       color:#fff;
       transform: translateY(-2px);
     }
@@ -162,7 +161,7 @@
       <p>季節が巡るたびに、肌はその変化を敏感に感じ取っています。春には花粉や紫外線、夏には汗と皮脂、秋には乾燥、そして冬には冷気と暖房。どの季節も、肌にとっては小さな試練の連続です。</p>
       <p>オーガニックケアは、そんな肌の声を静かに聞き取るような存在です。自然の恵みを活かした植物エキスや精油は、過剰な刺激を与えずに肌を守り、ゆるやかに整えてくれます。香りや手ざわりもまた、心にやさしく寄り添う要素のひとつ。スキンケアを「癒しの時間」として感じる人が増えているのも頷けます。</p>
       
-      <img src="images/30s-skincare.jpg" alt="スキンケアをする女性" class="half-size" onerror="this.style.display='none'">
+      <img src="https://placehold.co/600x400/f4e1d2/503535?text=Gentle+Skincare+Ritual" alt="スキンケアをする丁寧な手元" class="half-size">
       
       <p>朝、鏡の前で肌を触れた瞬間に「今日の調子、いいかも」と感じる。そんな小さな喜びが、心を軽やかにしてくれます。オーガニックコスメは、単なる化粧品ではなく、“自分と向き合うためのツール”なのかもしれません。</p>
     </section>
@@ -242,7 +241,7 @@
       自然の香りに包まれて深呼吸をすれば、心も肌も少しずつ柔らかくほぐれていきます。  
       肌を大切にするということは、自分の生き方を丁寧に扱うことでもあるのです。</p>
 
-      <img src="images/natural-beauty.jpg" alt="自然の中でリラックスする女性" class="half-size" onerror="this.style.display='none'">
+      <img src="https://placehold.co/600x400/f4e1d2/503535?text=Harmony+with+Nature" alt="自然と調和するリラックスした時間" class="half-size">
 
       <p>オーガニックケアは“足す美容”ではなく、“戻す美容”。  
       自然に還るように、シンプルに、穏やかに。  
