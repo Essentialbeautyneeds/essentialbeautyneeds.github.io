@@ -1,0 +1,286 @@
+<!doctype html>
+<html lang="ja">
+<head>
+  <meta charset="utf-8" />
+  <meta name="viewport" content="width=device-width,initial-scale=1" />
+  <title>美髪を育むオーガニックヘアケア | Essential Beauty Needs</title>
+  <meta name="description" content="髪のパサつきや頭皮の乾燥に。ノンシリコン、アミノ酸系など、髪と地肌に優しいオーガニックシャンプー＆ヘアケアの選び方とおすすめアイテムを紹介。">
+  <meta name="keywords" content="オーガニック, ヘアケア, シャンプー, ノンシリコン, 頭皮ケア, アミノ酸, 美髪">
+  <link rel="canonical" href="https://essential-beauty-needs.com/hair-care.html" />
+
+  <link href="https://fonts.googleapis.com/css2?family=Playfair+Display:wght@600&family=Quicksand:wght@400;600&display=swap" rel="stylesheet">
+
+  <script>
+    function isInternalUser() {
+      return document.cookie.split(';').some(c => c.trim().startsWith('internal_user=true'));
+    }
+    if (!isInternalUser()) {
+      var gaScript = document.createElement('script');
+      gaScript.async = true;
+      gaScript.src = "https://www.googletagmanager.com/gtag/js?id=G-2HGEPHVZYY";
+      document.head.appendChild(gaScript);
+      window.dataLayer = window.dataLayer || [];
+      function gtag(){dataLayer.push(arguments);}
+      gtag('js', new Date());
+      gtag('config', 'G-2HGEPHVZYY');
+    } else {
+        console.log('✅ Internal traffic excluded.');
+    }
+
+    function handleImageError(imgElement) { 
+         imgElement.onerror = null; 
+         imgElement.src = "https://placehold.co/600x400/e6e6fa/888888?text=Hair+Care+Image";
+         imgElement.style.objectFit = "cover";
+    }
+  </script>
+
+  <style>
+    /* 共通設定 */
+    :root {
+      --bg: #fffbfb; /* ほんのりラベンダー寄りの白 */
+      --accent: #d8bfd8; /* ラベンダーピンク（ヘアケアの癒やしイメージ） */
+      --accent-dark: #bca0bc;
+      --text-main: #504050;
+      --card-bg: #ffffff;
+    }
+    *, *::before, *::after { box-sizing: border-box; }
+
+    body {
+      font-family: 'Quicksand', sans-serif;
+      margin: 0;
+      background: var(--bg);
+      color: #555;
+      line-height: 1.8;
+    }
+
+    /* ヘッダー */
+    header {
+      background: linear-gradient(135deg, #fdf5ff, #f3e5f5);
+      text-align: center;
+      padding: 80px 20px 50px;
+      color: var(--text-main);
+      border-bottom: 3px solid #e0d0e0;
+    }
+    header h1 {
+      font-family: 'Playfair Display', serif;
+      font-size: 34px;
+      margin: 0;
+      color: #8e6e8e; /* 落ち着いたパープル系 */
+      letter-spacing: 1px;
+    }
+    header p {
+      font-size: 16px;
+      margin-top: 10px;
+      font-weight: 600;
+      color: var(--text-main);
+    }
+
+    /* ナビゲーション */
+    .nav-links{display:flex;gap:10px;justify-content:center;margin-top:25px;flex-wrap:wrap;}
+    .nav-links a{
+        background:rgba(255,255,255,0.7);
+        padding:8px 15px;
+        border-radius:20px;
+        text-decoration:none;
+        color:#503535;
+        font-weight:600; 
+        font-size:13px; 
+        box-shadow: 0 2px 5px rgba(0,0,0,0.05); 
+        transition:0.3s;
+    }
+    .nav-links a:hover{
+        background:var(--accent);
+        color:#fff; 
+        transform:translateY(-2px);
+    }
+    .nav-break { flex-basis: 100%; height: 0; margin: 3px 0; }
+
+    /* メインコンテンツ */
+    main {
+      max-width: 900px;
+      margin: 40px auto;
+      padding: 0 20px;
+    }
+
+    /* 導入メッセージ */
+    .intro-box {
+      background: #fff;
+      padding: 30px;
+      border-radius: 12px;
+      border-left: 5px solid var(--accent);
+      box-shadow: 0 4px 10px rgba(0,0,0,0.05);
+      margin-bottom: 50px;
+    }
+
+    /* セクション見出し */
+    h2 {
+      font-family: 'Playfair Display', serif;
+      text-align: center;
+      color: var(--text-main);
+      font-size: 26px;
+      margin: 60px 0 30px;
+      position: relative;
+    }
+    h2::after {
+      content: "";
+      display: block;
+      width: 50px;
+      height: 3px;
+      background: var(--accent);
+      margin: 15px auto 0;
+    }
+
+    /* 商品カード */
+    .item-card {
+      background: #fff;
+      border-radius: 15px;
+      padding: 25px;
+      margin-bottom: 40px;
+      box-shadow: 0 5px 15px rgba(0,0,0,0.05);
+      border: 1px solid #f0e6f0;
+    }
+    
+    .check-points {
+        background: #fdfafd;
+        border: 1px dashed var(--accent);
+        padding: 15px 20px;
+        border-radius: 8px;
+        margin-top: 20px;
+    }
+    .check-points h4 {
+        margin: 0 0 10px;
+        color: #8e6e8e;
+        font-size: 16px;
+    }
+    .check-points ul {
+        margin: 0;
+        padding-left: 20px;
+        font-size: 14px;
+        color: #555;
+    }
+    .check-points li {
+        margin-bottom: 5px;
+    }
+
+    /* バナーエリア */
+    .banner-area {
+        text-align: center;
+        margin: 40px 0;
+        padding: 20px;
+        background: #fff;
+        border-radius: 12px;
+    }
+
+    /* フッター */
+    footer {
+      text-align: center;
+      color: #777;
+      font-size: 13px;
+      margin: 60px 0;
+      border-top: 1px solid #eee;
+      padding-top: 40px;
+    }
+    #affiliateNotice {
+      position: fixed; right: 12px; bottom: 12px;
+      background: rgba(255, 255, 255, 0.8);
+      color: #555; font-size: 11px;
+      border-radius: 6px; padding: 4px 8px;
+      box-shadow: 0 2px 6px rgba(0,0,0,0.1);
+      z-index: 999;
+    }
+    
+    .back-btn { text-align: center; margin: 50px 0; }
+    .back-btn a { color: #777; text-decoration: none; border-bottom: 1px solid #ccc; }
+
+    @media(max-width: 600px) {
+        header h1 { font-size: 28px; }
+    }
+  </style>
+</head>
+<body>
+
+<header>
+  <h1>美髪を育むオーガニックヘアケア</h1>
+  <p>頭皮も「肌」の一部。優しさで選ぶヘアケア習慣。</p>
+
+  <div class="nav-links">
+      <a href="index.html">🏠 トップ</a>
+      <a href="skin-ranking.html">✨ ランキング</a>
+      <a href="trial-sets.html">🔰 お試しセット</a>
+      <div class="nav-break"></div>
+      <a href="amazon-oil-review.html">🔥 オイルレビュー</a>
+      <a href="seasons-skin.html">🌸 季節別ケア</a>
+      <a href="beauty-column.html">💄 コラム</a>
+  </div>
+</header>
+
+<main>
+
+  <div class="intro-box">
+    <h3 style="margin-top:0; color:#8e6e8e;">その髪の悩み、頭皮の「乾燥」が原因かも？</h3>
+    <p>
+        「高いトリートメントを使ってもパサつきが治らない」「夕方になると頭皮の匂いが気になる」…<br>
+        そんなお悩みはありませんか？<br><br>
+        実は、洗浄力の強すぎるシャンプーが、頭皮の必要な油分まで洗い流してしまっていることが原因かもしれません。<br>
+        顔のスキンケアと同じように、頭皮も<strong>「アミノ酸系」</strong>や<strong>「植物由来」</strong>の優しい成分で洗うことで、土台から健やかな美髪が育ちます。
+    </p>
+  </div>
+
+  <h2>🧴 おすすめオーガニックシャンプー</h2>
+
+  <div class="item-card">
+    <div style="text-align:center; margin-bottom:15px;">
+        <script type="text/javascript">
+        (function(b,c,f,g,a,d,e){b.MoshimoAffiliateObject=a;
+        b[a]=b[a]||function(){arguments.currentScript=c.currentScript
+        ||c.scripts[c.scripts.length-2];(b[a].q=b[a].q||[]).push(arguments)};
+        c.getElementById(a)||(d=c.createElement(f),d.src=g,
+        d.id=a,e=c.getElementsByTagName("body")[0],e.appendChild(d))})
+        (window,document,"script","//dn.msmstatic.com/site/cardlink/bundle.js?20220329","msmaflink");
+        msmaflink({"n":"オルナ オーガニック シャンプー トリートメント セット 各500ml 無添加 日本製 (モイスチャー)","b":"","t":"","d":"https:\/\/thumbnail.image.rakuten.co.jp","c_p":"\/@0_mall\/tsurunishi\/cabinet\/allna\/shampoo\/","p":["\/set_mo_new.jpg","\/01_mo.jpg","\/02_mo.jpg"],"u":{"u":"https:\/\/item.rakuten.co.jp\/tsurunishi\/90-92\/","t":"rakuten","r_v":""},"v":"2.1","b_l":[{"id":1,"u_tx":"楽天市場で見る","u_bc":"#87c209","u_url":"https:\/\/item.rakuten.co.jp\/tsurunishi\/90-92\/","a_id":5267359,"p_id":54,"pl_id":27059,"pc_id":54,"s_n":"rakuten","u_so":1},{"id":5,"u_tx":"Amazonで見る","u_bc":"#184f5c","u_url":"https:\/\/amzn.to\/4im47iv","a_id":0,"p_id":0,"pl_id":0,"pc_id":0,"s_n":"custom_10","u_so":2},{"id":4,"u_tx":"Yahoo!ショッピングで見る","u_bc":"#bf0000","u_url":"https:\/\/shopping.yahoo.co.jp\/search?first=1\u0026p=%E3%82%AA%E3%83%AB%E3%83%8A%20%E3%82%AA%E3%83%BC%E3%82%AC%E3%83%8B%E3%83%83%E3%82%AF%20%E3%82%B7%E3%83%A3%E3%83%B3%E3%83%97%E3%83%BC%20%E3%83%88%E3%83%AA%E3%83%BC%E3%83%88%E3%83%A1%E3%83%B3%E3%83%88%20%E3%82%BB%E3%83%83%E3%83%88%20%E5%90%84500ml%20%E7%84%A1%E6%B7%BB%E5%8A%A0%20%E6%97%A5%E6%9C%AC%E8%A3%BD%20(%E3%83%A2%E3%82%A4%E3%82%B9%E3%83%81%E3%83%A3%E3%83%BC)","a_id":5267465,"p_id":1225,"pl_id":27061,"pc_id":1925,"s_n":"yahoo","u_so":3}],"eid":"2L72J","s":"s"});
+        </script>
+        <div id="msmaflink-2L72J">リンク</div>
+    </div>
+
+    <div class="check-points">
+        <h4>💡 編集部のおすすめポイント</h4>
+        <ul>
+            <li><strong>アミノ酸系洗浄成分：</strong> 必要な潤いを残しながら、汚れだけを優しくオフ。</li>
+            <li><strong>植物由来の香り：</strong> バスタイムが癒やしのスパ時間に変わります。</li>
+            <li><strong>ノンシリコンでもきしまない：</strong> 厳選された植物オイルが髪をコーティングし、なめらかな指通りに。</li>
+        </ul>
+    </div>
+  </div>
+
+  <h2>💧 アウトバスケア（ヘアオイル）</h2>
+  
+  <div class="info-box" style="background:#fffaf4; padding:20px; border-radius:10px; margin-bottom:30px;">
+      <p style="margin:0; font-size:14px;">
+          お風呂上がりの濡れた髪や、朝のスタイリングには「植物オイル」が最適です。<br>
+          ヘアケア専用のものでなくても、<strong>ホホバオイル</strong>や<strong>アルガンオイル</strong>なら、顔や体の保湿と兼ねて使えるのでコスパも抜群です。
+      </p>
+  </div>
+
+  <div class="banner-area">
+      <p style="font-weight:bold; color:#8e6e8e;">＼ 髪にも使える万能オイルはこちら ／</p>
+      <a href="amazon-oil-review.html" style="display:inline-block; padding:12px 30px; background:#d8bfd8; color:#fff; text-decoration:none; border-radius:30px; font-weight:bold; box-shadow:0 4px 10px rgba(0,0,0,0.1); transition:0.3s;">
+          おすすめオイル3選を見る &rarr;
+      </a>
+  </div>
+
+  <div class="back-btn">
+    <a href="index.html">← トップページへ戻る</a>
+  </div>
+
+</main>
+
+<div id="affiliateNotice">※当サイトはアフィリエイト広告（Amazonアソシエイト含む）を利用しています</div>
+
+<footer>
+  © 2025 Essential Beauty Needs
+  <br><br>
+  <a href="privacy-policy.html" style="color: #777; text-decoration: none; border-bottom: 1px solid #ccc;">プライバシーポリシー</a>
+</footer>
+
+</body>
+</html>
