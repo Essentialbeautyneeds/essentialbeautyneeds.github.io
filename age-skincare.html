@@ -1,302 +1,179 @@
 <!doctype html>
 <html lang="ja">
 <head>
-<link rel="canonical" href="https://essential-beauty-needs.com/age-skincare.html" />
- 
-<meta charset="utf-8">
- <script>
-  // internal_user クッキーが設定されているか確認
-  function isInternalUser() {
-    return document.cookie.split(';').some(c => c.trim().startsWith('internal_user=true'));
-  }
+  <meta charset="utf-8" />
+  <meta name="viewport" content="width=device-width,initial-scale=1" />
+  <title>40代・50代からの肌質別スキンケア｜年齢肌を輝かせるオーガニック</title>
+  <meta name="description" content="40代・50代の年齢肌悩みに。ハリ不足、乾燥、くすみにアプローチする、大人のためのオーガニックスキンケア選びとおすすめランキング。">
+  <meta name="keywords" content="40代, 50代, スキンケア, エイジングケア, オーガニック, ハリ, 乾燥">
+  <link rel="canonical" href="https://essential-beauty-needs.com/age-skincare.html" />
 
-  // internal_user クッキーがない場合だけ、GA4を読み込む
-  if (!isInternalUser()) {
-    var gaScript = document.createElement('script');
-    gaScript.async = true;
-    gaScript.src = "https://www.googletagmanager.com/gtag/js?id=G-2HGEPHVZYY";
-    document.head.appendChild(gaScript);
+  <link href="https://fonts.googleapis.com/css2?family=Playfair+Display:wght@600&family=Quicksand:wght@400;600&display=swap" rel="stylesheet">
 
-    window.dataLayer = window.dataLayer || [];
-    function gtag(){dataLayer.push(arguments);}
-    gtag('js', new Date());
-    gtag('config', 'G-2HGEPHVZYY');
-  } else {
-    console.log('✅ Internal traffic excluded.');
-  }
-</script>
-    
-<meta name="viewport" content="width=device-width,initial-scale=1">
-<title>40代・50代向け 年齢・肌質別オーガニックスキンケア｜肌が喜ぶ自然派コスメ</title>
-<link href="https://fonts.googleapis.com/css2?family=Playfair+Display:wght@600&family=Quicksand:wght@400;600&display=swap" rel="stylesheet">
-<style>
-:root {
-  --bg: #fff8f8;
-  --accent: #f7a8a8;
-  --accent-hover: #f48b8b;
-  --muted: #666;
-}
-* { box-sizing: border-box; margin: 0; padding: 0; }
-body { font-family: 'Quicksand', sans-serif; background: var(--bg); color: #333; line-height: 1.6; }
-header { text-align: center; padding: 80px 20px; background: linear-gradient(135deg,#ffe6e6,#ffdcdc); color:#503535; box-shadow:0 4px 20px rgba(0,0,0,0.1);}
-h1 { font-family: 'Playfair Display', serif; font-size: 42px; margin-bottom: 10px; }
-p.lead { font-size: 18px; color: #5a4545; }
-.container { max-width: 1000px; margin: 0 auto; padding: 0 20px; }
-.article { margin: 80px 0; }
-.article h2 { font-family: 'Playfair Display', serif; font-size:28px; color:#503535; text-align:center; margin-bottom:20px; }
-/* 修正後 (ヒーロー画像のサイズと中央寄せを設定) */
-.article img.hero { 
-    width:100%; 
-    max-width: 600px; /* ★追加: 最大幅を600pxに設定 */
-    display: block; /* ★追加: 中央寄せのためにブロック要素に */
-    margin: 0 auto 20px; /* ★修正: 中央寄せ + 下マージン */
-    max-height:400px; 
-    object-fit:cover; 
-    border-radius:18px; 
-    box-shadow:0 6px 25px rgba(0,0,0,0.15); 
-}
-    
-/* レイアウトを縦長（シングルカラム）に変更 */
-/* 修正後 (レビュー全体（商品リンクとレビューカラムを含む）の幅と中央寄せを設定) */
-.product-review { 
-    gap:30px; 
-    margin-bottom:50px; 
-    margin-left: auto; /* ★追加: 中央寄せ */
-    margin-right: auto; /* ★追加: 中央寄せ */
-}
-    
-/* product-cardの flex 設定を解除（幅は親要素の幅100%になる） */
-.product-card { 
-    /* flex:1; min-width:280px; を削除 */
-    text-align:left; 
-    background:#fff; 
-    border-radius:14px; 
-    padding:15px; 
-    box-shadow:0 4px 12px rgba(0,0,0,0.08); 
-    margin-bottom: 30px; /* カード下の余白追加 */
-}
-.product-card img { width:100%; height:220px; border-radius:12px; object-fit:cover; margin-bottom:12px; }
-.product-card h3 { font-size:18px; margin-bottom:10px; }
-.product-card p { font-size:15px; color:#444; margin-bottom:10px; }
-.product-card ul { font-size:14px; margin-left:18px; color:#555; margin-bottom:10px; }
-.btn { display:inline-block; background:var(--accent); color:#fff; padding:12px 28px; border-radius:30px; text-decoration:none; font-weight:600; transition:0.3s; }
-.btn:hover { background:var(--accent-hover); }
-
-/* レビューカラムも縦に積むよう変更 */
-.review-column { 
-    gap:20px; 
-    max-width: 600px; /* 最大幅を設定 */
-    margin: 0 auto;  /* 中央寄せ */
-    display: flex; /* ★追加 */
-    flex-direction: column; /* ★追加 */
-}
-.review-card { background:#fff5f5; border-radius:14px; padding:15px; text-align:center; box-shadow:inset 0 0 10px rgba(0,0,0,0.05); }
-.review-card img { width:100px; height:100px; border-radius:50%; object-fit:cover; margin-bottom:8px; }
-.review-card p { font-size:14px; color:#333; margin-bottom:6px; }
-.review-card .name { font-weight:600; color:#555; margin-top:2px; }
-
-.internal-link { text-align:center; margin:20px 0; }
-.internal-link a { color:#d6336c; font-weight:600; text-decoration:none; }
-
-.related { text-align:center; margin:20px 0 0; }
-.related a { color:#d6336c; font-weight:600; text-decoration:none; font-size:1.1em; margin:0 12px; }
-
-footer { text-align:center; font-size:13px; color:#888; margin:60px 0 30px; }
-
-#affiliateNotice {
-    position: fixed;
-    right: 12px;
-    bottom: 12px;
-    background: rgba(255, 255, 255, 0.8);
-    color: #555;
-    font-size: 11px;
-    border-radius: 6px;
-    padding: 4px 8px;
-    box-shadow: 0 2px 6px rgba(0,0,0,0.1);
-    z-index: 999;
-}
-
-@media (max-width:768px){ 
-  .product-review{ flex-direction:column; } 
-  .review-column{ flex-direction:column; } /* レビューカードも縦に積む */
-}
-  /* Navigation */
-    nav{position:relative; z-index:3; margin-top:25px;}
-    .nav-link {
-      display: inline-block;
-      margin: 6px 12px;
-      padding: 8px 18px;
-      background: rgba(255,255,255,0.8);
-      border-radius: 8px;
-      font-weight:600;
-      text-decoration:none;
-      color:var(--text-main);
-      transition:0.3s;
-      box-shadow: 0 2px 5px rgba(0,0,0,0.05);
+  <script>
+    function isInternalUser() {
+      return document.cookie.split(';').some(c => c.trim().startsWith('internal_user=true'));
     }
-    .nav-link:hover {
-      background: var(--accent);
-      color:#fff;
-      transform: translateY(-2px);
+    if (!isInternalUser()) {
+      var gaScript = document.createElement('script');
+      gaScript.async = true;
+      gaScript.src = "https://www.googletagmanager.com/gtag/js?id=G-2HGEPHVZYY";
+      document.head.appendChild(gaScript);
+      window.dataLayer = window.dataLayer || [];
+      function gtag(){dataLayer.push(arguments);}
+      gtag('js', new Date());
+      gtag('config', 'G-2HGEPHVZYY');
+    } else {
+        console.log('✅ Internal traffic excluded.');
     }
 
-    .container{max-width:980px;margin:0 auto;padding:0 16px;}
-
-     /* Common Buttons */
-    .btn-main {
-      display:inline-block;
-      padding:14px 32px;
-      border-radius:30px;
-      background:linear-gradient(45deg,#f48b8b,#f7a8a8);
-      color: #fff;
-      text-decoration: none;
-      font-weight: bold;
-      box-shadow: 0 4px 12px rgba(0,0,0,0.15);
-      transition: 0.3s;
+    function handleImageError(imgElement, width, height, text) { 
+         imgElement.onerror = null; 
+         imgElement.src = `https://placehold.co/${width}x${height}/f4e1d2/503535?text=${encodeURIComponent(text)}`;
+         imgElement.style.objectFit = "cover";
     }
-    .btn-main:hover {
-      transform: translateY(-3px);
-      box-shadow: 0 6px 18px rgba(0,0,0,0.2);
+  </script>
+
+  <style>
+    :root {
+      --bg: #fffbf9; /* 少し落ち着いたベージュピンク系の背景 */
+      --accent: #e8c2b6; /* 大人の落ち着いたピンクベージュ */
+      --text-main: #503535;
     }
-<style>
-:root {
-  --bg: #fff8f8;
-  --accent: #f7a8a8;
-  --accent-hover: #f48b8b;
-  --muted: #666;
-}
-* { box-sizing: border-box; margin: 0; padding: 0; }
-body { font-family: 'Quicksand', sans-serif; background: var(--bg); color: #333; line-height: 1.6; }
+    *, *::before, *::after { box-sizing: border-box; }
 
-/* 変更点: header全体の背景とpaddingを削除 */
-header { text-align: center; padding: 0; background: none; color:#503535; box-shadow:none;}
+    body {
+      font-family: 'Quicksand', sans-serif;
+      margin: 0;
+      background: var(--bg);
+      color: #555;
+      line-height: 1.8;
+    }
 
-/* 変更点: ピンク背景のヘッダー部分を定義 */
-.pink-header-box {
-    padding: 80px 20px 40px; /* 上下のpaddingを設定 */
-    background: linear-gradient(135deg,#ffe6e6,#ffdcdc);
-    box-shadow:0 4px 20px rgba(0,0,0,0.1);
-}
+    /* ヘッダー */
+    header {
+      background: linear-gradient(135deg, #fff0eb, #eddcd9);
+      text-align: center;
+      padding: 80px 20px 50px;
+      color: var(--text-main);
+      border-bottom: 3px solid #e6b7b3;
+    }
+    header h1 {
+      font-family: 'Playfair Display', serif;
+      font-size: 34px;
+      margin: 0;
+      color: #a86f6f; /* 落ち着いたローズブラウン */
+      letter-spacing: 1px;
+    }
+    header p {
+      font-size: 16px;
+      margin-top: 10px;
+      font-weight: 600;
+      color: var(--text-main);
+    }
 
-/* 変更点: 説明文のボックス（白背景 + ピンク枠）を定義 */
-.description-box {
-    max-width: 600px;
-    /* 負のマージンでピンクの背景に少し被せるデザインに */
-    margin: -30px auto 30px; 
-    padding: 25px 20px;
-    background: #ffffff; /* 白背景 */
-    border: 2px solid #e91e63; 
-    border-radius: 12px;
-    box-shadow: 0 4px 15px rgba(0,0,0,0.1);
-    text-align: center;
-    position: relative;
-    z-index: 2; /* 他の要素の上に表示 */
-}
+    /* ナビゲーション（共通） */
+    .nav-links{display:flex;gap:10px;justify-content:center;margin-top:25px;flex-wrap:wrap;}
+    .nav-links a{
+        background:rgba(255,255,255,0.6);
+        padding:8px 15px;
+        border-radius:20px;
+        text-decoration:none;
+        color:#503535;
+        font-weight:600; 
+        font-size:13px; 
+        box-shadow: 0 2px 5px rgba(0,0,0,0.05); 
+        transition:0.3s;
+    }
+    .nav-links a:hover{
+        background:var(--accent);
+        color:#fff; 
+        transform:translateY(-2px);
+    }
+    .nav-break { flex-basis: 100%; height: 0; margin: 3px 0; }
 
-h1 { font-family: 'Playfair Display', serif; font-size: 42px; margin-bottom: 10px; }
-p.lead { font-size: 18px; color: #5a4545; }
-.container { max-width: 1000px; margin: 0 auto; padding: 0 20px; }
-.article { margin: 80px 0; }
-.article h2 { font-family: 'Playfair Display', serif; font-size:28px; color:#503535; text-align:center; margin-bottom:20px; }
-    
-:root {
-  --bg: #fff8f8;
-  --accent: #f7a8a8;
-  --accent-hover: #f48b8b;
-  --muted: #666;
-}
-* { box-sizing: border-box; margin: 0; padding: 0; }
-body { font-family: 'Quicksand', sans-serif; background: var(--bg); color: #333; line-height: 1.6; }
+    /* メインコンテンツ */
+    main {
+      max-width: 900px;
+      margin: 40px auto;
+      padding: 0 20px;
+    }
 
-/* 変更点: header全体の背景とpaddingを削除 */
-header { text-align: center; padding: 0; background: none; color:#503535; box-shadow:none;}
+    /* メイン画像 */
+    img.hero {
+        width: 100%;
+        max-height: 400px;
+        object-fit: cover;
+        border-radius: 18px;
+        margin-bottom: 40px;
+        box-shadow: 0 6px 25px rgba(0,0,0,0.1);
+        /* 画像がまだない場合の仮の色 */
+        background-color: #f4e1d2; 
+    }
 
-/* 変更点: ピンク背景のヘッダー部分を定義 */
-.pink-header-box {
-    padding: 80px 20px 40px; /* 上下のpaddingを設定 */
-    background: linear-gradient(135deg,#ffe6e6,#ffdcdc);
-    box-shadow:0 4px 20px rgba(0,0,0,0.1);
-}
+    /* 導入文 */
+    .intro-box {
+      background: #fff;
+      padding: 30px;
+      border-radius: 12px;
+      border-left: 5px solid var(--accent);
+      box-shadow: 0 4px 10px rgba(0,0,0,0.05);
+      margin-bottom: 50px;
+      font-size: 15px;
+    }
 
-/* 変更点: 説明文のボックス（白背景 + ピンク枠）を定義 */
-.description-box {
-    max-width: 600px;
-    margin: -30px auto 30px; 
-    padding: 25px 20px;
-    background: #ffffff; /* 白背景 */
-    border: 2px solid var(--accent); /* ピンク枠線 */
-    border-radius: 12px;
-    box-shadow: 0 4px 15px rgba(0,0,0,0.1);
-    text-align: center;
-    position: relative;
-    z-index: 2; /* 他の要素の上に表示 */
-}
+    /* ランキングセクション */
+    .ranking-section { margin-bottom: 60px; }
+    .ranking-section h2 {
+        font-family: 'Playfair Display', serif;
+        text-align: center;
+        color: #a86f6f;
+        font-size: 26px;
+        margin-bottom: 30px;
+        position: relative;
+    }
+    .ranking-section h2::after {
+        content: ""; display: block; width: 50px; height: 3px;
+        background: var(--accent); margin: 15px auto 0; opacity: 0.7;
+    }
 
-h1 { font-family: 'Playfair Display', serif; font-size: 42px; margin-bottom: 10px; }
-p.lead { font-size: 18px; color: #5a4545; }
-.container { max-width: 1000px; margin: 0 auto; padding: 0 20px; }
-.article { margin: 80px 0; }
-.article h2 { font-family: 'Playfair Display', serif; font-size:28px; color:#503535; text-align:center; margin-bottom:20px; }
-/* 修正後 (ヒーロー画像のサイズと中央寄せを設定) */
-.article img.hero { 
-    width:100%; 
-    max-width: 600px; /* ★追加: 最大幅を600pxに設定 */
-    display: block; /* ★追加: 中央寄せのためにブロック要素に */
-    margin: 0 auto 20px; /* ★修正: 中央寄せ + 下マージン */
-    max-height:400px; 
-    object-fit:cover; 
-    border-radius:18px; 
-    box-shadow:0 6px 25px rgba(0,0,0,0.15); 
-}
-    
-/* レイアウトを縦長（シングルカラム）に変更 */
-/* 修正後 (レビュー全体（商品リンクとレビューカラムを含む）の幅と中央寄せを設定) */
-.product-review { 
-    gap:30px; 
-    margin-bottom:50px; 
-    margin-left: auto; 
-    margin-right: auto; 
-}
-    
-/* product-cardの flex 設定を解除（幅は親要素の幅100%になる） */
-.product-card { 
-    /* flex:1; min-width:280px; を削除 */
-    text-align:left; 
-    background:#fff; 
-    border-radius:14px; 
-    padding:15px; 
-    box-shadow:0 4px 12px rgba(0,0,0,0.08); 
-    margin-bottom: 30px; /* カード下の余白追加 */
-}
-.product-card img { width:100%; height:220px; border-radius:12px; object-fit:cover; margin-bottom:12px; }
-.product-card h3 { font-size:18px; margin-bottom:10px; }
-.product-card p { font-size:15px; color:#444; margin-bottom:10px; }
-.product-card ul { font-size:14px; margin-left:18px; color:#555; margin-bottom:10px; }
-.btn { display:inline-block; background:var(--accent); color:#fff; padding:12px 28px; border-radius:30px; text-decoration:none; font-weight:600; transition:0.3s; }
-.btn:hover { background:var(--accent-hover); }
+    /* 商品カード */
+    .item-card {
+      background: #fff;
+      border-radius: 15px;
+      padding: 25px;
+      margin-bottom: 30px;
+      box-shadow: 0 5px 15px rgba(0,0,0,0.05);
+      border: 1px solid #f0ebeb;
+      position: relative;
+    }
+    .rank-badge {
+        position: absolute; top: -12px; left: 15px;
+        background: #c5a059; color: #fff; padding: 4px 12px;
+        border-radius: 15px; font-weight: bold; font-size: 13px;
+        box-shadow: 0 2px 5px rgba(0,0,0,0.15);
+    }
 
-/* レビューカラムも縦に積むよう変更 */
-.review-column { 
-    gap:20px; 
-    max-width: 600px; /* 最大幅を600pxに設定 */
-    margin: 0 auto;  /* 中央寄せ */
-    display: flex; /* ★追加: flexboxを適用 */
-    flex-direction: column; /* ★追加: 子要素を縦に並べる */
-}
-.review-card { background:#fff5f5; border-radius:14px; padding:15px; text-align:center; box-shadow:inset 0 0 10px rgba(0,0,0,0.05); }
-.review-card img { width:100px; height:100px; border-radius:50%; object-fit:cover; margin-bottom:8px; }
-.review-card p { font-size:14px; color:#333; margin-bottom:6px; }
-.review-card .name { font-weight:600; color:#555; margin-top:2px; }
+    /* 編集部コメント */
+    .editor-comment {
+        background: #fdf9f8;
+        border: 1px dashed var(--accent);
+        padding: 15px;
+        border-radius: 10px;
+        margin-top: 20px;
+        font-size: 14px;
+    }
+    .editor-comment h4 { margin: 0 0 8px; color: #a86f6f; font-size: 15px; }
 
-.internal-link { text-align:center; margin:20px 0; }
-.internal-link a { color:#d6336c; font-weight:600; text-decoration:none; }
-
-.related { text-align:center; margin:20px 0 0; }
-.related a { color:#d6336c; font-weight:600; text-decoration:none; font-size:1.1em; margin:0 12px; }
-
-footer { text-align:center; font-size:13px; color:#888; margin:60px 0 30px; }
-
- /* Footer & Others */
+    /* フッター */
+    footer {
+      text-align: center;
+      color: #777;
+      font-size: 13px;
+      margin: 60px 0;
+      border-top: 1px solid #eee;
+      padding-top: 40px;
+    }
     #affiliateNotice {
       position: fixed; right: 12px; bottom: 12px;
       background: rgba(255, 255, 255, 0.8);
@@ -305,236 +182,89 @@ footer { text-align:center; font-size:13px; color:#888; margin:60px 0 30px; }
       box-shadow: 0 2px 6px rgba(0,0,0,0.1);
       z-index: 999;
     }
-    
+    .back-btn { text-align: center; margin: 50px 0; }
+    .back-btn a { color: #777; text-decoration: none; border-bottom: 1px solid #ccc; }
 
-@media (max-width:768px){ 
-  .product-review{ flex-direction:column; } 
-  .review-column{ flex-direction:column; } /* レビューカードも縦に積む */
-}
-  /* Navigation */
-    nav{position:relative; z-index:3; margin-top:25px;}
-    .nav-link {
-      display: inline-block;
-      margin: 6px 12px;
-      padding: 8px 18px;
-      background: rgba(255,255,255,0.8);
-      border-radius: 8px;
-      font-weight:600;
-      text-decoration:none;
-      color:var(--text-main);
-      transition:0.3s;
-      box-shadow: 0 2px 5px rgba(0,0,0,0.05);
-    }
-    .nav-link:hover {
-      background: var(--accent);
-      color:#fff;
-      transform: translateY(-2px);
-    }
-
-    .container{max-width:980px;margin:0 auto;padding:0 16px;}
-
-     /* Common Buttons */
-    .btn-main {
-      display:inline-block;
-      padding:14px 32px;
-      border-radius:30px;
-      background:linear-gradient(45deg,#f48b8b,#f7a8a8);
-      color: #fff;
-      text-decoration: none;
-      font-weight: bold;
-      box-shadow: 0 4px 12px rgba(0,0,0,0.15);
-      transition: 0.3s;
-    }
-    .btn-main:hover {
-      transform: translateY(-3px);
-      box-shadow: 0 6px 18px rgba(0,0,0,0.2);
-    }
-       .nav-break {
-    /* flexコンテナ内で、次の行に要素を移動させる */
-    flex-basis: 100%;
-    height: 0; /* 高さは不要 */
-    margin: 10px 0; /* 上下に少しスペースを開ける */
-}
-</style>
-    
+    @media(max-width: 600px) {
+        header h1 { font-size: 28px; }
+    }
+  </style>
 </head>
 <body>
 
 <header>
-    <div class="pink-header-box">
-        <h1>40代・50代向け 年齢・肌質別オーガニックスキンケア</h1>
-        <p class="lead">乾燥・ハリ不足・敏感肌にも対応した自然派コスメとリアルユーザーの声を紹介します。</p>
+  <h1>40代・50代からの<br>肌質別スキンケア</h1>
+  <p>年齢を重ねた肌にこそ、植物の力強いエナジーを。</p>
 
-        <div style="margin-top: 30px;">
-            <nav>
-                <a href="seasons-skin.html" class="nav-link">🌸 季節別スキンケア</a>
-                <a href="acne-care.html" class="nav-link">🧴 肌荒れのお悩みケア</a>
-                <a href="lifestyle-skincare.html" class="nav-link">💆‍♀️ 生活リズム別スキンケア</a>
-                    <div class="nav-break"></div> 
-
-                <a href="diet-beauty.html" class="nav-link">🍃 ダイエット効果インナービューティー</a>
-                <a href="skin-ranking.html" class="nav-link">✨ スキンケアランキング！</a>
-                <a href="winter-selection.html" class="nav-link">⛄冬のおすすめ！</a>
-
-            </nav>
-        </div>
-    </div> <div class="description-box">
-        <p style="font-size:17px; color:#5a4545; margin-bottom:10px;">
-            40代・50代の肌は、乾燥・ハリ不足・敏感化など「年齢特有の変化」が現れやすい時期です。<br>
-            本ページでは、無理なく続けられる自然派スキンケアを軸に、<br>年齢に合わせたケア方法と実際の愛用者レビューをまとめています。
-        </p>
-
-        <p style="font-size:16px; color:#5a4545;">
-            <strong></strong>肌に優しいアイテムを選びたいけれど、どれを選べばいいかわからない…<br> 
-            そんな方のために、肌質別のポイントやおすすめ成分もわかりやすく紹介しています。</strong>
-        </p>
-    </div>
+  <div class="nav-links">
+      <a href="index.html">🏠 トップ</a>
+      <a href="skin-ranking.html">✨ ランキング</a>
+      <a href="trial-sets.html">🔰 お試しセット</a>
+      <div class="nav-break"></div>
+      <a href="seasons-skin.html">🌸 季節別ケア</a>
+      <a href="amazon-oil-review.html">🔥 オイルレビュー</a>
+      <a href="beauty-column.html">💄 コラム</a>
+  </div>
 </header>
 
-<main class="container">
-
-<section class="article">
-  <h2>40代 の肌ケア</h2>
-  <img src="images/40s1.jpg" alt="40代主婦のスキンケア" class="hero">
-  <div class="product-review">
-        <!-- START MoshimoAffiliateEasyLink -->
-<script type="text/javascript">
-(function(b,c,f,g,a,d,e){b.MoshimoAffiliateObject=a;
-b[a]=b[a]||function(){arguments.currentScript=c.currentScript
-||c.scripts[c.scripts.length-2];(b[a].q=b[a].q||[]).push(arguments)};
-c.getElementById(a)||(d=c.createElement(f),d.src=g,
-d.id=a,e=c.getElementsByTagName("body")[0],e.appendChild(d))})
-(window,document,"script","//dn.msmstatic.com/site/cardlink/bundle.js?20220329","msmaflink");
-msmaflink({"n":"【アールグレイ＆アーバンウッドの香り】 HAN.d Siro jam シロジャム （ 高保湿 薬用 ハンドクリーム \/ 25g 約1ヶ月 瓶タイプ ） ハンドケア エイジングケア 手元美容 ハンドジェル （ ナイアシン","b":"","t":"","d":"https:\/\/thumbnail.image.rakuten.co.jp","c_p":"\/@0_mall\/miyabisyouten\/cabinet\/bulk_270","p":["\/5000000004197_1.jpg","\/5000000004197_2.jpg","\/5000000004197_3.jpg"],"u":{"u":"https:\/\/item.rakuten.co.jp\/miyabisyouten\/5000000004197\/","t":"rakuten","r_v":""},"v":"2.1","b_l":[{"id":1,"u_tx":"楽天市場で見る","u_bc":"#87c209","u_url":"https:\/\/item.rakuten.co.jp\/miyabisyouten\/5000000004197\/","a_id":5267359,"p_id":54,"pl_id":27059,"pc_id":54,"s_n":"rakuten","u_so":1},{"id":5,"u_tx":"Amazonで見る","u_bc":"#184f5c","u_url":"https:\/\/amzn.to\/4okfYD9","a_id":0,"p_id":0,"pl_id":0,"pc_id":0,"s_n":"custom_10","u_so":2},{"id":4,"u_tx":"Yahoo!ショッピングで見る","u_bc":"#bf0000","u_url":"https:\/\/shopping.yahoo.co.jp\/search?first=1\u0026p=%E3%80%90%E3%82%A2%E3%83%BC%E3%83%AB%E3%82%B0%E3%83%AC%E3%82%A4%EF%BC%86%E3%82%A2%E3%83%BC%E3%83%90%E3%83%B3%E3%82%A6%E3%83%83%E3%83%89%E3%81%AE%E9%A6%99%E3%82%8A%E3%80%91%20HAN.d%20Siro%20jam%20%E3%82%B7%E3%83%AD%E3%82%B8%E3%83%A3%E3%83%A0%20%EF%BC%88%20%E9%AB%98%E4%BF%9D%E6%B9%BF%20%E8%96%AC%E7%94%A8%20%E3%83%8F%E3%83%B3%E3%83%89%E3%82%AF%E3%83%AA%E3%83%BC%E3%83%A0%20%2F%2025g%20%E7%B4%841%E3%83%B6%E6%9C%88%20%E7%93%B6%E3%82%BF%E3%82%A4%E3%83%97%20%EF%BC%89%20%E3%83%8F%E3%83%B3%E3%83%89%E3%82%B1%E3%82%A2%20%E3%82%A8%E3%82%A4%E3%82%B8%E3%83%B3%E3%82%B0%E3%82%B1%E3%82%A2%20%E6%89%8B%E5%85%83%E7%BE%8E%E5%AE%B9%20%E3%83%8F%E3%83%B3%E3%83%89%E3%82%B8%E3%82%A7%E3%83%AB%20%EF%BC%88%20%E3%83%8A%E3%82%A4%E3%82%A2%E3%82%B7%E3%83%B3","a_id":5267465,"p_id":1225,"pl_id":27061,"pc_id":1925,"s_n":"yahoo","u_so":3}],"eid":"c0IvH","s":"s"});
-</script>
-<div id="msmaflink-c0IvH">リンク</div>
-<!-- MoshimoAffiliateEasyLink END -->
-    
-   <div style="background:#f9f9f9; padding:20px; border-radius:12px; margin-top:20px; border:1px solid #eee;">
-    <h4 style="color:#503535; margin-bottom:10px; font-size:18px;">💡 このアイテムの注目ポイント</h4>
-    <ul style="text-align:left; font-size:15px; line-height:1.8; color:#444; padding-left:20px;">
-        <li>水分量の多いジェルタイプで、手肌に水分を補給</li>
-        <li>エイジングケア※として注目されるナイアシンアミド配合</li>
-        <li>夜寝る前のハンドケアにも最適なリラックスする香り</li>
-    </ul>
-    <p style="font-size:12px; color:#888; margin-top:10px; text-align:right;">※年齢に応じたケアのこと</p>
-</div>
-  </div>
-</section>
-
-<section class="article">
-  <h2>50代の肌ケア</h2>
-  <img src="images/50s1.jpg" alt="50代のスキンケア" class="hero">
-  <div class="product-review">
-       <!-- START MoshimoAffiliateEasyLink -->
-<script type="text/javascript">
-(function(b,c,f,g,a,d,e){b.MoshimoAffiliateObject=a;
-b[a]=b[a]||function(){arguments.currentScript=c.currentScript
-||c.scripts[c.scripts.length-2];(b[a].q=b[a].q||[]).push(arguments)};
-c.getElementById(a)||(d=c.createElement(f),d.src=g,
-d.id=a,e=c.getElementsByTagName("body")[0],e.appendChild(d))})
-(window,document,"script","//dn.msmstatic.com/site/cardlink/bundle.js?20220329","msmaflink");
-msmaflink({"n":"ROSE LABO (ローズラボ) ローズ アロマ バスソルト (300g 約15回分 \/ バラの香り) 入浴剤 岩塩 (乾燥\/保湿\/冷え) 無添加 バスグッズ ギフト","b":"","t":"","d":"https:\/\/thumbnail.image.rakuten.co.jp","c_p":"\/@0_mall\/snowshiruhu\/cabinet\/bulk_2127","p":["\/1000000608388_1.jpg","\/1000000608388_2.jpg","\/1000000608388_3.jpg"],"u":{"u":"https:\/\/item.rakuten.co.jp\/snowshiruhu\/1000000608388\/","t":"rakuten","r_v":""},"v":"2.1","b_l":[{"id":1,"u_tx":"楽天市場で見る","u_bc":"#87c209","u_url":"https:\/\/item.rakuten.co.jp\/snowshiruhu\/1000000608388\/","a_id":5267359,"p_id":54,"pl_id":27059,"pc_id":54,"s_n":"rakuten","u_so":1},{"id":5,"u_tx":"Amazonで見る","u_bc":"#184f5c","u_url":"https:\/\/amzn.to\/3KrRIkK","a_id":0,"p_id":0,"pl_id":0,"pc_id":0,"s_n":"custom_10","u_so":2},{"id":4,"u_tx":"Yahoo!ショッピングで見る","u_bc":"#bf0000","u_url":"https:\/\/shopping.yahoo.co.jp\/search?first=1\u0026p=ROSE%20LABO%20(%E3%83%AD%E3%83%BC%E3%82%BA%E3%83%A9%E3%83%9C)%20%E3%83%AD%E3%83%BC%E3%82%BA%20%E3%82%A2%E3%83%AD%E3%83%9E%20%E3%83%90%E3%82%B9%E3%82%BD%E3%83%AB%E3%83%88%20(300g%20%E7%B4%8415%E5%9B%9E%E5%88%86%20%2F%20%E3%83%90%E3%83%A9%E3%81%AE%E9%A6%99%E3%82%8A)%20%E5%85%A5%E6%B5%B4%E5%89%A4%20%E5%B2%A9%E5%A1%A9%20(%E4%B9%BE%E7%87%A5%2F%E4%BF%9D%E6%B9%BF%2F%E5%86%B7%E3%81%88)%20%E7%84%A1%E6%B7%BB%E5%8A%A0%20%E3%83%90%E3%82%B9%E3%82%B0%E3%83%83%E3%82%BA%20%E3%82%AE%E3%83%95%E3%83%88","a_id":5267465,"p_id":1225,"pl_id":27061,"pc_id":1925,"s_n":"yahoo","u_so":3}],"eid":"9IOFy","s":"s"});
-</script>
-<div id="msmaflink-9IOFy">リンク</div>
-<!-- MoshimoAffiliateEasyLink END -->
-    
-    <div style="background:#fff0f5; padding:20px; border-radius:12px; margin-top:20px; border:1px solid #f4a8a8;">
-    <h4 style="color:#d6336c; margin-bottom:10px; font-size:18px; text-align:center;">🌹 50代におすすめの理由</h4>
-    <p style="font-size:15px; color:#555; text-align:left; line-height:1.7;">
-        更年期などで気持ちの揺らぎを感じやすい50代には、スキンケアだけでなく「香り」によるリラックス時間も大切です。<br>
-        本物のバラ（ローズ）の香りに包まれるバスタイムは、一日頑張った自分への最高のご褒美になります。<br>
-        岩塩の温浴効果で体を芯から温め、冷え対策ができるのも嬉しいポイントです。
+<main>
+  <img src="https://placehold.co/960x400/f4e1d2/503535?text=Ageless+Beauty+Care" 
+       alt="年齢肌を慈しむ丁寧なスキンケアのイメージ" class="hero"
+       onerror="handleImageError(this, 960, 400, 'Ageless Beauty Care')">
+  <div class="intro-box">
+    <p>
+        40代、50代を迎えると、今までと同じケアでは物足りなさを感じることがあります。それは、肌の水分量や皮脂量、そしてターンオーバーの周期が変化してくるからです。<br><br>
+        「もう歳だから」と諦める必要はありません。大切なのは、<strong>今の肌状態に合った、質の高い潤いと栄養</strong>を与えてあげること。<br>
+        植物のパワフルな生命力が凝縮されたオーガニックコスメは、年齢を重ねた肌の土台（角質層）を健やかに整え、内側から輝くようなハリとツヤをもたらしてくれます。<br><br>
+        ここでは、大人の肌悩みに寄り添う、実力派のオーガニックアイテムを厳選してご紹介します。
     </p>
-</div>
-  </div>
-</section>
+  </div>
 
-<div style="border:1px solid #e0e0e0; padding:15px; margin:20px 0; border-radius:8px; text-align:center; background-color:#fff;">
-  <h3>当サイトおすすめの一押しコスメ！</h3>
-  <p>今回ご紹介するのは、オーガニックなスキンケアブランド「<strong>たかくらとくらす</strong>」。<br>敏感肌にも優しく、初めての方でも安心して試せます。</p>
-  
-    <a href="https://px.a8.net/svt/ejp?a8mat=45I9PD+4UG1SQ+4F9W+5YRHE" 
-     target="_blank" rel="nofollow sponsored" 
-     style="display:inline-block; padding:12px 25px; background-color:#ff69b4; color:#fff; text-decoration:none; border-radius:6px; font-weight:bold; margin-bottom:10px;">
-    今すぐ試してみる
-  </a>
+  <section class="ranking-section">
+      <h2>👑 大人のための・ハリつやランキング</h2>
+      
+      <div class="item-card">
+          <span class="rank-badge" style="background:#c5a059;">1位</span>
+          <script type="text/javascript">
+            (function(b,c,f,g,a,d,e){b.MoshimoAffiliateObject=a;
+            b[a]=b[a]||function(){arguments.currentScript=c.currentScript
+            ||c.scripts[c.scripts.length-2];(b[a].q=b[a].q||[]).push(arguments)};
+            c.getElementById(a)||(d=c.createElement(f),d.src=g,
+            d.id=a,e=c.getElementsByTagName("body")[0],e.appendChild(d))})
+            (window,document,"script","//dn.msmstatic.com/site/cardlink/bundle.js?20220329","msmaflink");
+            msmaflink({"n":"N organic Vie エヌオーガニック ヴィ ローション100ml\/エッセンス5g\/クリーム47g スキンケア 3点セット","b":"","t":"","d":"https:\/\/thumbnail.image.rakuten.co.jp","c_p":"\/@0_mall\/syo-ei\/cabinet\/f\/27","p":["\/27-4589795143995.jpg"],"u":{"u":"https:\/\/item.rakuten.co.jp\/syo-ei\/27-4589795143995\/","t":"rakuten","r_v":""},"v":"2.1","b_l":[{"id":1,"u_tx":"楽天市場で見る","u_bc":"#87c209","u_url":"https:\/\/item.rakuten.co.jp\/syo-ei\/27-4589795143995\/","a_id":5267359,"p_id":54,"pl_id":27059,"pc_id":54,"s_n":"rakuten","u_so":1},{"id":4,"u_tx":"Yahoo!ショッピングで見る","u_bc":"#bf0000","u_url":"https:\/\/shopping.yahoo.co.jp\/search?first=1\u0026p=N%20organic%20Vie%20%E3%82%A8%E3%83%8C%E3%82%AA%E3%83%BC%E3%82%AC%E3%83%8B%E3%83%83%E3%82%AF%20%E3%83%B4%E3%82%A3%20%E3%83%AD%E3%83%BC%E3%82%B7%E3%83%A7%E3%83%B3100ml%2F%E3%82%A8%E3%83%83%E3%82%BB%E3%83%B3%E3%82%B95g%2F%E3%82%AF%E3%83%AA%E3%83%BC%E3%83%A047g%20%E3%82%B9%E3%82%AD%E3%83%B3%E3%82%B1%E3%82%A2%203%E7%82%B9%E3%82%BB%E3%83%83%E3%83%88","a_id":5267465,"p_id":1225,"pl_id":27061,"pc_id":1925,"s_n":"yahoo","u_so":3}],"eid":"jZg7n","s":"s"});
+            </script>
+            <div id="msmaflink-jZg7n">リンク</div>
+          <div class="editor-comment">
+              <h4>💡 編集部のコメント</h4>
+              <p>とろみのある化粧水がぐんぐん浸透（※角質層まで）。リラックス感のある香りに包まれながら、もっちりとしたハリ肌を目指せます。乾燥小じわが気になる方に。</p>
+          </div>
+      </div>
 
-  <br>
+      <div class="item-card">
+        <span class="rank-badge" style="background:#a8a8a8;">2位</span>
+         <div style="background:#eee; padding:20px; text-align:center;">ここにアフィリエイトリンク（例：アムリターラなど）</div>
+        <div class="editor-comment">
+            <h4>💡 編集部のコメント</h4>
+            <p>（ここに商品の特徴やおすすめポイントを記載します。例：国産オーガニックのパワーで、くすみがちな肌に透明感を与えてくれます。）</p>
+        </div>
+    </div>
+      
+  </section>
 
-    <a href="https://px.a8.net/svt/ejp?a8mat=45I9PD+4UG1SQ+4F9W+5Z6WX" target="_blank" rel="nofollow sponsored">
-    <img border="0" width="468" height="60" alt="たかくらとくらす" src="https://www28.a8.net/svt/bgt?aid=251115169293&wid=002&eno=01&mid=s00000020642001004000&mc=1">
-  </a>
-  <img border="0" width="1" height="1" src="https://www17.a8.net/0.gif?a8mat=45I9PD+4UG1SQ+4F9W+5Z6WX" alt="">
-</div>
-
-<div class="container" style="margin:60px auto; max-width:860px; text-align:center;">
-  <h2 style="font-family:'Playfair Display',serif; font-size:26px; color:#503535; margin-bottom:18px;">
-    年齢に合ったスキンケアで、肌はもっと変わる
-  </h2>
-
-  <p style="font-size:16px; color:#444; margin-bottom:14px;">
-    40代・50代は、過度なアンチエイジングよりも「保湿・めぐり・低刺激」の3つを大切にしたケアが効果的です。
-  </p>
-
-  <p style="font-size:16px; color:#444; margin-bottom:14px;">
-    無理なく続けられる自然派アイテムを取り入れることで、<br>
-    肌本来の力が整い、乾燥やハリ不足といった悩みもやわらいでいきます。
-  </p>
-
-  <p style="font-size:16px; color:#444;">
-    このページが、あなたの毎日のスキンケア選びの参考になれば幸いです。
-  </p>
-</div>
-
-<div style="
-  max-width: 900px;
-  margin: 60px auto;
-  padding: 30px 20px;
-  background: linear-gradient(135deg, #ffe3ea, #ffd6e6);
-  border-radius: 18px;
-  box-shadow: 0 6px 20px rgba(0,0,0,0.12);
-  text-align: center;
-">
-  <p style="
-    font-family: 'Playfair Display', serif;
-    font-size: 30px;
-    margin-bottom: 10px;
-    color:#503535;
-    text-align: center;
-  ">
-    🌸 今月の特別おすすめアイテム
-  </p>
-
-  <p style="font-size:16px; color:#444; margin-bottom:20px;text-align: center;">
-    年齢肌・乾燥肌の方に特に人気のアイテムをピックアップしました。<br>
-    気分が上がるケアで、毎日のスキンケア時間をもっと贅沢に。
-  </p>
-<div style="    text-align: center;">
-
-   <a href="https://px.a8.net/svt/ejp?a8mat=45I9PD+4HCIHM+37D2+609HT" rel="nofollow sponsored">
-<img border="0" width="300" height="250" alt="" src="https://www25.a8.net/svt/bgt?aid=251115169271&wid=002&eno=01&mid=s00000014951001009000&mc=1"></a>
-<img border="0" width="1" height="1" src="https://www12.a8.net/0.gif?a8mat=45I9PD+4HCIHM+37D2+609HT" alt="">
-
-  <p style="margin-top:15px; font-size:14px; color:#777;">
-    ※ 気になる方は今すぐチェックしてみてくださいね。
-  </p>
-</div>
- 
-<div class="related" style="margin-top:50px;">
-  <p>さらにおすすめの記事はこちら：</p>
-  <a href="index.html">🏠 トップページへ戻る</a>
-  <a href="winter-selection.html">❄ 冬のベストセレクションを見る</a>
-</div>
+  <div class="back-btn">
+    <a href="index.html">← トップページへ戻る</a>
+  </div>
 
 </main>
 
-<footer style="text-align:center; padding:40px 0; background:#fff; font-size:13px; color:#888; border-top:1px solid #eee;">
-  © 2025 Essential Beauty Needs
-          <a href="privacy-policy.html" style="color: #777; text-decoration: none; margin-left: 15px;">プライバシーポリシー</a>
-</footer>
-
 <div id="affiliateNotice">※当サイトはアフィリエイト広告（Amazonアソシエイト含む）を利用しています</div>
+
+<footer>
+  © 2025 Essential Beauty Needs
+  <br><br>
+  <a href="privacy-policy.html" style="color: #777; text-decoration: none; border-bottom: 1px solid #ccc;">プライバシーポリシー</a>
+</footer>
 
 </body>
 </html>
