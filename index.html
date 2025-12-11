@@ -4,25 +4,30 @@
   <meta charset="utf-8" />
   <meta name="author" content="Essential Beauty Needs">
   <meta name="robots" content="index, follow">
+  
   <meta property="og:title" content="オーガニックスキンケアの教科書 | Essential Beauty Needs">
   <meta property="og:description" content="肌本来の力を取り戻す。敏感肌・乾燥肌に悩む方へ、オーガニックスキンケアのメリット、アンチエイジング効果、選び方を徹底解説します。">
-  <meta property="og:image" content="https://essentialbeautyneeds.github.io/essentialbeautyneeds/images/header_rose.jpg">
+  <meta property="og:image" content="https://essential-beauty-needs.com/images/header_rose.jpg">
   <meta property="og:type" content="website">
-  <meta property="og:url" content="https://essentialbeautyneeds.github.io/essentialbeautyneeds/index.html">
+  <meta property="og:url" content="https://essential-beauty-needs.com/index.html">
   <meta property="og:locale" content="ja_JP">
   <meta property="og:site_name" content="Essential Beauty Needs">
+  
   <meta name="twitter:card" content="summary_large_image">
   <meta name="twitter:title" content="オーガニックスキンケアの教科書 | Essential Beauty Needs">
   <meta name="twitter:description" content="肌本来の力を取り戻す。敏感肌・乾燥肌に悩む方へ、オーガニックスキンケアのメリット、アンチエイジング効果、選び方を徹底解説します。">
-  <meta name="twitter:image" content="https://essentialbeautyneeds.github.io/essentialbeautyneeds/images/header_rose.jpg">
+  <meta name="twitter:image" content="https://essential-beauty-needs.com/images/header_rose.jpg">
   
   <meta name="viewport" content="width=device-width,initial-scale=1" />
   <link rel="icon" href="favicon.ico" type="image/x-icon">
 
   <script>
+    // 1. 内部トラフィック除外設定
     function isInternalUser() {
       return document.cookie.split(';').some(c => c.trim().startsWith('internal_user=true'));
     }
+    
+    // 2. GA4読み込み
     if (!isInternalUser()) {
       var gaScript = document.createElement('script');
       gaScript.async = true;
@@ -34,6 +39,14 @@
       gtag('config', 'G-2HGEPHVZYY');
     } else {
       console.log('✅ Internal traffic excluded.');
+    }
+
+    // 3. 画像読み込みエラー時のフォールバック処理
+    function handleImageError(imgElement) {
+      imgElement.onerror = null;
+      // グレーの代替画像を表示
+      imgElement.src = "https://placehold.co/600x400/f0f0f0/cccccc?text=No+Image";
+      imgElement.style.objectFit = "cover";
     }
   </script>
 
@@ -65,6 +78,8 @@
       text-align:center;
       color:var(--text-main);
       padding:80px 20px 50px;
+      /* フォールバック背景色 */
+      background-color: #f7a8a8;
       background-image:url('images/header_rose.jpg');
       background-size:cover;
       background-position:center;
@@ -85,9 +100,10 @@
     p.lead{font-size:17px;color:#5a4545; margin-bottom: 25px;}
 
     /* Navigation */
-     .nav-links{display:flex;gap:12px;justify-content:center;margin-top:12px;flex-wrap:wrap;}
-.nav-links a{background:rgba(255,255,255,0.8);padding:8px 12px;border-radius:8px;text-decoration:none;color:#503535;font-weight:600;}
-.nav-links a:hover{background:var(--accent);color:#fff;}
+    .nav-links{display:flex;gap:12px;justify-content:center;margin-top:12px;flex-wrap:wrap;}
+    .nav-links a{background:rgba(255,255,255,0.8);padding:8px 12px;border-radius:8px;text-decoration:none;color:#503535;font-weight:600;}
+    .nav-links a:hover{background:var(--accent);color:#fff;}
+    .nav-break { flex-basis: 100%; height: 0; margin: 5px 0; }
 
     .container{max-width:980px;margin:0 auto;padding:0 16px;}
 
@@ -137,35 +153,37 @@
       display: block;
     }
 
-    /* Reviews */
-    .reviews{
-      background:var(--review-bg);
-      padding:60px 20px;
-      border-radius:20px;
-      margin-top:40px;
-      display:grid;
-      grid-template-columns:repeat(auto-fit,minmax(300px,1fr));
-      gap:25px;
+    /* Replaced Reviews Section -> "Recommended For" Section */
+    .recommend-box {
+      background: #fffaf4; /* 少し温かみのある背景色 */
+      padding: 40px 20px;
+      border-radius: 20px;
+      margin-top: 40px;
+      border: 2px dashed #f7a8a8;
+      text-align: center;
     }
-    .review-card{
-      background:#fff;
-      border-radius:18px;
-      padding:25px;
-      box-shadow:0 5px 15px rgba(0,0,0,0.08);
-      display:flex;
-      flex-direction: column; /* Changed to column for better reading */
-      gap:15px;
-      opacity:0;
-      transform:translateY(20px);
-      transition:all .6s ease;
+    .check-list {
+      list-style: none;
+      padding: 0;
+      max-width: 600px;
+      margin: 0 auto;
+      text-align: left;
     }
-    .review-card.visible{opacity:1;transform:translateY(0);}
-    .review-header {
-      display: flex;
-      align-items: center;
-      gap: 15px;
+    .check-list li {
+      margin-bottom: 15px;
+      font-size: 18px;
+      color: #555;
+      padding-left: 30px;
+      position: relative;
     }
-    .review-photo{width:60px;height:60px;border-radius:50%;object-fit:cover;}
+    .check-list li::before {
+      content: "✔";
+      position: absolute;
+      left: 0;
+      color: #f7a8a8;
+      font-weight: bold;
+      font-size: 20px;
+    }
 
     /* Common Buttons */
     .btn-main {
@@ -183,6 +201,14 @@
       transform: translateY(-3px);
       box-shadow: 0 6px 18px rgba(0,0,0,0.2);
     }
+    
+    /* Images */
+    .responsive-img {
+        max-width: 100%;
+        height: auto;
+        border-radius: 10px;
+        box-shadow: 0 5px 15px rgba(0,0,0,0.1);
+    }
 
     /* Footer & Others */
     #affiliateNotice {
@@ -199,12 +225,6 @@
       .concept-box {padding: 20px;}
       header {padding-top: 60px;}
     }
-      .nav-break {
-    /* flexコンテナ内で、次の行に要素を移動させる */
-    flex-basis: 100%;
-    height: 0; /* 高さは不要 */
-    margin: 5px 0; /* 上下に少しスペースを開ける */
-}
   </style>
 </head>
 <body>
@@ -227,18 +247,18 @@
         <a href="seasons-skin.html">🌸 季節別スキンケア</a>
         <a href="age-skincare.html">👩 年齢・肌質別スキンケア</a>
         <a href="lifestyle-skincare.html">🕒 生活リズム別スキンケア</a>
-               <div class="nav-break"></div>
+                <div class="nav-break"></div>
 
-        <a href="diet-beauty.html">🍃 ダイエット効果：インナービューティー</a>
+        <a href="diet-beauty.html">🍃 インナービューティー</a>
         <a href="beauty-column.html">💄 ビューティーコラム</a>
         <a href="acne-care.html" class="nav-link">🧴 肌荒れのケア</a>
         <a href="amazon-oil-review.html" class="nav-link">本当に効く！オイルレビュー🔥</a>
-        <a href="skin-ranking.html" class="nav-link">✨ スキンケアアイテム ランキング！</a>
+        <a href="skin-ranking.html" class="nav-link">✨ おすすめランキング！</a>
         <a href="organic-science.html" class="nav-link">🔬 オーガニック成分の科学</a>
                       <div class="nav-break"></div>
        <a href="about.html">👤 サイトについて (About)</a> 
       
-      <a href="index.html">🏠 トップ</a>
+      <a href="index.html" style="background:#fff; border:1px solid #ddd;">🏠 トップ</a>
       </div>
     </div>
 
@@ -265,9 +285,9 @@
     </p>
   </section>
 
-<div style="text-align: center; margin-top: 30px; margin-bottom: 30px;">
-        <img src="images/organic1.jpg" style="max-width: 40%; height: auto; border-radius: 10px; box-shadow: 0 5px 15px rgba(0,0,0,0.1);">
-    </div>
+  <div style="text-align: center; margin-top: 30px; margin-bottom: 30px;">
+    <img src="images/organic1.jpg" class="responsive-img" style="max-width: 40%;" onerror="handleImageError(this)" alt="オーガニックイメージ">
+  </div>
   
   <section>
     <h2>オーガニックコスメ 3つのメリット</h2>
@@ -311,52 +331,35 @@
     </a>
   </section>
 
-  <h2>オーガニック生活を始めた人の声</h2>
-  <section class="reviews">
+  <section class="recommend-box">
+    <h2>こんなお悩みの方におすすめです</h2>
+    <p style="margin-bottom:30px;">Essential Beauty Needsは、以下のようなお悩みを持つ方に最適な情報を発信しています。</p>
     
-    <div class="review-card">
-      <div class="review-header">
-        <img src="images/30sai.jpg" alt="30代女性" class="review-photo">
-        <div>
-          <strong>30代女性 (事務職)</strong><br>
-          <span style="font-size:12px; color:#888;">悩み：乾燥・大人ニキビ</span>
-        </div>
-      </div>
-      <p>
-        以前は高価なデパコスを使っていましたが、肌荒れが治らず…。
-        思い切って植物由来のシンプルなケアに変えたところ、肌が自ら潤うようになったのを感じます。
-        「いい香り」に癒やされるスキンケアタイムが毎日の楽しみになりました。
-      </p>
-    </div>
-
-    <div class="review-card">
-      <div class="review-header">
-        <img src="images/40s1.jpg" alt="40代女性" class="review-photo">
-        <div>
-          <strong>40代女性 (主婦)</strong><br>
-          <span style="font-size:12px; color:#888;">悩み：ハリ不足・くすみ</span>
-        </div>
-      </div>
-      <p>
-        年齢とともに肌が薄くなり、少しの刺激で赤くなるのが悩みでした。
-        オーガニックに変えてからは、肌がふっくらと柔らかくなり、ファンデーションを厚塗りしなくて済むようになりました。
-        肌本来の力が戻ってきた気がします。
-      </p>
-    </div>
-
+    <ul class="check-list">
+      <li><strong>敏感肌で、新しい化粧品を試すのが怖い</strong><br>
+          <span style="font-size:14px; color:#888;">→ 合成成分を使わない、肌に優しいアイテムを厳選しています。</span></li>
+      
+      <li><strong>夕方になると肌が乾燥してくすむ</strong><br>
+          <span style="font-size:14px; color:#888;">→ 植物オイルの力で、肌自体の保湿力を底上げする方法を紹介します。</span></li>
+      
+      <li><strong>年齢とともに肌のハリ不足を感じている</strong><br>
+          <span style="font-size:14px; color:#888;">→ 自然界の抗酸化成分（エイジングケア成分）を取り入れるヒントがあります。</span></li>
+          
+      <li><strong>人工的な香りが苦手で、スキンケアに癒やしを求めたい</strong><br>
+          <span style="font-size:14px; color:#888;">→ 本物の精油の香りで、心も体もリラックスできるケアを提案します。</span></li>
+    </ul>
   </section>
-
   <section style="margin-top:60px; text-align:center;">
     <h2>美容コラム</h2>
     <div style="display:flex; flex-wrap:wrap; justify-content:center; gap:20px; margin-top:20px;">
       <div style="width:300px; text-align:left;">
-        <img src="images/article1.jpg" style="width:100%; border-radius:10px; margin-bottom:10px;">
+        <img src="images/article1.jpg" style="width:100%; border-radius:10px; margin-bottom:10px;" onerror="handleImageError(this)" alt="コラム画像1">
         <h3 style="font-size:18px;">オーガニックと無添加の違いとは？</h3>
         <p style="font-size:14px; color:#666;">よく聞くけれど意外と知らない、言葉の定義と選び方のポイントを解説します。</p>
         <a href="beauty-column.html" style="color:var(--accent-hover); font-weight:bold; text-decoration:none;">続きを読む &rarr;</a>
       </div>
       <div style="width:300px; text-align:left;">
-        <img src="images/article2.jpg" style="width:100%; border-radius:10px; margin-bottom:10px;">
+        <img src="images/article2.jpg" style="width:100%; border-radius:10px; margin-bottom:10px;" onerror="handleImageError(this)" alt="コラム画像2">
         <h3 style="font-size:18px;">朝と夜で変える？スキンケアの基本</h3>
         <p style="font-size:14px; color:#666;">肌のリズムに合わせたケアを行うことで、効果は何倍にも変わります。</p>
         <a href="beauty-column.html" style="color:var(--accent-hover); font-weight:bold; text-decoration:none;">続きを読む &rarr;</a>
@@ -375,7 +378,6 @@
     </a>
     <img border="0" width="1" height="1" src="https://www16.a8.net/0.gif?a8mat=45I9PD+4HXY3E+51ZO+1HLVB5" alt="">
   </div>
-
   
    <div class="nav-links" style="text-align:center">
       <a href="#" style="color:var(--muted); text-decoration:none;">⬆ ページトップへ</a>
@@ -387,32 +389,10 @@
 
 <footer style="text-align:center; padding:40px 0; background:#fff; font-size:13px; color:#888; border-top:1px solid #eee;">
   © 2025 Essential Beauty Needs
-          <a href="privacy-policy.html" style="color: #777; text-decoration: none; margin-left: 15px;">プライバシーポリシー</a>
+          <a href="privacy-policy.html" style="color: #777; text-decoration: none; margin-left: 15px;">プライバシーポリシー</a>
 </footer>
 
 <div id="affiliateNotice">※当サイトはアフィリエイト広告（Amazonアソシエイト含む）を利用しています</div>
 
-<script>
-  // Simple intersection observer for review animation
-  document.querySelectorAll('.review-card').forEach(card=>{
-    const obs=new IntersectionObserver((entries)=>{
-      entries.forEach(e=>{
-        if(e.isIntersecting){e.target.classList.add('visible'); obs.unobserve(e.target);}
-      });
-    },{threshold:0.1});
-    obs.observe(card);
-  });
-</script>
-
 </body>
 </html>
-
-
-
-
-
-
-
-
-
-
