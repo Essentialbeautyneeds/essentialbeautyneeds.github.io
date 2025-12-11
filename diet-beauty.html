@@ -1,267 +1,234 @@
 <!doctype html>
 <html lang="ja">
 <head>
-    <meta charset="utf-8" />
-    <meta name="viewport" content="width=device-width,initial-scale=1" />
-    <title>内側から輝く美しさへ：インナービューティ＆ダイエットの秘訣 | Essential Beauty Needs</title>
-    <meta name="description" content="外側からのオーガニックケアを最大限に活かすための、食事、デトックス、睡眠など内側から美しくなるインナービューティとダイエットの秘訣を解説します。">
-    <meta name="keywords" content="オーガニック, ダイエット, インナービューティ, 腸活, デトックス, 食べるスキンケア, ウェルビーイング">
+  <meta charset="utf-8" />
+  <meta name="viewport" content="width=device-width,initial-scale=1" />
+  <title>内側から輝く美しさへ：インナービューティ＆ダイエットの秘訣 | Essential Beauty Needs</title>
+  <meta name="description" content="外側からのオーガニックケアを最大限に活かすための、食事、デトックス、睡眠など内側から美しくなるインナービューティとダイエットの秘訣を解説します。">
+  <meta name="keywords" content="オーガニック, ダイエット, インナービューティ, 腸活, デトックス, 食べるスキンケア, ウェルビーイング">
 
-    <link href="https://fonts.googleapis.com/css2?family=Playfair+Display:wght@600&family=Quicksand:wght@400;600&display=swap" rel="stylesheet">
-    <link rel="canonical" href="https://essential-beauty-needs.com/diet-beauty.html" />
-    
-    <script>
-      // 1. GA4 アクセス解析（自分を除外する設定付き）
-      function isInternalUser() {
-        return document.cookie.split(';').some(c => c.trim().startsWith('internal_user=true'));
-      }
-      if (!isInternalUser()) {
-        var gaScript = document.createElement('script');
-        gaScript.async = true;
-        gaScript.src = "https://www.googletagmanager.com/gtag/js?id=G-2HGEPHVZYY";
-        document.head.appendChild(gaScript);
-        window.dataLayer = window.dataLayer || [];
-        function gtag(){dataLayer.push(arguments);}
-        gtag('js', new Date());
-        gtag('config', 'G-2HGEPHVZYY');
-      } else {
+  <link href="https://fonts.googleapis.com/css2?family=Playfair+Display:wght@600&family=Quicksand:wght@400;600&display=swap" rel="stylesheet">
+  <link rel="canonical" href="https://essential-beauty-needs.com/diet-beauty.html" />
+  
+  <script>
+    function isInternalUser() {
+      return document.cookie.split(';').some(c => c.trim().startsWith('internal_user=true'));
+    }
+    if (!isInternalUser()) {
+      var gaScript = document.createElement('script');
+      gaScript.async = true;
+      gaScript.src = "https://www.googletagmanager.com/gtag/js?id=G-2HGEPHVZYY";
+      document.head.appendChild(gaScript);
+      window.dataLayer = window.dataLayer || [];
+      function gtag(){dataLayer.push(arguments);}
+      gtag('js', new Date());
+      gtag('config', 'G-2HGEPHVZYY');
+    } else {
         console.log('✅ Internal traffic excluded.');
-      }
+    }
 
-      // 2. 画像読み込みエラー時のフォールバック処理
-      function handleImageError(imgElement) {
-        imgElement.onerror = null;
-        // グレーの代替画像を表示
-        imgElement.src = "https://placehold.co/600x400/f0f0f0/cccccc?text=No+Image";
-        imgElement.style.objectFit = "cover";
-      }
-    </script>
+    function handleImageError(imgElement) { 
+         imgElement.onerror = null; 
+         imgElement.src = "https://placehold.co/600x400/f0f0f0/cccccc?text=Image+Not+Found";
+         imgElement.style.objectFit = "cover";
+    }
+  </script>
+  
+  <style>
+    /* 共通設定 */
+    :root {
+      --color-primary: #d46a8b;
+      --color-secondary: #f5a9bc;
+      --color-accent: #f7ccd9;
+      --color-bg-light: #fffaf9;
+      --color-text: #474747;
+      --color-shadow: rgba(0,0,0,0.1);
+    }
+    body{
+      font-family:'Quicksand',sans-serif;
+      background:var(--color-bg-light);
+      color:var(--color-text);
+      margin:0;
+      line-height:1.8;
+      min-height: 100vh;
+      display: flex;
+      flex-direction: column;
+    }
     
-    <style>
-      /* カラー変数 */
-      :root { 
-          --color-primary: #d46a8b; /* メインカラー */
-          --color-secondary: #f5a9bc; /* アクセントカラー */
-          --color-accent: #f7ccd9; /* サブアクセント */
-          --color-bg-light: #fffaf9; 
-          --color-text: #474747; 
-          --color-shadow: rgba(0,0,0,0.1); 
-      }
-      body{ font-family:'Quicksand',sans-serif; background:var(--color-bg-light); color:var(--color-text); margin:0; line-height:1.8; min-height: 100vh; display: flex; flex-direction: column; }
-      
-      /* ヘッダー */
-      header{ 
-          text-align:center; 
-          padding:80px 20px 40px; 
-          background: linear-gradient(90deg, #fcebeb, #fff0f5); 
-          color: var(--color-primary);
-      }
-      header h1{ 
-          font-family:'Playfair Display',serif; 
-          font-size:36px; 
-          margin-bottom:10px; 
-          letter-spacing:1px; 
-      }
-      header p{ 
-          font-size:16px; 
-          color: #a0526a; 
-      }
-      
-      main{ max-width:900px; margin:60px auto; padding:0 20px; flex-grow: 1; }
-      
-      /* 見出し */
-      h2{ font-family:'Playfair Display',serif; color:var(--color-primary); text-align:center; font-size:26px; margin-bottom:40px; position: relative; }
-      h2::after { content: ""; display: block; width: 60px; height: 3px; background: var(--color-secondary); margin: 15px auto 0; opacity: 0.6; }
-      
-      h3{ font-family:'Playfair Display',serif; color:var(--color-primary); font-size: 22px; text-align: left; border-left: 5px solid var(--color-secondary); padding-left: 15px; margin-top: 50px; margin-bottom: 20px; }
-      
-      h4 { font-size: 18px; color: var(--color-primary); margin-bottom: 15px; border-bottom: 2px dashed #fcdfe8; padding-bottom: 8px; }
+    /* ヘッダー */
+    header{
+      text-align:center;
+      padding:80px 20px 40px;
+      background: linear-gradient(90deg, #fcebeb, #fff0f5);
+      color: var(--color-primary);
+    }
+    header h1{
+      font-family:'Playfair Display',serif;
+      font-size:36px;
+      margin-bottom:10px;
+      letter-spacing:1px;
+    }
+    header p{
+      font-size:16px;
+      color: #a0526a;
+    }
+    
+    /* メインコンテンツ */
+    main{
+      max-width:900px;
+      margin:60px auto;
+      padding:0 20px;
+      flex-grow: 1;
+    }
+    
+    /* 見出し */
+    h2{
+      font-family:'Playfair Display',serif;
+      color:var(--color-primary);
+      text-align:center;
+      font-size:26px;
+      margin-bottom:40px;
+      position: relative;
+    }
+    h2::after {
+      content: "";
+      display: block;
+      width: 60px;
+      height: 3px;
+      background: var(--color-secondary);
+      margin: 15px auto 0;
+      opacity: 0.6;
+    }
+    
+    h3{
+      font-family:'Playfair Display',serif;
+      color:var(--color-primary);
+      font-size: 22px;
+      text-align: left;
+      border-left: 5px solid var(--color-secondary);
+      padding-left: 15px;
+      margin-top: 50px;
+      margin-bottom: 20px;
+    }
+    
+    h4 {
+      font-size: 18px;
+      color: var(--color-primary);
+      margin-bottom: 15px;
+      border-bottom: 2px dashed #fcdfe8;
+      padding-bottom: 8px;
+    }
 
-      /* ナビゲーション（共通スタイル） */
-      .nav-links { display:flex; gap:12px; justify-content:center; margin-top:25px; flex-wrap:wrap; }
-      .nav-links a { 
-          background: rgba(255,255,255,0.6); 
-          padding: 8px 18px; 
-          border-radius: 20px; 
-          text-decoration: none; 
-          color: #a0526a; 
-          font-weight: 600; 
-          font-size: 14px;
-          border: 1px solid #fcebeb;
-          transition: 0.3s;
-      }
-      .nav-links a:hover { 
-          background: var(--color-secondary); 
-          color: #fff; 
-          transform: translateY(-2px);
-      }
-      .nav-break { flex-basis: 100%; height: 0; margin: 5px 0; }
+    /* ナビゲーション（共通スタイル） */
+    .nav-links{display:flex;gap:12px;justify-content:center;margin-top:25px;flex-wrap:wrap;}
+    .nav-links a{
+        background: rgba(255,255,255,0.6);
+        padding: 8px 18px;
+        border-radius: 20px;
+        text-decoration: none;
+        color: #a0526a;
+        font-weight: 600;
+        font-size: 14px;
+        border: 1px solid #fcebeb;
+        transition: 0.3s;
+    }
+    .nav-links a:hover{
+        background: var(--color-secondary);
+        color: #fff;
+        transform: translateY(-2px);
+    }
+    .nav-break { flex-basis: 100%; height: 0; margin: 5px 0; }
 
-      /* 戻るボタン */
-      .back-btn{ 
-          display:inline-block; margin:60px auto; 
-          background:linear-gradient(45deg,var(--color-secondary),var(--color-primary)); 
-          color:#fff; padding:12px 28px; border-radius:30px; 
-          text-decoration:none; font-weight:600; 
-          box-shadow:0 4px 12px rgba(0,0,0,0.15); 
-          transition:transform .3s ease, box-shadow .3s ease; 
-      }
-      .back-btn:hover { transform: translateY(-3px); box-shadow: 0 6px 16px rgba(0,0,0,0.2); }
+    /* 戻るボタン */
+    .back-btn{
+      display:inline-block;
+      margin:60px auto;
+      background:linear-gradient(45deg,var(--color-secondary),var(--color-primary));
+      color:#fff;
+      padding:12px 28px;
+      border-radius:30px;
+      text-decoration:none;
+      font-weight:600;
+      box-shadow:0 4px 12px rgba(0,0,0,0.15);
+      transition:transform .3s ease, box-shadow .3s ease;
+    }
+    .back-btn:hover { transform: translateY(-3px); box-shadow: 0 6px 16px rgba(0,0,0,0.2); }
 
-      /* コンテンツボックス */
-      .content-section { margin-bottom: 50px; }
-      .content-box { background: #fcfcfc; border: 1px solid #eee; padding: 25px; border-radius: 8px; margin: 30px 0; }
-      .intro-box { background: #fff8fb !important; border-left: 5px solid #f2c8d6 !important; border:none; }
+    /* コンテンツボックス */
+    .content-section { margin-bottom: 50px; }
+    .content-box { background: #fcfcfc; border: 1px solid #eee; padding: 25px; border-radius: 8px; margin: 30px 0; }
+    .intro-box { background: #fff8fb !important; border-left: 5px solid #f2c8d6 !important; border:none; }
 
-      /* リスト */
-      .list-check { padding-left: 0; }
-      .list-check li { list-style: none; position: relative; padding-left: 30px; margin-bottom: 12px; line-height: 1.6; }
-      .list-check li::before { content: "✅"; position: absolute; left: 0; font-size: 16px; color: var(--color-primary); }
+    /* リスト */
+    .list-check { padding-left: 0; }
+    .list-check li { list-style: none; position: relative; padding-left: 30px; margin-bottom: 12px; line-height: 1.6; }
+    .list-check li::before { content: "✅"; position: absolute; left: 0; font-size: 16px; color: var(--color-primary); }
 
-      /* 画像 */
-      .article-img {
-          max-width: 100%; 
-          width: 500px; /* PCでの最大幅 */
-          height: auto; 
-          border-radius: 12px; 
-          box-shadow: 0 5px 15px rgba(0,0,0,0.08);
-          margin: 20px auto;
-          display: block;
-      }
+    /* 画像 */
+    .article-img {
+        max-width: 100%; 
+        width: 500px; /* PCでの最大幅 */
+        height: auto; 
+        border-radius: 12px; 
+        box-shadow: 0 5px 15px rgba(0,0,0,0.08);
+        margin: 20px auto;
+        display: block;
+    }
 
-      /* フッター & その他 */
-      footer{ text-align:center; font-size:13px; color:#777; padding: 40px 0; margin-top: auto; border-top: 1px solid #eee; background:#fff; }
-      #affiliateNotice {
-        position: fixed; right: 12px; bottom: 12px;
-        background: rgba(255, 255, 255, 0.9);
-        color: #555; font-size: 11px;
-        border-radius: 6px; padding: 4px 8px;
-        box-shadow: 0 2px 6px rgba(0,0,0,0.1);
-        z-index: 999;
-      }
+    /* フッター & その他 */
+    footer{ text-align:center; font-size:13px; color:#777; padding: 40px 0; margin-top: auto; border-top: 1px solid #eee; background:#fff; }
+    #affiliateNotice {
+      position: fixed; right: 12px; bottom: 12px;
+      background: rgba(255, 255, 255, 0.9);
+      color: #555; font-size: 11px;
+      border-radius: 6px; padding: 4px 8px;
+      box-shadow: 0 2px 6px rgba(0,0,0,0.1);
+      z-index: 999;
+    }
 
-      @media (max-width: 768px) {
-        header { padding: 60px 20px 30px; }
-        header h1 { font-size: 28px; }
-        .article-img { width: 100%; }
-      }
-    </style>
+    @media (max-width: 768px) {
+      header { padding: 60px 20px 30px; }
+      header h1 { font-size: 28px; }
+      .article-img { width: 100%; }
+    }
+  </style>
 </head>
 
 <body>
-    <header>
-        <h1>内側から輝く美しさへ</h1>
-        <p>オーガニックライフで叶える、インナービューティ＆ダイエットの秘訣</p>
+  <header>
+    <h1>内側から輝く美しさへ</h1>
+    <p>オーガニックライフで叶える、インナービューティ＆ダイエットの秘訣</p>
 
-        <nav class="nav-links">
-            <a href="seasons-skin.html">🌸 季節別ケア</a>
-            <a href="skin-ranking.html">✨ ランキング</a>
-            <a href="acne-care.html">🧴 肌荒れケア</a>
-            <div class="nav-break"></div> 
-            <a href="amazon-oil-review.html">🔥 オイルレビュー</a>    
-            <a href="lifestyle-skincare.html">💆‍♀️ 生活リズム別</a>
-            <a href="winter-selection.html">⛄ 冬のおすすめ</a>
-            <div class="nav-break"></div>
-            <a href="index.html" style="background:#fff; border:1px solid #ddd;">🏠 トップに戻る</a>
-        </nav>
-    </header>
+    <nav class="nav-links">
+        <a href="seasons-skin.html">🌸 季節別ケア</a>
+        <a href="skin-ranking.html">✨ ランキング</a>
+        <a href="acne-care.html">🧴 肌荒れケア</a>
+        <div class="nav-break"></div> 
+        <a href="amazon-oil-review.html">🔥 オイルレビュー</a>    
+        <a href="lifestyle-skincare.html">💆‍♀️ 生活リズム別</a>
+        <a href="winter-selection.html">⛄ 冬のおすすめ</a>
+        <div class="nav-break"></div>
+        <a href="index.html" style="background:#fff; border:1px solid #ddd;">🏠 トップに戻る</a>
+    </nav>
+  </header>
 
-    <main>
-        <h2>インナービューティー：スキンケアは体の内から</h2>
+  <main>
+    <h2>インナービューティー：スキンケアは体の内から</h2>
+    
+    <div class="content-box intro-box">
+        <p>どんなに高価なオーガニックコスメを使っても、「肌の調子がなかなか上向かない」と感じることはありませんか？</p>
+        <p>実は、肌のバリア機能やコンディションは、あなたが<strong>「何を食べるか」「どう眠るか」「どう体を巡らせるか」</strong>といった、日々のインナーケアに大きく左右されます。肌は『内臓の鏡』。オーガニックな生活は、外側だけでなく、内側からのデトックスと再生を促し、結果的に無理のない美しさと健康的なダイエットをサポートします。</p>
+        <p>このページでは、美容の土台を作るための「食べ方」「巡らせ方」「休ませ方」を、オーガニックの視点からご紹介します。今日から始められる簡単な習慣で、体の中から輝く真の美しさを手に入れましょう。</p>
+    </div>
+
+    <div style="text-align: center;">
+        <img src="images/diet1.jpg" alt="オーガニック食材とキッチン" class="article-img" onerror="handleImageError(this)">
+    </div>
+
+    <div class="content-section">
+        <h3>1. 食べるスキンケア：肌を作る「食事」を見直す</h3>
+        <p>オーガニック食材を選ぶことは、農薬や添加物を避けるだけでなく、栄養価の高い「生命力に満ちた食べ物」を体に取り入れることを意味します。これが究極のスキンケアであり、代謝を上げ、太りにくい体を作る第一歩です。</p>
         
-        <div class="content-box intro-box">
-            <p>どんなに高価なオーガニックコスメを使っても、「肌の調子がなかなか上向かない」と感じることはありませんか？</p>
-            <p>実は、肌のバリア機能やコンディションは、あなたが<strong>「何を食べるか」「どう眠るか」「どう体を巡らせるか」</strong>といった、日々のインナーケアに大きく左右されます。肌は『内臓の鏡』。オーガニックな生活は、外側だけでなく、内側からのデトックスと再生を促し、結果的に無理のない美しさと健康的なダイエットをサポートします。</p>
-            <p>このページでは、美容の土台を作るための「食べ方」「巡らせ方」「休ませ方」を、オーガニックの視点からご紹介します。今日から始められる簡単な習慣で、体の中から輝く真の美しさを手に入れましょう。</p>
-        </div>
-
-        <div style="text-align: center;">
-            <img src="images/diet1.jpg" alt="オーガニック食材とキッチン" class="article-img" onerror="handleImageError(this)">
-        </div>
-
-        <div class="content-section">
-            <h3>1. 食べるスキンケア：肌を作る「食事」を見直す</h3>
-            <p>オーガニック食材を選ぶことは、農薬や添加物を避けるだけでなく、栄養価の高い「生命力に満ちた食べ物」を体に取り入れることを意味します。これが究極のスキンケアであり、代謝を上げ、太りにくい体を作る第一歩です。</p>
-            
-            <script type="text/javascript">
-            (function(b,c,f,g,a,d,e){b.MoshimoAffiliateObject=a;
-            b[a]=b[a]||function(){arguments.currentScript=c.currentScript
-            ||c.scripts[c.scripts.length-2];(b[a].q=b[a].q||[]).push(arguments)};
-            c.getElementById(a)||(d=c.createElement(f),d.src=g,
-            d.id=a,e=c.getElementsByTagName("body")[0],e.appendChild(d))})
-            (window,document,"script","//dn.msmstatic.com/site/cardlink/bundle.js?20220329","msmaflink");
-            msmaflink({"n":"オーガニックマキベリー粉末（フリーズドライ製法） 100g 【送料無料】【メール便で郵便ポストにお届け】【代引不可】【時間指定不可】 有機JAS認定 [04] NICHIGA(ニチガ)","b":"","t":"","d":"https:\/\/thumbnail.image.rakuten.co.jp","c_p":"\/","p":["@0_mall\/auc-garlic\/cabinet\/makiberi\/makiberi1-r100gm.jpg","@0_mall\/auc-garlic\/cabinet\/makiberi\/makiberi-100m.jpg","@0_gold\/auc-garlic\/item\/makiberi\/mb_s01.jpg"],"u":{"u":"https:\/\/item.rakuten.co.jp\/auc-garlic\/makiberi-100m\/","t":"rakuten","r_v":""},"v":"2.1","b_l":[{"id":1,"u_tx":"楽天市場で見る","u_bc":"#87c209","u_url":"https:\/\/item.rakuten.co.jp\/auc-garlic\/makiberi-100m\/","a_id":5267359,"p_id":54,"pl_id":27059,"pc_id":54,"s_n":"rakuten","u_so":1},{"id":5,"u_tx":"Amazonで見る","u_bc":"#184f5c","u_url":"https:\/\/amzn.to\/3Kv27Mw","a_id":0,"p_id":0,"pl_id":0,"pc_id":0,"s_n":"custom_10","u_so":2},{"id":4,"u_tx":"Yahoo!ショッピングで見る","u_bc":"#bf0000","u_url":"https:\/\/shopping.yahoo.co.jp\/search?first=1\u0026p=%E3%82%AA%E3%83%BC%E3%82%AC%E3%83%8B%E3%83%83%E3%82%AF%E3%83%9E%E3%82%AD%E3%83%99%E3%83%AA%E3%83%BC%E7%B2%89%E6%9C%AB%EF%BC%88%E3%83%95%E3%83%AA%E3%83%BC%E3%82%BA%E3%83%89%E3%83%A9%E3%82%A4%E8%A3%BD%E6%B3%95%EF%BC%89%20100g%20%E3%80%90%E9%80%81%E6%96%99%E7%84%A1%E6%96%99%E3%80%91%E3%80%90%E3%83%A1%E3%83%BC%E3%83%AB%E4%BE%BF%E3%81%A7%E9%83%B5%E4%BE%BF%E3%83%9D%E3%82%B9%E3%83%88%E3%81%AB%E3%81%8A%E5%B1%8A%E3%81%91%E3%80%91%E3%80%90%E4%BB%A3%E5%BC%95%E4%B8%8D%E5%8F%AF%E3%80%91%E3%80%90%E6%99%82%E9%96%93%E6%8C%87%E5%AE%9A%E4%B8%8D%E5%8F%AF%E3%80%91%20%E6%9C%89%E6%A9%9FJAS%E8%AA%8D%E5%AE%9A%20%5B04%5D%20NICHIGA(%E3%83%8B%E3%83%81%E3%82%AC)","a_id":5267465,"p_id":1225,"pl_id":27061,"pc_id":1925,"s_n":"yahoo","u_so":3}],"eid":"SNB7U","s":"s"});
-            </script>
-            <div id="msmaflink-SNB7U">リンク</div>
-            <div class="content-box">
-                <h4>🔑 <strong>ダイエットと美肌に効くオーガニックフード</strong></h4>
-                <ul class="list-check">
-                    <li><strong>発酵食品（味噌、麹、無糖ヨーグルト）</strong>：腸内環境を整え、美肌とデトックス効果を高めます。</li>
-                    <li><strong>色の濃い野菜やフルーツ</strong>：豊富な抗酸化物質が、肌の老化や炎症を防ぎます。</li>
-                    <li><strong>良質なオイル（エキストラバージンオリーブオイル、亜麻仁油）</strong>：肌の細胞膜やホルモンバランスを整える必須脂肪酸を補給します。</li>
-                    <li><strong>グルテンフリーの選択</strong>：体質によっては、小麦を減らすことが、むくみや肌荒れ、隠れ炎症の改善に繋がります。</li>
-                </ul>
-            </div>
-        </div>
-
-        <div class="content-section">
-            <h3>2. デトックス＆巡り：溜めない体で代謝をアップ</h3>
-            <div style="text-align: center;">
-                <img src="images/diet2.jpg" alt="ヨガとリラックス空間" class="article-img" onerror="handleImageError(this)">
-            </div>
-            <p>体重や体型だけでなく、肌荒れやくすみ、冷えはすべて「体の巡りが滞っているサイン」かもしれません。体内の老廃物をスムーズに排出するデトックスは、ダイエット効果を高め、透明感のある肌を育みます。</p>
-            
-            <script type="text/javascript">
-            (function(b,c,f,g,a,d,e){b.MoshimoAffiliateObject=a;
-            b[a]=b[a]||function(){arguments.currentScript=c.currentScript
-            ||c.scripts[c.scripts.length-2];(b[a].q=b[a].q||[]).push(arguments)};
-            c.getElementById(a)||(d=c.createElement(f),d.src=g,
-            d.id=a,e=c.getElementsByTagName("body")[0],e.appendChild(d))})
-            (window,document,"script","//dn.msmstatic.com/site/cardlink/bundle.js?20220329","msmaflink");
-            msmaflink({"n":"【4日20時〜最大半額★1000名様限定】ちょうかつ陽茶 ダイエット お茶 ノンカフェイン ほうじ茶 ティーバッグ マテ茶 グアー豆 食物繊維 サイリウム オオバコ ティーパック マテ茶 乳酸菌 ビフィズス菌 健康茶 減肥茶 ダイエットティー 薬草茶 薬膳茶 減らす 五つ星本舗","b":"","t":"","d":"https:\/\/thumbnail.image.rakuten.co.jp","c_p":"\/@0_mall\/levante\/cabinet\/item\/harb","p":["\/h-cy001.jpg","\/h-cy_img01.jpg","\/h-cy_img02.jpg"],"u":{"u":"https:\/\/item.rakuten.co.jp\/levante\/h-cy001\/","t":"rakuten","r_v":""},"v":"2.1","b_l":[{"id":1,"u_tx":"楽天市場で見る","u_bc":"#87c209","u_url":"https:\/\/item.rakuten.co.jp\/levante\/h-cy001\/","a_id":5267359,"p_id":54,"pl_id":27059,"pc_id":54,"s_n":"rakuten","u_so":1},{"id":5,"u_tx":"Amazonで見る","u_bc":"#184f5c","u_url":"https:\/\/amzn.to\/4pyNkiH","a_id":0,"p_id":0,"pl_id":0,"pc_id":0,"s_n":"custom_10","u_so":2},{"id":4,"u_tx":"Yahoo!ショッピングで見る","u_bc":"#bf0000","u_url":"https:\/\/shopping.yahoo.co.jp\/search?first=1\u0026p=%E3%80%904%E6%97%A520%E6%99%82%E3%80%9C%E6%9C%80%E5%A4%A7%E5%8D%8A%E9%A1%8D%E2%98%851000%E5%90%8D%E6%A7%98%E9%99%90%E5%AE%9A%E3%80%91%E3%81%A1%E3%82%87%E3%81%86%E3%81%8B%E3%81%A4%E9%99%BD%E8%8C%B6%20%E3%83%80%E3%82%A4%E3%82%A8%E3%83%83%E3%83%88%20%E3%81%8A%E8%8C%B6%20%E3%83%8E%E3%83%B3%E3%82%AB%E3%83%95%E3%82%A7%E3%82%A4%E3%83%B3%20%E3%81%BB%E3%81%86%E3%81%98%E8%8C%B6%20%E3%83%86%E3%82%A3%E3%83%BC%E3%83%90%E3%83%83%E3%82%B0%20%E3%83%9E%E3%83%86%E8%8C%B6%20%E3%82%B0%E3%82%A2%E3%83%BC%E8%B1%86%20%E9%A3%9F%E7%89%A9%E7%B9%8A%E7%B6%AD%20%E3%82%B5%E3%82%A4%E3%83%AA%E3%82%A6%E3%83%A0%20%E3%82%AA%E3%82%AA%E3%83%90%E3%82%B3%20%E3%83%86%E3%82%A3%E3%83%BC%E3%83%91%E3%83%83%E3%82%AF%20%E3%83%9E%E3%83%86%E8%8C%B6%20%E4%B9%B3%E9%85%B8%E8%8F%8C%20%E3%83%93%E3%83%95%E3%82%A3%E3%82%BA%E3%82%B9%E8%8F%8C%20%E5%81%A5%E5%BA%B7%E8%8C%B6%20%E6%B8%9B%E8%82%A5%E8%8C%B6%20%E3%83%80%E3%82%A4%E3%82%A8%E3%83%83%E3%83%88%E3%83%86%E3%82%A3%E3%83%BC%20%E8%96%AC%E8%8D%89%E8%8C%B6%20%E8%96%AC%E8%86%B3%E8%8C%B6%20%E6%B8%9B%E3%82%89%E3%81%99%20%E4%BA%94%E3%81%A4%E6%98%9F%E6%9C%AC%E8%88%97","a_id":5267465,"p_id":1225,"pl_id":27061,"pc_id":1925,"s_n":"yahoo","u_so":3}],"eid":"psGeA","s":"s"});
-            </script>
-            <div id="msmaflink-psGeA">リンク</div>
-            <div class="content-box">
-                <h4>🛁 <strong>オーガニックなデトックス習慣</strong></h4>
-                <ul class="list-check">
-                    <li><strong>朝の白湯</strong>：内臓を温めて代謝をスタートさせ、腸の動きを活発にします。</li>
-                    <li><strong>ミネラル豊富なバスソルト入浴</strong>：じんわりと体を温め、発汗による老廃物排出を促します。</li>
-                    <li><strong>セルフリンパマッサージ</strong>：オーガニックなキャリアオイル（ホホバ、アルガンなど）を使い、入浴後などに顔や体をマッサージし、巡りをサポートします。</li>
-                    <li><strong>利尿作用のあるハーブティー</strong>：水分代謝を助け、穏やかにデトックスを促します。（例：ダンデライオン、ネトル）</li>
-                </ul>
-            </div>
-        </div>
-
-        <div class="content-section">
-            <h3>3. 休息と再生：質の良い睡眠で美肌と痩せ体質を育む</h3>
-            <p>睡眠中に分泌される「成長ホルモン」は、肌のターンオーバーを促す美肌ホルモンであると同時に、脂肪の分解を促進するダイエットの味方でもあります。質の高い睡眠は、努力せずとも痩せやすく、肌が綺麗になる土台です。</p>
-            
-            <script type="text/javascript">
-            (function(b,c,f,g,a,d,e){b.MoshimoAffiliateObject=a;
-            b[a]=b[a]||function(){arguments.currentScript=c.currentScript
-            ||c.scripts[c.scripts.length-2];(b[a].q=b[a].q||[]).push(arguments)};
-            c.getElementById(a)||(d=c.createElement(f),d.src=g,
-            d.id=a,e=c.getElementsByTagName("body")[0],e.appendChild(d))})
-            (window,document,"script","//dn.msmstatic.com/site/cardlink/bundle.js?20220329","msmaflink");
-            msmaflink({"n":"オーガニック レモンマートルティー ルイボスティー ブレンド ティーバッグ 2g×50個 有機 レモンマートル ルイボス の ブレンド ハーブティー 植物由来のティーバッグ ティーパック nichie ニチエー 【お茶】","b":"","t":"","d":"https:\/\/thumbnail.image.rakuten.co.jp","c_p":"\/@0_mall\/collagenkirei\/cabinet","p":["\/cart\/rooiboslemn-01.jpg","\/nakami\/teabag_corn.jpg","\/item_page\/rooiboslemn_2.jpg"],"u":{"u":"https:\/\/item.rakuten.co.jp\/collagenkirei\/rooiboslemn-01\/","t":"rakuten","r_v":""},"v":"2.1","b_l":[{"id":1,"u_tx":"楽天市場で見る","u_bc":"#87c209","u_url":"https:\/\/item.rakuten.co.jp\/collagenkirei\/rooiboslemn-01\/","a_id":5267359,"p_id":54,"pl_id":27059,"pc_id":54,"s_n":"rakuten","u_so":1},{"id":5,"u_tx":"Amazonで見る","u_bc":"#184f5c","u_url":"https:\/\/amzn.to\/4rnTPH7","a_id":0,"p_id":0,"pl_id":0,"pc_id":0,"s_n":"custom_10","u_so":2},{"id":4,"u_tx":"Yahoo!ショッピングで見る","u_bc":"#bf0000","u_url":"https:\/\/shopping.yahoo.co.jp\/search?first=1\u0026p=%E3%82%AA%E3%83%BC%E3%82%AC%E3%83%8B%E3%83%83%E3%82%AF%20%E3%83%AC%E3%83%A2%E3%83%B3%E3%83%9E%E3%83%BC%E3%83%88%E3%83%AB%E3%83%86%E3%82%A3%E3%83%BC%20%E3%83%AB%E3%82%A4%E3%83%9C%E3%82%B9%E3%83%86%E3%82%A3%E3%83%BC%20%E3%83%96%E3%83%AC%E3%83%B3%E3%83%89%20%E3%83%86%E3%82%A3%E3%83%BC%E3%83%90%E3%83%83%E3%82%B0%202g%C3%9750%E5%80%8B%20%E6%9C%89%E6%A9%9F%20%E3%83%AC%E3%83%A2%E3%83%B3%E3%83%9E%E3%83%BC%E3%83%88%E3%83%AB%20%E3%83%AB%E3%82%A4%E3%83%9C%E3%82%B9%20%E3%81%AE%20%E3%83%96%E3%83%AC%E3%83%B3%E3%83%89%20%E3%83%8F%E3%83%BC%E3%83%96%E3%83%86%E3%82%A3%E3%83%BC%20%E6%A4%8D%E7%89%A9%E7%94%B1%E6%9D%A5%E3%81%AE%E3%83%86%E3%82%A3%E3%83%BC%E3%83%90%E3%83%83%E3%82%B0%20%E3%83%86%E3%82%A3%E3%83%BC%E3%83%91%E3%83%83%E3%82%AF%20nichie%20%E3%83%8B%E3%83%81%E3%82%A8%E3%83%BC%20%E3%80%90%E3%81%8A%E8%8C%B6%E3%80%91","a_id":5267465,"p_id":1225,"pl_id":27061,"pc_id":1925,"s_n":"yahoo","u_so":3}],"eid":"KX5lg","s":"s"});
-            </script>
-            <div id="msmaflink-KX5lg">リンク</div>
-            <div class="content-box">
-                <h4>🌿 <strong>睡眠の質を高めるオーガニックアプローチ</strong></h4>
-                <ul class="list-check">
-                    <li><strong>寝室のアロマ</strong>：ラベンダーやカモミールなど、リラックス効果の高いオーガニックエッセンシャルオイルをディフューズします。</li>
-                    <li><strong>温かい飲み物</strong>：就寝1時間前にノンカフェインのハーブティーを飲み、心身をリラックスさせます。</li>
-                    <li><strong>寝具の素材</strong>：肌触りの良いオーガニックコットンやシルクの寝具を選び、体への負担を軽減します。</li>
-                </ul>
-            </div>
-        </div>
-
-        <div class="content-box intro-box">
-            <p>オーガニックコスメを使った外側からのケアも大切ですが、それ以上に、内側からのケアは肌の輝きと体の健やかさを保証する土台となります。</p>
-            <p>ストイックになりすぎる必要はありません。「今日は体に優しいものを選ぼう」「ぐっすり眠って肌を休ませてあげよう」といった、小さな意識の変化が、長期的に大きな変化を生み出します。</p>
-            <p>スキンケアとダイエットを切り離さず、<strong>トータルなウェルビーイング</strong>として楽しんでみてください。内側からも外側からも輝く、あなたらしい美しさを応援しています。</p>
-        </div>
-
         <script type="text/javascript">
         (function(b,c,f,g,a,d,e){b.MoshimoAffiliateObject=a;
         b[a]=b[a]||function(){arguments.currentScript=c.currentScript
@@ -269,19 +236,98 @@
         c.getElementById(a)||(d=c.createElement(f),d.src=g,
         d.id=a,e=c.getElementsByTagName("body")[0],e.appendChild(d))})
         (window,document,"script","//dn.msmstatic.com/site/cardlink/bundle.js?20220329","msmaflink");
-        msmaflink({"n":"【賞味期限2027\/03】エステプロラボ F-ブロッカー ハーブティー 3g×30包 Esthe Pro Labo ダイエット スッキリ 天然素材 おいしい オーガニック サロン専売品 送料無料","b":"","t":"","d":"https:\/\/thumbnail.image.rakuten.co.jp","c_p":"\/@0_mall\/arianakosume\/cabinet","p":["\/main-6\/s-1-4562249290339-rk.jpg","\/biiino\/award\/456224f2371affa6.jpg","\/lib\/bn_haisou.jpg"],"u":{"u":"https:\/\/item.rakuten.co.jp\/arianakosume\/4562249290339\/","t":"rakuten","r_v":""},"v":"2.1","b_l":[{"id":1,"u_tx":"楽天市場で見る","u_bc":"#87c209","u_url":"https:\/\/item.rakuten.co.jp\/arianakosume\/4562249290339\/","a_id":5267359,"p_id":54,"pl_id":27059,"pc_id":54,"s_n":"rakuten","u_so":1},{"id":5,"u_tx":"Amazonで見る","u_bc":"#184f5c","u_url":"https:\/\/amzn.to\/4pbtKcG","a_id":0,"p_id":0,"pl_id":0,"pc_id":0,"s_n":"custom_10","u_so":2},{"id":4,"u_tx":"Yahoo!ショッピングで見る","u_bc":"#bf0000","u_url":"https:\/\/shopping.yahoo.co.jp\/search?first=1\u0026p=%E3%80%90%E8%B3%9E%E5%91%B3%E6%9C%9F%E9%99%902027%2F03%E3%80%91%E3%82%A8%E3%82%B9%E3%83%86%E3%83%97%E3%83%AD%E3%83%A9%E3%83%9C%20F-%E3%83%96%E3%83%AD%E3%83%83%E3%82%AB%E3%83%BC%20%E3%83%8F%E3%83%BC%E3%83%96%E3%83%86%E3%82%A3%E3%83%BC%203g%C3%9730%E5%8C%85%20Esthe%20Pro%20Labo%20%E3%83%80%E3%82%A4%E3%82%A8%E3%83%83%E3%83%88%20%E3%82%B9%E3%83%83%E3%82%AD%E3%83%AA%20%E5%A4%A9%E7%84%B6%E7%B4%A0%E6%9D%90%20%E3%81%8A%E3%81%84%E3%81%97%E3%81%84%20%E3%82%AA%E3%83%BC%E3%82%AC%E3%83%8B%E3%83%83%E3%82%AF%20%E3%82%B5%E3%83%AD%E3%83%B3%E5%B0%82%E5%A3%B2%E5%93%81%20%E9%80%81%E6%96%99%E7%84%A1%E6%96%99","a_id":5267465,"p_id":1225,"pl_id":27061,"pc_id":1925,"s_n":"yahoo","u_so":3}],"eid":"62iG3","s":"s"});
+        msmaflink({"n":"オーガニックマキベリー粉末（フリーズドライ製法） 100g 【送料無料】【メール便で郵便ポストにお届け】【代引不可】【時間指定不可】 有機JAS認定 [04] NICHIGA(ニチガ)","b":"","t":"","d":"https:\/\/thumbnail.image.rakuten.co.jp","c_p":"\/","p":["@0_mall\/auc-garlic\/cabinet\/makiberi\/makiberi1-r100gm.jpg","@0_mall\/auc-garlic\/cabinet\/makiberi\/makiberi-100m.jpg","@0_gold\/auc-garlic\/item\/makiberi\/mb_s01.jpg"],"u":{"u":"https:\/\/item.rakuten.co.jp\/auc-garlic\/makiberi-100m\/","t":"rakuten","r_v":""},"v":"2.1","b_l":[{"id":1,"u_tx":"楽天市場で見る","u_bc":"#87c209","u_url":"https:\/\/item.rakuten.co.jp\/auc-garlic\/makiberi-100m\/","a_id":5267359,"p_id":54,"pl_id":27059,"pc_id":54,"s_n":"rakuten","u_so":1},{"id":5,"u_tx":"Amazonで見る","u_bc":"#184f5c","u_url":"https:\/\/amzn.to\/3Kv27Mw","a_id":0,"p_id":0,"pl_id":0,"pc_id":0,"s_n":"custom_10","u_so":2},{"id":4,"u_tx":"Yahoo!ショッピングで見る","u_bc":"#bf0000","u_url":"https:\/\/shopping.yahoo.co.jp\/search?first=1\u0026p=%E3%82%AA%E3%83%BC%E3%82%AC%E3%83%8B%E3%83%83%E3%82%AF%E3%83%9E%E3%82%AD%E3%83%99%E3%83%AA%E3%83%BC%E7%B2%89%E6%9C%AB%EF%BC%88%E3%83%95%E3%83%AA%E3%83%BC%E3%82%BA%E3%83%89%E3%83%A9%E3%82%A4%E8%A3%BD%E6%B3%95%EF%BC%89%20100g%20%E3%80%90%E9%80%81%E6%96%99%E7%84%A1%E6%96%99%E3%80%91%E3%80%90%E3%83%A1%E3%83%BC%E3%83%AB%E4%BE%BF%E3%81%A7%E9%83%B5%E4%BE%BF%E3%83%9D%E3%82%B9%E3%83%88%E3%81%AB%E3%81%8A%E5%B1%8A%E3%81%91%E3%80%91%E3%80%90%E4%BB%A3%E5%BC%95%E4%B8%8D%E5%8F%AF%E3%80%91%E3%80%90%E6%99%82%E9%96%93%E6%8C%87%E5%AE%9A%E4%B8%8D%E5%8F%AF%E3%80%91%20%E6%9C%89%E6%A9%9FJAS%E8%AA%8D%E5%AE%9A%20%5B04%5D%20NICHIGA(%E3%83%8B%E3%83%81%E3%82%AC)","a_id":5267465,"p_id":1225,"pl_id":27061,"pc_id":1925,"s_n":"yahoo","u_so":3}],"eid":"SNB7U","s":"s"});
         </script>
-        <div id="msmaflink-62iG3">リンク</div>
-        <div style="text-align:center;">
-            <a href="index.html" class="back-btn">← トップページへ戻る</a>
+        <div id="msmaflink-SNB7U">リンク</div>
+        <div class="content-box">
+            <h4>🔑 <strong>ダイエットと美肌に効くオーガニックフード</strong></h4>
+            <ul class="list-check">
+                <li><strong>発酵食品（味噌、麹、無糖ヨーグルト）</strong>：腸内環境を整え、美肌とデトックス効果を高めます。</li>
+                <li><strong>色の濃い野菜やフルーツ</strong>：豊富な抗酸化物質が、肌の老化や炎症を防ぎます。</li>
+                <li><strong>良質なオイル（エキストラバージンオリーブオイル、亜麻仁油）</strong>：肌の細胞膜やホルモンバランスを整える必須脂肪酸を補給します。</li>
+                <li><strong>グルテンフリーの選択</strong>：体質によっては、小麦を減らすことが、むくみや肌荒れ、隠れ炎症の改善に繋がります。</li>
+            </ul>
         </div>
-    </main>
-    
-    <div id="affiliateNotice">※当サイトはアフィリエイト広告（Amazonアソシエイト含む）を利用しています</div>
+    </div>
 
-    <footer>
-        © 2025 Essential Beauty Needs
-        <a href="privacy-policy.html" style="color: #777; text-decoration: none; margin-left: 15px;">プライバシーポリシー</a>
-    </footer>
+    <div class="content-section">
+        <h3>2. デトックス＆巡り：溜めない体で代謝をアップ</h3>
+        <div style="text-align: center;">
+            <img src="images/diet2.jpg" alt="ヨガとリラックス空間" class="article-img" onerror="handleImageError(this)">
+        </div>
+        <p>体重や体型だけでなく、肌荒れやくすみ、冷えはすべて「体の巡りが滞っているサイン」かもしれません。体内の老廃物をスムーズに排出するデトックスは、ダイエット効果を高め、透明感のある肌を育みます。</p>
+        
+        <script type="text/javascript">
+        (function(b,c,f,g,a,d,e){b.MoshimoAffiliateObject=a;
+        b[a]=b[a]||function(){arguments.currentScript=c.currentScript
+        ||c.scripts[c.scripts.length-2];(b[a].q=b[a].q||[]).push(arguments)};
+        c.getElementById(a)||(d=c.createElement(f),d.src=g,
+        d.id=a,e=c.getElementsByTagName("body")[0],e.appendChild(d))})
+        (window,document,"script","//dn.msmstatic.com/site/cardlink/bundle.js?20220329","msmaflink");
+        msmaflink({"n":"【4日20時〜最大半額★1000名様限定】ちょうかつ陽茶 ダイエット お茶 ノンカフェイン ほうじ茶 ティーバッグ マテ茶 グアー豆 食物繊維 サイリウム オオバコ ティーパック マテ茶 乳酸菌 ビフィズス菌 健康茶 減肥茶 ダイエットティー 薬草茶 薬膳茶 減らす 五つ星本舗","b":"","t":"","d":"https:\/\/thumbnail.image.rakuten.co.jp","c_p":"\/@0_mall\/levante\/cabinet\/item\/harb","p":["\/h-cy001.jpg","\/h-cy_img01.jpg","\/h-cy_img02.jpg"],"u":{"u":"https:\/\/item.rakuten.co.jp\/levante\/h-cy001\/","t":"rakuten","r_v":""},"v":"2.1","b_l":[{"id":1,"u_tx":"楽天市場で見る","u_bc":"#87c209","u_url":"https:\/\/item.rakuten.co.jp\/levante\/h-cy001\/","a_id":5267359,"p_id":54,"pl_id":27059,"pc_id":54,"s_n":"rakuten","u_so":1},{"id":5,"u_tx":"Amazonで見る","u_bc":"#184f5c","u_url":"https:\/\/amzn.to\/4pyNkiH","a_id":0,"p_id":0,"pl_id":0,"pc_id":0,"s_n":"custom_10","u_so":2},{"id":4,"u_tx":"Yahoo!ショッピングで見る","u_bc":"#bf0000","u_url":"https:\/\/shopping.yahoo.co.jp\/search?first=1\u0026p=%E3%80%904%E6%97%A520%E6%99%82%E3%80%9C%E6%9C%80%E5%A4%A7%E5%8D%8A%E9%A1%8D%E2%98%851000%E5%90%8D%E6%A7%98%E9%99%90%E5%AE%9A%E3%80%91%E3%81%A1%E3%82%87%E3%81%86%E3%81%8B%E3%81%A4%E9%99%BD%E8%8C%B6%20%E3%83%80%E3%82%A4%E3%82%A8%E3%83%83%E3%83%88%20%E3%81%8A%E8%8C%B6%20%E3%83%8E%E3%83%B3%E3%82%AB%E3%83%95%E3%82%A7%E3%82%A4%E3%83%B3%20%E3%81%BB%E3%81%86%E3%81%98%E8%8C%B6%20%E3%83%86%E3%82%A3%E3%83%BC%E3%83%90%E3%83%83%E3%82%B0%20%E3%83%9E%E3%83%86%E8%8C%B6%20%E3%82%B0%E3%82%A2%E3%83%BC%E8%B1%86%20%E9%A3%9F%E7%89%A9%E7%B9%8A%E7%B6%AD%20%E3%82%B5%E3%82%A4%E3%83%AA%E3%82%A6%E3%83%A0%20%E3%82%AA%E3%82%AA%E3%83%90%E3%82%B3%20%E3%83%86%E3%82%A3%E3%83%BC%E3%83%91%E3%83%83%E3%82%AF%20%E3%83%9E%E3%83%86%E8%8C%B6%20%E4%B9%B3%E9%85%B8%E8%8F%8C%20%E3%83%93%E3%83%95%E3%82%A3%E3%82%BA%E3%82%B9%E8%8F%8C%20%E5%81%A5%E5%BA%B7%E8%8C%B6%20%E6%B8%9B%E8%82%A5%E8%8C%B6%20%E3%83%80%E3%82%A4%E3%82%A8%E3%83%83%E3%83%88%E3%83%86%E3%82%A3%E3%83%BC%20%E8%96%AC%E8%8D%89%E8%8C%B6%20%E8%96%AC%E8%86%B3%E8%8C%B6%20%E6%B8%9B%E3%82%89%E3%81%99%20%E4%BA%94%E3%81%A4%E6%98%9F%E6%9C%AC%E8%88%97","a_id":5267465,"p_id":1225,"pl_id":27061,"pc_id":1925,"s_n":"yahoo","u_so":3}],"eid":"psGeA","s":"s"});
+        </script>
+        <div id="msmaflink-psGeA">リンク</div>
+        <div class="content-box">
+            <h4>🛁 <strong>オーガニックなデトックス習慣</strong></h4>
+            <ul class="list-check">
+                <li><strong>朝の白湯</strong>：内臓を温めて代謝をスタートさせ、腸の動きを活発にします。</li>
+                <li><strong>ミネラル豊富なバスソルト入浴</strong>：じんわりと体を温め、発汗による老廃物排出を促します。</li>
+                <li><strong>セルフリンパマッサージ</strong>：オーガニックなキャリアオイル（ホホバ、アルガンなど）を使い、入浴後などに顔や体をマッサージし、巡りをサポートします。</li>
+                <li><strong>利尿作用のあるハーブティー</strong>：水分代謝を助け、穏やかにデトックスを促します。（例：ダンデライオン、ネトル）</li>
+            </ul>
+        </div>
+    </div>
+
+    <div class="content-section">
+        <h3>3. 休息と再生：質の良い睡眠で美肌と痩せ体質を育む</h3>
+        <p>睡眠中に分泌される「成長ホルモン」は、肌のターンオーバーを促す美肌ホルモンであると同時に、脂肪の分解を促進するダイエットの味方でもあります。質の高い睡眠は、努力せずとも痩せやすく、肌が綺麗になる土台です。</p>
+        
+        <script type="text/javascript">
+        (function(b,c,f,g,a,d,e){b.MoshimoAffiliateObject=a;
+        b[a]=b[a]||function(){arguments.currentScript=c.currentScript
+        ||c.scripts[c.scripts.length-2];(b[a].q=b[a].q||[]).push(arguments)};
+        c.getElementById(a)||(d=c.createElement(f),d.src=g,
+        d.id=a,e=c.getElementsByTagName("body")[0],e.appendChild(d))})
+        (window,document,"script","//dn.msmstatic.com/site/cardlink/bundle.js?20220329","msmaflink");
+        msmaflink({"n":"オーガニック レモンマートルティー ルイボスティー ブレンド ティーバッグ 2g×50個 有機 レモンマートル ルイボス の ブレンド ハーブティー 植物由来のティーバッグ ティーパック nichie ニチエー 【お茶】","b":"","t":"","d":"https:\/\/thumbnail.image.rakuten.co.jp","c_p":"\/@0_mall\/collagenkirei\/cabinet","p":["\/cart\/rooiboslemn-01.jpg","\/nakami\/teabag_corn.jpg","\/item_page\/rooiboslemn_2.jpg"],"u":{"u":"https:\/\/item.rakuten.co.jp\/collagenkirei\/rooiboslemn-01\/","t":"rakuten","r_v":""},"v":"2.1","b_l":[{"id":1,"u_tx":"楽天市場で見る","u_bc":"#87c209","u_url":"https:\/\/item.rakuten.co.jp\/collagenkirei\/rooiboslemn-01\/","a_id":5267359,"p_id":54,"pl_id":27059,"pc_id":54,"s_n":"rakuten","u_so":1},{"id":5,"u_tx":"Amazonで見る","u_bc":"#184f5c","u_url":"https:\/\/amzn.to\/4rnTPH7","a_id":0,"p_id":0,"pl_id":0,"pc_id":0,"s_n":"custom_10","u_so":2},{"id":4,"u_tx":"Yahoo!ショッピングで見る","u_bc":"#bf0000","u_url":"https:\/\/shopping.yahoo.co.jp\/search?first=1\u0026p=%E3%82%AA%E3%83%BC%E3%82%AC%E3%83%8B%E3%83%83%E3%82%AF%20%E3%83%AC%E3%83%A2%E3%83%B3%E3%83%9E%E3%83%BC%E3%83%88%E3%83%AB%E3%83%86%E3%82%A3%E3%83%BC%20%E3%83%AB%E3%82%A4%E3%83%9C%E3%82%B9%E3%83%86%E3%82%A3%E3%83%BC%20%E3%83%96%E3%83%AC%E3%83%B3%E3%83%89%20%E3%83%86%E3%82%A3%E3%83%BC%E3%83%90%E3%83%83%E3%82%B0%202g%C3%9750%E5%80%8B%20%E6%9C%89%E6%A9%9F%20%E3%83%AC%E3%83%A2%E3%83%B3%E3%83%9E%E3%83%BC%E3%83%88%E3%83%AB%20%E3%83%AB%E3%82%A4%E3%83%9C%E3%82%B9%20%E3%81%AE%20%E3%83%96%E3%83%AC%E3%83%B3%E3%83%89%20%E3%83%8F%E3%83%BC%E3%83%96%E3%83%86%E3%82%A3%E3%83%BC%20%E6%A4%8D%E7%89%A9%E7%94%B1%E6%9D%A5%E3%81%AE%E3%83%86%E3%82%A3%E3%83%BC%E3%83%90%E3%83%83%E3%82%B0%20%E3%83%86%E3%82%A3%E3%83%BC%E3%83%91%E3%83%83%E3%82%AF%20nichie%20%E3%83%8B%E3%83%81%E3%82%A8%E3%83%BC%20%E3%80%90%E3%81%8A%E8%8C%B6%E3%80%91","a_id":5267465,"p_id":1225,"pl_id":27061,"pc_id":1925,"s_n":"yahoo","u_so":3}],"eid":"KX5lg","s":"s"});
+        </script>
+        <div id="msmaflink-KX5lg">リンク</div>
+        <div class="content-box">
+            <h4>🌿 <strong>睡眠の質を高めるオーガニックアプローチ</strong></h4>
+            <ul class="list-check">
+                <li><strong>寝室のアロマ</strong>：ラベンダーやカモミールなど、リラックス効果の高いオーガニックエッセンシャルオイルをディフューズします。</li>
+                <li><strong>温かい飲み物</strong>：就寝1時間前にノンカフェインのハーブティーを飲み、心身をリラックスさせます。</li>
+                <li><strong>寝具の素材</strong>：肌触りの良いオーガニックコットンやシルクの寝具を選び、体への負担を軽減します。</li>
+            </ul>
+        </div>
+    </div>
+
+    <div class="content-box intro-box">
+        <p>オーガニックコスメを使った外側からのケアも大切ですが、それ以上に、内側からのケアは肌の輝きと体の健やかさを保証する土台となります。</p>
+        <p>ストイックになりすぎる必要はありません。「今日は体に優しいものを選ぼう」「ぐっすり眠って肌を休ませてあげよう」といった、小さな意識の変化が、長期的に大きな変化を生み出します。</p>
+        <p>スキンケアとダイエットを切り離さず、<strong>トータルなウェルビーイング</strong>として楽しんでみてください。内側からも外側からも輝く、あなたらしい美しさを応援しています。</p>
+    </div>
+
+    <script type="text/javascript">
+    (function(b,c,f,g,a,d,e){b.MoshimoAffiliateObject=a;
+    b[a]=b[a]||function(){arguments.currentScript=c.currentScript
+    ||c.scripts[c.scripts.length-2];(b[a].q=b[a].q||[]).push(arguments)};
+    c.getElementById(a)||(d=c.createElement(f),d.src=g,
+    d.id=a,e=c.getElementsByTagName("body")[0],e.appendChild(d))})
+    (window,document,"script","//dn.msmstatic.com/site/cardlink/bundle.js?20220329","msmaflink");
+    msmaflink({"n":"【賞味期限2027\/03】エステプロラボ F-ブロッカー ハーブティー 3g×30包 Esthe Pro Labo ダイエット スッキリ 天然素材 おいしい オーガニック サロン専売品 送料無料","b":"","t":"","d":"https:\/\/thumbnail.image.rakuten.co.jp","c_p":"\/@0_mall\/arianakosume\/cabinet","p":["\/main-6\/s-1-4562249290339-rk.jpg","\/biiino\/award\/456224f2371affa6.jpg","\/lib\/bn_haisou.jpg"],"u":{"u":"https:\/\/item.rakuten.co.jp\/arianakosume\/4562249290339\/","t":"rakuten","r_v":""},"v":"2.1","b_l":[{"id":1,"u_tx":"楽天市場で見る","u_bc":"#87c209","u_url":"https:\/\/item.rakuten.co.jp\/arianakosume\/4562249290339\/","a_id":5267359,"p_id":54,"pl_id":27059,"pc_id":54,"s_n":"rakuten","u_so":1},{"id":5,"u_tx":"Amazonで見る","u_bc":"#184f5c","u_url":"https:\/\/amzn.to\/4pbtKcG","a_id":0,"p_id":0,"pl_id":0,"pc_id":0,"s_n":"custom_10","u_so":2},{"id":4,"u_tx":"Yahoo!ショッピングで見る","u_bc":"#bf0000","u_url":"https:\/\/shopping.yahoo.co.jp\/search?first=1\u0026p=%E3%80%90%E8%B3%9E%E5%91%B3%E6%9C%9F%E9%99%902027%2F03%E3%80%91%E3%82%A8%E3%82%B9%E3%83%86%E3%83%97%E3%83%AD%E3%83%A9%E3%83%9C%20F-%E3%83%96%E3%83%AD%E3%83%83%E3%82%AB%E3%83%BC%20%E3%83%8F%E3%83%BC%E3%83%96%E3%83%86%E3%82%A3%E3%83%BC%203g%C3%9730%E5%8C%85%20Esthe%20Pro%20Labo%20%E3%83%80%E3%82%A4%E3%82%A8%E3%83%83%E3%83%88%20%E3%82%B9%E3%83%83%E3%82%AD%E3%83%AA%20%E5%A4%A9%E7%84%B6%E7%B4%A0%E6%9D%90%20%E3%81%8A%E3%81%84%E3%81%97%E3%81%84%20%E3%82%AA%E3%83%BC%E3%82%AC%E3%83%8B%E3%83%83%E3%82%AF%20%E3%82%B5%E3%83%AD%E3%83%B3%E5%B0%82%E5%A3%B2%E5%93%81%20%E9%80%81%E6%96%99%E7%84%A1%E6%96%99","a_id":5267465,"p_id":1225,"pl_id":27061,"pc_id":1925,"s_n":"yahoo","u_so":3}],"eid":"62iG3","s":"s"});
+    </script>
+    <div id="msmaflink-62iG3">リンク</div>
+    <div style="text-align:center;">
+        <a href="index.html" class="back-btn">← トップページへ戻る</a>
+    </div>
+  </main>
+  
+  <div id="affiliateNotice">※当サイトはアフィリエイト広告（Amazonアソシエイト含む）を利用しています</div>
+
+  <footer>
+    © 2025 Essential Beauty Needs
+    <a href="privacy-policy.html" style="color: #777; text-decoration: none; margin-left: 15px;">プライバシーポリシー</a>
+  </footer>
 </body>
 </html>
