@@ -7,6 +7,29 @@
   <link rel="canonical" href="https://essential-beauty-needs.com/about.html">
   <link href="https://fonts.googleapis.com/css2?family=Playfair+Display:wght@600&family=Quicksand:wght@400;600&display=swap" rel="stylesheet">
   
+  <script>
+    function isInternalUser() {
+      return document.cookie.split(';').some(c => c.trim().startsWith('internal_user=true'));
+    }
+    if (!isInternalUser()) {
+      var gaScript = document.createElement('script');
+      gaScript.async = true;
+      gaScript.src = "https://www.googletagmanager.com/gtag/js?id=G-2HGEPHVZYY";
+      document.head.appendChild(gaScript);
+      window.dataLayer = window.dataLayer || [];
+      function gtag(){dataLayer.push(arguments);}
+      gtag('js', new Date());
+      gtag('config', 'G-2HGEPHVZYY');
+    } else {
+        console.log('✅ Internal traffic excluded.');
+    }
+
+    function handleImageError(imgElement, width, height, text) { 
+         imgElement.onerror = null; 
+         imgElement.src = `https://placehold.co/${width}x${height}/f7a8a8/ffffff?text=${encodeURIComponent(text)}`;
+    }
+  </script>
+  
   <style>
     /* 全体の設定 */
     body {
@@ -21,7 +44,7 @@
     /* ヘッダーの設定 */
     header {
       text-align: center;
-      padding: 80px 20px;
+      padding: 80px 20px 100px; /* 下部余白を増やしてカードと被せる準備 */
       background: linear-gradient(90deg, #fbeaea, #f9d9d7);
     }
     
@@ -35,7 +58,7 @@
     /* メインエリアの設定 */
     main {
       max-width: 700px;
-      margin: -20px auto 40px; /* ヘッダーに少し被せておしゃれに */
+      margin: -60px auto 40px; /* ヘッダーに大きく被せる */
       padding: 0 20px;
       position: relative;
     }
@@ -51,7 +74,7 @@
     /* 画像の設定 */
     .profile-image-container {
       text-align: center;
-      margin-top: -80px; /* 画像を半分枠の外に出す演出 */
+      margin-top: -80px; /* 画像を枠の外に出す演出 */
       margin-bottom: 20px;
     }
     
@@ -62,6 +85,7 @@
       object-fit: cover;
       border: 5px solid #ffffff; /* 画像の周りに白いフチをつける */
       box-shadow: 0 4px 10px rgba(0,0,0,0.1);
+      background: #fff; /* 画像読み込み前の背景 */
     }
 
     /* テキストの調整 */
@@ -84,6 +108,11 @@
       border-left: 4px solid #f48b8b;
     }
 
+    /* ナビゲーション（共通スタイル） */
+    .nav-links{display:flex;gap:10px;justify-content:center;margin-top:40px;flex-wrap:wrap;}
+    .nav-links a{background:rgba(255,255,255,0.6);padding:8px 15px;border-radius:20px;text-decoration:none;color:#503535;font-weight:600; font-size:13px; border:1px solid #eee; transition:0.3s;}
+    .nav-links a:hover{background:#f48b8b;color:#fff; border-color:#f48b8b;}
+
     /* フッター周り */
     .footer-links {
       text-align: center;
@@ -91,16 +120,6 @@
       font-size: 14px;
     }
     
-    a {
-      color: #f48b8b;
-      text-decoration: none;
-      transition: opacity 0.3s;
-    }
-    
-    a:hover {
-      opacity: 0.7;
-    }
-
     footer {
       text-align: center;
       color: #999;
@@ -114,7 +133,7 @@
         padding: 30px 20px;
       }
       header {
-        padding-bottom: 80px; /* スマホで画像が被りすぎないように調整 */
+        padding-bottom: 80px; 
       }
     }
   </style>
@@ -128,11 +147,7 @@
 
   <main>
     <div class="profile-card">
-      
-      <div class="profile-image-container">
-        <img src="images/Yuri.jpg" alt="管理人のYuri" class="profile-image">
-      </div>
-
+ 
       <p>はじめまして、管理人の<strong>Yuri</strong>です。</p>
       
       <p>かつての私は、肌トラブルを隠すためにメイクを重ね、高価な化粧品を買い漁る日々を送っていました。<br>
@@ -160,9 +175,16 @@
       </p>
 
     </div>
+    
+    <div class="nav-links">
+        <a href="index.html">🏠 トップ</a>
+        <a href="skin-ranking.html">✨ ランキング</a>
+        <a href="beauty-column.html">💄 コラム</a>
+        <a href="organic-science.html">🔬 成分の科学</a>
+    </div>
+
     <div class="footer-links">
-      <p><a href="index.html">← トップページに戻る</a></p>
-      <p style="font-size:11px; color: #888;">お問合せ先：essential.beauty.needs.ebn@gmail.com</p>
+      <p style="font-size:11px; color: #888; margin-top:20px;">お問合せ先：essential.beauty.needs.ebn@gmail.com</p>
     </div>
 
   </main>
