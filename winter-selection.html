@@ -11,25 +11,27 @@
   <link rel="canonical" href="https://essential-beauty-needs.com/winter-selection.html" />
   
   <script>
-    document.addEventListener('DOMContentLoaded', function() {
-      function isInternalUser() {
-        return document.cookie.split(';').some(c => c.trim().startsWith('internal_user=true'));
-      }
-      if (!isInternalUser()) {
-        console.log('⏳ Loading GA4...');
-        var gaScript = document.createElement('script');
-        gaScript.async = true;
-        gaScript.src = "https://www.googletagmanager.com/gtag/js?id=G-2HGEPHVZYY";
-        document.head.appendChild(gaScript);
+    function isInternalUser() {
+      return document.cookie.split(';').some(c => c.trim().startsWith('internal_user=true'));
+    }
+    if (!isInternalUser()) {
+      var gaScript = document.createElement('script');
+      gaScript.async = true;
+      gaScript.src = "https://www.googletagmanager.com/gtag/js?id=G-2HGEPHVZYY";
+      document.head.appendChild(gaScript);
+      window.dataLayer = window.dataLayer || [];
+      function gtag(){dataLayer.push(arguments);}
+      gtag('js', new Date());
+      gtag('config', 'G-2HGEPHVZYY');
+    } else {
+        console.log('✅ Internal traffic excluded.');
+    }
 
-        window.dataLayer = window.dataLayer || [];
-        function gtag(){dataLayer.push(arguments);}
-        gtag('js', new Date());
-        gtag('config', 'G-2HGEPHVZYY');
-      } else {
-        console.log('✅ Internal traffic excluded. GA4 script not loaded.');
-      }
-    });
+    function handleImageError(imgElement, width, height, text) { 
+         imgElement.onerror = null; 
+         // 代替画像を表示（バナーの場合は非表示にするなどの処理も可能）
+         imgElement.style.display = 'none';
+    }
   </script>
     
   <style>
@@ -93,31 +95,25 @@
         opacity: 0.6;
     }
 
-    nav {
-      margin-top:25px;
-      text-align:center;
-      display: flex;
-      flex-wrap: wrap;
-      justify-content: center;
-      gap: 10px;
+    /* ナビゲーション（共通スタイル） */
+    .nav-links{display:flex;gap:12px;justify-content:center;margin-top:25px;flex-wrap:wrap;}
+    .nav-links a{
+        background: linear-gradient(45deg,var(--color-accent),var(--color-secondary));
+        padding: 8px 18px;
+        border-radius: 20px;
+        text-decoration: none;
+        color: #fff;
+        font-weight: 600;
+        font-size: 14px;
+        box-shadow: 0 2px 5px rgba(0,0,0,0.1);
+        transition: 0.3s;
     }
-    nav a {
-      display:inline-block;
-      padding:10px 22px;
-      background:linear-gradient(45deg,var(--color-accent),var(--color-secondary));
-      color:#fff;
-      border-radius:30px;
-      text-decoration:none;
-      font-weight:600;
-      box-shadow: 0 2px 6px var(--color-shadow);
-      transition:all .3s ease;
-      font-size: 14px;
+    .nav-links a:hover{
+        background: linear-gradient(45deg,#3f5d85,#5f97c4);
+        transform: translateY(-2px);
+        box-shadow: 0 4px 10px rgba(0,0,0,0.2);
     }
-    nav a:hover {
-      background: linear-gradient(45deg,#3f5d85,#5f97c4);
-      transform: translateY(-2px);
-      box-shadow: 0 4px 10px rgba(0,0,0,0.2);
-    }
+    .nav-break { flex-basis: 100%; height: 0; margin: 5px 0; }
 
     .selection-list {
       display: flex;
@@ -127,8 +123,9 @@
 
     .item-wrapper {
         background: #fff;
-        padding: 10px;
+        padding: 20px; /* パディングを少し増やしました */
         border-radius: 8px;
+        box-shadow: 0 2px 8px rgba(0,0,0,0.05); /* 影を追加 */
     }
 
     .back-btn{
@@ -157,7 +154,7 @@
       border-top: 1px solid #eee;
     }
 
-    /* 記事エリアのスタイル（長文対応） */
+    /* 記事エリアのスタイル */
     .info-box {
       background: #f4f9fc;
       border-left: 5px solid #6aa8d4;
@@ -169,7 +166,6 @@
       box-shadow: 0 2px 8px rgba(0,0,0,0.05);
       font-size: 15px;
     }
-    /* 段落ごとの余白 */
     .info-box p {
       margin-bottom: 1.5em;
     }
@@ -194,16 +190,8 @@
     @media (max-width: 768px) {
         header { padding: 60px 15px 30px; }
         header h1 { font-size: 28px; }
-        nav { flex-direction: row; }
-        nav a { margin: 5px 5px; }
         .info-box { padding: 20px; font-size: 14px; }
     }
-       .nav-break {
-    /* flexコンテナ内で、次の行に要素を移動させる */
-    flex-basis: 100%;
-    height: 0; /* 高さは不要 */
-    margin: 5px 0; /* 上下に少しスペースを開ける */
-}
   </style>
 </head>
 
@@ -212,20 +200,20 @@
     <h1>オーガニックケア・冬のベストセレクション</h1>
     <p>乾燥と冷えに負けない、ぬくもりのあるスキンケアを。</p>
 
-    <nav>
+    <div class="nav-links">
       <a href="seasons-skin.html">🌸 季節別スキンケア</a>
       <a href="skin-ranking.html">✨ スキンケアランキング</a>
       <a href="age-skincare.html">👩 40代・50代向け 肌質別</a>
-      <a href="organic-science.html">🔬 オーガニック成分の科学</a>
-     <div class="nav-break"></div>
-      <a href="diet-beauty.html">🍃 ダイエット効果：インナービューティー</a>
+      <a href="organic-science.html">🔬 成分の科学</a>
+      <div class="nav-break"></div>
+      <a href="diet-beauty.html">🍃 インナービューティー</a>
       <a href="beauty-column.html">💄 ビューティーコラム</a>
-     <div class="nav-break"></div>
-      <a href="amazon-oil-review.html" class="nav-link">本当に効く！オイルレビュー🔥</a>
+      <div class="nav-break"></div>
+      <a href="amazon-oil-review.html">🔥 オイルレビュー</a>
       <a href="acne-care.html">🧴 ニキビ・敏感肌ケア</a>
       <a href="lifestyle-skincare.html">💆‍♀️ 生活リズム別</a>
-      <a href="index.html">🏠 トップに戻る</a>
-    </nav>
+      <a href="index.html" style="background:#fff; color:#305060; border:1px solid #ddd;">🏠 トップ</a>
+    </div>
   </header>
 
   <main>
@@ -276,7 +264,7 @@
           c.getElementById(a)||(d=c.createElement(f),d.src=g,
           d.id=a,e=c.getElementsByTagName("body")[0],e.appendChild(d))})
           (window,document,"script","//dn.msmstatic.com/site/cardlink/bundle.js?20220329","msmaflink");
-          msmaflink({"n":"Torriden セルメイジングコラーゲンファーミングクリーム(韓国コスメ)／トリデン（Torriden）","b":"","t":"","d":"https:\/\/thumbnail.image.rakuten.co.jp","c_p":"\/@0_mall\/0101marui\/cabinet\/cf019\/962","p":["\/198809784603795.jpg","\/198809784603795_2.jpg","\/198809784603795_3.jpg"],"u":{"u":"https:\/\/item.rakuten.co.jp\/0101marui\/cf019962190101\/","t":"rakuten","r_v":""},"v":"2.1","b_l":[{"id":1,"u_tx":"楽天市場で見る","u_bc":"#87c209","u_url":"https:\/\/item.rakuten.co.jp\/0101marui\/cf019962190101\/","a_id":5267359,"p_id":54,"pl_id":27059,"pc_id":54,"s_n":"rakuten","u_so":1},{"id":5,"u_tx":"Amazonで見る","u_bc":"#184f5c","u_url":"https:\/\/amzn.to\/48noDit","a_id":0,"p_id":0,"pl_id":0,"pc_id":0,"s_n":"custom_10","u_so":2},{"id":4,"u_tx":"Yahoo!ショッピングで見る","u_bc":"#bf0000","u_url":"https:\/\/shopping.yahoo.co.jp\/search?first=1\u0026p=Torriden%20%E3%82%BB%E3%83%AB%E3%83%A1%E3%82%A4%E3%82%B8%E3%83%B3%E3%82%B0%E3%82%B3%E3%83%A9%E3%83%BC%E3%82%B2%E3%83%B3%E3%83%95%E3%82%A1%E3%83%BC%E3%83%9F%E3%83%B3%E3%82%B0%E3%82%AF%E3%83%AA%E3%83%BC%E3%83%A0(%E9%9F%93%E5%9B%BD%E3%82%B3%E3%82%B9%E3%83%A1)%EF%BC%8F%E3%83%88%E3%83%AA%E3%83%87%E3%83%B3%EF%BC%88Torriden%EF%BC%89","a_id":5267465,"p_id":1225,"pl_id":27061,"pc_id":1925,"s_n":"yahoo","u_so":3}],"eid":"8G1Pa","s":"s"});
+          msmaflink({"n":"Torriden セルメイジングコラーゲンファーミングクリーム(韓国コスメ)／トリデン（Torriden）","b":"","t":"","d":"https:\/\/thumbnail.image.rakuten.co.jp","c_p":"\/@0_mall\/0101marui\/cabinet\/cf019\/962","p":["\/198809784603795.jpg","\/198809784603795_2.jpg","\/198809784603795_3.jpg"],"u":{"u":"https:\/\/item.rakuten.co.jp\/0101marui\/cf019962190101\/","t":"rakuten","r_v":""},"v":"2.1","b_l":[{"id":1,"u_tx":"楽天市場で見る","u_bc":"#87c209","u_url":"https:\/\/item.rakuten.co.jp\/0101marui\/cf019962190101\/","a_id":5267359,"p_id":54,"pl_id":27059,"pc_id":54,"s_n":"rakuten","u_so":1},{"id":5,"u_tx":"Amazonで見る","u_bc":"#184f5c","u_url":"https:\/\/amzn.to\/48noDit","a_id":0,"p_id":0,"pl_id":0,"pc_id":0,"s_n":"custom_10","u_so":2},{"id":4,"u_tx":"Yahoo!ショッピングで見る","u_bc":"#bf0000","u_url":"https:\/\/shopping.yahoo.co.jp\/search?first=1\u0026p=Torriden%20%E3%82%BB%E3%83%AB%E3%83%A1%E3%82%A4%E3%82%B8%E3%83%B3%E3%82%B0%E3%83%93%E3%82%BF%E3%83%9F%E3%83%B3%E3%83%95%E3%82%A1%E3%83%BC%E3%83%9F%E3%83%B3%E3%82%B0%E3%82%AF%E3%83%AA%E3%83%BC%E3%83%A0(%E9%9F%93%E5%9B%BD%E3%82%B3%E3%82%B9%E3%83%A1)%EF%BC%8F%E3%83%88%E3%83%AA%E3%83%87%E3%83%B3%EF%BC%88Torriden%EF%BC%89","a_id":5267465,"p_id":1225,"pl_id":27061,"pc_id":1925,"s_n":"yahoo","u_so":3}],"eid":"8G1Pa","s":"s"});
           </script>
           <div id="msmaflink-8G1Pa">リンク</div>
         </div>
@@ -292,32 +280,6 @@
           msmaflink({"n":"ゴールデンホホバオイル 300ml ホホバオイル 未精製 キャリアオイル マッサージオイル ボディオイル 業務用 ホホバ ゴールデン 頭皮 クレンジング 肌 未精製ホホバ マッサージ オイル 妊娠線 顔 オイル 無添加 ポンプ付き 送料無料 ポンプボトル","b":"","t":"","d":"https:\/\/thumbnail.image.rakuten.co.jp","c_p":"\/@0_mall\/virginbeautyshop\/cabinet","p":["\/04226192\/sn\/10251920\/ta-jjb-300.jpg","\/04226192\/sn\/10251920\/ta-jjb-300_sq_01.jpg","\/img-up_1_568\/900_k1_154057_42.jpg"],"u":{"u":"https:\/\/item.rakuten.co.jp\/virginbeautyshop\/ta-jjb-300\/","t":"rakuten","r_v":""},"v":"2.1","b_l":[{"id":1,"u_tx":"楽天市場で見る","u_bc":"#87c209","u_url":"https:\/\/item.rakuten.co.jp\/virginbeautyshop\/ta-jjb-300\/","a_id":5267359,"p_id":54,"pl_id":27059,"pc_id":54,"s_n":"rakuten","u_so":1},{"id":5,"u_tx":"Amazonで見る","u_bc":"#184f5c","u_url":"https:\/\/amzn.to\/4iolGCC","a_id":0,"p_id":0,"pl_id":0,"pc_id":0,"s_n":"custom_10","u_so":2},{"id":4,"u_tx":"Yahoo!ショッピングで見る","u_bc":"#bf0000","u_url":"https:\/\/shopping.yahoo.co.jp\/search?first=1\u0026p=%E3%82%B4%E3%83%BC%E3%83%AB%E3%83%87%E3%83%B3%E3%83%9B%E3%83%9B%E3%83%90%E3%82%AA%E3%82%A4%E3%83%AB%20300ml%20%E3%83%9B%E3%83%9B%E3%83%90%E3%82%AA%E3%82%A4%E3%83%AB%20%E6%9C%AA%E7%B2%BE%E8%A3%BD%20%E3%82%AD%E3%83%A3%E3%83%AA%E3%82%A2%E3%82%AA%E3%82%A4%E3%83%AB%20%E3%83%9E%E3%83%83%E3%82%B5%E3%83%BC%E3%82%B8%E3%82%AA%E3%82%A4%E3%83%AB%20%E3%83%9C%E3%83%87%E3%82%A3%E3%82%AA%E3%82%A4%E3%83%AB%20%E6%A5%AD%E5%8B%99%E7%94%A8%20%E3%83%9B%E3%83%9B%E3%83%90%20%E3%82%B4%E3%83%BC%E3%83%AB%E3%83%87%E3%83%B3%20%E9%A0%AD%E7%9A%AE%20%E3%82%AF%E3%83%AC%E3%83%B3%E3%82%B8%E3%83%B3%E3%82%B0%20%E8%82%8C%20%E6%9C%AA%E7%B2%BE%E8%A3%BD%E3%83%9B%E3%83%9B%E3%83%90%20%E3%83%9E%E3%83%83%E3%82%B5%E3%83%BC%E3%82%B8%20%E3%82%AA%E3%82%A4%E3%83%AB%20%E5%A6%8A%E5%A8%A0%E7%B7%9A%20%E9%A1%94%20%E3%82%AA%E3%82%A4%E3%83%AB%20%E7%84%A1%E6%B7%BB%E5%8A%A0%20%E3%83%9D%E3%83%B3%E3%83%97%E4%BB%98%E3%81%8D%20%E9%80%81%E6%96%99%E7%84%A1%E6%96%99%20%E3%83%9D%E3%83%B3%E3%83%97%E3%83%9C%E3%83%88%E3%83%AB","a_id":5267465,"p_id":1225,"pl_id":27061,"pc_id":1925,"s_n":"yahoo","u_so":3}],"eid":"IFpRy","s":"s"});
           </script>
           <div id="msmaflink-IFpRy">リンク</div>
-        </div>
-
-        <div class="item-wrapper">
-          <script type="text/javascript">
-          (function(b,c,f,g,a,d,e){b.MoshimoAffiliateObject=a;
-          b[a]=b[a]||function(){arguments.currentScript=c.currentScript
-          ||c.scripts[c.scripts.length-2];(b[a].q=b[a].q||[]).push(arguments)};
-          c.getElementById(a)||(d=c.createElement(f),d.src=g,
-          d.id=a,e=c.getElementsByTagName("body")[0],e.appendChild(d))})
-          (window,document,"script","//dn.msmstatic.com/site/cardlink/bundle.js?20220329","msmaflink");
-          msmaflink({"n":"【楽天4冠達成 超保湿】CBD バーム モイスチャー 70g 15g クリーム ボディバター 保湿 roun ラウン cbdクリーム cbdスポーツバーム 大容量 cbd スキンケア 天然 植物由来 100％ cbdオイル 国産 日本製 ボディバーム 高濃度 保湿 乾燥肌 肌荒れ 肩","b":"","t":"","d":"https:\/\/thumbnail.image.rakuten.co.jp","c_p":"\/@0_mall\/leep\/cabinet\/roun\/moisturizing-balm","p":["\/mois_balm_15.jpg","\/attention_package.jpg","\/moist-balm-01.jpg"],"u":{"u":"https:\/\/item.rakuten.co.jp\/leep\/moisturizing-balm-roun\/","t":"rakuten","r_v":""},"v":"2.1","b_l":[{"id":1,"u_tx":"楽天市場で見る","u_bc":"#87c209","u_url":"https:\/\/item.rakuten.co.jp\/leep\/moisturizing-balm-roun\/","a_id":5267359,"p_id":54,"pl_id":27059,"pc_id":54,"s_n":"rakuten","u_so":1},{"id":5,"u_tx":"Amazonで見る","u_bc":"#184f5c","u_url":"https:\/\/amzn.to\/3Xor53e","a_id":0,"p_id":0,"pl_id":0,"pc_id":0,"s_n":"custom_10","u_so":2},{"id":4,"u_tx":"Yahoo!ショッピングで見る","u_bc":"#bf0000","u_url":"https:\/\/shopping.yahoo.co.jp\/search?first=1\u0026p=%E3%80%90%E6%A5%BD%E5%A4%A94%E5%86%A0%E9%81%94%E6%88%90%20%E8%B6%85%E4%BF%9D%E6%B9%BF%E3%80%91CBD%20%E3%83%90%E3%83%BC%E3%83%A0%20%E3%83%A2%E3%82%A4%E3%82%B9%E3%83%81%E3%83%A3%E3%83%BC%2070g%2015g%20%E3%82%AF%E3%83%AA%E3%83%BC%E3%83%A0%20%E3%83%9C%E3%83%87%E3%82%A3%E3%83%90%E3%82%BF%E3%83%BC%20%E4%BF%9D%E6%B9%BF%20roun%20%E3%83%A9%E3%82%A6%E3%83%B3%20cbd%E3%82%AF%E3%83%AA%E3%83%BC%E3%83%A0%20cbd%E3%82%B9%E3%83%9D%E3%83%BC%E3%83%84%E3%83%90%E3%83%BC%E3%83%A0%20%E5%A4%A7%E5%AE%B9%E9%87%8F%20cbd%20%E3%82%B9%E3%82%AD%E3%83%B3%E3%82%B1%E3%82%A2%20%E5%A4%A9%E7%84%B6%20%E6%A4%8D%E7%89%A9%E7%94%B1%E6%9D%A5%20100%EF%BC%85%20cbd%E3%82%AA%E3%82%A4%E3%83%AB%20%E5%9B%BD%E7%94%A3%20%E6%97%A5%E6%9C%AC%E8%A3%BD%20%E3%83%9C%E3%83%87%E3%82%A3%E3%83%90%E3%83%BC%E3%83%A0%20%E9%AB%98%E6%BF%83%E5%BA%A6%20%E4%BF%9D%E6%B9%BF%20%E4%B9%BE%E7%87%A5%E8%82%8C%20%E8%82%8C%E8%8D%92%E3%82%8C%20%E8%82%A9","a_id":5267465,"p_id":1225,"pl_id":27061,"pc_id":1925,"s_n":"yahoo","u_so":3}],"eid":"ZkM27","s":"s"});
-          </script>
-          <div id="msmaflink-ZkM27">リンク</div>
-        </div>
-
-        <div class="item-wrapper">
-          <script type="text/javascript">
-          (function(b,c,f,g,a,d,e){b.MoshimoAffiliateObject=a;
-          b[a]=b[a]||function(){arguments.currentScript=c.currentScript
-          ||c.scripts[c.scripts.length-2];(b[a].q=b[a].q||[]).push(arguments)};
-          c.getElementById(a)||(d=c.createElement(f),d.src=g,
-          d.id=a,e=c.getElementsByTagName("body")[0],e.appendChild(d))})
-          (window,document,"script","//dn.msmstatic.com/site/cardlink/bundle.js?20220329","msmaflink");
-          msmaflink({"n":"【12\/1限定！抽選で最大100%ポイントバック】アムリターラ(amritara) ライス＆グレープラディエンスクリーム SPF12 PA++ 30g | サンスクリーン 日焼け止め 美容クリーム UVケア 紫外線 オーガニックスキンケア 日焼け止めクリーム 日焼け","b":"","t":"","d":"https:\/\/thumbnail.image.rakuten.co.jp","c_p":"\/@0_mall\/aimere\/cabinet\/05981471","p":["\/imgrc0113471491.jpg","\/imgrc0113392181.jpg","\/imgrc0113516780.jpg"],"u":{"u":"https:\/\/item.rakuten.co.jp\/aimere\/a0360033\/","t":"rakuten","r_v":""},"v":"2.1","b_l":[{"id":1,"u_tx":"楽天市場で見る","u_bc":"#87c209","u_url":"https:\/\/item.rakuten.co.jp\/aimere\/a0360033\/","a_id":5267359,"p_id":54,"pl_id":27059,"pc_id":54,"s_n":"rakuten","u_so":1},{"id":5,"u_tx":"Amazonで見る","u_bc":"#184f5c","u_url":"https:\/\/amzn.to\/49MsJTE","a_id":0,"p_id":0,"pl_id":0,"pc_id":0,"s_n":"custom_10","u_so":2},{"id":4,"u_tx":"Yahoo!ショッピングで見る","u_bc":"#bf0000","u_url":"https:\/\/shopping.yahoo.co.jp\/search?first=1\u0026p=%E3%80%9012%2F1%E9%99%90%E5%AE%9A%EF%BC%81%E6%8A%BD%E9%81%B8%E3%81%A7%E6%9C%80%E5%A4%A7100%25%E3%83%9D%E3%82%A4%E3%83%B3%E3%83%88%E3%83%90%E3%83%83%E3%82%AF%E3%80%91%E3%82%A2%E3%83%A0%E3%83%AA%E3%82%BF%E3%83%BC%E3%83%A9(amritara)%20%E3%83%A9%E3%82%A4%E3%82%B9%EF%BC%86%E3%82%B0%E3%83%AC%E3%83%BC%E3%83%97%E3%83%A9%E3%83%87%E3%82%A3%E3%82%A8%E3%83%B3%E3%82%B9%E3%82%AF%E3%83%AA%E3%83%BC%E3%83%A0%20SPF12%20PA%2B%2B%2030g%20%7C%20%E3%82%B5%E3%83%B3%E3%82%B9%E3%82%AF%E3%83%AA%E3%83%BC%E3%83%B3%20%E6%97%A5%E7%84%BC%E3%81%91%E6%AD%A2%E3%82%81%20%E7%BE%8E%E5%AE%B9%E3%82%AF%E3%83%AA%E3%83%BC%E3%83%A0%20UV%E3%82%B1%E3%82%A2%20%E7%B4%AB%E5%A4%96%E7%B7%9A%20%E3%82%AA%E3%83%BC%E3%82%AC%E3%83%8B%E3%83%83%E3%82%AF%E3%82%B9%E3%82%AD%E3%83%B3%E3%82%B1%E3%82%A2%20%E6%97%A5%E7%84%BC%E3%81%91%E6%AD%A2%E3%82%81%E3%82%AF%E3%83%AA%E3%83%BC%E3%83%A0%20%E6%97%A5%E7%84%BC%E3%81%91","a_id":5267465,"p_id":1225,"pl_id":27061,"pc_id":1925,"s_n":"yahoo","u_so":3}],"eid":"Im1i0","s":"s"});
-          </script>
-          <div id="msmaflink-Im1i0">リンク</div>
         </div>
 
     </div>
@@ -343,7 +305,7 @@
           alt="おすすめアイテム"
           width="120" height="60"
           style="border-radius:6px; border:0;"
-          onerror="this.onerror=null; this.src='https://placehold.co/120x60/f7d4d4/fff?text=A8+Banner';"
+          onerror="handleImageError(this)"
         >
       </a>
 
@@ -353,7 +315,8 @@
       <a href="https://px.a8.net/svt/ejp?a8mat=45IB9B+J1WWQ+3NI6+61RIA" rel="nofollow sponsored" target="_blank" rel="noopener noreferrer">オウミニョンヌを試してみる！</a>
       <img border="0" width="1" height="1" src="https://www19.a8.net/0.gif?a8mat=45IB9B+J1WWQ+3NI6+61RIA" alt="">
     </div>
-          <h2>⛄まとめ</h2>
+          
+    <h2>⛄まとめ</h2>
 
     <div class="info-box">
       <p>最後までご覧いただき、ありがとうございます。あなたのライフスタイルや肌の悩みにフィットするアイテムは見つかりましたでしょうか？</p>
@@ -370,7 +333,7 @@
           alt="おすすめアイテム"
           style="border-radius:14px; box-shadow:0 4px 15px rgba(0,0,0,0.15);"
           src="https://www29.a8.net/svt/bgt?aid=251115169271&wid=002&eno=01&mid=s00000014951001009000&mc=1"
-          onerror="this.onerror=null; this.src='https://placehold.co/300x250/f4f9fc/305060?text=A8+Banner';"
+          onerror="handleImageError(this)"
           >
       </a>
 
@@ -390,8 +353,9 @@
   
   <div id="affiliateNotice">※当サイトはアフィリエイト広告（Amazonアソシエイト含む）を利用しています</div>
     
-<footer style="text-align:center; padding:40px 0; background:#fff; font-size:13px; color:#888; border-top:1px solid #eee;">
-  © 2025 Essential Beauty Needs
-          <a href="privacy-policy.html" style="color: #777; text-decoration: none; margin-left: 15px;">プライバシーポリシー</a>
-</footer></body>
+  <footer>
+    © 2025 Essential Beauty Needs
+    <a href="privacy-policy.html" style="color: #777; text-decoration: none; margin-left: 15px;">プライバシーポリシー</a>
+  </footer>
+</body>
 </html>
