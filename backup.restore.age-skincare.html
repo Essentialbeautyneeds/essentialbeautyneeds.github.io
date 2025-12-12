@@ -39,6 +39,7 @@
       --bg: #fffbf9; /* 少し落ち着いたベージュピンク系の背景 */
       --accent: #e8c2b6; /* 大人の落ち着いたピンクベージュ */
       --text-main: #503535;
+      --accent-dark: #a86f6f; /* 濃いアクセントカラー */
     }
     *, *::before, *::after { box-sizing: border-box; }
 
@@ -62,7 +63,7 @@
       font-family: 'Playfair Display', serif;
       font-size: 34px;
       margin: 0;
-      color: #a86f6f; /* 落ち着いたローズブラウン */
+      color: var(--accent-dark);
       letter-spacing: 1px;
     }
     header p {
@@ -107,7 +108,6 @@
         border-radius: 18px;
         margin-bottom: 40px;
         box-shadow: 0 6px 25px rgba(0,0,0,0.1);
-        /* 画像がまだない場合の仮の色 */
         background-color: #f4e1d2; 
     }
 
@@ -122,20 +122,50 @@
       font-size: 15px;
     }
 
-    /* ランキングセクション */
-    .ranking-section { margin-bottom: 60px; }
-    .ranking-section h2 {
+    /* 見出しスタイル */
+    h2 {
         font-family: 'Playfair Display', serif;
         text-align: center;
-        color: #a86f6f;
+        color: var(--accent-dark);
         font-size: 26px;
         margin-bottom: 30px;
         position: relative;
+        margin-top: 60px;
     }
-    .ranking-section h2::after {
+    h2::after {
         content: ""; display: block; width: 50px; height: 3px;
         background: var(--accent); margin: 15px auto 0; opacity: 0.7;
     }
+    h3 {
+        font-size: 20px;
+        color: var(--text-main);
+        border-bottom: 2px solid var(--accent);
+        padding-bottom: 10px;
+        margin-top: 40px;
+        margin-bottom: 20px;
+    }
+
+    /* 記事本文 */
+    .article-content p {
+        margin-bottom: 25px;
+    }
+    .highlight-box {
+        background: #fff8f5;
+        padding: 25px;
+        border-radius: 10px;
+        border: 1px solid #eee;
+        margin: 30px 0;
+    }
+    .highlight-box h4 {
+        margin-top: 0;
+        color: var(--accent-dark);
+        display: flex;
+        align-items: center;
+        gap: 10px;
+    }
+
+    /* ランキングセクション */
+    .ranking-section { margin-top: 60px; margin-bottom: 60px; }
 
     /* 商品カード */
     .item-card {
@@ -153,6 +183,8 @@
         border-radius: 15px; font-weight: bold; font-size: 13px;
         box-shadow: 0 2px 5px rgba(0,0,0,0.15);
     }
+    .rank-badge.silver { background: #a8a8a8; }
+    .rank-badge.bronze { background: #b08d57; }
 
     /* 編集部コメント */
     .editor-comment {
@@ -163,7 +195,7 @@
         margin-top: 20px;
         font-size: 14px;
     }
-    .editor-comment h4 { margin: 0 0 8px; color: #a86f6f; font-size: 15px; }
+    .editor-comment h4 { margin: 0 0 8px; color: var(--accent-dark); font-size: 15px; }
 
     /* フッター */
     footer {
@@ -214,18 +246,46 @@
 
   <div class="intro-box">
     <p>
-        40代、50代を迎えると、今までと同じケアでは物足りなさを感じることがあります。それは、肌の水分量や皮脂量、そしてターンオーバーの周期が変化してくるからです。<br><br>
-        「もう歳だから」と諦める必要はありません。大切なのは、<strong>今の肌状態に合った、質の高い潤いと栄養</strong>を与えてあげること。<br>
-        植物のパワフルな生命力が凝縮されたオーガニックコスメは、年齢を重ねた肌の土台（角質層）を健やかに整え、内側から輝くようなハリとツヤをもたらしてくれます。<br><br>
-        ここでは、大人の肌悩みに寄り添う、実力派のオーガニックアイテムを厳選してご紹介します。
+        40代、50代を迎えると、鏡を見るたびに「以前とは違う」と感じることが増えてきませんか？<br>
+        肌の水分量や皮脂量が減少し、ターンオーバーの周期が長くなることで、乾燥、ハリ不足、くすみといったエイジングサインが現れやすくなります。<br><br>
+        しかし、「もう歳だから」と諦める必要は全くありません。大切なのは、<strong>今の肌状態に合った、質の高い潤いと栄養</strong>を与えてあげること。<br>
+        過酷な環境を生き抜く植物たちのパワフルな生命力が凝縮された「オーガニックコスメ」は、年齢を重ねた肌の土台（角質層）を優しく、かつ力強く支えてくれる心強い味方です。<br><br>
+        このページでは、大人の肌悩みに寄り添い、内側から輝くような美しさを引き出すためのヒントと、厳選したオーガニックアイテムをご紹介します。
     </p>
   </div>
 
+  <section class="article-content">
+      <h2>年齢肌と向き合う、大人のスキンケア</h2>
+
+      <h3>40代・50代が意識したい3つのケア</h3>
+      <p>年齢を重ねた肌に必要なのは、単に「何かを塗る」ことではなく、「肌の基礎力」を底上げすることです。以下の3つのポイントを意識してみましょう。</p>
+
+      <div class="highlight-box">
+          <h4>1. 「落としすぎない」クレンジング</h4>
+          <p>大人の肌は非常にデリケート。洗浄力の強すぎるクレンジングは、肌に必要な潤いまで奪ってしまい、乾燥やシワの原因になります。ミルクタイプやクリームタイプ、または上質な植物オイルを使った、肌に負担をかけないクレンジングを選びましょう。</p>
+      </div>
+
+      <div class="highlight-box">
+          <h4>2. 「水分」と「油分」の黄金バランス</h4>
+          <p>水分だけを与えても、蓋をする油分がなければすぐに蒸発してしまいます。逆に油分だけでも、内側は乾いたまま。化粧水でたっぷりと水分を補給した後、美容液やクリーム、良質なオイルでしっかりと潤いを閉じ込める「ミルフィーユ保湿」を心がけてください。</p>
+      </div>
+
+      <div class="highlight-box">
+          <h4>3. 「巡り」を意識したケア</h4>
+          <p>肌のくすみやゴワつきは、血行不良や代謝の低下が原因かもしれません。スキンケアの際に、心地よい香りに包まれながら優しくハンドプレスをしたり、首やデコルテまでリンパを流すようにケアすることで、顔色がパッと明るくなります。</p>
+      </div>
+
+      <h3>なぜ、オーガニックが年齢肌に良いの？</h3>
+      <p>一般的なコスメに含まれる合成成分は、即効性はあっても、長期的に使い続けると肌に負担をかける場合があります。一方、本物のオーガニックコスメには、植物が自らを守るために作り出した「フィトケミカル（植物化学成分）」が豊富に含まれています。</p>
+      <p>これらの成分は、人間の肌の組成と親和性が高く、肌が本来持っている「自ら美しくなろうとする力」を穏やかに、しかし力強くサポートしてくれます。使い続けるほどに肌の土台が整い、揺らぎにくい健やかな肌へと導いてくれるのです。</p>
+  </section>
+
   <section class="ranking-section">
-      <h2>👑 大人のための・ハリつやランキング</h2>
+      <h2>👑 大人のための・ハリつやオーガニック選</h2>
+      <p style="text-align:center; margin-bottom:30px;">編集部が厳選した、年齢肌に自信をくれる実力派アイテムをご紹介します。</p>
       
       <div class="item-card">
-          <span class="rank-badge" style="background:#c5a059;">1位</span>
+          <span class="rank-badge">1位</span>
           
           <script type="text/javascript">
             (function(b,c,f,g,a,d,e){b.MoshimoAffiliateObject=a;
@@ -244,8 +304,27 @@
           </div>
       </div>
 
+      <div class="item-card">
+        <span class="rank-badge silver">2位</span>
+        <div style="background:#eee; padding:30px; text-align:center; border-radius:8px; color:#777;">
+            ここに2位の商品リンク（例：アムリターラ、HANAオーガニックなど）を配置
+        </div>
+        <div class="editor-comment">
+            <h4>💡 編集部のコメント</h4>
+            <p>（ここに商品の特徴やおすすめポイントを記載します。例：国産オーガニックのパワーで、くすみがちな肌に透明感を与えてくれます。）</p>
+        </div>
+      </div>
 
-    </div>
+      <div class="item-card">
+        <span class="rank-badge bronze">3位</span>
+        <div style="background:#eee; padding:30px; text-align:center; border-radius:8px; color:#777;">
+            ここに3位の商品リンク（例：ヴェレダ ざくろシリーズなど）を配置
+        </div>
+        <div class="editor-comment">
+            <h4>💡 編集部のコメント</h4>
+            <p>（ここに商品の特徴やおすすめポイントを記載します。例：年齢肌に不可欠な油分を補い、ふっくらとした柔らかい肌へ。）</p>
+        </div>
+      </div>
       
   </section>
 
