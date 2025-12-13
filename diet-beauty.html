@@ -176,38 +176,59 @@
         display: block;
     }
 
-    /* 楽天ROOMリンク用スタイル（新規追加） */
-    .room-promo {
-        background: #fff;
-        border: 2px dashed var(--room-color);
-        border-radius: 15px;
-        padding: 25px;
-        text-align: center;
-        margin: 50px 0;
-        color: var(--color-text);
+    /* 楽天ROOM画像リンク用スタイル */
+    .room-promo-img {
+        display: block;
+        max-width: 100%;
+        width: 600px; /* 画像の最大幅 */
+        height: auto;
+        margin: 50px auto;
+        transition: transform 0.3s ease, box-shadow 0.3s ease;
+        border-radius: 15px; /* 画像の角丸 */
+        box-shadow: 0 4px 10px rgba(0,0,0,0.05);
     }
-    .room-btn {
-        display: inline-block;
-        background: var(--room-color);
-        color: #fff;
-        padding: 12px 30px;
-        border-radius: 30px;
-        text-decoration: none;
-        font-weight: bold;
-        margin-top: 15px;
-        box-shadow: 0 4px 10px rgba(198, 53, 53, 0.3);
-        transition: 0.3s;
-    }
-    .room-btn:hover {
-        background: #a82525;
-        transform: translateY(-2px);
-        box-shadow: 0 6px 14px rgba(198, 53, 53, 0.4);
+    .room-promo-img:hover {
+        transform: translateY(-3px);
+        box-shadow: 0 8px 20px rgba(198, 53, 53, 0.15);
     }
 
-    /* フッター & その他 */
-    footer{ text-align:center; font-size:13px; color:#777; padding: 40px 0; margin-top: auto; border-top: 1px solid #eee; background:#fff; }
-    footer a { transition: 0.3s; }
-    footer a:hover { color: var(--room-color) !important; border-bottom-color: var(--room-color) !important; }
+    /* フッター（リンク網羅型） */
+    footer {
+        background: #fffaf4;
+        border-top: 3px solid #f7a8a8;
+        padding: 50px 20px 60px;
+        margin-top: 60px;
+        color: #555;
+        font-size: 14px;
+    }
+    .footer-container {
+        max-width: 960px;
+        margin: 0 auto;
+        display: flex;
+        flex-wrap: wrap;
+        justify-content: space-between;
+        gap: 30px;
+        text-align: left;
+    }
+    .footer-col { flex: 1; min-width: 200px; }
+    .footer-col h3 {
+        font-size: 16px;
+        color: #d6336c;
+        border-bottom: 1px dashed #f4b5b5;
+        padding-bottom: 8px;
+        margin-bottom: 15px;
+        font-weight: bold;
+    }
+    .footer-col a {
+        display: block; color: #666; text-decoration: none; margin-bottom: 10px; transition: 0.3s; position: relative; padding-left: 10px;
+    }
+    .footer-col a::before { content: "・"; position: absolute; left: 0; color: #f7a8a8; }
+    .footer-col a:hover { color: #d6336c; padding-left: 15px; }
+    .footer-bottom { text-align: center; margin-top: 50px; padding-top: 30px; border-top: 1px solid #eee; }
+    .footer-room-link {
+        display: inline-block; color: #c63535; font-weight: bold; border: 1px solid #c63535; padding: 8px 20px; border-radius: 20px; text-decoration: none; margin-bottom: 20px; background: #fff; transition: 0.3s;
+    }
+    .footer-room-link:hover { background: #c63535; color: #fff; }
 
     #affiliateNotice {
       position: fixed; right: 12px; bottom: 12px;
@@ -231,21 +252,17 @@
     <h1>内側から輝く美しさへ</h1>
     <p>オーガニックライフで叶える、インナービューティ＆ダイエットの秘訣</p>
 
-   <div class="nav-links" role="navigation">
-    <a href="index.html">🏠 トップ</a>
-    <a href="skin-ranking.html">✨ ランキング</a>
-    <a href="trial-sets.html" style="background:#fff0f5; border:1px solid #ffb6c1; font-weight:bold;">🔰 お試しセット</a>
-    <div class="nav-break"></div>
-    
-    <a href="seasons-skin.html">🌸 季節別</a>
-    <a href="age-skincare.html">👩 年齢・肌質別</a>
-    <a href="lifestyle-skincare.html">💆‍♀️ 生活リズム別</a>
-    <div class="nav-break"></div>
-
-    <a href="organic-science.html">🔬 成分の科学</a>
-    <a href="beauty-column.html">💄 コラム</a>
-    <a href="diet-beauty.html">🍃 インナービューティー</a>
-</div>
+    <nav class="nav-links">
+        <a href="seasons-skin.html">🌸 季節別ケア</a>
+        <a href="skin-ranking.html">✨ ランキング</a>
+        <a href="acne-care.html">🧴 肌荒れケア</a>
+        <div class="nav-break"></div> 
+        <a href="amazon-oil-review.html">🔥 オイルレビュー</a>    
+        <a href="lifestyle-skincare.html">💆‍♀️ 生活リズム別</a>
+        <a href="winter-selection.html">⛄ 冬のおすすめ</a>
+        <div class="nav-break"></div>
+        <a href="index.html" style="background:#fff; border:1px solid #ddd;">🏠 トップに戻る</a>
+    </nav>
   </header>
 
   <main>
@@ -355,13 +372,9 @@
     </script>
     <div id="msmaflink-62iG3">リンク</div>
 
-    <div class="room-promo">
-        <h3 style="margin-top:0; color: #c63535; font-size:18px; border:none; padding:0;">\ 管理人 Yuriの愛用品コレクション /</h3>
-        <p style="font-size:14px;">栄養士Yuriが厳選した、肌と体にやさしいアイテムを楽天ROOMで公開中。<br>ブログで紹介しきれなかった商品も載せています♪</p>
-        <a href="https://room.rakuten.co.jp/room_e0dd63a90a/items" target="_blank" rel="noopener" class="room-btn">
-            楽天ROOMで見る →
-        </a>
-    </div>
+    <a href="https://room.rakuten.co.jp/room_e0dd63a90a/items" target="_blank" rel="noopener" class="room-promo-img-link">
+        <img src="image_313a40.png" alt="管理人Yuriの楽天ROOM愛用品コレクション" class="room-promo-img">
+    </a>
 
     <div style="text-align:center;">
         <a href="index.html" class="back-btn">← トップページへ戻る</a>
@@ -371,13 +384,45 @@
   <div id="affiliateNotice">※当サイトはアフィリエイト広告（Amazonアソシエイト含む）を利用しています</div>
 
   <footer>
-    <div style="margin-bottom: 20px;">
-        <a href="https://room.rakuten.co.jp/room_e0dd63a90a/items" target="_blank" rel="noopener" style="color: #777; text-decoration: none; border-bottom: 1px solid #ccc;">
-          🏠 管理人Yuriの楽天ROOM
-        </a>
+    <div class="footer-container">
+      
+      <div class="footer-col">
+        <h3>🌸 スキンケア・悩み別</h3>
+        <a href="skin-ranking.html">おすすめスキンケアランキング</a>
+        <a href="seasons-skin.html">季節別スキンケア（春夏秋冬）</a>
+        <a href="age-skincare.html">40代・50代 年齢別ケア</a>
+        <a href="acne-care.html">肌荒れ・敏感肌・ニキビケア</a>
+        <a href="lifestyle-skincare.html">生活リズム別（時短・夜型など）</a>
+      </div>
+
+      <div class="footer-col">
+        <h3>🛁 ボディ・ヘア・インナー</h3>
+        <a href="hair-care.html">ヘアケア・頭皮ケア特集</a>
+        <a href="diet-beauty.html">インナービューティー＆ダイエット</a>
+        <a href="amazon-oil-review.html">本当に効く！オイルレビュー</a>
+        <a href="organic-science.html">オーガニック成分の科学</a>
+      </div>
+
+      <div class="footer-col">
+        <h3>🎁 特集・コラム・その他</h3>
+        <a href="gift-selection.html">心をつなぐオーガニックギフト</a>
+        <a href="trial-sets.html">失敗しない！お試しセット比較</a>
+        <a href="winter-selection.html">冬のベストセレクション</a>
+        <a href="beauty-column.html">ビューティーコラム一覧</a>
+        <a href="about.html">当サイトについて (About)</a>
+      </div>
+
     </div>
-    © 2025 Essential Beauty Needs
-    <a href="privacy-policy.html" style="color: #777; text-decoration: none; margin-left: 15px;">プライバシーポリシー</a>
+    
+    <div class="footer-bottom">
+       <a href="https://room.rakuten.co.jp/room_e0dd63a90a/items" target="_blank" rel="noopener" class="footer-room-link">
+          🏠 管理人Yuriの楽天ROOMを見る
+       </a>
+       <br>
+       
+       © 2025 Essential Beauty Needs<br><br>
+       <a href="privacy-policy.html" style="color:#888; text-decoration:none; font-size:12px;">プライバシーポリシー</a>
+    </div>
   </footer>
 </body>
 </html>
