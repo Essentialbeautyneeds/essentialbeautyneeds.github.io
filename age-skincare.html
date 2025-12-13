@@ -40,6 +40,7 @@
       --accent: #e8c2b6; /* 大人の落ち着いたピンクベージュ */
       --text-main: #503535;
       --accent-dark: #a86f6f; /* 濃いアクセントカラー */
+      --room-color: #c63535; /* 楽天ROOM用カラー */
     }
     *, *::before, *::after { box-sizing: border-box; }
 
@@ -197,6 +198,34 @@
     }
     .editor-comment h4 { margin: 0 0 8px; color: var(--accent-dark); font-size: 15px; }
 
+    /* 楽天ROOMリンク用スタイル（新規追加） */
+    .room-promo {
+        background: #fff;
+        border: 2px dashed var(--room-color);
+        border-radius: 15px;
+        padding: 25px;
+        text-align: center;
+        margin: 50px 0;
+        color: var(--text-main);
+    }
+    .room-btn {
+        display: inline-block;
+        background: var(--room-color);
+        color: #fff;
+        padding: 12px 30px;
+        border-radius: 30px;
+        text-decoration: none;
+        font-weight: bold;
+        margin-top: 15px;
+        box-shadow: 0 4px 10px rgba(198, 53, 53, 0.3);
+        transition: 0.3s;
+    }
+    .room-btn:hover {
+        background: #a82525;
+        transform: translateY(-2px);
+        box-shadow: 0 6px 14px rgba(198, 53, 53, 0.4);
+    }
+
     /* フッター */
     footer {
       text-align: center;
@@ -206,6 +235,9 @@
       border-top: 1px solid #eee;
       padding-top: 40px;
     }
+    footer a { transition: 0.3s; }
+    footer a:hover { color: var(--room-color) !important; border-bottom-color: var(--room-color) !important; }
+
     #affiliateNotice {
       position: fixed; right: 12px; bottom: 12px;
       background: rgba(255, 255, 255, 0.8);
@@ -348,6 +380,14 @@ msmaflink({"n":"オルナ オーガニック 化粧水 乳液 美容液3点 セ�
       
   </section>
 
+  <div class="room-promo">
+      <h3 style="margin-top:0; color: #c63535; font-size:18px;">\ 管理人 Yuriの愛用品コレクション /</h3>
+      <p style="font-size:14px;">栄養士Yuriが厳選した、肌と体にやさしいアイテムを楽天ROOMで公開中。<br>ブログで紹介しきれなかった商品も載せています♪</p>
+      <a href="https://room.rakuten.co.jp/room_e0dd63a90a/items" target="_blank" rel="noopener" class="room-btn">
+          楽天ROOMで見る →
+      </a>
+  </div>
+
   <div class="back-btn">
     <a href="index.html">← トップページへ戻る</a>
   </div>
@@ -357,6 +397,11 @@ msmaflink({"n":"オルナ オーガニック 化粧水 乳液 美容液3点 セ�
 <div id="affiliateNotice">※当サイトはアフィリエイト広告（Amazonアソシエイト含む）を利用しています</div>
 
 <footer>
+  <div style="margin-bottom: 20px;">
+      <a href="https://room.rakuten.co.jp/room_e0dd63a90a/items" target="_blank" rel="noopener" style="color: #777; text-decoration: none; border-bottom: 1px solid #ccc;">
+        🏠 管理人Yuriの楽天ROOM
+      </a>
+  </div>
   © 2025 Essential Beauty Needs
   <br><br>
   <a href="privacy-policy.html" style="color: #777; text-decoration: none; border-bottom: 1px solid #ccc;">プライバシーポリシー</a>
