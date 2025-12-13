@@ -41,6 +41,7 @@
             --accent-hover: #f48b8b;
             --muted: #666;
             --text-main: #503535;
+            --room-color: #c63535; /* 楽天ROOM用カラー */
         }
         * { box-sizing: border-box; margin: 0; padding: 0; }
         body { font-family: 'Quicksand', sans-serif; background: var(--bg); color: #333; line-height: 1.8; }
@@ -116,9 +117,74 @@
             -webkit-overflow-scrolling: touch;
             margin-top: 20px;
         }
+
+        /* 楽天ROOMリンク用スタイル（コード版） */
+        .room-promo {
+            background: #fff;
+            border: 2px dashed var(--room-color);
+            border-radius: 15px;
+            padding: 25px;
+            text-align: center;
+            margin: 50px 0;
+            color: var(--text-main);
+        }
+        .room-btn {
+            display: inline-block;
+            background: var(--room-color);
+            color: #fff;
+            padding: 12px 30px;
+            border-radius: 30px;
+            text-decoration: none;
+            font-weight: bold;
+            margin-top: 15px;
+            box-shadow: 0 4px 10px rgba(198, 53, 53, 0.3);
+            transition: 0.3s;
+        }
+        .room-btn:hover {
+            background: #a82525;
+            transform: translateY(-2px);
+            box-shadow: 0 6px 14px rgba(198, 53, 53, 0.4);
+        }
         
+        /* フッター（リンク網羅型） */
+        footer {
+            background: #fffaf4;
+            border-top: 3px solid #f7a8a8;
+            padding: 50px 20px 60px;
+            margin-top: 60px;
+            color: #555;
+            font-size: 14px;
+        }
+        .footer-container {
+            max-width: 960px;
+            margin: 0 auto;
+            display: flex;
+            flex-wrap: wrap;
+            justify-content: space-between;
+            gap: 30px;
+            text-align: left;
+        }
+        .footer-col { flex: 1; min-width: 200px; }
+        .footer-col h3 {
+            font-size: 16px;
+            color: #d6336c;
+            border-bottom: 1px dashed #f4b5b5;
+            padding-bottom: 8px;
+            margin-bottom: 15px;
+            font-weight: bold;
+        }
+        .footer-col a {
+            display: block; color: #666; text-decoration: none; margin-bottom: 10px; transition: 0.3s; position: relative; padding-left: 10px;
+        }
+        .footer-col a::before { content: "・"; position: absolute; left: 0; color: #f7a8a8; }
+        .footer-col a:hover { color: #d6336c; padding-left: 15px; }
+        .footer-bottom { text-align: center; margin-top: 50px; padding-top: 30px; border-top: 1px solid #eee; }
+        .footer-room-link {
+            display: inline-block; color: #c63535; font-weight: bold; border: 1px solid #c63535; padding: 8px 20px; border-radius: 20px; text-decoration: none; margin-bottom: 20px; background: #fff; transition: 0.3s;
+        }
+        .footer-room-link:hover { background: #c63535; color: #fff; }
+
         /* Footer & Others */
-        footer { text-align:center; padding:40px 0; background:#fff; font-size:13px; color:#888; border-top:1px solid #eee; }
         #affiliateNotice {
             position: fixed; right: 12px; bottom: 12px;
             background: rgba(255, 255, 255, 0.8);
@@ -127,6 +193,8 @@
             box-shadow: 0 2px 6px rgba(0,0,0,0.1);
             z-index: 999;
         }
+        .back-btn { text-align: center; margin: 50px 0; }
+        .back-btn a { color: #777; text-decoration: none; border-bottom: 1px solid #ccc; }
     </style>
 </head>
 <body>
@@ -287,6 +355,15 @@
     msmaflink({"n":"フレッシュ ハンド＆キューティクルクリーム 60g FRESH スキンケアシリーズ 無添加 シアバター 爪 かかと ひじ ひざ 角質 ネイルケア オーガニック ターンオーバー ホホバ油 レモンオイル ハンドクリーム ひび割れ 植物由来 保湿 シアバター 潤い 手荒れ 乾燥 修復","b":"","t":"","d":"https:\/\/thumbnail.image.rakuten.co.jp","c_p":"\/@0_mall\/nc-bar\/cabinet\/fresh","p":["\/300-300-hand-hp.jpg","\/550-550-hand2.jpg","\/550-550-hand01.jpg"],"u":{"u":"https:\/\/item.rakuten.co.jp\/nc-bar\/fresh-hc-cream\/","t":"rakuten","r_v":""},"v":"2.1","b_l":[{"id":1,"u_tx":"楽天市場で見る","u_bc":"#87c209","u_url":"https:\/\/item.rakuten.co.jp\/nc-bar\/fresh-hc-cream\/","a_id":5267359,"p_id":54,"pl_id":27059,"pc_id":54,"s_n":"rakuten","u_so":1},{"id":5,"u_tx":"Amazonで見る","u_bc":"#184f5c","u_url":"https:\/\/amzn.to\/4im3J8N","a_id":0,"p_id":0,"pl_id":0,"pc_id":0,"s_n":"custom_10","u_so":2},{"id":4,"u_tx":"Yahoo!ショッピングで見る","u_bc":"#bf0000","u_url":"https:\/\/shopping.yahoo.co.jp\/search?first=1\u0026p=%E3%83%95%E3%83%AC%E3%83%83%E3%82%B7%E3%83%A5%20%E3%83%8F%E3%83%B3%E3%83%89%EF%BC%86%E3%82%AD%E3%83%A5%E3%83%BC%E3%83%86%E3%82%A3%E3%82%AF%E3%83%AB%E3%82%AF%E3%83%AA%E3%83%BC%E3%83%A0%2060g%20FRESH%20%E3%82%B9%E3%82%AD%E3%83%B3%E3%82%B1%E3%82%A2%E3%82%B7%E3%83%AA%E3%83%BC%E3%82%BA%20%E7%84%A1%E6%B7%BB%E5%8A%A0%20%E3%82%B7%E3%82%A2%E3%83%90%E3%82%BF%E3%83%BC%20%E7%88%AA%20%E3%81%8B%E3%81%8B%E3%81%A8%20%E3%81%B2%E3%81%98%20%E3%81%B2%E3%81%96%20%E8%A7%92%E8%B3%AA%20%E3%83%8D%E3%82%A4%E3%83%AB%E3%82%B1%E3%82%A2%20%E3%82%AA%E3%83%BC%E3%82%AC%E3%83%8B%E3%83%83%E3%82%AF%20%E3%82%BF%E3%83%BC%E3%83%B3%E3%82%AA%E3%83%BC%E3%83%90%E3%83%BC%20%E3%83%9B%E3%83%9B%E3%83%9B%E6%B2%B9%20%E3%83%AC%E3%83%A2%E3%83%B3%E3%82%AA%E3%82%A4%E3%83%AB%20%E3%83%8F%E3%83%B3%E3%83%89%E3%82%AF%E3%83%AA%E3%83%BC%E3%83%A0%20%E3%81%B2%E3%81%B3%E5%89%B2%E3%82%8C%20%E6%A4%8D%E7%89%A9%E7%94%B1%E6%9D%A5%20%E4%BF%9D%E6%B9%BF%20%E3%82%B7%E3%82%A2%E3%83%90%E3%82%BF%E3%83%BC%20%E6%BD%A4%E3%81%84%20%E6%89%8B%E8%8D%92%E3%82%8C%20%E4%B9%BE%E7%87%A5%20%E4%BF%AE%E5%BE%A9","a_id":5267465,"p_id":1225,"pl_id":27061,"pc_id":1925,"s_n":"yahoo","u_so":3}],"eid":"nCxKb","s":"s"});
     </script>
     <div id="msmaflink-nCxKb">リンク</div>
+
+    <div class="room-promo">
+        <h3 style="margin-top:0; color: #c63535; font-size:18px;">\ 管理人 Yuriの愛用品コレクション /</h3>
+        <p style="font-size:14px;">栄養士Yuriが厳選した、肌と体にやさしいアイテムを楽天ROOMで公開中。<br>ブログで紹介しきれなかった商品も載せています♪</p>
+        <a href="https://room.rakuten.co.jp/room_e0dd63a90a/items" target="_blank" rel="noopener" class="room-btn">
+            楽天ROOMで見る →
+        </a>
+    </div>
+    
     <div class="nav-links" style="text-align:center; margin: 40px 0;">
         <a href="#" style="color:var(--muted); text-decoration:none;">⬆ ページトップへ</a>
         <div class="nav-break"></div>
@@ -296,9 +373,46 @@
 
 </main>
 
-<footer style="text-align:center; padding:40px 0; background:#fff; font-size:13px; color:#888; border-top:1px solid #eee;">
-    © 2025 Essential Beauty Needs
-    <a href="privacy-policy.html" style="color: #777; text-decoration: none; margin-left: 15px;">プライバシーポリシー</a>
+<footer>
+  <div class="footer-container">
+    
+    <div class="footer-col">
+      <h3>🌸 スキンケア・悩み別</h3>
+      <a href="skin-ranking.html">おすすめスキンケアランキング</a>
+      <a href="seasons-skin.html">季節別スキンケア（春夏秋冬）</a>
+      <a href="age-skincare.html">40代・50代 年齢別ケア</a>
+      <a href="acne-care.html">肌荒れ・敏感肌・ニキビケア</a>
+      <a href="lifestyle-skincare.html">生活リズム別（時短・夜型など）</a>
+    </div>
+
+    <div class="footer-col">
+      <h3>🛁 ボディ・ヘア・インナー</h3>
+      <a href="hair-care.html">ヘアケア・頭皮ケア特集</a>
+      <a href="diet-beauty.html">インナービューティー＆ダイエット</a>
+      <a href="amazon-oil-review.html">本当に効く！オイルレビュー</a>
+      <a href="organic-science.html">オーガニック成分の科学</a>
+    </div>
+
+    <div class="footer-col">
+      <h3>🎁 特集・コラム・その他</h3>
+      <a href="gift-selection.html">心をつなぐオーガニックギフト</a>
+      <a href="trial-sets.html">失敗しない！お試しセット比較</a>
+      <a href="winter-selection.html">冬のベストセレクション</a>
+      <a href="beauty-column.html">ビューティーコラム一覧</a>
+      <a href="about.html">当サイトについて (About)</a>
+    </div>
+
+  </div>
+  
+  <div class="footer-bottom">
+     <a href="https://room.rakuten.co.jp/room_e0dd63a90a/items" target="_blank" rel="noopener" class="footer-room-link">
+        🏠 管理人Yuriの楽天ROOMを見る
+     </a>
+     <br>
+     
+     © 2025 Essential Beauty Needs<br><br>
+     <a href="privacy-policy.html" style="color:#888; text-decoration:none; font-size:12px;">プライバシーポリシー</a>
+  </div>
 </footer>
 
 <div id="affiliateNotice">※当サイトはアフィリエイト広告（Amazonアソシエイト含む）を利用しています</div>
