@@ -202,13 +202,6 @@
         box-shadow: 0 6px 14px rgba(198, 53, 53, 0.4);
     }
 
-    /* レスポンシブ */
-    @media(max-width: 700px){
-      header h1 { font-size: 28px; }
-      .badge { left: 50%; transform: translateX(-50%); top: -20px;}
-      .rank-item { margin-top: 25px; }
-    }
-
     /* フッター（リンク網羅型） */
     footer {
         background: #fffaf4;
@@ -256,7 +249,16 @@
       box-shadow: 0 2px 6px rgba(0,0,0,0.1);
       z-index: 999;
     }
-    .back-btn a { text-align:center; color: #777; text-decoration: none; border-bottom: 1px solid #ccc; }
+    
+    .back-btn { text-align:center; margin: 40px 0; }
+    .back-btn a { color: #777; text-decoration: none; border-bottom: 1px solid #ccc; }
+
+    /* レスポンシブ */
+    @media(max-width: 700px){
+      header h1 { font-size: 28px; }
+      .badge { left: 50%; transform: translateX(-50%); top: -20px;}
+      .rank-item { margin-top: 25px; }
+    }
   </style>
 </head>
 <body>
@@ -481,19 +483,8 @@
       </a>
   </div>
 
-  <div class="nav-links" style="margin-top:40px;">
-      <a href="index.html">🏠 トップ</a>
-      <a href="seasons-skin.html">🌸 季節別スキンケア</a>
-      <a href="age-skincare.html">🍁 年齢・肌質別</a>
-      <a href="diet-beauty.html">🍃 インナービューティー</a>
-      <div class="nav-break"></div>
-      <a href="acne-care.html">👩 肌荒れケア</a>
-      <a href="lifestyle-skincare.html">💆‍♀️ 生活リズム別スキンケア</a>
-      <a href="beauty-column.html">💄 ビューティーコラム</a>
-  </div>
-<br><br>
-  <div class="back-btn";"text-align:center";>
-    <a href="#top" onclick="window.scrollTo({top:0,behavior:'smooth'});return false;">⬆ ページトップへ戻る</a>
+  <div class="back-btn">
+    <a href="index.html">← トップページへ戻る</a>
   </div>
 
 </main>
