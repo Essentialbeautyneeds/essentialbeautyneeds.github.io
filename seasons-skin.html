@@ -41,6 +41,7 @@
     --accent: #f7a8a8;
     --accent-hover: #f48b8b;
     --muted: #666;
+    --room-color: #c63535; /* 楽天ROOM用カラー */
 }
 * { box-sizing: border-box; margin: 0; padding: 0; }
 body { font-family: 'Quicksand', sans-serif; background: var(--bg); color: #333; line-height: 1.6; }
@@ -137,6 +138,37 @@ footer { text-align:center; font-size:13px; color:#888; margin:60px 0 30px; }
     transform: translateY(-2px);
     box-shadow: 0 6px 15px rgba(0,0,0,0.12);
 }
+
+/* 楽天ROOMリンク用スタイル（新規追加） */
+.room-promo {
+    background: #fff;
+    border: 2px dashed var(--room-color);
+    border-radius: 15px;
+    padding: 25px;
+    text-align: center;
+    margin: 50px 0;
+    color: #503535;
+}
+.room-btn {
+    display: inline-block;
+    background: var(--room-color);
+    color: #fff;
+    padding: 12px 30px;
+    border-radius: 30px;
+    text-decoration: none;
+    font-weight: bold;
+    margin-top: 15px;
+    box-shadow: 0 4px 10px rgba(198, 53, 53, 0.3);
+    transition: 0.3s;
+}
+.room-btn:hover {
+    background: #a82525;
+    transform: translateY(-2px);
+    box-shadow: 0 6px 14px rgba(198, 53, 53, 0.4);
+}
+/* フッターリンク用 */
+footer a { transition: 0.3s; }
+footer a:hover { color: var(--room-color) !important; border-bottom-color: var(--room-color) !important; }
 
 @media (max-width:768px){ 
     .product-review{ flex-direction:column; } 
@@ -305,6 +337,13 @@ footer { text-align:center; font-size:13px; color:#888; margin:60px 0 30px; }
     </p>
     <img border="0" width="1" height="1" src="https://www16.a8.net/0.gif?a8mat=45I9PD+4GR2VU+3PSY+1BNJ9D" alt="">
 
+    <div class="room-promo">
+        <h3 style="margin-top:0; color: #c63535; font-size:18px;">\ 管理人 Yuriの愛用品コレクション /</h3>
+        <p style="font-size:14px;">栄養士Yuriが厳選した、肌と体にやさしいアイテムを楽天ROOMで公開中。<br>ブログで紹介しきれなかった商品も載せています♪</p>
+        <a href="https://room.rakuten.co.jp/room_e0dd63a90a/items" target="_blank" rel="noopener" class="room-btn">
+            楽天ROOMで見る →
+        </a>
+    </div>
         
     <div class="related">
         <p>さらにおすすめの記事はこちら：</p>
@@ -314,8 +353,13 @@ footer { text-align:center; font-size:13px; color:#888; margin:60px 0 30px; }
 </main>
 
 <footer style="text-align:center; padding:40px 0; background:#fff; font-size:13px; color:#888; border-top:1px solid #eee;">
+    <div style="margin-bottom: 20px;">
+        <a href="https://room.rakuten.co.jp/room_e0dd63a90a/items" target="_blank" rel="noopener" style="color: #777; text-decoration: none; border-bottom: 1px solid #ccc;">
+          🏠 管理人Yuriの楽天ROOM
+        </a>
+    </div>
     © 2025 Essential Beauty Needs
-    <a href="privacy-policy.html" style="color: #777; text-decoration: none; margin-left: 15px;">プライバシーポリシー</a>
+    <a href="privacy-policy.html" style="color: #777; text-decoration: none; margin-left: 15px; border-bottom: 1px solid #ccc;">プライバシーポリシー</a>
 </footer>
 
 <div id="affiliateNotice">※当サイトはアフィリエイト広告（Amazonアソシエイト含む）を利用しています</div>
