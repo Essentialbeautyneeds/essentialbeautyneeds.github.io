@@ -1,190 +1,226 @@
 <!doctype html>
 <html lang="ja">
 <head>
-<meta charset="utf-8" />
-<script>
-  function isInternalUser() {
-    return document.cookie.split(';').some(c => c.trim().startsWith('internal_user=true'));
-  }
-  if (!isInternalUser()) {
-    var gaScript = document.createElement('script');
-    gaScript.async = true;
-    gaScript.src = "https://www.googletagmanager.com/gtag/js?id=G-2HGEPHVZYY";
-    document.head.appendChild(gaScript);
-    window.dataLayer = window.dataLayer || [];
-    function gtag(){dataLayer.push(arguments);}
-    gtag('js', new Date());
-    gtag('config', 'G-2HGEPHVZYY');
-  } else {
-    console.log('✅ Internal traffic excluded.');
-  }
-</script>
+  <meta charset="utf-8" />
+  <script>
+    function isInternalUser() {
+      return document.cookie.split(';').some(c => c.trim().startsWith('internal_user=true'));
+    }
+    if (!isInternalUser()) {
+      var gaScript = document.createElement('script');
+      gaScript.async = true;
+      gaScript.src = "https://www.googletagmanager.com/gtag/js?id=G-2HGEPHVZYY";
+      document.head.appendChild(gaScript);
+      window.dataLayer = window.dataLayer || [];
+      function gtag(){dataLayer.push(arguments);}
+      gtag('js', new Date());
+      gtag('config', 'G-2HGEPHVZYY');
+    } else {
+        console.log('✅ Internal traffic excluded.');
+    }
+  </script>
   
-<meta name="viewport" content="width=device-width,initial-scale=1" />
-<title>生活リズム別スキンケア｜Essential Beauty Needs</title>
-<meta name="description" content="生活リズムに合わせたオーガニック・ナチュラルなスキンケア提案。ナチュラル派／時短派／アクティブ派／夜型の4タイプに合うおすすめ商品を紹介。">
+  <meta name="viewport" content="width=device-width,initial-scale=1" />
+  <title>生活リズム別スキンケア｜Essential Beauty Needs</title>
+  <meta name="description" content="生活リズムに合わせたオーガニック・ナチュラルなスキンケア提案。ナチュラル派／時短派／アクティブ派／夜型の4タイプに合うおすすめ商品を紹介。">
   
-<link rel="canonical" href="https://essential-beauty-needs.com/lifestyle-skincare.html" />
+  <link rel="canonical" href="https://essential-beauty-needs.com/lifestyle-skincare.html" />
   
-<link href="https://fonts.googleapis.com/css2?family=Playfair+Display:wght@600&family=Quicksand:wght@400;600&display=swap" rel="stylesheet">
-<style>
-:root{
-  --bg:#fff8f8;
-  --accent:#f7a8a8;
-  --accent-hover:#f48b8b;
-  --muted:#666;
-  --card:#fff;
-  --room-color: #c63535; /* 楽天ROOM用カラー */
-}
-*{box-sizing:border-box;margin:0;padding:0;}
-body{font-family:'Quicksand',sans-serif;background:var(--bg);color:#333;line-height:1.7;}
-.header{
-  text-align:center;
-  padding:72px 20px 36px;
-  background:linear-gradient(135deg,#ffe6e6,#ffdcdc);
-  color:#503535;
-  position:relative;
-}
-.header h1{font-family:'Playfair Display',serif;font-size:38px;margin-bottom:8px;}
-.header p.lead{font-size:16px;color:#5a4545;margin-bottom:14px;}
-.container{max-width:1000px;margin:30px auto;padding:0 18px;}
-.nav-links{display:flex;gap:12px;justify-content:center;margin-top:12px;flex-wrap:wrap;}
-.nav-links a{background:rgba(255,255,255,0.8);padding:8px 12px;border-radius:8px;text-decoration:none;color:#503535;font-weight:600;}
-.nav-links a:hover{background:var(--accent);color:#fff;}
-.top-cta{margin-top:18px;}
+  <link href="https://fonts.googleapis.com/css2?family=Playfair+Display:wght@600&family=Quicksand:wght@400;600&display=swap" rel="stylesheet">
+  <style>
+    :root{
+      --bg:#fff8f8;
+      --accent:#f7a8a8;
+      --accent-hover:#f48b8b;
+      --muted:#666;
+      --card:#fff;
+      --room-color: #c63535; /* 楽天ROOM用カラー */
+      --text-main: #503535;
+    }
+    *{box-sizing:border-box;margin:0;padding:0;}
+    body{font-family:'Quicksand',sans-serif;background:var(--bg);color:#333;line-height:1.7;}
+    .header{
+      text-align:center;
+      padding:72px 20px 36px;
+      background:linear-gradient(135deg,#ffe6e6,#ffdcdc);
+      color:#503535;
+      position:relative;
+    }
+    .header h1{font-family:'Playfair Display',serif;font-size:38px;margin-bottom:8px;}
+    .header p.lead{font-size:16px;color:#5a4545;margin-bottom:14px;}
+    .container{max-width:1000px;margin:30px auto;padding:0 18px;}
+    .nav-links{display:flex;gap:12px;justify-content:center;margin-top:12px;flex-wrap:wrap;}
+    .nav-links a{background:rgba(255,255,255,0.8);padding:8px 12px;border-radius:8px;text-decoration:none;color:#503535;font-weight:600;}
+    .nav-links a:hover{background:var(--accent);color:#fff;}
+    .top-cta{margin-top:18px;}
 
-/* sections */
-.section{margin:56px 0;padding:0;}
-.section h2{font-family:'Playfair Display',serif;color:#503535;font-size:26px;text-align:center;margin-bottom:18px;}
-.block{display:flex;gap:24px;align-items:flex-start;flex-wrap:wrap;}
-.card{background:var(--card);border-radius:14px;padding:20px;box-shadow:0 6px 18px rgba(0,0,0,0.06);flex:1;min-width:280px;}
+    /* sections */
+    .section{margin:56px 0;padding:0;}
+    .section h2{font-family:'Playfair Display',serif;color:#503535;font-size:26px;text-align:center;margin-bottom:18px;}
+    .block{display:flex;gap:24px;align-items:flex-start;flex-wrap:wrap;}
+    .card{background:var(--card);border-radius:14px;padding:20px;box-shadow:0 6px 18px rgba(0,0,0,0.06);flex:1;min-width:280px;}
 
-/* ▼▼▼ 修正箇所：口コミの代わりのポイントBOX ▼▼▼ */
-.point-box {
-    background: #fff;
-    border: 1px dashed var(--accent);
-    border-radius: 12px;
-    padding: 15px;
-    margin-top: 20px;
-}
-.point-title {
-    font-weight: bold;
-    color: #d6336c;
-    margin-bottom: 8px;
-    display: flex;
-    align-items: center;
-    gap: 5px;
-    font-size: 15px;
-}
-.point-list {
-    list-style: none;
-    padding: 0;
-    margin: 0;
-    font-size: 14px;
-    color: #444;
-}
-.point-list li {
-    position: relative;
-    padding-left: 20px;
-    margin-bottom: 5px;
-}
-.point-list li::before {
-    content: "✔";
-    color: var(--accent);
-    position: absolute;
-    left: 0;
-    font-weight: bold;
-}
-/* ▲▲▲ 修正箇所ここまで ▲▲▲ */
+    /* ポイントBOX */
+    .point-box {
+        background: #fff;
+        border: 1px dashed var(--accent);
+        border-radius: 12px;
+        padding: 15px;
+        margin-top: 20px;
+    }
+    .point-title {
+        font-weight: bold;
+        color: #d6336c;
+        margin-bottom: 8px;
+        display: flex;
+        align-items: center;
+        gap: 5px;
+        font-size: 15px;
+    }
+    .point-list {
+        list-style: none;
+        padding: 0;
+        margin: 0;
+        font-size: 14px;
+        color: #444;
+    }
+    .point-list li {
+        position: relative;
+        padding-left: 20px;
+        margin-bottom: 5px;
+    }
+    .point-list li::before {
+        content: "✔";
+        color: var(--accent);
+        position: absolute;
+        left: 0;
+        font-weight: bold;
+    }
 
-/* related & back-top */
-.related{ text-align:center;margin:48px 0;}
-.related a{display:inline-block;margin:6px 10px;padding:10px 20px;border-radius:26px;text-decoration:none;background:linear-gradient(45deg,#f7a8a8,#f48b8b);color:#fff;font-weight:600;box-shadow:0 4px 12px rgba(0,0,0,0.12);}
-.back-to-top{display:block;text-align:center;margin-top:20px;color:#d6336c;text-decoration:none;font-weight:700;}
+    /* related & back-top */
+    .related{ text-align:center;margin:48px 0;}
+    .related a{display:inline-block;margin:6px 10px;padding:10px 20px;border-radius:26px;text-decoration:none;background:linear-gradient(45deg,#f7a8a8,#f48b8b);color:#fff;font-weight:600;box-shadow:0 4px 12px rgba(0,0,0,0.12);}
+    .back-to-top{display:block;text-align:center;margin-top:20px;color:#d6336c;text-decoration:none;font-weight:700;}
 
-/* affiliate notice */
-#affiliateNotice {
-    position: fixed;
-    right: 12px;
-    bottom: 12px;
-    background: rgba(255, 255, 255, 0.8);
-    color: #555;
-    font-size: 11px;
-    border-radius: 6px;
-    padding: 4px 8px;
-    box-shadow: 0 2px 6px rgba(0,0,0,0.1);
-    z-index: 999;
-}
+    /* affiliate notice */
+    #affiliateNotice {
+        position: fixed;
+        right: 12px;
+        bottom: 12px;
+        background: rgba(255, 255, 255, 0.8);
+        color: #555;
+        font-size: 11px;
+        border-radius: 6px;
+        padding: 4px 8px;
+        box-shadow: 0 2px 6px rgba(0,0,0,0.1);
+        z-index: 999;
+    }
 
-@media(max-width:900px){
-  .block{flex-direction:column;}
-}
-.nav-break {
-    flex-basis: 100%;
-    height: 0;
-    margin: 5px 0;
-}
-.special-link a {
-    display:inline-block; 
-    background: linear-gradient(45deg, #f7a8a8, #807eed); 
-    color:#fff; 
-    font-weight:600; 
-    padding:12px 28px; 
-    border-radius:30px; 
-    text-decoration:none; 
-    box-shadow:0 4px 12px rgba(0,0,0,0.15); 
-    transition:all 0.3s ease; 
-    text-align:center;
-}
-.special-link a:hover {
-    transform: translateY(-3px);
-    box-shadow: 0 6px 15px rgba(0,0,0,0.2);
-}
-.internal-link {
-    display: inline-block;
-    color: var(--accent-hover);
-    font-weight: 600;
-    text-decoration: none;
-    padding: 10px;
-    border: 1px solid var(--accent);
-    border-radius: 20px;
-    transition: 0.3s;
-}
-.internal-link:hover {
-    background: var(--accent);
-    color: #fff;
-}
+    @media(max-width:900px){
+      .block{flex-direction:column;}
+    }
+    .nav-break {
+        flex-basis: 100%;
+        height: 0;
+        margin: 5px 0;
+    }
+    .special-link a {
+        display:inline-block; 
+        background: linear-gradient(45deg, #f7a8a8, #807eed); 
+        color:#fff; 
+        font-weight:600; 
+        padding:12px 28px; 
+        border-radius:30px; 
+        text-decoration:none; 
+        box-shadow:0 4px 12px rgba(0,0,0,0.15); 
+        transition:all 0.3s ease; 
+        text-align:center;
+    }
+    .special-link a:hover {
+        transform: translateY(-3px);
+        box-shadow: 0 6px 15px rgba(0,0,0,0.2);
+    }
+    .internal-link {
+        display: inline-block;
+        color: var(--accent-hover);
+        font-weight: 600;
+        text-decoration: none;
+        padding: 10px;
+        border: 1px solid var(--accent);
+        border-radius: 20px;
+        transition: 0.3s;
+    }
+    .internal-link:hover {
+        background: var(--accent);
+        color: #fff;
+    }
 
-/* 楽天ROOMリンク用スタイル（新規追加） */
-.room-promo {
-    background: #fff;
-    border: 2px dashed var(--room-color);
-    border-radius: 15px;
-    padding: 25px;
-    text-align: center;
-    margin: 50px 0;
-    color: #503535;
-}
-.room-btn {
-    display: inline-block;
-    background: var(--room-color);
-    color: #fff;
-    padding: 12px 30px;
-    border-radius: 30px;
-    text-decoration: none;
-    font-weight: bold;
-    margin-top: 15px;
-    box-shadow: 0 4px 10px rgba(198, 53, 53, 0.3);
-    transition: 0.3s;
-}
-.room-btn:hover {
-    background: #a82525;
-    transform: translateY(-2px);
-    box-shadow: 0 6px 14px rgba(198, 53, 53, 0.4);
-}
-/* フッターリンク用 */
-footer a { transition: 0.3s; }
-footer a:hover { color: var(--room-color) !important; border-bottom-color: var(--room-color) !important; }
+    /* 楽天ROOMリンク用スタイル（コード版） */
+    .room-promo {
+        background: #fff;
+        border: 2px dashed var(--room-color);
+        border-radius: 15px;
+        padding: 25px;
+        text-align: center;
+        margin: 50px 0;
+        color: #503535;
+    }
+    .room-btn {
+        display: inline-block;
+        background: var(--room-color);
+        color: #fff;
+        padding: 12px 30px;
+        border-radius: 30px;
+        text-decoration: none;
+        font-weight: bold;
+        margin-top: 15px;
+        box-shadow: 0 4px 10px rgba(198, 53, 53, 0.3);
+        transition: 0.3s;
+    }
+    .room-btn:hover {
+        background: #a82525;
+        transform: translateY(-2px);
+        box-shadow: 0 6px 14px rgba(198, 53, 53, 0.4);
+    }
+
+    /* フッター（リンク網羅型） */
+    footer {
+        background: #fffaf4;
+        border-top: 3px solid #f7a8a8;
+        padding: 50px 20px 60px;
+        margin-top: 60px;
+        color: #555;
+        font-size: 14px;
+    }
+    .footer-container {
+        max-width: 960px;
+        margin: 0 auto;
+        display: flex;
+        flex-wrap: wrap;
+        justify-content: space-between;
+        gap: 30px;
+        text-align: left;
+    }
+    .footer-col { flex: 1; min-width: 200px; }
+    .footer-col h3 {
+        font-size: 16px;
+        color: #d6336c;
+        border-bottom: 1px dashed #f4b5b5;
+        padding-bottom: 8px;
+        margin-bottom: 15px;
+        font-weight: bold;
+    }
+    .footer-col a {
+        display: block; color: #666; text-decoration: none; margin-bottom: 10px; transition: 0.3s; position: relative; padding-left: 10px;
+    }
+    .footer-col a::before { content: "・"; position: absolute; left: 0; color: #f7a8a8; }
+    .footer-col a:hover { color: #d6336c; padding-left: 15px; }
+    .footer-bottom { text-align: center; margin-top: 50px; padding-top: 30px; border-top: 1px solid #eee; }
+    
+    .footer-room-link {
+        display: inline-block; color: #c63535; font-weight: bold; border: 1px solid #c63535; padding: 8px 20px; border-radius: 20px; text-decoration: none; margin-bottom: 20px; background: #fff; transition: 0.3s;
+    }
+    .footer-room-link:hover { background: #c63535; color: #fff; }
 
 </style>
 </head>
@@ -196,20 +232,20 @@ footer a:hover { color: var(--room-color) !important; border-bottom-color: var(-
     <p class="lead">日々のリズムに合わせたオーガニック＆ナチュラルなケア提案。あなたの生活スタイルに合う商品をピックアップしました。</p>
 
     <div class="nav-links" role="navigation">
-    <a href="index.html">🏠 トップ</a>
-    <a href="skin-ranking.html">✨ ランキング</a>
-    <a href="trial-sets.html" style="background:#fff0f5; border:1px solid #ffb6c1; font-weight:bold;">🔰 お試しセット</a>
-    <div class="nav-break"></div>
-    
-    <a href="seasons-skin.html">🌸 季節別</a>
-    <a href="age-skincare.html">👩 年齢・肌質別</a>
-    <a href="lifestyle-skincare.html">💆‍♀️ 生活リズム別</a>
-    <div class="nav-break"></div>
+        <a href="index.html">🏠 トップ</a>
+        <a href="skin-ranking.html">✨ ランキング</a>
+        <a href="trial-sets.html" style="background:#fff0f5; border:1px solid #ffb6c1; font-weight:bold;">🔰 お試しセット</a>
+        <div class="nav-break"></div>
+        
+        <a href="seasons-skin.html">🌸 季節別</a>
+        <a href="age-skincare.html">👩 年齢・肌質別</a>
+        <a href="lifestyle-skincare.html">💆‍♀️ 生活リズム別</a>
+        <div class="nav-break"></div>
 
-    <a href="organic-science.html">🔬 成分の科学</a>
-    <a href="beauty-column.html">💄 コラム</a>
-    <a href="diet-beauty.html">🍃 インナービューティー</a>
-</div>
+        <a href="organic-science.html">🔬 成分の科学</a>
+        <a href="beauty-column.html">💄 コラム</a>
+        <a href="diet-beauty.html">🍃 インナービューティー</a>
+    </div>
 
      <div class="special-link" style="margin-top:25px;">
       <a href="winter-selection.html" target="_blank">
@@ -424,14 +460,46 @@ footer a:hover { color: var(--room-color) !important; border-bottom-color: var(-
 
 </main>
 
-<footer style="text-align:center; padding:40px 0; background:#fff; font-size:13px; color:#888; border-top:1px solid #eee;">
-  <div style="margin-bottom: 20px;">
-      <a href="https://room.rakuten.co.jp/room_e0dd63a90a/items" target="_blank" rel="noopener" style="color: #777; text-decoration: none; border-bottom: 1px solid #ccc;">
-        🏠 管理人Yuriの楽天ROOM
-      </a>
+<footer>
+  <div class="footer-container">
+    
+    <div class="footer-col">
+      <h3>🌸 スキンケア・悩み別</h3>
+      <a href="skin-ranking.html">おすすめスキンケアランキング</a>
+      <a href="seasons-skin.html">季節別スキンケア（春夏秋冬）</a>
+      <a href="age-skincare.html">40代・50代 年齢別ケア</a>
+      <a href="acne-care.html">肌荒れ・敏感肌・ニキビケア</a>
+      <a href="lifestyle-skincare.html">生活リズム別（時短・夜型など）</a>
+    </div>
+
+    <div class="footer-col">
+      <h3>🛁 ボディ・ヘア・インナー</h3>
+      <a href="hair-care.html">ヘアケア・頭皮ケア特集</a>
+      <a href="diet-beauty.html">インナービューティー＆ダイエット</a>
+      <a href="amazon-oil-review.html">本当に効く！オイルレビュー</a>
+      <a href="organic-science.html">オーガニック成分の科学</a>
+    </div>
+
+    <div class="footer-col">
+      <h3>🎁 特集・コラム・その他</h3>
+      <a href="gift-selection.html">心をつなぐオーガニックギフト</a>
+      <a href="trial-sets.html">失敗しない！お試しセット比較</a>
+      <a href="winter-selection.html">冬のベストセレクション</a>
+      <a href="beauty-column.html">ビューティーコラム一覧</a>
+      <a href="about.html">当サイトについて (About)</a>
+    </div>
+
   </div>
-  © 2025 Essential Beauty Needs
-      <a href="privacy-policy.html" style="color: #777; text-decoration: none; margin-left: 15px; border-bottom: 1px solid #ccc;">プライバシーポリシー</a>
+  
+  <div class="footer-bottom">
+     <a href="https://room.rakuten.co.jp/room_e0dd63a90a/items" target="_blank" rel="noopener" class="footer-room-link">
+        🏠 管理人Yuriの楽天ROOMを見る
+     </a>
+     <br>
+     
+     © 2025 Essential Beauty Needs<br><br>
+     <a href="privacy-policy.html" style="color:#888; text-decoration:none; font-size:12px;">プライバシーポリシー</a>
+  </div>
 </footer>
 <div id="affiliateNotice">※当サイトはアフィリエイト広告（Amazonアソシエイト含む）を利用しています</div>
 
