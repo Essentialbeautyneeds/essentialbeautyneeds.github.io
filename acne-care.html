@@ -1,8 +1,7 @@
 <!doctype html>
 <html lang="ja">
 <head>
-<link rel="canonical" href="https://essential-beauty-needs.com/acne-care.html" />
-    
+    <link rel="canonical" href="https://essential-beauty-needs.com/acne-care.html" />
     <meta charset="utf-8" />
     <meta name="viewport" content="width=device-width,initial-scale=1" />
     <title>肌荒れ・ニキビ・吹き出物対策｜Essential Beauty Needs</title>
@@ -31,22 +30,19 @@
         console.log('✅ Internal traffic excluded.');
     }
 
-    /**
-     * 画像読み込みエラー時のフォールバック処理。
-     * 読み込みエラー時にプレースホルダー画像に置き換えます。
-     * @param {HTMLElement} imgElement - エラーが発生したimg要素
-     * @param {number} width - プレースホルダーの幅
-     * @param {number} height - プレースホルダーの高さ
-     * @param {string} text - プレースホルダーに表示するテキスト
-     */
     function handleImageError(imgElement, width, height, text) {
-        imgElement.onerror = null; // エラーが再帰的に発生するのを防ぐ
-        // プレースホルダーのテキストを日本語から英語に変更（プレースホルダー生成の仕様に合わせるため）
+        imgElement.onerror = null; 
         imgElement.src = `https://placehold.co/${width}x${height}/f48b8b/ffffff?text=${encodeURIComponent(text)}`;
     }
 </script>
 <style>
 /* Reset & basic styling */
+:root {
+    --room-color: #c63535; /* 楽天ROOM用カラー */
+    --accent: #f7a8a8;
+    --text-main: #503535;
+}
+
 body {
     font-family: 'Quicksand', sans-serif;
     margin: 0;
@@ -75,38 +71,11 @@ header p {
     margin-bottom: 14px;
 }
 
-/* 上部ナビリンク（中央揃え） */
-.top-links {
-    display: flex;
-    justify-content: center;
-    flex-wrap: wrap;
-    gap: 12px;
-    margin: 20px 0 40px;
-    width: 100%;
-    box-sizing: border-box;
-}
-
-.top-links a {
-    display: inline-flex;
-    align-items: center;
-    justify-content: center;
-    gap: 5px;
-    background: linear-gradient(45deg, #f7a8a8, #f48b8b);
-    color: #fff;
-    font-weight: 500;
-    font-size: 1em;
-    text-decoration: none;
-    padding: 10px 22px;
-    border-radius: 20px;
-    box-shadow: 0 4px 12px rgba(0,0,0,0.12);
-    transition: all 0.3s ease;
-}
-
-.top-links a:hover {
-    background: linear-gradient(45deg, #f48b8b, #f26a6a);
-    transform: translateY(-3px);
-    box-shadow: 0 6px 20px rgba(0,0,0,0.2);
-}
+/* ナビゲーション */
+.nav-links{display:flex;gap:12px;justify-content:center;margin-top:12px;flex-wrap:wrap;}
+.nav-links a{background:rgba(255,255,255,0.8);padding:8px 12px;border-radius:8px;text-decoration:none;color:#503535;font-weight:600;}
+.nav-links a:hover{background:var(--accent);color:#fff;}
+.nav-break { flex-basis: 100%; height: 0; margin: 5px 0; }
 
 /* メイン */
 main {
@@ -140,17 +109,10 @@ img {
     border-radius: 14px;
     padding: 16px;
     box-shadow: 0 4px 16px rgba(0,0,0,0.06);
-    margin: 20px auto; /* 中央揃えに */
+    margin: 20px auto; 
     text-align: center;
-    max-width: 500px;  /* 幅を制限 */
+    max-width: 500px; 
 }
-
-/* .card img {
-    height: 140px;
-    width: auto;
-    margin-bottom: 12px;
-} */
-/* かんたんリンク用に画像スタイルを一時的に無効化または調整 */
 
 .card h3 {
     font-size: 18px;
@@ -172,35 +134,6 @@ img {
     max-width: 400px;
     list-style: disc;
     padding-left: 20px;
-}
-
-/* .card a.btn を削除し、かんたんリンクの表示に任せる */
-
-/* レビュー・ビフォーアフター */
-.review-box {
-    text-align: center;
-    margin: 30px 0;
-}
-
-.review-box img {
-    width: 100%;
-    max-width: 500px;
-    border-radius: 12px;
-    margin-bottom: 16px;
-}
-
-.review-box p {
-    font-size: 14px;
-    color: #333;
-    line-height: 1.6;
-    max-width: 700px;
-    margin: 0 auto;
-}
-
-.review-box p strong {
-    display: block;
-    margin-top: 6px;
-    color: #d6336c;
 }
 
 /* 最下部トップページボタン */
@@ -226,118 +159,40 @@ img {
     background: #f26a6a;
 }
 
-/* 「季節のおすすめスキンケア」前後の余白をさらに詰める */
-.seasonal-section {
-    padding-top: 10px !important;
-    padding-bottom: 20px !important;
-    margin-top: 30px !important;
-    margin-bottom: 20px !important;
-}
-
-.seasonal-section h2 {
-    margin-top: 5px !important;
-    margin-bottom: 15px !important;
-}
-    
-    /* 季節のおすすめカード */
-.seasonal-card {
-    display: inline-block;
-    width: 80%;
-    max-width: 680px;
-    background: var(--card);
-    border-radius: 18px;
-    box-shadow: 0 5px 15px rgba(0,0,0,0.08);
-    overflow: hidden;
-    transition: transform .3s, box-shadow .3s;
-    text-align: left;
-    margin: 0 auto; /* 中央揃え */
-}
-
-.seasonal-card:hover {
-    transform: translateY(-5px);
-    box-shadow: 0 8px 25px rgba(0,0,0,0.15);
-}
-
-.seasonal-card img {
-    width: 100%;
-    height: auto;
-    display: block;
-    border-bottom: 3px solid var(--accent);
-}
-
-.seasonal-card-text {
-    padding: 20px;
-}
-
-.seasonal-card-text h3 {
-    font-size: 20px;
-    color: #503535;
-    margin-bottom: 10px;
-}
-
-.seasonal-card-text p {
-    font-size: 14px;
-    color: var(--muted);
-    line-height: 1.6;
-}
-
-.seasonal-card-text .link-arrow {
-    display: inline-block;
-    margin-top: 8px;
-    color: var(--accent);
-    font-weight: 600;
-}
-
-@media(max-width: 600px) {
-    .seasonal-card {
-        width: 90%;
-    }
-}
-
-footer {
-    background: #d6336c;
-    color: #fff;
+/* 楽天ROOMリンク用スタイル */
+.room-promo {
+    background: #fff;
+    border: 2px dashed var(--room-color);
+    border-radius: 15px;
+    padding: 25px;
     text-align: center;
-    padding: 20px;
-    font-size: 0.9em;
+    margin: 50px auto;
+    color: #503535;
+    max-width: 600px;
 }
-
-.review-box p {
-    border: 2px solid #f4b5b5;
-    background: #fff7f7;
-    padding: 18px;
-    border-radius: 12px;
+.room-btn {
     display: inline-block;
-    text-align: left;
-    line-height: 1.7;
+    background: var(--room-color);
+    color: #fff;
+    padding: 12px 30px;
+    border-radius: 30px;
+    text-decoration: none;
+    font-weight: bold;
+    margin-top: 15px;
+    box-shadow: 0 4px 10px rgba(198, 53, 53, 0.3);
+    transition: 0.3s;
 }
-    #affiliateNotice {
-    position: fixed;
-    right: 12px;
-    bottom: 12px;
-    background: rgba(255, 255, 255, 0.8);
-    color: #555;
-    font-size: 11px;
-    border-radius: 6px;
-    padding: 4px 8px;
-    box-shadow: 0 2px 6px rgba(0,0,0,0.1);
-    z-index: 999;
+.room-btn:hover {
+    background: #a82525;
+    transform: translateY(-2px);
+    box-shadow: 0 6px 14px rgba(198, 53, 53, 0.4);
 }
-    .nav-links{display:flex;gap:12px;justify-content:center;margin-top:12px;flex-wrap:wrap;}
-.nav-links a{background:rgba(255,255,255,0.8);padding:8px 12px;border-radius:8px;text-decoration:none;color:#503535;font-weight:600;}
-.nav-links a:hover{background:var(--accent);color:#fff;}
 
-      .nav-break {
-    /* flexコンテナ内で、次の行に要素を移動させる */
-    flex-basis: 100%;
-    height: 0; /* 高さは不要 */
-    margin: 5px 0; /* 上下に少しスペースを開ける */
-}
-    /* ▼▼▼ 新しいフッター用のCSS ▼▼▼ */
+/* 新しいフッター用のCSS */
 footer {
-    background: #fffaf4; /* 優しいベージュ背景 */
-    border-top: 3px solid #f7a8a8; /* サイトのアクセントカラー */
-    padding: 50px 20px 60px; /* 下に60pxの余白を作り、右下の通知と重ならないように調整 */
+    background: #fffaf4;
+    border-top: 3px solid #f7a8a8;
+    padding: 50px 20px 60px;
     margin-top: 60px;
     color: #555;
     font-size: 14px;
@@ -353,10 +208,9 @@ footer {
     text-align: left;
 }
 
-/* スマホでは1列、PCでは3列にする設定 */
 .footer-col {
     flex: 1;
-    min-width: 200px; /* 幅が狭くなったら折り返す */
+    min-width: 200px;
 }
 
 .footer-col h3 {
@@ -375,7 +229,7 @@ footer {
     margin-bottom: 10px;
     transition: 0.3s;
     position: relative;
-    padding-left: 10px; /* アイコン用のスペース */
+    padding-left: 10px;
 }
 
 .footer-col a::before {
@@ -387,10 +241,9 @@ footer {
 
 .footer-col a:hover {
     color: #d6336c;
-    padding-left: 15px; /* ホバー時に少し右へ動くアニメーション */
+    padding-left: 15px;
 }
 
-/* フッター最下部（Roomリンクやコピーライト） */
 .footer-bottom {
     text-align: center;
     margin-top: 50px;
@@ -398,7 +251,6 @@ footer {
     border-top: 1px solid #eee;
 }
 
-/* 楽天ROOMリンクの強調 */
 .footer-room-link {
     display: inline-block;
     color: #c63535;
@@ -415,6 +267,19 @@ footer {
     background: #c63535;
     color: #fff;
 }
+
+#affiliateNotice {
+    position: fixed;
+    right: 12px;
+    bottom: 12px;
+    background: rgba(255, 255, 255, 0.8);
+    color: #555;
+    font-size: 11px;
+    border-radius: 6px;
+    padding: 4px 8px;
+    box-shadow: 0 2px 6px rgba(0,0,0,0.1);
+    z-index: 999;
+}
 </style>
 </head>
 
@@ -423,23 +288,23 @@ footer {
 <header>
     <h1>肌荒れ・ニキビ・吹き出物対策</h1>
     <p>肌悩みにおすすめの方へ向けたオーガニックスキンケア</p>
+
+    <div class="nav-links" role="navigation">
+        <a href="index.html">🏠 トップ</a>
+        <a href="skin-ranking.html">✨ ランキング</a>
+        <a href="trial-sets.html" style="background:#fff0f5; border:1px solid #ffb6c1; font-weight:bold;">🔰 お試しセット</a>
+        <div class="nav-break"></div>
+        
+        <a href="seasons-skin.html">🌸 季節別</a>
+        <a href="age-skincare.html">👩 年齢・肌質別</a>
+        <a href="lifestyle-skincare.html">💆‍♀️ 生活リズム別</a>
+        <div class="nav-break"></div>
+
+        <a href="organic-science.html">🔬 成分の科学</a>
+        <a href="beauty-column.html">💄 コラム</a>
+        <a href="diet-beauty.html">🍃 インナービューティー</a>
+    </div>
 </header>
-
-<div class="nav-links" role="navigation">
-    <a href="index.html">🏠 トップ</a>
-    <a href="skin-ranking.html">✨ ランキング</a>
-    <a href="trial-sets.html" style="background:#fff0f5; border:1px solid #ffb6c1; font-weight:bold;">🔰 お試しセット</a>
-    <div class="nav-break"></div>
-    
-    <a href="seasons-skin.html">🌸 季節別</a>
-    <a href="age-skincare.html">👩 年齢・肌質別</a>
-    <a href="lifestyle-skincare.html">💆‍♀️ 生活リズム別</a>
-    <div class="nav-break"></div>
-
-    <a href="organic-science.html">🔬 成分の科学</a>
-    <a href="beauty-column.html">💄 コラム</a>
-    <a href="diet-beauty.html">🍃 インナービューティー</a>
-</div>
 
 <div style="border: 2px solid #f4b5b5; border-radius: 12px; padding: 25px; margin: 25px auto; background: #ffffff; color: #503535; font-size: 15px; line-height: 1.7; max-width: 650px;">
     
@@ -526,8 +391,7 @@ footer {
 
         <div class="card">
         <h3>Acno　ケアクリーム 薬用ジェル</h3>
-        <!-- START MoshimoAffiliateEasyLink -->
-<script type="text/javascript">
+        <script type="text/javascript">
 (function(b,c,f,g,a,d,e){b.MoshimoAffiliateObject=a;
 b[a]=b[a]||function(){arguments.currentScript=c.currentScript
 ||c.scripts[c.scripts.length-2];(b[a].q=b[a].q||[]).push(arguments)};
@@ -537,8 +401,7 @@ d.id=a,e=c.getElementsByTagName("body")[0],e.appendChild(d))})
 msmaflink({"n":"【医師監修】にきび ニキビケアクリーム 50g ニキビ ニキビケア オールインワンジェル ACNO アクノ 大人ニキビ 背中 お尻 ニキビ跡 顔 ボディ 全身 に使える サリチル酸 人工香料不使用 国内製造（医薬部外品）","b":"","t":"","d":"https:\/\/thumbnail.image.rakuten.co.jp","c_p":"\/@0_mall\/eijyudou\/cabinet\/syouhin","p":["\/10552384\/11923754\/imgrc0100162498.jpg","\/acno\/10282510\/acno_b4.jpg","\/acno\/10282510\/acno_h4.jpg"],"u":{"u":"https:\/\/item.rakuten.co.jp\/eijyudou\/10004\/","t":"rakuten","r_v":""},"v":"2.1","b_l":[{"id":1,"u_tx":"楽天市場で見る","u_bc":"#87c209","u_url":"https:\/\/item.rakuten.co.jp\/eijyudou\/10004\/","a_id":5267359,"p_id":54,"pl_id":27059,"pc_id":54,"s_n":"rakuten","u_so":1},{"id":5,"u_tx":"Amazonで見る","u_bc":"#184f5c","u_url":"https:\/\/amzn.to\/4opUJQz","a_id":0,"p_id":0,"pl_id":0,"pc_id":0,"s_n":"custom_10","u_so":2},{"id":4,"u_tx":"Yahoo!ショッピングで見る","u_bc":"#bf0000","u_url":"https:\/\/shopping.yahoo.co.jp\/search?first=1\u0026p=%E3%80%90%E5%8C%BB%E5%B8%AB%E7%9B%A3%E4%BF%AE%E3%80%91%E3%81%AB%E3%81%8D%E3%81%B3%20%E3%83%8B%E3%82%AD%E3%83%93%E3%82%B1%E3%82%A2%E3%82%AF%E3%83%AA%E3%83%BC%E3%83%A0%2050g%20%E3%83%8B%E3%82%AD%E3%83%93%20%E3%83%8B%E3%82%AD%E3%83%93%E3%82%B1%E3%82%A2%20%E3%82%AA%E3%83%BC%E3%83%AB%E3%82%A4%E3%83%B3%E3%83%AF%E3%83%B3%E3%82%B8%E3%82%A7%E3%83%AB%20ACNO%20%E3%82%A2%E3%82%AF%E3%83%8E%20%E5%A4%A7%E4%BA%BA%E3%83%8B%E3%82%AD%E3%83%93%20%E8%83%8C%E4%B8%AD%20%E3%81%8A%E5%B0%BB%20%E3%83%8B%E3%82%AD%E3%83%93%E8%B7%A1%20%E9%A1%94%20%E3%83%9C%E3%83%87%E3%82%A3%20%E5%85%A8%E8%BA%AB%20%E3%81%AB%E4%BD%BF%E3%81%88%E3%82%8B%20%E3%82%B5%E3%83%AA%E3%83%81%E3%83%AB%E9%85%B8%20%E4%BA%BA%E5%B7%A5%E9%A6%99%E6%96%99%E4%B8%8D%E4%BD%BF%E7%94%A8%20%E5%9B%BD%E5%86%85%E8%A3%BD%E9%80%A0%EF%BC%88%E5%8C%BB%E8%96%AC%E9%83%A8%E5%A4%96%E5%93%81%EF%BC%89","a_id":5267465,"p_id":1225,"pl_id":27061,"pc_id":1925,"s_n":"yahoo","u_so":3}],"eid":"KhMPr","s":"s"});
 </script>
 <div id="msmaflink-KhMPr">リンク</div>
-<!-- MoshimoAffiliateEasyLink END -->
-        <p>にきびの原因となる余分な皮脂や汚れをすっきり落としつつ、<br>肌に必要なうるおいを保持する医薬部外品。</p>
+<p>にきびの原因となる余分な皮脂や汚れをすっきり落としつつ、<br>肌に必要なうるおいを保持する医薬部外品。</p>
         <ul>
             <li>1〜2cmを泡立てて洗顔</li>
             <li>洗顔料の残りやすい小鼻周りや髪の生え際も注意してすすぐ</li>
@@ -571,28 +434,20 @@ msmaflink({"n":"【医師監修】にきび ニキビケアクリーム 50g ニ�
     季節ごとの肌状態を見極めながら、オーガニック成分を活かしたスキンケアを取り入れることで、ニキビや吹き出物の予防に繋がります。敏感肌の方も安心して使える洗顔料や美容液を選ぶことが大切です。朝晩の簡単なケアでも継続することで、肌のバリア機能を守り、潤いとハリのある健康的な肌を育てられます。季節の変化に負けない肌を目指しましょう。
 </div>
 
-    
-    <div class="seasonal-section">
-    <h2>その他おすすめスキンケア</h2>
+    <div class="room-promo">
+        <h3 style="margin-top:0; color: #c63535; font-size:18px; border:none; padding:0;">\ 管理人 Yuriの愛用品コレクション /</h3>
+        <p style="font-size:14px;">栄養士Yuriが厳選した、肌と体にやさしいアイテムを楽天ROOMで公開中。<br>ブログで紹介しきれなかった商品も載せています♪</p>
+        <a href="https://room.rakuten.co.jp/room_e0dd63a90a/items" target="_blank" rel="noopener" class="room-btn">
+            楽天ROOMで見る →
+        </a>
+    </div>
 
-</div>
+    <div class="back-btn">
+        <a href="index.html">← トップページへ戻る</a>
+    </div>
     
 </main>
 <div id="affiliateNotice">※当サイトはアフィリエイト広告（Amazonアソシエイト含む）を利用しています</div>
-
-    <div class="nav-links">
-        <a href="seasons-skin.html">🌸 季節別スキンケアを見る </a>
-        <a href="skin-ranking.html">🏆 スキンケアランキングを見る </a>
-        <a href="diet-beauty.html">🍃 ダイエット効果：インナービューティー</a>
-  <div class="nav-break"></div>
-
-   
-        <a href="beauty-column.html">💄 ビューティーコラム</a>
-        <a href="age-skincare.html"> 👩 40代・50代向けスキンケアを見る </a>
-        <a href="lifestyle-skincare.html">💆‍♀️ 生活リズム別スキンケアを見る </a>
-  <div class="nav-break"></div>
-        <a href="index.html">← トップページへ戻る</a>
-</div>
 
 <footer>
   <div class="footer-container">
