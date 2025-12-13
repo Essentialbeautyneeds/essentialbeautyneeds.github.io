@@ -43,6 +43,7 @@
       --color-bg-light: #fffaf9;
       --color-text: #474747;
       --color-shadow: rgba(0,0,0,0.1);
+      --room-color: #c63535; /* 楽天ROOM用カラー */
     }
     body{
       font-family:'Quicksand',sans-serif;
@@ -175,8 +176,39 @@
         display: block;
     }
 
+    /* 楽天ROOMリンク用スタイル（新規追加） */
+    .room-promo {
+        background: #fff;
+        border: 2px dashed var(--room-color);
+        border-radius: 15px;
+        padding: 25px;
+        text-align: center;
+        margin: 50px 0;
+        color: var(--color-text);
+    }
+    .room-btn {
+        display: inline-block;
+        background: var(--room-color);
+        color: #fff;
+        padding: 12px 30px;
+        border-radius: 30px;
+        text-decoration: none;
+        font-weight: bold;
+        margin-top: 15px;
+        box-shadow: 0 4px 10px rgba(198, 53, 53, 0.3);
+        transition: 0.3s;
+    }
+    .room-btn:hover {
+        background: #a82525;
+        transform: translateY(-2px);
+        box-shadow: 0 6px 14px rgba(198, 53, 53, 0.4);
+    }
+
     /* フッター & その他 */
     footer{ text-align:center; font-size:13px; color:#777; padding: 40px 0; margin-top: auto; border-top: 1px solid #eee; background:#fff; }
+    footer a { transition: 0.3s; }
+    footer a:hover { color: var(--room-color) !important; border-bottom-color: var(--room-color) !important; }
+
     #affiliateNotice {
       position: fixed; right: 12px; bottom: 12px;
       background: rgba(255, 255, 255, 0.9);
@@ -199,17 +231,21 @@
     <h1>内側から輝く美しさへ</h1>
     <p>オーガニックライフで叶える、インナービューティ＆ダイエットの秘訣</p>
 
-    <nav class="nav-links">
-        <a href="seasons-skin.html">🌸 季節別ケア</a>
-        <a href="skin-ranking.html">✨ ランキング</a>
-        <a href="acne-care.html">🧴 肌荒れケア</a>
-        <div class="nav-break"></div> 
-        <a href="amazon-oil-review.html">🔥 オイルレビュー</a>    
-        <a href="lifestyle-skincare.html">💆‍♀️ 生活リズム別</a>
-        <a href="winter-selection.html">⛄ 冬のおすすめ</a>
-        <div class="nav-break"></div>
-        <a href="index.html" style="background:#fff; border:1px solid #ddd;">🏠 トップに戻る</a>
-    </nav>
+   <div class="nav-links" role="navigation">
+    <a href="index.html">🏠 トップ</a>
+    <a href="skin-ranking.html">✨ ランキング</a>
+    <a href="trial-sets.html" style="background:#fff0f5; border:1px solid #ffb6c1; font-weight:bold;">🔰 お試しセット</a>
+    <div class="nav-break"></div>
+    
+    <a href="seasons-skin.html">🌸 季節別</a>
+    <a href="age-skincare.html">👩 年齢・肌質別</a>
+    <a href="lifestyle-skincare.html">💆‍♀️ 生活リズム別</a>
+    <div class="nav-break"></div>
+
+    <a href="organic-science.html">🔬 成分の科学</a>
+    <a href="beauty-column.html">💄 コラム</a>
+    <a href="diet-beauty.html">🍃 インナービューティー</a>
+</div>
   </header>
 
   <main>
@@ -318,6 +354,15 @@
     msmaflink({"n":"【賞味期限2027\/03】エステプロラボ F-ブロッカー ハーブティー 3g×30包 Esthe Pro Labo ダイエット スッキリ 天然素材 おいしい オーガニック サロン専売品 送料無料","b":"","t":"","d":"https:\/\/thumbnail.image.rakuten.co.jp","c_p":"\/@0_mall\/arianakosume\/cabinet","p":["\/main-6\/s-1-4562249290339-rk.jpg","\/biiino\/award\/456224f2371affa6.jpg","\/lib\/bn_haisou.jpg"],"u":{"u":"https:\/\/item.rakuten.co.jp\/arianakosume\/4562249290339\/","t":"rakuten","r_v":""},"v":"2.1","b_l":[{"id":1,"u_tx":"楽天市場で見る","u_bc":"#87c209","u_url":"https:\/\/item.rakuten.co.jp\/arianakosume\/4562249290339\/","a_id":5267359,"p_id":54,"pl_id":27059,"pc_id":54,"s_n":"rakuten","u_so":1},{"id":5,"u_tx":"Amazonで見る","u_bc":"#184f5c","u_url":"https:\/\/amzn.to\/4pbtKcG","a_id":0,"p_id":0,"pl_id":0,"pc_id":0,"s_n":"custom_10","u_so":2},{"id":4,"u_tx":"Yahoo!ショッピングで見る","u_bc":"#bf0000","u_url":"https:\/\/shopping.yahoo.co.jp\/search?first=1\u0026p=%E3%80%90%E8%B3%9E%E5%91%B3%E6%9C%9F%E9%99%902027%2F03%E3%80%91%E3%82%A8%E3%82%B9%E3%83%86%E3%83%97%E3%83%AD%E3%83%A9%E3%83%9C%20F-%E3%83%96%E3%83%AD%E3%83%83%E3%82%AB%E3%83%BC%20%E3%83%8F%E3%83%BC%E3%83%96%E3%83%86%E3%82%A3%E3%83%BC%203g%C3%9730%E5%8C%85%20Esthe%20Pro%20Labo%20%E3%83%80%E3%82%A4%E3%82%A8%E3%83%83%E3%83%88%20%E3%82%B9%E3%83%83%E3%82%AD%E3%83%AA%20%E5%A4%A9%E7%84%B6%E7%B4%A0%E6%9D%90%20%E3%81%8A%E3%81%84%E3%81%97%E3%81%84%20%E3%82%AA%E3%83%BC%E3%82%AC%E3%83%8B%E3%83%83%E3%82%AF%20%E3%82%B5%E3%83%AD%E3%83%B3%E5%B0%82%E5%A3%B2%E5%93%81%20%E9%80%81%E6%96%99%E7%84%A1%E6%96%99","a_id":5267465,"p_id":1225,"pl_id":27061,"pc_id":1925,"s_n":"yahoo","u_so":3}],"eid":"62iG3","s":"s"});
     </script>
     <div id="msmaflink-62iG3">リンク</div>
+
+    <div class="room-promo">
+        <h3 style="margin-top:0; color: #c63535; font-size:18px; border:none; padding:0;">\ 管理人 Yuriの愛用品コレクション /</h3>
+        <p style="font-size:14px;">栄養士Yuriが厳選した、肌と体にやさしいアイテムを楽天ROOMで公開中。<br>ブログで紹介しきれなかった商品も載せています♪</p>
+        <a href="https://room.rakuten.co.jp/room_e0dd63a90a/items" target="_blank" rel="noopener" class="room-btn">
+            楽天ROOMで見る →
+        </a>
+    </div>
+
     <div style="text-align:center;">
         <a href="index.html" class="back-btn">← トップページへ戻る</a>
     </div>
@@ -326,6 +371,11 @@
   <div id="affiliateNotice">※当サイトはアフィリエイト広告（Amazonアソシエイト含む）を利用しています</div>
 
   <footer>
+    <div style="margin-bottom: 20px;">
+        <a href="https://room.rakuten.co.jp/room_e0dd63a90a/items" target="_blank" rel="noopener" style="color: #777; text-decoration: none; border-bottom: 1px solid #ccc;">
+          🏠 管理人Yuriの楽天ROOM
+        </a>
+    </div>
     © 2025 Essential Beauty Needs
     <a href="privacy-policy.html" style="color: #777; text-decoration: none; margin-left: 15px;">プライバシーポリシー</a>
   </footer>
