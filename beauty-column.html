@@ -36,8 +36,6 @@
       text-align:center;
       padding:80px 20px;
       background-color: #fbeaea;
-      /* 画像がある場合は以下が適用されます。なければグラデーション背景になります */
-      /* background-image:url('images/organic-care.jpg'); */
       background-size:cover;
       background-position:center;
       background-blend-mode:lighten;
@@ -56,7 +54,7 @@
     /* 画像サイズ縮小 */
     .half-size{ width:50%; max-width:100%; display:block; margin:25px auto; box-shadow: 0 4px 15px rgba(0,0,0,0.1); }
 
-    /* 専門家コメント風ボックス（修正後：編集部メモ） */
+    /* 専門家コメント風ボックス */
     .editorial-box {
       background:#fff3f3;
       border-left:5px solid #f7a8a8;
@@ -73,16 +71,6 @@
         gap: 10px;
     }
     .editorial-content { font-size:16px; color:#333; }
-
-    /* Footer & Others */
-    #affiliateNotice {
-      position: fixed; right: 12px; bottom: 12px;
-      background: rgba(255, 255, 255, 0.8);
-      color: #555; font-size: 11px;
-      border-radius: 6px; padding: 4px 8px;
-      box-shadow: 0 2px 6px rgba(0,0,0,0.1);
-      z-index: 999;
-    }
 
     /* Navigation */
     .nav-link {
@@ -124,20 +112,35 @@
       transform:translateY(-3px);
     }
 
-    /* 楽天ROOMリンク用スタイル（画像） */
-    .room-promo-img {
-        display: block;
-        max-width: 100%;
-        width: 600px; /* 画像の最大幅 */
-        height: auto;
-        margin: 50px auto;
-        transition: transform 0.3s ease, box-shadow 0.3s ease;
-        border-radius: 15px; /* 画像の角丸 */
-        box-shadow: 0 4px 10px rgba(0,0,0,0.05);
+    /* 楽天ROOMリンク用スタイル（コード版） */
+    :root {
+        --room-color: #c63535; /* 楽天ROOM用カラー */
     }
-    .room-promo-img:hover {
-        transform: translateY(-3px);
-        box-shadow: 0 8px 20px rgba(198, 53, 53, 0.15);
+    .room-promo {
+        background: #fff;
+        border: 2px dashed var(--room-color);
+        border-radius: 15px;
+        padding: 25px;
+        text-align: center;
+        margin: 50px 0;
+        color: #503535;
+    }
+    .room-btn {
+        display: inline-block;
+        background: var(--room-color);
+        color: #fff;
+        padding: 12px 30px;
+        border-radius: 30px;
+        text-decoration: none;
+        font-weight: bold;
+        margin-top: 15px;
+        box-shadow: 0 4px 10px rgba(198, 53, 53, 0.3);
+        transition: 0.3s;
+    }
+    .room-btn:hover {
+        background: #a82525;
+        transform: translateY(-2px);
+        box-shadow: 0 6px 14px rgba(198, 53, 53, 0.4);
     }
 
     /* フッター（リンク網羅型） */
@@ -177,6 +180,16 @@
         display: inline-block; color: #c63535; font-weight: bold; border: 1px solid #c63535; padding: 8px 20px; border-radius: 20px; text-decoration: none; margin-bottom: 20px; background: #fff; transition: 0.3s;
     }
     .footer-room-link:hover { background: #c63535; color: #fff; }
+
+    /* Footer & Others */
+    #affiliateNotice {
+      position: fixed; right: 12px; bottom: 12px;
+      background: rgba(255, 255, 255, 0.8);
+      color: #555; font-size: 11px;
+      border-radius: 6px; padding: 4px 8px;
+      box-shadow: 0 2px 6px rgba(0,0,0,0.1);
+      z-index: 999;
+    }
 
     @media(max-width:600px){
       header h1{font-size:30px;}
@@ -276,7 +289,7 @@
         c.getElementById(a)||(d=c.createElement(f),d.src=g,
         d.id=a,e=c.getElementsByTagName("body")[0],e.appendChild(d))})
         (window,document,"script","//dn.msmstatic.com/site/cardlink/bundle.js?20220329","msmaflink");
-        msmaflink({"n":"【mirari organic】トリートメントモイスチャークリーム | ミラリ 保湿クリーム 顔 スキンケア クリーム 保湿 うるおい 乾燥肌 敏感肌 ツヤ肌 しっとり ハリ コスメ 化粧品 ギフト プレゼント","b":"","t":"","d":"https:\/\/thumbnail.image.rakuten.co.jp","c_p":"\/@0_mall\/cosmekitchen\/cabinet\/09090634a\/shohin04","p":["\/imgrc0094573450.jpg","\/imgrc0094573447.jpg","\/imgrc0094573448.jpg"],"u":{"u":"https:\/\/item.rakuten.co.jp\/cosmekitchen\/4570073620307\/","t":"rakuten","r_v":""},"v":"2.1","b_l":[{"id":1,"u_tx":"楽天市場で見る","u_bc":"#87c209","u_url":"https:\/\/item.rakuten.co.jp\/cosmekitchen\/4570073620307\/","a_id":5267359,"p_id":54,"pl_id":27059,"pc_id":54,"s_n":"rakuten","u_so":1},{"id":5,"u_tx":"Amazonで見る","u_bc":"#184f5c","u_url":"https:\/\/amzn.to\/4ooBrep","a_id":0,"p_id":0,"pl_id":0,"pc_id":0,"s_n":"custom_10","u_so":2},{"id":4,"u_tx":"Yahoo!ショッピングで見る","u_bc":"#bf0000","u_url":"https:\/\/shopping.yahoo.co.jp\/search?first=1\u0026p=%E3%80%90mirari%20organic%E3%80%91%E3%83%88%E3%83%AA%E3%83%BC%E3%83%88%E3%83%A1%E3%83%B3%E3%83%88%E3%83%A2%E3%82%A4%E3%82%B9%E3%83%81%E3%83%A3%E3%83%BC%E3%82%AF%E3%83%AA%E3%83%BC%E3%83%A0%20%7C%20%E3%83%9F%E3%83%A9%E3%83%AA%20%E4%BF%9D%E6%B9%BF%E3%82%AF%E3%83%AA%E3%83%BC%E3%83%A0%20%E9%A1%94%20%E3%82%B9%E3%82%AD%E3%83%B3%E3%82%B1%E3%82%A2%20%E3%82%AF%E3%83%AA%E3%83%BC%E3%83%A0%20%E4%BF%9D%E6%B9%BF%20%E3%81%86%E3%82%8B%E3%81%8A%E3%81%84%20%E4%B9%BE%E7%87%A5%E8%82%8C%20%E6%95%8F%E6%84%9F%E8%82%8C%20%E3%83%83%E3%83%A4%E8%82%8C%20%E3%81%97%E3%81%A3%E3%81%A8%E3%82%8A%20%E3%83%8F%E3%83%AA%20%E3%82%B3%E3%82%B9%E3%83%A1%20%E5%8C%96%E7%B2%A7%E5%93%81%20%E3%82%AE%E3%83%95%E3%83%88%20%E3%83%97%E3%83%AC%E3%82%BC%E3%83%B3%E3%83%88","a_id":5267465,"p_id":1225,"pl_id":27061,"pc_id":1925,"s_n":"yahoo","u_so":3}],"eid":"XxmrA","s":"s"});
+        msmaflink({"n":"【mirari organic】トリートメントモイスチャークリーム | ミラリ 保湿クリーム 顔 スキンケア クリーム 保湿 うるおい 乾燥肌 敏感肌 ツヤ肌 しっとり ハリ コスメ 化粧品 ギフト プレゼント","b":"","t":"","d":"https:\/\/thumbnail.image.rakuten.co.jp","c_p":"\/@0_mall\/cosmekitchen\/cabinet\/09090634a\/shohin04","p":["\/imgrc0094573450.jpg","\/imgrc0094573447.jpg","\/imgrc0094573448.jpg"],"u":{"u":"https:\/\/item.rakuten.co.jp\/cosmekitchen\/4570073620307\/","t":"rakuten","r_v":""},"v":"2.1","b_l":[{"id":1,"u_tx":"楽天市場で見る","u_bc":"#87c209","u_url":"https:\/\/item.rakuten.co.jp\/cosmekitchen\/4570073620307\/","a_id":5267359,"p_id":54,"pl_id":27059,"pc_id":54,"s_n":"rakuten","u_so":1},{"id":5,"u_tx":"Amazonで見る","u_bc":"#184f5c","u_url":"https:\/\/amzn.to\/4ooBrep","a_id":0,"p_id":0,"pl_id":0,"pc_id":0,"s_n":"custom_10","u_so":2},{"id":4,"u_tx":"Yahoo!ショッピングで見る","u_bc":"#bf0000","u_url":"https:\/\/shopping.yahoo.co.jp\/search?first=1\u0026p=%E3%80%90mirari%20organic%E3%80%91%E3%83%88%E3%83%AA%E3%83%BC%E3%83%88%E3%83%A1%E3%83%B3%E3%83%88%E3%83%A2%E3%82%A4%E3%82%B9%E3%83%81%E3%83%A3%E3%83%BC%E3%82%AF%E3%83%AA%E3%83%BC%E3%83%A0%20%7C%20%E3%83%9F%E3%83%A9%E3%83%AA%20%E4%BF%9D%E6%B9%BF%E3%82%AF%E3%83%AA%E3%83%BC%E3%83%A0%20%E9%A1%94%20%E3%82%B9%E3%82%AD%E3%83%B3%E3%82%B1%E3%82%A2%20%E3%82%AF%E3%83%AA%E3%83%BC%E3%83%A0%20%E4%BF%9D%E6%B9%BF%20%E3%81%86%E3%82%8B%E3%81%8A%E3%81%84%20%E4%B9%BE%E7%87%A5%E8%82%8C%20%E6%95%8F%E6%84%9F%E8%82%8C%20%E3%83%84%E3%83%A4%E8%82%8C%20%E3%81%97%E3%81%A3%E3%81%A8%E3%82%8A%20%E3%83%8F%E3%83%AA%20%E3%82%B3%E3%82%B9%E3%83%A1%20%E5%8C%96%E7%B2%A7%E5%93%81%20%E3%82%AE%E3%83%95%E3%83%88%20%E3%83%97%E3%83%AC%E3%82%BC%E3%83%B3%E3%83%88","a_id":5267465,"p_id":1225,"pl_id":27061,"pc_id":1925,"s_n":"yahoo","u_so":3}],"eid":"XxmrA","s":"s"});
         </script>
         <div id="msmaflink-XxmrA">リンク</div>
       </div>
@@ -351,9 +364,13 @@
     </div>
   </section>
   
-  <a href="https://room.rakuten.co.jp/room_e0dd63a90a/items" target="_blank" rel="noopener" class="room-promo-img-link">
-      <img src="image_313a40.png" alt="管理人Yuriの楽天ROOM愛用品コレクション" class="room-promo-img">
-  </a>
+  <div class="room-promo">
+      <h3 style="margin-top:0; color: #c63535; font-size:18px;">\ 管理人 Yuriの愛用品コレクション /</h3>
+      <p style="font-size:14px;">栄養士Yuriが厳選した、肌と体にやさしいアイテムを楽天ROOMで公開中。<br>ブログで紹介しきれなかった商品も載せています♪</p>
+      <a href="https://room.rakuten.co.jp/room_e0dd63a90a/items" target="_blank" rel="noopener" class="room-btn">
+          楽天ROOMで見る →
+      </a>
+  </div>
 
   <div style="text-align:center; margin:50px 0;">
     <p style="font-size:1.1em; color:#555; margin-bottom:10px;">さらにおすすめの記事はこちら：</p>
