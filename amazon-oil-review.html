@@ -3,9 +3,27 @@
 <head>
     <meta charset="utf-8">
     <script>
-        // GA4読み込みと画像エラー処理の関数は既存ファイルから継承（省略）
-        function isInternalUser() { /* ... */ }
-        if (!isInternalUser()) { /* ... */ }
+        // internal_user クッキーが設定されているか確認
+        function isInternalUser() {
+            return document.cookie.split(';').some(c => c.trim().startsWith('internal_user=true'));
+        }
+
+        // internal_user クッキーがない場合だけ、GA4を読み込む
+        if (!isInternalUser()) {
+            var gaScript = document.createElement('script');
+            gaScript.async = true;
+            // GA4 ID: G-2HGEPHVZYY
+            gaScript.src = "https://www.googletagmanager.com/gtag/js?id=G-2HGEPHVZYY";
+            document.head.appendChild(gaScript);
+
+            window.dataLayer = window.dataLayer || [];
+            function gtag(){dataLayer.push(arguments);}
+            gtag('js', new Date());
+            gtag('config', 'G-2HGEPHVZYY');
+        } else {
+            console.log('✅ Internal traffic excluded.');
+        }
+
         function handleImageError(imgElement, width, height, text) { 
              imgElement.onerror = null; 
              imgElement.src = `https://placehold.co/${width}x${height}/f7a8a8/ffffff?text=${encodeURIComponent(text)}`;
@@ -27,6 +45,7 @@
             --accent: #f7a8a8;
             --accent-hover: #f48b8b;
             --text-main: #503535;
+            --room-color: #c63535; /* 楽天ROOM用カラー */
         }
         * { box-sizing: border-box; margin: 0; padding: 0; }
         body { font-family: 'Quicksand', sans-serif; background: var(--bg); color: #333; line-height: 1.8; }
@@ -129,7 +148,7 @@
             z-index: 999;
         }
 
- /* Common Buttons */
+    /* Common Buttons */
     .btn-main {
       display:inline-block;
       padding:14px 32px;
@@ -148,8 +167,8 @@
 
     /* Navigation */
      .nav-links{display:flex;gap:12px;justify-content:center;margin-top:12px;flex-wrap:wrap;}
-.nav-links a{background:rgba(255,255,255,0.8);padding:8px 12px;border-radius:8px;text-decoration:none;color:#503535;font-weight:600;}
-.nav-links a:hover{background:var(--accent);color:#fff;}
+    .nav-links a{background:rgba(255,255,255,0.8);padding:8px 12px;border-radius:8px;text-decoration:none;color:#503535;font-weight:600;}
+    .nav-links a:hover{background:var(--accent);color:#fff;}
 
         
     .nav-link {
@@ -174,24 +193,123 @@
     flex-basis: 100%;
     height: 0; /* 高さは不要 */
     margin: 10px 0; /* 上下に少しスペースを開ける */
-}
-/* ユーザーレビューのスタイル */
-.user-review {
-    background: #fdf5f5; /* 背景色を少し変える */
-    border-left: 5px solid var(--accent); /* アクセントカラーの縦線 */
-    padding: 15px 20px;
-    margin: 20px 0;
-    border-radius: 8px;
-    font-size: 15px;
-}
-.reviewer-info {
-    font-weight: bold;
-    color: var(--text-main);
-    margin-bottom: 5px;
-    display: block;
-    border-bottom: 1px dashed #f0e0e0;
-    padding-bottom: 5px;
-}
+    }
+    /* ユーザーレビューのスタイル */
+    .user-review {
+        background: #fdf5f5; /* 背景色を少し変える */
+        border-left: 5px solid var(--accent); /* アクセントカラーの縦線 */
+        padding: 15px 20px;
+        margin: 20px 0;
+        border-radius: 8px;
+        font-size: 15px;
+    }
+    .reviewer-info {
+        font-weight: bold;
+        color: var(--text-main);
+        margin-bottom: 5px;
+        display: block;
+        border-bottom: 1px dashed #f0e0e0;
+        padding-bottom: 5px;
+    }
+
+    /* 楽天ROOM画像リンク用スタイル */
+    .room-promo-img {
+        display: block;
+        max-width: 100%;
+        width: 600px; /* 画像の最大幅 */
+        height: auto;
+        margin: 50px auto;
+        transition: transform 0.3s ease, box-shadow 0.3s ease;
+        border-radius: 15px; /* 画像の角丸 */
+        box-shadow: 0 4px 10px rgba(0,0,0,0.05);
+    }
+    .room-promo-img:hover {
+        transform: translateY(-3px);
+        box-shadow: 0 8px 20px rgba(198, 53, 53, 0.15);
+    }
+
+    /* ▼▼▼ 新しいフッター用のCSS ▼▼▼ */
+    footer {
+        background: #fffaf4; /* 優しいベージュ背景 */
+        border-top: 3px solid #f7a8a8; /* サイトのアクセントカラー */
+        padding: 50px 20px 60px; /* 下に60pxの余白を作り、右下の通知と重ならないように調整 */
+        margin-top: 60px;
+        color: #555;
+        font-size: 14px;
+    }
+
+    .footer-container {
+        max-width: 960px;
+        margin: 0 auto;
+        display: flex;
+        flex-wrap: wrap;
+        justify-content: space-between;
+        gap: 30px;
+        text-align: left;
+    }
+
+    /* スマホでは1列、PCでは3列にする設定 */
+    .footer-col {
+        flex: 1;
+        min-width: 200px; /* 幅が狭くなったら折り返す */
+    }
+
+    .footer-col h3 {
+        font-size: 16px;
+        color: #d6336c;
+        border-bottom: 1px dashed #f4b5b5;
+        padding-bottom: 8px;
+        margin-bottom: 15px;
+        font-weight: bold;
+    }
+
+    .footer-col a {
+        display: block;
+        color: #666;
+        text-decoration: none;
+        margin-bottom: 10px;
+        transition: 0.3s;
+        position: relative;
+        padding-left: 10px; /* アイコン用のスペース */
+    }
+
+    .footer-col a::before {
+        content: "・";
+        position: absolute;
+        left: 0;
+        color: #f7a8a8;
+    }
+
+    .footer-col a:hover {
+        color: #d6336c;
+        padding-left: 15px; /* ホバー時に少し右へ動くアニメーション */
+    }
+
+    /* フッター最下部（Roomリンクやコピーライト） */
+    .footer-bottom {
+        text-align: center;
+        margin-top: 50px;
+        padding-top: 30px;
+        border-top: 1px solid #eee;
+    }
+
+    /* 楽天ROOMリンクの強調 */
+    .footer-room-link {
+        display: inline-block;
+        color: #c63535;
+        font-weight: bold;
+        border: 1px solid #c63535;
+        padding: 8px 20px;
+        border-radius: 20px;
+        text-decoration: none;
+        margin-bottom: 20px;
+        background: #fff;
+        transition: 0.3s;
+    }
+    .footer-room-link:hover {
+        background: #c63535;
+        color: #fff;
+    }
         
     </style>
 </head>
@@ -246,7 +364,7 @@
                     <li><strong>【安定性】</strong> 酸化しにくく、長期間品質が安定。朝晩、全身に使える万能オイル。</li>
                     <li><strong>【用途】</strong> 洗顔後のブースター、マッサージ、ヘアケア、クレンジングなど多用途に使用可能。敏感肌にも◎。</li>
                 </ul>
-               <div style="background:#f0f8ff; padding:15px; border-radius:8px; margin-top:15px; border:1px solid #dcdcdc;">
+                <div style="background:#f0f8ff; padding:15px; border-radius:8px; margin-top:15px; border:1px solid #dcdcdc;">
     <p style="font-weight:bold; color:#2c3e50; margin-bottom:5px;">💡 編集部のおすすめポイント</p>
     <p style="font-size:14px; margin:0;">
         「オイルはベタつく」という常識を覆すサラサラ感です。<br>
@@ -254,8 +372,7 @@
     </p>
 </div>
             </div>
-           <!-- START MoshimoAffiliateEasyLink -->
-<script type="text/javascript">
+           <script type="text/javascript">
 (function(b,c,f,g,a,d,e){b.MoshimoAffiliateObject=a;
 b[a]=b[a]||function(){arguments.currentScript=c.currentScript
 ||c.scripts[c.scripts.length-2];(b[a].q=b[a].q||[]).push(arguments)};
@@ -265,8 +382,7 @@ d.id=a,e=c.getElementsByTagName("body")[0],e.appendChild(d))})
 msmaflink({"n":"ゴールデンホホバオイル 300ml ホホバオイル 未精製 キャリアオイル マッサージオイル ボディオイル 業務用 ホホバ ゴールデン 頭皮 クレンジング 肌 未精製ホホバ マッサージ オイル 妊娠線 顔 オイル 無添加 ポンプ付き 送料無料 ポンプボトル","b":"","t":"","d":"https:\/\/thumbnail.image.rakuten.co.jp","c_p":"\/@0_mall\/virginbeautyshop\/cabinet","p":["\/04226192\/sn\/10251920\/ta-jjb-300.jpg","\/04226192\/sn\/10251920\/ta-jjb-300_sq_01.jpg","\/img-up_1_568\/900_k1_154057_43.jpg"],"u":{"u":"https:\/\/item.rakuten.co.jp\/virginbeautyshop\/ta-jjb-300\/","t":"rakuten","r_v":""},"v":"2.1","b_l":[{"id":1,"u_tx":"楽天市場で見る","u_bc":"#87c209","u_url":"https:\/\/item.rakuten.co.jp\/virginbeautyshop\/ta-jjb-300\/","a_id":5267359,"p_id":54,"pl_id":27059,"pc_id":54,"s_n":"rakuten","u_so":1},{"id":5,"u_tx":"Amazonで見る","u_bc":"#184f5c","u_url":"https:\/\/amzn.to\/4ouO0EY","a_id":0,"p_id":0,"pl_id":0,"pc_id":0,"s_n":"custom_10","u_so":2},{"id":4,"u_tx":"Yahoo!ショッピングで見る","u_bc":"#bf0000","u_url":"https:\/\/shopping.yahoo.co.jp\/search?first=1\u0026p=%E3%82%B4%E3%83%BC%E3%83%AB%E3%83%87%E3%83%B3%E3%83%9B%E3%83%9B%E3%83%90%E3%82%AA%E3%82%A4%E3%83%AB%20300ml%20%E3%83%9B%E3%83%9B%E3%83%90%E3%82%AA%E3%82%A4%E3%83%AB%20%E6%9C%AA%E7%B2%BE%E8%A3%BD%20%E3%82%AD%E3%83%A3%E3%83%AA%E3%82%A2%E3%82%AA%E3%82%A4%E3%83%AB%20%E3%83%9E%E3%83%83%E3%82%B5%E3%83%BC%E3%82%B8%E3%82%AA%E3%82%A4%E3%83%AB%20%E3%83%9C%E3%83%87%E3%82%A3%E3%82%AA%E3%82%A4%E3%83%AB%20%E6%A5%AD%E5%8B%99%E7%94%A8%20%E3%83%9B%E3%83%9B%E3%83%90%20%E3%82%B4%E3%83%BC%E3%83%AB%E3%83%87%E3%83%B3%20%E9%A0%AD%E7%9A%AE%20%E3%82%AF%E3%83%AC%E3%83%B3%E3%82%B8%E3%83%B3%E3%82%B0%20%E8%82%8C%20%E6%9C%AA%E7%B2%BE%E8%A3%BD%E3%83%9B%E3%83%9B%E3%83%90%20%E3%83%9E%E3%83%83%E3%82%B5%E3%83%BC%E3%82%B8%20%E3%82%AA%E3%82%A4%E3%83%AB%20%E5%A6%8A%E5%A8%A0%E7%B7%9A%20%E9%A1%94%20%E3%82%AA%E3%82%A4%E3%83%AB%20%E7%84%A1%E6%B7%BB%E5%8A%A0%20%E3%83%9D%E3%83%B3%E3%83%97%E4%BB%98%E3%81%8D%20%E9%80%81%E6%96%99%E7%84%A1%E6%96%99%20%E3%83%9D%E3%83%B3%E3%83%97%E3%83%9C%E3%83%88%E3%83%AB","a_id":5267465,"p_id":1225,"pl_id":27061,"pc_id":1925,"s_n":"yahoo","u_so":3}],"eid":"mrADW","s":"s"});
 </script>
 <div id="msmaflink-mrADW">リンク</div>
-<!-- MoshimoAffiliateEasyLink END -->
-        </div>
+</div>
     </section>
 
     <section class="article-section">
@@ -281,7 +397,7 @@ msmaflink({"n":"ゴールデンホホバオイル 300ml ホホバオイル 未�
                     <li><strong>【抗酸化力】</strong> 天然の<strong>ビタミンE（トコフェロール）</strong>がオリーブオイルの数倍含まれており、強力な<strong>抗酸化作用</strong>を発揮。</li>
                     <li><strong>【用途】</strong> ハリ不足、乾燥による小じわ、肌のくすみが気になる<strong>エイジングサイン</strong>への集中ケアに最適。</li>
                 </ul>
-               <div style="background:#fffaf0; padding:15px; border-radius:8px; margin-top:15px; border:1px solid #f0e68c;">
+                <div style="background:#fffaf0; padding:15px; border-radius:8px; margin-top:15px; border:1px solid #f0e68c;">
     <p style="font-weight:bold; color:#8b4513; margin-bottom:5px;">💡 編集部のおすすめポイント</p>
     <p style="font-size:14px; margin:0;">
         こっくりとした濃厚なテクスチャーですが、肌に乗せると驚くほど伸びが良いです。<br>
@@ -289,7 +405,6 @@ msmaflink({"n":"ゴールデンホホバオイル 300ml ホホバオイル 未�
     </p>
 </div>
             </div>
-<!-- START MoshimoAffiliateEasyLink -->
 <script type="text/javascript">
 (function(b,c,f,g,a,d,e){b.MoshimoAffiliateObject=a;
 b[a]=b[a]||function(){arguments.currentScript=c.currentScript
@@ -300,9 +415,7 @@ d.id=a,e=c.getElementsByTagName("body")[0],e.appendChild(d))})
 msmaflink({"n":"アルガンオイル 100ml アルガン 100% マッサージオイル オーガニック 植物性 キャリアオイル スキンケアオイル 化学添加物不使用 無添加 保湿 顔 ボディ 全身使用可 年齢肌 肌荒れ 乾燥肌 保湿化粧品","b":"","t":"","d":"https:\/\/thumbnail.image.rakuten.co.jp","c_p":"\/@0_mall\/be-garden\/cabinet\/item\/argan","p":["\/250428_argan_top.jpg","\/250428_argan_thum1.jpg","\/250428_argan_thum8.jpg"],"u":{"u":"https:\/\/item.rakuten.co.jp\/be-garden\/argan100\/","t":"rakuten","r_v":""},"v":"2.1","b_l":[{"id":1,"u_tx":"楽天市場で見る","u_bc":"#87c209","u_url":"https:\/\/item.rakuten.co.jp\/be-garden\/argan100\/","a_id":5267359,"p_id":54,"pl_id":27059,"pc_id":54,"s_n":"rakuten","u_so":1},{"id":5,"u_tx":"Amazonで見る","u_bc":"#184f5c","u_url":"https:\/\/amzn.to\/3Yb45EV","a_id":0,"p_id":0,"pl_id":0,"pc_id":0,"s_n":"custom_10","u_so":2},{"id":4,"u_tx":"Yahoo!ショッピングで見る","u_bc":"#bf0000","u_url":"https:\/\/shopping.yahoo.co.jp\/search?first=1\u0026p=%E3%82%A2%E3%83%AB%E3%82%AC%E3%83%B3%E3%82%AA%E3%82%A4%E3%83%AB%20100ml%20%E3%82%A2%E3%83%AB%E3%82%AC%E3%83%B3%20100%25%20%E3%83%9E%E3%83%83%E3%82%B5%E3%83%BC%E3%82%B8%E3%82%AA%E3%82%A4%E3%83%AB%20%E3%82%AA%E3%83%BC%E3%82%AC%E3%83%8B%E3%83%83%E3%82%AF%20%E6%A4%8D%E7%89%A9%E6%80%A7%20%E3%82%AD%E3%83%A3%E3%83%AA%E3%82%A2%E3%82%AA%E3%82%A4%E3%83%AB%20%E3%82%B9%E3%82%AD%E3%83%B3%E3%82%B1%E3%82%A2%E3%82%AA%E3%82%A4%E3%83%AB%20%E5%8C%96%E5%AD%A6%E6%B7%BB%E5%8A%A0%E7%89%A9%E4%B8%8D%E4%BD%BF%E7%94%A8%20%E7%84%A1%E6%B7%BB%E5%8A%A0%20%E4%BF%9D%E6%B9%BF%20%E9%A1%94%20%E3%83%9C%E3%83%87%E3%82%A3%20%E5%85%A8%E8%BA%AB%E4%BD%BF%E7%94%A8%E5%8F%AF%20%E5%B9%B4%E9%BD%A2%E8%82%8C%20%E8%82%8C%E8%8D%92%E3%82%8C%20%E4%B9%BE%E7%87%A5%E8%82%8C%20%E4%BF%9D%E6%B9%BF%E5%8C%96%E7%B2%A7%E5%93%81","a_id":5267465,"p_id":1225,"pl_id":27061,"pc_id":1925,"s_n":"yahoo","u_so":3}],"eid":"CpydR","s":"s"});
 </script>
 <div id="msmaflink-CpydR">リンク</div>
-<!-- MoshimoAffiliateEasyLink END -->
-        
-        </div>
+</div>
     </section>
 
     <section class="article-section">
@@ -326,8 +439,7 @@ msmaflink({"n":"アルガンオイル 100ml アルガン 100% マッサージオ
     </p>
 </div>
             </div>
-           <!-- START MoshimoAffiliateEasyLink -->
-<script type="text/javascript">
+           <script type="text/javascript">
 (function(b,c,f,g,a,d,e){b.MoshimoAffiliateObject=a;
 b[a]=b[a]||function(){arguments.currentScript=c.currentScript
 ||c.scripts[c.scripts.length-2];(b[a].q=b[a].q||[]).push(arguments)};
@@ -337,8 +449,7 @@ d.id=a,e=c.getElementsByTagName("body")[0],e.appendChild(d))})
 msmaflink({"n":"プラナロム ローズヒップ オイル 油 50ml 12551 キャリアオイル 化粧油 植物油 精油を希釈するためのオイル 天然 自然 オーガニック アロマ PRANAROM 健草医学舎","b":"","t":"","d":"https:\/\/thumbnail.image.rakuten.co.jp","c_p":"\/@0_mall\/etoile-life\/cabinet\/aroma","p":["\/12551.jpg","\/syokai-kounyu6.jpg"],"u":{"u":"https:\/\/item.rakuten.co.jp\/etoile-life\/ar-prm-12551\/","t":"rakuten","r_v":""},"v":"2.1","b_l":[{"id":1,"u_tx":"楽天市場で見る","u_bc":"#87c209","u_url":"https:\/\/item.rakuten.co.jp\/etoile-life\/ar-prm-12551\/","a_id":5267359,"p_id":54,"pl_id":27059,"pc_id":54,"s_n":"rakuten","u_so":1},{"id":5,"u_tx":"Amazonで見る","u_bc":"#184f5c","u_url":"https:\/\/amzn.to\/3MBq8Cc","a_id":0,"p_id":0,"pl_id":0,"pc_id":0,"s_n":"custom_10","u_so":2},{"id":4,"u_tx":"Yahoo!ショッピングで見る","u_bc":"#bf0000","u_url":"https:\/\/shopping.yahoo.co.jp\/search?first=1\u0026p=%E3%83%97%E3%83%A9%E3%83%8A%E3%83%AD%E3%83%A0%20%E3%83%AD%E3%83%BC%E3%82%BA%E3%83%92%E3%83%83%E3%83%97%20%E3%82%AA%E3%82%A4%E3%83%AB%20%E6%B2%B9%2050ml%2012551%20%E3%82%AD%E3%83%A3%E3%83%AA%E3%82%A2%E3%82%AA%E3%82%A4%E3%83%AB%20%E5%8C%96%E7%B2%A7%E6%B2%B9%20%E6%A4%8D%E7%89%A9%E6%B2%B9%20%E7%B2%BE%E6%B2%B9%E3%82%92%E5%B8%8C%E9%87%88%E3%81%99%E3%82%8B%E3%81%9F%E3%82%81%E3%81%AE%E3%82%AA%E3%82%A4%E3%83%AB%20%E5%A4%A9%E7%84%B6%20%E8%87%AA%E7%84%B6%20%E3%82%AA%E3%83%BC%E3%82%AC%E3%83%8B%E3%83%83%E3%82%AF%20%E3%82%A2%E3%83%AD%E3%83%9E%20PRANAROM%20%E5%81%A5%E8%8D%89%E5%8C%BB%E5%AD%A6%E8%88%8E","a_id":5267465,"p_id":1225,"pl_id":27061,"pc_id":1925,"s_n":"yahoo","u_so":3}],"eid":"Pu2Np","s":"s"});
 </script>
 <div id="msmaflink-Pu2Np">リンク</div>
-<!-- MoshimoAffiliateEasyLink END -->
-        </div>
+</div>
     </section>
 
     <section class="article-section">
@@ -378,7 +489,6 @@ msmaflink({"n":"プラナロム ローズヒップ オイル 油 50ml 12551 キ�
             </tbody>
         </table>
     </section>
-<!-- START MoshimoAffiliateEasyLink -->
 <script type="text/javascript">
 (function(b,c,f,g,a,d,e){b.MoshimoAffiliateObject=a;
 b[a]=b[a]||function(){arguments.currentScript=c.currentScript
@@ -389,9 +499,7 @@ d.id=a,e=c.getElementsByTagName("body")[0],e.appendChild(d))})
 msmaflink({"n":"椿油 つばき油 ツバキ油 リマナチュラルオーガニック 精製椿油 精製ヘア＆スキンオイル 50ml 送料無料","b":"","t":"","d":"https:\/\/thumbnail.image.rakuten.co.jp","c_p":"","p":["\/@0_mall\/megahealth\/cabinet\/haircare1\/limana-seituba.jpg"],"u":{"u":"https:\/\/item.rakuten.co.jp\/megahealth\/limana-seituba\/","t":"rakuten","r_v":""},"v":"2.1","b_l":[{"id":1,"u_tx":"楽天市場で見る","u_bc":"#87c209","u_url":"https:\/\/item.rakuten.co.jp\/megahealth\/limana-seituba\/","a_id":5267359,"p_id":54,"pl_id":27059,"pc_id":54,"s_n":"rakuten","u_so":1},{"id":5,"u_tx":"Amazonで見る","u_bc":"#184f5c","u_url":"https:\/\/amzn.to\/3Y3vad9","a_id":0,"p_id":0,"pl_id":0,"pc_id":0,"s_n":"custom_10","u_so":2},{"id":4,"u_tx":"Yahoo!ショッピングで見る","u_bc":"#bf0000","u_url":"https:\/\/shopping.yahoo.co.jp\/search?first=1\u0026p=%E6%A4%BF%E6%B2%B9%20%E3%81%A4%E3%81%B0%E3%81%8D%E6%B2%B9%20%E3%83%84%E3%83%90%E3%82%AD%E6%B2%B9%20%E3%83%AA%E3%83%9E%E3%83%8A%E3%83%81%E3%83%A5%E3%83%A9%E3%83%AB%E3%82%AA%E3%83%BC%E3%82%AC%E3%83%8B%E3%83%83%E3%82%AF%20%E7%B2%BE%E8%A3%BD%E6%A4%BF%E6%B2%B9%20%E7%B2%BE%E8%A3%BD%E3%83%98%E3%82%A2%EF%BC%86%E3%82%B9%E3%82%AD%E3%83%B3%E3%82%AA%E3%82%A4%E3%83%AB%2050ml%20%E9%80%81%E6%96%99%E7%84%A1%E6%96%99","a_id":5267465,"p_id":1225,"pl_id":27061,"pc_id":1925,"s_n":"yahoo","u_so":3}],"eid":"SZQWI","s":"s"});
 </script>
 <div id="msmaflink-SZQWI">リンク</div>
-<!-- MoshimoAffiliateEasyLink END -->
-  
-    <div style="text-align:center; margin:60px 0; background:#fff4f4; padding:40px; border-radius:20px;">
+<div style="text-align:center; margin:60px 0; background:#fff4f4; padding:40px; border-radius:20px;">
         <h3 style="margin-bottom:20px; color:var(--text-main);">今日から始める、本気のインナー＆アウターケア</h3>
         <p style="margin-bottom:30px;">
             オーガニックオイルでのケアは、肌を「育てる」ための第一歩です。<br>
@@ -423,6 +531,10 @@ msmaflink({"n":"椿油 つばき油 ツバキ油 リマナチュラルオーガ�
 
     </div>
     
+    <a href="https://room.rakuten.co.jp/room_e0dd63a90a/items" target="_blank" rel="noopener" class="room-promo-img-link">
+        <img src="image_313a40.png" alt="管理人Yuriの楽天ROOM愛用品コレクション" class="room-promo-img">
+    </a>
+
     <div class="nav-links" style="text-align:center; margin: 40px 0;">
         <a href="#" style="color:var(--muted); text-decoration:none;">⬆ ページトップへ</a>
         <div class="nav-break"></div>
@@ -432,9 +544,46 @@ msmaflink({"n":"椿油 つばき油 ツバキ油 リマナチュラルオーガ�
 
 </main>
 
-<footer style="text-align:center; padding:40px 0; background:#fff; font-size:13px; color:#888; border-top:1px solid #eee;">
-    © 2025 Essential Beauty Needs
-    <a href="privacy-policy.html" style="color: #777; text-decoration: none; margin-left: 15px;">プライバシーポリシー</a>
+<footer>
+  <div class="footer-container">
+    
+    <div class="footer-col">
+      <h3>🌸 スキンケア・悩み別</h3>
+      <a href="skin-ranking.html">おすすめスキンケアランキング</a>
+      <a href="seasons-skin.html">季節別スキンケア（春夏秋冬）</a>
+      <a href="age-skincare.html">40代・50代 年齢別ケア</a>
+      <a href="acne-care.html">肌荒れ・敏感肌・ニキビケア</a>
+      <a href="lifestyle-skincare.html">生活リズム別（時短・夜型など）</a>
+    </div>
+
+    <div class="footer-col">
+      <h3>🛁 ボディ・ヘア・インナー</h3>
+      <a href="hair-care.html">ヘアケア・頭皮ケア特集</a>
+      <a href="diet-beauty.html">インナービューティー＆ダイエット</a>
+      <a href="amazon-oil-review.html">本当に効く！オイルレビュー</a>
+      <a href="organic-science.html">オーガニック成分の科学</a>
+    </div>
+
+    <div class="footer-col">
+      <h3>🎁 特集・コラム・その他</h3>
+      <a href="gift-selection.html">心をつなぐオーガニックギフト</a>
+      <a href="trial-sets.html">失敗しない！お試しセット比較</a>
+      <a href="winter-selection.html">冬のベストセレクション</a>
+      <a href="beauty-column.html">ビューティーコラム一覧</a>
+      <a href="about.html">当サイトについて (About)</a>
+    </div>
+
+  </div>
+  
+  <div class="footer-bottom">
+     <a href="https://room.rakuten.co.jp/room_e0dd63a90a/items" target="_blank" rel="noopener" class="footer-room-link">
+        🏠 管理人Yuriの楽天ROOMを見る
+     </a>
+     <br>
+     
+     © 2025 Essential Beauty Needs<br><br>
+     <a href="privacy-policy.html" style="color:#888; text-decoration:none; font-size:12px;">プライバシーポリシー</a>
+  </div>
 </footer>
 
 <div id="affiliateNotice">※当サイトはアフィリエイト広告（Amazonアソシエイト含む）を利用しています</div>
