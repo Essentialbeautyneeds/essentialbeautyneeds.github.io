@@ -256,6 +256,52 @@
     @media(max-width: 600px) {
         .trial-header { flex-direction: column; align-items: flex-start; }
     }
+    /* ▼ 追加：リボン（バッジ）のデザイン */
+    .ribbon {
+        position: absolute;
+        top: 0;
+        left: 0;
+        padding: 6px 15px;
+        color: #fff;
+        font-weight: bold;
+        font-size: 13px;
+        border-bottom-right-radius: 10px;
+        z-index: 10;
+        box-shadow: 2px 2px 5px rgba(0,0,0,0.2);
+    }
+    .ribbon.gold { background: linear-gradient(135deg, #ffd700, #ffb900); color: #503535; }
+    .ribbon.pink { background: linear-gradient(135deg, #ff9a9e, #fe6b8b); }
+    .ribbon.blue { background: linear-gradient(135deg, #89f7fe, #66a6ff); }
+
+    /* ▼ 追加：Yuriのひとこと（吹き出し） */
+    .yuri-voice {
+        background: #fdf5e6;
+        border: 2px solid #fcebb6;
+        border-radius: 10px;
+        padding: 15px;
+        margin: 20px 0;
+        position: relative;
+        font-size: 14px;
+        color: #6b5b45;
+    }
+    .yuri-voice::before {
+        content: "👩‍⚕️ Yuri's Point";
+        display: block;
+        font-weight: bold;
+        color: #d68e33;
+        margin-bottom: 5px;
+        font-size: 12px;
+    }
+    .yuri-voice::after {
+        content: "";
+        position: absolute;
+        top: -10px;
+        left: 30px;
+        border-width: 0 10px 10px 10px;
+        border-style: solid;
+        border-color: transparent transparent #fcebb6 transparent;
+    }
+    
   </style>
 </head>
 <body>
@@ -295,8 +341,10 @@
   </div>
 
   <div class="trial-card">
+    <div class="ribbon gold">🏆 管理人のイチオシ</div>
+    
     <div class="trial-header">
-        <h3 class="brand-name">Itoguchi (イトグチ) シルク仕込みスキンケア トライアル セット</h3>
+        <h3 class="brand-name">Itoguchi (イトグチ) シルク仕込みスキンケア</h3>
         <span class="tag">乾燥肌・敏感肌</span>
     </div>
     <div class="trial-body">
@@ -305,9 +353,14 @@
         <ul class="check-points">
             <li>シルクの力だけでUVカットできるクリーム。</li>
             <li>つけたまま眠れるほど肌に優しい。</li>
-            <li>成分の100%が天然由来！世界基準の「コスモスナチュラル認証」取得コスメをライン。</li>
+            <li>成分の100%が天然由来！世界基準の「コスモスナチュラル認証」取得。</li>
         </ul>
 
+        <div class="yuri-voice">
+            「塗る日焼け止め」として使えるクリームが衝撃的！<br>
+            うっかり寝落ちしても肌が荒れないので、忙しい日の救世主です。シルクの保湿力は乾燥肌の私でも大満足でした✨
+        </div>
+      
        <!-- START MoshimoAffiliateEasyLink -->
 <script type="text/javascript">
 (function(b,c,f,g,a,d,e){b.MoshimoAffiliateObject=a;
@@ -324,20 +377,24 @@ msmaflink({"n":"Itoguchi (イトグチ) シルク仕込みスキンケア トラ
     </div>
   </div>
 
-  <div class="trial-card">
+ <div class="trial-card">
+    <div class="ribbon blue">💎 コスパ最強</div>
+
     <div class="trial-header">
-        <h3 class="brand-name">セレクトビューティー セレクトオーガニックスパ LBS　お試しセット </h3>
+        <h3 class="brand-name">セレクトオーガニックスパ LBS</h3>
         <span class="tag">弾力肌・保湿</span>
     </div>
     <div class="trial-body">
-        <p><strong>こんな人におすすめ：</strong> 刺激に変化を感じやすい敏感肌の方。</p>
-        
         <ul class="check-points">
              <li>肌本来の力をサポートし、若々しいハリに満ちた弾力肌へ。</li>
              <li>善玉菌をたっぷり補い、しっかりとした保湿力で肌を守る。</li>
              <li>敏感肌の方でも安心してお使いいただけるお肌にやさしいスキンケア。</li>
-           
         </ul>
+
+        <div class="yuri-voice">
+            「美肌菌」を育てるという発想が好きです。<br>
+            季節の変わり目で肌がゆらぎやすい時に使うと、肌の土台が整う感じがします🌿
+        </div>
 
         <!-- START MoshimoAffiliateEasyLink -->
 <script type="text/javascript">
@@ -355,19 +412,17 @@ msmaflink({"n":"【送料無料】セレクトビューティー セレクトオ
     </div>
   </div>
 
-  <div class="trial-card" style="border-top: 5px solid #ff79b0;">
+  <div class="trial-card" style="border-top: none;"> <div class="ribbon pink">🌹 エイジングケアなら</div>
+
     <div class="trial-header" style="background:#fff0f6;">
         <h3 class="brand-name">PLUEST (プルエスト)</h3>
         <span class="tag" style="background:#ffe6f0; color:#d6336c;">エイジングケア・高保湿</span>
     </div>
     <div class="trial-body">
-        <p><strong>こんな人におすすめ：</strong> 年齢サインが気になり始めた方、旅先でも本格的なスキンケアをしたい方。</p>
-        
-        <ul class="check-points">
-            <li>皮膚科学から生まれた、大人の肌に潤いを与えるエイジングケアセット。</li>
-            <li>化粧水・美容液・クリームの3ステップで、乾燥知らずの肌へ。</li>
-            <li>アルコールや合成着色料不使用の無添加処方で、敏感な肌にも安心。</li>
-        </ul>
+        <div class="yuri-voice">
+            とろみがあるのにスッと入る使用感が絶妙！<br>
+            旅行先でも本格的なケアができるので、お泊まり用としても重宝しています👜
+        </div>
 
         <script type="text/javascript">
         (function(b,c,f,g,a,d,e){b.MoshimoAffiliateObject=a;
