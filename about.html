@@ -71,21 +71,23 @@
       box-shadow: 0 10px 25px rgba(0,0,0,0.05); /* ふんわりした影 */
     }
 
-    /* 画像の設定 */
+    /* 画像の設定（追加部分） */
     .profile-image-container {
       text-align: center;
-      margin-top: -80px; /* 画像を枠の外に出す演出 */
-      margin-bottom: 20px;
+      margin-top: -80px; /* 画像をカードの外（上）にはみ出させる */
+      margin-bottom: 30px;
+      position: relative;
+      z-index: 10;
     }
     
     .profile-image {
-      width: 140px;
+      width: 140px; /* 大きすぎず、ちょうどよいサイズ */
       height: 140px;
-      border-radius: 50%;
+      border-radius: 50%; /* 完全な円形 */
       object-fit: cover;
-      border: 5px solid #ffffff; /* 画像の周りに白いフチをつける */
-      box-shadow: 0 4px 10px rgba(0,0,0,0.1);
-      background: #fff; /* 画像読み込み前の背景 */
+      border: 5px solid #ffffff; /* 画像の周りに白い太いフチをつける */
+      box-shadow: 0 4px 10px rgba(0,0,0,0.1); /* 画像自体にも影をつける */
+      background: #fff;
     }
 
     /* テキストの調整 */
@@ -147,7 +149,11 @@
 
   <main>
     <div class="profile-card">
- 
+
+      <div class="profile-image-container">
+          <img src="images/Yuri.jpg" alt="管理人の顔写真" class="profile-image" onerror="handleImageError(this, 140, 140, 'Yuri')">
+      </div>
+
       <p>はじめまして、管理人の<strong>Yuri</strong>です。</p>
       
       <p>かつての私は、肌トラブルを隠すためにメイクを重ね、高価な化粧品を買い漁る日々を送っていました。<br>
