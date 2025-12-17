@@ -138,8 +138,9 @@
     .rank-item {
       position: relative;
       background: #fff;
-      padding-top: 20px; 
+      padding: 30px 20px 20px; 
       border-radius: 10px; 
+      box-shadow: 0 4px 15px rgba(0,0,0,0.03);
     }
 
     /* 順位バッジ */
@@ -163,6 +164,36 @@
     }
     .badge.rank2 { background: linear-gradient(45deg, #C0C0C0, #E0E0E0); color: #555; }
     .badge.rank3 { background: linear-gradient(45deg, #CD7F32, #E8A668); }
+
+    /* ★追加：商品説明エリア★ */
+    .item-desc {
+        background: #fff9f9;
+        border-left: 5px solid #f48b8b;
+        padding: 15px;
+        margin: 20px 0;
+        border-radius: 5px;
+        text-align: left;
+    }
+    .item-desc h4 {
+        margin: 0 0 10px 0;
+        color: #d6336c;
+        font-size: 16px;
+        display: flex;
+        align-items: center;
+    }
+    .item-desc h4::before {
+        content: "👩‍⚕️";
+        margin-right: 5px;
+    }
+    .point-list {
+        margin: 0;
+        padding-left: 20px;
+        font-size: 14px;
+        color: #555;
+    }
+    .point-list li {
+        margin-bottom: 5px;
+    }
 
     /* スタッフ一押しエリア */
     .staff-push-box {
@@ -307,6 +338,16 @@
       
       <div class="rank-item">
         <span class="badge rank1">1位</span>
+        
+        <div class="item-desc">
+            <h4>Yuri's Review</h4>
+            <ul class="point-list">
+                <li><strong>香りだけで癒やされる！</strong> 厳選された植物精油の香りが、疲れた夜のスキンケアを至福の時間に変えてくれます。</li>
+                <li><strong>3ステップで完璧ケア：</strong> 化粧水・乳液・美容液のライン使いで、水分と油分のバランスが見事に整います。</li>
+                <li><strong>翌朝のもっちり感：</strong> ヒアルロン酸・コラーゲン・セラミドのトリプル配合で、吸い付くような肌へ。</li>
+            </ul>
+        </div>
+
         <script type="text/javascript">
         (function(b,c,f,g,a,d,e){b.MoshimoAffiliateObject=a;
         b[a]=b[a]||function(){arguments.currentScript=c.currentScript
@@ -321,6 +362,16 @@
 
       <div class="rank-item">
         <span class="badge rank2">2位</span>
+        
+        <div class="item-desc">
+            <h4>Yuri's Review</h4>
+            <ul class="point-list">
+                <li><strong>深呼吸したくなる香り：</strong> スウィートシトラスの香りが大人気。スキンケアの時間が「義務」から「楽しみ」に変わります。</li>
+                <li><strong>ゆらぎ肌のお守り：</strong> 季節の変わり目で不安定になった肌も、優しく包み込んで落ち着かせてくれます。</li>
+                <li><strong>とろみがあるのに高浸透：</strong> 肌に乗せるとスーッと馴染み、内側から潤う感覚はやみつきになります。</li>
+            </ul>
+        </div>
+
         <script type="text/javascript">
         (function(b,c,f,g,a,d,e){b.MoshimoAffiliateObject=a;
         b[a]=b[a]||function(){arguments.currentScript=c.currentScript
@@ -335,6 +386,16 @@
 
       <div class="rank-item">
         <span class="badge rank3">3位</span>
+        
+        <div class="item-desc">
+            <h4>Yuri's Review</h4>
+            <ul class="point-list">
+                <li><strong>究極のシンプルケア：</strong> 水分（アロエ）と油分（オリーブオイル等）という肌に必要なものだけで作られています。</li>
+                <li><strong>水を使わない濃厚さ：</strong> 水の代わりにアロエベラ液汁を使用。自然の治癒力がダイレクトに届きます。</li>
+                <li><strong>子供と一緒に使える：</strong> 余計なものが一切入っていないので、家族みんなの保湿ケアとしても優秀です。</li>
+            </ul>
+        </div>
+
         <script type="text/javascript">
         (function(b,c,f,g,a,d,e){b.MoshimoAffiliateObject=a;
         b[a]=b[a]||function(){arguments.currentScript=c.currentScript
@@ -360,6 +421,16 @@
       
       <div class="rank-item">
         <span class="badge rank1">1位</span>
+        
+        <div class="item-desc">
+            <h4>Yuri's Review</h4>
+            <ul class="point-list">
+                <li><strong>家族みんなで使える万能バーム：</strong> 顔だけでなく、乾燥した手先、髪の毛先までこれ一つでOK。</li>
+                <li><strong>愛媛の甘夏の香り：</strong> 蓋を開けた瞬間、もぎたての甘夏の香りが広がり、子供たちも大喜びです。</li>
+                <li><strong>驚きのコストパフォーマンス：</strong> 少量でよく伸びるので、小さな容器でもかなり長持ちします。</li>
+            </ul>
+        </div>
+
         <script type="text/javascript">
         (function(b,c,f,g,a,d,e){b.MoshimoAffiliateObject=a;
         b[a]=b[a]||function(){arguments.currentScript=c.currentScript
@@ -367,13 +438,23 @@
         c.getElementById(a)||(d=c.createElement(f),d.src=g,
         d.id=a,e=c.getElementsByTagName("body")[0],e.appendChild(d))})
         (window,document,"script","//dn.msmstatic.com/site/cardlink/bundle.js?20220329","msmaflink");
-        msmaflink({"n":"yaetoco 甘夏なめらかバーム 5g || ヤエトコ オーガニック スキンケア ボディケア 顔 爪 髪 全身 バーム 日本製 日本 愛媛 無茶々園 人気 可愛い 子供 家族 無農薬 肌荒れ","b":"","t":"","d":"https:\/\/thumbnail.image.rakuten.co.jp","c_p":"\/@0_mall\/amasia\/cabinet","p":["\/product6\/1086_l.jpg","\/product6\/1086sub2_l.jpg","\/product4\/yaetoco1.jpg"],"u":{"u":"https:\/\/item.rakuten.co.jp\/amasia\/1086\/","t":"rakuten","r_v":""},"v":"2.1","b_l":[{"id":1,"u_tx":"楽天市場で見る","u_bc":"#87c209","u_url":"https:\/\/item.rakuten.co.jp\/amasia\/1086\/","a_id":5267359,"p_id":54,"pl_id":27059,"pc_id":54,"s_n":"rakuten","u_so":1},{"id":5,"u_tx":"Amazonで見る","u_bc":"#184f5c","u_url":"https:\/\/amzn.to\/48960zW","a_id":0,"p_id":0,"pl_id":0,"pc_id":0,"s_n":"custom_10","u_so":2},{"id":4,"u_tx":"Yahoo!ショッピングで見る","u_bc":"#bf0000","u_url":"https:\/\/shopping.yahoo.co.jp\/search?first=1\u0026p=yaetoco%20%E7%94%98%E5%A4%8F%E3%81%AA%E3%82%81%E3%82%89%E3%81%8B%E3%83%90%E3%83%BC%E3%83%A0%205g%20%7C%7C%20%E3%83%A4%E3%82%A8%E3%83%88%E3%82%B3%20%E3%82%AA%E3%83%BC%E3%82%AC%E3%83%8B%E3%83%83%E3%82%AF%20%E3%82%B9%E3%82%AD%E3%83%B3%E3%82%B1%E3%82%A2%20%E3%83%9C%E3%83%87%E3%82%A3%E3%82%B1%E3%82%A2%20%E9%A1%94%20%E7%88%AA%20%E9%AB%AA%20%E5%85%A8%E8%BA%AB%20%E3%83%90%E3%83%BC%E3%83%A0%20%E6%97%A5%E6%9C%AC%E8%A3%BD%20%E6%97%A5%E6%9C%AC%20%E6%84%9B%E5%AA%9B%20%E7%84%A1%E8%8C%B6%E3%80%85%E5%9C%92%20%E4%BA%BA%E6%B0%97%20%E5%8F%AF%E6%84%9B%E3%81%84%20%E5%AD%90%E4%BE%9B%20%E5%AE%B6%E6%97%8F%20%E7%84%A1%E8%BE%B2%E8%96%AC%20%E8%82%8C%E8%8D%92%E3%82%8C","a_id":5267465,"p_id":1225,"pl_id":27061,"pc_id":1925,"s_n":"yahoo","u_so":3}],"eid":"XzMou","s":"s"});
+        msmaflink({"n":"yaetoco 甘夏なめらかバーム 5g || ヤエトコ オーガニック スキンケア ボディケア 顔 爪 髪 全身 バーム 日本製 日本 愛媛 無茶々園 人気 可愛い 子供 家族 無農薬 肌荒れ","b":"","t":"","d":"https:\/\/thumbnail.image.rakuten.co.jp","c_p":"\/@0_mall\/amasia\/cabinet","p":["\/product6\/1086_l.jpg","\/product6\/1086sub2_l.jpg","\/product4\/yaetoco1.jpg"],"u":{"u":"https:\/\/item.rakuten.co.jp\/amasia\/1086\/","t":"rakuten","r_v":""},"v":"2.1","b_l":[{"id":1,"u_tx":"楽天市場で見る","u_bc":"#87c209","u_url":"https:\/\/item.rakuten.co.jp\/amasia\/1086\/","a_id":5267359,"p_id":54,"pl_id":27059,"pc_id":54,"s_n":"rakuten","u_so":1},{"id":5,"u_tx":"Amazonで見る","u_bc":"#184f5c","u_url":"https:\/\/amzn.to\/48960zW","a_id":0,"p_id":0,"pl_id":0,"pc_id":0,"s_n":"custom_10","u_so":2},{"id":4,"u_tx":"Yahoo!ショッピングで見る","u_bc":"#bf0000","u_url":"https:\/\/shopping.yahoo.co.jp\/search?first=1\u0026p=yaetoco%20%E7%94%98%E5%A4%8F%E3%81%AA%E3%82%81%E3%82%89%E3%81%8B%E3%83%90%E3%83%BC%E3%83%A0%205g%20%7C%7C%20%E3%83%A4%E3%82%A8%E3%83%88%E3%82%B3%20%E3%82%AA%E3%83%BC%E3%82%AC%E3%83%B3%E3%83%83%E3%82%AF%20%E3%82%B9%E3%82%AD%E3%83%B3%E3%82%B1%E3%82%A2%20%E3%83%9C%E3%83%87%E3%82%A3%E3%82%B1%E3%82%A2%20%E9%A1%94%20%E7%88%AA%20%E9%AB%AA%20%E5%85%A8%E8%BA%AB%20%E3%83%90%E3%83%BC%E3%83%A0%20%E6%97%A5%E6%9C%AC%E8%A3%BD%20%E6%97%A5%E6%9C%AC%20%E6%84%9B%E5%AA%9B%20%E7%84%A1%E8%8C%B6%E3%80%85%E5%9C%92%20%E4%BA%BA%E6%B0%97%20%E5%8F%AF%E6%84%9B%E3%81%84%20%E5%AD%90%E4%BE%9B%20%E5%AE%B6%E6%97%8F%20%E7%84%A1%E8%BE%B2%E8%96%AC%20%E8%82%8C%E8%8D%92%E3%82%8C","a_id":5267465,"p_id":1225,"pl_id":27061,"pc_id":1925,"s_n":"yahoo","u_so":3}],"eid":"XzMou","s":"s"});
         </script>
         <div id="msmaflink-XzMou">リンク</div>
         </div>
       
       <div class="rank-item">
         <span class="badge rank2">2位</span>
+        
+        <div class="item-desc">
+            <h4>Yuri's Review</h4>
+            <ul class="point-list">
+                <li><strong>1つで何役もこなす最強アイテム：</strong> メイク落とし、保湿、ヘアケア、ボディマッサージと、これ1本で全身ケアが完了。</li>
+                <li><strong>完全無添加の安心感：</strong> 原材料は「有機ココナッツ」のみ。口に入れても大丈夫なグレードです。</li>
+                <li><strong>圧倒的なコスパ：</strong> 大容量でこの価格。たっぷり惜しみなく使えるのが嬉しいポイントです。</li>
+            </ul>
+        </div>
+
         <script type="text/javascript">
         (function(b,c,f,g,a,d,e){b.MoshimoAffiliateObject=a;
         b[a]=b[a]||function(){arguments.currentScript=c.currentScript
@@ -388,6 +469,16 @@
 
       <div class="rank-item">
         <span class="badge rank3">3位</span>
+        
+        <div class="item-desc">
+            <h4>Yuri's Review</h4>
+            <ul class="point-list">
+                <li><strong>驚異の300ml大容量：</strong> オーガニックコスメとは思えないサイズ感。顔だけでなく全身にバシャバシャ使えます。</li>
+                <li><strong>時短に嬉しいポンプ式：</strong> お風呂上がりに片手ですぐ保湿できるので、忙しいママさんにもぴったり。</li>
+                <li><strong>爽やかなシトラス：</strong> 癖のない香りなので、強い香りが苦手な方や男性とのシェアコスメとしても優秀です。</li>
+            </ul>
+        </div>
+
         <script type="text/javascript">
         (function(b,c,f,g,a,d,e){b.MoshimoAffiliateObject=a;
         b[a]=b[a]||function(){arguments.currentScript=c.currentScript
@@ -404,7 +495,7 @@
   </section>
 
   <section>
-    <h2>✨ アンチエイジングランキング</h2>
+    <h2>✨ エイジングケアランキング</h2>
     <div class="rank-intro">
       鏡を見るたびに感じる「ハリのなさ」「乾燥による小じわ」——。<br>
       このランキングでは、ただ高価な商品を紹介するのではなく、<strong>「自分の予算と状態にあわせて」</strong>選べるように、効果と価格のバランスが取れたアイテムを厳選しました。
@@ -413,6 +504,16 @@
       
       <div class="rank-item">
         <span class="badge rank1">1位</span>
+        
+        <div class="item-desc">
+            <h4>Yuri's Review</h4>
+            <ul class="point-list">
+                <li><strong>アミノ酸のプロ「味の素」が開発：</strong> 肌の素となるアミノ酸を熟知したメーカーだからこその、本質的なエイジングケアです。</li>
+                <li><strong>紫色の秘密は「グアイアズレン」：</strong> 植物由来の成分が肌荒れを防ぎ、透明感のある肌へと導きます。</li>
+                <li><strong>サラッとしているのに高保湿：</strong> ベタつきが苦手な方でも使いやすい、軽やかなテクスチャーの実力派です。</li>
+            </ul>
+        </div>
+
         <script type="text/javascript">
         (function(b,c,f,g,a,d,e){b.MoshimoAffiliateObject=a;
         b[a]=b[a]||function(){arguments.currentScript=c.currentScript
@@ -427,6 +528,16 @@
 
       <div class="rank-item">
         <span class="badge rank2">2位</span>
+        
+        <div class="item-desc">
+            <h4>Yuri's Review</h4>
+            <ul class="point-list">
+                <li><strong>信頼の「医薬部外品」：</strong> 効果効能が認められた成分を配合。本気で肌を変えたい人におすすめです。</li>
+                <li><strong>独自の「クレイ（粘土）」成分：</strong> ミネラル豊富なクレイが肌を守りながら保湿。他にはない使用感です。</li>
+                <li><strong>ロングセラーの実力：</strong> 長年愛され続けているブランドには理由があります。乾燥小じわが気になる方に。</li>
+            </ul>
+        </div>
+
         <script type="text/javascript">
         (function(b,c,f,g,a,d,e){b.MoshimoAffiliateObject=a;
         b[a]=b[a]||function(){arguments.currentScript=c.currentScript
@@ -441,6 +552,16 @@
 
       <div class="rank-item">
         <span class="badge rank3">3位</span>
+        
+        <div class="item-desc">
+            <h4>Yuri's Review</h4>
+            <ul class="point-list">
+                <li><strong>ご褒美オイル：</strong> 貴重なオーキッド（蘭）エキスを贅沢に配合。使うたびにラグジュアリーな気分になれます。</li>
+                <li><strong>ベタつかない神オイル：</strong> オイルなのに驚くほど浸透が早く、朝のメイク前にも使えます。</li>
+                <li><strong>エイジングサインに：</strong> 肌にハリと弾力を与えてくれるので、疲れた肌へのスペシャルケアとして最適です。</li>
+            </ul>
+        </div>
+
         <script type="text/javascript">
         (function(b,c,f,g,a,d,e){b.MoshimoAffiliateObject=a;
         b[a]=b[a]||function(){arguments.currentScript=c.currentScript
@@ -458,7 +579,13 @@
 
   <div class="staff-push-box">
     <h3 style="margin-top:0; color:#d6336c;">👑 スタッフ一押しアイテム</h3>
-    <p style="margin-bottom:20px;color:#d6336c;">一年を通して使える最強のオーガニックジェルです。<br>迷ったらまずはコレ！</p>
+    
+    <div class="item-desc" style="background:#fff; border:none; text-align:center;">
+        <p style="margin-bottom:10px; font-weight:bold;">
+            「赤ちゃんにも使える優しさ」×「大人のエイジングケア」<br>
+            忙しい朝もこれ一本で完了する、私の最強のパートナーです。
+        </p>
+    </div>
 
     <div style="display:inline-block;">
       <a href="https://px.a8.net/svt/ejp?a8mat=45I9PD+4GR2VU+3PSY+1BNJ9D" rel="nofollow sponsored" target="_blank">
@@ -521,13 +648,13 @@
   </div>
   
   <div class="footer-bottom">
-     <a href="https://room.rakuten.co.jp/room_e0dd63a90a/items" target="_blank" rel="noopener" class="footer-room-link">
+      <a href="https://room.rakuten.co.jp/room_e0dd63a90a/items" target="_blank" rel="noopener" class="footer-room-link">
         🏠 管理人Yuriの楽天ROOMを見る
-     </a>
-     <br>
-     
-     © 2025 Essential Beauty Needs<br><br>
-     <a href="privacy-policy.html" style="color:#888; text-decoration:none; font-size:12px;">プライバシーポリシー</a>
+      </a>
+      <br>
+      
+      © 2025 Essential Beauty Needs<br><br>
+      <a href="privacy-policy.html" style="color:#888; text-decoration:none; font-size:12px;">プライバシーポリシー</a>
   </div>
 </footer>
 
