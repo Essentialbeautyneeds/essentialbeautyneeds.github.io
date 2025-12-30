@@ -1,0 +1,350 @@
+<!doctype html>
+<html lang="ja">
+<head>
+<meta charset="utf-8">
+<script>
+    // 1. 内部トラフィック除外設定
+    function isInternalUser() {
+        return document.cookie.split(';').some(c => c.trim().startsWith('internal_user=true'));
+    }
+    // 2. GA4読み込み
+    if (!isInternalUser()) {
+        var gaScript = document.createElement('script');
+        gaScript.async = true;
+        gaScript.src = "https://www.googletagmanager.com/gtag/js?id=G-2HGEPHVZYY";
+        document.head.appendChild(gaScript);
+        window.dataLayer = window.dataLayer || [];
+        function gtag(){dataLayer.push(arguments);}
+        gtag('js', new Date());
+        gtag('config', 'G-2HGEPHVZYY');
+    }
+    // 3. 画像読み込みエラー時のフォールバック処理
+    function handleImageError(imgElement, width, height, text) {
+        imgElement.onerror = null; 
+        imgElement.src = `https://placehold.co/${width}x${height}/f7a8a8/ffffff?text=${encodeURIComponent(text)}`;
+    }
+</script>
+    
+<meta name="viewport" content="width=device-width,initial-scale=1">
+<title>【緊急】挙式直前！背中・二の腕のブツブツを撃退する栄養士の美肌メソッド | Essential Beauty Needs</title>
+<meta name="description" content="ドレス試着で背中ニキビや二の腕のザラつきに気づいた花嫁様へ。元プランナー・栄養士が教える、挙式までに間に合わせる「食事×専用ケア」の緊急マニュアル。">
+<meta name="keywords" content="背中ニキビ,二の腕ブツブツ,ブライダルエステ,花嫁美容,栄養士監修">
+<link href="https://fonts.googleapis.com/css2?family=Playfair+Display:wght@600&family=Quicksand:wght@400;600&display=swap" rel="stylesheet">
+<link rel="canonical" href="https://essential-beauty-needs.com/bridal-care.html" />
+    
+<style>
+:root {
+    --bg: #fff8f8;
+    --card: #ffffff;
+    --accent: #f7a8a8;
+    --accent-hover: #f48b8b;
+    --muted: #666;
+    --text-main: #503535;
+    --room-color: #c63535;
+    --gold: #d4af37; /* ブライダル用のゴールドアクセント */
+}
+* { box-sizing: border-box; margin: 0; padding: 0; }
+body { font-family: 'Quicksand', sans-serif; background: var(--bg); color: #333; line-height: 1.8; }
+
+/* Header (Indexと共通) */
+header {
+    text-align: center;
+    padding: 60px 20px 40px;
+    background: linear-gradient(135deg, #fff0f0, #ffe6e6);
+    border-bottom: 3px solid #e6b7b3;
+}
+h1 { font-family: 'Playfair Display', serif; font-size: 32px; color: var(--text-main); margin-bottom: 10px; }
+p.lead { font-size: 16px; color: #5a4545; font-weight: 600; }
+
+.container { max-width: 800px; margin: 0 auto; padding: 0 20px; }
+
+/* LP Specific Styles */
+.lp-hero-box {
+    background: #fff;
+    border-radius: 20px;
+    padding: 40px 20px;
+    margin: -30px auto 40px;
+    box-shadow: 0 10px 30px rgba(0,0,0,0.1);
+    position: relative;
+    max-width: 860px;
+    text-align: center;
+    border: 1px solid #ffebeb;
+}
+.lp-badge {
+    display: inline-block;
+    background: #d6336c;
+    color: #fff;
+    padding: 5px 15px;
+    border-radius: 20px;
+    font-size: 14px;
+    font-weight: bold;
+    margin-bottom: 15px;
+}
+.lp-headline {
+    font-size: 26px;
+    color: var(--text-main);
+    line-height: 1.5;
+    margin-bottom: 20px;
+    border-bottom: 2px solid var(--accent);
+    padding-bottom: 20px;
+    font-weight: bold;
+}
+.lp-section { margin-bottom: 60px; }
+.lp-h2 {
+    font-family: 'Playfair Display', serif;
+    font-size: 24px;
+    color: var(--text-main);
+    text-align: center;
+    margin-bottom: 30px;
+    background: #fff;
+    padding: 15px;
+    border-radius: 10px;
+    box-shadow: 0 4px 10px rgba(0,0,0,0.05);
+}
+.check-box {
+    background-color: #fff0f5;
+    padding: 30px;
+    border-radius: 15px;
+    border: 2px dashed var(--accent);
+}
+.check-list li {
+    list-style: none;
+    position: relative;
+    padding-left: 30px;
+    margin-bottom: 15px;
+    font-weight: bold;
+    color: #555;
+    font-size: 17px;
+}
+.check-list li::before {
+    content: "✔";
+    position: absolute;
+    left: 0;
+    color: #d6336c;
+    font-size: 20px;
+}
+
+/* 栄養士アドバイス枠 */
+.expert-box {
+    background: #fdfdfd;
+    border-left: 5px solid #88c088; /* 栄養士っぽい緑 */
+    padding: 20px;
+    border-radius: 5px;
+    box-shadow: 0 2px 8px rgba(0,0,0,0.05);
+    margin: 30px 0;
+}
+.expert-title {
+    display: flex;
+    align-items: center;
+    color: #2e5c2e;
+    font-weight: bold;
+    font-size: 18px;
+    margin-bottom: 15px;
+}
+
+/* アフィリエイト商品紹介エリア（ここが収益の要！） */
+.product-offer {
+    background: #fff;
+    border: 3px solid var(--gold);
+    border-radius: 20px;
+    padding: 40px 20px;
+    text-align: center;
+    margin-top: 50px;
+    position: relative;
+    overflow: hidden;
+}
+.product-offer::before {
+    content: "RECOMMEND";
+    position: absolute;
+    top: 0;
+    left: 0;
+    background: var(--gold);
+    color: #fff;
+    padding: 5px 15px;
+    font-size: 12px;
+    font-weight: bold;
+    border-bottom-right-radius: 10px;
+}
+.product-name {
+    font-size: 24px;
+    color: #d6336c;
+    font-weight: bold;
+    margin-bottom: 20px;
+}
+.btn-cta {
+    display: block;
+    width: 100%;
+    max-width: 400px;
+    margin: 20px auto 0;
+    padding: 20px;
+    background: linear-gradient(45deg, #d6336c, #ff8e8e);
+    color: #fff;
+    text-align: center;
+    text-decoration: none;
+    font-weight: bold;
+    font-size: 20px;
+    border-radius: 50px;
+    box-shadow: 0 4px 15px rgba(214, 51, 108, 0.4);
+    transition: transform 0.2s;
+}
+.btn-cta:hover {
+    transform: translateY(-3px);
+    opacity: 0.9;
+}
+.btn-shiny {
+    animation: shiny 3s infinite;
+}
+@keyframes shiny {
+    0% { transform: scale(1); }
+    50% { transform: scale(1.02); }
+    100% { transform: scale(1); }
+}
+
+/* Footer (Indexと共通) */
+footer {
+    background: #fffaf4;
+    border-top: 3px solid #f7a8a8;
+    padding: 50px 20px 60px;
+    margin-top: 60px;
+    color: #555;
+    font-size: 14px;
+}
+.footer-container {
+    max-width: 960px;
+    margin: 0 auto;
+    text-align: center;
+}
+.footer-room-link {
+    display: inline-block; color: #c63535; font-weight: bold; border: 1px solid #c63535; padding: 8px 20px; border-radius: 20px; text-decoration: none; margin-bottom: 20px; background: #fff; transition: 0.3s;
+}
+.footer-room-link:hover { background: #c63535; color: #fff; }
+#affiliateNotice {
+    position: fixed; right: 12px; bottom: 12px;
+    background: rgba(255, 255, 255, 0.8);
+    color: #555; font-size: 11px;
+    border-radius: 6px; padding: 4px 8px;
+    box-shadow: 0 2px 6px rgba(0,0,0,0.1);
+    z-index: 999;
+}
+
+@media(max-width:600px){
+    h1{font-size:24px;}
+    .lp-headline{font-size: 20px;}
+    .btn-cta { font-size: 18px; }
+}
+</style>
+</head>
+<body>
+
+<header>
+    <h1>Essential Beauty Needs</h1>
+    <p class="lead">Nutritional & Organic Skincare for Brides</p>
+</header>
+
+<div class="lp-hero-box">
+    <span class="lp-badge">プレ花嫁 緊急レスキュー</span>
+    <h2 class="lp-headline">
+        「背中の大きく開いたドレス、<br>本当に着こなせてる？」<br>
+        <span style="font-size:18px; color:#666; font-weight:normal; display:block; margin-top:15px;">
+            試着室で気づいてしまった<br>背中・二の腕のブツブツを<br>挙式当日までに「なかったこと」にする方法
+        </span>
+    </h2>
+    <img src="images/bridal-back.jpg" style="width:100%; border-radius:10px; margin-top:10px;" alt="美しい背中の花嫁" onerror="handleImageError(this, 800, 400, 'Bridal Back Care')">
+</div>
+
+<main class="container">
+
+    <section class="lp-section">
+        <div class="check-box">
+            <p style="text-align: center; font-weight: bold; margin-bottom: 20px; font-size:18px;">こんな「見なかったことにしたい」悩みありませんか？</p>
+            <ul class="check-list">
+                <li>試着室の鏡で見た自分の背中が、思ったより荒れていた</li>
+                <li>二の腕の赤いプツプツ（毛孔性苔癬）がファンデで隠しきれない</li>
+                <li>エステに通う予算も時間も、もう残っていない</li>
+                <li>一生残る結婚式の写真で、絶対に後悔したくない</li>
+            </ul>
+        </div>
+        <div style="margin-top: 30px; line-height: 2;">
+            <p>こんにちは、管理栄養士で元ウェディングプランナーのYuriです。</p>
+            <p>プランナー時代、多くの花嫁様が<strong>「顔のケアは完璧だったのに、背中のケアを忘れていた！」</strong>と、最終フィッティングで青ざめる姿を見てきました。</p>
+            <p>当日のスポットライトは、残酷なほど肌の凹凸を照らし出します。<br>
+            でも、諦めないでください。栄養士の視点（内側）と、正しい専用ケア（外側）を組み合わせれば、<strong>短期間でも肌の印象は劇的に変えられます。</strong></p>
+        </div>
+    </section>
+
+    <section class="lp-section">
+        <h2 class="lp-h2">Method 1：まずは「内側」から炎症を鎮める</h2>
+        <p>高価なクリームを塗る前に、まずは3日間、以下の食事を意識してください。背中ニキビやザラつきの正体は、体の内側の「炎症」と「代謝不足」です。</p>
+        
+        <div class="expert-box">
+            <div class="expert-title">👩‍⚕️ 栄養士Yuriの「花嫁のための3日間デトックス」</div>
+            <h3 style="font-size:16px; margin:10px 0; border-bottom:1px dashed #ccc;">1. 「白い砂糖」を3日間だけ断つ</h3>
+            <p style="font-size:14px; margin-bottom:15px;">砂糖は炎症の餌です。チョコやクッキーの代わりに、抗酸化作用のある「アーモンド」や「高カカオチョコ」をおやつにしてください。</p>
+            
+            <h3 style="font-size:16px; margin:10px 0; border-bottom:1px dashed #ccc;">2. 「ビタミンB群」を朝に摂る</h3>
+            <p style="font-size:14px;">皮脂コントロールに必須のビタミンB。納豆、卵、バナナを朝食に取り入れるだけで、肌のターンオーバーが変わります。</p>
+        </div>
+    </section>
+
+    <section class="lp-section">
+        <h2 class="lp-h2">Method 2：時間がない花嫁のための「即効」外側ケア</h2>
+        <p>食事での体質改善は重要ですが、効果が出るまでには時間がかかります。<br>挙式まで時間がない場合は、<strong>「背中・二の腕専用」に開発されたケアアイテム</strong>の力を借りるのが賢い選択です。</p>
+        <p>一般的なボディクリームでは浸透しにくい、背中の厚い皮膚のために作られた、私が最も信頼しているアイテムをご紹介します。</p>
+
+        <div class="product-offer">
+            <h3 class="product-name">【ここに商品名を入れる】<br><span style="font-size:16px; color:#555;">（例：背中ニキビ専用ジェル / 薬用ボディスクラブなど）</span></h3>
+            
+            <div style="margin: 20px 0;">
+                <img src="https://placehold.co/300x300/eee/999?text=Product+Image" alt="商品画像" style="max-width:100%; border-radius:10px;">
+            </div>
+
+            <p style="text-align: left; background:#f9f9f9; padding:15px; border-radius:10px; font-size:15px;">
+                <strong>✅ おすすめポイント：</strong><br>
+                ・厚い背中の皮膚にもグングン浸透する「〇〇成分」配合<br>
+                ・敏感な挙式前の肌にも優しい「無添加・オーガニック処方」<br>
+                ・ベタつかないから、お風呂上がりすぐにパジャマを着てもOK！
+            </p>
+            
+            <a href="【アフィリエイトリンクのURL】" class="btn-cta btn-shiny">公式サイトでお得に試す ＞</a>
+            
+            <p style="font-size: 12px; color: #666; margin-top: 15px;">※人気商品のため、在庫切れにご注意ください。<br>※万が一肌に合わない場合の返金保証もチェック！</p>
+        </div>
+        </section>
+
+    <section class="lp-section" style="text-align:center; margin-top:80px;">
+        <h2 style="font-family:'Playfair Display',serif; font-size:28px; color:#d6336c;">Confidence creates Beauty.</h2>
+        <p style="margin-top:20px;">
+            背中や肌が整うと、当日の立ち振る舞いに自信が出ます。<br>
+            ゲストの視線を気にせず、最高の笑顔でドレスを着こなすために。<br>
+            「あの時ケアしておけばよかった」と後悔しないよう、今すぐできることから始めましょう。
+        </p>
+        <p style="margin-top:30px; font-weight:bold;">あなたの結婚式が、最高に美しい一日になりますように。</p>
+        
+        <div style="margin-top:50px;">
+            <img src="images/yuri_profile.jpg" alt="Yuri" style="width:80px; height:80px; border-radius:50%; object-fit:cover;" onerror="handleImageError(this, 80, 80, 'Yuri')">
+            <p style="font-size:14px; color:#999; margin-top:10px;">Managed by Yuri (Registered Dietitian)</p>
+        </div>
+    </section>
+
+</main>
+
+<footer>
+  <div class="footer-container">
+      <a href="https://room.rakuten.co.jp/room_e0dd63a90a/items" target="_blank" rel="noopener" class="footer-room-link">
+        🏠 管理人Yuriの楽天ROOMを見る
+      </a>
+      <br>
+      <div style="margin-top:20px;">
+        <a href="index.html" style="margin:0 10px; color:#666; text-decoration:none;">トップページ</a> | 
+        <a href="skin-ranking.html" style="margin:0 10px; color:#666; text-decoration:none;">ランキング</a>
+      </div>
+      <br>
+      © 2025 Essential Beauty Needs<br>
+      <a href="privacy-policy.html" style="color:#888; text-decoration:none; font-size:12px;">プライバシーポリシー</a>
+  </div>
+</footer>
+
+<div id="affiliateNotice">※当サイトはアフィリエイト広告（Amazonアソシエイト含む）を利用しています</div>
+
+</body>
+</html>
