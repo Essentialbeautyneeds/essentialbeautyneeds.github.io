@@ -142,65 +142,64 @@ p.lead { font-size: 16px; color: #5a4545; font-weight: 600; }
     margin-bottom: 15px;
 }
 
-/* アフィリエイト商品紹介エリア（ここが収益の要！） */
-.product-offer {
-    background: #fff;
-    border: 3px solid var(--gold);
-    border-radius: 20px;
-    padding: 40px 20px;
-    text-align: center;
+/* アフィリエイト商品紹介エリア */
+.product-category {
     margin-top: 50px;
-    position: relative;
-    overflow: hidden;
+    border-top: 2px dashed #eee;
+    padding-top: 30px;
 }
-.product-offer::before {
-    content: "RECOMMEND";
-    position: absolute;
-    top: 0;
-    left: 0;
-    background: var(--gold);
-    color: #fff;
-    padding: 5px 15px;
-    font-size: 12px;
-    font-weight: bold;
-    border-bottom-right-radius: 10px;
-}
-.product-name {
-    font-size: 24px;
-    color: #d6336c;
-    font-weight: bold;
-    margin-bottom: 20px;
-}
-.btn-cta {
-    display: block;
-    width: 100%;
-    max-width: 400px;
-    margin: 20px auto 0;
-    padding: 20px;
-    background: linear-gradient(45deg, #d6336c, #ff8e8e);
-    color: #fff;
+.product-category h3 {
     text-align: center;
-    text-decoration: none;
-    font-weight: bold;
+    color: #d6336c;
     font-size: 20px;
-    border-radius: 50px;
-    box-shadow: 0 4px 15px rgba(214, 51, 108, 0.4);
-    transition: transform 0.2s;
-}
-.btn-cta:hover {
-    transform: translateY(-3px);
-    opacity: 0.9;
-}
-.btn-shiny {
-    animation: shiny 3s infinite;
-}
-@keyframes shiny {
-    0% { transform: scale(1); }
-    50% { transform: scale(1.02); }
-    100% { transform: scale(1); }
+    margin-bottom: 20px;
+    background: #fff5f5;
+    display: inline-block;
+    padding: 5px 20px;
+    border-radius: 20px;
 }
 
-/* Footer (Indexと共通) */
+/* A8用デザイン調整 */
+.a8-box {
+    background: #fff;
+    border: 3px solid var(--gold);
+    border-radius: 15px;
+    padding: 20px;
+    text-align: center;
+    margin: 20px 0;
+    position: relative;
+}
+.a8-box::before {
+    content: "SPECIAL CARE";
+    position: absolute;
+    top: -12px;
+    left: 50%;
+    transform: translateX(-50%);
+    background: var(--gold);
+    color: #fff;
+    padding: 2px 15px;
+    font-size: 12px;
+    font-weight: bold;
+    border-radius: 10px;
+}
+.a8-btn-style {
+    display: inline-block;
+    background: linear-gradient(45deg, #d6336c, #ff8e8e);
+    color: #fff !important;
+    padding: 15px 30px;
+    border-radius: 50px;
+    text-decoration: none;
+    font-weight: bold;
+    margin-top: 15px;
+    box-shadow: 0 4px 10px rgba(214, 51, 108, 0.3);
+    transition: transform 0.2s;
+}
+.a8-btn-style:hover {
+    transform: translateY(-2px);
+    opacity: 0.9;
+}
+
+/* Footer & Nav (Indexと共通) */
 footer {
     background: #fffaf4;
     border-top: 3px solid #f7a8a8;
@@ -212,8 +211,28 @@ footer {
 .footer-container {
     max-width: 960px;
     margin: 0 auto;
-    text-align: center;
+    display: flex;
+    flex-wrap: wrap;
+    justify-content: space-between;
+    gap: 30px;
+    text-align: left;
 }
+.footer-col { flex: 1; min-width: 200px; }
+.footer-col h3 {
+    font-size: 16px;
+    color: #d6336c;
+    border-bottom: 1px dashed #f4b5b5;
+    padding-bottom: 8px;
+    margin-bottom: 15px;
+    font-weight: bold;
+}
+.footer-col a {
+    display: block; color: #666; text-decoration: none; margin-bottom: 10px; transition: 0.3s; position: relative; padding-left: 10px;
+}
+.footer-col a::before { content: "・"; position: absolute; left: 0; color: #f7a8a8; }
+.footer-col a:hover { color: #d6336c; padding-left: 15px; }
+.footer-bottom { text-align: center; margin-top: 50px; padding-top: 30px; border-top: 1px solid #eee; width: 100%; }
+
 .footer-room-link {
     display: inline-block; color: #c63535; font-weight: bold; border: 1px solid #c63535; padding: 8px 20px; border-radius: 20px; text-decoration: none; margin-bottom: 20px; background: #fff; transition: 0.3s;
 }
@@ -230,7 +249,6 @@ footer {
 @media(max-width:600px){
     h1{font-size:24px;}
     .lp-headline{font-size: 20px;}
-    .btn-cta { font-size: 18px; }
 }
 </style>
 </head>
@@ -288,28 +306,58 @@ footer {
 
     <section class="lp-section">
         <h2 class="lp-h2">Method 2：時間がない花嫁のための「即効」外側ケア</h2>
-        <p>食事での体質改善は重要ですが、効果が出るまでには時間がかかります。<br>挙式まで時間がない場合は、<strong>「背中・二の腕専用」に開発されたケアアイテム</strong>の力を借りるのが賢い選択です。</p>
-        <p>一般的なボディクリームでは浸透しにくい、背中の厚い皮膚のために作られた、私が最も信頼しているアイテムをご紹介します。</p>
+        <p>食事での体質改善は重要ですが、効果が出るまでには時間がかかります。<br>挙式まで時間がない場合は、<strong>「悩み別の専用ケア」</strong>の力を借りるのが賢い選択です。</p>
+        <p>背中や二の腕の皮膚は顔よりも厚いため、普通のボディクリームでは届きません。浸透力に優れた専用アイテムを選びました。</p>
 
-        <div class="product-offer">
-            <h3 class="product-name">【ここに商品名を入れる】<br><span style="font-size:16px; color:#555;">（例：背中ニキビ専用ジェル / 薬用ボディスクラブなど）</span></h3>
+        <div class="product-category" style="text-align: center;">
+            <h3>悩み① 背中のニキビ・黒ずみ</h3>
+            <p style="font-size:14px; margin-bottom:15px;">「背中ニキビといえばコレ」というほどの定番ジェル。厚い皮膚にも浸透し、美白成分も配合。</p>
             
-            <div style="margin: 20px 0;">
-                <img src="https://placehold.co/300x300/eee/999?text=Product+Image" alt="商品画像" style="max-width:100%; border-radius:10px;">
+            <script type="text/javascript">
+            (function(b,c,f,g,a,d,e){b.MoshimoAffiliateObject=a;
+            b[a]=b[a]||function(){arguments.currentScript=c.currentScript
+            ||c.scripts[c.scripts.length-2];(b[a].q=b[a].q||[]).push(arguments)};
+            c.getElementById(a)||(d=c.createElement(f),d.src=g,
+            d.id=a,e=c.getElementsByTagName("body")[0],e.appendChild(d))})
+            (window,document,"script","//dn.msmstatic.com/site/cardlink/bundle.js?20220329","msmaflink");
+            msmaflink({"n":"【2本買うと1本プレゼント】背中ニキビ 跡 背中 ニキビ 跡【シアクル ゲルクリーム 100g】背中ニキビ パック 背中 乾燥 黒ずみ お尻 ニキビ 胸 ニキビ 男 ニキビ 塗る ブツブツ 肌荒れ 美白 クリーム 体ニキビ 保湿 ニキビケア 背中ケア","b":"","t":"","d":"https:\/\/thumbnail.image.rakuten.co.jp","c_p":"\/@0_mall\/shampool\/cabinet\/08387823","p":["\/08531725\/imgrc0094882762.jpg","\/08387826\/08571215\/imgrc0085908346.jpg","\/08430591\/08550455\/imgrc0088334509.jpg"],"u":{"u":"https:\/\/item.rakuten.co.jp\/shampool\/siaql-b\/","t":"rakuten","r_v":""},"v":"2.1","b_l":[{"u_bc":"#000000","u_tx":"Amazonで見る","u_url":"https:\/\/amzn.to\/4pZHjMz","s_n":"custom_3","u_so":0,"a_id":0,"p_id":0,"pc_id":0,"pl_id":0,"id":13},{"id":1,"u_tx":"楽天市場で見る","u_bc":"#bf0000","u_url":"https:\/\/item.rakuten.co.jp\/shampool\/siaql-b\/","a_id":5267359,"p_id":54,"pl_id":27059,"pc_id":54,"s_n":"rakuten","u_so":1},{"id":12,"u_tx":"Yahoo!ショッピングで見る","u_bc":"#87c209","u_url":"https:\/\/shopping.yahoo.co.jp\/search?first=1\u0026p=%E3%80%902%E6%9C%AC%E8%B2%B7%E3%81%86%E3%81%A81%E6%9C%AC%E3%83%97%E3%83%AC%E3%82%BC%E3%83%B3%E3%83%88%E3%80%91%E8%83%8C%E4%B8%AD%E3%83%8B%E3%82%AD%E3%83%93%20%E8%B7%A1%20%E8%83%8C%E4%B8%AD%20%E3%83%8B%E3%82%AD%E3%83%93%20%E8%B7%A1%E3%80%90%E3%82%B7%E3%82%A2%E3%82%AF%E3%83%AB%20%E3%82%B2%E3%83%AB%E3%82%AF%E3%83%AA%E3%83%BC%E3%83%A0%20100g%E3%80%91%E8%83%8C%E4%B8%AD%E3%83%8B%E3%82%AD%E3%83%93%20%E3%83%91%E3%83%83%E3%82%AF%20%E8%83%8C%E4%B8%AD%20%E4%B9%BE%E7%87%A5%20%E9%BB%92%E3%81%9A%E3%81%BF%20%E3%81%8A%E5%B0%BB%20%E3%83%8B%E3%82%AD%E3%83%93%20%E8%83%B8%20%E3%83%8B%E3%82%AD%E3%83%93%20%E7%94%B7%20%E3%83%8B%E3%82%AD%E3%83%93%20%E5%A1%97%E3%82%8B%20%E3%83%96%E3%83%84%E3%83%96%E3%83%84%20%E8%82%8C%E8%8D%92%E3%82%8C%20%E7%BE%8E%E7%99%BD%20%E3%82%AF%E3%83%AA%E3%83%BC%E3%83%A0%20%E4%BD%93%E3%83%8B%E3%82%AD%E3%83%93%20%E4%BF%9D%E6%B9%BF%20%E3%83%8B%E3%82%AD%E3%83%93%E3%82%B1%E3%82%A2%20%E8%83%8C%E4%B8%AD%E3%82%B1%E3%82%A2","a_id":5267465,"p_id":1225,"pl_id":27061,"pc_id":1925,"s_n":"yahoo","u_so":2}],"eid":"HO39p","s":"s"});
+            </script>
+            <div id="msmaflink-HO39p">リンク</div>
             </div>
 
-            <p style="text-align: left; background:#f9f9f9; padding:15px; border-radius:10px; font-size:15px;">
-                <strong>✅ おすすめポイント：</strong><br>
-                ・厚い背中の皮膚にもグングン浸透する「〇〇成分」配合<br>
-                ・敏感な挙式前の肌にも優しい「無添加・オーガニック処方」<br>
-                ・ベタつかないから、お風呂上がりすぐにパジャマを着てもOK！
-            </p>
+        <div class="product-category" style="text-align: center;">
+            <h3>悩み② 二の腕のザラつき</h3>
+            <p style="font-size:14px; margin-bottom:15px;">二の腕のプツプツ（毛孔性苔癬）対策に。植物由来の角質ケアで、ドレスの似合うスベスベ肌へ。</p>
             
-            <a href="【アフィリエイトリンクのURL】" class="btn-cta btn-shiny">公式サイトでお得に試す ＞</a>
+            <script type="text/javascript">
+            (function(b,c,f,g,a,d,e){b.MoshimoAffiliateObject=a;
+            b[a]=b[a]||function(){arguments.currentScript=c.currentScript
+            ||c.scripts[c.scripts.length-2];(b[a].q=b[a].q||[]).push(arguments)};
+            c.getElementById(a)||(d=c.createElement(f),d.src=g,
+            d.id=a,e=c.getElementsByTagName("body")[0],e.appendChild(d))})
+            (window,document,"script","//dn.msmstatic.com/site/cardlink/bundle.js?20220329","msmaflink");
+            msmaflink({"n":"二の腕 ブツブツ ニキビ ザラザラ｜うでつるん。 スプレーボトル 30ml ｜植物生まれの肌に優しい角質ケアで気になる二の腕のぼつぼつ（ ぶつぶつ ）・にきび・にきび痕のお手入れ【メール便】","b":"","t":"","d":"https:\/\/thumbnail.image.rakuten.co.jp","c_p":"\/@0_mall\/cosmest-1\/cabinet\/ude_tsurun","p":["\/2405udetsurun800.jpg","\/220819lp_02.jpg","\/220819lp_03.jpg"],"u":{"u":"https:\/\/item.rakuten.co.jp\/cosmest-1\/coe_udetsurun_spray30\/","t":"rakuten","r_v":""},"v":"2.1","b_l":[{"u_bc":"#000000","u_tx":"Amazonで見る","u_url":"https:\/\/amzn.to\/4pltRSh","s_n":"custom_3","u_so":0,"a_id":0,"p_id":0,"pc_id":0,"pl_id":0,"id":13},{"id":1,"u_tx":"楽天市場で見る","u_bc":"#bf0000","u_url":"https:\/\/item.rakuten.co.jp\/cosmest-1\/coe_udetsurun_spray30\/","a_id":5267359,"p_id":54,"pl_id":27059,"pc_id":54,"s_n":"rakuten","u_so":1},{"id":12,"u_tx":"Yahoo!ショッピングで見る","u_bc":"#87c209","u_url":"https:\/\/shopping.yahoo.co.jp\/search?first=1\u0026p=%E4%BA%8C%E3%81%AE%E8%85%95%20%E3%83%96%E3%83%84%E3%83%96%E3%83%84%20%E3%83%8B%E3%82%AD%E3%83%93%20%E3%82%B6%E3%83%A9%E3%82%B6%E3%83%A9%EF%BD%9C%E3%81%86%E3%81%A7%E3%81%A4%E3%82%8B%E3%82%93%E3%80%82%20%E3%82%B9%E3%83%97%E3%83%AC%E3%83%BC%E3%83%9C%E3%83%88%E3%83%AB%2030ml%20%EF%BD%9C%E6%A4%8D%E7%89%A9%E7%94%9F%E3%81%BE%E3%82%8C%E3%81%AE%E8%82%8C%E3%81%AB%E5%84%AA%E3%81%97%E3%81%84%E8%A7%92%E8%B3%AA%E3%82%B1%E3%82%A2%E3%81%A7%E6%B0%97%E3%81%AB%E3%81%AA%E3%82%8B%E4%BA%8C%E3%81%AE%E8%85%95%E3%81%AE%E3%81%BC%E3%81%A4%E3%81%BC%E3%81%A4%EF%BC%88%20%E3%81%B6%E3%81%A4%E3%81%B6%E3%81%A4%20%EF%BC%89%E3%83%BB%E3%81%AB%E3%81%8D%E3%81%B3%E3%83%BB%E3%81%AB%E3%81%8D%E3%81%B3%E7%97%95%E3%81%AE%E3%81%8A%E6%89%8B%E5%85%A5%E3%82%8C%E3%80%90%E3%83%A1%E3%83%BC%E3%83%AB%E4%BE%BF%E3%80%91","a_id":5267465,"p_id":1225,"pl_id":27061,"pc_id":1925,"s_n":"yahoo","u_so":2}],"eid":"7osiZ","s":"s"});
+            </script>
+            <div id="msmaflink-7osiZ">リンク</div>
+            </div>
+
+        <div class="a8-box">
+            <h3 style="color:#d4af37; font-size:20px; margin-bottom:10px;">自分ではどうにもならない時の救世主</h3>
+            <p style="font-size:14px; margin-bottom:20px;">「もう時間がない！」という方は、プロの手を借りるのが一番確実でリラックスもできます。<br>まずは気軽な体験コースで、背中をピカピカにしてもらいましょう。</p>
             
-            <p style="font-size: 12px; color: #666; margin-top: 15px;">※人気商品のため、在庫切れにご注意ください。<br>※万が一肌に合わない場合の返金保証もチェック！</p>
+            <a href="https://px.a8.net/svt/ejp?a8mat=45KRG0+5R6W2I+2NSW+C33KX" rel="nofollow">
+            <img border="0" width="120" height="60" alt="" src="https://www29.a8.net/svt/bgt?aid=251231472348&wid=002&eno=01&mid=s00000012416002030000&mc=1"></a>
+            <img border="0" width="1" height="1" src="https://www13.a8.net/0.gif?a8mat=45KRG0+5R6W2I+2NSW+C33KX" alt="">
+
+            <br>
+            
+            <a href="https://px.a8.net/svt/ejp?a8mat=45KRG0+5R6W2I+2NSW+BX3J6" rel="nofollow" class="a8-btn-style">
+                体験エステを詳しく見る ＞
+            </a>
+            <img border="0" width="1" height="1" src="https://www11.a8.net/0.gif?a8mat=45KRG0+5R6W2I+2NSW+BX3J6" alt="">
         </div>
-        </section>
+
+    </section>
 
     <section class="lp-section" style="text-align:center; margin-top:80px;">
         <h2 style="font-family:'Playfair Display',serif; font-size:28px; color:#d6336c;">Confidence creates Beauty.</h2>
@@ -330,16 +378,42 @@ footer {
 
 <footer>
   <div class="footer-container">
+    
+    <div class="footer-col">
+      <h3>🌸 スキンケア・悩み別</h3>
+      <a href="skin-ranking.html">おすすめスキンケアランキング</a>
+      <a href="seasons-skin.html">季節別スキンケア（春夏秋冬）</a>
+      <a href="age-skincare.html">40代・50代 年齢別ケア</a>
+      <a href="acne-care.html">肌荒れ・敏感肌・ニキビケア</a>
+      <a href="lifestyle-skincare.html">生活リズム別（時短・夜型など）</a>
+    </div>
+
+    <div class="footer-col">
+      <h3>🛁 ボディ・ヘア・インナー</h3>
+      <a href="hair-care.html">ヘアケア・頭皮ケア特集</a>
+      <a href="diet-beauty.html">インナービューティー＆ダイエット</a>
+      <a href="amazon-oil-review.html">本当に効く！オイルレビュー</a>
+      <a href="organic-science.html">オーガニック成分の科学</a>
+    </div>
+
+    <div class="footer-col">
+      <h3>🎁 特集・コラム・その他</h3>
+      <a href="gift-selection.html">心をつなぐオーガニックギフト</a>
+      <a href="trial-sets.html">失敗しない！お試しセット比較</a>
+      <a href="winter-selection.html">冬のベストセレクション</a>
+      <a href="beauty-column.html">ビューティーコラム一覧</a>
+      <a href="about.html">当サイトについて (About)</a>
+    </div>
+
+  </div>
+  
+  <div class="footer-bottom">
       <a href="https://room.rakuten.co.jp/room_e0dd63a90a/items" target="_blank" rel="noopener" class="footer-room-link">
         🏠 管理人Yuriの楽天ROOMを見る
       </a>
       <br>
-      <div style="margin-top:20px;">
-        <a href="index.html" style="margin:0 10px; color:#666; text-decoration:none;">トップページ</a> | 
-        <a href="skin-ranking.html" style="margin:0 10px; color:#666; text-decoration:none;">ランキング</a>
-      </div>
-      <br>
-      © 2025 Essential Beauty Needs<br>
+      
+      © 2025 Essential Beauty Needs<br><br>
       <a href="privacy-policy.html" style="color:#888; text-decoration:none; font-size:12px;">プライバシーポリシー</a>
   </div>
 </footer>
