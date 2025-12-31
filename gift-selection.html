@@ -3,9 +3,9 @@
 <head>
   <meta charset="utf-8" />
   <meta name="viewport" content="width=device-width,initial-scale=1" />
-  <title>心をつなぐオーガニックギフト | Essential Beauty Needs</title>
-  <meta name="description" content="誕生日、母の日、出産祝いに。大切な人へ贈りたい、肌に優しくセンスの良いオーガニックコスメのギフトを価格帯別に厳選しました。">
-  <meta name="keywords" content="オーガニック, ギフト, プレゼント, ハンドクリーム, 入浴剤, コスメ, 女性">
+  <title>花嫁が喜ぶオーガニックギフト｜受付お礼・自分へのご褒美に</title>
+  <meta name="description" content="結婚式の受付や余興のお礼、そして頑張る花嫁自身へのご褒美に。センスが良く、肌に優しいオーガニックコスメのギフトを価格帯別に厳選しました。">
+  <meta name="keywords" content="花嫁ギフト, 受付お礼, プチギフト, ブライダルエステ, オーガニック, ハンドクリーム, 入浴剤">
   <link rel="canonical" href="https://essential-beauty-needs.com/gift-selection.html" />
 
   <link href="https://fonts.googleapis.com/css2?family=Playfair+Display:wght@600&family=Quicksand:wght@400;600&display=swap" rel="stylesheet">
@@ -195,6 +195,48 @@
         box-shadow: 0 6px 14px rgba(198, 53, 53, 0.4);
     }
 
+    /* ▼▼▼ 追加：診断ボタン用のアニメーション ▼▼▼ */
+    @keyframes pulse-glow {
+      0% { box-shadow: 0 0 0 0 rgba(230, 126, 34, 0.4); transform: scale(1); }
+      50% { box-shadow: 0 0 0 10px rgba(230, 126, 34, 0); transform: scale(1.02); }
+      100% { box-shadow: 0 0 0 0 rgba(230, 126, 34, 0); transform: scale(1); }
+    }
+    .diagnosis-banner {
+      background: #fff;
+      border: 3px solid #f39c12; /* 目立つオレンジ/ゴールド系 */
+      border-radius: 15px;
+      padding: 25px;
+      text-align: center;
+      margin: 30px auto; /* 中央寄せ */
+      position: relative;
+      max-width: 650px;
+    }
+    /* 「NEW!」などのバッジ */
+    .diagnosis-badge {
+        background: #d35400; color: #fff; padding: 5px 15px; border-radius: 5px;
+        font-weight: bold; font-size: 12px; position: absolute; top: -15px; left: 50%;
+        transform: translateX(-50%); box-shadow: 0 2px 5px rgba(0,0,0,0.2);
+    }
+    .diagnosis-btn {
+      display: inline-block;
+      background: linear-gradient(45deg, #e67e22, #f39c12);
+      color: #fff;
+      font-size: 18px;
+      font-weight: bold;
+      padding: 15px 35px;
+      border-radius: 50px;
+      text-decoration: none;
+      margin-top: 15px;
+      box-shadow: 0 4px 15px rgba(230, 126, 34, 0.4);
+      /* ここでキラキラさせます */
+      animation: pulse-glow 2s infinite;
+    }
+    .diagnosis-btn:hover {
+        opacity: 0.9;
+        transform: translateY(-2px);
+    }
+    /* ▲▲▲ 追加ここまで ▲▲▲ */
+
     /* フッター（リンク網羅型） */
     footer {
         background: #fffaf4;
@@ -254,13 +296,13 @@
 <body>
 
 <header>
-  <h1>心をつなぐ、オーガニックギフト</h1>
-  <p>大切なあの人へ。肌と心に優しい贈り物を。</p>
+  <h1>花嫁が喜ぶ、オーガニックギフト</h1>
+  <p>受付のお礼に、頑張る自分に。肌と心に優しい贈り物を。</p>
 
   <div class="nav-links">
       <a href="index.html">🏠 トップ</a>
+      <a href="bridal-care.html">👰 花嫁ケア診断</a>
       <a href="skin-ranking.html">✨ ランキング</a>
-      <a href="seasons-skin.html">🌸 季節別ケア</a>
       <a href="amazon-oil-review.html">🔥 オイルレビュー</a>
       <div class="nav-break"></div>
       <a href="age-skincare.html">👩 年代別ケア</a>
@@ -269,27 +311,36 @@
   </div>
 </header>
 
+<div class="diagnosis-banner">
+    <span class="diagnosis-badge">栄養士監修・無料ツール</span>
+    <h3 style="color:#d35400; margin-bottom:10px; font-size:20px;">⚡ 背中の「ブツブツ」ドレス試着で焦ってない？</h3>
+    <p style="margin-bottom:5px;">挙式までに間に合わせる！<br>
+    今の肌状態と、必要なケア方法を<strong>30秒で診断</strong>します。</p>
+    
+    <a href="bridal-care.html" class="diagnosis-btn">
+        ✨ 今すぐ肌診断をする！ ✨
+    </a>
+</div>
 <main>
 
   <div class="intro-message">
     <p style="margin:0;">
-        「何を贈れば喜んでもらえるかな？」<br>
-        そんな風に相手を想う時間こそが、一番のプレゼントかもしれません。<br><br>
-        オーガニックコスメのギフトは、単なる「モノ」だけでなく、<br>
-        <strong>「健やかでいてほしい」「リラックスしてほしい」</strong>という<br>
-        優しい気持ちをまっすぐに届けてくれます。<br><br>
-        敏感肌の方や、香りにこだわる方にも自信を持って贈れる、<br>
-        センスの良いアイテムを価格帯別に厳選しました。
+        結婚式の受付や余興をお願いした友人へのお礼、何を贈るか迷っていませんか？<br>
+        また、準備に追われる花嫁様ご自身への「ご褒美」も忘れてはいけません。<br><br>
+        オーガニックコスメのギフトは、<br>
+        <strong>「お疲れ様」「ありがとう」「当日もよろしくね」</strong>という<br>
+        優しい気持ちをセンス良く届けてくれます。<br><br>
+        敏感肌の方や、香りにこだわる方にも自信を持って贈れるアイテムを、<br>
+        「受付のお礼（〜3,000円）」や「自分へのご褒美（5,000円〜）」など目的別に厳選しました。
     </p>
   </div>
 
-  <h2 class="gift-heading">プチギフト＆ご挨拶<br><span style="font-size:16px; color:#888;">(〜3,000円)</span></h2>
+  <h2 class="gift-heading">受付・余興のお礼プチギフト<br><span style="font-size:16px; color:#888;">(〜3,000円)</span></h2>
 
   <div class="gift-card">
     <div class="price-label">Under ¥3,000</div>
     
-    <!-- START MoshimoAffiliateEasyLink -->
-<script type="text/javascript">
+    <script type="text/javascript">
 (function(b,c,f,g,a,d,e){b.MoshimoAffiliateObject=a;
 b[a]=b[a]||function(){arguments.currentScript=c.currentScript
 ||c.scripts[c.scripts.length-2];(b[a].q=b[a].q||[]).push(arguments)};
@@ -299,25 +350,22 @@ d.id=a,e=c.getElementsByTagName("body")[0],e.appendChild(d))})
 msmaflink({"n":"スキンケア TOCCA トッカ ハンドクリーム クレオパトラの香り ギフト お祝い 内祝い 結婚 出産 引き出物 お返し お礼 誕生日 プレゼント 女性 おしゃれ ボディケア その他 オーガニック 手荒れ ギフトセット 香り ハンド クリーム 入学祝い お返し ギフト ギフト","b":"","t":"","d":"https:\/\/thumbnail.image.rakuten.co.jp","c_p":"\/@0_mall\/auc-concent\/cabinet","p":["\/items18\/2096414.jpg","\/option_banner.jpg"],"u":{"u":"https:\/\/item.rakuten.co.jp\/auc-concent\/2096414\/","t":"rakuten","r_v":""},"v":"2.1","b_l":[{"id":1,"u_tx":"楽天市場で見る","u_bc":"#87c209","u_url":"https:\/\/item.rakuten.co.jp\/auc-concent\/2096414\/","a_id":5267359,"p_id":54,"pl_id":27059,"pc_id":54,"s_n":"rakuten","u_so":0},{"u_bc":"#125592","u_tx":"Amazonで見る","u_url":"https:\/\/amzn.to\/4pL2v95","s_n":"custom_4","u_so":1,"a_id":0,"p_id":0,"pc_id":0,"pl_id":0,"id":8},{"u_bc":"#bf0000","u_tx":"Yahoo!ショッピングで見る","u_url":"https:\/\/shopping.yahoo.co.jp\/search?first=1\u0026p=%E3%82%B9%E3%82%AD%E3%83%B3%E3%82%B1%E3%82%A2%20TOCCA%20%E3%83%88%E3%83%83%E3%82%AB%20%E3%83%8F%E3%83%B3%E3%83%89%E3%82%AF%E3%83%AA%E3%83%BC%E3%83%A0%20%E3%82%AF%E3%83%AC%E3%82%AA%E3%83%91%E3%83%88%E3%83%A9%E3%81%AE%E9%A6%99%E3%82%8A%20%E3%82%AE%E3%83%95%E3%83%88%20%E3%81%8A%E7%A5%9D%E3%81%84%20%E5%86%85%E7%A5%9D%E3%81%84%20%E7%B5%90%E5%A9%9A%20%E5%87%BA%E7%94%A3%20%E5%BC%95%E3%81%8D%E5%87%BA%E7%89%A9%20%E3%81%8A%E8%BF%94%E3%81%97%20%E3%81%8A%E7%A4%BC%20%E8%AA%95%E7%94%9F%E6%97%A5%20%E3%83%97%E3%83%AC%E3%82%BC%E3%83%B3%E3%83%88%20%E5%A5%B3%E6%80%A7%20%E3%81%8A%E3%81%97%E3%82%83%E3%82%8C%20%E3%83%9C%E3%83%87%E3%82%A3%E3%82%B1%E3%82%A2%20%E3%81%9D%E3%81%AE%E4%BB%96%20%E3%82%AA%E3%83%BC%E3%82%AC%E3%83%8B%E3%83%83%E3%82%AF%20%E6%89%8B%E8%8D%92%E3%82%8C%20%E3%82%AE%E3%83%95%E3%83%88%E3%82%BB%E3%83%83%E3%83%88%20%E9%A6%99%E3%82%8A%20%E3%83%8F%E3%83%B3%E3%83%89%20%E3%82%AF%E3%83%AA%E3%83%BC%E3%83%A0%20%E5%85%A5%E5%AD%A6%E7%A5%9D%E3%81%84%20%E3%81%8A%E8%BF%94%E3%81%97%20%E3%82%AE%E3%83%95%E3%83%88%20%E3%82%AE%E3%83%95%E3%83%88","s_n":"yahoo","u_so":5,"a_id":5267465,"p_id":1225,"pc_id":1925,"pl_id":27061,"id":9}],"eid":"Vyyao","s":"s"});
 </script>
 <div id="msmaflink-Vyyao">リンク</div>
-<!-- MoshimoAffiliateEasyLink END -->
-
-    <div class="gift-point">
-        <h4>💐 編集部のおすすめポイント</h4>
+<div class="gift-point">
+        <h4>💐 花嫁のおすすめポイント</h4>
         <ul>
-            <li><strong>誰にでも喜ばれる必需品：</strong> 手洗いの機会が増えた今、上質なハンドクリームは間違いのないギフト。</li>
-            <li><strong>香りでリフレッシュ：</strong> 天然精油の香りで、仕事や家事の合間に癒やしを届けられます。</li>
-            <li><strong>気を遣わせない価格：</strong> お礼やちょっとしたご挨拶にぴったりのサイズ感です。</li>
+            <li><strong>受付のお礼に最適：</strong> パッケージが可愛く、そのまま渡しても様になります。</li>
+            <li><strong>香りのセンス：</strong> 「クレオパトラの香り」というネーミングも、特別な日のギフトにぴったり。</li>
+            <li><strong>実用性：</strong> 準備で手荒れしやすい時期、自分用にも欲しくなる保湿力です。</li>
         </ul>
     </div>
   </div>
 
-  <h2 class="gift-heading">お祝い＆リラックス<br><span style="font-size:16px; color:#888;">(3,000円〜5,000円)</span></h2>
+  <h2 class="gift-heading">準備疲れを癒やすリラックスギフト<br><span style="font-size:16px; color:#888;">(3,000円〜5,000円)</span></h2>
 
   <div class="gift-card">
     <div class="price-label">¥3,000 - ¥5,000</div>
     
-    <!-- START MoshimoAffiliateEasyLink -->
-<script type="text/javascript">
+    <script type="text/javascript">
 (function(b,c,f,g,a,d,e){b.MoshimoAffiliateObject=a;
 b[a]=b[a]||function(){arguments.currentScript=c.currentScript
 ||c.scripts[c.scripts.length-2];(b[a].q=b[a].q||[]).push(arguments)};
@@ -327,25 +375,22 @@ d.id=a,e=c.getElementsByTagName("body")[0],e.appendChild(d))})
 msmaflink({"n":"Health Nuts はとむぎバスソルト・入浴剤 730g \/ 天然素材 100%完全無添加 安心でやさしい バスソルト","b":"","t":"","d":"https:\/\/thumbnail.image.rakuten.co.jp","c_p":"\/@0_mall\/zakkagenesis\/cabinet\/bulk_502","p":["\/1000000116684_1.jpg","\/1000000116684_2.jpg","\/1000000116684_3.jpg"],"u":{"u":"https:\/\/item.rakuten.co.jp\/zakkagenesis\/1000000116684\/","t":"rakuten","r_v":""},"v":"2.1","b_l":[{"id":1,"u_tx":"楽天市場で見る","u_bc":"#87c209","u_url":"https:\/\/item.rakuten.co.jp\/zakkagenesis\/1000000116684\/","a_id":5267359,"p_id":54,"pl_id":27059,"pc_id":54,"s_n":"rakuten","u_so":1},{"id":8,"u_tx":"Amazonで見る","u_bc":"#125592","u_url":"https:\/\/amzn.to\/4qcODo5","a_id":0,"p_id":0,"pl_id":0,"pc_id":0,"s_n":"custom_4","u_so":2},{"id":9,"u_tx":"Yahoo!ショッピングで見る","u_bc":"#bf0000","u_url":"https:\/\/shopping.yahoo.co.jp\/search?first=1\u0026p=Health%20Nuts%20%E3%81%AF%E3%81%A8%E3%82%80%E3%81%8E%E3%83%90%E3%82%B9%E3%82%BD%E3%83%AB%E3%83%88%E3%83%BB%E5%85%A5%E6%B5%B4%E5%89%A4%20730g%20%2F%20%E5%A4%A9%E7%84%B6%E7%B4%A0%E6%9D%90%20100%25%E5%AE%8C%E5%85%A8%E7%84%A1%E6%B7%BB%E5%8A%A0%20%E5%AE%89%E5%BF%83%E3%81%A7%E3%82%84%E3%81%95%E3%81%97%E3%81%84%20%E3%83%90%E3%82%B9%E3%82%BD%E3%83%AB%E3%83%88","a_id":5267465,"p_id":1225,"pl_id":27061,"pc_id":1925,"s_n":"yahoo","u_so":3}],"eid":"Qoglv","s":"s"});
 </script>
 <div id="msmaflink-Qoglv">リンク</div>
-<!-- MoshimoAffiliateEasyLink END -->
-
-    <div class="gift-point">
-        <h4>💐 編集部のおすすめポイント</h4>
+<div class="gift-point">
+        <h4>💐 花嫁のおすすめポイント</h4>
         <ul>
-            <li><strong>豊富なミネラル：</strong> 国内生産量1％しかない稀少な在来種を遠赤外線で焙用。</li>
-            <li><strong>ナチュラルで癒される香り：</strong> 眠りを誘うほどの、ほんわかした心地良さをお楽しみください。</li>
-            <li><strong>使用後の楽しみ：</strong> 小物などを入れて使用できます♪</li>
+            <li><strong>花嫁のデトックスに：</strong> たっぷり汗をかいて、ドレスから出る二の腕や背中をすっきりさせたい時に。</li>
+            <li><strong>準備疲れをリセット：</strong> 眠りを誘うような優しい香りで、マリッジブルー対策にも◎。</li>
+            <li><strong>友人への内祝いにも：</strong> 誰にでも使いやすい無添加素材なので、引き出物や内祝いにも選ばれています。</li>
         </ul>
     </div>
   </div>
 
-  <h2 class="gift-heading">特別な日の贈り物<br><span style="font-size:16px; color:#888;">(5,000円〜)</span></h2>
+  <h2 class="gift-heading">挙式直前のスペシャルケア<br><span style="font-size:16px; color:#888;">(5,000円〜)</span></h2>
 
   <div class="gift-card">
     <div class="price-label">Over ¥5,000</div>
     
-   <!-- START MoshimoAffiliateEasyLink -->
-<script type="text/javascript">
+   <script type="text/javascript">
 (function(b,c,f,g,a,d,e){b.MoshimoAffiliateObject=a;
 b[a]=b[a]||function(){arguments.currentScript=c.currentScript
 ||c.scripts[c.scripts.length-2];(b[a].q=b[a].q||[]).push(arguments)};
@@ -355,14 +400,12 @@ d.id=a,e=c.getElementsByTagName("body")[0],e.appendChild(d))})
 msmaflink({"n":"NANOA スキンケア 素肌潤うギフトセット ( 化粧水 \/ 保湿クリーム ) スキンケア ヒト幹細胞 エクソソーム EGF スキンケア セラミド 保湿セット 保湿 乾燥肌 スキンケア 保湿 うるおい クリーム 肌 基礎化粧品 30代 40代 50代","b":"","t":"","d":"https:\/\/thumbnail.image.rakuten.co.jp","c_p":"\/@0_mall\/hiragana1\/cabinet","p":["\/tuzyou\/na-giftset-05.jpg","\/09360223\/11706109\/11707119\/1.jpg","\/09360223\/11706109\/11707119\/2.jpg"],"u":{"u":"https:\/\/item.rakuten.co.jp\/hiragana1\/na-giftset-05\/","t":"rakuten","r_v":""},"v":"2.1","b_l":[{"id":1,"u_tx":"楽天市場で見る","u_bc":"#87c209","u_url":"https:\/\/item.rakuten.co.jp\/hiragana1\/na-giftset-05\/","a_id":5267359,"p_id":54,"pl_id":27059,"pc_id":54,"s_n":"rakuten","u_so":0},{"u_bc":"#125592","u_tx":"Amazonで見る","u_url":"https:\/\/amzn.to\/4q54eWz","s_n":"custom_4","u_so":1,"a_id":0,"p_id":0,"pc_id":0,"pl_id":0,"id":8},{"u_bc":"#bf0000","u_tx":"Yahoo!ショッピングで見る","u_url":"https:\/\/shopping.yahoo.co.jp\/search?first=1\u0026p=NANOA%20%E3%82%B9%E3%82%AD%E3%83%B3%E3%82%B1%E3%82%A2%20%E7%B4%A0%E8%82%8C%E6%BD%A4%E3%81%86%E3%82%AE%E3%83%95%E3%83%88%E3%82%BB%E3%83%83%E3%83%88%20(%20%E5%8C%96%E7%B2%A7%E6%B0%B4%20%2F%20%E4%BF%9D%E6%B9%BF%E3%82%AF%E3%83%AA%E3%83%BC%E3%83%A0%20)%20%E3%82%B9%E3%82%AD%E3%83%B3%E3%82%B1%E3%82%A2%20%E3%83%92%E3%83%88%E5%B9%B9%E7%B4%B0%E8%83%9E%20%E3%82%A8%E3%82%AF%E3%82%BD%E3%82%BD%E3%83%BC%E3%83%A0%20EGF%20%E3%82%B9%E3%82%AD%E3%83%B3%E3%82%B1%E3%82%A2%20%E3%82%BB%E3%83%A9%E3%83%9F%E3%83%89%20%E4%BF%9D%E6%B9%BF%E3%82%BB%E3%83%83%E3%83%88%20%E4%BF%9D%E6%B9%BF%20%E4%B9%BE%E7%87%A5%E8%82%8C%20%E3%82%B9%E3%82%AD%E3%83%B3%E3%82%B1%E3%82%A2%20%E4%BF%9D%E6%B9%BF%20%E3%81%86%E3%82%8B%E3%81%8A%E3%81%84%20%E3%82%AF%E3%83%AA%E3%83%BC%E3%83%A0%20%E8%82%8C%20%E5%9F%BA%E7%A4%8E%E5%8C%96%E7%B2%A7%E5%93%81%2030%E4%BB%A3%2040%E4%BB%A3%2050%E4%BB%A3","s_n":"yahoo","u_so":5,"a_id":5267465,"p_id":1225,"pc_id":1925,"pl_id":27061,"id":9}],"eid":"RFWY8","s":"s"});
 </script>
 <div id="msmaflink-RFWY8">リンク</div>
-<!-- MoshimoAffiliateEasyLink END -->
-
-    <div class="gift-point">
-        <h4>💐 編集部のおすすめポイント</h4>
+<div class="gift-point">
+        <h4>💐 花嫁のおすすめポイント</h4>
         <ul>
-            <li><strong>ライン使いの贅沢：</strong> 化粧水・乳液・美容液が揃ったセットは、スキンケアを一新するワクワク感を贈れます。</li>
-            <li><strong>確かな品質：</strong> 多くの支持を集めるオーガニックブランドなら、母の日や誕生日などの特別なギフトにも安心です。</li>
-            <li><strong>香りのアロマテラピー：</strong> 毎日のケアが楽しみになるような、植物由来の豊かな香りを楽しんでもらえます。</li>
+            <li><strong>自分へのご褒美に：</strong> 挙式直前の「追い込み美容」として、エステ代わりに投入したい贅沢セット。</li>
+            <li><strong>母の日のプレゼントに：</strong> 一緒に挙式を迎えるお母様へ、「今までありがとう」の気持ちを込めて贈るのも素敵です。</li>
+            <li><strong>写真映えする肌へ：</strong> ヒト幹細胞やセラミドなど、話題の成分で当日の化粧ノリを底上げします。</li>
         </ul>
     </div>
   </div>
@@ -386,8 +429,9 @@ msmaflink({"n":"NANOA スキンケア 素肌潤うギフトセット ( 化粧水
 <footer>
   <div class="footer-container">
     
-    <div class="footer-col">
+   <div class="footer-col">
       <h3>🌸 スキンケア・悩み別</h3>
+      <a href="bridal-care.html" style="color:#d35400; font-weight:bold;">👰 結婚式直前！背中・二の腕ケア</a>
       <a href="skin-ranking.html">おすすめスキンケアランキング</a>
       <a href="seasons-skin.html">季節別スキンケア（春夏秋冬）</a>
       <a href="age-skincare.html">40代・50代 年齢別ケア</a>
@@ -415,13 +459,13 @@ msmaflink({"n":"NANOA スキンケア 素肌潤うギフトセット ( 化粧水
   </div>
   
   <div class="footer-bottom">
-     <a href="https://room.rakuten.co.jp/room_e0dd63a90a/items" target="_blank" rel="noopener" class="footer-room-link">
+      <a href="https://room.rakuten.co.jp/room_e0dd63a90a/items" target="_blank" rel="noopener" class="footer-room-link">
         🏠 管理人Yuriの楽天ROOMを見る
-     </a>
-     <br>
-     
-     © 2025 Essential Beauty Needs<br><br>
-     <a href="privacy-policy.html" style="color:#888; text-decoration:none; font-size:12px;">プライバシーポリシー</a>
+      </a>
+      <br>
+      
+      © 2025 Essential Beauty Needs<br><br>
+      <a href="privacy-policy.html" style="color:#888; text-decoration:none; font-size:12px;">プライバシーポリシー</a>
   </div>
 </footer>
 
