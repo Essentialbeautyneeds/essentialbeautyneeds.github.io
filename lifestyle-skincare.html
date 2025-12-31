@@ -21,8 +21,8 @@
   </script>
   
   <meta name="viewport" content="width=device-width,initial-scale=1" />
-  <title>生活リズム別スキンケア｜Essential Beauty Needs</title>
-  <meta name="description" content="生活リズムに合わせたオーガニック・ナチュラルなスキンケア提案。ナチュラル派／時短派／アクティブ派／夜型の4タイプに合うおすすめ商品を紹介。">
+  <title>【期間・タイプ別】花嫁のためのスキンケア計画表 | Essential Beauty Needs</title>
+  <meta name="description" content="忙しい花嫁様も、じっくり派の花嫁様も。挙式までの期間や生活スタイルに合わせた、無理なく続くオーガニック・スキンケア計画を提案します。">
   
   <link rel="canonical" href="https://essential-beauty-needs.com/lifestyle-skincare.html" />
   
@@ -183,6 +183,48 @@
         box-shadow: 0 6px 14px rgba(198, 53, 53, 0.4);
     }
 
+    /* ▼▼▼ 追加：診断ボタン用のアニメーション ▼▼▼ */
+    @keyframes pulse-glow {
+      0% { box-shadow: 0 0 0 0 rgba(230, 126, 34, 0.4); transform: scale(1); }
+      50% { box-shadow: 0 0 0 10px rgba(230, 126, 34, 0); transform: scale(1.02); }
+      100% { box-shadow: 0 0 0 0 rgba(230, 126, 34, 0); transform: scale(1); }
+    }
+    .diagnosis-banner {
+      background: #fff;
+      border: 3px solid #f39c12; /* 目立つオレンジ/ゴールド系 */
+      border-radius: 15px;
+      padding: 25px;
+      text-align: center;
+      margin: 30px auto; /* 中央寄せ */
+      position: relative;
+      max-width: 650px;
+    }
+    /* 「NEW!」などのバッジ */
+    .diagnosis-badge {
+        background: #d35400; color: #fff; padding: 5px 15px; border-radius: 5px;
+        font-weight: bold; font-size: 12px; position: absolute; top: -15px; left: 50%;
+        transform: translateX(-50%); box-shadow: 0 2px 5px rgba(0,0,0,0.2);
+    }
+    .diagnosis-btn {
+      display: inline-block;
+      background: linear-gradient(45deg, #e67e22, #f39c12);
+      color: #fff;
+      font-size: 18px;
+      font-weight: bold;
+      padding: 15px 35px;
+      border-radius: 50px;
+      text-decoration: none;
+      margin-top: 15px;
+      box-shadow: 0 4px 15px rgba(230, 126, 34, 0.4);
+      /* ここでキラキラさせます */
+      animation: pulse-glow 2s infinite;
+    }
+    .diagnosis-btn:hover {
+        opacity: 0.9;
+        transform: translateY(-2px);
+    }
+    /* ▲▲▲ 追加ここまで ▲▲▲ */
+
     /* フッター（リンク網羅型） */
     footer {
         background: #fffaf4;
@@ -216,20 +258,22 @@
     .footer-col a::before { content: "・"; position: absolute; left: 0; color: #f7a8a8; }
     .footer-col a:hover { color: #d6336c; padding-left: 15px; }
     .footer-bottom { text-align: center; margin-top: 50px; padding-top: 30px; border-top: 1px solid #eee; }
-    
     .footer-room-link {
         display: inline-block; color: #c63535; font-weight: bold; border: 1px solid #c63535; padding: 8px 20px; border-radius: 20px; text-decoration: none; margin-bottom: 20px; background: #fff; transition: 0.3s;
     }
     .footer-room-link:hover { background: #c63535; color: #fff; }
 
-</style>
+    @media(max-width:600px){
+      header h1{font-size:30px;}
+    }
+  </style>
 </head>
 <body>
 
 <header class="header">
   <div class="container">
-    <h1>生活リズム別スキンケア</h1>
-    <p class="lead">日々のリズムに合わせたオーガニック＆ナチュラルなケア提案。あなたの生活スタイルに合う商品をピックアップしました。</p>
+    <h1>花嫁のタイプ別スキンケア計画</h1>
+    <p class="lead">忙しい人も、じっくり派も。あなたの生活リズムに合わせた、無理なく続く美肌プラン。</p>
 
     <div class="nav-links" role="navigation">
         <a href="index.html">🏠 トップ</a>
@@ -256,14 +300,25 @@
   </div>
 </header>
 
+<div class="diagnosis-banner">
+    <span class="diagnosis-badge">栄養士監修・無料ツール</span>
+    <h3 style="color:#d35400; margin-bottom:10px; font-size:20px;">⚡ あなたの肌、今のケアで挙式に間に合う？</h3>
+    <p style="margin-bottom:5px;">背中や二の腕の「ざらつき」見逃していませんか？<br>
+    今の肌状態と、最適なケアプランを<strong>30秒で診断</strong>します。</p>
+    
+    <a href="bridal-care.html" class="diagnosis-btn">
+        ✨ 今すぐ肌診断をする！ ✨
+    </a>
+</div>
 <div style="border:2px solid #f4b5b5; border-radius:12px; padding:20px; margin:25px auto; background:#fff1f1; color:#503535; font-size:16px; line-height:1.6; width:90%; max-width:600px;">
-  日々の生活リズムに合わせたスキンケアは、肌の健康や美容に直結する非常に重要なポイントです。朝は一日の中で最も慌ただしい時間帯で、スキンケアに多くの時間を割けない人も多いですが、その分「短時間でしっかり潤うか」が鍵になります。
+  結婚式の準備は想像以上に忙しいもの。でも、スキンケアは毎日の積み重ねが大切です。<br>
+  「仕事が忙しくて時間がない」「彼と一緒にケアしたい」など、あなたのライフスタイルに合わせた無理のないケアで、当日最高の笑顔を迎えましょう。
 </div>
   
 <main class="container">
 
   <section class="section" id="natural">
-    <h2>🕊 ナチュラル派・家族重視（ゆったり生活）</h2>
+    <h2>🕊 ナチュラル派・新婚生活（彼とシェア）</h2>
     <div class="block">
       <div class="card">
         
@@ -279,20 +334,20 @@
         <div id="msmaflink-FcPsw">リンク</div>
 
         <div class="point-box">
-            <div class="point-title">💡 おすすめポイント</div>
+            <div class="point-title">💡 花嫁のおすすめポイント</div>
             <ul class="point-list">
-                <li><strong>家族で使えるやさしさ：</strong> 年齢や性別を問わず使えるベーシックな処方。</li>
-                <li><strong>天然由来成分100%：</strong> 合成保存料や香料不使用で、敏感肌の方にもおすすめ。</li>
-                <li><strong>高コスパ：</strong> 毎日たっぷり使える容量と価格のバランスが魅力。</li>
+                <li><strong>新郎様と一緒に：</strong> 挙式に向けて、彼にもスキンケアを始めてほしい時にぴったりなシェアコスメ。</li>
+                <li><strong>肌に優しい処方：</strong> ストレスで敏感になりがちな準備期間中も安心。</li>
+                <li><strong>シンプルステップ：</strong> 洗顔から保湿までこれ一つで完了するベーシックセット。</li>
             </ul>
         </div>
         </div>
     </div>
-    <div style="text-align:center;margin-top:12px;"><a class="internal-link" href="#time-saving">次：忙しい日常（時短ケア） →</a></div>
+    <div style="text-align:center;margin-top:12px;"><a class="internal-link" href="#time-saving">次：忙しい花嫁（時短ケア） →</a></div>
   </section>
 
   <section class="section" id="time-saving">
-    <h2>⏱ 忙しい日常・時短ケア（ワーキングライフ）</h2>
+    <h2>⏱ 仕事と準備で多忙な花嫁（時短ケア）</h2>
     <div class="block">
       <div class="card">
         
@@ -308,16 +363,16 @@
         <div id="msmaflink-0CX0q">リンク</div>
 
         <div class="point-box">
-            <div class="point-title">💡 おすすめポイント</div>
+            <div class="point-title">💡 花嫁のおすすめポイント</div>
             <ul class="point-list">
-                <li><strong>水を使わずヘチマ水100%：</strong> 自然の恵みがそのまま詰まった、濃厚な潤い化粧水。</li>
-                <li><strong>シンプルケア：</strong> 肌本来の力を引き出す設計で、忙しい時もこれ一本で満足感。</li>
-                <li><strong>全身ローションとしても：</strong> 顔だけでなく、お風呂上がりのボディケアにも最適。</li>
+                <li><strong>ヘチマ水100%：</strong> 余計なものを入れない、究極のシンプルケア。忙しい朝もこれ一本で水分補給完了。</li>
+                <li><strong>全身ローションに：</strong> お風呂上がりに全身にバシャバシャ使って、ボディの保湿も同時に。</li>
+                <li><strong>高機能なのに時短：</strong> 手抜きに見えてしっかり潤う、忙しい花嫁の強い味方。</li>
             </ul>
         </div>
         </div>
     </div>
-    <div style="text-align:center;margin-top:12px;"><a class="internal-link" href="#active">次：アクティブ派（外出・運動） →</a></div>
+    <div style="text-align:center;margin-top:12px;"><a class="internal-link" href="#active">次：アクティブ花嫁（前撮り・リゾート） →</a></div>
   </section>
 
   <div style="text-align:center; margin: 40px 0;">
@@ -334,7 +389,7 @@
   
 
   <section class="section" id="active">
-    <h2>🏞 アクティブ・アウトドア（外出・運動が多い）</h2>
+    <h2>🏞 アクティブ花嫁（前撮り・ハネムーン）</h2>
     <div class="block">
       <div class="card">
         
@@ -350,23 +405,24 @@
         <div id="msmaflink-yWCJk">リンク</div>
 
         <div class="point-box">
-            <div class="point-title">💡 おすすめポイント</div>
+            <div class="point-title">💡 花嫁のおすすめポイント</div>
             <ul class="point-list">
-                <li><strong>ディート不使用：</strong> 強い薬剤を使わず、天然精油の香りでガード。お子様にも安心。</li>
-                <li><strong>爽やかなアロマ：</strong> 虫が嫌がる香りと人間が癒やされる香りを両立。</li>
-                <li><strong>持ち運びサイズ：</strong> キャンプや公園遊びにサッとバッグに入れておけます。</li>
+                <li><strong>ロケフォトの必需品：</strong> 前撮りやリゾート挙式など、屋外での撮影時の虫除け＆リフレッシュに。</li>
+                <li><strong>香りでリラックス：</strong> 緊張しがちな撮影中も、アロマの香りで自然な笑顔を引き出せます。</li>
+                <li><strong>肌に優しい：</strong> 強い薬剤を使わず、大事な肌を守ります。</li>
             </ul>
         </div>
         </div>
     </div>
-    <div style="text-align:center;margin-top:12px;"><a class="internal-link" href="#night">次：夜型・不規則生活 →</a></div>
+    <div style="text-align:center;margin-top:12px;"><a class="internal-link" href="#night">次：寝不足花嫁（ナイトケア） →</a></div>
   </section>
 
   <section class="section" id="night">
-    <h2>🌙 夜型・不規則生活（夜勤／睡眠不足）</h2>
+    <h2>🌙 寝不足・ストレスフル花嫁（ナイトケア）</h2>
 
     <div style="border:2px solid #f4b5b5; border-radius:12px; padding:20px; margin:25px auto; background:#fff1f1; color:#503535; font-size:16px; line-height:1.6; width:90%; max-width:600px;">
-        夜は一日の疲れを癒し、肌を集中ケアする絶好の時間です。メイクや皮脂汚れをしっかり落とした後、肌が最も吸収しやすいタイミングに美容液やクリームで栄養を届けることで、翌朝の肌の調子が大きく変わります。
+        準備やマリッジブルーで寝不足になっていませんか？<br>
+        睡眠中は美肌を作るゴールデンタイム。寝ている間にダメージを修復する「塗って寝るだけ」の高機能クリームで、翌朝の肌を復活させましょう。
     </div>
 
     <div class="block">
@@ -384,11 +440,11 @@
         <div id="msmaflink-r9mo3">リンク</div>
 
         <div class="point-box">
-            <div class="point-title">💡 おすすめポイント</div>
+            <div class="point-title">💡 花嫁のおすすめポイント</div>
             <ul class="point-list">
-                <li><strong>月桃（ゲットウ）の抗酸化力：</strong> 沖縄の伝統ハーブが、寝ている間に肌ダメージをケア。</li>
-                <li><strong>ベタつかない高保湿：</strong> シアバター配合なのに軽やかな使い心地で、枕への付着も気になりません。</li>
-                <li><strong>リラックスアロマ：</strong> 深い呼吸を誘う香りで、良質な睡眠をサポートします。</li>
+                <li><strong>月桃のパワー：</strong> 紫外線ダメージやストレス肌を寝ている間にリペア。</li>
+                <li><strong>翌朝のハリ：</strong> シアバター配合で、挙式直前の「疲れ顔」をふっくら肌へ。</li>
+                <li><strong>癒やしの香り：</strong> 深呼吸したくなる香りで、安眠を誘います。</li>
             </ul>
         </div>
         </div>
@@ -396,8 +452,8 @@
   </section>
 
   <div style="border:2px solid #f4b5b5; border-radius:12px; padding:20px; margin:25px auto; background:#fff1f1; color:#503535; font-size:16px; line-height:1.6; width:90%; max-width:600px;">
-    朝と夜の役割を意識し、生活リズムに合ったアイテムを選びましょう。無理なく続けられるスキンケア習慣が身につきます。
-    毎日の小さな積み重ねが、長期的な美肌づくりにつながるのです。
+    無理なケアは続きません。あなたの今のライフスタイルに合ったアイテムを一つ取り入れるだけで、肌は応えてくれます。<br>
+    自分を大切に慈しむ時間が、挙式当日の自信に繋がりますよ。
   </div>
   
   <div style="text-align:center; margin:20px 0;">
@@ -415,27 +471,6 @@
   <img border="0" width="1" height="1" src="https://www16.a8.net/0.gif?a8mat=45I9PD+4HXY3E+51ZO+1HLVB5" alt="">
 
 </div>
-  
-  <div style="border:2px solid #f4b5b5; border-radius:12px; padding:20px; margin:25px auto; background:#fffaf9; color:#503535; font-size:16px; line-height:1.6; width:90%; max-width:600px;">
-    生活スタイルに合ったスキンケアを取り入れることで、肌トラブルを防ぎつつ、心地よい毎日を過ごせます。朝晩の習慣、週末のスペシャルケアなど、自分に合ったリズムでケアを楽しむことが大切です。
-    家族と一緒に使えるアイテムや持ち運びしやすい商品を選ぶと、忙しい日常でも続けやすく、自然由来成分で肌にも優しいケアが可能です。
-  </div>
-
-  <div>
-    <p style="text-align:center;">一年を通して使える最強のオーガニックジェルです。ぜひ使ってみてください！</p>
-
-    <p style="text-align:center;">
-      <a href="https://px.a8.net/svt/ejp?a8mat=45I9PD+4GR2VU+3PSY+1BMW42" rel="nofollow sponsored noopener">【ハレナ　オーガニックオールインワンジェル】</a>
-    </p>
-    <img border="0" width="1" height="1" src="https://www10.a8.net/0.gif?a8mat=45I9PD+4GR2VU+3PSY+1BMW42" alt="">
-
-    <p style="text-align:center;">
-      <a href="https://px.a8.net/svt/ejp?a8mat=45I9PD+4GR2VU+3PSY+1BNJ9D" rel="nofollow sponsored noopener">
-        <img border="0" width="468" height="60" alt="HALENA オーガニックオールインワンジェル" src="https://www25.a8.net/svt/bgt?aid=251115169270&wid=002&eno=01&mid=s00000017341008004000&mc=1">
-      </a>
-    </p>
-    <img border="0" width="1" height="1" src="https://www16.a8.net/0.gif?a8mat=45I9PD+4GR2VU+3PSY+1BNJ9D" alt="">
-  </div>
   
   <div class="room-promo">
       <h3 style="margin-top:0; color: #c63535; font-size:18px;">\ 管理人 Yuriの愛用品コレクション /</h3>
@@ -463,8 +498,9 @@
 <footer>
   <div class="footer-container">
     
-    <div class="footer-col">
+   <div class="footer-col">
       <h3>🌸 スキンケア・悩み別</h3>
+      <a href="bridal-care.html" style="color:#d35400; font-weight:bold;">👰 結婚式直前！背中・二の腕ケア</a>
       <a href="skin-ranking.html">おすすめスキンケアランキング</a>
       <a href="seasons-skin.html">季節別スキンケア（春夏秋冬）</a>
       <a href="age-skincare.html">40代・50代 年齢別ケア</a>
@@ -492,13 +528,13 @@
   </div>
   
   <div class="footer-bottom">
-     <a href="https://room.rakuten.co.jp/room_e0dd63a90a/items" target="_blank" rel="noopener" class="footer-room-link">
+      <a href="https://room.rakuten.co.jp/room_e0dd63a90a/items" target="_blank" rel="noopener" class="footer-room-link">
         🏠 管理人Yuriの楽天ROOMを見る
-     </a>
-     <br>
-     
-     © 2025 Essential Beauty Needs<br><br>
-     <a href="privacy-policy.html" style="color:#888; text-decoration:none; font-size:12px;">プライバシーポリシー</a>
+      </a>
+      <br>
+      
+      © 2025 Essential Beauty Needs<br><br>
+      <a href="privacy-policy.html" style="color:#888; text-decoration:none; font-size:12px;">プライバシーポリシー</a>
   </div>
 </footer>
 <div id="affiliateNotice">※当サイトはアフィリエイト広告（Amazonアソシエイト含む）を利用しています</div>
