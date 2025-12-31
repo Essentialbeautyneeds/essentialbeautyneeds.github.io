@@ -3,9 +3,9 @@
 <head>
     <meta charset="utf-8">
     <meta name="viewport" content="width=device-width,initial-scale=1">
-    <title>【Amazonで高評価】本当に効く🔥オーガニックフェイスオイル3選徹底レビュー</title>
-    <meta name="description" content="乾燥肌・エイジングケアに必須の良質なフェイスオイルを厳選。ホホバ、アルガン、ローズヒップなど、Amazonで買えるオーガニックオイルの選び方と効果を比較します。">
-    <meta name="keywords" content="オーガニックオイル, Amazon, ホホバオイル, アルガンオイル, ローズヒップオイル, エイジングケア,アンチエイジング, バリア機能""
+    <title>花嫁の「発光肌」を作るオーガニックオイル3選徹底レビュー</title>
+    <meta name="description" content="ドレスが映えるツヤ肌を作るには？花嫁に必須のホホバ、アルガン、ローズヒップオイルを厳選。背中・デコルテ・二の腕のケア方法まで解説します。">
+    <meta name="keywords" content="花嫁美容, ボディケア, 背中ケア, アルガンオイル, ホホバオイル, ローズヒップオイル, ブライダルエステ">
 
     <link href="https://fonts.googleapis.com/css2?family=Playfair+Display:wght@600&family=Quicksand:wght@400;600&display=swap" rel="stylesheet">
     <link rel="canonical" href="https://essential-beauty-needs.com/amazon-oil-review.html" />
@@ -51,7 +51,7 @@
             color: var(--text-main); 
             border-bottom: 3px solid #e6b7b3;
         }
-        h1 { font-family: 'Playfair Display', serif; font-size: 36px; margin-bottom: 8px; }
+        h1 { font-family: 'Playfair Display', serif; font-size: 34px; margin-bottom: 8px; }
         h2 { font-family: 'Playfair Display', serif; text-align: left; color: var(--text-main); margin: 50px 0 20px; font-size: 26px; border-bottom: 2px solid #f7dada; padding-bottom: 5px; }
         h3 { color: var(--accent); margin: 30px 0 15px; font-size: 22px; }
         
@@ -182,6 +182,48 @@
         box-shadow: 0 6px 14px rgba(198, 53, 53, 0.4);
     }
 
+    /* ▼▼▼ 追加：診断ボタン用のアニメーション ▼▼▼ */
+    @keyframes pulse-glow {
+      0% { box-shadow: 0 0 0 0 rgba(230, 126, 34, 0.4); transform: scale(1); }
+      50% { box-shadow: 0 0 0 10px rgba(230, 126, 34, 0); transform: scale(1.02); }
+      100% { box-shadow: 0 0 0 0 rgba(230, 126, 34, 0); transform: scale(1); }
+    }
+    .diagnosis-banner {
+      background: #fff;
+      border: 3px solid #f39c12; /* 目立つオレンジ/ゴールド系 */
+      border-radius: 15px;
+      padding: 25px;
+      text-align: center;
+      margin: 30px auto; /* 中央寄せ */
+      position: relative;
+      max-width: 650px;
+    }
+    /* 「NEW!」などのバッジ */
+    .diagnosis-badge {
+        background: #d35400; color: #fff; padding: 5px 15px; border-radius: 5px;
+        font-weight: bold; font-size: 12px; position: absolute; top: -15px; left: 50%;
+        transform: translateX(-50%); box-shadow: 0 2px 5px rgba(0,0,0,0.2);
+    }
+    .diagnosis-btn {
+      display: inline-block;
+      background: linear-gradient(45deg, #e67e22, #f39c12);
+      color: #fff;
+      font-size: 18px;
+      font-weight: bold;
+      padding: 15px 35px;
+      border-radius: 50px;
+      text-decoration: none;
+      margin-top: 15px;
+      box-shadow: 0 4px 15px rgba(230, 126, 34, 0.4);
+      /* ここでキラキラさせます */
+      animation: pulse-glow 2s infinite;
+    }
+    .diagnosis-btn:hover {
+        opacity: 0.9;
+        transform: translateY(-2px);
+    }
+    /* ▲▲▲ 追加ここまで ▲▲▲ */
+
     /* フッター（リンク網羅型） */
     footer {
         background: #fffaf4;
@@ -237,17 +279,17 @@
 <header>
     <div class="container">
         <h1>
-            【Amazonで高評価】本当に効く🔥<br>
-            <span style="font-size:0.8em; display:block; margin-top:5px;">オーガニックフェイスオイル３選徹底レビュー</span>
+            花嫁の「発光肌」を作る<br>
+            <span style="font-size:0.8em; display:block; margin-top:5px;">オーガニックオイル３選徹底レビュー</span>
         </h1>
         <p class="lead" style="font-size:17px;color:#5a4545; margin-bottom: 25px;">
-            乾燥やハリ不足を感じ始めたら。Amazonで手軽に買える、成分にこだわった良質な植物オイルを専門的に比較します。
+            ドレス試着で気づく「肌の質感」の違い。背中・デコルテ・二の腕まで、挙式当日に自信が持てる植物オイルの選び方。
         </p>
 
         <div style="margin-top: 30px;">
             <div class="nav-links">
                 <a href="index.html">🏠 トップ</a>
-                <a href="organic-science.html">🔬 成分の科学（NEW!）</a>
+                <a href="bridal-care.html">👰 花嫁ケア診断</a>
                 <a href="seasons-skin.html">🌸 季節別ケア</a>
                 <a href="age-skincare.html">👩 年齢・肌質別</a>
                 <div class="nav-break"></div>
@@ -259,35 +301,44 @@
     </div>
 </header>
 
+<div class="diagnosis-banner">
+    <span class="diagnosis-badge">栄養士監修・無料ツール</span>
+    <h3 style="color:#d35400; margin-bottom:10px; font-size:20px;">⚡ 花嫁様、背中やデコルテの準備はOK？</h3>
+    <p style="margin-bottom:5px;">ドレス映えする肌を作るには「今の状態」を知ることから。<br>
+    あなたに必要なオイルやケア方法を<strong>30秒で診断</strong>します。</p>
+    
+    <a href="bridal-care.html" class="diagnosis-btn">
+        ✨ 今すぐ肌診断をする！ ✨
+    </a>
+</div>
 <main class="container">
 
     <div class="article-section">
-        <h2>💧 オイルが鍵：肌のバリア機能を修復する「良質な油分」</h2>
+        <h2>💧 挙式当日の輝きは「オイル」で決まる</h2>
         <p>
-            前回のコラム（オーガニック成分の科学）でも解説した通り、肌の潤いを保つ<strong>バリア機能</strong>の核となるのは、<strong>良質な油分（必須脂肪酸）</strong>です。
-        </p>
-        <p>
-            特に、外部の刺激や乾燥が原因で肌がゆらぎやすい方にとって、植物オイルは「蓋」をするだけでなく、細胞間脂質を補い、肌本来の防御力を高める役割を担います。
-            今回は、Amazonで手軽に購入でき、かつ<strong>オーガニック認証</strong>や<strong>品質</strong>が確かな3つの代表的なフェイスオイルを厳選しました。
+            スポットライトやフラッシュを浴びる結婚式。写真映えする肌とは、白さよりも<strong>「光を反射する艶（ツヤ）」</strong>がある肌です。<br>
+            化粧水だけのケアでは、この「艶」は生まれません。<br><br>
+            植物オイル（フィトオイル）は、肌に「蓋」をするだけでなく、内側からふっくらとさせ、レフ板のように光を味方につける肌を作ってくれます。<br>
+            今回は、花嫁様が今すぐAmazonで手軽に始められる、高品質なオーガニックオイルを厳選しました。
         </p>
     </div>
     
     <section class="article-section">
-        <h2>🥇 レビュー１: ホホバオイル（万能性と安定性No.1）</h2>
+        <h2>🥇 レビュー１: ホホバオイル（全身の乾燥・ブースターに）</h2>
         <div class="oil-review-card">
             
             <div class="oil-detail-area">
-                <h3>ホホバオイルの特徴とメリット</h3>
+                <h3>花嫁の必需品「万能オイル」</h3>
                 <ul class="point-list">
-                    <li><strong>【成分】</strong> 人間の皮脂に最も近い<strong>ワックスエステル</strong>で構成され、肌なじみが抜群。</li>
-                    <li><strong>【安定性】</strong> 酸化しにくく、長期間品質が安定。朝晩、全身に使える万能オイル。</li>
-                    <li><strong>【用途】</strong> 洗顔後のブースター、マッサージ、ヘアケア、クレンジングなど多用途に使用可能。敏感肌にも◎。</li>
+                    <li><strong>【成分】</strong> 人間の皮脂に近い<strong>ワックスエステル</strong>。さらっとしていてドレスに付着しにくいのも魅力。</li>
+                    <li><strong>【用途】</strong> お風呂上がりの濡れた肌に塗れば、全身の保湿が完了。背中ケアの基本です。</li>
+                    <li><strong>【ブースター】</strong> 化粧水前に一滴なじませるだけで、肌が柔らかくなり、化粧水の浸透が格段にアップします。</li>
                 </ul>
                 <div style="background:#f0f8ff; padding:15px; border-radius:8px; margin-top:15px; border:1px solid #dcdcdc;">
-    <p style="font-weight:bold; color:#2c3e50; margin-bottom:5px;">💡 編集部のおすすめポイント</p>
+    <p style="font-weight:bold; color:#2c3e50; margin-bottom:5px;">💡 花嫁へのおすすめポイント</p>
     <p style="font-size:14px; margin:0;">
-        「オイルはベタつく」という常識を覆すサラサラ感です。<br>
-        化粧水の前のブースターとして使うと、肌が柔らかくなり水分が馴染みやすくなります。一本で髪から爪先までケアできるコスパの良さも魅力です。
+        酸化しにくく安定しているので、挙式準備期間中ずっと使えます。<br>
+        「エステに行く時間がない」という方は、ホホバオイルでデコルテを優しくマッサージするだけでも、鎖骨が綺麗に出ますよ。
     </p>
 </div>
             </div>
@@ -305,22 +356,22 @@ msmaflink({"n":"ゴールデンホホバオイル 300ml ホホバオイル 未�
     </section>
 
     <section class="article-section">
-        <h2>🥈 レビュー２: アルガンオイル（エイジングケアに特化）</h2>
+        <h2>🥈 レビュー２: アルガンオイル（年齢が出やすい首・デコルテに）</h2>
         <div class="oil-review-card">
 
             
             <div class="oil-detail-area">
-                <h3>アルガンオイルの特徴とメリット</h3>
+                <h3>肌の「ハリ・弾力」を取り戻す</h3>
                 <ul class="point-list">
-                    <li><strong>【成分】</strong> <strong>オレイン酸</strong>が豊富で、肌を柔らかくし、水分を保持する力に優れる。</li>
-                    <li><strong>【抗酸化力】</strong> 天然の<strong>ビタミンE（トコフェロール）</strong>がオリーブオイルの数倍含まれており、強力な<strong>抗酸化作用</strong>を発揮。</li>
-                    <li><strong>【用途】</strong> ハリ不足、乾燥による小じわ、肌のくすみが気になる<strong>エイジングサイン</strong>への集中ケアに最適。</li>
+                    <li><strong>【成分】</strong> <strong>ビタミンE（若返りのビタミン）</strong>がオリーブオイルの数倍。抗酸化作用が非常に高いです。</li>
+                    <li><strong>【用途】</strong> 乾燥による小じわや、年齢が出やすい首元のシワ対策に。</li>
+                    <li><strong>【髪にも】</strong> ヘアオイルとしても優秀。挙式当日のヘアセットが決まる、艶のある髪を育てます。</li>
                 </ul>
                 <div style="background:#fffaf0; padding:15px; border-radius:8px; margin-top:15px; border:1px solid #f0e68c;">
-    <p style="font-weight:bold; color:#8b4513; margin-bottom:5px;">💡 編集部のおすすめポイント</p>
+    <p style="font-weight:bold; color:#8b4513; margin-bottom:5px;">💡 花嫁へのおすすめポイント</p>
     <p style="font-size:14px; margin:0;">
-        こっくりとした濃厚なテクスチャーですが、肌に乗せると驚くほど伸びが良いです。<br>
-        特に「目元の小じわ」や「口元の乾燥」が気になる部分に重ね付けすると、翌朝の肌のもっちり感が違います。冬場の強い味方です。
+        こっくりとした濃厚なテクスチャーが特徴。<br>
+        「首のシワ」や「目元の小じわ」など、年齢サインが気になる部分に集中的に塗り込んでください。大人の花嫁様に特におすすめです。
     </p>
 </div>
             </div>
@@ -338,23 +389,22 @@ msmaflink({"n":"アルガンオイル 100ml アルガン 100% マッサージオ
     </section>
 
     <section class="article-section">
-        <h2>🥉 レビュー３: ローズヒップオイル（ブライトニング・透明感）</h2>
+        <h2>🥉 レビュー３: ローズヒップオイル（背中のニキビ跡・くすみに）</h2>
         <div class="oil-review-card">
 
             
             <div class="oil-detail-area">
-                <h3>ローズヒップオイルの特徴とメリット</h3>
+                <h3>ドレスから見える肌を「トーンアップ」</h3>
                 <ul class="point-list">
-                    <li><strong>【成分】</strong> 天然の**トランスレチノイン酸**を豊富に含み、肌のターンオーバーを強力にサポート。</li>
-                    <li><strong>【ビタミンC】</strong> 野生のバラの果実（ローズヒップ）から採れ、天然の<strong>ビタミンC</strong>が豊富。肌のトーンアップやくすみ対策に。</li>
-                    <li><strong>【用途】</strong> 夏の紫外線ダメージ後のケア、ニキビ跡や色素沈着、肌のハリを取り戻したい時に特に有効。</li>
+                    <li><strong>【成分】</strong> 天然の<strong>ビタミンC</strong>とレチノイン酸が豊富。肌のターンオーバーを促し、透明感を引き出します。</li>
+                    <li><strong>【用途】</strong> 夏の挙式で日焼けが心配な方や、背中のニキビ跡が気になる方に。</li>
+                    <li><strong>【注意】</strong> 酸化しやすいので、開封後は冷蔵庫で保管し、早めに使い切りましょう。夜のスペシャルケア向きです。</li>
                 </ul>
                 <div style="background:#fff0f5; padding:15px; border-radius:8px; margin-top:15px; border:1px solid #ffb6c1;">
-    <p style="font-weight:bold; color:#c71585; margin-bottom:5px;">💡 編集部のおすすめポイント</p>
+    <p style="font-weight:bold; color:#c71585; margin-bottom:5px;">💡 花嫁へのおすすめポイント</p>
     <p style="font-size:14px; margin:0;">
-        「天然の美容液」と呼ばれるほど栄養価が高いオイルです。<br>
-        紫外線を浴びてしまった後のケアや、肌のキメを整えて透明感※を出したい時に最適です。独特な香りがありますが、それは成分が濃厚である証拠と言えます。<br>
-        <span style="font-size:11px; color:#888;">※保湿による肌印象</span>
+        「天然の美白美容液」とも呼ばれます。背中のポツポツ跡やくすみが気になる箇所に、夜寝る前に一滴なじませてみてください。<br>
+        独特な香りがありますが、効果を実感する花嫁様が多い「攻め」のオーガニックオイルです。
     </p>
 </div>
             </div>
@@ -372,38 +422,34 @@ msmaflink({"n":"プラナロム ローズヒップ オイル 油 50ml 12551 キ�
     </section>
 
     <section class="article-section">
-        <h2>⚖️ 【比較表】あなたに合うオイルはどれ？</h2>
+        <h2>⚖️ 【比較表】花嫁タイプ別おすすめオイル</h2>
         <table class="comparison-table">
             <thead>
                 <tr>
                     <th>オイル名</th>
-                    <th>主成分の特徴</th>
-                    <th>肌悩み（ターゲット）</th>
-                    <th>おすすめ肌質</th>
-                    <th>酸化安定性</th>
+                    <th>こんな花嫁様におすすめ</th>
+                    <th>最適なケア部位</th>
+                    <th>使用タイミング</th>
                 </tr>
             </thead>
             <tbody>
                 <tr>
                     <td><strong>ホホバオイル</strong></td>
-                    <td>ワックスエステル</td>
-                    <td>乾燥予防、全般的な保湿</td>
-                    <td>全肌質<br>（敏感肌含む）</td>
-                    <td>非常に高い</td>
+                    <td>乾燥肌、敏感肌の方<br>ズボラでも続けたい方</td>
+                    <td>顔、全身、髪<br>（万能）</td>
+                    <td>朝・夜<br>（ブースターとして）</td>
                 </tr>
                 <tr>
                     <td><strong>アルガンオイル</strong></td>
-                    <td>オレイン酸、ビタミンE</td>
-                    <td>ハリ・ツヤ、エイジングケア</td>
-                    <td>乾燥肌、年齢肌</td>
-                    <td>高い</td>
+                    <td>ハリ不足が気になる方<br>大人花嫁様</td>
+                    <td>首、デコルテ、<br>目元・口元</td>
+                    <td>夜<br>（リッチな保湿に）</td>
                 </tr>
                 <tr>
                     <td><strong>ローズヒップ<br>オイル</strong></td>
-                    <td>天然レチノイン酸、<br>オメガ3・6</td>
-                    <td>くすみ、ニキビ跡、<br>トーンアップ</td>
-                    <td>混合肌、ダメージ肌</td>
-                    <td>低い<br>（早めに使い切る）</td>
+                    <td>ニキビ跡、くすみ、<br>日焼けが気になる方</td>
+                    <td>背中、頬の高い位置</td>
+                    <td>夜のみ<br>（集中ケア）</td>
                 </tr>
             </tbody>
         </table>
@@ -419,10 +465,10 @@ msmaflink({"n":"椿油 つばき油 ツバキ油 リマナチュラルオーガ�
 </script>
 <div id="msmaflink-SZQWI">リンク</div>
 <div style="text-align:center; margin:60px 0; background:#fff4f4; padding:40px; border-radius:20px;">
-        <h3 style="margin-bottom:20px; color:var(--text-main);">今日から始める、本気のインナー＆アウターケア</h3>
+        <h3 style="margin-bottom:20px; color:var(--text-main);">今日から始める、おうちブライダルエステ</h3>
         <p style="margin-bottom:30px;">
-            オーガニックオイルでのケアは、肌を「育てる」ための第一歩です。<br>
-            あなたにぴったりのオイルを選び、早速Amazonから購入して試してみましょう。
+            高いエステに通わなくても、良質なオイルが1本あれば肌は確実に変わります。<br>
+            「どのオイルが合うかわからない」という方は、まずはホホバオイルから始めてみてください。
         </p>
         <a href="skin-ranking.html" class="btn-main">
             ▶ 総合ランキングもチェックする
@@ -470,8 +516,9 @@ msmaflink({"n":"椿油 つばき油 ツバキ油 リマナチュラルオーガ�
 <footer>
   <div class="footer-container">
     
-    <div class="footer-col">
+   <div class="footer-col">
       <h3>🌸 スキンケア・悩み別</h3>
+      <a href="bridal-care.html" style="color:#d35400; font-weight:bold;">👰 結婚式直前！背中・二の腕ケア</a>
       <a href="skin-ranking.html">おすすめスキンケアランキング</a>
       <a href="seasons-skin.html">季節別スキンケア（春夏秋冬）</a>
       <a href="age-skincare.html">40代・50代 年齢別ケア</a>
@@ -499,13 +546,13 @@ msmaflink({"n":"椿油 つばき油 ツバキ油 リマナチュラルオーガ�
   </div>
   
   <div class="footer-bottom">
-     <a href="https://room.rakuten.co.jp/room_e0dd63a90a/items" target="_blank" rel="noopener" class="footer-room-link">
+      <a href="https://room.rakuten.co.jp/room_e0dd63a90a/items" target="_blank" rel="noopener" class="footer-room-link">
         🏠 管理人Yuriの楽天ROOMを見る
-     </a>
-     <br>
-     
-     © 2025 Essential Beauty Needs<br><br>
-     <a href="privacy-policy.html" style="color:#888; text-decoration:none; font-size:12px;">プライバシーポリシー</a>
+      </a>
+      <br>
+      
+      © 2025 Essential Beauty Needs<br><br>
+      <a href="privacy-policy.html" style="color:#888; text-decoration:none; font-size:12px;">プライバシーポリシー</a>
   </div>
 </footer>
 
