@@ -202,7 +202,46 @@
       transform: translateY(-3px);
       box-shadow: 0 6px 18px rgba(0,0,0,0.2);
     }
-    
+    /* ▼▼▼ 追加：診断ボタン用のアニメーション ▼▼▼ */
+    @keyframes pulse-glow {
+      0% { box-shadow: 0 0 0 0 rgba(230, 126, 34, 0.4); transform: scale(1); }
+      50% { box-shadow: 0 0 0 10px rgba(230, 126, 34, 0); transform: scale(1.02); }
+      100% { box-shadow: 0 0 0 0 rgba(230, 126, 34, 0); transform: scale(1); }
+    }
+    .diagnosis-banner {
+      background: #fff;
+      border: 3px solid #f39c12; /* 目立つオレンジ/ゴールド系 */
+      border-radius: 15px;
+      padding: 25px;
+      text-align: center;
+      margin: 30px 0;
+      position: relative;
+    }
+    /* 「NEW!」などのバッジ */
+    .diagnosis-badge {
+        background: #d35400; color: #fff; padding: 5px 15px; border-radius: 5px;
+        font-weight: bold; font-size: 12px; position: absolute; top: -15px; left: 50%;
+        transform: translateX(-50%); box-shadow: 0 2px 5px rgba(0,0,0,0.2);
+    }
+    .diagnosis-btn {
+      display: inline-block;
+      background: linear-gradient(45deg, #e67e22, #f39c12);
+      color: #fff;
+      font-size: 20px;
+      font-weight: bold;
+      padding: 15px 40px;
+      border-radius: 50px;
+      text-decoration: none;
+      margin-top: 15px;
+      box-shadow: 0 4px 15px rgba(230, 126, 34, 0.4);
+      /* ここでキラキラさせます */
+      animation: pulse-glow 2s infinite;
+    }
+    .diagnosis-btn:hover {
+        opacity: 0.9;
+        transform: translateY(-2px);
+    }
+    /* ▲▲▲ 追加ここまで ▲▲▲ */
     /* Images */
     .responsive-img {
         max-width: 100%;
@@ -338,7 +377,17 @@
 </header>
 
 <main class="container">
-
+<div class="diagnosis-banner">
+      <span class="diagnosis-badge">栄養士監修・無料ツール</span>
+      <h3 style="color:#d35400; margin-bottom:10px; font-size:22px;">⚡ 緊急開催！あなたの肌は大丈夫？</h3>
+      <p style="margin-bottom:5px;">挙式やイベント直前、背中や二の腕の「ブツブツ・ザラつき」に焦っていませんか？<br>
+      今のあなたの肌状態と、必要なケア方法を<strong>30秒で診断</strong>します。</p>
+      
+      <a href="bridal-care.html" class="diagnosis-btn">
+          ✨ 今すぐ肌診断をする！ ✨
+      </a>
+      <p style="font-size:12px; color:#888; margin-top:10px;">（クリックして緊急マニュアルを読む ＞）</p>
+  </div>
   <div style="background:#fffaf0; border:2px dashed #f7a8a8; padding:15px; margin:20px 0; text-align:center; border-radius:10px;">
       <p style="margin:0 0 10px; font-weight:bold; color:#d6336c;">\ 迷ったらコレを見て！ /</p>
       <p style="margin:0; font-size:14px;">栄養士が成分で厳選した<br>
@@ -470,8 +519,9 @@
 <footer>
   <div class="footer-container">
     
-    <div class="footer-col">
+   <div class="footer-col">
       <h3>🌸 スキンケア・悩み別</h3>
+      <a href="bridal-care.html" style="color:#d35400; font-weight:bold;">👰 結婚式直前！背中・二の腕ケア</a>
       <a href="skin-ranking.html">おすすめスキンケアランキング</a>
       <a href="seasons-skin.html">季節別スキンケア（春夏秋冬）</a>
       <a href="age-skincare.html">40代・50代 年齢別ケア</a>
@@ -513,3 +563,4 @@
 
 </body>
 </html>
+
