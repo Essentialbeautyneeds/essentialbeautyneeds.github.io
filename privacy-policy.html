@@ -1,50 +1,308 @@
 <!doctype html>
 <html lang="ja">
 <head>
-  <meta charset="utf-8" />
-  <meta name="viewport" content="width=device-width,initial-scale=1" />
-  <title>プライバシーポリシー | Essential Beauty Needs</title>
-  <meta name="description" content="当サイトの個人情報の取り扱いに関する方針を記載しています。">
-  <link rel="stylesheet" href="style.css">   <link href="https://fonts.googleapis.com/css2?family=Quicksand:wght@400;600&family=Playfair+Display:wght@600&display=swap" rel="stylesheet">
-  <link rel="canonical" href="https://essential-beauty-needs.com/privacy-policy.html" />
+  <meta charset="utf-8" />
+  <meta name="viewport" content="width=device-width,initial-scale=1" />
+  <title>プライバシーポリシー | Essential Beauty Needs</title>
+  <meta name="description" content="当サイトの個人情報の取り扱いに関する方針を記載しています。">
+  <link rel="canonical" href="https://essential-beauty-needs.com/privacy-policy.html" />
+  
+  <link href="https://fonts.googleapis.com/css2?family=Playfair+Display:wght@600&family=Quicksand:wght@400;600&display=swap" rel="stylesheet">
+
+  <script>
+    function isInternalUser() {
+      return document.cookie.split(';').some(c => c.trim().startsWith('internal_user=true'));
+    }
+    if (!isInternalUser()) {
+      var gaScript = document.createElement('script');
+      gaScript.async = true;
+      gaScript.src = "https://www.googletagmanager.com/gtag/js?id=G-2HGEPHVZYY";
+      document.head.appendChild(gaScript);
+      window.dataLayer = window.dataLayer || [];
+      function gtag(){dataLayer.push(arguments);}
+      gtag('js', new Date());
+      gtag('config', 'G-2HGEPHVZYY');
+    } else {
+        console.log('✅ Internal traffic excluded.');
+    }
+  </script>
+
+  <style>
+    /* 共通設定 */
+    :root {
+      --bg: #fff8f8;
+      --accent: #f7a8a8;
+      --accent-hover: #f48b8b;
+      --text-main: #503535;
+      --card-bg: #ffffff;
+      --room-color: #c63535;
+    }
+    *, *::before, *::after { box-sizing: border-box; }
+
+    body {
+      font-family: 'Quicksand', sans-serif;
+      margin: 0;
+      background: var(--bg);
+      color: #555;
+      line-height: 1.8;
+    }
+
+    /* ヘッダー */
+    header {
+      background: linear-gradient(135deg, #fff0f5, #ffe6e6);
+      text-align: center;
+      padding: 80px 20px 50px;
+      color: var(--text-main);
+      border-bottom: 3px solid #e6b7b3;
+    }
+    header h1 {
+      font-family: 'Playfair Display', serif;
+      font-size: 34px;
+      margin: 0;
+      color: #d6336c;
+      letter-spacing: 1px;
+    }
+    header p {
+      font-size: 16px;
+      margin-top: 10px;
+      font-weight: 600;
+      color: var(--text-main);
+    }
+
+    /* ナビゲーション */
+    .nav-links{display:flex;gap:12px;justify-content:center;margin-top:25px;flex-wrap:wrap;}
+    .nav-links a{background:rgba(255,255,255,0.6);padding:8px 12px;border-radius:20px;text-decoration:none;color:#503535;font-weight:600; font-size:14px; box-shadow: 0 2px 5px rgba(0,0,0,0.05); transition:0.3s;}
+    .nav-links a:hover{background:var(--accent);color:#fff; transform:translateY(-2px);}
+    .nav-break { flex-basis: 100%; height: 0; margin: 5px 0; }
+
+    /* メインコンテンツ */
+    main {
+      max-width: 900px;
+      margin: 40px auto;
+      padding: 0 20px;
+    }
+
+    /* コンテンツボックス */
+    .content-wrapper {
+      background: #ffffff;
+      padding: 40px;
+      border-radius: 12px;
+      box-shadow: 0 5px 15px rgba(0,0,0,0.05);
+      border: 1px solid #fceeee;
+    }
+
+    h2 {
+      font-size: 20px;
+      color: #d6336c;
+      border-bottom: 1px solid #fceeee;
+      padding-bottom: 10px;
+      margin-top: 30px;
+      margin-bottom: 15px;
+    }
+    h2:first-child { margin-top: 0; }
+
+    p { margin-bottom: 1.5em; }
+
+    /* ▼▼▼ 追加：診断ボタン用のアニメーション ▼▼▼ */
+    @keyframes pulse-glow {
+      0% { box-shadow: 0 0 0 0 rgba(230, 126, 34, 0.4); transform: scale(1); }
+      50% { box-shadow: 0 0 0 10px rgba(230, 126, 34, 0); transform: scale(1.02); }
+      100% { box-shadow: 0 0 0 0 rgba(230, 126, 34, 0); transform: scale(1); }
+    }
+    .diagnosis-banner {
+      background: #fff;
+      border: 3px solid #f39c12; /* 目立つオレンジ/ゴールド系 */
+      border-radius: 15px;
+      padding: 25px;
+      text-align: center;
+      margin: 30px auto; /* 中央寄せ */
+      position: relative;
+      max-width: 650px;
+    }
+    /* 「NEW!」などのバッジ */
+    .diagnosis-badge {
+        background: #d35400; color: #fff; padding: 5px 15px; border-radius: 5px;
+        font-weight: bold; font-size: 12px; position: absolute; top: -15px; left: 50%;
+        transform: translateX(-50%); box-shadow: 0 2px 5px rgba(0,0,0,0.2);
+    }
+    .diagnosis-btn {
+      display: inline-block;
+      background: linear-gradient(45deg, #e67e22, #f39c12);
+      color: #fff;
+      font-size: 18px;
+      font-weight: bold;
+      padding: 15px 35px;
+      border-radius: 50px;
+      text-decoration: none;
+      margin-top: 15px;
+      box-shadow: 0 4px 15px rgba(230, 126, 34, 0.4);
+      /* ここでキラキラさせます */
+      animation: pulse-glow 2s infinite;
+    }
+    .diagnosis-btn:hover {
+        opacity: 0.9;
+        transform: translateY(-2px);
+    }
+    /* ▲▲▲ 追加ここまで ▲▲▲ */
+
+    /* フッター（リンク網羅型） */
+    footer {
+        background: #fffaf4;
+        border-top: 3px solid #f7a8a8;
+        padding: 50px 20px 60px;
+        margin-top: 60px;
+        color: #555;
+        font-size: 14px;
+    }
+    .footer-container {
+        max-width: 960px;
+        margin: 0 auto;
+        display: flex;
+        flex-wrap: wrap;
+        justify-content: space-between;
+        gap: 30px;
+        text-align: left;
+    }
+    .footer-col { flex: 1; min-width: 200px; }
+    .footer-col h3 {
+        font-size: 16px;
+        color: #d6336c;
+        border-bottom: 1px dashed #f4b5b5;
+        padding-bottom: 8px;
+        margin-bottom: 15px;
+        font-weight: bold;
+    }
+    .footer-col a {
+        display: block; color: #666; text-decoration: none; margin-bottom: 10px; transition: 0.3s; position: relative; padding-left: 10px;
+    }
+    .footer-col a::before { content: "・"; position: absolute; left: 0; color: #f7a8a8; }
+    .footer-col a:hover { color: #d6336c; padding-left: 15px; }
+    .footer-bottom { text-align: center; margin-top: 50px; padding-top: 30px; border-top: 1px solid #eee; }
+    
+    .footer-room-link {
+        display: inline-block; color: #c63535; font-weight: bold; border: 1px solid #c63535; padding: 8px 20px; border-radius: 20px; text-decoration: none; margin-bottom: 20px; background: #fff; transition: 0.3s;
+    }
+    .footer-room-link:hover { background: #c63535; color: #fff; }
+
+    .back-btn { text-align: center; margin-top: 50px; }
+    .back-btn a { 
+        display: inline-block;
+        padding: 10px 25px;
+        border: 1px solid #ddd;
+        border-radius: 25px;
+        color: #555; 
+        text-decoration: none; 
+        font-weight: bold;
+        transition: 0.3s;
+    }
+    .back-btn a:hover {
+        background: #f7a8a8;
+        color: #fff;
+        border-color: #f7a8a8;
+    }
+
+    @media(max-width: 600px) {
+        header h1 { font-size: 28px; }
+        .content-wrapper { padding: 25px; }
+    }
+  </style>
 </head>
 <body>
 
 <header>
-  <h1>プライバシーポリシー</h1>
-  <p>当サイトの個人情報保護方針について</p>
+  <h1>Privacy Policy</h1>
+  <p>個人情報保護方針</p>
+
+  <div class="nav-links">
+      <a href="index.html">🏠 トップ</a>
+      <a href="bridal-care.html">👰 花嫁ケア診断</a>
+      <a href="skin-ranking.html">✨ ランキング</a>
+      <div class="nav-break"></div>
+      <a href="about.html">👤 運営者情報</a>
+      <a href="beauty-column.html">💄 コラム</a>
+  </div>
 </header>
 
+<div class="diagnosis-banner">
+    <span class="diagnosis-badge">栄養士監修・無料ツール</span>
+    <h3 style="color:#d35400; margin-bottom:10px; font-size:20px;">⚡ 挙式前の「肌トラブル」放置していませんか？</h3>
+    <p style="margin-bottom:5px;">今の肌状態と、必要なケア方法を<strong>30秒で診断</strong>します。</p>
+    
+    <a href="bridal-care.html" class="diagnosis-btn">
+        ✨ 今すぐ肌診断をする！ ✨
+    </a>
+</div>
 <main>
-  <div class="content-wrapper" style="max-width: 800px; margin: 40px auto; padding: 0 20px; line-height: 1.8; color: #503535; background: #fff; border-radius: 12px; padding: 30px;">
-    <h2>1. 個人情報の利用目的</h2>
-    <p>当サイトでは、お問い合わせの際、お名前やメールアドレス等の個人情報をご入力いただく場合がございます。取得した個人情報は、お問い合わせへの回答や必要な情報をご連絡するために利用するものであり、これらの目的以外では利用いたしません。</p>
+  <div class="content-wrapper">
+    <h2>1. 個人情報の利用目的</h2>
+    <p>当サイトでは、お問い合わせの際、お名前やメールアドレス等の個人情報をご入力いただく場合がございます。取得した個人情報は、お問い合わせへの回答や必要な情報をご連絡するために利用するものであり、これらの目的以外では利用いたしません。</p>
 
-    <h2>2. クッキー（Cookie）について</h2>
-    <p>当サイトでは、利用状況の把握や広告配信のため、一部のコンテンツでクッキー（Cookie）を利用しています。Cookieには個人を特定する情報は含まれていません。</p>
+    <h2>2. クッキー（Cookie）について</h2>
+    <p>当サイトでは、利用状況の把握や広告配信のため、一部のコンテンツでクッキー（Cookie）を利用しています。Cookieには個人を特定する情報は含まれていません。</p>
 
-    <h2>3. アクセス解析ツールについて</h2>
-    <p>当サイトでは、Googleによるアクセス解析ツール「**Google Analytics**」を利用しています。このGoogle Analyticsはトラフィックデータの収集のためにCookieを使用しています。このトラフィックデータは匿名で収集されており、個人を特定するものではありません。この機能はCookieを無効にすることで収集を拒否することができます。</p>
-    <p>Google Analyticsの規約について、詳しくは<a href="https://marketingplatform.google.com/about/analytics/terms/jp/" target="_blank">Google Analytics利用規約</a>をご覧ください。</p>
+    <h2>3. アクセス解析ツールについて</h2>
+    <p>当サイトでは、Googleによるアクセス解析ツール「<strong>Google Analytics</strong>」を利用しています。このGoogle Analyticsはトラフィックデータの収集のためにCookieを使用しています。このトラフィックデータは匿名で収集されており、個人を特定するものではありません。この機能はCookieを無効にすることで収集を拒否することができます。</p>
+    <p>Google Analyticsの規約について、詳しくは<a href="https://marketingplatform.google.com/about/analytics/terms/jp/" target="_blank" style="color:#d6336c; text-decoration:underline;">Google Analytics利用規約</a>をご覧ください。</p>
 
-    <h2>4. アフィリエイトプログラムについて</h2>
-    <p>当サイトは、**Amazonアソシエイト**、**楽天アフィリエイト**、**A8.net**などのアフィリエイトプログラムに参加しています。これらのアフィリエイトリンクを経由して商品を購入いただいた場合、当サイトが紹介料を受け取ることがあります。</p>
-    <p>アフィリエイトプログラムにおけるトラッキングは、Cookieによって行われます。これにより、個人を特定できる情報を収集することはございません。</p>
+    <h2>4. アフィリエイトプログラムについて</h2>
+    <p>当サイトは、<strong>Amazonアソシエイト</strong>、<strong>楽天アフィリエイト</strong>、<strong>A8.net</strong>などのアフィリエイトプログラムに参加しています。これらのアフィリエイトリンクを経由して商品を購入いただいた場合、当サイトが紹介料を受け取ることがあります。</p>
+    <p>アフィリエイトプログラムにおけるトラッキングは、Cookieによって行われます。これにより、個人を特定できる情報を収集することはございません。</p>
 
-    <h2>5. 免責事項</h2>
-    <p>当サイトからリンクやバナーなどによって他のサイトに移動された場合、移動先サイトで提供される情報、サービス等について一切の責任を負いません。また、当サイトで掲載している情報については、可能な限り正確な情報を提供するよう努めておりますが、誤情報が入り込んだり、情報が古くなっていることもございます。当サイトに掲載された内容によって生じた損害等の一切の責任を負いかねますのでご了承ください。</p>
+    <h2>5. 免責事項</h2>
+    <p>当サイトからリンクやバナーなどによって他のサイトに移動された場合、移動先サイトで提供される情報、サービス等について一切の責任を負いません。また、当サイトで掲載している情報については、可能な限り正確な情報を提供するよう努めておりますが、誤情報が入り込んだり、情報が古くなっていることもございます。当サイトに掲載された内容によって生じた損害等の一切の責任を負いかねますのでご了承ください。</p>
 
-    <h2>6. 著作権について</h2>
-    <p>当サイトで掲載している文章や画像などにつきましては、無断転載することを固く禁じます。</p>
-    <p>最終更新日: 2025年11月30日</p>
+    <h2>6. 著作権について</h2>
+    <p>当サイトで掲載している文章や画像などにつきましては、無断転載することを固く禁じます。</p>
+    <p style="text-align:right; font-size:14px; color:#888;">最終更新日: 2025年11月30日</p>
 
-    <div class="back-btn" style="text-align: center; margin-top: 50px;">
-      <a href="index.html">🏠 トップページへ戻る</a>
-    </div>
-  </div>
+    <div class="back-btn">
+      <a href="index.html">🏠 トップページへ戻る</a>
+    </div>
+  </div>
 </main>
 
-<footer>© 2025 EssentialBeautyNeeds</footer>
+<footer>
+  <div class="footer-container">
+    
+   <div class="footer-col">
+      <h3>🌸 スキンケア・悩み別</h3>
+      <a href="bridal-care.html" style="color:#d35400; font-weight:bold;">👰 結婚式直前！背中・二の腕ケア</a>
+      <a href="skin-ranking.html">おすすめスキンケアランキング</a>
+      <a href="seasons-skin.html">季節別スキンケア（春夏秋冬）</a>
+      <a href="age-skincare.html">40代・50代 年齢別ケア</a>
+      <a href="acne-care.html">肌荒れ・敏感肌・ニキビケア</a>
+      <a href="lifestyle-skincare.html">生活リズム別（時短・夜型など）</a>
+    </div>
+
+    <div class="footer-col">
+      <h3>🛁 ボディ・ヘア・インナー</h3>
+      <a href="hair-care.html">ヘアケア・頭皮ケア特集</a>
+      <a href="diet-beauty.html">インナービューティー＆ダイエット</a>
+      <a href="amazon-oil-review.html">本当に効く！オイルレビュー</a>
+      <a href="organic-science.html">オーガニック成分の科学</a>
+    </div>
+
+    <div class="footer-col">
+      <h3>🎁 特集・コラム・その他</h3>
+      <a href="gift-selection.html">心をつなぐオーガニックギフト</a>
+      <a href="trial-sets.html">失敗しない！お試しセット比較</a>
+      <a href="winter-selection.html">冬のベストセレクション</a>
+      <a href="beauty-column.html">ビューティーコラム一覧</a>
+      <a href="about.html">当サイトについて (About)</a>
+    </div>
+
+  </div>
+  
+  <div class="footer-bottom">
+      <a href="https://room.rakuten.co.jp/room_e0dd63a90a/items" target="_blank" rel="noopener" class="footer-room-link">
+        🏠 管理人Yuriの楽天ROOMを見る
+      </a>
+      <br>
+      
+      © 2025 Essential Beauty Needs<br><br>
+      <a href="privacy-policy.html" style="color:#888; text-decoration:none; font-size:12px;">プライバシーポリシー</a>
+  </div>
+</footer>
 
 </body>
 </html>
