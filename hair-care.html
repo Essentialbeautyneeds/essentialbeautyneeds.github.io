@@ -3,9 +3,9 @@
 <head>
   <meta charset="utf-8" />
   <meta name="viewport" content="width=device-width,initial-scale=1" />
-  <title>美髪を育むオーガニックヘアケア | Essential Beauty Needs</title>
-  <meta name="description" content="髪のパサつきや頭皮の乾燥に。ノンシリコン、アミノ酸系など、髪と地肌に優しいオーガニックシャンプー＆ヘアケアの選び方とおすすめアイテムを紹介します。""
-  <meta name="keywords" content="オーガニック, ヘアケア, シャンプー, ノンシリコン, 頭皮ケア, アミノ酸, 美髪">
+  <title>挙式当日に天使の輪を作る！花嫁のための美髪ケア</title>
+  <meta name="description" content="ドレスに負けないツヤ髪を作るには？挙式直前でも間に合う、頭皮ケアから始めるオーガニックシャンプー＆トリートメントの選び方。">
+  <meta name="keywords" content="花嫁ヘア, ブライダルヘア, ヘアケア, オーガニックシャンプー, 天使の輪, 頭皮ケア, 美髪">
   <link rel="canonical" href="https://essential-beauty-needs.com/hair-care.html" />
 
   <link href="https://fonts.googleapis.com/css2?family=Playfair+Display:wght@600&family=Quicksand:wght@400;600&display=swap" rel="stylesheet">
@@ -27,7 +27,7 @@
         console.log('✅ Internal traffic excluded.');
     }
 
-    function handleImageError(imgElement) { 
+    function handleImageError(imgElement, width, height, text) { 
          imgElement.onerror = null; 
          imgElement.src = "https://placehold.co/600x400/e6e6fa/888888?text=Hair+Care+Image";
          imgElement.style.objectFit = "cover";
@@ -200,6 +200,48 @@
         box-shadow: 0 6px 14px rgba(198, 53, 53, 0.4);
     }
 
+    /* ▼▼▼ 追加：診断ボタン用のアニメーション ▼▼▼ */
+    @keyframes pulse-glow {
+      0% { box-shadow: 0 0 0 0 rgba(230, 126, 34, 0.4); transform: scale(1); }
+      50% { box-shadow: 0 0 0 10px rgba(230, 126, 34, 0); transform: scale(1.02); }
+      100% { box-shadow: 0 0 0 0 rgba(230, 126, 34, 0); transform: scale(1); }
+    }
+    .diagnosis-banner {
+      background: #fff;
+      border: 3px solid #f39c12; /* 目立つオレンジ/ゴールド系 */
+      border-radius: 15px;
+      padding: 25px;
+      text-align: center;
+      margin: 30px auto; /* 中央寄せ */
+      position: relative;
+      max-width: 650px;
+    }
+    /* 「NEW!」などのバッジ */
+    .diagnosis-badge {
+        background: #d35400; color: #fff; padding: 5px 15px; border-radius: 5px;
+        font-weight: bold; font-size: 12px; position: absolute; top: -15px; left: 50%;
+        transform: translateX(-50%); box-shadow: 0 2px 5px rgba(0,0,0,0.2);
+    }
+    .diagnosis-btn {
+      display: inline-block;
+      background: linear-gradient(45deg, #e67e22, #f39c12);
+      color: #fff;
+      font-size: 18px;
+      font-weight: bold;
+      padding: 15px 35px;
+      border-radius: 50px;
+      text-decoration: none;
+      margin-top: 15px;
+      box-shadow: 0 4px 15px rgba(230, 126, 34, 0.4);
+      /* ここでキラキラさせます */
+      animation: pulse-glow 2s infinite;
+    }
+    .diagnosis-btn:hover {
+        opacity: 0.9;
+        transform: translateY(-2px);
+    }
+    /* ▲▲▲ 追加ここまで ▲▲▲ */
+
     /* フッター（リンク網羅型） */
     footer {
         background: #fffaf4;
@@ -259,11 +301,12 @@
 <body>
 
 <header>
-  <h1>美髪を育むオーガニックヘアケア</h1>
-  <p>頭皮も「肌」の一部。優しさで選ぶヘアケア習慣。</p>
+  <h1>花嫁のための美髪ケア</h1>
+  <p>当日、360度どこから見られても美しいツヤ髪へ。</p>
 
   <div class="nav-links">
       <a href="index.html">🏠 トップ</a>
+      <a href="bridal-care.html">👰 花嫁ケア診断</a>
       <a href="skin-ranking.html">✨ ランキング</a>
       <a href="trial-sets.html">🔰 お試しセット</a>
       <div class="nav-break"></div>
@@ -273,53 +316,59 @@
   </div>
 </header>
 
+<div class="diagnosis-banner">
+    <span class="diagnosis-badge">栄養士監修・無料ツール</span>
+    <h3 style="color:#d35400; margin-bottom:10px; font-size:20px;">⚡ 髪より先に「背中」のケアは済んだ？</h3>
+    <p style="margin-bottom:5px;">ヘアメイクが決まっても、背中が荒れていたら台無し！<br>
+    今の肌状態と、緊急ケア方法を<strong>30秒で診断</strong>します。</p>
+    
+    <a href="bridal-care.html" class="diagnosis-btn">
+        ✨ 今すぐ肌診断をする！ ✨
+    </a>
+</div>
 <main>
 
  <div class="intro-box">
-    <h3 style="margin-top:0; color:#8e6e8e;">その髪の悩み、頭皮の「乾燥」が原因かも？</h3>
+    <h3 style="margin-top:0; color:#8e6e8e;">ヘアメイクの仕上がりは「土台」で変わる</h3>
     <p>
-        「高いトリートメントを使ってもパサつきが治らない」「夕方になると頭皮の匂いが気になる」…<br>
-        そんなお悩みはありませんか？<br><br>
-        実は、洗浄力の強すぎるシャンプーが、頭皮の必要な油分まで洗い流してしまっていることが原因かもしれません。<br>
-        顔のスキンケアと同じように、頭皮も<strong>「アミノ酸系」</strong>や<strong>「植物由来」</strong>の優しい成分で洗うことで、土台から健やかな美髪が育ちます。
+        「当日のヘアセット、思うようにボリュームが出なかったらどうしよう…」<br>
+        「スポットライトで髪のパサつきが目立つのが怖い…」<br><br>
+        そんな花嫁様の不安を解消するのは、実は毎日のシャンプーです。<br>
+        頭皮は顔と一枚皮で繋がっています。頭皮が乾燥してたるむと、実は<strong>顔のフェイスラインまでたるんでしまう</strong>ことをご存知ですか？<br>
+        挙式当日のリフトアップとツヤ髪のために、今すぐ頭皮ケアを見直しましょう。
     </p>
-  </div>
+ </div>
 
-  <section class="hair-column">
-      <h2 style="margin-top:0; margin-bottom:20px;">頭皮は「顔の続き」です。<br>本質的なヘアケアの話。</h2>
-      <p>
-          「髪は女の命」と言われますが、その髪を育むのは他ならぬ「頭皮」です。頭皮と顔は一枚の皮膚で繋がっており、実は顔以上に毛穴が多く、経皮吸収率も高いデリケートな場所。<br>
-          だからこそ、毎日使うシャンプーやトリートメントの成分には、顔のスキンケアと同じくらい慎重になる必要があります。
-      </p>
+ <section class="hair-column">
+      <h2 style="margin-top:0; margin-bottom:20px;">頭皮ケアは、最高のリフトアップ美容</h2>
       
       <h3>植物の力で「土壌」を耕す</h3>
       <p>
-          一般的なシャンプーに含まれる強い洗浄成分（ラウレス硫酸など）やシリコンは、即効性のあるツヤや指通りを与えてくれますが、長期的に見ると頭皮の乾燥を招き、健康な髪が生えにくい環境を作ってしまうことがあります。<br>
-          オーガニックヘアケアの真髄は、植物の力で頭皮という「土壌」を整えることにあります。アミノ酸系の洗浄成分が汚れだけを優しく落とし、ハーブエキスが血行を促進。自らの力で潤う「強い髪」を育てる土台を作ります。
+          洗浄力の強すぎるシャンプーは、頭皮を乾燥させ、顔のたるみや髪のパサつきの原因になります。<br>
+          オーガニックヘアケアの真髄は、植物の力で頭皮という「土壌」を整えること。<br>
+          アミノ酸系の優しい泡で洗い、ハーブエキスで血行を促進することで、根元から立ち上がる元気な髪と、キュッと引き締まったフェイスラインを目指せます。
       </p>
   
       <h3>「きしみ」は再生への通過点</h3>
       <p>
-          オーガニックに切り替えた直後、髪がごわついたり、きしみを感じて「合わない」とやめてしまう方がいます。<br>
-          しかし、これはシリコンによる人工的なコーティングが剥がれ、髪が「素の状態」に戻ろうとしている好転反応（リセット期間）であることが多いのです。<br>
-          この時期を乗り越え、植物オイルが浸透し始めると、内側から湧き出るような本物のツヤとコシが蘇ります。
+          オーガニックに変えた直後、髪がきしむことがありますが、これはシリコンが剥がれて「素髪」に戻ろうとしている証拠。<br>
+          この時期を乗り越えれば、人工的なツヤではなく、内側から発光するような「天使の輪」が現れます。
       </p>
   
       <div class="hair-advice-box">
-          <h4 style="margin-top:0; color:#503535; font-size:18px;">💡 美髪を育てるワンポイント</h4>
+          <h4 style="margin-top:0; color:#503535; font-size:18px;">💡 花嫁のための美髪テクニック</h4>
           <p style="margin-bottom:0; font-size:15px;">
-              効果を最大化するコツは<strong>「予洗い」</strong>と<strong>「泡パック」</strong>です。<br>
-              洗髪前に38度前後のお湯で2〜3分しっかり流すだけで、汚れの大部分は落ち、シャンプーの泡立ちが変わります。<br>
-              また、植物成分たっぷりの泡をすぐに流さず、1分ほど置いて「泡パック」をすることで、有用成分が頭皮の角質層まで浸透し、洗い上がりが驚くほどしっとりしますよ。
+              効果を最大化するコツは<strong>「頭皮マッサージ」</strong>と<strong>「泡パック」</strong>。<br>
+              シャンプーの際、下から上へと頭皮を引き上げるようにマッサージし、植物成分たっぷりの泡を1分ほど置いてパックしてください。<br>
+              お風呂上がりの顔色が、ワントーン明るくなりますよ。
           </p>
       </div>
-  </section>
+ </section>
 
-  <h2>🧴 おすすめオーガニックシャンプー</h2>
+ <h2>🧴 花嫁におすすめ！実力派オーガニックシャンプー</h2>
 
-  <div class="item-card">
-    <!-- START MoshimoAffiliateEasyLink -->
-<script type="text/javascript">
+ <div class="item-card">
+   <script type="text/javascript">
 (function(b,c,f,g,a,d,e){b.MoshimoAffiliateObject=a;
 b[a]=b[a]||function(){arguments.currentScript=c.currentScript
 ||c.scripts[c.scripts.length-2];(b[a].q=b[a].q||[]).push(arguments)};
@@ -329,24 +378,22 @@ d.id=a,e=c.getElementsByTagName("body")[0],e.appendChild(d))})
 msmaflink({"n":"オルナ オーガニック シャンプー トリートメント ヘアオイル 3点 セット 無添加 保湿 ダメージ補修","b":"","t":"","d":"https:\/\/thumbnail.image.rakuten.co.jp","c_p":"\/@0_mall\/zestnationjapan-03\/cabinet\/10848229","p":["\/30904568_1.jpg","\/30904568_2.jpg","\/30904568_3.jpg"],"u":{"u":"https:\/\/item.rakuten.co.jp\/zestnationjapan-03\/eahrcgm6v3nlrfmclydylvxocu\/","t":"rakuten","r_v":""},"v":"2.1","b_l":[{"id":1,"u_tx":"楽天市場で見る","u_bc":"#87c209","u_url":"https:\/\/item.rakuten.co.jp\/zestnationjapan-03\/eahrcgm6v3nlrfmclydylvxocu\/","a_id":5267359,"p_id":54,"pl_id":27059,"pc_id":54,"s_n":"rakuten","u_so":1},{"id":8,"u_tx":"Amazonで見る","u_bc":"#125592","u_url":"https:\/\/amzn.to\/3L05QSz","a_id":0,"p_id":0,"pl_id":0,"pc_id":0,"s_n":"custom_4","u_so":2},{"id":9,"u_tx":"Yahoo!ショッピングで見る","u_bc":"#bf0000","u_url":"https:\/\/shopping.yahoo.co.jp\/search?first=1\u0026p=%E3%82%AA%E3%83%AB%E3%83%8A%20%E3%82%AA%E3%83%BC%E3%82%AC%E3%83%8B%E3%83%83%E3%82%AF%20%E3%82%B7%E3%83%A3%E3%83%B3%E3%83%97%E3%83%BC%20%E3%83%88%E3%83%AA%E3%83%BC%E3%83%88%E3%83%A1%E3%83%B3%E3%83%88%20%E3%83%98%E3%82%A2%E3%82%AA%E3%82%A4%E3%83%AB%203%E7%82%B9%20%E3%82%BB%E3%83%83%E3%83%88%20%E7%84%A1%E6%B7%BB%E5%8A%A0%20%E4%BF%9D%E6%B9%BF%20%E3%83%80%E3%83%A1%E3%83%BC%E3%82%B8%E8%A3%9C%E4%BF%AE","a_id":5267465,"p_id":1225,"pl_id":27061,"pc_id":1925,"s_n":"yahoo","u_so":3}],"eid":"GuV8M","s":"s"});
 </script>
 <div id="msmaflink-GuV8M">リンク</div>
-<!-- MoshimoAffiliateEasyLink END -->
-    </div>
+</div>
 
-    <div class="check-points">
-        <h4>💡 編集部のおすすめポイント</h4>
-        <ul>
-            <li><strong>アミノ酸系洗浄成分：</strong> 必要な潤いを残しながら、汚れだけを優しくオフ。</li>
-            <li><strong>植物由来の香り：</strong> バスタイムが癒やしのスパ時間に変わります。</li>
-            <li><strong>ノンシリコンでもきしまない：</strong> 厳選された植物オイルが髪をコーティングし、なめらかな指通りに。</li>
-        </ul>
-    </div>
-  </div>
+   <div class="check-points">
+       <h4>💡 編集部のおすすめポイント</h4>
+       <ul>
+           <li><strong>サロン品質のツヤ：</strong> 厳選された植物オイルが、カラーやパーマで傷んだ髪を補修。</li>
+           <li><strong>アロマの癒やし：</strong> バスタイムが極上のリラックスタイムに。準備疲れも癒やされます。</li>
+           <li><strong>コスパ◎：</strong> 挙式までたっぷり使える3点セットで、髪の芯から美しく。</li>
+       </ul>
+   </div>
+ </div>
 
-  <h2>💧 コンディショニング　シャンプー </h2>
+ <h2>💧 プロも愛用！頭皮コンディショニング</h2>
 
     <div class="item-card">
- <!-- START MoshimoAffiliateEasyLink -->
-<script type="text/javascript">
+ <script type="text/javascript">
 (function(b,c,f,g,a,d,e){b.MoshimoAffiliateObject=a;
 b[a]=b[a]||function(){arguments.currentScript=c.currentScript
 ||c.scripts[c.scripts.length-2];(b[a].q=b[a].q||[]).push(arguments)};
@@ -356,22 +403,19 @@ d.id=a,e=c.getElementsByTagName("body")[0],e.appendChild(d))})
 msmaflink({"n":"【公式】ジョンマスターオーガニック John Masters Organics Z＆Sコンディショニングシャンプー N(ジン＆セージ) 473mL【送料無料】|ジョンマスター シャンプー 頭皮ケア ヘアシャンプー オーガニック いい 香り スカルプケア ヘアケア 髪 ヘア 化粧品 美容 ダメージ","b":"","t":"","d":"https:\/\/thumbnail.image.rakuten.co.jp","c_p":"\/@0_mall\/johnmastersorganics\/cabinet","p":["\/08193645\/imgrc0096138851.jpg","\/10995272\/imgrc0121230513.jpg","\/10995272\/imgrc0121230514.jpg"],"u":{"u":"https:\/\/item.rakuten.co.jp\/johnmastersorganics\/20055\/","t":"rakuten","r_v":""},"v":"2.1","b_l":[{"id":1,"u_tx":"楽天市場で見る","u_bc":"#87c209","u_url":"https:\/\/item.rakuten.co.jp\/johnmastersorganics\/20055\/","a_id":5267359,"p_id":54,"pl_id":27059,"pc_id":54,"s_n":"rakuten","u_so":1},{"id":8,"u_tx":"Amazonで見る","u_bc":"#125592","u_url":"https:\/\/amzn.to\/3XOijvz","a_id":0,"p_id":0,"pl_id":0,"pc_id":0,"s_n":"custom_4","u_so":2},{"id":9,"u_tx":"Yahoo!ショッピングで見る","u_bc":"#bf0000","u_url":"https:\/\/shopping.yahoo.co.jp\/search?first=1\u0026p=%E3%80%90%E5%85%AC%E5%BC%8F%E3%80%91%E3%82%B8%E3%83%A7%E3%83%B3%E3%83%9E%E3%82%B9%E3%82%BF%E3%83%BC%E3%82%AA%E3%83%BC%E3%82%AC%E3%83%8B%E3%83%83%E3%82%AF%20John%20Masters%20Organics%20Z%EF%BC%86S%E3%82%B3%E3%83%B3%E3%83%87%E3%82%A3%E3%82%B7%E3%83%A7%E3%83%8B%E3%83%B3%E3%82%B0%E3%82%B7%E3%83%A3%E3%83%B3%E3%83%97%E3%83%BC%20N(%E3%82%B8%E3%83%B3%EF%BC%86%E3%82%BB%E3%83%BC%E3%82%B8)%20473mL%E3%80%90%E9%80%81%E6%96%99%E7%84%A1%E6%96%99%E3%80%91%7C%E3%82%B8%E3%83%A7%E3%83%B3%E3%83%9E%E3%82%B9%E3%82%BF%E3%83%BC%20%E3%82%B7%E3%83%A3%E3%83%B3%E3%83%97%E3%83%BC%20%E9%A0%AD%E7%9A%AE%E3%82%B1%E3%82%A2%20%E3%83%98%E3%82%A2%E3%82%B7%E3%83%A3%E3%83%B3%E3%83%97%E3%83%BC%20%E3%82%AA%E3%83%BC%E3%82%AC%E3%83%8B%E3%83%83%E3%82%AF%20%E3%81%84%E3%81%84%20%E9%A6%99%E3%82%8A%20%E3%82%B9%E3%82%AB%E3%83%AB%E3%83%97%E3%82%B1%E3%82%A2%20%E3%83%98%E3%82%A2%E3%82%B1%E3%82%A2%20%E9%AB%AA%20%E3%83%98%E3%82%A2%20%E5%8C%96%E7%B2%A7%E5%93%81%20%E7%BE%8E%E5%AE%B9%20%E3%83%80%E3%83%A1%E3%83%BC%E3%82%B8","a_id":5267465,"p_id":1225,"pl_id":27061,"pc_id":1925,"s_n":"yahoo","u_so":3}],"eid":"N0o1S","s":"s"});
 </script>
 <div id="msmaflink-N0o1S">リンク</div>
-<!-- MoshimoAffiliateEasyLink END -->
-     
 <div class="check-points">
-        <h4>💡 編集部のおすすめポイント</h4>
-        <ul>
-            <li><strong>オイリー頭皮をケアするコンディショニングシャンプー。</strong>すこやかな頭皮と髪に導く亜鉛*やセージ葉エキスを配合。</li>
-            <li><strong>髪に潤いを：</strong> ウルチカジオイカエキスが頭皮を引き締め、ラベンダー花／葉／茎エキスが髪に潤いを与えます。</li>
-            <li><strong>アクセントのある香り：</strong> マンダリンオレンジやレモングラスなど爽やかな柑橘系とハーブの香りです。</li>
-        </ul>
-    </div>
-</div>
+       <h4>💡 編集部のおすすめポイント</h4>
+       <ul>
+           <li><strong>頭皮ケアの決定版：</strong> 亜鉛やセージ葉エキスが頭皮環境を整え、健康な髪を育成します。</li>
+           <li><strong>フェイスラインもすっきり：</strong> 頭皮を引き締めることで、顔のリフトアップ効果も期待大。</li>
+           <li><strong>男性にもおすすめ：</strong> 新郎様と一緒に使える、甘すぎない柑橘＆ハーブの香り。</li>
+       </ul>
+   </div>
+   </div>
 
- <h2> 🌧ヘアミスト</h2>
+<h2> 🌧お直しにも！ヘアミスト</h2>
 
     <div class="item-card">
-<!-- START MoshimoAffiliateEasyLink -->
 <script type="text/javascript">
 (function(b,c,f,g,a,d,e){b.MoshimoAffiliateObject=a;
 b[a]=b[a]||function(){arguments.currentScript=c.currentScript
@@ -382,22 +426,16 @@ d.id=a,e=c.getElementsByTagName("body")[0],e.appendChild(d))})
 msmaflink({"n":"ジョンマスターオーガニック グリーンティー＆カレンデュラ リーブインコンディショニングミスト 125ml \/ John Masters Organics ミスト ヘアケア スプレー","b":"","t":"","d":"https:\/\/thumbnail.image.rakuten.co.jp","c_p":"\/@0_mall\/onestep\/cabinet","p":["\/life\/johnmas\/ks1562_1.jpg","\/life\/johnmas\/ks1562_2.jpg","\/parts02\/storepr_sub01.jpg"],"u":{"u":"https:\/\/item.rakuten.co.jp\/onestep\/ks1562\/","t":"rakuten","r_v":""},"v":"2.1","b_l":[{"id":1,"u_tx":"楽天市場で見る","u_bc":"#87c209","u_url":"https:\/\/item.rakuten.co.jp\/onestep\/ks1562\/","a_id":5267359,"p_id":54,"pl_id":27059,"pc_id":54,"s_n":"rakuten","u_so":1},{"id":8,"u_tx":"Amazonで見る","u_bc":"#125592","u_url":"https:\/\/amzn.to\/4pAI3aX","a_id":0,"p_id":0,"pl_id":0,"pc_id":0,"s_n":"custom_4","u_so":2},{"id":9,"u_tx":"Yahoo!ショッピングで見る","u_bc":"#bf0000","u_url":"https:\/\/shopping.yahoo.co.jp\/search?first=1\u0026p=%E3%82%B8%E3%83%A7%E3%83%B3%E3%83%9E%E3%82%B9%E3%82%BF%E3%83%BC%E3%82%AA%E3%83%BC%E3%82%AC%E3%83%8B%E3%83%83%E3%82%AF%20%E3%82%B0%E3%83%AA%E3%83%BC%E3%83%B3%E3%83%86%E3%82%A3%E3%83%BC%EF%BC%86%E3%82%AB%E3%83%AC%E3%83%B3%E3%83%87%E3%83%A5%E3%83%A9%20%E3%83%AA%E3%83%BC%E3%83%96%E3%82%A4%E3%83%B3%E3%82%B3%E3%83%B3%E3%83%87%E3%82%A3%E3%82%B7%E3%83%A7%E3%83%8B%E3%83%B3%E3%82%B0%E3%83%9F%E3%82%B9%E3%83%88%20125ml%20%2F%20John%20Masters%20Organics%20%E3%83%9F%E3%82%B9%E3%83%88%20%E3%83%98%E3%82%A2%E3%82%B1%E3%82%A2%20%E3%82%B9%E3%83%97%E3%83%AC%E3%83%BC","a_id":5267465,"p_id":1225,"pl_id":27061,"pc_id":1925,"s_n":"yahoo","u_so":3}],"eid":"9bVsL","s":"s"});
 </script>
 <div id="msmaflink-9bVsL">リンク</div>
-<!-- MoshimoAffiliateEasyLink END -->
-     
 <div class="check-points">
-        <h4>💡 編集部のおすすめポイント</h4>
-        <ul>
-            <li><strong>サラサラの手触り。</strong>いつまでも髪に触れたくなるような感覚です♪</li>
-            <li><strong>乾燥ダメージのリペア：</strong> ミストに含まれるブロッコリー種子油がキューティクルを整えます。</li>
-            <li><strong>最高の香り：</strong> 柑橘系とイランイランの香りが気分をリフレッシュ！</li>
-        </ul>
-    </div>
-    </div>
+       <h4>💡 編集部のおすすめポイント</h4>
+       <ul>
+           <li><strong>当日のヘアメイク直しに：</strong> 挙式当日、控室に一本あると安心。乾燥した髪に潤いチャージ。</li>
+           <li><strong>ツヤ出し仕上げ：</strong> ブロー前にシュッと一吹きで、キューティクルが整い天使の輪が復活。</li>
+           <li><strong>香りのお守り：</strong> イランイランの香りで、挙式直前の緊張をほぐしてくれます。</li>
+       </ul>
+   </div>
+   </div>
 
-
-
-  
-  
   <div class="banner-area">
       <p style="font-weight:bold; color:#8e6e8e;">＼ 髪にも使える万能オイルはこちら ／</p>
       <a href="amazon-oil-review.html" style="display:inline-block; padding:12px 30px; background:#d8bfd8; color:#fff; text-decoration:none; border-radius:30px; font-weight:bold; box-shadow:0 4px 10px rgba(0,0,0,0.1); transition:0.3s;">
@@ -424,8 +462,9 @@ msmaflink({"n":"ジョンマスターオーガニック グリーンティー＆
 <footer>
   <div class="footer-container">
     
-    <div class="footer-col">
+   <div class="footer-col">
       <h3>🌸 スキンケア・悩み別</h3>
+      <a href="bridal-care.html" style="color:#d35400; font-weight:bold;">👰 結婚式直前！背中・二の腕ケア</a>
       <a href="skin-ranking.html">おすすめスキンケアランキング</a>
       <a href="seasons-skin.html">季節別スキンケア（春夏秋冬）</a>
       <a href="age-skincare.html">40代・50代 年齢別ケア</a>
@@ -453,13 +492,13 @@ msmaflink({"n":"ジョンマスターオーガニック グリーンティー＆
   </div>
   
   <div class="footer-bottom">
-     <a href="https://room.rakuten.co.jp/room_e0dd63a90a/items" target="_blank" rel="noopener" class="footer-room-link">
+      <a href="https://room.rakuten.co.jp/room_e0dd63a90a/items" target="_blank" rel="noopener" class="footer-room-link">
         🏠 管理人Yuriの楽天ROOMを見る
-     </a>
-     <br>
-     
-     © 2025 Essential Beauty Needs<br><br>
-     <a href="privacy-policy.html" style="color:#888; text-decoration:none; font-size:12px;">プライバシーポリシー</a>
+      </a>
+      <br>
+      
+      © 2025 Essential Beauty Needs<br><br>
+      <a href="privacy-policy.html" style="color:#888; text-decoration:none; font-size:12px;">プライバシーポリシー</a>
   </div>
 </footer>
 
