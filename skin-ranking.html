@@ -3,9 +3,9 @@
 <head>
   <meta charset="utf-8" />
   <meta name="viewport" content="width=device-width,initial-scale=1" />
-  <title>スキンケアランキング | Essential Beauty Needs</title>
-  <meta name="description" content="敏感肌・コスパ・アンチエイジング別のおすすめスキンケアランキング。オーガニックコスメ中心に紹介。">
-  <meta name="keywords" content="スキンケアランキング, 敏感肌, コスパ, アンチエイジング, オーガニック, 美容">
+  <title>花嫁が選ぶ！挙式までに美肌を作るオーガニックランキング | Essential Beauty Needs</title>
+  <meta name="description" content="結婚式までに肌を整えたい花嫁様へ。敏感肌でも安心、写真映えするツヤ肌、準備疲れを癒やす香りなど、目的別に厳選したオーガニックコスメランキング。">
+  <meta name="keywords" content="花嫁美容, スキンケアランキング, 敏感肌, プレ花嫁, ブライダルエステ, オーガニック">
   <link href="https://fonts.googleapis.com/css2?family=Quicksand:wght@400;600&family=Playfair+Display:wght@600&display=swap" rel="stylesheet">
   <link rel="canonical" href="https://essential-beauty-needs.com/skin-ranking.html" />
 
@@ -94,6 +94,48 @@
       transform: translateY(-3px);
       box-shadow: 0 6px 15px rgba(0,0,0,0.2);
     }
+
+    /* ▼▼▼ 追加：診断ボタン用のアニメーション ▼▼▼ */
+    @keyframes pulse-glow {
+      0% { box-shadow: 0 0 0 0 rgba(230, 126, 34, 0.4); transform: scale(1); }
+      50% { box-shadow: 0 0 0 10px rgba(230, 126, 34, 0); transform: scale(1.02); }
+      100% { box-shadow: 0 0 0 0 rgba(230, 126, 34, 0); transform: scale(1); }
+    }
+    .diagnosis-banner {
+      background: #fff;
+      border: 3px solid #f39c12; /* 目立つオレンジ/ゴールド系 */
+      border-radius: 15px;
+      padding: 25px;
+      text-align: center;
+      margin: 30px auto; /* 中央寄せ */
+      position: relative;
+      max-width: 650px;
+    }
+    /* 「NEW!」などのバッジ */
+    .diagnosis-badge {
+        background: #d35400; color: #fff; padding: 5px 15px; border-radius: 5px;
+        font-weight: bold; font-size: 12px; position: absolute; top: -15px; left: 50%;
+        transform: translateX(-50%); box-shadow: 0 2px 5px rgba(0,0,0,0.2);
+    }
+    .diagnosis-btn {
+      display: inline-block;
+      background: linear-gradient(45deg, #e67e22, #f39c12);
+      color: #fff;
+      font-size: 18px;
+      font-weight: bold;
+      padding: 15px 35px;
+      border-radius: 50px;
+      text-decoration: none;
+      margin-top: 15px;
+      box-shadow: 0 4px 15px rgba(230, 126, 34, 0.4);
+      /* ここでキラキラさせます */
+      animation: pulse-glow 2s infinite;
+    }
+    .diagnosis-btn:hover {
+        opacity: 0.9;
+        transform: translateY(-2px);
+    }
+    /* ▲▲▲ 追加ここまで ▲▲▲ */
 
     main {
       max-width: 900px;
@@ -295,12 +337,12 @@
 <body>
 
 <header>
-  <h1>💖 スキンケアランキング</h1>
-  <p>敏感肌・コスパ・アンチエイジング別に<br>おすすめアイテムを厳選しました！</p>
+  <h1>💖 花嫁スキンケアランキング</h1>
+  <p>挙式までに「結果」を出したいあなたへ。<br>目的別に厳選したオーガニック名品。</p>
 
   <div class="nav-links" role="navigation">
     <a href="index.html">🏠 トップ</a>
-    <a href="skin-ranking.html">✨ ランキング</a>
+    <a href="bridal-care.html">👰 花嫁ケア診断</a>
     <a href="trial-sets.html" style="background:#fff0f5; border:1px solid #ffb6c1; font-weight:bold;">🔰 お試しセット</a>
     <div class="nav-break"></div>
     
@@ -322,17 +364,26 @@
   </div>
 </header>
 
+<div class="diagnosis-banner">
+    <span class="diagnosis-badge">栄養士監修・無料ツール</span>
+    <h3 style="color:#d35400; margin-bottom:10px; font-size:20px;">⚡ あなたの肌は挙式に間に合う？</h3>
+    <p style="margin-bottom:5px;">今の肌状態と、必要な「緊急ケア」を<strong>30秒で診断</strong>します。</p>
+    
+    <a href="bridal-care.html" class="diagnosis-btn">
+        ✨ 今すぐ肌診断をする！ ✨
+    </a>
+</div>
 <main>
   <p style="text-align:center; margin-top:30px;">
-    自然派スキンケアの専門家が選んだ、今使うべきアイテム。<br>
+    自然派スキンケアの専門家が選んだ、花嫁のためのアイテム。<br>
     気になる商品は「楽天市場で見る」や「Amazonで見る」から詳細をチェック！
   </p>
   
   <section>
-    <h2>🌿 敏感肌ランキング</h2>
+    <h2>🌿 敏感肌でも安心ランキング</h2>
     <div class="rank-intro">
-      お肌が敏感な方にとって、新しいスキンケアアイテムの選択は、喜びよりも不安が先に立つ難しい問題です。<br><br>
-      このランキングでは、<strong>「肌への優しさ」と「確かな効果」</strong>の両立を最も重視して選定しました。実際に敏感肌を持つスタッフが試用し、安心して長く使い続けられると評価したものだけを厳選しています。
+      挙式準備中の肌は、ストレスや寝不足で非常にデリケート。<br><br>
+      このランキングでは、<strong>「低刺激」かつ「当日の化粧ノリを良くする」</strong>アイテムを厳選。実際に敏感肌のスタッフが試し、赤みが出なかったものだけを選びました。
     </div>
     <div class="ranking-list">
       
@@ -342,9 +393,9 @@
         <div class="item-desc">
             <h4>Yuri's Review</h4>
             <ul class="point-list">
-                <li><strong>香りだけで癒やされる！</strong> 厳選された植物精油の香りが、疲れた夜のスキンケアを至福の時間に変えてくれます。</li>
-                <li><strong>3ステップで完璧ケア：</strong> 化粧水・乳液・美容液のライン使いで、水分と油分のバランスが見事に整います。</li>
-                <li><strong>翌朝のもっちり感：</strong> ヒアルロン酸・コラーゲン・セラミドのトリプル配合で、吸い付くような肌へ。</li>
+                <li><strong>香りだけで癒やされる！</strong> アロマの香りが、準備でピリピリした心を優しくほぐしてくれます。</li>
+                <li><strong>3ステップで完璧ケア：</strong> ライン使いすることで、水分と油分のバランスが整い、当日のメイク崩れを防ぎます。</li>
+                <li><strong>翌朝のもっちり感：</strong> ヒアルロン酸・コラーゲン・セラミドのトリプル配合で、写真映えするハリ肌へ。</li>
             </ul>
         </div>
 
@@ -366,9 +417,9 @@
         <div class="item-desc">
             <h4>Yuri's Review</h4>
             <ul class="point-list">
-                <li><strong>深呼吸したくなる香り：</strong> スウィートシトラスの香りが大人気。スキンケアの時間が「義務」から「楽しみ」に変わります。</li>
-                <li><strong>ゆらぎ肌のお守り：</strong> 季節の変わり目で不安定になった肌も、優しく包み込んで落ち着かせてくれます。</li>
-                <li><strong>とろみがあるのに高浸透：</strong> 肌に乗せるとスーッと馴染み、内側から潤う感覚はやみつきになります。</li>
+                <li><strong>マリッジブルー対策に：</strong> スウィートシトラスの香りが、不安な気持ちを明るく切り替えてくれます。</li>
+                <li><strong>ゆらぎ肌のお守り：</strong> 直前の肌トラブルを防ぐ、優しく包み込むような保湿力。</li>
+                <li><strong>高浸透：</strong> とろみがあるのにスッと馴染み、内側から潤う「発光肌」を作ります。</li>
             </ul>
         </div>
 
@@ -390,9 +441,9 @@
         <div class="item-desc">
             <h4>Yuri's Review</h4>
             <ul class="point-list">
-                <li><strong>究極のシンプルケア：</strong> 水分（アロエ）と油分（オリーブオイル等）という肌に必要なものだけで作られています。</li>
-                <li><strong>水を使わない濃厚さ：</strong> 水の代わりにアロエベラ液汁を使用。自然の治癒力がダイレクトに届きます。</li>
-                <li><strong>子供と一緒に使える：</strong> 余計なものが一切入っていないので、家族みんなの保湿ケアとしても優秀です。</li>
+                <li><strong>究極のシンプルケア：</strong> 忙しくて時間がない花嫁様に。水を使わずアロエ液汁を使用した濃厚保湿。</li>
+                <li><strong>彼とシェアできる：</strong> さっぱりとした使用感で、新郎様のスキンケアデビューにも最適。</li>
+                <li><strong>肌トラブルの鎮静：</strong> アロエの力で、赤みや日焼け後のケアにも。</li>
             </ul>
         </div>
 
@@ -412,10 +463,10 @@
   </section>
 
   <section>
-    <h2>💰 コスパランキング</h2>
+    <h2>💰 全身に使える！コスパランキング</h2>
     <div class="rank-intro">
-      スキンケアは「続けること」が最も大切です。<br>
-      このランキングでは、流通コストの削減や大容量化といった企業努力により、<strong>品質と価格のバランス</strong>が取れた製品のみを選びました。
+      お顔だけでなく、ドレスから露出する背中やデコルテ、二の腕のケアも必須。<br>
+      このランキングでは、<strong>「惜しみなく全身に使える」</strong>大容量＆高品質なアイテムを選びました。
     </div>
     <div class="ranking-list">
       
@@ -425,9 +476,9 @@
         <div class="item-desc">
             <h4>Yuri's Review</h4>
             <ul class="point-list">
-                <li><strong>家族みんなで使える万能バーム：</strong> 顔だけでなく、乾燥した手先、髪の毛先までこれ一つでOK。</li>
-                <li><strong>愛媛の甘夏の香り：</strong> 蓋を開けた瞬間、もぎたての甘夏の香りが広がり、子供たちも大喜びです。</li>
-                <li><strong>驚きのコストパフォーマンス：</strong> 少量でよく伸びるので、小さな容器でもかなり長持ちします。</li>
+                <li><strong>全身ツヤ肌へ：</strong> 固めのバームが体温でとろけ、乾燥した肘や膝もしっとり艶やかに。</li>
+                <li><strong>愛媛の甘夏の香り：</strong> フレッシュな柑橘の香りで、ダイエット中の空腹も紛れるかも？</li>
+                <li><strong>爪先までケア：</strong> ネイルケアにも使えるので、ブライダルネイルを美しく保ちます。</li>
             </ul>
         </div>
 
@@ -449,9 +500,9 @@
         <div class="item-desc">
             <h4>Yuri's Review</h4>
             <ul class="point-list">
-                <li><strong>1つで何役もこなす最強アイテム：</strong> メイク落とし、保湿、ヘアケア、ボディマッサージと、これ1本で全身ケアが完了。</li>
-                <li><strong>完全無添加の安心感：</strong> 原材料は「有機ココナッツ」のみ。口に入れても大丈夫なグレードです。</li>
-                <li><strong>圧倒的なコスパ：</strong> 大容量でこの価格。たっぷり惜しみなく使えるのが嬉しいポイントです。</li>
+                <li><strong>マッサージに最適：</strong> 伸びが良いので、二の腕やデコルテのリンパマッサージに。</li>
+                <li><strong>完全無添加：</strong> 口に入れても安全なレベル。敏感な背中にも安心して使えます。</li>
+                <li><strong>メイク落としにも：</strong> 濃い舞台メイクの練習後も、肌負担なくするんとオフ。</li>
             </ul>
         </div>
 
@@ -462,7 +513,7 @@
         c.getElementById(a)||(d=c.createElement(f),d.src=g,
         d.id=a,e=c.getElementsByTagName("body")[0],e.appendChild(d))})
         (window,document,"script","//dn.msmstatic.com/site/cardlink/bundle.js?20220329","msmaflink");
-        msmaflink({"n":"ココナッツオイル 保湿 美容 スキンケア オイル 有機バージンココナッツオイル100％ 化粧品","b":"","t":"","d":"https:\/\/thumbnail.image.rakuten.co.jp","c_p":"\/@0_mall\/peacehair\/cabinet\/ef\/item\/coconuts","p":["\/coconuts_01.jpg","\/coconuts_02.jpg","\/coconuts_03.jpg"],"u":{"u":"https:\/\/item.rakuten.co.jp\/peacehair\/coconuts\/","t":"rakuten","r_v":""},"v":"2.1","b_l":[{"id":1,"u_tx":"楽天市場で見る","u_bc":"#87c209","u_url":"https:\/\/item.rakuten.co.jp\/peacehair\/coconuts\/","a_id":5267359,"p_id":54,"pl_id":27059,"pc_id":54,"s_n":"rakuten","u_so":1},{"id":5,"u_tx":"Amazonで見る","u_bc":"#184f5c","u_url":"https:\/\/amzn.to\/4onkYXE","a_id":0,"p_id":0,"pl_id":0,"pc_id":0,"s_n":"custom_10","u_so":2},{"id":4,"u_tx":"Yahoo!ショッピングで見る","u_bc":"#bf0000","u_url":"https:\/\/shopping.yahoo.co.jp\/search?first=1\u0026p=%E3%82%B3%E3%82%B3%E3%83%8A%E3%83%83%E3%83%84%E3%82%AA%E3%82%A4%E3%83%AB%20%E4%BF%9D%E6%B9%BF%20%E7%BE%8E%E5%AE%B9%20%E3%82%B9%E3%82%AD%E3%83%B3%E3%82%B1%E3%82%A2%20%E3%82%AA%E3%82%A4%E3%83%AB%20%E6%9C%89%E6%A9%9F%E3%83%90%E3%83%BC%E3%82%B8%E3%83%B3%E3%82%B3%E3%82%B3%E3%83%8A%E3%83%83%E3%83%84%E3%82%AA%E3%82%A4%E3%83%AB100%EF%BC%85%20%E5%8C%96%E7%B2%A7%E5%93%81","a_id":5267465,"p_id":1225,"pl_id":27061,"pc_id":1925,"s_n":"yahoo","u_so":3}],"eid":"JO5d3","s":"s"});
+        msmaflink({"n":"ココナッツオイル 保湿 美容 スキンケア オイル 有機バージンココナッツオイル100％ 化粧品","b":"","t":"","d":"https:\/\/thumbnail.image.rakuten.co.jp","c_p":"\/@0_mall\/peacehair\/cabinet\/ef\/item\/coconuts","p":["\/coconuts_01.jpg","\/coconuts_02.jpg","\/coconuts_03.jpg"],"u":{"u":"https:\/\/item.rakuten.co.jp\/peacehair\/coconuts\/","t":"rakuten","r_v":""},"v":"2.1","b_l":[{"id":1,"u_tx":"楽天市場で見る","u_bc":"#87c209","u_url":"https:\/\/item.rakuten.co.jp\/peacehair\/coconuts\/","a_id":5267359,"p_id":54,"pl_id":27059,"pc_id":54,"s_n":"rakuten","u_so":1},{"id":5,"u_tx":"Amazonで見る","u_bc":"#184f5c","u_url":"https:\/\/amzn.to\/4onkYXE","a_id":0,"p_id":0,"pl_id":0,"pc_id":0,"s_n":"custom_10","u_so":2},{"id":4,"u_tx":"Yahoo!ショッピングで見る","u_bc":"#bf0000","u_url":"https:\/\/shopping.yahoo.co.jp\/search?first=1\u0026p=%E3%82%B3%E3%82%B3%E3%83%8A%E3%83%83%E3%83%84%E3%82%AA%E3%82%A4%E3%83%AB%20%E4%BF%9D%E6%B9%BF%20%E7%BE%8E%E5%AE%B9%20%E3%82%B9%E3%82%AD%E3%83%B3%E3%82%B1%E3%82%A2%20%E3%82%AA%E3%82%A4%E3%83%AB%20%E6%9C%AA%E7%B2%BE%E8%A3%BD%20%E6%9C%89%E6%A9%9F%E3%83%90%E3%83%BC%E3%82%B8%E3%83%B3%E3%82%B3%E3%82%B3%E3%83%8A%E3%83%83%E3%83%84%E3%82%AA%E3%82%A4%E3%83%AB100%EF%BC%85%20%E5%8C%96%E7%B2%A7%E5%93%81","a_id":5267465,"p_id":1225,"pl_id":27061,"pc_id":1925,"s_n":"yahoo","u_so":3}],"eid":"JO5d3","s":"s"});
         </script>
         <div id="msmaflink-JO5d3">リンク</div>
         </div>
@@ -473,9 +524,9 @@
         <div class="item-desc">
             <h4>Yuri's Review</h4>
             <ul class="point-list">
-                <li><strong>驚異の300ml大容量：</strong> オーガニックコスメとは思えないサイズ感。顔だけでなく全身にバシャバシャ使えます。</li>
-                <li><strong>時短に嬉しいポンプ式：</strong> お風呂上がりに片手ですぐ保湿できるので、忙しいママさんにもぴったり。</li>
-                <li><strong>爽やかなシトラス：</strong> 癖のない香りなので、強い香りが苦手な方や男性とのシェアコスメとしても優秀です。</li>
+                <li><strong>全身ローションとして：</strong> 300mlの大容量なので、お風呂上がりに全身にバシャバシャ使えます。</li>
+                <li><strong>時短ポンプ式：</strong> 片手で使えるので、忙しい準備期間のボディケアに最適。</li>
+                <li><strong>ベタつかない：</strong> すぐにパジャマを着ても張り付かない、さらっとした使い心地。</li>
             </ul>
         </div>
 
@@ -497,8 +548,8 @@
   <section>
     <h2>✨ エイジングケアランキング</h2>
     <div class="rank-intro">
-      鏡を見るたびに感じる「ハリのなさ」「乾燥による小じわ」——。<br>
-      このランキングでは、ただ高価な商品を紹介するのではなく、<strong>「自分の予算と状態にあわせて」</strong>選べるように、効果と価格のバランスが取れたアイテムを厳選しました。
+      大人花嫁様のための、実力派エイジングケア。<br>
+      ハリ不足や乾燥による小じわをケアし、自信を持ってドレスを着られる肌へと導きます。
     </div>
     <div class="ranking-list">
       
@@ -508,9 +559,9 @@
         <div class="item-desc">
             <h4>Yuri's Review</h4>
             <ul class="point-list">
-                <li><strong>アミノ酸のプロ「味の素」が開発：</strong> 肌の素となるアミノ酸を熟知したメーカーだからこその、本質的なエイジングケアです。</li>
-                <li><strong>紫色の秘密は「グアイアズレン」：</strong> 植物由来の成分が肌荒れを防ぎ、透明感のある肌へと導きます。</li>
-                <li><strong>サラッとしているのに高保湿：</strong> ベタつきが苦手な方でも使いやすい、軽やかなテクスチャーの実力派です。</li>
+                <li><strong>アミノ酸の力：</strong> 肌の素となるアミノ酸を熟知した「味の素」開発の本格ケア。</li>
+                <li><strong>透明感アップ：</strong> 植物由来の「グアイアズレン」が、くすみがちな肌に透明感を与えます。</li>
+                <li><strong>化粧ノリ抜群：</strong> サラッとしているのに高保湿で、朝のメイク前にも最適。</li>
             </ul>
         </div>
 
@@ -532,9 +583,9 @@
         <div class="item-desc">
             <h4>Yuri's Review</h4>
             <ul class="point-list">
-                <li><strong>信頼の「医薬部外品」：</strong> 効果効能が認められた成分を配合。本気で肌を変えたい人におすすめです。</li>
-                <li><strong>独自の「クレイ（粘土）」成分：</strong> ミネラル豊富なクレイが肌を守りながら保湿。他にはない使用感です。</li>
-                <li><strong>ロングセラーの実力：</strong> 長年愛され続けているブランドには理由があります。乾燥小じわが気になる方に。</li>
+                <li><strong>医薬部外品の実力：</strong> 挙式までに確実に肌を変えたい大人花嫁に。</li>
+                <li><strong>クレイの力：</strong> 独自の粘土成分が肌を守り、乾燥による小じわを目立たなくします。</li>
+                <li><strong>ロングセラー：</strong> 親子で愛用される方も多い、信頼のブランドです。</li>
             </ul>
         </div>
 
@@ -556,9 +607,9 @@
         <div class="item-desc">
             <h4>Yuri's Review</h4>
             <ul class="point-list">
-                <li><strong>ご褒美オイル：</strong> 貴重なオーキッド（蘭）エキスを贅沢に配合。使うたびにラグジュアリーな気分になれます。</li>
-                <li><strong>ベタつかない神オイル：</strong> オイルなのに驚くほど浸透が早く、朝のメイク前にも使えます。</li>
-                <li><strong>エイジングサインに：</strong> 肌にハリと弾力を与えてくれるので、疲れた肌へのスペシャルケアとして最適です。</li>
+                <li><strong>ご褒美オイル：</strong> 貴重な蘭（オーキッド）エキス配合。挙式直前の「追い込み美容」に。</li>
+                <li><strong>朝も使える：</strong> オイルなのに驚くほど浸透が早く、メイク前にも使えます。</li>
+                <li><strong>ハリと弾力：</strong> 疲れた肌をふっくらと蘇らせ、ドレスに負けない輝きを与えます。</li>
             </ul>
         </div>
 
@@ -578,12 +629,12 @@
   </section>
 
   <div class="staff-push-box">
-    <h3 style="margin-top:0; color:#d6336c;">👑 スタッフ一押しアイテム</h3>
+    <h3 style="margin-top:0; color:#d6336c;">👑 敏感な花嫁様に一押し！</h3>
     
     <div class="item-desc" style="background:#fff; border:none; text-align:center;">
         <p style="margin-bottom:10px; font-weight:bold;">
             「赤ちゃんにも使える優しさ」×「大人のエイジングケア」<br>
-            忙しい朝もこれ一本で完了する、私の最強のパートナーです。
+            忙しい準備期間も、これ一本で高保湿ケアが完了。私の最強のパートナーです。
         </p>
     </div>
 
@@ -619,8 +670,9 @@
 <footer>
   <div class="footer-container">
     
-    <div class="footer-col">
+   <div class="footer-col">
       <h3>🌸 スキンケア・悩み別</h3>
+      <a href="bridal-care.html" style="color:#d35400; font-weight:bold;">👰 結婚式直前！背中・二の腕ケア</a>
       <a href="skin-ranking.html">おすすめスキンケアランキング</a>
       <a href="seasons-skin.html">季節別スキンケア（春夏秋冬）</a>
       <a href="age-skincare.html">40代・50代 年齢別ケア</a>
