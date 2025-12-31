@@ -212,31 +212,54 @@ footer {
     h1{font-size:24px;}
     .lp-headline{font-size: 20px;}
 }
-    /* --- もしもアフィリエイト強制横並び調整 --- */
-/* PCやタブレットなど、ある程度幅がある時は3つ並べる */
+
+/* --- もしもアフィリエイト強制横並び調整（HTML修正版） --- */
+/* 画面幅に関わらず、フレックスボックスで強制的に並べます */
+div[id^="msmaflink"] {
+    max-width: 100% !important; /* ボックス全体を横に広げる */
+    width: 100% !important;
+    margin: 20px auto !important;
+    box-sizing: border-box !important;
+}
+
+/* ボタンを包むエリア */
+div[id^="msmaflink"] .msmaflink-btns {
+    display: flex !important;
+    flex-direction: row !important; /* 横並び */
+    flex-wrap: nowrap !important;   /* 折り返し禁止（ここが重要） */
+    justify-content: space-between !important;
+    gap: 8px !important;            /* ボタン間の隙間 */
+    margin-top: 10px !important;
+    width: 100% !important;
+}
+
+/* 各ボタンのスタイル */
+div[id^="msmaflink"] .msmaflink-btns a {
+    flex: 1 !important;             /* 3つのボタンを均等な幅にする */
+    width: auto !important;         /* 固定幅を解除 */
+    margin: 0 !important;
+    font-size: 11px !important;     /* 文字がはみ出ないように少し小さく */
+    line-height: 1.2 !important;
+    padding: 12px 0 !important;     /* 高さを確保 */
+    display: flex !important;
+    align-items: center !important;
+    justify-content: center !important;
+    box-sizing: border-box !important;
+}
+
+/* PCサイズでの画像とテキストのレイアウト調整 */
 @media (min-width: 600px) {
-    /* リンクボックス全体の幅を最大まで広げる */
-    div[id^="msmaflink"] {
-        max-width: 100% !important;
-        width: 100% !important;
-    }
-    /* ボタンを包むエリアをフレックスボックスにする */
-    div[id^="msmaflink"] .msmaflink-btns {
-        display: flex !important;
-        flex-wrap: nowrap !important; /* 折り返し禁止 */
-        justify-content: space-between !important;
-        gap: 8px !important; /* ボタン間の隙間 */
-        margin-top: 10px !important;
-    }
-    /* 各ボタンの幅を3等分にする */
-    div[id^="msmaflink"] .msmaflink-btns a {
-        width: 32% !important;
-        margin: 0 !important;
-        font-size: 12px !important; /* 文字がはみ出ないよう少し小さく */
-        display: flex !important;
-        align-items: center !important;
-        justify-content: center !important;
-    }
+     div[id^="msmaflink"] > div {
+         display: flex !important;
+         align-items: center !important;
+     }
+     div[id^="msmaflink"] .msmaflink-image {
+         margin-right: 20px !important;
+     }
+     /* PCなら文字サイズを少し大きく戻す */
+     div[id^="msmaflink"] .msmaflink-btns a {
+        font-size: 13px !important;
+     }
 }
 </style>
 </head>
