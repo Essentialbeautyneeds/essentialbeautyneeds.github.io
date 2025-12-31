@@ -147,6 +147,7 @@ p.lead { font-size: 16px; color: #5a4545; font-weight: 600; }
     margin-top: 50px;
     border-top: 2px dashed #eee;
     padding-top: 30px;
+    text-align: center;
 }
 .product-category h3 {
     text-align: center;
@@ -159,45 +160,6 @@ p.lead { font-size: 16px; color: #5a4545; font-weight: 600; }
     border-radius: 20px;
 }
 
-/* A8用デザイン調整 */
-.a8-box {
-    background: #fff;
-    border: 3px solid var(--gold);
-    border-radius: 15px;
-    padding: 20px;
-    text-align: center;
-    margin: 20px 0;
-    position: relative;
-}
-.a8-box::before {
-    content: "SPECIAL CARE";
-    position: absolute;
-    top: -12px;
-    left: 50%;
-    transform: translateX(-50%);
-    background: var(--gold);
-    color: #fff;
-    padding: 2px 15px;
-    font-size: 12px;
-    font-weight: bold;
-    border-radius: 10px;
-}
-.a8-btn-style {
-    display: inline-block;
-    background: linear-gradient(45deg, #d6336c, #ff8e8e);
-    color: #fff !important;
-    padding: 15px 30px;
-    border-radius: 50px;
-    text-decoration: none;
-    font-weight: bold;
-    margin-top: 15px;
-    box-shadow: 0 4px 10px rgba(214, 51, 108, 0.3);
-    transition: transform 0.2s;
-}
-.a8-btn-style:hover {
-    transform: translateY(-2px);
-    opacity: 0.9;
-}
 
 /* Footer & Nav (Indexと共通) */
 footer {
@@ -250,6 +212,32 @@ footer {
     h1{font-size:24px;}
     .lp-headline{font-size: 20px;}
 }
+    /* --- もしもアフィリエイト強制横並び調整 --- */
+/* PCやタブレットなど、ある程度幅がある時は3つ並べる */
+@media (min-width: 600px) {
+    /* リンクボックス全体の幅を最大まで広げる */
+    div[id^="msmaflink"] {
+        max-width: 100% !important;
+        width: 100% !important;
+    }
+    /* ボタンを包むエリアをフレックスボックスにする */
+    div[id^="msmaflink"] .msmaflink-btns {
+        display: flex !important;
+        flex-wrap: nowrap !important; /* 折り返し禁止 */
+        justify-content: space-between !important;
+        gap: 8px !important; /* ボタン間の隙間 */
+        margin-top: 10px !important;
+    }
+    /* 各ボタンの幅を3等分にする */
+    div[id^="msmaflink"] .msmaflink-btns a {
+        width: 32% !important;
+        margin: 0 !important;
+        font-size: 12px !important; /* 文字がはみ出ないよう少し小さく */
+        display: flex !important;
+        align-items: center !important;
+        justify-content: center !important;
+    }
+}
 </style>
 </head>
 <body>
@@ -268,7 +256,7 @@ footer {
         </span>
     </h2>
     
-    <img src="images/back.jpg" style="width:100%; border-radius:10px; margin-top:10px;" alt="美しい背中の花嫁">
+    <img src="images/back.jpg" style="width:100%; border-radius:10px; margin-top:10px;" alt="美しい背中の花嫁" onerror="handleImageError(this, 800, 450, 'Bridal Back')">
     
 </div>
 
@@ -311,7 +299,7 @@ footer {
         <p>食事での体質改善は重要ですが、効果が出るまでには時間がかかります。<br>挙式まで時間がない場合は、<strong>「悩み別の専用ケア」</strong>の力を借りるのが賢い選択です。</p>
         <p>背中や二の腕の皮膚は顔よりも厚いため、普通のボディクリームでは届きません。浸透力に優れた専用アイテムを選びました。</p>
 
-        <div class="product-category" style="text-align: center;">
+        <div class="product-category">
             <h3>悩み① 背中のニキビ・黒ずみ</h3>
             <p style="font-size:14px; margin-bottom:15px;">「背中ニキビといえばコレ」というほどの定番ジェル。厚い皮膚にも浸透し、美白成分も配合。</p>
             
@@ -327,7 +315,7 @@ footer {
             <div id="msmaflink-HO39p">リンク</div>
             </div>
 
-        <div class="product-category" style="text-align: center;">
+        <div class="product-category">
             <h3>悩み② 二の腕のザラつき</h3>
             <p style="font-size:14px; margin-bottom:15px;">二の腕のプツプツ（毛孔性苔癬）対策に。植物由来の角質ケアで、ドレスの似合うスベスベ肌へ。</p>
             
@@ -343,21 +331,24 @@ footer {
             <div id="msmaflink-7osiZ">リンク</div>
             </div>
 
-        <div class="a8-box">
-            <h3 style="color:#d4af37; font-size:20px; margin-bottom:10px;">自分ではどうにもならない時の救世主</h3>
-            <p style="font-size:14px; margin-bottom:20px;">「もう時間がない！」という方は、プロの手を借りるのが一番確実でリラックスもできます。<br>まずは気軽な体験コースで、背中をピカピカにしてもらいましょう。</p>
+        <div class="product-category">
+            <h3>悩み③ サロンに行く時間がない！</h3>
+            <p style="font-size:14px; margin-bottom:15px;">
+                「エステに通う時間がない…」そんな花嫁様の救世主。<br>
+                エステ発のプロ用ブランド「エステダム」で、サロン帰りのような、なめらかで発光する肌へ。
+            </p>
             
-            <a href="https://px.a8.net/svt/ejp?a8mat=45KRG0+5R6W2I+2NSW+C33KX" rel="nofollow">
-            <img border="0" width="120" height="60" alt="" src="https://www29.a8.net/svt/bgt?aid=251231472348&wid=002&eno=01&mid=s00000012416002030000&mc=1"></a>
-            <img border="0" width="1" height="1" src="https://www13.a8.net/0.gif?a8mat=45KRG0+5R6W2I+2NSW+C33KX" alt="">
-
-            <br>
-            
-            <a href="https://px.a8.net/svt/ejp?a8mat=45KRG0+5R6W2I+2NSW+BX3J6" rel="nofollow" class="a8-btn-style">
-                体験エステを詳しく見る ＞
-            </a>
-            <img border="0" width="1" height="1" src="https://www11.a8.net/0.gif?a8mat=45KRG0+5R6W2I+2NSW+BX3J6" alt="">
-        </div>
+            <script type="text/javascript">
+            (function(b,c,f,g,a,d,e){b.MoshimoAffiliateObject=a;
+            b[a]=b[a]||function(){arguments.currentScript=c.currentScript
+            ||c.scripts[c.scripts.length-2];(b[a].q=b[a].q||[]).push(arguments)};
+            c.getElementById(a)||(d=c.createElement(f),d.src=g,
+            d.id=a,e=c.getElementsByTagName("body")[0],e.appendChild(d))})
+            (window,document,"script","//dn.msmstatic.com/site/cardlink/bundle.js?20220329","msmaflink");
+            msmaflink({"n":"エステダム オーセリュレール ボディ オイル 125ml サロン専売品 ESTHEDERM 正規品【送料無料\/沖縄・離島除く】","b":"","t":"","d":"https:\/\/thumbnail.image.rakuten.co.jp","c_p":"","p":["\/@0_mall\/esthesupply\/cabinet\/new\/2018042607.jpg"],"u":{"u":"https:\/\/item.rakuten.co.jp\/esthesupply\/2018042607\/","t":"rakuten","r_v":""},"v":"2.1","b_l":[{"id":13,"u_tx":"Amazonで見る","u_bc":"#000000","u_url":"https:\/\/amzn.to\/49xOW7g","a_id":0,"p_id":0,"pl_id":0,"pc_id":0,"s_n":"custom_3","u_so":1},{"id":1,"u_tx":"楽天市場で見る","u_bc":"#bf0000","u_url":"https:\/\/item.rakuten.co.jp\/esthesupply\/2018042607\/","a_id":5267359,"p_id":54,"pl_id":27059,"pc_id":54,"s_n":"rakuten","u_so":2},{"id":12,"u_tx":"Yahoo!ショッピングで見る","u_bc":"#87c209","u_url":"https:\/\/shopping.yahoo.co.jp\/search?first=1\u0026p=%E3%82%A8%E3%82%B9%E3%83%86%E3%83%80%E3%83%A0%20%E3%82%AA%E3%83%BC%E3%82%BB%E3%83%AA%E3%83%A5%E3%83%AC%E3%83%BC%E3%83%AB%20%E3%83%9C%E3%83%87%E3%82%A3%20%E3%82%AA%E3%82%A4%E3%83%AB%20125ml%20%E3%82%B5%E3%83%AD%E3%83%B3%E5%B0%82%E5%A3%B2%E5%93%81%20ESTHEDERM%20%E6%AD%A3%E8%A6%8F%E5%93%81%E3%80%90%E9%80%81%E6%96%99%E7%84%A1%E6%96%99%2F%E6%B2%96%E7%B8%84%E3%83%BB%E9%9B%A2%E5%B3%B6%E9%99%A4%E3%81%8F%E3%80%91","a_id":5267465,"p_id":1225,"pl_id":27061,"pc_id":1925,"s_n":"yahoo","u_so":3}],"eid":"ntr6U","s":"s"});
+            </script>
+            <div id="msmaflink-ntr6U">リンク</div>
+            </div>
 
     </section>
 
@@ -371,7 +362,7 @@ footer {
         <p style="margin-top:30px; font-weight:bold;">あなたの結婚式が、最高に美しい一日になりますように。</p>
         
         <div style="margin-top:50px;">
-            <img src="images/Yuri.jpg" style="width:80px; height:80px; border-radius:50%; object-fit:cover;" alt="Yuri">
+            <img src="images/Yuri.jpg" style="width:80px; height:80px; border-radius:50%; object-fit:cover;" alt="Yuri" onerror="handleImageError(this, 80, 80, 'Yuri')">
             <p style="font-size:14px; color:#999; margin-top:10px;">Managed by Yuri (Registered Dietitian)</p>
         </div>
     </section>
