@@ -3,7 +3,8 @@
 <head>
   <meta charset="utf-8" />
   <meta name="viewport" content="width=device-width,initial-scale=1" />
-  <title>このサイトについて | Essential Beauty Needs</title>
+  <title>プロフィール・運営者情報 | Essential Beauty Needs</title>
+  <meta name="description" content="管理栄養士・スキンケアアドバイザーYuriのプロフィール。オーストラリアで学んだ自然療法と栄養学をベースに、花嫁のための美容メソッドを発信しています。">
   <link rel="canonical" href="https://essential-beauty-needs.com/about.html">
   <link href="https://fonts.googleapis.com/css2?family=Playfair+Display:wght@600&family=Quicksand:wght@400;600&display=swap" rel="stylesheet">
   
@@ -71,7 +72,7 @@
       box-shadow: 0 10px 25px rgba(0,0,0,0.05); /* ふんわりした影 */
     }
 
-    /* 画像の設定（追加部分） */
+    /* 画像の設定 */
     .profile-image-container {
       text-align: center;
       margin-top: -80px; /* 画像をカードの外（上）にはみ出させる */
@@ -109,6 +110,25 @@
       margin-top: 30px;
       border-left: 4px solid #f48b8b;
     }
+    
+    /* 診断へのリンクボタン */
+    .diagnosis-link {
+        display: block;
+        background: #fff4e6;
+        border: 2px dashed #e67e22;
+        color: #d35400;
+        text-align: center;
+        padding: 15px;
+        border-radius: 10px;
+        text-decoration: none;
+        font-weight: bold;
+        margin: 30px 0;
+        transition: 0.3s;
+    }
+    .diagnosis-link:hover {
+        background: #ffe0b2;
+        transform: translateY(-2px);
+    }
 
     /* ナビゲーション（共通スタイル） */
     .nav-links{display:flex;gap:10px;justify-content:center;margin-top:40px;flex-wrap:wrap;}
@@ -144,7 +164,7 @@
 <body>
 
   <header>
-    <h1>ご挨拶 / このサイトについて</h1>
+    <h1>Profile / 運営者情報</h1>
   </header>
 
  <main>
@@ -154,39 +174,45 @@
           <img src="images/Yuri.jpg" alt="管理人の顔写真" class="profile-image" onerror="handleImageError(this, 140, 140, 'Yuri')">
       </div>
 
-      <p>はじめまして、管理人の<strong>Yuri</strong>です。</p>
-      <p>オーストラリアのメルボルンで幼少から大学卒業するまで約15年ほど滞在し、現地の大学で栄養士の資格を取得してから日本へ帰国しました。<br>その後、美容健康を趣味としてフリーランスで仕事をしています。</p>
-        
-      <p>かつての私は、肌トラブルを隠すためにメイクを重ね、高価な化粧品を買い漁る日々を送っていました。<br>
-      しかし、ある時ふと気づいたのです。<br>
-      「外側を飾るだけでは、本当の美しさは手に入らない」と。</p>
-
-      <p><strong>『Essential Beauty Needs』</strong>は、そんな私の実体験から生まれた、自然由来・オーガニック成分を中心とした美容アイテムを紹介する情報サイトです。</p>
+      <p>はじめまして。管理人の<strong>Yuri</strong>です。<br>
+      栄養士・スキンケアアドバイザーとして、結婚式を控えた花嫁様を中心に、肌と食のカウンセリングを行っています。</p>
       
-      <p>単に成分が良いというだけでなく、肌へのやさしさ、環境への配慮、そして何より「使っていて心が満たされるか」を大切に製品をセレクトしています。<br>
-      読者の皆さまが、ご自身の肌と心に合う「自然派ケア」を見つけるお手伝いができれば幸せです。</p>
+      <p>私はオーストラリア・メルボルンの大学で栄養学を学び、約15年間を現地で過ごしました。<br>
+      オーガニック先進国であるメルボルンで学んだことは、「肌の美しさは、塗るものだけでなく、食べるものと心の状態で決まる」という事実です。</p>
+        
+      <p>結婚式という人生の晴れ舞台。しかし、準備のストレスやダイエットで肌荒れを起こし、自信をなくしてしまう花嫁様をこれまで数多く見てきました。</p>
+
+      <p><strong>『Essential Beauty Needs』</strong>は、そんな花嫁様のために立ち上げた美容情報サイトです。</p>
+      
+      <p>「エステに行く時間がない」「背中の荒れが治らない」<br>
+      そんな切実な悩みに、栄養学に基づいたインナーケアと、肌本来の力を引き出すオーガニックコスメの両面からアプローチします。</p>
+      
+      <a href="bridal-care.html" class="diagnosis-link">
+          👰 挙式直前でも間に合う！<br>
+          「背中・二の腕」緊急ケア診断はこちら ＞
+      </a>
 
       <div class="policy-box">
         <strong>【運営ポリシー・免責事項】</strong><br>
-        <p style="margin-bottom:10px;">すべての記事は、私自身の愛用体験や、成分リサーチに基づき作成しています。</p>
+        <p style="margin-bottom:10px;">当サイトの記事は、栄養士としての知見や成分リサーチに基づき作成しています。</p>
         
         <p style="font-size: 0.85em; color: #777;">
         Amazonのアソシエイトとして、Essential Beauty Needsは適格販売により収入を得ています。<br>
-        また、本サイトは「もしもアフィリエイト」等のASPを通じて商品を紹介しています。紹介料の有無に関わらず「心からおすすめできる本物」のみを厳選して掲載することをお約束します。
+        また、本サイトは「もしもアフィリエイト」等のASPを通じて商品を紹介しています。紹介料の有無に関わらず、花嫁様が安心して使える「本物」のみを厳選して掲載することをお約束します。
         </p>
       </div>
 
       <p style="text-align: center; margin-top: 30px; font-weight: bold; color: #503535;">
-        植物の生命力を借りて、<br>
-        内側から輝く「健やかな美しさ」を一緒に育てていきませんか？
+        一生に一度の写真を、<br>
+        最高に輝く笑顔と素肌で残しましょう。
       </p>
 
       <p style="text-align: right; margin-top: 20px;">
         <strong>Yuri</strong><br>
-        <span style="font-size:12px; color:#888;">Nutritionist / Beauty Writer</span>
+        <span style="font-size:12px; color:#888;">Nutritionist / Skincare Advisor</span>
       </p>
 
-<div style="text-align:right; margin-top:20px; font-size: 0.95em;">
+      <div style="text-align:right; margin-top:20px; font-size: 0.95em;">
         <span style="color:#999; font-size:0.85em; margin-right:5px;">Follow me:</span>
         
         <a href="https://www.instagram.com/yuri.ebn?igsh=d2JqOGJqd2J4Z2Rw" target="_blank" style="text-decoration:none; margin-left:8px; color:#d62976; font-weight:600;">
@@ -205,6 +231,7 @@
     
     <div class="nav-links">
         <a href="index.html">🏠 トップ</a>
+        <a href="bridal-care.html">👰 花嫁ケア診断</a>
         <a href="skin-ranking.html">✨ ランキング</a>
         <a href="beauty-column.html">💄 コラム</a>
         <a href="organic-science.html">🔬 成分の科学</a>
