@@ -30,9 +30,9 @@
 </script>
     
 <meta name="viewport" content="width=device-width,initial-scale=1">
-<title>季節別オーガニックスキンケア特集｜肌が喜ぶ自然派コスメ</title>
-<meta name="description" content="【栄養士監修】春のゆらぎ肌、夏の紫外線、秋のくすみ、冬の乾燥。四季それぞれの肌悩みに合わせた最適なオーガニックスキンケアと対策をご紹介。肌本来のバリア機能を高め、一年中健やかな素肌へ導くヒントが満載です。">
-<meta name="keywords" content="オーガニックスキンケア,季節別,肌荒れ対策,自然派コスメ,乾燥肌,紫外線ケア,栄養士監修">
+<title>花嫁のための四季別・挙式カレンダー美容｜季節の肌トラブル対策</title>
+<meta name="description" content="【栄養士監修】春挙式のゆらぎ肌、夏挙式の背中ニキビ、秋のくすみ、冬の乾燥対策。挙式シーズンに合わせた最適なオーガニックケアで、当日最高の肌コンディションを。">
+<meta name="keywords" content="花嫁美容, 季節別スキンケア, 春婚, 夏婚, 秋婚, 冬婚, 背中ケア">
 <link href="https://fonts.googleapis.com/css2?family=Playfair+Display:wght@600&family=Quicksand:wght@400;600&display=swap" rel="stylesheet">
 
 <link rel="canonical" href="https://essential-beauty-needs.com/seasons-skin.html" />
@@ -110,6 +110,48 @@ p.lead { font-size: 18px; color: #5a4545; }
 .nav-links a{background:rgba(255,255,255,0.8);padding:8px 12px;border-radius:8px;text-decoration:none;color:#503535;font-weight:600;}
 .nav-links a:hover{background:var(--accent);color:#fff;}
 .nav-break { flex-basis: 100%; height: 0; margin: 5px 0; }
+
+/* ▼▼▼ 追加：診断ボタン用のアニメーション ▼▼▼ */
+@keyframes pulse-glow {
+  0% { box-shadow: 0 0 0 0 rgba(230, 126, 34, 0.4); transform: scale(1); }
+  50% { box-shadow: 0 0 0 10px rgba(230, 126, 34, 0); transform: scale(1.02); }
+  100% { box-shadow: 0 0 0 0 rgba(230, 126, 34, 0); transform: scale(1); }
+}
+.diagnosis-banner {
+  background: #fff;
+  border: 3px solid #f39c12; /* 目立つオレンジ/ゴールド系 */
+  border-radius: 15px;
+  padding: 25px;
+  text-align: center;
+  margin: 30px auto; /* 中央寄せ */
+  position: relative;
+  max-width: 650px;
+}
+/* 「NEW!」などのバッジ */
+.diagnosis-badge {
+    background: #d35400; color: #fff; padding: 5px 15px; border-radius: 5px;
+    font-weight: bold; font-size: 12px; position: absolute; top: -15px; left: 50%;
+    transform: translateX(-50%); box-shadow: 0 2px 5px rgba(0,0,0,0.2);
+}
+.diagnosis-btn {
+  display: inline-block;
+  background: linear-gradient(45deg, #e67e22, #f39c12);
+  color: #fff;
+  font-size: 18px;
+  font-weight: bold;
+  padding: 15px 35px;
+  border-radius: 50px;
+  text-decoration: none;
+  margin-top: 15px;
+  box-shadow: 0 4px 15px rgba(230, 126, 34, 0.4);
+  /* ここでキラキラさせます */
+  animation: pulse-glow 2s infinite;
+}
+.diagnosis-btn:hover {
+    opacity: 0.9;
+    transform: translateY(-2px);
+}
+/* ▲▲▲ 追加ここまで ▲▲▲ */
 
 /* 楽天ROOMリンク用スタイル（コード版） */
 .room-promo {
@@ -189,11 +231,12 @@ footer {
 <body class="season-page">
 
 <header>
-    <h1>季節別オーガニックスキンケア特集</h1>
-    <p class="lead">春夏秋冬、それぞれの肌悩みに合った自然派コスメとリアルユーザーの声を紹介します。</p>
+    <h1>挙式カレンダー別・花嫁スキンケア</h1>
+    <p class="lead">あなたの挙式は何月？<br>季節のリスクを先回りして、当日最高の肌を迎える。</p>
     
     <div class="nav-links" role="navigation">
     <a href="index.html">🏠 トップ</a>
+    <a href="bridal-care.html">👰 花嫁ケア診断</a>
     <a href="skin-ranking.html">✨ ランキング</a>
     <a href="trial-sets.html" style="background:#fff0f5; border:1px solid #ffb6c1; font-weight:bold;">🔰 お試しセット</a>
     <div class="nav-break"></div>
@@ -208,23 +251,33 @@ footer {
     <a href="diet-beauty.html">🍃 インナービューティー</a>
 </div>
 </header>
+
+<div class="diagnosis-banner">
+    <span class="diagnosis-badge">栄養士監修・無料ツール</span>
+    <h3 style="color:#d35400; margin-bottom:10px; font-size:20px;">⚡ 挙式までに背中・二の腕を磨き上げる！</h3>
+    <p style="margin-bottom:5px;">今の肌状態と、季節に合わせたケア方法を<br><strong>30秒で診断</strong>します。</p>
     
+    <a href="bridal-care.html" class="diagnosis-btn">
+        ✨ 今すぐ肌診断をする！ ✨
+    </a>
+</div>
 <main class="container">
 
     <div style="margin: 10px 0; padding: 20px; background: #fff; border-radius: 12px; box-shadow: 0 2px 10px rgba(0,0,0,0.05); border-left: 5px solid var(--accent);">
         <p style="font-size: 16px; color: #503535; text-align: justify; text-justify: inter-ideograph;">
-            一年を通して同じスキンケアを続けていませんか？私たちの肌は、四季の変化に非常に敏感です。<br>春は<strong>花粉や寒暖差</strong>によるゆらぎ、夏は<strong>紫外線と皮脂の過剰分泌</strong>、秋は<strong>夏のダメージの蓄積と急激な乾燥、</strong>そして冬は<strong>厳しい乾燥と血行不良</strong>。<br>この特集では、それぞれの季節に最適なオーガニックコスメと、お肌を守るための具体的なケアの「<strong>気にするポイント</strong>」をご紹介します。肌のバリア機能を高め、四季を通じて健やかな美しさを保つためのヒントを見つけましょう。
+            結婚式の日取りが決まったら、次にすべきは「季節に合わせたスキンケア計画」です。<br>
+            春の挙式なら花粉による赤み、夏の挙式なら背中の日焼けやあせも…。季節ごとの肌リスクを知り、オーガニックの優しい力で肌のバリア機能を高めておけば、当日は自信を持ってドレスを着こなせます。
         </p>
     </div>
     
     <section class="article" id="spring">
-        <h2>🌸 春の肌ケア</h2>
+        <h2>🌸 春挙式の花嫁（3月〜5月）</h2>
         <img src="images/spring.jpg" alt="春のスキンケア" class="hero" onerror="handleImageError(this, 960, 400, 'Spring Skincare Image')">
 
         <div class="product-review">
             
             <div class="product-card">
-                <p style="font-weight:600; margin-bottom:10px;">【ピックアップ商品】</p>
+                <p style="font-weight:600; margin-bottom:10px;">【花粉・ゆらぎ肌対策】</p>
                 <script type="text/javascript">
                 (function(b,c,f,g,a,d,e){b.MoshimoAffiliateObject=a;
                 b[a]=b[a]||function(){arguments.currentScript=c.currentScript
@@ -232,16 +285,16 @@ footer {
                 c.getElementById(a)||(d=c.createElement(f),d.src=g,
                 d.id=a,e=c.getElementsByTagName("body")[0],e.appendChild(d))})
                 (window,document,"script","//dn.msmstatic.com/site/cardlink/bundle.js?20220329","msmaflink");
-                msmaflink({"n":"エトヴォス 公式( ETVOS ) 「 モイストバリアクリーム 」 30g 【30日間返品保証】","b":"","t":"","d":"https:\/\/thumbnail.image.rakuten.co.jp","c_p":"\/@0_mall\/etvos\/cabinet\/product\/10167338","p":["\/imgrc0096967181.jpg","\/imgrc0096967115.jpg","\/imgrc0096967116.jpg"],"u":{"u":"https:\/\/item.rakuten.co.jp\/etvos\/cr1-0064\/","t":"rakuten","r_v":""},"v":"2.1","b_l":[{"id":1,"u_tx":"楽天市場で見る","u_bc":"#f76956","u_url":"https:\/\/item.rakuten.co.jp\/etvos\/cr1-0064\/","a_id":5267359,"p_id":54,"pl_id":27059,"pc_id":54,"s_n":"rakuten","u_so":0},{"u_bc":"#bf0000","u_tx":"Amazonで見る","u_url":"https:\/\/amzn.to\/4ooBrep","s_n":"custom_10","u_so":1,"a_id":0,"p_id":0,"pc_id":0,"pl_id":0,"id":5},{"u_bc":"#66a7ff","u_tx":"Yahoo!ショッピングで見る","u_url":"https:\/\/shopping.yahoo.co.jp\/search?first=1\u0026p=%E3%82%A8%E3%83%88%E3%83%B4%E3%82%A9%E3%82%B9%20%E5%85%AC%E5%BC%8F(%20ETVOS%20)%20%E3%80%8C%20%E3%83%A2%E3%82%A4%E3%82%B9%E3%83%88%E3%83%90%E3%83%AA%E3%82%A2%E3%82%AF%E3%83%AA%E3%83%BC%E3%83%A0%20%E3%80%8D%2030g%20%E3%80%9030%E6%97%A5%E9%96%93%E8%BF%94%E5%93%81%E4%BF%9D%E8%A8%BC%E3%80%91","s_n":"yahoo","u_so":2,"a_id":5267465,"p_id":1225,"pc_id":1925,"pl_id":27061,"id":4}],"eid":"9tFYL","s":"s"});
+                msmaflink({"n":"エトヴォス 公式( ETVOS ) 「 モイストバリアクリーム 」 30g 【30日間返品保証】","b":"","t":"","d":"https:\/\/thumbnail.image.rakuten.co.jp","c_p":"\/@0_mall\/etvos\/cabinet\/product\/10167338","p":["\/imgrc0096967181.jpg","\/imgrc0096967115.jpg","\/imgrc0096967116.jpg"],"u":{"u":"https:\/\/item.rakuten.co.jp\/etvos\/cr1-0064\/","t":"rakuten","r_v":""},"v":"2.1","b_l":[{"id":1,"u_tx":"楽天市場で見る","u_bc":"#f76956","u_url":"https:\/\/item.rakuten.co.jp\/etvos\/cr1-0064\/","a_id":5267359,"p_id":54,"pl_id":27059,"pc_id":54,"s_n":"rakuten","u_so":0},{"u_bc":"#bf0000","u_tx":"Amazonで見る","u_url":"https:\/\/amzn.to\/4ooBrep","s_n":"custom_10","u_so":1,"a_id":0,"p_id":0,"pc_id":0,"pl_id":0,"id":5},{"u_bc":"#66a7ff","u_tx":"Yahoo!ショッピングで見る","u_url":"https:\/\/shopping.yahoo.co.jp\/search?first=1\u0026p=%E3%82%A8%E3%83%88%E3%83%B4%E3%82%A9%E3%82%B9%E3%82%AC%E5%85%AC%E5%BC%8F(%20ETVOS%20)%20%E3%80%8C%20%E3%83%A2%E3%82%A4%E3%82%B9%E3%83%88%E3%83%90%E3%83%AA%E3%82%A2%E3%82%AF%E3%83%AA%E3%83%BC%E3%83%A0%20%E3%80%8D%2030g%20%E3%80%9030%E6%97%A5%E9%96%93%E8%BF%94%E5%93%81%E4%BF%9D%E8%A8%BC%E3%80%91","s_n":"yahoo","u_so":2,"a_id":5267465,"p_id":1225,"pc_id":1925,"pl_id":27061,"id":4}],"eid":"9tFYL","s":"s"});
                 </script>
                 <div id="msmaflink-9tFYL">リンク</div>
                 
                 <div class="season-check">
-                    <h4>💡 春のゆらぎ肌チェック</h4>
+                    <h4>💡 春婚の注意ポイント</h4>
                     <ul>
-                        <li>花粉やほこりで肌がむずがゆい</li>
-                        <li>紫外線が強くなり始め、赤みが出やすい</li>
-                        <li><strong>対策：</strong> バリア機能をサポートするクリームで、外部刺激をブロックしましょう。</li>
+                        <li>花粉による「赤み」は写真に残ると目立ちます。</li>
+                        <li>バリア機能強化クリームで、外部刺激を徹底ブロック。</li>
+                        <li><strong>直前対策：</strong> 刺激の少ないシンプルケアに切り替えを。</li>
                     </ul>
                 </div>
                 </div>
@@ -249,7 +302,7 @@ footer {
     </section>
 
     <section class="article" id="summer">
-        <h2>☀ 夏の肌ケア</h2>
+        <h2>☀ 夏挙式の花嫁（6月〜8月）</h2>
         <img src="images/summer.jpg" alt="夏のスキンケア" class="hero" onerror="handleImageError(this, 960, 400, 'Summer Skincare Image')">
 
         <div class="product-review">
@@ -265,11 +318,11 @@ footer {
                 </script>
                 <div id="msmaflink-Hh2e5">リンク</div>
                 <div class="season-check">
-                    <h4>💡 夏のダメージ対策</h4>
+                    <h4>💡 夏婚の注意ポイント</h4>
                     <ul>
-                        <li>エアコンによる隠れ乾燥に注意</li>
-                        <li>汗と皮脂で毛穴が詰まりやすい</li>
-                        <li><strong>対策：</strong> 紫外線吸収剤不使用の優しいUVケアと、帰宅後の丁寧な保湿がカギです。</li>
+                        <li>ドレスから出る背中やデコルテの「日焼け跡」は要注意！</li>
+                        <li>汗による「あせも」や毛穴詰まりを防ぐため、帰宅後のクレンジングは必須。</li>
+                        <li><strong>対策：</strong> 紫外線吸収剤フリーの優しいUVで、肌負担を減らしながらガード。</li>
                     </ul>
                 </div>
                 </div>
@@ -277,7 +330,7 @@ footer {
     </section>
 
     <section class="article" id="autumn">
-        <h2>🍂 秋の肌ケア</h2>
+        <h2>🍂 秋挙式の花嫁（9月〜11月）</h2>
         <img src="images/autumn.jpg" alt="秋のスキンケア" class="hero" onerror="handleImageError(this, 960, 400, 'Autumn Skincare Image')">
 
         <div class="product-review">
@@ -293,11 +346,11 @@ footer {
                 </script>
                 <div id="msmaflink-iJcSq">リンク</div>
                 <div class="season-check">
-                    <h4>💡 秋のリカバリーケア</h4>
+                    <h4>💡 秋婚の注意ポイント</h4>
                     <ul>
-                        <li>夏の紫外線ダメージがシミ・くすみとして現れる</li>
-                        <li>急激な湿度低下で乾燥が進む</li>
-                        <li><strong>対策：</strong> 高保湿な化粧水で、角質層の水分バランスを整えることが最優先です。</li>
+                        <li>夏の紫外線の影響で、肌が「くすみ」やすい時期。</li>
+                        <li>高保湿化粧水で、枯れた肌に水分を満たし、透明感を復活させましょう。</li>
+                        <li><strong>対策：</strong> ローズヒップオイルなど、ブライトニング効果のあるアイテムの併用もおすすめ。</li>
                     </ul>
                 </div>
                 </div>
@@ -305,7 +358,7 @@ footer {
     </section>
 
     <section class="article" id="winter">
-        <h2>❄ 冬の肌ケア</h2>
+        <h2>❄ 冬挙式の花嫁（12月〜2月）</h2>
         <img src="images/winter.jpg" alt="冬のスキンケア" class="hero" onerror="handleImageError(this, 960, 400, 'Winter Skincare Image')">
 
         <div class="product-review">
@@ -321,11 +374,11 @@ footer {
                 </script>
                 <div id="msmaflink-oN0OR">リンク</div>
                 <div class="season-check">
-                    <h4>💡 冬の集中保湿</h4>
+                    <h4>💡 冬婚の注意ポイント</h4>
                     <ul>
-                        <li>血行不良による顔色の悪さ</li>
-                        <li>粉を吹くほどの深刻な乾燥</li>
-                        <li><strong>対策：</strong> セラミドやヒアルロン酸など、保湿成分が濃厚な美容液をプラスしましょう。</li>
+                        <li>乾燥による「粉吹き」や「メイク割れ」が起きやすい。</li>
+                        <li>血行不良で顔色が悪くなりがちなので、マッサージも併用を。</li>
+                        <li><strong>対策：</strong> セラミド美容液で、乾燥に負けない「土台」を作りましょう。</li>
                     </ul>
                 </div>
                 </div>
@@ -333,9 +386,11 @@ footer {
     </section>
     
     <div style="margin: 80px 0 50px; padding: 30px; background: #fff5f5; border-radius: 12px; border: 1px solid var(--accent);">
-        <h2 style="font-family: 'Playfair Display', serif; font-size: 24px; color: #d6336c; text-align: center; margin-bottom: 15px;">🌿 季節に寄り添うスキンケアを</h2>
+        <h2 style="font-family: 'Playfair Display', serif; font-size: 24px; color: #d6336c; text-align: center; margin-bottom: 15px;">🌿 季節ごとのケアが、最高の当日を作る</h2>
         <p style="font-size: 16px; color: #444; text-align: justify; text-justify: inter-ideograph;">
-            春夏秋冬それぞれの環境に合わせたケアを取り入れることが、美しさを維持する秘訣です。特に季節の変わり目は、肌の準備期間としてケアを強化することが大切です。オーガニックコスメは、自然の力を借りて肌本来の回復力を高めてくれるため、季節のゆらぎに負けない健やかな肌づくりに最適です。ここで見つけたあなたの肌が本当に喜ぶアイテムを取り入れて、一年中自信を持って過ごせる「うるおい美肌」を目指しましょう。
+            結婚式当日の肌は、それまでの数ヶ月間のケアの結果です。<br>
+            挙式シーズン特有のトラブルを先回りして防ぐことで、当日はトラブル知らずの「発光肌」で迎えられます。<br>
+            オーガニックの力を借りて、季節に負けない最強の花嫁肌を育てていきましょう。
         </p>
     </div>
     
@@ -363,7 +418,7 @@ footer {
         
     <div class="related">
         <p>さらにおすすめの記事はこちら：</p>
-        <a href="index.html">🏠 トップページへ戻る</a>
+        <a href="index.html">🏠 トップページへ</a>
     </div>
 
     <div class="back-btn" style="text-align:center; margin-top:20px;">
@@ -375,8 +430,9 @@ footer {
 <footer>
   <div class="footer-container">
     
-    <div class="footer-col">
+   <div class="footer-col">
       <h3>🌸 スキンケア・悩み別</h3>
+      <a href="bridal-care.html" style="color:#d35400; font-weight:bold;">👰 結婚式直前！背中・二の腕ケア</a>
       <a href="skin-ranking.html">おすすめスキンケアランキング</a>
       <a href="seasons-skin.html">季節別スキンケア（春夏秋冬）</a>
       <a href="age-skincare.html">40代・50代 年齢別ケア</a>
@@ -404,13 +460,13 @@ footer {
   </div>
   
   <div class="footer-bottom">
-     <a href="https://room.rakuten.co.jp/room_e0dd63a90a/items" target="_blank" rel="noopener" class="footer-room-link">
+      <a href="https://room.rakuten.co.jp/room_e0dd63a90a/items" target="_blank" rel="noopener" class="footer-room-link">
         🏠 管理人Yuriの楽天ROOMを見る
-     </a>
-     <br>
-     
-     © 2025 Essential Beauty Needs<br><br>
-     <a href="privacy-policy.html" style="color:#888; text-decoration:none; font-size:12px;">プライバシーポリシー</a>
+      </a>
+      <br>
+      
+      © 2025 Essential Beauty Needs<br><br>
+      <a href="privacy-policy.html" style="color:#888; text-decoration:none; font-size:12px;">プライバシーポリシー</a>
   </div>
 </footer>
 
