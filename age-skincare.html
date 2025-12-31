@@ -198,21 +198,34 @@
     }
     .editor-comment h4 { margin: 0 0 8px; color: var(--accent-dark); font-size: 15px; }
 
-    /* 楽天ROOM画像リンク用スタイル */
-    .room-promo-img {
-        display: block;
-        max-width: 100%;
-        width: 600px; /* 画像の最大幅 */
-        height: auto;
-        margin: 50px auto;
-        transition: transform 0.3s ease, box-shadow 0.3s ease;
-        border-radius: 15px; /* 画像の角丸 */
-        box-shadow: 0 4px 10px rgba(0,0,0,0.05);
+    /* ▼▼▼ 修正：楽天ROOMリンク用スタイル（コード版） ▼▼▼ */
+    .room-promo {
+        background: #fff;
+        border: 2px dashed var(--room-color);
+        border-radius: 15px;
+        padding: 25px;
+        text-align: center;
+        margin: 50px 0;
+        color: var(--text-main);
     }
-    .room-promo-img:hover {
-        transform: translateY(-3px);
-        box-shadow: 0 8px 20px rgba(198, 53, 53, 0.15);
+    .room-btn {
+        display: inline-block;
+        background: var(--room-color);
+        color: #fff;
+        padding: 12px 30px;
+        border-radius: 30px;
+        text-decoration: none;
+        font-weight: bold;
+        margin-top: 15px;
+        box-shadow: 0 4px 10px rgba(198, 53, 53, 0.3);
+        transition: 0.3s;
     }
+    .room-btn:hover {
+        background: #a82525;
+        transform: translateY(-2px);
+        box-shadow: 0 6px 14px rgba(198, 53, 53, 0.4);
+    }
+    /* ▲▲▲ 修正ここまで ▲▲▲ */
 
     /* ▼▼▼ 追加：診断ボタン用のアニメーション ▼▼▼ */
     @keyframes pulse-glow {
@@ -447,10 +460,13 @@ msmaflink({"n":"オルナ オーガニック 化粧水 乳液 美容液3点 セ�
       
   </section>
 
-  <a href="https://room.rakuten.co.jp/room_e0dd63a90a/items" target="_blank" rel="noopener" class="room-promo-img-link">
-      <img src="image_313a40.png" alt="管理人Yuriの楽天ROOM愛用品コレクション" class="room-promo-img">
-  </a>
-
+  <div class="room-promo">
+      <h3 style="margin-top:0; color: #c63535; font-size:18px;">\ 管理人 Yuriの愛用品コレクション /</h3>
+      <p style="font-size:14px;">栄養士Yuriが厳選した、肌と体にやさしいアイテムを楽天ROOMで公開中。<br>ブログで紹介しきれなかった商品も載せています♪</p>
+      <a href="https://room.rakuten.co.jp/room_e0dd63a90a/items" target="_blank" rel="noopener" class="room-btn">
+          楽天ROOMで見る →
+      </a>
+  </div>
   <div class="back-btn">
     <a href="index.html">← トップページへ戻る</a>
   </div>
