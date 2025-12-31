@@ -332,6 +332,19 @@
       .concept-box {padding: 20px;}
       header {padding-top: 60px;}
     }
+    /* ▼▼▼ 追加：横揺れ防止用 ▼▼▼ */
+
+/* 1. 画面からはみ出す要素を強制的に隠す設定 */
+html, body {
+    overflow-x: hidden;
+    width: 100%;
+}
+
+/* 2. 全ての画像（バナー含む）が画面幅を超えないようにする設定 */
+img {
+    max-width: 100%;
+    height: auto;
+}
   </style>
 </head>
 <body>
@@ -563,3 +576,4 @@
 
 </body>
 </html>
+
