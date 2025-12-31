@@ -260,6 +260,12 @@ div[id^="msmaflink"] .msmaflink-btns a {
         font-size: 13px !important;
      }
 }
+    /* 画面幅がスマホサイズ（480px以下）の時だけ文字を小さくする */
+@media screen and (max-width: 480px) {
+    .lp-h2 {
+        font-size: 17px; /* スマホではこのサイズ */
+    }
+}
 </style>
 </head>
 <body>
