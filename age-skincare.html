@@ -3,9 +3,9 @@
 <head>
   <meta charset="utf-8" />
   <meta name="viewport" content="width=device-width,initial-scale=1" />
-  <title>40代・50代からの肌質別スキンケア｜年齢肌を輝かせるオーガニック</title>
-  <meta name="description" content="40代・50代の年齢肌悩みに。ハリ不足や乾燥、くすみにアプローチする、大人のためのオーガニックスキンケア選びとおすすめランキング。""
-  <meta name="keywords" content="40代, 50代, スキンケア, エイジングケア, オーガニック, ハリ, 乾燥">
+  <title>大人花嫁のためのエイジングケア｜年齢肌を輝かせるオーガニック</title>
+  <meta name="description" content="40代・50代の大人花嫁様へ。挙式までにハリと潤いを取り戻す、栄養士厳選のオーガニック・エイジングケアと保湿メソッド。">
+  <meta name="keywords" content="大人花嫁, 40代, 50代, ブライダルエステ, エイジングケア, オーガニック, ハリ, 乾燥">
   <link rel="canonical" href="https://essential-beauty-needs.com/age-skincare.html" />
 
   <link href="https://fonts.googleapis.com/css2?family=Playfair+Display:wght@600&family=Quicksand:wght@400;600&display=swap" rel="stylesheet">
@@ -214,6 +214,48 @@
         box-shadow: 0 8px 20px rgba(198, 53, 53, 0.15);
     }
 
+    /* ▼▼▼ 追加：診断ボタン用のアニメーション ▼▼▼ */
+    @keyframes pulse-glow {
+      0% { box-shadow: 0 0 0 0 rgba(230, 126, 34, 0.4); transform: scale(1); }
+      50% { box-shadow: 0 0 0 10px rgba(230, 126, 34, 0); transform: scale(1.02); }
+      100% { box-shadow: 0 0 0 0 rgba(230, 126, 34, 0); transform: scale(1); }
+    }
+    .diagnosis-banner {
+      background: #fff;
+      border: 3px solid #f39c12; /* 目立つオレンジ/ゴールド系 */
+      border-radius: 15px;
+      padding: 25px;
+      text-align: center;
+      margin: 30px auto; /* 中央寄せ */
+      position: relative;
+      max-width: 650px;
+    }
+    /* 「NEW!」などのバッジ */
+    .diagnosis-badge {
+        background: #d35400; color: #fff; padding: 5px 15px; border-radius: 5px;
+        font-weight: bold; font-size: 12px; position: absolute; top: -15px; left: 50%;
+        transform: translateX(-50%); box-shadow: 0 2px 5px rgba(0,0,0,0.2);
+    }
+    .diagnosis-btn {
+      display: inline-block;
+      background: linear-gradient(45deg, #e67e22, #f39c12);
+      color: #fff;
+      font-size: 18px;
+      font-weight: bold;
+      padding: 15px 35px;
+      border-radius: 50px;
+      text-decoration: none;
+      margin-top: 15px;
+      box-shadow: 0 4px 15px rgba(230, 126, 34, 0.4);
+      /* ここでキラキラさせます */
+      animation: pulse-glow 2s infinite;
+    }
+    .diagnosis-btn:hover {
+        opacity: 0.9;
+        transform: translateY(-2px);
+    }
+    /* ▲▲▲ 追加ここまで ▲▲▲ */
+
     /* フッター（リンク網羅型） */
     footer {
         background: #fffaf4;
@@ -271,11 +313,12 @@
 <body>
 
 <header>
-  <h1>40代・50代からの<br>肌質別スキンケア</h1>
-  <p>年齢を重ねた肌にこそ、植物の力強いエナジーを。</p>
+  <h1>大人花嫁のための<br>エイジングケア</h1>
+  <p>年齢を重ねた肌こそ、植物のエナジーで輝く。</p>
 
  <div class="nav-links" role="navigation">
     <a href="index.html">🏠 トップ</a>
+    <a href="bridal-care.html">👰 花嫁ケア診断</a>
     <a href="skin-ranking.html">✨ ランキング</a>
     <a href="trial-sets.html" style="background:#fff0f5; border:1px solid #ffb6c1; font-weight:bold;">🔰 お試しセット</a>
     <div class="nav-break"></div>
@@ -291,48 +334,58 @@
 </div>
 </header>
 
+<div class="diagnosis-banner">
+    <span class="diagnosis-badge">栄養士監修・無料ツール</span>
+    <h3 style="color:#d35400; margin-bottom:10px; font-size:20px;">⚡ 大人の「背中・二の腕」諦めていませんか？</h3>
+    <p style="margin-bottom:5px;">挙式までに「ハリ」と「潤い」を取り戻したい大人花嫁様へ。<br>
+    今の肌状態と、効率的なケア方法を<strong>30秒で診断</strong>します。</p>
+    
+    <a href="bridal-care.html" class="diagnosis-btn">
+        ✨ 今すぐ肌診断をする！ ✨
+    </a>
+</div>
 <main>
   <img src="images/50aa.jpg" 
        alt="年齢肌を慈しむ丁寧なスキンケアのイメージ" class="hero"
        onerror="handleImageError(this, 960, 400, 'Ageless Beauty Care')">
   <div class="intro-box">
     <p>
-        40代、50代を迎えると、鏡を見るたびに「以前とは違う」と感じることが増えてきませんか？<br>
-        肌の水分量や皮脂量が減少し、ターンオーバーの周期が長くなることで、乾燥、ハリ不足、くすみといったエイジングサインが現れやすくなります。<br><br>
-        しかし、「もう歳だから」と諦める必要は全くありません。大切なのは、<strong>今の肌状態に合った、質の高い潤いと栄養</strong>を与えてあげること。<br>
-        過酷な環境を生き抜く植物たちのパワフルな生命力が凝縮された「オーガニックコスメ」は、年齢を重ねた肌の土台（角質層）を優しく、かつ力強く支えてくれる心強い味方です。<br><br>
-        このページでは、大人の肌悩みに寄り添い、内側から輝くような美しさを引き出すためのヒントと、厳選したオーガニックアイテムをご紹介します。
+        40代、50代で迎える結婚式。鏡を見るたびに「ドレスが似合うか不安…」と感じていませんか？<br>
+        確かに、肌の水分量やハリは年齢とともに変化しますが、それは決して「劣化」ではありません。<br><br>
+        大切なのは、<strong>「隠す」のではなく、大人の肌が持つ「品格」を引き出す</strong>こと。<br>
+        植物の生命力が凝縮されたオーガニックコスメは、疲れた肌に深い潤いを与え、内側から発光するような艶をもたらしてくれます。<br><br>
+        このページでは、大人花嫁様が当日に「一番美しい私」でいるための、ハリ・ツヤ育成メソッドと厳選アイテムをご紹介します。
     </p>
   </div>
 
   <section class="article-content">
-      <h2>年齢肌と向き合う、大人のスキンケア</h2>
+      <h2>大人花嫁が挙式までにすべき3つのケア</h2>
 
-      <h3>40代・50代が意識したい3つのケア</h3>
-      <p>年齢を重ねた肌に必要なのは、単に「何かを塗る」ことではなく、「肌の基礎力」を底上げすることです。以下の3つのポイントを意識してみましょう。</p>
+      <h3>年齢肌を「ドレス映え肌」に変えるポイント</h3>
+      <p>年齢を重ねた肌に必要なのは、攻めのケアよりも「土台を底上げする」ケアです。</p>
 
       <div class="highlight-box">
           <h4>1. 「落としすぎない」クレンジング</h4>
-          <p>大人の肌は非常にデリケート。洗浄力の強すぎるクレンジングは、肌に必要な潤いまで奪ってしまい、乾燥やシワの原因になります。ミルクタイプやクリームタイプ、または上質な植物オイルを使った、肌に負担をかけないクレンジングを選びましょう。</p>
+          <p>大人の肌は乾燥しがち。強いクレンジングは、肌に必要な潤いまで奪い、シワの原因になります。上質な植物オイルやミルクタイプで、肌をいたわりながらオフしましょう。</p>
       </div>
 
       <div class="highlight-box">
-          <h4>2. 「水分」と「油分」の黄金バランス</h4>
-          <p>水分だけを与えても、蓋をする油分がなければすぐに蒸発してしまいます。逆に油分だけでも、内側は乾いたまま。化粧水でたっぷりと水分を補給した後、美容液やクリーム、良質なオイルでしっかりと潤いを閉じ込める「ミルフィーユ保湿」を心がけてください。</p>
+          <h4>2. 「油分」で艶のヴェールを作る</h4>
+          <p>水分補給だけでは不十分です。良質な美容オイルやクリームで「蓋」をすることで、肌に艶が生まれ、ライトを浴びた時に美しく反射する「レフ板肌」が作れます。</p>
       </div>
 
       <div class="highlight-box">
-          <h4>3. 「巡り」を意識したケア</h4>
-          <p>肌のくすみやゴワつきは、血行不良や代謝の低下が原因かもしれません。スキンケアの際に、心地よい香りに包まれながら優しくハンドプレスをしたり、首やデコルテまでリンパを流すようにケアすることで、顔色がパッと明るくなります。</p>
+          <h4>3. デコルテまでが「顔」</h4>
+          <p>ドレスを着た時、年齢が出やすいのが首とデコルテです。スキンケアの際は必ずデコルテまで広げ、リンパを流すようにマッサージを。これだけで顔色がパッと明るくなります。</p>
       </div>
 
-      <h3>なぜ、オーガニックが年齢肌に良いの？</h3>
-      <p>一般的なコスメに含まれる合成成分は、即効性はあっても、長期的に使い続けると肌に負担をかける場合があります。一方、本物のオーガニックコスメには、植物が自らを守るために作り出した「フィトケミカル（植物化学成分）」が豊富に含まれています。</p>
-      <p>これらの成分は、人間の肌の組成と親和性が高く、肌が本来持っている「自ら美しくなろうとする力」を穏やかに、しかし力強くサポートしてくれます。使い続けるほどに肌の土台が整い、揺らぎにくい健やかな肌へと導いてくれるのです。</p>
+      <h3>なぜ、大人の挙式にオーガニック？</h3>
+      <p>即効性のあるケミカルな施術も魅力的ですが、敏感になりがちな大人の肌には負担になることも。<br>
+      植物の「フィトケミカル」を含むオーガニックコスメは、肌本来の再生力を穏やかにサポートし、無理なく自然な美しさを引き出してくれる、大人花嫁の強い味方です。</p>
   </section>
 
   <section class="ranking-section">
-      <h2>👑 大人のための・ハリつやオーガニック選</h2>
+      <h2>👑 大人花嫁のための・ハリつや名品選</h2>
       <p style="text-align:center; margin-bottom:30px;">編集部が厳選した、年齢肌に自信をくれる実力派アイテムをご紹介します。</p>
       
       <div class="item-card">
@@ -369,7 +422,7 @@ msmaflink({"n":"【正規品】フランキンセンス インテンス スリ�
 <div id="msmaflink-TjOew">リンク</div>
 <div class="editor-comment">
             <h4>💡 編集部のコメント</h4>
-            <p>（ここに商品の特徴やおすすめポイントを記載します。例：国産オーガニックのパワーで、くすみがちな肌に透明感を与えてくれます。）</p>
+            <p>挙式前の「塗って寝るだけ」スペシャルケア。フランキンセンスの高貴な香りが、忙しい準備期間のストレスも癒やしてくれます。</p>
         </div>
       </div>
 
@@ -388,7 +441,7 @@ msmaflink({"n":"オルナ オーガニック 化粧水 乳液 美容液3点 セ�
 <div id="msmaflink-kPsOb">リンク</div>
 <div class="editor-comment">
             <h4>💡 編集部のコメント</h4>
-            <p>（ここに商品の特徴やおすすめポイントを記載します。例：年齢肌に不可欠な油分を補い、ふっくらとした柔らかい肌へ。）</p>
+            <p>ライン使いでこの価格は魅力。惜しみなくたっぷり使って、デコルテや背中までしっかり保湿したい方に。</p>
         </div>
       </div>
       
@@ -409,8 +462,9 @@ msmaflink({"n":"オルナ オーガニック 化粧水 乳液 美容液3点 セ�
 <footer>
   <div class="footer-container">
     
-    <div class="footer-col">
+   <div class="footer-col">
       <h3>🌸 スキンケア・悩み別</h3>
+      <a href="bridal-care.html" style="color:#d35400; font-weight:bold;">👰 結婚式直前！背中・二の腕ケア</a>
       <a href="skin-ranking.html">おすすめスキンケアランキング</a>
       <a href="seasons-skin.html">季節別スキンケア（春夏秋冬）</a>
       <a href="age-skincare.html">40代・50代 年齢別ケア</a>
@@ -438,13 +492,13 @@ msmaflink({"n":"オルナ オーガニック 化粧水 乳液 美容液3点 セ�
   </div>
   
   <div class="footer-bottom">
-     <a href="https://room.rakuten.co.jp/room_e0dd63a90a/items" target="_blank" rel="noopener" class="footer-room-link">
+      <a href="https://room.rakuten.co.jp/room_e0dd63a90a/items" target="_blank" rel="noopener" class="footer-room-link">
         🏠 管理人Yuriの楽天ROOMを見る
-     </a>
-     <br>
-     
-     © 2025 Essential Beauty Needs<br><br>
-     <a href="privacy-policy.html" style="color:#888; text-decoration:none; font-size:12px;">プライバシーポリシー</a>
+      </a>
+      <br>
+      
+      © 2025 Essential Beauty Needs<br><br>
+      <a href="privacy-policy.html" style="color:#888; text-decoration:none; font-size:12px;">プライバシーポリシー</a>
   </div>
 </footer>
 
