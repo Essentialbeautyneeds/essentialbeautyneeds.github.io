@@ -21,9 +21,9 @@
   </script>
   
   <meta name="viewport" content="width=device-width,initial-scale=1" />
-  <title>美容コラム・オーガニックケア情報 | Essential Beauty Needs</title>
-  <meta name="description" content="オーガニック美容の最新情報やスキンケアのコツを解説。化学成分フリーの商品レビューも掲載。">
-  <meta name="keywords" content="美容コラム, オーガニック, スキンケア, 化学成分フリー, 自然派, 敏感肌, 美容液">
+  <title>花嫁美容コラム・オーガニックケア情報 | Essential Beauty Needs</title>
+  <meta name="description" content="挙式を控えた花嫁様へ。ドレス映えする肌作り、ストレスケア、直前美容など、栄養士が教えるオーガニック美容のコツを解説。">
+  <meta name="keywords" content="花嫁美容, オーガニック, プレ花嫁, ブライダルエステ, 背中ケア, 敏感肌, 美容液">
   
   <link rel="canonical" href="https://essential-beauty-needs.com/beauty-column.html" />
   <link href="https://fonts.googleapis.com/css2?family=Playfair+Display:wght@600&family=Quicksand:wght@400;600&display=swap" rel="stylesheet">
@@ -146,6 +146,48 @@
         box-shadow: 0 6px 14px rgba(198, 53, 53, 0.4);
     }
 
+    /* ▼▼▼ 追加：診断ボタン用のアニメーション ▼▼▼ */
+    @keyframes pulse-glow {
+      0% { box-shadow: 0 0 0 0 rgba(230, 126, 34, 0.4); transform: scale(1); }
+      50% { box-shadow: 0 0 0 10px rgba(230, 126, 34, 0); transform: scale(1.02); }
+      100% { box-shadow: 0 0 0 0 rgba(230, 126, 34, 0); transform: scale(1); }
+    }
+    .diagnosis-banner {
+      background: #fff;
+      border: 3px solid #f39c12; /* 目立つオレンジ/ゴールド系 */
+      border-radius: 15px;
+      padding: 25px;
+      text-align: center;
+      margin: 30px auto; /* 中央寄せ */
+      position: relative;
+      max-width: 650px;
+    }
+    /* 「NEW!」などのバッジ */
+    .diagnosis-badge {
+        background: #d35400; color: #fff; padding: 5px 15px; border-radius: 5px;
+        font-weight: bold; font-size: 12px; position: absolute; top: -15px; left: 50%;
+        transform: translateX(-50%); box-shadow: 0 2px 5px rgba(0,0,0,0.2);
+    }
+    .diagnosis-btn {
+      display: inline-block;
+      background: linear-gradient(45deg, #e67e22, #f39c12);
+      color: #fff;
+      font-size: 18px;
+      font-weight: bold;
+      padding: 15px 35px;
+      border-radius: 50px;
+      text-decoration: none;
+      margin-top: 15px;
+      box-shadow: 0 4px 15px rgba(230, 126, 34, 0.4);
+      /* ここでキラキラさせます */
+      animation: pulse-glow 2s infinite;
+    }
+    .diagnosis-btn:hover {
+        opacity: 0.9;
+        transform: translateY(-2px);
+    }
+    /* ▲▲▲ 追加ここまで ▲▲▲ */
+
     /* フッター（リンク網羅型） */
     footer {
         background: #fffaf4;
@@ -203,10 +245,20 @@
 <body class="page-beauty-column">
 
   <header>
-    <h1>ビューティーコラム</h1>
-    <p>肌と心を整える、オーガニックケアの秘密</p>
+    <h1>花嫁美容コラム</h1>
+    <p>肌と心を整える、挙式までのオーガニックケア</p>
   </header>
 
+  <div class="diagnosis-banner">
+      <span class="diagnosis-badge">栄養士監修・無料ツール</span>
+      <h3 style="color:#d35400; margin-bottom:10px; font-size:20px;">⚡ あなたの肌は挙式までに間に合う？</h3>
+      <p style="margin-bottom:5px;">背中の荒れ、二の腕のザラつき…<br>
+      今の肌状態と、必要な「緊急ケア」を<strong>30秒で診断</strong>します。</p>
+      
+      <a href="bridal-care.html" class="diagnosis-btn">
+          ✨ 今すぐ肌診断をする！ ✨
+      </a>
+  </div>
   <div style="margin-top: 30px; text-align:center">
       <nav>
         <a href="seasons-skin.html" class="nav-link">🌸 季節別ケア</a>
@@ -225,34 +277,31 @@
     <script async src="//www.instagram.com/embed.js"></script>
 
     <section>
-      <h2>自然のリズムに寄り添うスキンケア</h2>
-      <p>季節が巡るたびに、肌はその変化を敏感に感じ取っています。春には花粉や紫外線、夏には汗と皮脂、秋には乾燥、そして冬には冷気と暖房。どの季節も、肌にとっては小さな試練の連続です。</p>
-      <p>オーガニックケアは、そんな肌の声を静かに聞き取るような存在です。自然の恵みを活かした植物エキスや精油は、過剰な刺激を与えずに肌を守り、ゆるやかに整えてくれます。香りや手ざわりもまた、心にやさしく寄り添う要素のひとつ。スキンケアを「癒しの時間」として感じる人が増えているのも頷けます。</p>
+      <h2>「当日、一番きれいな私」になるために</h2>
+      <p>結婚式の準備期間は、楽しみと同じくらい、ストレスや不安が押し寄せる時期でもあります。寝不足や緊張は、すぐに肌の「ゆらぎ」として現れます。</p>
+      <p>そんなデリケートな時期の花嫁様にこそ、オーガニックケアをおすすめします。植物の香りは張り詰めた神経を緩め、優しい成分は疲れが見える肌を穏やかに整えてくれます。「きれいにならなきゃ」というプレッシャーを、「自分をいたわる時間」に変えてみませんか？</p>
       
       <img src="images/new11.jpg" alt="スキンケアをする丁寧な手元" class="half-size">
       
-      <p>朝、鏡の前で肌を触れた瞬間に「今日の調子、いいかも」と感じる。そんな小さな喜びが、心を軽やかにしてくれます。オーガニックコスメは、単なる化粧品ではなく、“自分と向き合うためのツール”なのかもしれません。</p>
+      <p>朝、鏡の前で肌に触れたとき「あ、もっちりしてる」と感じる小さな喜びが、挙式当日の自信に繋がります。オーガニックコスメは、花嫁の心強いパートナーなのです。</p>
     </section>
 
     <section>
-      <h2>「肌の自活力」を引き出すには？</h2>
+      <h2>「崩れない肌」を作る自活力</h2>
       
       <div class="editorial-box">
         <div class="editorial-title">
-            <span>💡</span> <strong>編集部メモ：バリア機能とオーガニック</strong>
+            <span>💡</span> <strong>編集部メモ：花嫁とバリア機能</strong>
         </div>
         <div class="editorial-content">
-          「オーガニック成分」の大きなメリットは、肌が本来持っている<strong>バリア機能</strong>を邪魔せずにサポートできる点です。<br>
-          洗浄力が強すぎる洗顔料や、過剰な化学成分は、時に肌を守るための常在菌や皮脂膜まで洗い流してしまうことがあります。<br>
-          自然由来の穏やかな成分でケアすることは、肌が自ら潤う力＝<strong>自活力</strong>を守るための第一歩と言えます。
+          挙式当日は、長時間のメイクや強いライトにさらされます。<br>
+          オーガニック成分で<strong>「バリア機能」</strong>を高めておくことは、当日の化粧崩れを防ぐ最強の下準備です。<br>
+          肌の水分と油分のバランスが整っていると、ファンデーションがピタッと密着し、時間が経っても美しいツヤ肌をキープできます。
         </div>
       </div>
-      <p>「与えるケア」より「育てるケア」が今の時代の主流になりつつあります。  
-      毎日のクレンジングや保湿の選び方一つで、肌の未来が変わる。オーガニックアイテムを選ぶということは、  
-      その選択そのものが“肌を信じる”という行為なのかもしれません。</p>
-      <p>たとえば、オーガニックローションは保湿だけでなく、肌の水分循環をサポートします。  
-      オイルやクリームは外から守るのではなく、内側の潤いを閉じ込めるように働きかけてくれます。  
-      こうした小さな積み重ねが、やがて揺らぎにくい肌をつくり上げていくのです。</p>
+      <p>「与えるケア」より「育てるケア」へ。<br>
+      毎日のクレンジングや保湿で肌の基礎力を底上げしておけば、エステに頼りすぎなくても、内側から発光するような美しさが手に入ります。</p>
+      <p>例えば、オーガニックローションで水分を巡らせ、オイルで蓋をする。このシンプルな積み重ねが、写真にも映える「透明感」を作ります。</p>
     </section>
   </main>
 
@@ -267,10 +316,10 @@
         text-align:center;
         box-shadow:0 4px 12px rgba(0,0,0,0.05);
     ">
-      <h3 style="font-weight:600; margin-bottom:12px; font-size:18px; margin-top:0;">当サイトおすすめの一押しコスメ！</h3>
+      <h3 style="font-weight:600; margin-bottom:12px; font-size:18px; margin-top:0;">敏感な時期の花嫁様に一押し！</h3>
       <p style="margin-bottom:20px; font-size:15px; color:#555;">
-        ハレナ オーガニックオールインワンジェルは敏感肌にも優しく、<br>
-        初めての方でも安心して試せます。
+        赤ちゃんにも使える優しさ。「ハレナ オーガニックオールインワンジェル」なら、<br>
+        忙しい準備期間もこれ1本で高保湿ケアが完了します。
       </p>
 
       <a href="https://px.a8.net/svt/ejp?a8mat=45I9PD+4GR2VU+3PSY+1BNQZ5" 
@@ -288,7 +337,7 @@
          "
          onmouseover="this.style.background='#ff4d91'"
          onmouseout="this.style.background='#ff79b0'">
-        今すぐ試してみる
+        お得に試してみる ＞
       </a>
 
       <div style="margin-top:10px;">
@@ -330,6 +379,7 @@
       
       <div class="footer-col">
         <h3>🌸 スキンケア・悩み別</h3>
+        <a href="bridal-care.html" style="color:#d35400; font-weight:bold;">👰 結婚式直前！背中・二の腕ケア</a>
         <a href="skin-ranking.html">おすすめスキンケアランキング</a>
         <a href="seasons-skin.html">季節別スキンケア（春夏秋冬）</a>
         <a href="age-skincare.html">40代・50代 年齢別ケア</a>
