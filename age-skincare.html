@@ -337,6 +337,101 @@
     vertical-align: super; /* 少し上付き文字にする */
 }
 /* ▲▲▲ 追加ここまで ▲▲▲ */
+    /* ▼▼▼ フッター共通スタイル（ここから） ▼▼▼ */
+footer {
+    background: #fffaf4;       /* 背景：やさしいクリーム色 */
+    border-top: 3px solid #f7a8a8; /* 上の線：ピンク */
+    padding: 50px 20px 60px;
+    margin-top: 60px;
+    color: #555;
+    font-size: 14px;
+}
+
+.footer-container {
+    max-width: 960px;
+    margin: 0 auto;
+    display: flex;
+    flex-wrap: wrap;
+    justify-content: space-between;
+    gap: 30px;
+    text-align: left;
+}
+
+.footer-col {
+    flex: 1;
+    min-width: 200px;
+}
+
+.footer-col h3 {
+    font-size: 16px;
+    color: #d6336c;
+    border-bottom: 1px dashed #f4b5b5; /* 見出しの下線 */
+    padding-bottom: 8px;
+    margin-bottom: 15px;
+    font-weight: bold;
+}
+
+.footer-col a {
+    display: block;
+    color: #666;
+    text-decoration: none;
+    margin-bottom: 10px;
+    transition: 0.3s;
+    position: relative;
+    padding-left: 10px;
+}
+
+.footer-col a::before {
+    content: "・";
+    position: absolute;
+    left: 0;
+    color: #f7a8a8;
+}
+
+.footer-col a:hover {
+    color: #d6336c;
+    padding-left: 15px;
+}
+
+.footer-bottom {
+    text-align: center;
+    margin-top: 50px;
+    padding-top: 30px;
+    border-top: 1px solid #eee;
+}
+
+.footer-room-link {
+    display: inline-block;
+    color: #c63535;
+    font-weight: bold;
+    border: 1px solid #c63535;
+    padding: 8px 20px;
+    border-radius: 20px;
+    text-decoration: none;
+    margin-bottom: 20px;
+    background: #fff;
+    transition: 0.3s;
+}
+.footer-room-link:hover {
+    background: #c63535;
+    color: #fff;
+}
+
+/* New!! 点滅アニメーション */
+@keyframes blinkEffect {
+    0% { opacity: 1; }
+    50% { opacity: 0.3; }
+    100% { opacity: 1; }
+}
+.new-mark {
+    color: #ff0000;
+    font-weight: bold;
+    font-size: 0.8em;
+    margin-left: 5px;
+    animation: blinkEffect 1.2s infinite;
+    vertical-align: super;
+}
+/* ▲▲▲ フッター共通スタイル（ここまで） ▲▲▲ */
   </style>
 </head>
 <body>
@@ -550,7 +645,7 @@ msmaflink({"n":"オルナ オーガニック 化粧水 乳液 美容液3点 セ�
     
     <div class="footer-col">
       <h3>🌸 スキンケア・悩み別</h3>
-      <a href="bridal-care.html">結婚式直前！背中・二の腕ケア<span class="new-mark">New!!</span></a>
+      <a href="bridal-care.html" style="color:#d35400; font-weight:bold;">👰 結婚式直前！背中・二の腕ケア<span class="new-mark">New!!</span></a>
       <a href="skin-ranking.html">おすすめスキンケアランキング</a>
       <a href="seasons-skin.html">季節別スキンケア（春夏秋冬）</a>
       <a href="age-skincare.html">40代・50代 年齢別ケア</a>
@@ -563,7 +658,6 @@ msmaflink({"n":"オルナ オーガニック 化粧水 乳液 美容液3点 セ�
       <a href="hair-care.html">ヘアケア・頭皮ケア特集</a>
       <a href="diet-beauty.html">インナービューティー＆ダイエット</a>
       <a href="smoothie-recipes.html">栄養士おすすめ！スムージーのレシピ<span class="new-mark">New!!</span></a>
-
       <a href="amazon-oil-review.html">本当に効く！オイルレビュー</a>
       <a href="organic-science.html">オーガニック成分の科学</a>
     </div>
@@ -574,20 +668,20 @@ msmaflink({"n":"オルナ オーガニック 化粧水 乳液 美容液3点 セ�
       <a href="trial-sets.html">失敗しない！お試しセット比較</a>
       <a href="winter-selection.html">冬のベストセレクション</a>
       <a href="beauty-column.html">ビューティーコラム一覧</a>
-        <a href="sonoko-diet.html">食べて痩せる肌診断 <span class="new-mark">New!!</span></a>
+      <a href="sonoko-diet.html">食べて痩せる肌診断 <span class="new-mark">New!!</span></a>
       <a href="about.html">当サイトについて (About)</a>
     </div>
 
   </div>
   
   <div class="footer-bottom">
-      <a href="https://room.rakuten.co.jp/room_e0dd63a90a/items" target="_blank" rel="noopener" class="footer-room-link">
+     <a href="https://room.rakuten.co.jp/room_e0dd63a90a/items" target="_blank" rel="noopener" class="footer-room-link">
         🏠 管理人Yuriの楽天ROOMを見る
-      </a>
-      <br>
-      
-      © 2025 Essential Beauty Needs<br><br>
-      <a href="privacy-policy.html" style="color:#888; text-decoration:none; font-size:12px;">プライバシーポリシー</a>
+     </a>
+     <br>
+     
+     © 2025 Essential Beauty Needs<br><br>
+     <a href="privacy-policy.html" style="color:#888; text-decoration:none; font-size:12px;">プライバシーポリシー</a>
   </div>
 </footer>
 
