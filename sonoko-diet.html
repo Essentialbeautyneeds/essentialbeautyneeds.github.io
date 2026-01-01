@@ -170,6 +170,22 @@
       margin: 60px 0 30px;
       font-size: 12px;
     }
+    /* ▼▼▼ 追加：New!! 点滅用スタイル ▼▼▼ */
+@keyframes blinkEffect {
+    0% { opacity: 1; }
+    50% { opacity: 0.3; }
+    100% { opacity: 1; }
+}
+
+.new-mark {
+    color: #ff0000;       /* 文字色を赤にする */
+    font-weight: bold;    /* 太文字にする */
+    font-size: 0.8em;     /* リンク文字より少し小さくする */
+    margin-left: 5px;     /* 前の文字と少し間隔を空ける */
+    animation: blinkEffect 1.2s infinite; /* 1.2秒間隔で点滅を繰り返す */
+    vertical-align: super; /* 少し上付き文字にする */
+}
+/* ▲▲▲ 追加ここまで ▲▲▲ */
   </style>
 </head>
 
@@ -310,10 +326,51 @@
 
   </main>
 
-  <footer>
-    © 2025 Essential Beauty Needs<br>
-    <span style="font-size:10px; color:#ccc;">当ページはプロモーションが含まれています。</span>
-  </footer>
+ <footer>
+  <div class="footer-container">
+    
+    <div class="footer-col">
+      <h3>🌸 スキンケア・悩み別</h3>
+      <a href="bridal-care.html">結婚式直前！背中・二の腕ケア<span class="new-mark">New!!</span></a>
+      <a href="skin-ranking.html">おすすめスキンケアランキング</a>
+      <a href="seasons-skin.html">季節別スキンケア（春夏秋冬）</a>
+      <a href="age-skincare.html">40代・50代 年齢別ケア</a>
+      <a href="acne-care.html">肌荒れ・敏感肌・ニキビケア</a>
+      <a href="lifestyle-skincare.html">生活リズム別（時短・夜型など）</a>
+    </div>
+
+    <div class="footer-col">
+      <h3>🛁 ボディ・ヘア・インナー</h3>
+      <a href="hair-care.html">ヘアケア・頭皮ケア特集</a>
+      <a href="diet-beauty.html">インナービューティー＆ダイエット</a>
+      <a href="smoothie-recipes.html">栄養士おすすめ！スムージーのレシピ<span class="new-mark">New!!</span></a>
+
+      <a href="amazon-oil-review.html">本当に効く！オイルレビュー</a>
+      <a href="organic-science.html">オーガニック成分の科学</a>
+    </div>
+
+    <div class="footer-col">
+      <h3>🎁 特集・コラム・その他</h3>
+      <a href="gift-selection.html">心をつなぐオーガニックギフト</a>
+      <a href="trial-sets.html">失敗しない！お試しセット比較</a>
+      <a href="winter-selection.html">冬のベストセレクション</a>
+      <a href="beauty-column.html">ビューティーコラム一覧</a>
+        <a href="sonoko-diet.html">食べて痩せる肌診断 <span class="new-mark">New!!</span></a>
+      <a href="about.html">当サイトについて (About)</a>
+    </div>
+
+  </div>
+  
+  <div class="footer-bottom">
+      <a href="https://room.rakuten.co.jp/room_e0dd63a90a/items" target="_blank" rel="noopener" class="footer-room-link">
+        🏠 管理人Yuriの楽天ROOMを見る
+      </a>
+      <br>
+      
+      © 2025 Essential Beauty Needs<br><br>
+      <a href="privacy-policy.html" style="color:#888; text-decoration:none; font-size:12px;">プライバシーポリシー</a>
+  </div>
+</footer>
 
 </body>
 </html>
