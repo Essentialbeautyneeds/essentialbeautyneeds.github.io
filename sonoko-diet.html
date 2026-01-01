@@ -28,7 +28,7 @@
     /* 共通設定 */
     body {
       font-family: 'Quicksand', "Helvetica Neue", Arial, sans-serif;
-      background: #fffaf4; /* 優しいクリーム色 */
+      background: #fffaf4;
       color: #555;
       margin: 0;
       padding: 0;
@@ -85,10 +85,15 @@
 
     p { margin-bottom: 1.5em; font-size: 16px; }
     
-    /* 画像のレスポンシブ対応（バナー用） */
+    /* 画像のスタイル */
     img {
         max-width: 100%;
         height: auto;
+        border-radius: 12px; /* 画像の角を少し丸くする */
+    }
+    .feature-img {
+        margin: 30px 0;
+        box-shadow: 0 4px 12px rgba(0,0,0,0.1);
     }
 
     /* 強調ボックス（栄養士メモ） */
@@ -129,7 +134,7 @@
     .aff-btn {
       display: inline-block;
       background: linear-gradient(45deg, #ff7e5f, #feb47b);
-      color: white !important; /* 文字色を強制的に白に */
+      color: white !important;
       padding: 15px 40px;
       border-radius: 50px;
       font-weight: bold;
@@ -172,6 +177,9 @@
   </header>
 
   <main>
+    
+    <img src="https://images.unsplash.com/photo-1494859632785-32abaf52f825?ixlib=rb-4.0.3&auto=format&fit=crop&w=1200&q=80" alt="ヘルシーな食事を楽しむ花嫁" class="feature-img" style="margin-top:0;">
+
     <div class="article-box">
       <p>こんにちは、栄養士の<strong>Yuri</strong>です。</p>
       <p>「ドレスの試着までにあと3kg痩せたい！」<br>
@@ -189,6 +197,9 @@
       その答えは、意外かもしれませんが<strong>「しっかり食べること」</strong>なんです。</p>
 
       <h2>花嫁ダイエットの正解は「代謝を上げる」こと</h2>
+      
+      <img src="https://images.unsplash.com/photo-1490645935967-10de6ba17061?ixlib=rb-4.0.3&auto=format&fit=crop&w=1000&q=80" alt="新鮮な野菜とフルーツ" class="feature-img">
+
       <p>美しいラインを作るには、代謝を上げて脂肪を燃やす必要があります。<br>
       そのためには、バランスの取れた食事で「燃やすための材料」を体に補給してあげなければなりません。</p>
 
