@@ -226,6 +226,22 @@ footer {
 @media (max-width:768px){ 
     .product-review{ flex-direction:column; } 
 }
+    /* ▼▼▼ 追加：New!! 点滅用スタイル ▼▼▼ */
+@keyframes blinkEffect {
+    0% { opacity: 1; }
+    50% { opacity: 0.3; }
+    100% { opacity: 1; }
+}
+
+.new-mark {
+    color: #ff0000;       /* 文字色を赤にする */
+    font-weight: bold;    /* 太文字にする */
+    font-size: 0.8em;     /* リンク文字より少し小さくする */
+    margin-left: 5px;     /* 前の文字と少し間隔を空ける */
+    animation: blinkEffect 1.2s infinite; /* 1.2秒間隔で点滅を繰り返す */
+    vertical-align: super; /* 少し上付き文字にする */
+}
+/* ▲▲▲ 追加ここまで ▲▲▲ */
 </style>
 </head>
 <body class="season-page">
@@ -454,6 +470,7 @@ footer {
       <a href="trial-sets.html">失敗しない！お試しセット比較</a>
       <a href="winter-selection.html">冬のベストセレクション</a>
       <a href="beauty-column.html">ビューティーコラム一覧</a>
+        <a href="sonoko-diet.html">食べて痩せる肌診断 <span class="new-mark">New!!</span></a>
       <a href="about.html">当サイトについて (About)</a>
     </div>
 
