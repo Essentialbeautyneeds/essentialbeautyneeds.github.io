@@ -85,15 +85,24 @@
 
     p { margin-bottom: 1.5em; font-size: 16px; }
     
-    /* 画像のスタイル */
+    /* 画像のスタイル（修正：サイズを50%にして中央寄せ） */
     img {
-        max-width: 100%;
+        max-width: 100%; /* スマホなど画面が小さいときは幅いっぱい */
         height: auto;
-        border-radius: 12px; /* 画像の角を少し丸くする */
+        border-radius: 12px;
     }
     .feature-img {
-        margin: 30px 0;
+        display: block;        /* ブロック要素にして中央寄せ可能にする */
+        margin: 30px auto;     /* 上下30px、左右自動（中央寄せ） */
+        width: 50%;            /* 幅を50%（半分）にする */
         box-shadow: 0 4px 12px rgba(0,0,0,0.1);
+    }
+    
+    /* スマホ画面（幅600px以下）のときは画像を大きく戻す設定 */
+    @media (max-width: 600px) {
+      .feature-img { width: 100%; }
+      .article-box { padding: 25px; }
+      h1 { font-size: 22px; }
     }
 
     /* 強調ボックス（栄養士メモ） */
@@ -160,11 +169,6 @@
       color: #999;
       margin: 60px 0 30px;
       font-size: 12px;
-    }
-
-    @media (max-width: 600px) {
-      .article-box { padding: 25px; }
-      h1 { font-size: 22px; }
     }
   </style>
 </head>
@@ -255,6 +259,7 @@
             そう思ったあなたにおすすめなのが、これです👇
         </p>
       </div>
+
       <h2>SONOKO式 8週間ダイエット献立（1週間お試し）</h2>
       
       <p>美容家・鈴木その子氏が提唱した「食べて美しく痩せる」メソッドを詰め込んだ、調理不要の献立セットです。<br>
