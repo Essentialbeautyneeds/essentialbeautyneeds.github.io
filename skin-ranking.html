@@ -332,6 +332,20 @@
       .badge { left: 50%; transform: translateX(-50%); top: -20px;}
       .rank-item { margin-top: 25px; }
     }
+@keyframes blinkEffect {
+    0% { opacity: 1; }
+    50% { opacity: 0.3; }
+    100% { opacity: 1; }
+}
+
+.new-mark {
+    color: #ff0000;       /* 文字色を赤にする */
+    font-weight: bold;    /* 太文字にする */
+    font-size: 0.8em;     /* リンク文字より少し小さくする */
+    margin-left: 5px;     /* 前の文字と少し間隔を空ける */
+    animation: blinkEffect 1.2s infinite; /* 1.2秒間隔で点滅を繰り返す */
+    vertical-align: super; /* 少し上付き文字にする */
+}
   </style>
 </head>
 <body>
@@ -685,6 +699,55 @@
             忙しい準備期間も、これ一本で高保湿ケアが完了。私の最強のパートナーです。
         </p>
     </div>
+<div style="background:#fff5f5; border-radius:15px; padding:30px; margin:40px 0; border:2px solid #ffdecb;">
+        <h2 style="color:#d68e33; text-align:center; margin-top:0; border-bottom:none;">🍽️ あなたの「好物」でバレる！？<br>肌トラブル診断</h2>
+        <p style="text-align:center; font-size:14px;">好きな食べ物は、今の体内の栄養バランスと肌状態を映す鏡です。<br>当てはまるものをチェックしてみましょう。</p>
+
+        <details style="margin-bottom:15px; background:#fff; padding:15px; border-radius:10px; cursor:pointer;">
+            <summary style="font-weight:bold; color:#c04b4b;">🍰 甘いもの（ケーキ・チョコ）が大好き</summary>
+            <div style="margin-top:10px; font-size:15px;">
+                <p><strong>診断：脂性肌～混合肌（ニキビ・黄ぐすみ）</strong></p>
+                <p>糖質の摂りすぎはTゾーンのベタつきや、肌が黄色くくすむ「糖化」の原因に。ハリの低下にも要注意です。<br>
+                <span style="color:#d68e33;">👉 おすすめケア：</span>低GIのナッツをおやつにするか、食事で血糖値を急上昇させない工夫を。
+                </p>
+            </div>
+        </details>
+
+        <details style="margin-bottom:15px; background:#fff; padding:15px; border-radius:10px; cursor:pointer;">
+            <summary style="font-weight:bold; color:#c04b4b;">🌶️ 辛いもの（唐辛子など）が大好き</summary>
+            <div style="margin-top:10px; font-size:15px;">
+                <p><strong>診断：脂性肌～敏感肌（炎症リスク）</strong></p>
+                <p>発汗作用で皮脂が増えるほか、刺激で肌の赤みや炎症を引き起こしやすくなっています。<br>
+                <span style="color:#d68e33;">👉 おすすめケア：</span>抗酸化作用のあるトマトなどの野菜をたっぷり摂って炎症を鎮火！
+                </p>
+            </div>
+        </details>
+
+        <details style="margin-bottom:15px; background:#fff; padding:15px; border-radius:10px; cursor:pointer;">
+            <summary style="font-weight:bold; color:#c04b4b;">🍤 油っこいもの・スナックが大好き</summary>
+            <div style="margin-top:10px; font-size:15px;">
+                <p><strong>診断：脂性肌（毛穴詰まり・ニキビ）</strong></p>
+                <p>悪い油の摂りすぎは、そのままドロドロの皮脂となり毛穴を詰まらせます。酸化した油は肌老化の最大要因！<br>
+                <span style="color:#d68e33;">👉 おすすめケア：</span>揚げ物を減らし、SONOKOのような「ノンオイル調理」で肌を休ませて。
+                </p>
+            </div>
+        </details>
+        
+        <details style="margin-bottom:15px; background:#fff; padding:15px; border-radius:10px; cursor:pointer;">
+            <summary style="font-weight:bold; color:#c04b4b;">🧂 味の濃いもの・塩辛いものが大好き</summary>
+            <div style="margin-top:10px; font-size:15px;">
+                <p><strong>診断：乾燥肌～むくみ肌</strong></p>
+                <p>塩分過多は体内の水分を奪い、肌の乾燥を招きます。同時に顔のむくみも引き起こすダブルパンチ。<br>
+                <span style="color:#d68e33;">👉 おすすめケア：</span>カリウムを含む野菜や海藻を摂って、余分な塩分を排出しましょう。
+                </p>
+            </div>
+        </details>
+        
+        <p style="margin-top:20px; font-weight:bold; text-align:center;">
+            「わかってるけど、食事を変えるのは難しい…」<br>
+            そう思ったあなたにおすすめなのが、これです👇
+        </p>
+      </div>
 
     <div style="display:inline-block;">
       <a href="https://px.a8.net/svt/ejp?a8mat=45I9PD+4GR2VU+3PSY+1BNJ9D" rel="nofollow sponsored" target="_blank">
@@ -742,6 +805,7 @@
       <a href="trial-sets.html">失敗しない！お試しセット比較</a>
       <a href="winter-selection.html">冬のベストセレクション</a>
       <a href="beauty-column.html">ビューティーコラム一覧</a>
+      <a href="sonoko-diet.html">食べて痩せる肌診断 <span class="new-mark">New!!</span></a>
       <a href="about.html">当サイトについて (About)</a>
     </div>
 
