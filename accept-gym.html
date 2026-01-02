@@ -33,12 +33,13 @@
       margin: 0;
       padding: 0;
       line-height: 1.8;
+      padding-bottom: 80px; /* フローティングボタン用余白 */
     }
     
     header {
       text-align: center;
       padding: 60px 20px 50px;
-      background: linear-gradient(135deg, #f3f3f3, #e8e8e8); /* 高級感のあるグレー系 */
+      background: linear-gradient(135deg, #f3f3f3, #e8e8e8);
       border-bottom: 3px solid #d4af37; /* ゴールドのライン */
     }
     
@@ -60,14 +61,14 @@
     .article-box {
       background: #fff;
       padding: 40px;
-      border-radius: 5px; /* シャープな印象に */
+      border-radius: 5px;
       box-shadow: 0 10px 30px rgba(0,0,0,0.08);
       margin-bottom: 40px;
     }
 
     h2 {
-      color: #333;
-      border-left: 5px solid #d4af37; /* ゴールド */
+      color: #1a2f4b; /* ネイビー（ACCEPTロゴ色イメージ） */
+      border-left: 5px solid #d4af37;
       padding-left: 15px;
       margin-top: 50px;
       font-size: 24px;
@@ -80,6 +81,7 @@
       font-size: 20px;
       border-bottom: 1px solid #eee;
       padding-bottom: 10px;
+      font-weight: bold;
     }
 
     p { margin-bottom: 1.5em; font-size: 16px; }
@@ -93,6 +95,19 @@
         display: block;
         margin: 30px auto;
         box-shadow: 0 4px 12px rgba(0,0,0,0.1);
+    }
+    
+    /* Before/After画像の横並び設定 */
+    .ba-container {
+        display: flex;
+        flex-wrap: wrap;
+        gap: 10px;
+        justify-content: center;
+        margin: 20px 0;
+    }
+    .ba-item {
+        width: 48%; /* スマホで2列 */
+        min-width: 150px;
     }
 
     /* 栄養士メモ（ゴールドVer） */
@@ -135,7 +150,7 @@
 
     /* NAP情報ボックス（重要！） */
     .nap-box {
-        background: #f9f9f9;
+        background: #fdfdfd;
         border: 2px solid #ccc;
         padding: 25px;
         margin: 40px 0;
@@ -156,13 +171,13 @@
     .nap-label {
         font-weight: bold;
         width: 100px;
-        color: #666;
+        color: #1a2f4b;
     }
 
     /* CTAエリア */
     .cta-area {
       text-align: center;
-      background: #fffbf0; /* 薄いゴールド/クリーム */
+      background: #fffbf0;
       border: 2px solid #d4af37;
       border-radius: 10px;
       padding: 40px 20px;
@@ -186,25 +201,70 @@
         border: 1px solid #c00;
     }
     
-    /* アフィリエイトボタンの装飾 */
-    .aff-btn {
-      display: inline-block;
-      background: linear-gradient(45deg, #d4af37, #c5a028);
-      color: white !important;
-      padding: 18px 50px;
-      border-radius: 5px;
-      font-weight: bold;
-      text-decoration: none;
-      box-shadow: 0 4px 15px rgba(212, 175, 55, 0.4);
-      transition: 0.3s;
-      font-size: 20px;
-      margin-top: 15px;
-      margin-bottom: 10px;
+    /* アフィリエイトボタン（キラッと光る） */
+    @keyframes shine {
+        0% { left: -100%; transition-property: left; }
+        100% { left: 100%; transition-property: left; }
     }
-    .aff-btn:hover {
-      transform: translateY(-3px);
-      box-shadow: 0 6px 20px rgba(212, 175, 55, 0.6);
-      opacity: 0.9;
+    .aff-btn-wrapper {
+        display: inline-block;
+        position: relative;
+        overflow: hidden;
+        border-radius: 5px;
+        background: linear-gradient(45deg, #d4af37, #c5a028);
+        box-shadow: 0 4px 15px rgba(212, 175, 55, 0.4);
+        transition: 0.3s;
+        margin: 15px 0;
+    }
+    .aff-btn-wrapper:hover {
+        transform: translateY(-3px);
+        box-shadow: 0 6px 20px rgba(212, 175, 55, 0.6);
+    }
+    .aff-btn-wrapper::after {
+        content: "";
+        position: absolute;
+        top: 0;
+        left: -100%;
+        width: 100%;
+        height: 100%;
+        background: linear-gradient(to right, rgba(255,255,255,0) 0%, rgba(255,255,255,0.3) 50%, rgba(255,255,255,0) 100%);
+        transform: skewX(-25deg);
+        animation: shine 3s infinite;
+    }
+    .aff-btn-wrapper a {
+        display: block;
+        padding: 18px 50px;
+        color: white !important;
+        font-weight: bold;
+        text-decoration: none;
+        font-size: 20px;
+        position: relative;
+        z-index: 2;
+    }
+
+    /* フローティングボタン（スマホ下部固定） */
+    .floating-cta {
+        position: fixed;
+        bottom: 0;
+        left: 0;
+        width: 100%;
+        background: rgba(255, 255, 255, 0.95);
+        border-top: 1px solid #d4af37;
+        padding: 10px 0 15px;
+        text-align: center;
+        z-index: 9999;
+        box-shadow: 0 -2px 10px rgba(0,0,0,0.1);
+    }
+    .floating-btn {
+        display: inline-block;
+        background: #d4af37;
+        color: #fff;
+        font-weight: bold;
+        padding: 12px 40px;
+        border-radius: 50px;
+        text-decoration: none;
+        font-size: 16px;
+        animation: pulse-glow 2s infinite;
     }
 
     /* ナビゲーション */
@@ -213,17 +273,8 @@
     .nav-links a:hover{background:#d4af37;color:#fff;}
 
     /* ▼▼▼ フッター共通スタイル ▼▼▼ */
-    footer {
-        background: #fffaf4;
-        border-top: 3px solid #f7a8a8;
-        padding: 50px 20px 60px;
-        margin-top: 60px;
-        color: #555;
-        font-size: 14px;
-    }
-    .footer-container {
-        max-width: 960px; margin: 0 auto; display: flex; flex-wrap: wrap; justify-content: space-between; gap: 30px; text-align: left;
-    }
+    footer { background: #fffaf4; border-top: 3px solid #f7a8a8; padding: 50px 20px 60px; margin-top: 60px; color: #555; font-size: 14px; }
+    .footer-container { max-width: 960px; margin: 0 auto; display: flex; flex-wrap: wrap; justify-content: space-between; gap: 30px; text-align: left; }
     .footer-col { flex: 1; min-width: 200px; }
     .footer-col h3 { font-size: 16px; color: #d6336c; border-bottom: 1px dashed #f4b5b5; padding-bottom: 8px; margin-bottom: 15px; font-weight: bold; }
     .footer-col a { display: block; color: #666; text-decoration: none; margin-bottom: 10px; transition: 0.3s; position: relative; padding-left: 10px; }
@@ -239,7 +290,8 @@
     @media (max-width: 600px) {
       .article-box { padding: 25px; }
       h1 { font-size: 22px; }
-      .aff-btn { padding: 15px 30px; font-size: 16px; width: 100%; box-sizing: border-box; }
+      .aff-btn-wrapper a { padding: 15px 20px; font-size: 16px; }
+      .ba-item { width: 100%; } /* スマホではBeforeAfterを縦並びに */
     }
   </style>
 </head>
@@ -253,9 +305,13 @@
 
   <main>
     
-    <img src="https://images.unsplash.com/photo-1571019614242-c5c5dee9f50b?ixlib=rb-4.0.3&auto=format&fit=crop&w=1200&q=80" alt="銀座パーソナルジムACCEPT" class="feature-img" style="width:100%; max-width:800px;">
+    <img src="images/IMG_2080_Original.JPG" alt="理想のドレス姿" class="feature-img" style="width:100%; max-width:800px; margin-top:0;">
 
     <div class="article-box">
+      <div style="text-align:center; margin-bottom:30px;">
+          <img src="images/IMG_1816_Original.JPG" alt="ACCEPTロゴ" style="width:200px;">
+      </div>
+
       <p>こんにちは、栄養士の<strong>Yuri</strong>です。</p>
       <p>「結婚式までに絶対に痩せたい。でも、リバウンドはしたくない」<br>
       「騒がしいジムは苦手。落ち着いた空間でプロに見てもらいたい」</p>
@@ -272,9 +328,30 @@
          これなら「忙しい花嫁様」でも無理なく続けられますね。
       </div>
 
-      <img src="https://images.unsplash.com/photo-1490645935967-10de6ba17061?ixlib=rb-4.0.3&auto=format&fit=crop&w=1000&q=80" alt="丁寧な食事指導" class="feature-img" style="width:60%;">
+      <img src="images/IMG_2075_Original.JPG" alt="理想のくびれ" class="feature-img" style="width:70%;">
+
+      <h3>論より証拠。この変化を見てください</h3>
+      <p>「本当に変われるの？」そんな不安を持つ方へ。<br>
+      ACCEPTで実際にトレーニングを受けた方々の、劇的なビフォーアフターをご紹介します。</p>
+
+      <div class="ba-container">
+          <div class="ba-item">
+              <img src="images/IMG_1498_Original.JPG" alt="4ヶ月で-8kgの変化">
+          </div>
+          <div class="ba-item">
+              <img src="images/IMG_1499_Original.JPG" alt="6ヶ月で-15kgの変化">
+          </div>
+          <div class="ba-item">
+              <img src="images/758D9FDE-907B-4879-926C-0565A4064E72.jpg" alt="劇的なボディメイク成功例">
+          </div>
+      </div>
+      <p>ただ痩せるだけでなく、<strong>「美しい姿勢」</strong>や<strong>「引き締まったライン」</strong>を手に入れているのが分かります。<br>
+      これが、自己流ダイエットとプロの指導の決定的な違いです。</p>
 
       <h3>ACCEPTが選ばれる5つの理由</h3>
+      
+      <img src="images/IMG_3722_Original.jpg" alt="プロトレーナーによる指導" class="feature-img" style="width:100%;">
+
       <ul class="point-list">
           <li>世界大会活躍レベルのプロトレーナーによる一貫指導</li>
           <li>完全個室＆手ぶらでOK（ウェア・タオル・水素水無料）</li>
@@ -282,6 +359,10 @@
           <li>チケットに「利用期限なし」。急な仕事が入っても安心</li>
           <li>56歳現役チャンピオンも在籍。年齢を問わず結果が出る</li>
       </ul>
+
+      <div style="text-align:center; margin:30px 0;">
+          <img src="images/IMG_2078_Original.JPG" alt="ヒップアップトレーニング" style="width:60%; border-radius:50%; box-shadow:0 5px 15px rgba(0,0,0,0.1);">
+      </div>
 
       <p>「トレーニング＝つらい」という常識を覆し、楽しんで続けられることを大切にしているACCEPT。<br>
       12回のコースを終える頃には、体型はもちろん、マインドまでポジティブに変わっているはずです。</p>
@@ -295,13 +376,18 @@
           <br>
           
           <div style="margin: 20px 0;">
-             <a href="//af.moshimo.com/af/c/click?a_id=5325988&p_id=6463&pc_id=18262&pl_id=82867" rel="nofollow" referrerpolicy="no-referrer-when-downgrade" attributionsrc><img src="//image.moshimo.com/af-img/6218/000000082867.png" width="300" height="250" style="border:none;" alt="ACCEPTバナー"></a><img src="//i.moshimo.com/af/i/impression?a_id=5325988&p_id=6463&pc_id=18262&pl_id=82867" width="1" height="1" style="border:none;" loading="lazy">
+             <a href="//af.moshimo.com/af/c/click?a_id=5325988&p_id=6463&pc_id=18262&pl_id=82867" rel="nofollow" referrerpolicy="no-referrer-when-downgrade" attributionsrc><img src="//image.moshimo.com/af-img/6218/000000082867.png" width="300" height="250" style="border:none;"></a><img src="//i.moshimo.com/af/i/impression?a_id=5325988&p_id=6463&pc_id=18262&pl_id=82867" width="1" height="1" style="border:none;" loading="lazy">
           </div>
 
-          <a href="//af.moshimo.com/af/c/click?a_id=5325988&p_id=6463&pc_id=18262&pl_id=82663" rel="nofollow" referrerpolicy="no-referrer-when-downgrade" attributionsrc class="aff-btn">無料体験・カウンセリングを予約する ▶</a><img src="//i.moshimo.com/af/i/impression?a_id=5325988&p_id=6463&pc_id=18262&pl_id=82663" width="1" height="1" style="border:none;" loading="lazy">
+          <div class="aff-btn-wrapper">
+             <a href="//af.moshimo.com/af/c/click?a_id=5325988&p_id=6463&pc_id=18262&pl_id=82663" rel="nofollow" referrerpolicy="no-referrer-when-downgrade" attributionsrc>無料体験・カウンセリングを予約する ▶</a>
+          </div>
+          <img src="//i.moshimo.com/af/i/impression?a_id=5325988&p_id=6463&pc_id=18262&pl_id=82663" width="1" height="1" style="border:none;" loading="lazy">
           
           <p style="font-size:12px; margin-top:15px; color:#888;">※無理な勧誘はありませんのでご安心ください</p>
       </div>
+      <img src="images/IMG_3618_Original.jpg" alt="女性トレーナーも在籍" class="feature-img" style="width:100%;">
+
       <h3>店舗情報</h3>
       <p>ご来店の際は、以下の情報をご確認ください。</p>
       
@@ -348,6 +434,10 @@
   </main>
   
   <div id="affiliateNotice">※当サイトはアフィリエイト広告（Amazonアソシエイト含む）を利用しています</div>
+
+  <div class="floating-cta">
+      <a href="//af.moshimo.com/af/c/click?a_id=5325988&p_id=6463&pc_id=18262&pl_id=82663" rel="nofollow" referrerpolicy="no-referrer-when-downgrade" attributionsrc class="floating-btn">無料体験を予約する ▶</a>
+  </div>
 
   <footer>
     <div class="footer-container">
