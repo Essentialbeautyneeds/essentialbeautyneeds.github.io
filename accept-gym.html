@@ -33,14 +33,14 @@
       margin: 0;
       padding: 0;
       line-height: 1.8;
-      padding-bottom: 80px; /* フローティングボタン用余白 */
+      padding-bottom: 90px; /* フローティングボタンの分だけ余白を空ける */
     }
     
     header {
       text-align: center;
       padding: 60px 20px 50px;
       background: linear-gradient(135deg, #f3f3f3, #e8e8e8);
-      border-bottom: 3px solid #d4af37; /* ゴールドのライン */
+      border-bottom: 3px solid #d4af37;
     }
     
     h1 {
@@ -67,17 +67,18 @@
     }
 
     h2 {
-      color: #1a2f4b; /* ネイビー（ACCEPTロゴ色イメージ） */
+      color: #1a2f4b;
       border-left: 5px solid #d4af37;
       padding-left: 15px;
-      margin-top: 50px;
+      margin-top: 60px;
+      margin-bottom: 30px;
       font-size: 24px;
       font-family: 'Playfair Display', serif;
     }
 
     h3 {
       color: #555;
-      margin-top: 30px;
+      margin-top: 40px;
       font-size: 20px;
       border-bottom: 1px solid #eee;
       padding-bottom: 10px;
@@ -101,16 +102,19 @@
     .ba-container {
         display: flex;
         flex-wrap: wrap;
-        gap: 10px;
+        gap: 15px;
         justify-content: center;
-        margin: 20px 0;
+        margin: 30px 0;
     }
     .ba-item {
-        width: 48%; /* スマホで2列 */
+        width: 48%;
         min-width: 150px;
     }
+    .ba-item img {
+        box-shadow: 0 4px 8px rgba(0,0,0,0.1);
+    }
 
-    /* 栄養士メモ（ゴールドVer） */
+    /* 栄養士メモ */
     .nutrition-point {
       background: #fafafa;
       border: 1px solid #d4af37;
@@ -148,7 +152,7 @@
         font-size: 18px;
     }
 
-    /* NAP情報ボックス（重要！） */
+    /* NAP情報ボックス */
     .nap-box {
         background: #fdfdfd;
         border: 2px solid #ccc;
@@ -250,7 +254,7 @@
         width: 100%;
         background: rgba(255, 255, 255, 0.95);
         border-top: 1px solid #d4af37;
-        padding: 10px 0 15px;
+        padding: 12px 0 20px;
         text-align: center;
         z-index: 9999;
         box-shadow: 0 -2px 10px rgba(0,0,0,0.1);
@@ -267,12 +271,27 @@
         animation: pulse-glow 2s infinite;
     }
 
+    /* 【修正】アフィリエイト表記のフロート設定 */
+    #affiliateNotice {
+        position: fixed;
+        right: 10px;
+        bottom: 90px; /* フローティングボタン(約70px)より上に表示 */
+        background: rgba(255, 255, 255, 0.9);
+        color: #555;
+        font-size: 10px;
+        border-radius: 4px;
+        padding: 4px 8px;
+        box-shadow: 0 2px 6px rgba(0,0,0,0.1);
+        z-index: 9998; /* ボタン(9999)より下、他コンテンツより上 */
+        border: 1px solid #eee;
+    }
+
     /* ナビゲーション */
     .nav-links{display:flex;gap:10px;justify-content:center;margin-top:40px;flex-wrap:wrap;}
     .nav-links a{background:rgba(255,255,255,0.8);padding:10px 20px;border-radius:25px;text-decoration:none;color:#503535;font-weight:600; border:1px solid #eee; transition:0.3s;}
     .nav-links a:hover{background:#d4af37;color:#fff;}
 
-    /* ▼▼▼ フッター共通スタイル ▼▼▼ */
+    /* フッター共通スタイル */
     footer { background: #fffaf4; border-top: 3px solid #f7a8a8; padding: 50px 20px 60px; margin-top: 60px; color: #555; font-size: 14px; }
     .footer-container { max-width: 960px; margin: 0 auto; display: flex; flex-wrap: wrap; justify-content: space-between; gap: 30px; text-align: left; }
     .footer-col { flex: 1; min-width: 200px; }
@@ -285,13 +304,12 @@
     .footer-room-link:hover { background: #c63535; color: #fff; }
     @keyframes blinkEffect { 0% { opacity: 1; } 50% { opacity: 0.3; } 100% { opacity: 1; } }
     .new-mark { color: #ff0000; font-weight: bold; font-size: 0.8em; margin-left: 5px; animation: blinkEffect 1.2s infinite; vertical-align: super; }
-    /* ▲▲▲ フッターここまで ▲▲▲ */
 
     @media (max-width: 600px) {
       .article-box { padding: 25px; }
       h1 { font-size: 22px; }
       .aff-btn-wrapper a { padding: 15px 20px; font-size: 16px; }
-      .ba-item { width: 100%; } /* スマホではBeforeAfterを縦並びに */
+      .ba-item { width: 100%; } 
     }
   </style>
 </head>
@@ -305,7 +323,7 @@
 
   <main>
     
-    <img src="images/IMG_2080_Original.JPG" alt="理想のドレス姿" class="feature-img" style="width:50%; max-width:400px; margin-top:0;">
+    <img src="images/IMG_2080_Original.JPG" alt="理想のドレス姿" class="feature-img" style="width:100%; max-width:800px; margin-top:0;">
 
     <div class="article-box">
       <div style="text-align:center; margin-bottom:30px;">
@@ -313,13 +331,15 @@
       </div>
 
       <p>こんにちは、栄養士の<strong>Yuri</strong>です。</p>
-      <p style="color: #fe019a";>「結婚式までに絶対に痩せたい。でも、リバウンドはしたくない」<br>
+      <p>「結婚式までに絶対に痩せたい。でも、リバウンドはしたくない」<br>
       「騒がしいジムは苦手。落ち着いた空間でプロに見てもらいたい」</p>
       
       <p>そんな、質を求める大人の女性や花嫁様に、今、銀座で話題のパーソナルジムをご紹介します。</p>
 
       <h2>【銀座】パーソナルジム ACCEPT</h2>
       <p>銀座駅から徒歩5分。一流ホテル出身のホスピタリティと、世界大会で活躍するトレーナーの実力を兼ね備えた、まさに<strong>「大人のための隠れ家ジム」</strong>です。</p>
+
+      <img src="images/IMG_2076_Original.JPG" alt="Body Make" class="feature-img" style="width:60%; margin: 40px auto;">
 
       <div class="nutrition-point">
          <strong>👩‍⚕️ Yuri's Check：ここが違う！</strong><br>
@@ -328,7 +348,7 @@
          これなら「忙しい花嫁様」でも無理なく続けられますね。
       </div>
 
-      <img src="images/IMG_2075_Original.JPG" alt="理想のくびれ" class="feature-img" style="width:70%;">
+      <img src="images/IMG_2075_Original.JPG" alt="Diet" class="feature-img" style="width:60%; margin: 40px auto;">
 
       <h3>論より証拠。この変化を見てください</h3>
       <p>「本当に変われるの？」そんな不安を持つ方へ。<br>
@@ -341,7 +361,7 @@
           <div class="ba-item">
               <img src="images/IMG_1499_Original.JPG" alt="6ヶ月で-15kgの変化">
           </div>
-          <div class="ba-item">
+          <div class="ba-item" style="width:100%; max-width:500px;">
               <img src="images/758D9FDE-907B-4879-926C-0565A4064E72.jpg" alt="劇的なボディメイク成功例">
           </div>
       </div>
@@ -350,7 +370,7 @@
 
       <h3>ACCEPTが選ばれる5つの理由</h3>
       
-      <img src="images/IMG_3722_Original.JPG" alt="プロトレーナーによる指導" class="feature-img" style="width:100%;">
+      <img src="images/IMG_3722_Original.jpg" alt="プロトレーナーによる指導" class="feature-img" style="width:100%;">
 
       <ul class="point-list">
           <li>世界大会活躍レベルのプロトレーナーによる一貫指導</li>
@@ -360,9 +380,7 @@
           <li>56歳現役チャンピオンも在籍。年齢を問わず結果が出る</li>
       </ul>
 
-      <div style="text-align:center; margin:30px 0;">
-          <img src="images/IMG_2078_Original.JPG" alt="ヒップアップトレーニング" style="width:60%; border-radius:50%; box-shadow:0 5px 15px rgba(0,0,0,0.1);">
-      </div>
+      <img src="images/IMG_2078_Original.JPG" alt="Hip up" class="feature-img" style="width:60%; margin: 40px auto;">
 
       <p>「トレーニング＝つらい」という常識を覆し、楽しんで続けられることを大切にしているACCEPT。<br>
       12回のコースを終える頃には、体型はもちろん、マインドまでポジティブに変わっているはずです。</p>
@@ -376,7 +394,7 @@
           <br>
           
           <div style="margin: 20px 0;">
-             <a href="//af.moshimo.com/af/c/click?a_id=5325988&p_id=6463&pc_id=18262&pl_id=82867" rel="nofollow" referrerpolicy="no-referrer-when-downgrade" attributionsrc><img src="//image.moshimo.com/af-img/6218/000000082867.png" width="300" height="250" style="border:none;"></a><img src="//i.moshimo.com/af/i/impression?a_id=5325988&p_id=6463&pc_id=18262&pl_id=82867" width="1" height="1" style="border:none;" loading="lazy">
+             <a href="//af.moshimo.com/af/c/click?a_id=5325988&p_id=6463&pc_id=18262&pl_id=82867" rel="nofollow" referrerpolicy="no-referrer-when-downgrade" attributionsrc><img src="//image.moshimo.com/af-img/6218/000000082867.png" width="300" height="250" style="border:none;" alt="ACCEPTバナー"></a><img src="//i.moshimo.com/af/i/impression?a_id=5325988&p_id=6463&pc_id=18262&pl_id=82867" width="1" height="1" style="border:none;" loading="lazy">
           </div>
 
           <div class="aff-btn-wrapper">
@@ -386,7 +404,7 @@
           
           <p style="font-size:12px; margin-top:15px; color:#888;">※無理な勧誘はありませんのでご安心ください</p>
       </div>
-      <img src="images/IMG_3618_Original.JPG" alt="女性トレーナーも在籍" class="feature-img" style="width:100%;">
+      <img src="images/IMG_3618_Original.jpg" alt="女性トレーナーも在籍" class="feature-img" style="width:100%;">
 
       <h3>店舗情報</h3>
       <p>ご来店の際は、以下の情報をご確認ください。</p>
