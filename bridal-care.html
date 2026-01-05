@@ -46,16 +46,55 @@
 * { box-sizing: border-box; margin: 0; padding: 0; }
 body { font-family: 'Quicksand', sans-serif; background: var(--bg); color: #333; line-height: 1.8; }
 
-/* Header */
+/* ▼▼▼ Header (修正箇所) ▼▼▼ */
 header {
     text-align: center;
-    padding: 30px 20px; /* 高さを少し抑えめに調整 */
-    background: linear-gradient(135deg, #fff0f0, #ffe6e6);
+    /* 背景画像の設定 */
+    background-image: url('images/bride3.jpg'); /* 画像パスは環境に合わせて調整してください */
+    background-size: cover; /* 画像をエリア全体に広げる */
+    background-position: center center; /* 画像の中央を表示 */
+    background-repeat: no-repeat;
+    
+    position: relative; /* オーバーレイのために必要 */
+    padding: 60px 20px; /* 高さを少し広げてブライダル感を出す */
     border-bottom: 3px solid #e6b7b3;
-    margin-bottom: 40px; /* 下のコンテンツとの間隔 */
+    margin-bottom: 40px;
+    color: #fff; /* 文字色を白にして視認性を高める */
 }
-h1 { font-family: 'Playfair Display', serif; font-size: 28px; color: var(--text-main); margin-bottom: 5px; }
-p.lead { font-size: 14px; color: #5a4545; font-weight: 600; }
+
+/* 背景画像を少し暗くするためのオーバーレイ */
+header::before {
+    content: '';
+    position: absolute;
+    top: 0;
+    left: 0;
+    right: 0;
+    bottom: 0;
+    background: rgba(255, 240, 240, 0.6); /* 薄いピンクのフィルターをかける */
+    z-index: 1;
+}
+
+/* ヘッダー内の文字をオーバーレイの上に表示 */
+header h1, header p {
+    position: relative;
+    z-index: 2;
+}
+
+h1 {
+    font-family: 'Playfair Display', serif;
+    font-size: 32px;
+    color: var(--text-main); /* 文字色は元の茶色に戻す（フィルターで少し白っぽくなるので） */
+    margin-bottom: 10px;
+    text-shadow: 1px 1px 3px rgba(255,255,255,0.8); /* 白い影をつけて視認性アップ */
+}
+p.lead {
+    font-size: 16px;
+    color: #5a4545;
+    font-weight: 600;
+    text-shadow: 1px 1px 2px rgba(255,255,255,0.8);
+}
+/* ▲▲▲ Header 修正ここまで ▲▲▲ */
+
 
 .container { max-width: 900px; margin: 0 auto; padding: 0 20px; }
 
@@ -188,6 +227,7 @@ footer {
 
 @media(max-width:600px){
     h1{font-size:24px;}
+    header { padding: 40px 20px; } /* スマホではヘッダー高さを少し抑える */
 }
 
 /* もしもアフィリエイト調整 */
@@ -368,6 +408,59 @@ div[id^="msmaflink"] .msmaflink-btns a {
     </div>
 </section>
 
+<div style="
+    background: #1a2f4b;
+    background: linear-gradient(135deg, #1a2f4b, #2c4a70);
+    border-radius: 12px;
+    padding: 30px;
+    margin: 40px auto;
+    text-align: center;
+    color: #fff;
+    box-shadow: 0 5px 20px rgba(0,0,0,0.15);
+    max-width: 700px;
+    position: relative;
+    overflow: hidden;
+">
+    <div style="
+        position: absolute; top: 10px; left: 10px; right: 10px; bottom: 10px;
+        border: 1px solid rgba(212, 175, 55, 0.5); border-radius: 8px; pointer-events: none;
+    "></div>
+
+    <span style="
+        background: #d4af37; color: #fff; font-size: 11px; font-weight: bold;
+        padding: 4px 12px; border-radius: 20px; text-transform: uppercase; letter-spacing: 1px;
+    ">
+        New Arrival
+    </span>
+
+    <h3 style="
+        font-family: 'Playfair Display', serif; color: #fff; margin: 15px 0 10px; font-size: 22px;
+        border-bottom: none;
+    ">
+        銀座で叶える、一生モノの美ボディ
+    </h3>
+    
+    <p style="font-size: 14px; line-height: 1.6; margin-bottom: 25px; color: #e0e0e0;">
+        「結婚式までに確実に痩せたい」<br>
+        「食事制限でリバウンドしたくない」<br>
+        そんな花嫁様へ。世界レベルのトレーナーが指導する<br>
+        完全個室のプライベートジムを取材しました。
+    </p>
+
+    <a href="accept-gym.html" style="
+        display: inline-block;
+        background: #d4af37;
+        color: #fff;
+        font-weight: bold;
+        text-decoration: none;
+        padding: 12px 35px;
+        border-radius: 50px;
+        box-shadow: 0 4px 15px rgba(0,0,0,0.3);
+        transition: transform 0.2s;
+    " onmouseover="this.style.transform='translateY(-2px)'" onmouseout="this.style.transform='translateY(0)'">
+        記事を読む &raquo;
+    </a>
+</div>
 
     <section class="lp-section">
         <h2 class="lp-h2">Step 2：時間がない花嫁のための「即効」外側ケア</h2>
@@ -426,60 +519,7 @@ div[id^="msmaflink"] .msmaflink-btns a {
             </div>
 
     </section>
-<div style="
-    background: #1a2f4b;
-    background: linear-gradient(135deg, #1a2f4b, #2c4a70);
-    border-radius: 12px;
-    padding: 30px;
-    margin: 40px auto;
-    text-align: center;
-    color: #fff;
-    box-shadow: 0 5px 20px rgba(0,0,0,0.15);
-    max-width: 700px;
-    position: relative;
-    overflow: hidden;
-">
-    <div style="
-        position: absolute; top: 10px; left: 10px; right: 10px; bottom: 10px;
-        border: 1px solid rgba(212, 175, 55, 0.5); border-radius: 8px; pointer-events: none;
-    "></div>
 
-    <span style="
-        background: #d4af37; color: #fff; font-size: 11px; font-weight: bold;
-        padding: 4px 12px; border-radius: 20px; text-transform: uppercase; letter-spacing: 1px;
-    ">
-        New Arrival
-    </span>
-
-    <h3 style="
-        font-family: 'Playfair Display', serif; color: #fff; margin: 15px 0 10px; font-size: 22px;
-        border-bottom: none;
-    ">
-        銀座で叶える、一生モノの美ボディ
-    </h3>
-    
-    <p style="font-size: 14px; line-height: 1.6; margin-bottom: 25px; color: #e0e0e0;">
-        「結婚式までに確実に痩せたい」<br>
-        「食事制限でリバウンドしたくない」<br>
-        そんな花嫁様へ。世界レベルのトレーナーが指導する<br>
-        完全個室のプライベートジムを取材しました。
-    </p>
-
-    <a href="accept-gym.html" style="
-        display: inline-block;
-        background: #d4af37;
-        color: #fff;
-        font-weight: bold;
-        text-decoration: none;
-        padding: 12px 35px;
-        border-radius: 50px;
-        box-shadow: 0 4px 15px rgba(0,0,0,0.3);
-        transition: transform 0.2s;
-    " onmouseover="this.style.transform='translateY(-2px)'" onmouseout="this.style.transform='translateY(0)'">
-        記事を読む &raquo;
-    </a>
-</div>
-    
     <section class="lp-section" style="text-align:center; margin-top:80px;">
         <h2 style="font-family:'Playfair Display',serif; font-size:28px; color:#d6336c;">Confidence creates Beauty.</h2>
         <p style="margin-top:20px;">
