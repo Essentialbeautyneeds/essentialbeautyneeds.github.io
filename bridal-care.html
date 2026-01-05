@@ -56,96 +56,118 @@ header {
 h1 { font-family: 'Playfair Display', serif; font-size: 32px; color: var(--text-main); margin-bottom: 10px; }
 p.lead { font-size: 16px; color: #5a4545; font-weight: 600; }
 
-.container { max-width: 800px; margin: 0 auto; padding: 0 20px; }
+.container { max-width: 900px; margin: 0 auto; padding: 0 20px; }
 
-/* ▼▼▼ Hero Box (修正箇所) ▼▼▼ */
+/* ▼▼▼ Hero Box (レイアウト修正済み) ▼▼▼ */
 .lp-hero-box {
-    background: #fff;
-    border-radius: 10px;
-    padding: 25px;
-    margin: -15px auto 30px;
-    box-shadow: 0 5px 15px rgba(0,0,0,0.1);
+    background: #ffffff;
+    border-radius: 20px; /* 角を丸く */
+    padding: 40px; /* 内側の余白を広めに */
+    margin: -30px auto 50px; /* ヘッダーに少し重ねるデザイン */
+    box-shadow: 0 10px 30px rgba(0,0,0,0.08); /* ふんわりとした影 */
     position: relative;
-    max-width: 800px; /* 横幅を広げて横並びに対応 */
-    border: 1px solid #ffebeb;
+    max-width: 960px; /* 幅を広く設定 */
+    border: none;
     
-    /* 横並び設定 (Flexbox) */
+    /* 横並び設定 */
     display: flex;
     align-items: center;
     justify-content: space-between;
-    gap: 30px;
+    gap: 40px;
     text-align: left;
 }
 
 /* テキストエリア */
 .lp-hero-text-area {
-    flex: 1;
+    flex: 1; /* 残りのスペースを使う */
+    display: flex;
+    flex-direction: column;
+    align-items: flex-start; /* 左寄せ */
 }
 
 /* 画像エリア */
 .lp-hero-img-area {
-    width: 250px;
-    flex-shrink: 0;
+    width: 45%; /* 画像の幅を45%に固定 */
+    max-width: 400px;
+    flex-shrink: 0; /* 画像が潰れないようにする */
 }
 .lp-hero-img-area img {
     width: 100%;
     height: auto;
-    border-radius: 10px;
-    box-shadow: 0 4px 10px rgba(0,0,0,0.1);
+    border-radius: 15px; /* 画像の角丸 */
+    box-shadow: 0 5px 15px rgba(0,0,0,0.1);
+    object-fit: cover;
 }
 
 .lp-badge {
     display: inline-block;
     background: #d6336c;
     color: #fff;
-    padding: 5px 15px;
-    border-radius: 20px;
+    padding: 6px 18px;
+    border-radius: 30px;
     font-size: 13px;
     font-weight: bold;
-    margin-bottom: 15px;
+    margin-bottom: 20px;
+    letter-spacing: 0.05em;
 }
 
 .lp-headline {
-    font-size: 22px;
+    font-size: 26px; /* 見出しを大きく */
     color: var(--text-main);
-    line-height: 1.6;
+    line-height: 1.5;
     margin-bottom: 15px;
     font-weight: bold;
+    border: none; /* 下線削除 */
+    padding: 0;
 }
 
 /* ジャンプボタン */
 .jump-btn {
-    display: inline-block;
-    background: linear-gradient(to right, #e67e22, #d35400);
+    display: inline-flex;
+    align-items: center;
+    justify-content: center;
+    background: linear-gradient(to right, #e67e22, #d35400); /* オレンジグラデーション */
     color: #fff;
     text-decoration: none;
-    padding: 12px 25px;
+    padding: 15px 40px;
     border-radius: 50px;
     font-weight: bold;
-    font-size: 15px;
-    box-shadow: 0 4px 6px rgba(0,0,0,0.2);
-    transition: transform 0.2s;
-    margin-top: 10px;
+    font-size: 16px;
+    box-shadow: 0 5px 15px rgba(230, 126, 34, 0.3);
+    transition: transform 0.2s, box-shadow 0.2s;
+    margin-top: 25px;
 }
 .jump-btn:hover {
     transform: translateY(-2px);
-    opacity: 0.9;
+    box-shadow: 0 8px 20px rgba(230, 126, 34, 0.4);
+    opacity: 0.95;
+}
+.jump-btn::before {
+    content: "🔍";
+    margin-right: 8px;
+    font-size: 1.1em;
 }
 
-/* スマホ対応：画面幅700px以下なら縦並びに戻す */
-@media (max-width: 700px) {
+/* スマホ対応：画面幅768px以下なら縦並び */
+@media (max-width: 768px) {
     .lp-hero-box {
-        display: block; /* 縦並び */
+        display: flex;
+        flex-direction: column; /* 縦並び */
+        padding: 30px 20px;
+        margin-top: 20px;
+        gap: 30px;
+    }
+    .lp-hero-text-area {
+        align-items: center; /* 中央揃え */
         text-align: center;
-        max-width: 430px;
-        padding: 20px 15px;
+        width: 100%;
     }
     .lp-hero-img-area {
-        width: 80%;
-        margin: 20px auto 0;
+        width: 100%;
+        max-width: 100%;
     }
     .lp-headline {
-        font-size: 19px;
+        font-size: 22px;
     }
 }
 /* ▲▲▲ Hero Box 修正ここまで ▲▲▲ */
@@ -154,7 +176,7 @@ p.lead { font-size: 16px; color: #5a4545; font-weight: 600; }
 .lp-section { margin-bottom: 60px; }
 
 .lp-h2 {
-    font-size: 19px;
+    font-size: 20px;
     font-weight: bold;
     border-bottom: 2px solid #88c088;
     padding-bottom: 10px;
@@ -345,18 +367,18 @@ div[id^="msmaflink"] .msmaflink-btns a {
         <h2 class="lp-headline">
             試着室で気づいた<br>背中・二の腕の荒れを<br>
             <span style="color:#d6336c;">挙式までに「なかったこと」に。</span>
-            <span style="font-size:15px; color:#666; font-weight:normal; display:block; margin-top:10px;">
+            <span style="font-size:16px; color:#666; font-weight:normal; display:block; margin-top:15px; line-height:1.6;">
                 元プランナー・栄養士が教える<br>緊急「食事×ケア」マニュアル
             </span>
         </h2>
         
         <a href="#shindan-tool" class="jump-btn">
-            🔍 今すぐ無料肌診断をする
+            今すぐ無料肌診断をする
         </a>
     </div>
 
     <div class="lp-hero-img-area">
-        <img src="images/back.jpg" alt="美しい背中の花嫁" onerror="handleImageError(this, 800, 450, 'Bridal Back')">
+        <img src="images/back.jpg" alt="美しい背中の花嫁" onerror="handleImageError(this, 800, 530, 'Bridal Back')">
     </div>
 </div>
 <main class="container">
@@ -372,7 +394,7 @@ div[id^="msmaflink"] .msmaflink-btns a {
             </ul>
         </div>
 
-        <section class="lp-section" id="shindan-tool">
+        <section class="lp-section" id="shindan-tool" style="scroll-margin-top: 40px;">
             <div style="background-color: #f0f8ff; padding: 25px; border-radius: 12px; border: 1px dashed #4682b4; text-align: center;">
                 <h3 style="color: #0056b3; margin-bottom: 20px; font-size: 20px;">🔍 栄養士Yuriの【肌荒れ原因】無料診断</h3>
                 <p style="margin-bottom: 20px;">あなたの背中・二の腕荒れの「真の原因」は？<br>3つの質問に答えてチェックしてみましょう！</p>
@@ -556,96 +578,4 @@ div[id^="msmaflink"] .msmaflink-btns a {
             c.getElementById(a)||(d=c.createElement(f),d.src=g,
             d.id=a,e=c.getElementsByTagName("body")[0],e.appendChild(d))})
             (window,document,"script","//dn.msmstatic.com/site/cardlink/bundle.js?20220329","msmaflink");
-            msmaflink({"n":"二の腕 ブツブツ ニキビ ザラザラ｜うでつるん。 スプレーボトル 30ml ｜植物生まれの肌に優しい角質ケアで気になる二の腕のぼつぼつ（ ぶつぶつ ）・にきび・にきび痕のお手入れ【メール便】","b":"","t":"","d":"https:\/\/thumbnail.image.rakuten.co.jp","c_p":"\/@0_mall\/cosmest-1\/cabinet\/ude_tsurun","p":["\/2405udetsurun800.jpg","\/220819lp_02.jpg","\/220819lp_03.jpg"],"u":{"u":"https:\/\/item.rakuten.co.jp\/cosmest-1\/coe_udetsurun_spray30\/","t":"rakuten","r_v":""},"v":"2.1","b_l":[{"u_bc":"#000000","u_tx":"Amazonで見る","u_url":"https:\/\/amzn.to\/4pltRSh","s_n":"custom_3","u_so":0,"a_id":0,"p_id":0,"pc_id":0,"pl_id":0,"id":13},{"id":1,"u_tx":"楽天市場で見る","u_bc":"#bf0000","u_url":"https:\/\/item.rakuten.co.jp\/cosmest-1\/coe_udetsurun_spray30\/","a_id":5267359,"p_id":54,"pl_id":27059,"pc_id":54,"s_n":"rakuten","u_so":1},{"id":12,"u_tx":"Yahoo!ショッピングで見る","u_bc":"#87c209","u_url":"https:\/\/shopping.yahoo.co.jp\/search?first=1\u0026p=%E4%BA%8C%E3%81%AE%E8%85%95%20%E3%83%96%E3%83%84%E3%83%96%E3%83%84%20%E3%83%8B%E3%82%AD%E3%83%93%20%E3%82%B6%E3%83%A9%E3%82%B6%E3%83%A9%EF%BD%9C%E3%81%86%E3%81%A7%E3%81%A4%E3%82%8B%E3%82%93%E3%80%82%20%E3%82%B9%E3%83%97%E3%83%AC%E3%83%BC%E3%83%9C%E3%83%88%E3%83%AB%2030ml%20%EF%BD%9C%E6%A4%8D%E7%89%A9%E7%94%9F%E3%81%BE%E3%82%8C%E3%81%AE%E8%82%8C%E3%81%AB%E5%84%AA%E3%81%97%E3%81%84%E8%A7%92%E8%B3%AA%E3%82%B1%E3%82%A2%E3%81%A7%E6%B0%97%E3%81%AB%E3%81%AA%E3%82%8B%E4%BA%8C%E3%81%AE%E8%85%95%E3%81%AE%E3%81%BC%E3%81%A4%E3%81%BC%E3%81%A4%EF%BC%88%20%E3%81%B6%E3%81%A4%E3%81%B6%E3%81%A4%20%EF%BC%89%E3%83%BB%E3%81%AB%E3%81%8D%E3%81%B3%E3%83%BB%E3%81%AB%E3%81%8D%E3%81%B3%E7%97%95%E3%81%AE%E3%81%8A%E6%89%8B%E5%85%A5%E3%82%8C%E3%80%90%E3%83%A1%E3%83%BC%E3%83%AB%E4%BE%BF%E3%80%91","a_id":5267465,"p_id":1225,"pl_id":27061,"pc_id":1925,"s_n":"yahoo","u_so":2}],"eid":"7osiZ","s":"s"});
-            </script>
-            <div id="msmaflink-7osiZ">リンク</div>
-            </div>
-
-        <div class="product-category">
-            <h3>悩み③ サロンに行く時間がない！</h3>
-            <p style="font-size:14px; margin-bottom:15px;">
-                「エステに通う時間がない…」そんな花嫁様の救世主。<br>
-                エステ発のプロ用ブランド「エステダム」で、サロン帰りのような、なめらかで発光する肌へ。
-            </p>
-            
-            <script type="text/javascript">
-            (function(b,c,f,g,a,d,e){b.MoshimoAffiliateObject=a;
-            b[a]=b[a]||function(){arguments.currentScript=c.currentScript
-            ||c.scripts[c.scripts.length-2];(b[a].q=b[a].q||[]).push(arguments)};
-            c.getElementById(a)||(d=c.createElement(f),d.src=g,
-            d.id=a,e=c.getElementsByTagName("body")[0],e.appendChild(d))})
-            (window,document,"script","//dn.msmstatic.com/site/cardlink/bundle.js?20220329","msmaflink");
-            msmaflink({"n":"エステダム オーセリュレール ボディ オイル 125ml サロン専売品 ESTHEDERM 正規品【送料無料\/沖縄・離島除く】","b":"","t":"","d":"https:\/\/thumbnail.image.rakuten.co.jp","c_p":"","p":["\/@0_mall\/esthesupply\/cabinet\/new\/2018042607.jpg"],"u":{"u":"https:\/\/item.rakuten.co.jp\/esthesupply\/2018042607\/","t":"rakuten","r_v":""},"v":"2.1","b_l":[{"id":13,"u_tx":"Amazonで見る","u_bc":"#000000","u_url":"https:\/\/amzn.to\/49xOW7g","a_id":0,"p_id":0,"pl_id":0,"pc_id":0,"s_n":"custom_3","u_so":1},{"id":1,"u_tx":"楽天市場で見る","u_bc":"#bf0000","u_url":"https:\/\/item.rakuten.co.jp\/esthesupply\/2018042607\/","a_id":5267359,"p_id":54,"pl_id":27059,"pc_id":54,"s_n":"rakuten","u_so":2},{"id":12,"u_tx":"Yahoo!ショッピングで見る","u_bc":"#87c209","u_url":"https:\/\/shopping.yahoo.co.jp\/search?first=1\u0026p=%E3%82%A8%E3%82%B9%E3%83%86%E3%83%80%E3%83%A0%20%E3%82%AA%E3%83%BC%E3%82%BB%E3%83%AA%E3%83%A5%E3%83%AC%E3%83%BC%E3%83%AB%20%E3%83%9C%E3%83%87%E3%82%A3%20%E3%82%AA%E3%82%A4%E3%83%AB%20125ml%20%E3%82%B5%E3%83%AD%E3%83%B3%E5%B0%82%E5%A3%B2%E5%93%81%20ESTHEDERM%20%E6%AD%A3%E8%A6%8F%E5%93%81%E3%80%90%E9%80%81%E6%96%99%E7%84%A1%E6%96%99%2F%E6%B2%96%E7%B8%84%E3%83%BB%E9%9B%A2%E5%B3%B6%E9%99%A4%E3%81%8F%E3%80%91","a_id":5267465,"p_id":1225,"pl_id":27061,"pc_id":1925,"s_n":"yahoo","u_so":3}],"eid":"ntr6U","s":"s"});
-            </script>
-            <div id="msmaflink-ntr6U">リンク</div>
-            </div>
-
-    </section>
-
-    <section class="lp-section" style="text-align:center; margin-top:80px;">
-        <h2 style="font-family:'Playfair Display',serif; font-size:28px; color:#d6336c;">Confidence creates Beauty.</h2>
-        <p style="margin-top:20px;">
-            背中や肌が整うと、当日の立ち振る舞いに自信が出ます。<br>
-            ゲストの視線を気にせず、最高の笑顔でドレスを着こなすために。<br>
-            「あの時ケアしておけばよかった」と後悔しないよう、今すぐできることから始めましょう。
-        </p>
-        <p style="margin-top:30px; font-weight:bold;">あなたの結婚式が、最高に美しい一日になりますように。</p>
-        
-        <div style="margin-top:50px;">
-            <img src="images/Yuri.jpg" style="width:80px; height:80px; border-radius:50%; object-fit:cover;" alt="Yuri" onerror="handleImageError(this, 80, 80, 'Yuri')">
-            <p style="font-size:14px; color:#999; margin-top:10px;">Managed by Yuri (Registered Dietitian)</p>
-        </div>
-    </section>
-
-</main>
-
-<footer>
-  <div class="footer-container">
-    
-     <div class="footer-col">
-      <h3>🌸 スキンケア・悩み別</h3>
-      <a href="bridal-care.html">結婚式直前！背中・二の腕ケア<span class="new-mark">New!!</span></a>
-      <a href="skin-ranking.html">おすすめスキンケアランキング</a>
-      <a href="seasons-skin.html">季節別スキンケア（春夏秋冬）</a>
-      <a href="age-skincare.html">40代・50代 年齢別ケア</a>
-      <a href="acne-care.html">肌荒れ・敏感肌・ニキビケア</a>
-      <a href="lifestyle-skincare.html">生活リズム別（時短・夜型など）</a>
-    </div>
-
-    <div class="footer-col">
-      <h3>🛁 ボディ・ヘア・インナー</h3>
-      <a href="hair-care.html">ヘアケア・頭皮ケア特集</a>
-      <a href="diet-beauty.html">インナービューティー＆ダイエット</a>
-      <a href="smoothie-recipes.html">栄養士おすすめ！スムージーのレシピ<span class="new-mark">New!!</span></a>
-
-      <a href="amazon-oil-review.html">本当に効く！オイルレビュー</a>
-      <a href="organic-science.html">オーガニック成分の科学</a>
-    </div>
-
-    <div class="footer-col">
-      <h3>🎁 特集・コラム・その他</h3>
-      <a href="gift-selection.html">心をつなぐオーガニックギフト</a>
-      <a href="trial-sets.html">失敗しない！お試しセット比較</a>
-      <a href="winter-selection.html">冬のベストセレクション</a>
-      <a href="beauty-column.html">ビューティーコラム一覧</a>
-        <a href="sonoko-diet.html">食べて痩せる肌診断 <span class="new-mark">New!!</span></a>
-      <a href="about.html">当サイトについて (About)</a>
-    </div>
-
-  </div>
-  
-  <div class="footer-bottom">
-      <a href="https://room.rakuten.co.jp/room_e0dd63a90a/items" target="_blank" rel="noopener" class="footer-room-link">
-        🏠 管理人Yuriの楽天ROOMを見る
-      </a>
-      <br>
-      
-      © 2025 Essential Beauty Needs<br><br>
-      <a href="privacy-policy.html" style="color:#888; text-decoration:none; font-size:12px;">プライバシーポリシー</a>
-  </div>
-</footer>
-
-<div id="affiliateNotice">※当サイトはアフィリエイト広告（Amazonアソシエイト含む）を利用しています</div>
-
-</body>
-</html>
+            msmaflink({"n":"二の腕 ブツブツ ニキビ ザラザラ｜うでつるん。 スプレーボトル 30ml ｜植物生まれの肌に優しい角質ケアで気になる二の腕のぼつぼつ（ ぶつぶつ ）・にきび・にきび痕のお手入れ【メール便】","b":"","t":"","d":"https:\/\/thumbnail.image.rakuten.co.jp","c_p":"\/@0_mall\/cosmest-1\/cabinet\/ude_tsurun","p":["\/2405udetsurun800.jpg","\/220819lp_02.jpg","\/220819lp_03.jpg"],"u":{"u":"https:\/\/item.rakuten.co.jp\/cosmest-1\/coe_udetsurun_spray30\/","t":"rakuten","r_v":""},"v":"2.1","b_l":[{"u_bc":"#000000","u_tx":"Amazonで見る","u_url":"https:\/\/amzn.to\/4pltRSh","s_n":"custom_3","u_so":0,"a_id":0,"p_id":0,"pc_id":0,"pl_id":0,"id":13},{"id":1,"u_tx":"楽天市場で見る","u_bc":"#bf0000","u_url":"https:\/\/item.rakuten.co.jp\/cosmest-1\/coe_udetsurun_spray30\/","a_id":5267359,"p_id":54,"pl_id":27059,"pc_id":54,"s_n":"rakuten","u_so":1},{"id":12,"u_tx":"Yahoo!ショッピングで見る","u_bc":"#87c209","u_url":"https:\/\/shopping.yahoo.co.jp\/search?first=1\u0026p=%E4%BA%8C%E3%81%AE%E8%85%95%20%E3%83%96%E3%83%84%E3%83%96%
