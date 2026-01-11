@@ -1,190 +1,153 @@
 <!DOCTYPE html>
 <html lang="ja">
 <head>
-    <meta charset="UTF-8">
-    <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Yuriの公式Note記事一覧 | essential-beauty-needs.com</title>
+    <meta charset="utf-8" />
+    <meta name="viewport" content="width=device-width,initial-scale=1" />
+    <title>栄養士Yuriの公式Note記事一覧 | Essential Beauty Needs</title>
     <meta name="description" content="栄養士Yuriが執筆したNote記事のまとめページです。プレ花嫁向けのダイエット、スキンケア、健康情報をカテゴリー別に紹介しています。">
+    <link rel="canonical" href="https://essential-beauty-needs.com/note-archive.html" />
+
+    <link href="https://fonts.googleapis.com/css2?family=Playfair+Display:wght@600&family=Quicksand:wght@400;600&display=swap" rel="stylesheet">
+
+    <script>
+        // 1. 内部トラフィック除外設定
+        function isInternalUser() {
+            return document.cookie.split(';').some(c => c.trim().startsWith('internal_user=true'));
+        }
+          
+        // 2. GA4読み込み
+        if (!isInternalUser()) {
+            var gaScript = document.createElement('script');
+            gaScript.async = true;
+            gaScript.src = "https://www.googletagmanager.com/gtag/js?id=G-2HGEPHVZYY";
+            document.head.appendChild(gaScript);
+            window.dataLayer = window.dataLayer || [];
+            function gtag(){dataLayer.push(arguments);}
+            gtag('js', new Date());
+            gtag('config', 'G-2HGEPHVZYY');
+        }
+
+        // 3. 画像読み込みエラー時のフォールバック処理
+        function handleImageError(imgElement) {
+            imgElement.onerror = null;
+            imgElement.src = "https://placehold.co/150x110/fcece3/d4a373?text=Note"; 
+            imgElement.style.objectFit = "cover";
+        }
+    </script>
+
     <style>
-        /* ページ全体のスタイル */
-        body {
-            font-family: "Helvetica Neue", Arial, "Hiragino Kaku Gothic ProN", "Hiragino Sans", Meiryo, sans-serif;
-            background-color: #fdfcf8;
-            color: #333;
-            line-height: 1.6;
-            margin: 0;
-            padding: 0;
+        :root{
+            --bg:#fff8f8;
+            --card:#ffffff;
+            --accent:#f7a8a8;
+            --accent-hover:#f48b8b;
+            --muted:#666;
+            --btn-text:#fff;
+            --text-main: #503535;
+            --room-color: #c63535;
         }
-        .container {
-            max-width: 800px;
-            margin: 0 auto;
-            padding: 20px;
-        }
+        *{box-sizing:border-box;margin:0;padding:0;}
+        body{font-family:'Quicksand',sans-serif;background:var(--bg);color:#333; line-height: 1.8;}
 
-        /* ヘッダー */
-        header {
-            text-align: center;
-            padding: 40px 0 20px;
+        /* Header Styles */
+        header{
+            position:relative;
+            text-align:center;
+            color:var(--text-main);
+            padding:60px 20px 40px;
+            background: linear-gradient(135deg, #ffe6e6, #ffdcdc);
+            border-bottom:3px solid #e6b7b3;
         }
-        h1 {
-            color: #d4a373;
-            font-size: 24px;
-            margin-bottom: 10px;
-            letter-spacing: 0.05em;
-        }
-        .intro-text {
-            font-size: 14px;
-            color: #666;
-            margin-bottom: 30px;
-        }
+        h1{font-family:'Playfair Display',serif;font-size:32px;letter-spacing:1px;margin-bottom:8px;}
+        .lead{font-size:16px;color:#5a4545; margin-bottom: 25px;}
 
-        /* カテゴリーナビボタン */
-        .category-nav {
-            display: flex;
-            justify-content: center;
-            gap: 10px;
-            margin-bottom: 40px;
-            flex-wrap: wrap;
-        }
-        .nav-btn {
-            background-color: #fff;
-            border: 1px solid #ddd;
-            padding: 10px 20px;
-            border-radius: 25px;
-            text-decoration: none;
-            color: #555;
-            font-size: 14px;
-            transition: all 0.3s ease;
-        }
-        .nav-btn:hover {
-            background-color: #fcece3;
-            border-color: #fcece3;
-            color: #d4a373;
-        }
+        /* Navigation */
+        .nav-links{display:flex;gap:12px;justify-content:center;margin-top:12px;flex-wrap:wrap;}
+        .nav-links a{background:rgba(255,255,255,0.8);padding:8px 12px;border-radius:8px;text-decoration:none;color:#503535;font-weight:600;}
+        .nav-links a:hover{background:var(--accent);color:#fff;}
+        .nav-break { flex-basis: 100%; height: 0; margin: 5px 0; }
 
-        /* セクション見出し */
-        h2.section-title {
-            text-align: center;
-            font-size: 20px;
-            color: #555;
-            margin-top: 50px;
-            margin-bottom: 20px;
-            border-bottom: 2px solid #fcece3;
-            display: inline-block;
-            padding-bottom: 5px;
-        }
-        .section-wrapper {
-            margin-bottom: 20px;
-        }
+        .container{max-width:900px;margin:0 auto;padding:0 16px;}
 
-        /* 記事リンクカード */
-        .note-list {
-            list-style: none;
-            padding: 0;
-            margin: 0;
-        }
-        .note-item {
-            background: #fff;
-            border: 1px solid #eee;
-            margin-bottom: 15px;
-            border-radius: 8px;
-            transition: transform 0.2s, box-shadow 0.2s;
-        }
-        .note-item:hover {
-            transform: translateY(-2px);
-            box-shadow: 0 4px 10px rgba(0,0,0,0.05);
-            border-color: #fcece3;
-        }
-        .note-link {
-            display: block;
-            padding: 20px;
-            text-decoration: none;
-            color: #333;
-            position: relative;
-        }
-        .note-title {
-            font-size: 16px;
-            font-weight: bold;
-            margin: 0 0 5px 0;
-            display: block;
-            color: #444;
-        }
-        .note-desc {
-            font-size: 13px;
-            color: #888;
-            margin: 0;
-            display: block;
-        }
-        .price-tag {
-            background-color: #fcece3;
-            color: #d4a373;
-            font-size: 11px;
-            padding: 2px 6px;
-            border-radius: 4px;
-            margin-left: 8px;
-            vertical-align: middle;
-            font-weight: normal;
-        }
-        .arrow-icon {
-            position: absolute;
-            right: 20px;
-            top: 50%;
-            transform: translateY(-50%);
-            color: #d4a373;
-        }
+        /* Note Archive Styles */
+        .category-nav { display: flex; justify-content: center; gap: 15px; margin: 40px 0; flex-wrap: wrap; }
+        .cat-btn { background: #fff; border: 1px solid #f4b5b5; padding: 10px 24px; border-radius: 25px; text-decoration: none; color: var(--text-main); font-weight: bold; transition: all 0.3s ease; box-shadow: 0 2px 5px rgba(0,0,0,0.05); }
+        .cat-btn:hover { background: #fcece3; transform: translateY(-2px); color: #d6336c; }
 
-        /* フッターエリア */
-        .profile-link-area {
-            text-align: center;
-            margin-top: 60px;
-            padding: 30px;
-            background-color: #fff;
-            border-radius: 10px;
-            box-shadow: 0 2px 8px rgba(0,0,0,0.05);
-        }
-        .btn-green {
-            background-color: #2cb696;
-            color: #fff;
-            padding: 12px 30px;
-            border-radius: 5px;
-            text-decoration: none;
-            font-weight: bold;
-            display: inline-block;
-            margin-top: 10px;
-        }
-        .btn-green:hover {
-            opacity: 0.9;
-        }
+        h2.section-title { text-align: center; font-family: 'Playfair Display', serif; font-size: 24px; color: var(--text-main); margin-top: 50px; margin-bottom: 25px; border-bottom: 2px solid #fcece3; display: inline-block; padding-bottom: 5px; }
+        .section-wrapper { text-align: center; margin-bottom: 40px; }
 
-        /* スマホ対応 */
+        .note-list { list-style: none; padding: 0; margin: 0; text-align: left; }
+        .note-item { background: #fff; border: 1px solid #eee; margin-bottom: 20px; border-radius: 12px; transition: transform 0.2s, box-shadow 0.2s; overflow: hidden; }
+        .note-item:hover { transform: translateY(-3px); box-shadow: 0 6px 15px rgba(0,0,0,0.08); border-color: #fcece3; }
+        .note-link { display: flex; text-decoration: none; color: #333; align-items: center; }
+        
+        .note-thumb-box { width: 140px; min-height: 110px; flex-shrink: 0; background: #fafafa; position: relative; }
+        .note-thumb { width: 100%; height: 100%; object-fit: cover; position: absolute; top: 0; left: 0; }
+
+        .note-content { padding: 15px 20px; flex: 1; }
+        .note-title { font-size: 16px; font-weight: bold; margin: 0 0 5px 0; display: block; color: var(--text-main); line-height: 1.5; }
+        /* note-desc は表示しません（タイトルだけで十分かつ、スマホで見やすくするため） */
+        .note-desc { display: none; } 
+        
+        .price-tag { background-color: #fcece3; color: #d4a373; font-size: 11px; padding: 2px 8px; border-radius: 4px; margin-left: 8px; vertical-align: middle; font-weight: normal; border: 1px solid #ebdacc; white-space: nowrap; }
+        .arrow-icon { color: #f4b5b5; font-size: 18px; margin-left: 10px; margin-right: 15px; }
+
         @media (max-width: 600px) {
-            .nav-btn {
-                font-size: 12px;
-                padding: 8px 15px;
-            }
-            .note-title {
-                font-size: 15px;
-            }
+            .nav-links { gap: 8px; }
+            .nav-links a { font-size: 12px; padding: 6px 10px; }
+            .note-thumb-box { width: 110px; min-height: 90px; }
+            .note-title { font-size: 14px; }
+            .note-content { padding: 12px; }
+            .arrow-icon { display: none; }
         }
+
+        /* Footer & Float */
+        footer { background: #fffaf4; border-top: 3px solid #f7a8a8; padding: 50px 20px 60px; margin-top: 60px; color: #555; font-size: 14px; }
+        .footer-container { max-width: 960px; margin: 0 auto; display: flex; flex-wrap: wrap; justify-content: space-between; gap: 30px; text-align: left; }
+        .footer-col { flex: 1; min-width: 200px; }
+        .footer-col h3 { font-size: 16px; color: #d6336c; border-bottom: 1px dashed #f4b5b5; padding-bottom: 8px; margin-bottom: 15px; font-weight: bold; }
+        .footer-col a { display: block; color: #666; text-decoration: none; margin-bottom: 10px; transition: 0.3s; position: relative; padding-left: 10px; }
+        .footer-col a::before { content: "・"; position: absolute; left: 0; color: #f7a8a8; }
+        .footer-col a:hover { color: #d6336c; padding-left: 15px; }
+        .footer-bottom { text-align: center; margin-top: 50px; padding-top: 30px; border-top: 1px solid #eee; }
+        .footer-room-link { display: inline-block; color: #c63535; font-weight: bold; border: 1px solid #c63535; padding: 8px 20px; border-radius: 20px; text-decoration: none; margin-bottom: 20px; background: #fff; transition: 0.3s; }
+        .footer-room-link:hover { background: #c63535; color: #fff; }
+        
+        #affiliateNotice { position: fixed; right: 12px; bottom: 12px; background: rgba(255, 255, 255, 0.9); color: #555; font-size: 11px; border-radius: 6px; padding: 4px 8px; box-shadow: 0 2px 6px rgba(0,0,0,0.15); z-index: 999; border: 1px solid #eee; }
+        @keyframes blinkEffect { 0% { opacity: 1; } 50% { opacity: 0.3; } 100% { opacity: 1; } }
+        .new-mark { color: #ff0000; font-weight: bold; font-size: 0.8em; margin-left: 5px; animation: blinkEffect 1.2s infinite; vertical-align: super; }
     </style>
 </head>
 <body>
 
-<div class="container">
+<header>
+    <h1>Nutritionist Yuri's Note</h1>
+    <p class="lead">栄養士Yuriの公式Noteアーカイブ。<br>プレ花嫁様のための食事術・美容情報を発信しています。</p>
 
-    <header>
-        <h1>Nutritionist Yuri's Note</h1>
-        <p class="intro-text">
-            栄養士Yuriの公式Noteアーカイブ。<br>
-            プレ花嫁様のための食事術・美容情報を発信しています。
-        </p>
+    <div class="nav-links" role="navigation">
+        <a href="index.html">🏠 トップ</a>
+        <a href="bridal-care.html">👰 花嫁ケア診断</a>
+        <a href="skin-ranking.html">✨ ランキング</a>
+        <a href="trial-sets.html" style="background:#fff0f5; border:1px solid #ffb6c1; font-weight:bold;">🔰 お試しセット</a>
+        <div class="nav-break"></div>
+        <a href="seasons-skin.html">🌸 季節別</a>
+        <a href="age-skincare.html">👩 年齢・肌質別</a>
+        <a href="lifestyle-skincare.html">💆‍♀️ 生活リズム別</a>
+        <div class="nav-break"></div>
+        <a href="organic-science.html">🔬 成分の科学</a>
+        <a href="beauty-column.html">💄 コラム</a>
+        <a href="diet-beauty.html">🍃 インナービューティー</a>
+    </div>
+</header>
 
-        <div class="category-nav">
-            <a href="#diet" class="nav-btn">🥗 ダイエット</a>
-            <a href="#skincare" class="nav-btn">✨ スキンケア</a>
-            <a href="#general" class="nav-btn">📖 一般・コラム</a>
-        </div>
-    </header>
+<main class="container">
+
+    <div class="category-nav">
+        <a href="#diet" class="cat-btn">🥗 ダイエット</a>
+        <a href="#skincare" class="cat-btn">✨ スキンケア</a>
+        <a href="#general" class="cat-btn">📖 一般・コラム</a>
+    </div>
 
     <div class="section-wrapper" id="diet">
         <h2 class="section-title">Diet & Body Make</h2>
@@ -192,68 +155,99 @@
             
             <li class="note-item">
                 <a href="https://note.com/yuri_organic/n/n7953338e3de7" class="note-link" target="_blank">
-                    <span class="note-title">【花嫁講座①】「食べないダイエット」は失敗の元</span>
-                    <span class="note-desc">一生に一度のドレスを「最高に美しく」着こなすための真実。</span>
+                    <div class="note-thumb-box">
+                        <img src="https://assets.st-note.com/production/uploads/images/243029543/rectangle_large_type_2_68ff6b19a06c4449425ee8ac2faaa76b.jpeg?width=1280" class="note-thumb" onerror="handleImageError(this)" alt="記事サムネイル">
+                    </div>
+                    <div class="note-content">
+                        <span class="note-title">【花嫁講座①】「食べないダイエット」をした花嫁は、当日の写真で後悔します。一生に一度のドレスを「最高に美しく」着こなすための真実</span>
+                    </div>
                     <span class="arrow-icon">▶</span>
                 </a>
             </li>
 
             <li class="note-item">
                 <a href="https://note.com/yuri_organic/n/n589cadd48cf2" class="note-link" target="_blank">
-                    <span class="note-title">【保存版】「暴飲暴食肌」を3日でなかったことにする緊急レスキュー</span>
-                    <span class="note-desc">鏡を見て絶望したあなたへ。年末年始のリカバリー術。</span>
+                    <div class="note-thumb-box">
+                        <img src="https://assets.st-note.com/production/uploads/images/241788680/rectangle_large_type_2_d68a35a9ff3d81ab05c4def81330c57e.jpeg?width=1280" class="note-thumb" onerror="handleImageError(this)" alt="記事サムネイル">
+                    </div>
+                    <div class="note-content">
+                        <span class="note-title">【保存版】鏡を見て絶望したあなたへ。年末年始の「暴飲暴食肌」を3日でなかったことにする緊急レスキュー講義</span>
+                    </div>
                     <span class="arrow-icon">▶</span>
                 </a>
             </li>
 
             <li class="note-item">
                 <a href="https://note.com/yuri_organic/n/nba6d451fbd96" class="note-link" target="_blank">
-                    <span class="note-title">【栄養士直伝】23時に食べても大丈夫？「太らない年越しそば」の正解</span>
-                    <span class="note-desc">正月太りを回避する3つの秘策を公開。</span>
+                    <div class="note-thumb-box">
+                        <img src="https://assets.st-note.com/production/uploads/images/239836859/rectangle_large_type_2_01011a63756c64451bc722ce275b93e8.jpeg?width=1280" class="note-thumb" onerror="handleImageError(this)" alt="記事サムネイル">
+                    </div>
+                    <div class="note-content">
+                        <span class="note-title">【栄養士直伝】23時に食べても大丈夫？「太らない年越しそば」の正解と、正月太りを回避する3つの秘策</span>
+                    </div>
                     <span class="arrow-icon">▶</span>
                 </a>
             </li>
 
             <li class="note-item">
                 <a href="https://note.com/yuri_organic/n/n205ea6d9d6ac" class="note-link" target="_blank">
-                    <span class="note-title">産後ママ必見！無理なく「最速」で体型を取り戻す魔法の食事術<span class="price-tag">¥680</span></span>
-                    <span class="note-desc">栄養士が教える、忙しくても実践できるレシピ付き。</span>
+                    <div class="note-thumb-box">
+                        <img src="https://assets.st-note.com/production/uploads/images/237313004/rectangle_large_type_2_b28e63012bfa1223c64e91f249654aa3.jpeg?width=1280" class="note-thumb" onerror="handleImageError(this)" alt="記事サムネイル">
+                    </div>
+                    <div class="note-content">
+                        <span class="note-title">産後ママ必見！栄養士が教える、無理なく「最速」で体型を取り戻す魔法の食事術＆レシピ<span class="price-tag">¥680</span></span>
+                    </div>
                     <span class="arrow-icon">▶</span>
                 </a>
             </li>
 
             <li class="note-item">
                 <a href="https://note.com/yuri_organic/n/nea6bb43b063d" class="note-link" target="_blank">
-                    <span class="note-title">【緊急企画】3日で-2kg？『食べて痩せる「3日間リセット食」』完全マニュアル<span class="price-tag">¥300</span></span>
-                    <span class="note-desc">脂肪燃焼スープのレシピ付き。短期間で調整したい方へ。</span>
+                    <div class="note-thumb-box">
+                        <img src="https://assets.st-note.com/production/uploads/images/239164556/rectangle_large_type_2_1dfdfabf17237cb7e255843b9fe3d8b5.jpeg?width=1280" class="note-thumb" onerror="handleImageError(this)" alt="記事サムネイル">
+                    </div>
+                    <div class="note-content">
+                        <span class="note-title">【緊急企画】3日で-2kgも夢じゃない？栄養士が教える『食べて痩せる「3日間リセット食」』完全マニュアル<span class="price-tag">¥300</span></span>
+                    </div>
                     <span class="arrow-icon">▶</span>
                 </a>
             </li>
 
             <li class="note-item">
                 <a href="https://note.com/yuri_organic/n/nde3f43d312e5" class="note-link" target="_blank">
-                    <span class="note-title">【クリスマス当日】「太らない」ための賢いメニュー選び＆飲み方</span>
-                    <span class="note-desc">イベントを楽しみながら体型を維持するコツ。</span>
+                    <div class="note-thumb-box">
+                        <img src="https://assets.st-note.com/production/uploads/images/238675623/rectangle_large_type_2_c688585dd064f430c62b113efdec446d.jpeg?width=1280" class="note-thumb" onerror="handleImageError(this)" alt="記事サムネイル">
+                    </div>
+                    <div class="note-content">
+                        <span class="note-title">【クリスマス当日🎄】栄養士が教える！「太らない」ための賢いメニュー選び＆飲み方🍷✨</span>
+                    </div>
                     <span class="arrow-icon">▶</span>
                 </a>
             </li>
 
             <li class="note-item">
                 <a href="https://note.com/yuri_organic/n/n2e27726ddaba" class="note-link" target="_blank">
-                    <span class="note-title">食べて痩せるオーガニック・ダイエット｜21日間プログラム<span class="price-tag">¥480</span></span>
-                    <span class="note-desc">3週間で「肌と体」が変わる、栄養士実践の食事法。</span>
+                    <div class="note-thumb-box">
+                        <img src="https://assets.st-note.com/production/uploads/images/237186457/rectangle_large_type_2_fab1c7ef3f630f11ee81c53f1a95c6bc.jpeg?width=1280" class="note-thumb" onerror="handleImageError(this)" alt="記事サムネイル">
+                    </div>
+                    <div class="note-content">
+                        <span class="note-title">【栄養士が実践】食べて痩せるオーガニック・ダイエット｜21日間で「肌と体」が変わる食事プログラム<span class="price-tag">¥480</span></span>
+                    </div>
                     <span class="arrow-icon">▶</span>
                 </a>
             </li>
 
             <li class="note-item">
                 <a href="https://note.com/yuri_organic/n/n23d9f57c02c2" class="note-link" target="_blank">
-                    <span class="note-title">「運動嫌い」でも食事制限なしで－10kg達成した方法<span class="price-tag">¥880</span></span>
-                    <span class="note-desc">鍵は「食事の前後5分」にありました。</span>
+                    <div class="note-thumb-box">
+                        <img src="https://assets.st-note.com/production/uploads/images/237312294/rectangle_large_type_2_54836e56f74fd4d82e6050a8434d53df.jpeg?width=1280" class="note-thumb" onerror="handleImageError(this)" alt="記事サムネイル">
+                    </div>
+                    <div class="note-content">
+                        <span class="note-title">「運動嫌い」の栄養士が、食事制限なしで－10kg達成。鍵は「食事の前後5分」にありました。<span class="price-tag">¥880</span></span>
+                    </div>
                     <span class="arrow-icon">▶</span>
                 </a>
             </li>
-
         </ul>
     </div>
 
@@ -263,76 +257,111 @@
             
             <li class="note-item">
                 <a href="https://note.com/yuri_organic/n/nb8a8a082b1f4" class="note-link" target="_blank">
-                    <span class="note-title">デパコスに月5万消えていた私が、1本1,000円の化粧水を選んだ話</span>
-                    <span class="note-desc">「高い野菜」で過去最高の美肌を手に入れるまで。</span>
+                    <div class="note-thumb-box">
+                        <img src="https://assets.st-note.com/production/uploads/images/238468039/rectangle_large_type_2_fdb906e9562b115a848221f2648027c7.jpeg?width=1280" class="note-thumb" onerror="handleImageError(this)" alt="記事サムネイル">
+                    </div>
+                    <div class="note-content">
+                        <span class="note-title">【#私のお金の使い道】デパコスに月5万消えていた栄養士が、1本1,000円の化粧水と「高い野菜」で、過去最高の美肌を手に入れるまで🥕✨</span>
+                    </div>
                     <span class="arrow-icon">▶</span>
                 </a>
             </li>
 
             <li class="note-item">
                 <a href="https://note.com/yuri_organic/n/ncaa50f7e42d2" class="note-link" target="_blank">
-                    <span class="note-title">高級美容液をやめて、私が「オーガニック」を選んだ理由</span>
-                    <span class="note-desc">栄養士が見た、肌の真実と原点回帰。</span>
+                    <div class="note-thumb-box">
+                        <img src="https://assets.st-note.com/production/uploads/images/237276853/rectangle_large_type_2_71b3ff94fa37c86906a8ba69e073ed7e.jpeg?width=1280" class="note-thumb" onerror="handleImageError(this)" alt="記事サムネイル">
+                    </div>
+                    <div class="note-content">
+                        <span class="note-title">高級美容液をやめて、私が「オーガニック」を選んだ理由。栄養士が見た、肌の真実と原点回帰。</span>
+                    </div>
                     <span class="arrow-icon">▶</span>
                 </a>
             </li>
 
             <li class="note-item">
                 <a href="https://note.com/yuri_organic/n/n5308afb65213" class="note-link" target="_blank">
-                    <span class="note-title">カサカサ肌の原因は「ヘルシー志向」？肌を潤す「魔法のオイル」</span>
-                    <span class="note-desc">栄養士が教える、正しい油の選び方。</span>
+                    <div class="note-thumb-box">
+                        <img src="https://assets.st-note.com/production/uploads/images/237253572/rectangle_large_type_2_e25ffb7bf256246f16ab6c135cc102ab.jpeg?width=1280" class="note-thumb" onerror="handleImageError(this)" alt="記事サムネイル">
+                    </div>
+                    <div class="note-content">
+                        <span class="note-title">カサカサ肌の原因は「ヘルシー志向」？栄養士が教える、肌を潤す「魔法のオイル」の選び方</span>
+                    </div>
                     <span class="arrow-icon">▶</span>
                 </a>
             </li>
 
             <li class="note-item">
                 <a href="https://note.com/yuri_organic/n/n450fc45fcae3" class="note-link" target="_blank">
-                    <span class="note-title">「甘いものがやめられない」あなたへ。肌が焦げる「糖化」の真実</span>
-                    <span class="note-desc">体重よりも怖い、肌の老化を防ぐために。</span>
+                    <div class="note-thumb-box">
+                        <img src="https://assets.st-note.com/production/uploads/images/237251911/rectangle_large_type_2_a6c8cb0968493fdc85739bde0d7f1ad9.jpeg?width=1280" class="note-thumb" onerror="handleImageError(this)" alt="記事サムネイル">
+                    </div>
+                    <div class="note-content">
+                        <span class="note-title">「甘いものがやめられない」あなたへ。体重よりも怖い、肌が焦げる「糖化」の真実</span>
+                    </div>
                     <span class="arrow-icon">▶</span>
                 </a>
             </li>
 
             <li class="note-item">
                 <a href="https://note.com/yuri_organic/n/nec3110bcde81" class="note-link" target="_blank">
-                    <span class="note-title">【栄養士直伝】高い美容液より効く？30代からの「最高の美肌定食」</span>
-                    <span class="note-desc">食べるだけで肌が変わる、食事の黄金ルール。</span>
+                    <div class="note-thumb-box">
+                        <img src="https://assets.st-note.com/production/uploads/images/237201476/rectangle_large_type_2_d383e0ca09f2d1a06de68788adc8e45c.jpeg?width=1280" class="note-thumb" onerror="handleImageError(this)" alt="記事サムネイル">
+                    </div>
+                    <div class="note-content">
+                        <span class="note-title">【栄養士直伝】高い美容液より効く？30代からの肌を救う「最高の美肌定食」のルール</span>
+                    </div>
                     <span class="arrow-icon">▶</span>
                 </a>
             </li>
 
             <li class="note-item">
                 <a href="https://note.com/yuri_organic/n/n50d0ec92e370" class="note-link" target="_blank">
-                    <span class="note-title">「高い化粧品を使っても肌が変わらない」と嘆くあなたへ</span>
-                    <span class="note-desc">栄養士がたどり着いた、スキンケアの「黄金バランス」。</span>
+                    <div class="note-thumb-box">
+                        <img src="https://assets.st-note.com/production/uploads/images/237196268/rectangle_large_type_2_64062bf2a0c72e448978dace0eae5bbd.jpeg?width=1280" class="note-thumb" onerror="handleImageError(this)" alt="記事サムネイル">
+                    </div>
+                    <div class="note-content">
+                        <span class="note-title">「高い化粧品を使っても肌が変わらない」と嘆くあなたへ。栄養士がたどり着いた、スキンケアの「黄金バランス」</span>
+                    </div>
                     <span class="arrow-icon">▶</span>
                 </a>
             </li>
 
             <li class="note-item">
                 <a href="https://note.com/yuri_organic/n/n150684409d15" class="note-link" target="_blank">
-                    <span class="note-title">夕方の顔が「土色」に見えたら要注意。血色を取り戻す「温活」食事術</span>
-                    <span class="note-desc">美白美容液より効く、内側からのケア。</span>
+                    <div class="note-thumb-box">
+                        <img src="https://assets.st-note.com/production/uploads/images/237257739/rectangle_large_type_2_72d2a144dd7fbad551286d2754e25974.jpeg?width=1280" class="note-thumb" onerror="handleImageError(this)" alt="記事サムネイル">
+                    </div>
+                    <div class="note-content">
+                        <span class="note-title">夕方の顔が「土色」に見えたら要注意。美白美容液より効く、血色を取り戻す「温活」食事術</span>
+                    </div>
                     <span class="arrow-icon">▶</span>
                 </a>
             </li>
 
             <li class="note-item">
                 <a href="https://note.com/yuri_organic/n/na3b2a84c6992" class="note-link" target="_blank">
-                    <span class="note-title">マリッジブルーで肌荒れしていませんか？心と肌を整えるインナーケア</span>
-                    <span class="note-desc">ストレスに負けない肌を作るための食事。</span>
+                    <div class="note-thumb-box">
+                        <img src="https://assets.st-note.com/production/uploads/images/240393454/rectangle_large_type_2_f5b0f1b576317aaf8eb5ac33e19a2213.jpeg?width=1280" class="note-thumb" onerror="handleImageError(this)" alt="記事サムネイル">
+                    </div>
+                    <div class="note-content">
+                        <span class="note-title">マリッジブルーで肌荒れしていませんか？心と肌を整えるインナーケア</span>
+                    </div>
                     <span class="arrow-icon">▶</span>
                 </a>
             </li>
 
             <li class="note-item">
                 <a href="https://note.com/yuri_organic/n/n92a0a376f3e6" class="note-link" target="_blank">
-                    <span class="note-title">【栄養士監修】肌荒れリセット！『7日間の美肌・腸活献立プログラム』<span class="price-tag">¥300</span></span>
-                    <span class="note-desc">コンビニ飯でも実践可能。買い物リスト付き。</span>
+                    <div class="note-thumb-box">
+                        <img src="https://assets.st-note.com/production/uploads/images/239145093/rectangle_large_type_2_6924a4f3d64da754461e33ec2cbc914e.jpeg?width=1280" class="note-thumb" onerror="handleImageError(this)" alt="記事サムネイル">
+                    </div>
+                    <div class="note-content">
+                        <span class="note-title">【栄養士監修】肌荒れリセット！コンビニ飯でもできる『7日間の美肌・腸活献立プログラム』（買い物リスト付き）<span class="price-tag">¥300</span></span>
+                    </div>
                     <span class="arrow-icon">▶</span>
                 </a>
             </li>
-
         </ul>
     </div>
 
@@ -342,77 +371,148 @@
             
             <li class="note-item">
                 <a href="https://note.com/yuri_organic/n/n40a06a10e164" class="note-link" target="_blank">
-                    <span class="note-title">【自己紹介】メルボルン育ちの栄養士が、「完璧なごはん」を手放した理由</span>
-                    <span class="note-desc">私の原点と、栄養士としての想い。</span>
+                    <div class="note-thumb-box">
+                        <img src="https://assets.st-note.com/production/uploads/images/237793695/rectangle_large_type_2_3409b8f981587a6c1300a22e89517c64.jpeg?width=1280" class="note-thumb" onerror="handleImageError(this)" alt="記事サムネイル">
+                    </div>
+                    <div class="note-content">
+                        <span class="note-title">【自己紹介】メルボルン育ち　栄養士が、「完璧なごはん」を手放した理由。</span>
+                    </div>
                     <span class="arrow-icon">▶</span>
                 </a>
             </li>
 
             <li class="note-item">
                 <a href="https://note.com/yuri_organic/n/nf776665cec66" class="note-link" target="_blank">
-                    <span class="note-title">「食べてストレス発散」は意志が弱いからじゃない</span>
-                    <span class="note-desc">心を鎮めて勝手に痩せる「食の処方箋」。</span>
+                    <div class="note-thumb-box">
+                        <img src="https://assets.st-note.com/production/uploads/images/237330049/rectangle_large_type_2_83cd6b8bc82eb4fe190e4f96683cf07e.jpeg?width=1280" class="note-thumb" onerror="handleImageError(this)" alt="記事サムネイル">
+                    </div>
+                    <div class="note-content">
+                        <span class="note-title">「食べてストレス発散」は意志が弱いからじゃない。栄養士が教える、心を鎮めて勝手に痩せる「食の処方箋」</span>
+                    </div>
                     <span class="arrow-icon">▶</span>
                 </a>
             </li>
 
             <li class="note-item">
                 <a href="https://note.com/yuri_organic/n/n63dd9da81158" class="note-link" target="_blank">
-                    <span class="note-title">14時の魔の時間に勝つ。「午後の眠気」を消し去るランチの絶対法則</span>
-                    <span class="note-desc">仕事のパフォーマンスを最大化する食事術。</span>
+                    <div class="note-thumb-box">
+                        <img src="https://assets.st-note.com/production/uploads/images/242449834/rectangle_large_type_2_fcc1c1692913dbb438018eab8dfc7436.jpeg?width=1280" class="note-thumb" onerror="handleImageError(this)" alt="記事サムネイル">
+                    </div>
+                    <div class="note-content">
+                        <span class="note-title">【栄養士が解説】14時の魔の時間に勝つ。「午後の眠気」を消し去るランチの絶対法則</span>
+                    </div>
                     <span class="arrow-icon">▶</span>
                 </a>
             </li>
 
             <li class="note-item">
                 <a href="https://note.com/yuri_organic/n/nc4a45beefe88" class="note-link" target="_blank">
-                    <span class="note-title">年末年始の「お酒」と賢く付き合う教科書</span>
-                    <span class="note-desc">ダメージ最小限の飲み方＆翌朝のリカバリー術。</span>
+                    <div class="note-thumb-box">
+                        <img src="https://assets.st-note.com/production/uploads/images/239603987/rectangle_large_type_2_b7db7595e6fdb36f1ae6b304fb8bfa21.jpeg?width=1280" class="note-thumb" onerror="handleImageError(this)" alt="記事サムネイル">
+                    </div>
+                    <div class="note-content">
+                        <span class="note-title">【栄養士直伝】年末年始の「お酒」と賢く付き合う教科書。ダメージ最小限の飲み方＆翌朝のリカバリー術</span>
+                    </div>
                     <span class="arrow-icon">▶</span>
                 </a>
             </li>
 
             <li class="note-item">
                 <a href="https://note.com/yuri_organic/n/n4bab7b18ccd0" class="note-link" target="_blank">
-                    <span class="note-title">【#今年の振り返り】名古屋への出張のはずが…気づいたら「京都」だった件🚅</span>
-                    <span class="note-desc">絶望が「最高の休日」に変わった春の失敗談。</span>
+                    <div class="note-thumb-box">
+                        <img src="https://assets.st-note.com/production/uploads/images/238270011/rectangle_large_type_2_bab5635f53c3e20361f857fe769280b7.jpeg?width=1280" class="note-thumb" onerror="handleImageError(this)" alt="記事サムネイル">
+                    </div>
+                    <div class="note-content">
+                        <span class="note-title">【#今年の振り返り】名古屋への出張のはずが…気づいたら「京都」だった件🚅💦 絶望が「最高の休日」に変わった春の失敗談🌸</span>
+                    </div>
                     <span class="arrow-icon">▶</span>
                 </a>
             </li>
 
             <li class="note-item">
                 <a href="https://note.com/yuri_organic/n/nf3fc271b9297" class="note-link" target="_blank">
-                    <span class="note-title">【#今年の振り返り】ベトナムの路地裏から、沖縄の海風へ</span>
-                    <span class="note-desc">2025年、私が「食」と「人」に救われた旅の記録。</span>
+                    <div class="note-thumb-box">
+                        <img src="https://assets.st-note.com/production/uploads/images/238270126/rectangle_large_type_2_2b11d8307d4860f0cbe3e2d1c5c2c9ef.jpeg?width=1280" class="note-thumb" onerror="handleImageError(this)" alt="記事サムネイル">
+                    </div>
+                    <div class="note-content">
+                        <span class="note-title">【#今年の振り返り】ベトナムの路地裏から、沖縄の海風へ。2025年、私が「食」と「人」に救われ、少しだけ強くなれた旅の記録✈️</span>
+                    </div>
                     <span class="arrow-icon">▶</span>
                 </a>
             </li>
 
             <li class="note-item">
                 <a href="https://note.com/yuri_organic/n/n02b10396eee6" class="note-link" target="_blank">
-                    <span class="note-title">【緊急企画】クリスマス＆忘年会で「食べ過ぎた」あなたへ</span>
-                    <span class="note-desc">栄養士が教える、翌日の「正解リセット術」。</span>
+                    <div class="note-thumb-box">
+                        <img src="https://assets.st-note.com/production/uploads/images/238084511/rectangle_large_type_2_c5d29d6ce9c664fb7fbfb62a7c8103ea.jpeg?width=1280" class="note-thumb" onerror="handleImageError(this)" alt="記事サムネイル">
+                    </div>
+                    <div class="note-content">
+                        <span class="note-title">【緊急企画🎄】クリスマス＆忘年会で「食べ過ぎた」あなたへ🍰 栄養士が教える、翌日の「正解リセット術」✨</span>
+                    </div>
                     <span class="arrow-icon">▶</span>
                 </a>
             </li>
 
             <li class="note-item">
                 <a href="https://note.com/yuri_organic/n/n5677698b3775" class="note-link" target="_blank">
-                    <span class="note-title">冬の「冷え」は不調の始まり。体温を上げて免疫と美肌を守る</span>
-                    <span class="note-desc">冬の最強栄養学＆リセットレシピ。</span>
+                    <div class="note-thumb-box">
+                        <img src="https://assets.st-note.com/production/uploads/images/238072500/rectangle_large_type_2_b64345da6a63c67c8a9cdfdbf7cb69f5.jpeg?width=1280" class="note-thumb" onerror="handleImageError(this)" alt="記事サムネイル">
+                    </div>
+                    <div class="note-content">
+                        <span class="note-title">【栄養士】冬の「冷え」は不調の始まり。体温を上げて免疫と美肌を守る、冬の最強栄養学＆リセットレシピ</span>
+                    </div>
                     <span class="arrow-icon">▶</span>
                 </a>
             </li>
-
         </ul>
     </div>
 
-    <div class="profile-link-area">
-        <p>最新の記事はNoteで更新中！<br>フォローして情報をお受け取りください。</p>
-        <a href="https://note.com/yuri_organic" class="btn-green" target="_blank">Noteでフォローする</a>
+</main>
+
+<footer>
+  <div class="footer-container">
+    <div class="footer-col">
+      <h3>🌸 スキンケア・悩み別</h3>
+      <a href="bridal-care.html">👰 結婚式直前！背中・二の腕ケア<span class="new-mark">New!!</span></a>
+      <a href="skin-ranking.html">おすすめスキンケアランキング</a>
+      <a href="seasons-skin.html">季節別スキンケア（春夏秋冬）</a>
+      <a href="age-skincare.html">40代・50代 年齢別ケア</a>
+      <a href="acne-care.html">肌荒れ・敏感肌・ニキビケア</a>
+      <a href="lifestyle-skincare.html">生活リズム別（時短・夜型など）</a>
     </div>
 
-</div>
+    <div class="footer-col">
+      <h3>🛁 ボディ・ヘア・インナー</h3>
+      <a href="hair-care.html">ヘアケア・頭皮ケア特集</a>
+      <a href="diet-beauty.html">インナービューティー＆ダイエット</a>
+      <a href="smoothie-recipes.html">栄養士おすすめ！スムージーのレシピ<span class="new-mark">New!!</span></a>
+      <a href="amazon-oil-review.html">本当に効く！オイルレビュー</a>
+      <a href="organic-science.html">オーガニック成分の科学</a>
+    </div>
+
+    <div class="footer-col">
+      <h3>🎁 特集・コラム・その他</h3>
+      <a href="gift-selection.html">心をつなぐオーガニックギフト</a>
+      <a href="trial-sets.html">失敗しない！お試しセット比較</a>
+      <a href="winter-selection.html">冬のベストセレクション</a>
+      <a href="beauty-column.html">ビューティーコラム一覧</a>
+      <a href="sonoko-diet.html">食べて痩せる肌診断 <span class="new-mark">New!!</span></a>
+      <a href="about.html">当サイトについて (About)</a>
+    </div>
+
+  </div>
+   
+  <div class="footer-bottom">
+      <a href="https://room.rakuten.co.jp/room_e0dd63a90a/items" target="_blank" rel="noopener" class="footer-room-link">
+        🏠 管理人Yuriの楽天ROOMを見る
+      </a>
+      <br>
+      © 2025 Essential Beauty Needs<br><br>
+      <a href="privacy-policy.html" style="color:#888; text-decoration:none; font-size:12px;">プライバシーポリシー</a>
+  </div>
+</footer>
+
+<div id="affiliateNotice">※当サイトはアフィリエイト広告（Amazonアソシエイト含む）を利用しています</div>
 
 </body>
 </html>
