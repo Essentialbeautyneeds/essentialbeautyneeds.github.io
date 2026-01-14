@@ -39,7 +39,7 @@
       --accent: #f48b8b;
       --header-grad-start: #f8dcdc;
       --header-grad-end: #fbeaea;
-      --room-color: #c63535; /* 楽天ROOM用カラー */
+      --room-color: #c63535;
     }
     *, *::before, *::after { box-sizing: border-box; }
 
@@ -50,6 +50,7 @@
       color: #555; 
     }
 
+    /* --- ヘッダー --- */
     header {
       background: linear-gradient(90deg, var(--header-grad-start), var(--header-grad-end));
       text-align: center;
@@ -71,11 +72,38 @@
       font-weight: 600;
     }
 
-    /* ナビゲーション（共通スタイル） */
-    .nav-links{display:flex;gap:12px;justify-content:center;margin-top:25px;flex-wrap:wrap;}
-    .nav-links a{background:rgba(255,255,255,0.6);padding:8px 12px;border-radius:20px;text-decoration:none;color:#503535;font-weight:600; font-size:14px; box-shadow: 0 2px 5px rgba(0,0,0,0.05);}
-    .nav-links a:hover{background:var(--accent);color:#fff;}
-    .nav-break { flex-basis: 100%; height: 0; margin: 5px 0; }
+    /* ▼▼▼ スッキリ・ヘッダー用スタイル ▼▼▼ */
+    /* メインナビ */
+    .main-nav { display: flex; justify-content: center; gap: 15px; margin-bottom: 15px; margin-top: 25px; }
+    .main-nav a {
+        background: rgba(255,255,255,0.9); padding: 8px 16px; border-radius: 20px;
+        text-decoration: none; color: #503535; font-weight: bold; font-size: 14px;
+        box-shadow: 0 2px 5px rgba(0,0,0,0.05); transition: 0.3s;
+    }
+    .main-nav a:hover { transform: translateY(-2px); color: #c63535; }
+
+    /* 開閉式メニュー */
+    details.menu-toggle { margin: 0 auto; max-width: 400px; cursor: pointer; position: relative; z-index: 100; }
+    summary.menu-btn {
+        list-style: none; font-size: 13px; color: #888; font-weight: bold;
+        padding: 8px 15px; border: 1px solid #e6b7b3; border-radius: 20px;
+        background: rgba(255,255,255,0.6); display: inline-block;
+    }
+    summary.menu-btn::after { content: " ▼"; font-size: 10px; }
+    details[open] summary.menu-btn::after { content: " ▲"; }
+
+    .hidden-links {
+        display: flex; flex-wrap: wrap; justify-content: center; gap: 8px;
+        margin-top: 10px; padding: 15px; background: rgba(255,255,255,0.95);
+        border-radius: 12px; box-shadow: 0 4px 15px rgba(0,0,0,0.1);
+        animation: fadeIn 0.3s ease;
+    }
+    .hidden-links a {
+        font-size: 12px; text-decoration: none; color: #555;
+        padding: 6px 12px; background: #fff; border-radius: 6px; border: 1px solid #eee;
+    }
+    @keyframes fadeIn { from { opacity: 0; transform: translateY(-5px); } to { opacity: 1; transform: translateY(0); } }
+    /* ▲▲▲ ここまで ▲▲▲ */
 
     /* Special Link Button */
     .special-link a {
@@ -95,7 +123,7 @@
       box-shadow: 0 6px 15px rgba(0,0,0,0.2);
     }
 
-    /* ▼▼▼ 追加：診断ボタン用のアニメーション ▼▼▼ */
+    /* 診断ボタン用アニメーション */
     @keyframes pulse-glow {
       0% { box-shadow: 0 0 0 0 rgba(230, 126, 34, 0.4); transform: scale(1); }
       50% { box-shadow: 0 0 0 10px rgba(230, 126, 34, 0); transform: scale(1.02); }
@@ -103,15 +131,14 @@
     }
     .diagnosis-banner {
       background: #fff;
-      border: 3px solid #f39c12; /* 目立つオレンジ/ゴールド系 */
+      border: 3px solid #f39c12; 
       border-radius: 15px;
       padding: 25px;
       text-align: center;
-      margin: 30px auto; /* 中央寄せ */
+      margin: 30px auto;
       position: relative;
       max-width: 650px;
     }
-    /* 「NEW!」などのバッジ */
     .diagnosis-badge {
         background: #d35400; color: #fff; padding: 5px 15px; border-radius: 5px;
         font-weight: bold; font-size: 12px; position: absolute; top: -15px; left: 50%;
@@ -128,14 +155,20 @@
       text-decoration: none;
       margin-top: 15px;
       box-shadow: 0 4px 15px rgba(230, 126, 34, 0.4);
-      /* ここでキラキラさせます */
       animation: pulse-glow 2s infinite;
     }
     .diagnosis-btn:hover {
         opacity: 0.9;
         transform: translateY(-2px);
     }
-    /* ▲▲▲ 追加ここまで ▲▲▲ */
+
+    /* Note誘導バナー（キラキラボタン） */
+    @keyframes shine { 0% { transform: translateX(-100%) skewX(-15deg); } 100% { transform: translateX(200%) skewX(-15deg); } }
+    .shiny-btn::after {
+      content: ''; position: absolute; top: 0; left: 0; width: 50%; height: 100%;
+      background: linear-gradient(to right, rgba(255,255,255,0) 0%, rgba(255,255,255,0.3) 50%, rgba(255,255,255,0) 100%);
+      transform: skewX(-15deg); animation: shine 3s infinite;
+    }
 
     main {
       max-width: 900px;
@@ -143,7 +176,6 @@
       padding: 0 20px;
     }
 
-    /* 見出しスタイル */
     h2 {
       font-family: 'Playfair Display', serif;
       color: var(--text-main);
@@ -158,7 +190,6 @@
       box-shadow: 0 4px 10px rgba(0,0,0,0.05);
     }
 
-    /* ランキング導入文 */
     .rank-intro {
       background: #fff;
       padding: 25px;
@@ -171,7 +202,6 @@
       box-shadow: 0 2px 8px rgba(0,0,0,0.05);
     }
 
-    /* ランキングリスト */
     .ranking-list {
       display: flex;
       flex-direction: column;
@@ -185,7 +215,6 @@
       box-shadow: 0 4px 15px rgba(0,0,0,0.03);
     }
 
-    /* 順位バッジ */
     .badge {
       position: absolute;
       top: -15px;
@@ -207,7 +236,6 @@
     .badge.rank2 { background: linear-gradient(45deg, #C0C0C0, #E0E0E0); color: #555; }
     .badge.rank3 { background: linear-gradient(45deg, #CD7F32, #E8A668); }
 
-    /* ★追加：商品説明エリア★ */
     .item-desc {
         background: #fff9f9;
         border-left: 5px solid #f48b8b;
@@ -237,7 +265,6 @@
         margin-bottom: 5px;
     }
 
-    /* スタッフ一押しエリア */
     .staff-push-box {
         margin: 60px 0; 
         background: #fff4f4; 
@@ -247,7 +274,7 @@
         border: 2px dashed #f48b8b;
     }
 
-    /* 楽天ROOMリンク用スタイル（コード版） */
+    /* 楽天ROOM */
     .room-promo {
         background: #fff;
         border: 2px dashed var(--room-color);
@@ -275,7 +302,7 @@
         box-shadow: 0 6px 14px rgba(198, 53, 53, 0.4);
     }
 
-    /* フッター（リンク網羅型） */
+    /* フッター */
     footer {
         background: #fffaf4;
         border-top: 3px solid #f7a8a8;
@@ -326,27 +353,15 @@
     .back-btn { text-align:center; margin: 40px 0; }
     .back-btn a { color: #777; text-decoration: none; border-bottom: 1px solid #ccc; }
 
-    /* レスポンシブ */
     @media(max-width: 700px){
       header h1 { font-size: 28px; }
       .badge { left: 50%; transform: translateX(-50%); top: -20px;}
       .rank-item { margin-top: 25px; }
     }
-@keyframes blinkEffect {
-    0% { opacity: 1; }
-    50% { opacity: 0.3; }
-    100% { opacity: 1; }
-}
-
-.new-mark {
-    color: #ff0000;       /* 文字色を赤にする */
-    font-weight: bold;    /* 太文字にする */
-    font-size: 0.8em;     /* リンク文字より少し小さくする */
-    margin-left: 5px;     /* 前の文字と少し間隔を空ける */
-    animation: blinkEffect 1.2s infinite; /* 1.2秒間隔で点滅を繰り返す */
-    vertical-align: super; /* 少し上付き文字にする */
-}
-    
+    @keyframes blinkEffect { 0% { opacity: 1; } 50% { opacity: 0.3; } 100% { opacity: 1; } }
+    .new-mark {
+        color: #ff0000; font-weight: bold; font-size: 0.8em; margin-left: 5px; animation: blinkEffect 1.2s infinite; vertical-align: super;
+    }
   </style>
 </head>
 <body>
@@ -355,21 +370,25 @@
   <h1>💖 花嫁スキンケアランキング</h1>
   <p>挙式までに「結果」を出したいあなたへ。<br>目的別に厳選したオーガニック名品。</p>
 
-  <div class="nav-links" role="navigation">
-    <a href="index.html">🏠 トップ</a>
-    <a href="bridal-care.html">👰 花嫁ケア診断</a>
-    <a href="trial-sets.html" style="background:#fff0f5; border:1px solid #ffb6c1; font-weight:bold;">🔰 お試しセット</a>
-    <div class="nav-break"></div>
-    
-    <a href="seasons-skin.html">🌸 季節別</a>
-    <a href="age-skincare.html">👩 年齢・肌質別</a>
-    <a href="lifestyle-skincare.html">💆‍♀️ 生活リズム別</a>
-    <div class="nav-break"></div>
+  <nav class="main-nav">
+      <a href="index.html">🏠 公式サイトTOP</a>
+      <a href="bridal-care.html">👰 花嫁ケア診断</a>
+  </nav>
 
-    <a href="organic-science.html">🔬 成分の科学</a>
-    <a href="beauty-column.html">💄 コラム</a>
-    <a href="diet-beauty.html">🍃 インナービューティー</a>
-</div>
+  <details class="menu-toggle">
+      <summary class="menu-btn">その他のメニューを表示</summary>
+      <div class="hidden-links">
+          <a href="skin-ranking.html">✨ ランキング</a>
+          <a href="trial-sets.html">🔰 お試しセット</a>
+          <a href="seasons-skin.html">🌸 季節別ケア</a>
+          <a href="age-skincare.html">👩 年齢別ケア</a>
+          <a href="lifestyle-skincare.html">💆‍♀️ 生活リズム別</a>
+          <a href="organic-science.html">🔬 成分の科学</a>
+          <a href="beauty-column.html">💄 コラム</a>
+          <a href="diet-beauty.html">🍃 インナービューティー</a>
+          <a href="note-archive.html">📕 公式Note</a>
+      </div>
+  </details>
   
  <div style="
     background: linear-gradient(135deg, #fff0f0, #ffeaf2);
@@ -700,7 +719,7 @@
             忙しい準備期間も、これ一本で高保湿ケアが完了。私の最強のパートナーです。
         </p>
     </div>
-<div style="background:#fff5f5; border-radius:15px; padding:30px; margin:40px 0; border:2px solid #ffdecb;">
+    <div style="background:#fff5f5; border-radius:15px; padding:30px; margin:40px 0; border:2px solid #ffdecb;">
         <h2 style="color:#d68e33; text-align:center; margin-top:0; border-bottom:none;">🍽️ あなたの「好物」でバレる！？<br>肌トラブル診断</h2>
         <p style="text-align:center; font-size:14px;">好きな食べ物は、今の体内の栄養バランスと肌状態を映す鏡です。<br>当てはまるものをチェックしてみましょう。</p>
 
@@ -773,49 +792,40 @@
       </a>
   </div>
 
+  <div style="max-width: 650px; margin: 50px auto; padding: 5px; background: linear-gradient(135deg, #f7a8a8 0%, #ffdecb 100%); border-radius: 20px; box-shadow: 0 10px 25px rgba(247, 168, 168, 0.25);">
+    <div style="background: #ffffff; border-radius: 15px; padding: 30px 20px; text-align: center; position: relative; overflow: hidden;">
+      
+      <span style="display: inline-block; background: #e74c3c; color: #fff; font-size: 12px; font-weight: bold; padding: 4px 12px; border-radius: 20px; vertical-align: middle; box-shadow: 0 2px 5px rgba(231, 76, 60, 0.3); margin-bottom: 10px;">
+        保存版・アーカイブ完成
+      </span>
+
+      <h3 style="margin: 5px 0 15px; font-size: 22px; color: #503535; font-family: 'Playfair Display', serif, sans-serif; line-height: 1.4;">
+        <span style="font-size: 0.8em; color: #d4a373;">栄養士Yuriの全ノウハウ公開</span><br>
+        読むだけで変わる「花嫁美容」Note
+      </h3>
+
+      <div style="background: #fffaf4; border: 1px dashed #d4a373; border-radius: 10px; padding: 15px; margin: 15px auto; max-width: 90%; text-align: left; font-size: 15px; color: #555;">
+        <p style="margin: 5px 0;">👰 <strong>プレ花嫁講座</strong>：ドレス姿を変える食事術</p>
+        <p style="margin: 5px 0;">📖 <strong>自己紹介</strong>：私が発信を続ける理由</p>
+        <p style="margin: 5px 0;">✨ <strong>高級美容液より効く</strong>「美肌定食」とは？</p>
+      </div>
+
+      <a href="note-archive.html" class="shiny-btn" style="display: block; width: 100%; max-width: 320px; margin: 20px auto 10px; background: linear-gradient(45deg, #f7a8a8, #d68e33); color: #fff; text-decoration: none; font-weight: bold; font-size: 18px; padding: 18px 0; border-radius: 50px; box-shadow: 0 5px 15px rgba(247, 168, 168, 0.4); position: relative; overflow: hidden; transition: transform 0.2s;">
+        全記事一覧を無料で見る ▶
+      </a>
+      
+      <p style="font-size: 12px; color: #999; margin-top: 10px;">※プレ花嫁様以外も役立つ情報満載です</p>
+    </div>
+  </div>
+
   <div class="back-btn">
     <a href="index.html">← トップページへ戻る</a>
   </div>
 
 </main>
 
- <div style="max-width: 650px; margin: 50px auto; padding: 5px; background: linear-gradient(135deg, #f7a8a8 0%, #ffdecb 100%); border-radius: 20px; box-shadow: 0 10px 25px rgba(247, 168, 168, 0.25);">
-  <div style="background: #ffffff; border-radius: 15px; padding: 30px 20px; text-align: center; position: relative; overflow: hidden;">
-    
-    <style>
-      @keyframes shine { 0% { transform: translateX(-100%) skewX(-15deg); } 100% { transform: translateX(200%) skewX(-15deg); } }
-      .shiny-btn::after {
-        content: ''; position: absolute; top: 0; left: 0; width: 50%; height: 100%;
-        background: linear-gradient(to right, rgba(255,255,255,0) 0%, rgba(255,255,255,0.3) 50%, rgba(255,255,255,0) 100%);
-        transform: skewX(-15deg); animation: shine 3s infinite;
-      }
-    </style>
-
-    <span style="display: inline-block; background: #e74c3c; color: #fff; font-size: 12px; font-weight: bold; padding: 4px 12px; border-radius: 20px; vertical-align: middle; box-shadow: 0 2px 5px rgba(231, 76, 60, 0.3); margin-bottom: 10px;">
-      保存版・アーカイブ完成
-    </span>
-
-    <h3 style="margin: 5px 0 15px; font-size: 22px; color: #503535; font-family: 'Playfair Display', serif, sans-serif; line-height: 1.4;">
-      <span style="font-size: 0.8em; color: #d4a373;">栄養士Yuriの全ノウハウ公開</span><br>
-      読むだけで変わる「花嫁美容」Note
-    </h3>
-
-    <div style="background: #fffaf4; border: 1px dashed #d4a373; border-radius: 10px; padding: 15px; margin: 15px auto; max-width: 90%; text-align: left; font-size: 15px; color: #555;">
-      <p style="margin: 5px 0;">👰 <strong>プレ花嫁講座</strong>：ドレス姿を変える食事術</p>
-      <p style="margin: 5px 0;">📖 <strong>自己紹介</strong>：私が発信を続ける理由</p>
-      <p style="margin: 5px 0;">✨ <strong>高級美容液より効く</strong>「美肌定食」とは？</p>
-    </div>
-
-    <a href="note-archive.html" class="shiny-btn" style="display: block; width: 100%; max-width: 320px; margin: 20px auto 10px; background: linear-gradient(45deg, #f7a8a8, #d68e33); color: #fff; text-decoration: none; font-weight: bold; font-size: 18px; padding: 18px 0; border-radius: 50px; box-shadow: 0 5px 15px rgba(247, 168, 168, 0.4); position: relative; overflow: hidden; transition: transform 0.2s;">
-      全記事一覧を無料で見る ▶
-    </a>
-    
-    <p style="font-size: 12px; color: #999; margin-top: 10px;">※プレ花嫁様以外も役立つ情報満載です</p>
-  </div>
-</div>
  <footer>
   <div class="footer-container">
-    
     <div class="footer-col">
       <h3>🌸 スキンケア・悩み別</h3>
       <a href="bridal-care.html">👰 結婚式直前！背中・二の腕ケア<span class="new-mark">New!!</span></a>
@@ -846,7 +856,6 @@
       <a href="sonoko-diet.html">食べて痩せる肌診断 <span class="new-mark">New!!</span></a>
       <a href="about.html">当サイトについて (About)</a>
     </div>
-
   </div>
    
   <div class="footer-bottom">
