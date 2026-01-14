@@ -20,8 +20,8 @@
         }
         function handleImageError(imgElement) {
             imgElement.onerror = null;
-            imgElement.src = "https://placehold.co/150x110/fcece3/d4a373?text=Note"; 
-            imgElement.style.objectFit = "cover";
+            imgElement.src = "https://placehold.co/160x90/fcece3/d4a373?text=Note"; 
+            imgElement.style.objectFit = "contain";
         }
     </script>
 
@@ -30,7 +30,7 @@
         *{box-sizing:border-box;margin:0;padding:0;}
         body{font-family:'Quicksand',sans-serif;background:var(--bg);color:#333; line-height: 1.8;}
 
-        /* --- ヘッダー（スッキリ版） --- */
+        /* --- ヘッダー --- */
         header{
             text-align:center; color:var(--text-main); padding: 40px 20px 20px;
             background: linear-gradient(135deg, #ffe6e6, #ffdcdc); border-bottom:3px solid #e6b7b3;
@@ -77,14 +77,28 @@
 
         h2.section-title { text-align: center; font-family: 'Playfair Display', serif; font-size: 24px; color: var(--text-main); margin-top: 40px; margin-bottom: 20px; border-bottom: 2px solid #fcece3; display: inline-block; padding-bottom: 5px; }
         
-        /* リストデザイン */
+        /* リストデザイン（16:9対応） */
         .note-list { list-style: none; padding: 0; margin: 0; }
         .note-item { background: #fff; border: 1px solid #eee; margin-bottom: 15px; border-radius: 12px; transition: transform 0.2s, box-shadow 0.2s; overflow: hidden; }
         .note-item:hover { transform: translateY(-2px); box-shadow: 0 4px 12px rgba(0,0,0,0.08); border-color: #fcece3; }
         .note-link { display: flex; text-decoration: none; color: #333; align-items: center; }
         
-        .note-thumb-box { width: 140px; height: 95px; flex-shrink: 0; background: #fff; position: relative; border-right: 1px solid #eee; }
-        .note-thumb { width: 100%; height: 100%; object-fit: cover; position: absolute; top: 0; left: 0; }
+        .note-thumb-box {
+            width: 160px; /* 幅を広げる */
+            height: 90px; /* 16:9の比率になる高さ */
+            flex-shrink: 0;
+            background: #f9f9f9; /* 画像が収まらなかった部分の背景色 */
+            position: relative;
+            border-right: 1px solid #eee;
+        }
+        .note-thumb {
+            width: 100%;
+            height: 100%;
+            object-fit: contain; /* 画像全体を枠内に収める（切れない） */
+            position: absolute;
+            top: 0;
+            left: 0;
+        }
         .note-content { padding: 12px 15px; flex: 1; }
         .note-title { font-size: 15px; font-weight: bold; margin: 0; display: block; color: var(--text-main); line-height: 1.5; }
         .arrow-icon { color: #f4b5b5; font-size: 18px; margin-left: 10px; margin-right: 15px; }
@@ -102,7 +116,10 @@
         .banner-button:hover { transform: translateY(-2px); opacity: 0.95; }
 
         @media (max-width: 600px) {
-            .note-thumb-box { width: 100px; height: 80px; }
+            .note-thumb-box {
+                width: 120px; /* スマホでの幅 */
+                height: 67.5px; /* 16:9比率 */
+            }
             .note-title { font-size: 13px; }
             .note-content { padding: 10px; }
             .arrow-icon { display: none; }
@@ -120,19 +137,19 @@
         .footer-col a { display: block; color: #666; text-decoration: none; margin-bottom: 8px; }
         .footer-col a:hover { color: #d6336c; }
         
-        /* New!! マークの点滅アニメーション */
+        /* New!! マーク */
         @keyframes blinkEffect { 0% { opacity: 1; } 50% { opacity: 0.3; } 100% { opacity: 1; } }
         .new-mark { color: #ff0000; font-weight: bold; font-size: 0.8em; margin-left: 5px; animation: blinkEffect 1.2s infinite; vertical-align: super; }
 
-        /* 楽天ROOMボタンのデザイン復活 */
+        /* 楽天ROOMボタン */
         .footer-bottom { text-align: center; margin-top: 30px; border-top: 1px solid #eee; padding-top: 20px; }
         .footer-room-link {
             display: inline-block;
             color: #c63535;
             font-weight: bold;
-            border: 1px solid #c63535; /* 赤い枠線 */
+            border: 1px solid #c63535;
             padding: 10px 25px;
-            border-radius: 30px; /* 角丸 */
+            border-radius: 30px;
             text-decoration: none;
             background: #fff;
             transition: 0.3s;
@@ -232,7 +249,7 @@
             <li class="note-item" style="opacity: 0.8;">
                 <a href="#" class="note-link" onclick="if(this.getAttribute('href')=='#'){alert('明日公開予定です！お楽しみに！'); return false;}">
                     <div class="note-thumb-box">
-                        <img src="https://placehold.co/150x110/eee/999?text=Coming+Soon" class="note-thumb" alt="Coming Soon">
+                        <img src="https://placehold.co/160x90/eee/999?text=Coming+Soon" class="note-thumb" alt="Coming Soon">
                     </div>
                     <div class="note-content">
                         <span class="note-title" style="color:#666;">【花嫁講座⑤完】式が終わっても「綺麗だね」と言われたい。リバウンド地獄を回避し、一生「太らない妻」になる方法（明日公開）</span>
