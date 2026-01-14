@@ -83,43 +83,99 @@
         .note-link { display: flex; text-decoration: none; color: #333; align-items: center; }
         
         .note-thumb-box { 
-    width: 180px;  /* 幅を広げる */
-    height: 100px; /* 高さを固定 */
-    flex-shrink: 0; 
-    background: #fff; /* 背景を白に */
-    position: relative; 
-    border-right: 1px solid #eee; /* 画像と文字の境目に線を引く */
-        /* 修正後（全体を表示する） */
-.note-thumb { 
-    width: 100%; 
-    height: 100%; 
-    object-fit: contain; /* 画像全体が収まるようにする */
-    position: absolute; 
-    top: 0; 
-    left: 0; 
-}
+            width: 180px; 
+            height: 100px;
+            flex-shrink: 0; 
+            background: #fff;
+            position: relative; 
+            border-right: 1px solid #eee;
+        }
+
+        .note-thumb { 
+            width: 100%; 
+            height: 100%; 
+            object-fit: cover; /* 画像比率を維持しつつ枠を埋める */
+            position: absolute; 
+            top: 0; 
+            left: 0; 
+        }
 
         .note-content { padding: 15px 20px; flex: 1; }
         .note-title { font-size: 16px; font-weight: bold; margin: 0 0 5px 0; display: block; color: var(--text-main); line-height: 1.5; }
-        /* note-desc は表示しません（タイトルだけで十分かつ、スマホで見やすくするため） */
         .note-desc { display: none; } 
         
         .price-tag { background-color: #fcece3; color: #d4a373; font-size: 11px; padding: 2px 8px; border-radius: 4px; margin-left: 8px; vertical-align: middle; font-weight: normal; border: 1px solid #ebdacc; white-space: nowrap; }
         .arrow-icon { color: #f4b5b5; font-size: 18px; margin-left: 10px; margin-right: 15px; }
 
+        /* --- バイブル用プレミアムバナーのCSS --- */
+        .premium-banner {
+            background-color: #f4f7f5; /* 薄いセージグリーン風の背景 */
+            padding: 40px 20px;
+            margin-top: 50px;
+            margin-bottom: 50px;
+            border-top: 1px solid #e0e0e0;
+            border-bottom: 1px solid #e0e0e0;
+            border-radius: 8px;
+        }
+
+        .banner-container {
+            max-width: 800px;
+            margin: 0 auto;
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            gap: 30px;
+            background: #fff;
+            padding: 30px;
+            border-radius: 12px;
+            box-shadow: 0 10px 30px rgba(0,0,0,0.05);
+        }
+
+        .banner-image { flex: 1; max-width: 300px; }
+        .banner-image img {
+            width: 100%; height: auto; border-radius: 8px;
+            box-shadow: 0 5px 15px rgba(0,0,0,0.15); transition: transform 0.3s ease;
+        }
+        .banner-image img:hover { transform: scale(1.02); }
+
+        .banner-content { flex: 1.2; text-align: left; }
+        .banner-tag {
+            display: inline-block; background-color: #8fa193; color: #fff;
+            font-size: 12px; font-weight: bold; letter-spacing: 1px;
+            padding: 4px 12px; border-radius: 20px; margin-bottom: 15px;
+        }
+        .banner-title {
+            font-family: "Times New Roman", "YuMincho", serif;
+            font-size: 28px; line-height: 1.4; color: #333; margin-bottom: 15px;
+        }
+        .banner-text { font-size: 14px; line-height: 1.8; color: #666; margin-bottom: 25px; }
+        .banner-button {
+            display: inline-block;
+            background: linear-gradient(135deg, #d4af37 0%, #c5a028 100%);
+            color: #fff; font-weight: bold; text-decoration: none;
+            padding: 12px 30px; border-radius: 30px; font-size: 15px;
+            box-shadow: 0 5px 15px rgba(212, 175, 55, 0.3); transition: all 0.3s ease;
+        }
+        .banner-button:hover { transform: translateY(-2px); opacity: 0.95; }
+
         @media (max-width: 600px) {
             .nav-links { gap: 8px; }
             .nav-links a { font-size: 12px; padding: 6px 10px; }
-            /* 修正後 */
-    .note-thumb-box { 
-        width: 120px; 
-        height: 80px; /* スマホでも横長比率を維持 */
-        min-height: auto;
-    }
-}
+            
+            .note-thumb-box { 
+                width: 120px; 
+                height: 80px; 
+                min-height: auto;
+            }
             .note-title { font-size: 14px; }
             .note-content { padding: 12px; }
             .arrow-icon { display: none; }
+
+            /* バナー用レスポンシブ */
+            .banner-container { flex-direction: column; text-align: center; padding: 25px 15px; }
+            .banner-content { text-align: center; }
+            .banner-title { font-size: 24px; }
+            .banner-image { max-width: 70%; margin: 0 auto; }
         }
 
         /* Footer & Float */
@@ -164,13 +220,13 @@
 <main class="container">
 
     <div class="category-nav">
-        <a href="#diet" class="cat-btn">🥗 ダイエット</a>
+        <a href="#diet" class="cat-btn">🥗 ダイエット・花嫁講座</a>
         <a href="#skincare" class="cat-btn">✨ スキンケア</a>
         <a href="#general" class="cat-btn">📖 一般・コラム</a>
     </div>
 
     <div class="section-wrapper" id="diet">
-        <h2 class="section-title">Diet & Body Make</h2>
+        <h2 class="section-title">Diet & Bridal Course</h2>
         <ul class="note-list">
             
             <li class="note-item">
@@ -186,66 +242,77 @@
             </li>
 
             <li class="note-item">
-                <a href="https://note.com/yuri_organic/n/n589cadd48cf2" class="note-link" target="_blank">
+                <a href="https://note.com/yuri_organic/n/n41e16581ada4?sub_rt=share_sb" class="note-link" target="_blank">
                     <div class="note-thumb-box">
-                        <img src="https://assets.st-note.com/production/uploads/images/241788680/rectangle_large_type_2_d68a35a9ff3d81ab05c4def81330c57e.jpeg?width=1280" class="note-thumb" onerror="handleImageError(this)" alt="記事サムネイル">
+                        <img src="https://placehold.co/150x110/fcece3/d4a373?text=Vol.2" class="note-thumb" onerror="handleImageError(this)" alt="Vol.2 サムネイル">
                     </div>
                     <div class="note-content">
-                        <span class="note-title">【保存版】鏡を見て絶望したあなたへ。年末年始の「暴飲暴食肌」を3日でなかったことにする緊急レスキュー講義</span>
+                        <span class="note-title">【花嫁講座②】なぜ肌がくすむの？美白美容液より先にやるべき「糖化」対策と食事のルール</span>
                     </div>
                     <span class="arrow-icon">▶</span>
                 </a>
             </li>
 
             <li class="note-item">
-                <a href="https://note.com/yuri_organic/n/nba6d451fbd96" class="note-link" target="_blank">
+                <a href="https://note.com/yuri_organic/n/na58ba68eb743?sub_rt=share_sb" class="note-link" target="_blank">
                     <div class="note-thumb-box">
-                        <img src="https://assets.st-note.com/production/uploads/images/239836859/rectangle_large_type_2_01011a63756c64451bc722ce275b93e8.jpeg?width=1280" class="note-thumb" onerror="handleImageError(this)" alt="記事サムネイル">
+                         <img src="https://placehold.co/150x110/fcece3/d4a373?text=Vol.3" class="note-thumb" onerror="handleImageError(this)" alt="Vol.3 サムネイル">
                     </div>
                     <div class="note-content">
-                        <span class="note-title">【栄養士直伝】23時に食べても大丈夫？「太らない年越しそば」の正解と、正月太りを回避する3つの秘策</span>
+                        <span class="note-title">【花嫁講座③】肌の「焦げ」を防げ！透明感を爆上げするアンチエイジング食材リスト</span>
                     </div>
                     <span class="arrow-icon">▶</span>
                 </a>
             </li>
 
             <li class="note-item">
-                <a href="https://note.com/yuri_organic/n/n205ea6d9d6ac" class="note-link" target="_blank">
+                <a href="https://note.com/yuri_organic/n/nfdaa221936d5?sub_rt=share_sb" class="note-link" target="_blank">
                     <div class="note-thumb-box">
-                        <img src="https://assets.st-note.com/production/uploads/images/237313004/rectangle_large_type_2_b28e63012bfa1223c64e91f249654aa3.jpeg?width=1280" class="note-thumb" onerror="handleImageError(this)" alt="記事サムネイル">
+                         <img src="https://placehold.co/150x110/fcece3/d4a373?text=Vol.4" class="note-thumb" onerror="handleImageError(this)" alt="Vol.4 サムネイル">
                     </div>
                     <div class="note-content">
-                        <span class="note-title">産後ママ必見！栄養士が教える、無理なく「最速」で体型を取り戻す魔法の食事術＆レシピ<span class="price-tag">¥680</span></span>
+                        <span class="note-title">【花嫁講座④】結婚式直前のメンタルケア＆むくみ撃退！心と体を整える最終調整メソッド</span>
                     </div>
                     <span class="arrow-icon">▶</span>
                 </a>
             </li>
 
-            <li class="note-item">
-                <a href="https://note.com/yuri_organic/n/nea6bb43b063d" class="note-link" target="_blank">
+            <li class="note-item" style="opacity: 0.8;">
+                <a href="#" class="note-link" onclick="alert('明日公開予定です！お楽しみに！'); return false;">
                     <div class="note-thumb-box">
-                        <img src="https://assets.st-note.com/production/uploads/images/239164556/rectangle_large_type_2_1dfdfabf17237cb7e255843b9fe3d8b5.jpeg?width=1280" class="note-thumb" onerror="handleImageError(this)" alt="記事サムネイル">
+                        <img src="https://placehold.co/150x110/eee/999?text=Coming+Soon" class="note-thumb" alt="Coming Soon">
                     </div>
                     <div class="note-content">
-                        <span class="note-title">【緊急企画】3日で-2kgも夢じゃない？栄養士が教える『食べて痩せる「3日間リセット食」』完全マニュアル<span class="price-tag">¥300</span></span>
+                        <span class="note-title" style="color:#888;">【花嫁講座⑤】最終回：当日を最高に迎えるためのラストスパート（明日公開）</span>
                     </div>
-                    <span class="arrow-icon">▶</span>
+                    <span class="arrow-icon">🔒</span>
                 </a>
             </li>
 
-            <li class="note-item">
-                <a href="https://note.com/yuri_organic/n/nde3f43d312e5" class="note-link" target="_blank">
-                    <div class="note-thumb-box">
-                        <img src="https://assets.st-note.com/production/uploads/images/238675623/rectangle_large_type_2_c688585dd064f430c62b113efdec446d.jpeg?width=1280" class="note-thumb" onerror="handleImageError(this)" alt="記事サムネイル">
-                    </div>
-                    <div class="note-content">
-                        <span class="note-title">【クリスマス当日🎄】栄養士が教える！「太らない」ための賢いメニュー選び＆飲み方🍷✨</span>
-                    </div>
-                    <span class="arrow-icon">▶</span>
-                </a>
-            </li>
+        </ul>
 
-            <li class="note-item">
+        <section class="premium-banner">
+            <div class="banner-container">
+                <div class="banner-image">
+                    <img src="https://placehold.co/300x400/eee/999?text=Bridal+Bible" alt="一生太らない花嫁バイブル">
+                </div>
+                <div class="banner-content">
+                    <span class="banner-tag">Premium Content</span>
+                    <h2 class="banner-title">一生太らない<br>花嫁バイブル</h2>
+                    <p class="banner-text">
+                        エステに課金する前に、やるべきことがあります。<br>
+                        3ヶ月前〜当日までの「食べるエステ」完全スケジュール。<br>
+                        プロが教える、人生最高に美しくなるための教科書。
+                    </p>
+                    <a href="#" class="banner-button" target="_blank">
+                        バイブルを今すぐ読む <span>→</span>
+                    </a>
+                </div>
+            </div>
+        </section>
+
+        <ul class="note-list">
+             <li class="note-item">
                 <a href="https://note.com/yuri_organic/n/n2e27726ddaba" class="note-link" target="_blank">
                     <div class="note-thumb-box">
                         <img src="https://assets.st-note.com/production/uploads/images/237186457/rectangle_large_type_2_fab1c7ef3f630f11ee81c53f1a95c6bc.jpeg?width=1280" class="note-thumb" onerror="handleImageError(this)" alt="記事サムネイル">
@@ -256,14 +323,24 @@
                     <span class="arrow-icon">▶</span>
                 </a>
             </li>
-
-            <li class="note-item">
+             <li class="note-item">
                 <a href="https://note.com/yuri_organic/n/n23d9f57c02c2" class="note-link" target="_blank">
                     <div class="note-thumb-box">
                         <img src="https://assets.st-note.com/production/uploads/images/237312294/rectangle_large_type_2_54836e56f74fd4d82e6050a8434d53df.jpeg?width=1280" class="note-thumb" onerror="handleImageError(this)" alt="記事サムネイル">
                     </div>
                     <div class="note-content">
                         <span class="note-title">「運動嫌い」の栄養士が、食事制限なしで－10kg達成。鍵は「食事の前後5分」にありました。<span class="price-tag">¥880</span></span>
+                    </div>
+                    <span class="arrow-icon">▶</span>
+                </a>
+            </li>
+             <li class="note-item">
+                <a href="https://note.com/yuri_organic/n/n205ea6d9d6ac" class="note-link" target="_blank">
+                    <div class="note-thumb-box">
+                        <img src="https://assets.st-note.com/production/uploads/images/237313004/rectangle_large_type_2_b28e63012bfa1223c64e91f249654aa3.jpeg?width=1280" class="note-thumb" onerror="handleImageError(this)" alt="記事サムネイル">
+                    </div>
+                    <div class="note-content">
+                        <span class="note-title">産後ママ必見！栄養士が教える、無理なく「最速」で体型を取り戻す魔法の食事術＆レシピ<span class="price-tag">¥680</span></span>
                     </div>
                     <span class="arrow-icon">▶</span>
                 </a>
@@ -432,6 +509,54 @@
                     </div>
                     <div class="note-content">
                         <span class="note-title">【栄養士直伝】年末年始の「お酒」と賢く付き合う教科書。ダメージ最小限の飲み方＆翌朝のリカバリー術</span>
+                    </div>
+                    <span class="arrow-icon">▶</span>
+                </a>
+            </li>
+
+            <li class="note-item">
+                <a href="https://note.com/yuri_organic/n/n589cadd48cf2" class="note-link" target="_blank">
+                    <div class="note-thumb-box">
+                        <img src="https://assets.st-note.com/production/uploads/images/241788680/rectangle_large_type_2_d68a35a9ff3d81ab05c4def81330c57e.jpeg?width=1280" class="note-thumb" onerror="handleImageError(this)" alt="記事サムネイル">
+                    </div>
+                    <div class="note-content">
+                        <span class="note-title">【保存版】鏡を見て絶望したあなたへ。年末年始の「暴飲暴食肌」を3日でなかったことにする緊急レスキュー講義</span>
+                    </div>
+                    <span class="arrow-icon">▶</span>
+                </a>
+            </li>
+
+            <li class="note-item">
+                <a href="https://note.com/yuri_organic/n/nba6d451fbd96" class="note-link" target="_blank">
+                    <div class="note-thumb-box">
+                        <img src="https://assets.st-note.com/production/uploads/images/239836859/rectangle_large_type_2_01011a63756c64451bc722ce275b93e8.jpeg?width=1280" class="note-thumb" onerror="handleImageError(this)" alt="記事サムネイル">
+                    </div>
+                    <div class="note-content">
+                        <span class="note-title">【栄養士直伝】23時に食べても大丈夫？「太らない年越しそば」の正解と、正月太りを回避する3つの秘策</span>
+                    </div>
+                    <span class="arrow-icon">▶</span>
+                </a>
+            </li>
+
+            <li class="note-item">
+                <a href="https://note.com/yuri_organic/n/nea6bb43b063d" class="note-link" target="_blank">
+                    <div class="note-thumb-box">
+                        <img src="https://assets.st-note.com/production/uploads/images/239164556/rectangle_large_type_2_1dfdfabf17237cb7e255843b9fe3d8b5.jpeg?width=1280" class="note-thumb" onerror="handleImageError(this)" alt="記事サムネイル">
+                    </div>
+                    <div class="note-content">
+                        <span class="note-title">【緊急企画】3日で-2kgも夢じゃない？栄養士が教える『食べて痩せる「3日間リセット食」』完全マニュアル<span class="price-tag">¥300</span></span>
+                    </div>
+                    <span class="arrow-icon">▶</span>
+                </a>
+            </li>
+
+            <li class="note-item">
+                <a href="https://note.com/yuri_organic/n/nde3f43d312e5" class="note-link" target="_blank">
+                    <div class="note-thumb-box">
+                        <img src="https://assets.st-note.com/production/uploads/images/238675623/rectangle_large_type_2_c688585dd064f430c62b113efdec446d.jpeg?width=1280" class="note-thumb" onerror="handleImageError(this)" alt="記事サムネイル">
+                    </div>
+                    <div class="note-content">
+                        <span class="note-title">【クリスマス当日🎄】栄養士が教える！「太らない」ための賢いメニュー選び＆飲み方🍷✨</span>
                     </div>
                     <span class="arrow-icon">▶</span>
                 </a>
