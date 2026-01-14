@@ -15,8 +15,6 @@
       function gtag(){dataLayer.push(arguments);}
       gtag('js', new Date());
       gtag('config', 'G-2HGEPHVZYY');
-    } else {
-        console.log('✅ Internal traffic excluded.');
     }
   </script>
   
@@ -25,8 +23,8 @@
   <meta name="description" content="忙しい花嫁様も、じっくり派の花嫁様も。挙式までの期間や生活スタイルに合わせた、無理なく続くオーガニック・スキンケア計画を提案します。">
   
   <link rel="canonical" href="https://essential-beauty-needs.com/lifestyle-skincare.html" />
-  
   <link href="https://fonts.googleapis.com/css2?family=Playfair+Display:wght@600&family=Quicksand:wght@400;600&display=swap" rel="stylesheet">
+  
   <style>
     :root{
       --bg:#fff8f8;
@@ -34,25 +32,57 @@
       --accent-hover:#f48b8b;
       --muted:#666;
       --card:#fff;
-      --room-color: #c63535; /* 楽天ROOM用カラー */
+      --room-color: #c63535;
       --text-main: #503535;
     }
     *{box-sizing:border-box;margin:0;padding:0;}
     body{font-family:'Quicksand',sans-serif;background:var(--bg);color:#333;line-height:1.7;}
-    .header{
-      text-align:center;
-      padding:72px 20px 36px;
-      background:linear-gradient(135deg,#ffe6e6,#ffdcdc);
-      color:#503535;
-      position:relative;
+
+    /* --- ヘッダー（スッキリ版に統一） --- */
+    header {
+      text-align:center; color:var(--text-main); padding: 40px 20px 20px;
+      background: linear-gradient(135deg, #ffe6e6, #ffdcdc); border-bottom:3px solid #e6b7b3;
     }
-    .header h1{font-family:'Playfair Display',serif;font-size:38px;margin-bottom:8px;}
-    .header p.lead{font-size:16px;color:#5a4545;margin-bottom:14px;}
+    header h1 {
+        font-family:'Playfair Display',serif; font-size:28px; letter-spacing:1px; margin-bottom:8px;
+    }
+    header .lead {
+        font-size:14px; color:#5a4545; margin-bottom: 20px;
+    }
+
+    /* メインナビ */
+    .main-nav { display: flex; justify-content: center; gap: 15px; margin-bottom: 15px; }
+    .main-nav a {
+        background: rgba(255,255,255,0.9); padding: 8px 16px; border-radius: 20px;
+        text-decoration: none; color: #503535; font-weight: bold; font-size: 14px;
+        box-shadow: 0 2px 5px rgba(0,0,0,0.05); transition: 0.3s;
+    }
+    .main-nav a:hover { transform: translateY(-2px); color: #c63535; }
+
+    /* 開閉式メニュー */
+    details.menu-toggle { margin: 0 auto; max-width: 400px; cursor: pointer; }
+    summary.menu-btn {
+        list-style: none; font-size: 13px; color: #888; font-weight: bold;
+        padding: 8px 15px; border: 1px solid #e6b7b3; border-radius: 20px;
+        background: rgba(255,255,255,0.6); display: inline-block;
+    }
+    summary.menu-btn::after { content: " ▼"; font-size: 10px; }
+    details[open] summary.menu-btn::after { content: " ▲"; }
+    
+    .hidden-links {
+        display: flex; flex-wrap: wrap; justify-content: center; gap: 8px;
+        margin-top: 10px; padding: 15px; background: rgba(255,255,255,0.95);
+        border-radius: 12px; box-shadow: 0 4px 15px rgba(0,0,0,0.1);
+        animation: fadeIn 0.3s ease;
+    }
+    .hidden-links a {
+        font-size: 12px; text-decoration: none; color: #555;
+        padding: 6px 12px; background: #fff; border-radius: 6px; border: 1px solid #eee;
+    }
+    @keyframes fadeIn { from { opacity: 0; transform: translateY(-5px); } to { opacity: 1; transform: translateY(0); } }
+
+    /* --- メインコンテンツ --- */
     .container{max-width:1000px;margin:30px auto;padding:0 18px;}
-    .nav-links{display:flex;gap:12px;justify-content:center;margin-top:12px;flex-wrap:wrap;}
-    .nav-links a{background:rgba(255,255,255,0.8);padding:8px 12px;border-radius:8px;text-decoration:none;color:#503535;font-weight:600;}
-    .nav-links a:hover{background:var(--accent);color:#fff;}
-    .top-cta{margin-top:18px;}
 
     /* sections */
     .section{margin:56px 0;padding:0;}
@@ -62,266 +92,80 @@
 
     /* ポイントBOX */
     .point-box {
-        background: #fff;
-        border: 1px dashed var(--accent);
-        border-radius: 12px;
-        padding: 15px;
-        margin-top: 20px;
+        background: #fff; border: 1px dashed var(--accent); border-radius: 12px; padding: 15px; margin-top: 20px;
     }
     .point-title {
-        font-weight: bold;
-        color: #d6336c;
-        margin-bottom: 8px;
-        display: flex;
-        align-items: center;
-        gap: 5px;
-        font-size: 15px;
+        font-weight: bold; color: #d6336c; margin-bottom: 8px; display: flex; align-items: center; gap: 5px; font-size: 15px;
     }
     .point-list {
-        list-style: none;
-        padding: 0;
-        margin: 0;
-        font-size: 14px;
-        color: #444;
+        list-style: none; padding: 0; margin: 0; font-size: 14px; color: #444;
     }
-    .point-list li {
-        position: relative;
-        padding-left: 20px;
-        margin-bottom: 5px;
-    }
-    .point-list li::before {
-        content: "✔";
-        color: var(--accent);
-        position: absolute;
-        left: 0;
-        font-weight: bold;
-    }
+    .point-list li { position: relative; padding-left: 20px; margin-bottom: 5px; }
+    .point-list li::before { content: "✔"; color: var(--accent); position: absolute; left: 0; font-weight: bold; }
 
-    /* related & back-top */
-    .related{ text-align:center;margin:48px 0;}
-    .related a{display:inline-block;margin:6px 10px;padding:10px 20px;border-radius:26px;text-decoration:none;background:linear-gradient(45deg,#f7a8a8,#f48b8b);color:#fff;font-weight:600;box-shadow:0 4px 12px rgba(0,0,0,0.12);}
+    /* ボタン・リンク類 */
+    .internal-link {
+        display: inline-block; color: var(--accent-hover); font-weight: 600; text-decoration: none;
+        padding: 10px; border: 1px solid var(--accent); border-radius: 20px; transition: 0.3s;
+    }
+    .internal-link:hover { background: var(--accent); color: #fff; }
+    
     .back-to-top{display:block;text-align:center;margin-top:20px;color:#d6336c;text-decoration:none;font-weight:700;}
 
-    /* affiliate notice */
-    #affiliateNotice {
-        position: fixed;
-        right: 12px;
-        bottom: 12px;
-        background: rgba(255, 255, 255, 0.8);
-        color: #555;
-        font-size: 11px;
-        border-radius: 6px;
-        padding: 4px 8px;
-        box-shadow: 0 2px 6px rgba(0,0,0,0.1);
-        z-index: 999;
-    }
-
-    @media(max-width:900px){
-      .block{flex-direction:column;}
-    }
-    .nav-break {
-        flex-basis: 100%;
-        height: 0;
-        margin: 5px 0;
-    }
-    .special-link a {
-        display:inline-block; 
-        background: linear-gradient(45deg, #f7a8a8, #807eed); 
-        color:#fff; 
-        font-weight:600; 
-        padding:12px 28px; 
-        border-radius:30px; 
-        text-decoration:none; 
-        box-shadow:0 4px 12px rgba(0,0,0,0.15); 
-        transition:all 0.3s ease; 
-        text-align:center;
-    }
-    .special-link a:hover {
-        transform: translateY(-3px);
-        box-shadow: 0 6px 15px rgba(0,0,0,0.2);
-    }
-    .internal-link {
-        display: inline-block;
-        color: var(--accent-hover);
-        font-weight: 600;
-        text-decoration: none;
-        padding: 10px;
-        border: 1px solid var(--accent);
-        border-radius: 20px;
-        transition: 0.3s;
-    }
-    .internal-link:hover {
-        background: var(--accent);
-        color: #fff;
-    }
-
-    /* 楽天ROOMリンク用スタイル（コード版） */
-    .room-promo {
-        background: #fff;
-        border: 2px dashed var(--room-color);
-        border-radius: 15px;
-        padding: 25px;
-        text-align: center;
-        margin: 50px 0;
-        color: #503535;
-    }
-    .room-btn {
-        display: inline-block;
-        background: var(--room-color);
-        color: #fff;
-        padding: 12px 30px;
-        border-radius: 30px;
-        text-decoration: none;
-        font-weight: bold;
-        margin-top: 15px;
-        box-shadow: 0 4px 10px rgba(198, 53, 53, 0.3);
-        transition: 0.3s;
-    }
-    .room-btn:hover {
-        background: #a82525;
-        transform: translateY(-2px);
-        box-shadow: 0 6px 14px rgba(198, 53, 53, 0.4);
-    }
-
-    /* ▼▼▼ 追加：診断ボタン用のアニメーション ▼▼▼ */
-    @keyframes pulse-glow {
-      0% { box-shadow: 0 0 0 0 rgba(230, 126, 34, 0.4); transform: scale(1); }
-      50% { box-shadow: 0 0 0 10px rgba(230, 126, 34, 0); transform: scale(1.02); }
-      100% { box-shadow: 0 0 0 0 rgba(230, 126, 34, 0); transform: scale(1); }
-    }
+    /* 診断バナー */
     .diagnosis-banner {
-      background: #fff;
-      border: 3px solid #f39c12; /* 目立つオレンジ/ゴールド系 */
-      border-radius: 15px;
-      padding: 25px;
-      text-align: center;
-      margin: 30px auto; /* 中央寄せ */
-      position: relative;
-      max-width: 650px;
+      background: #fff; border: 3px solid #f39c12; border-radius: 15px; padding: 25px;
+      text-align: center; margin: 30px auto; position: relative; max-width: 650px;
     }
-    /* 「NEW!」などのバッジ */
     .diagnosis-badge {
         background: #d35400; color: #fff; padding: 5px 15px; border-radius: 5px;
         font-weight: bold; font-size: 12px; position: absolute; top: -15px; left: 50%;
         transform: translateX(-50%); box-shadow: 0 2px 5px rgba(0,0,0,0.2);
     }
     .diagnosis-btn {
-      display: inline-block;
-      background: linear-gradient(45deg, #e67e22, #f39c12);
-      color: #fff;
-      font-size: 18px;
-      font-weight: bold;
-      padding: 15px 35px;
-      border-radius: 50px;
-      text-decoration: none;
-      margin-top: 15px;
-      box-shadow: 0 4px 15px rgba(230, 126, 34, 0.4);
-      /* ここでキラキラさせます */
+      display: inline-block; background: linear-gradient(45deg, #e67e22, #f39c12);
+      color: #fff; font-size: 18px; font-weight: bold; padding: 15px 35px; border-radius: 50px;
+      text-decoration: none; margin-top: 15px; box-shadow: 0 4px 15px rgba(230, 126, 34, 0.4);
       animation: pulse-glow 2s infinite;
     }
-    .diagnosis-btn:hover {
-        opacity: 0.9;
-        transform: translateY(-2px);
+    .diagnosis-btn:hover { opacity: 0.9; transform: translateY(-2px); }
+    @keyframes pulse-glow {
+      0% { box-shadow: 0 0 0 0 rgba(230, 126, 34, 0.4); transform: scale(1); }
+      50% { box-shadow: 0 0 0 10px rgba(230, 126, 34, 0); transform: scale(1.02); }
+      100% { box-shadow: 0 0 0 0 rgba(230, 126, 34, 0); transform: scale(1); }
     }
-    /* ▲▲▲ 追加ここまで ▲▲▲ */
 
-    /* フッター（リンク網羅型） */
-    footer {
-        background: #fffaf4;
-        border-top: 3px solid #f7a8a8;
-        padding: 50px 20px 60px;
-        margin-top: 60px;
-        color: #555;
-        font-size: 14px;
+    /* Noteアーカイブへの誘導バナー */
+    @keyframes shine { 0% { transform: translateX(-100%) skewX(-15deg); } 100% { transform: translateX(200%) skewX(-15deg); } }
+    .shiny-btn::after {
+      content: ''; position: absolute; top: 0; left: 0; width: 50%; height: 100%;
+      background: linear-gradient(to right, rgba(255,255,255,0) 0%, rgba(255,255,255,0.3) 50%, rgba(255,255,255,0) 100%);
+      transform: skewX(-15deg); animation: shine 3s infinite;
     }
-    .footer-container {
-        max-width: 960px;
-        margin: 0 auto;
-        display: flex;
-        flex-wrap: wrap;
-        justify-content: space-between;
-        gap: 30px;
-        text-align: left;
-    }
+
+    /* フッター */
+    footer { background: #fffaf4; border-top: 3px solid #f7a8a8; padding: 50px 20px 60px; margin-top: 60px; color: #555; font-size: 14px; }
+    .footer-container { max-width: 960px; margin: 0 auto; display: flex; flex-wrap: wrap; justify-content: space-between; gap: 30px; text-align: left; }
     .footer-col { flex: 1; min-width: 200px; }
-    .footer-col h3 {
-        font-size: 16px;
-        color: #d6336c;
-        border-bottom: 1px dashed #f4b5b5;
-        padding-bottom: 8px;
-        margin-bottom: 15px;
-        font-weight: bold;
-    }
-    .footer-col a {
-        display: block; color: #666; text-decoration: none; margin-bottom: 10px; transition: 0.3s; position: relative; padding-left: 10px;
-    }
+    .footer-col h3 { font-size: 16px; color: #d6336c; border-bottom: 1px dashed #f4b5b5; padding-bottom: 8px; margin-bottom: 15px; font-weight: bold; }
+    .footer-col a { display: block; color: #666; text-decoration: none; margin-bottom: 10px; transition: 0.3s; position: relative; padding-left: 10px; }
     .footer-col a::before { content: "・"; position: absolute; left: 0; color: #f7a8a8; }
     .footer-col a:hover { color: #d6336c; padding-left: 15px; }
     .footer-bottom { text-align: center; margin-top: 50px; padding-top: 30px; border-top: 1px solid #eee; }
-    .footer-room-link {
-        display: inline-block; color: #c63535; font-weight: bold; border: 1px solid #c63535; padding: 8px 20px; border-radius: 20px; text-decoration: none; margin-bottom: 20px; background: #fff; transition: 0.3s;
-    }
+    .footer-room-link { display: inline-block; color: #c63535; font-weight: bold; border: 1px solid #c63535; padding: 8px 20px; border-radius: 20px; text-decoration: none; margin-bottom: 20px; background: #fff; transition: 0.3s; }
     .footer-room-link:hover { background: #c63535; color: #fff; }
 
-    @media(max-width:600px){
-      header h1{font-size:30px;}
-    }
-    /* ▼▼▼ 追加：New!! 点滅用スタイル ▼▼▼ */
-@keyframes blinkEffect {
-    0% { opacity: 1; }
-    50% { opacity: 0.3; }
-    100% { opacity: 1; }
-}
-
-.new-mark {
-    color: #ff0000;       /* 文字色を赤にする */
-    font-weight: bold;    /* 太文字にする */
-    font-size: 0.8em;     /* リンク文字より少し小さくする */
-    margin-left: 5px;     /* 前の文字と少し間隔を空ける */
-    animation: blinkEffect 1.2s infinite; /* 1.2秒間隔で点滅を繰り返す */
-    vertical-align: super; /* 少し上付き文字にする */
-}
-/* ▲▲▲ 追加ここまで ▲▲▲ */
-    /* ▼▼▼ 追加：スッキリ・ヘッダー用スタイル ▼▼▼ */
-
-/* メインナビ（重要な2つだけ表示） */
-.main-nav { display: flex; justify-content: center; gap: 15px; margin-bottom: 15px; margin-top: 15px; }
-.main-nav a {
-    background: rgba(255,255,255,0.9); padding: 8px 16px; border-radius: 20px;
-    text-decoration: none; color: #503535; font-weight: bold; font-size: 14px;
-    box-shadow: 0 2px 5px rgba(0,0,0,0.05); transition: 0.3s;
-}
-.main-nav a:hover { transform: translateY(-2px); color: #c63535; }
-
-/* 開閉式メニュー（その他はここに隠す） */
-details.menu-toggle { margin: 0 auto; max-width: 400px; cursor: pointer; position: relative; z-index: 100; }
-summary.menu-btn {
-    list-style: none; font-size: 13px; color: #888; font-weight: bold;
-    padding: 8px 15px; border: 1px solid #e6b7b3; border-radius: 20px;
-    background: rgba(255,255,255,0.6); display: inline-block;
-}
-summary.menu-btn::after { content: " ▼"; font-size: 10px; }
-details[open] summary.menu-btn::after { content: " ▲"; }
-
-.hidden-links {
-    display: flex; flex-wrap: wrap; justify-content: center; gap: 8px;
-    margin-top: 10px; padding: 15px; background: rgba(255,255,255,0.95);
-    border-radius: 12px; box-shadow: 0 4px 15px rgba(0,0,0,0.1);
-    animation: fadeIn 0.3s ease;
-}
-.hidden-links a {
-    font-size: 12px; text-decoration: none; color: #555;
-    padding: 6px 12px; background: #fff; border-radius: 6px; border: 1px solid #eee;
-}
-@keyframes fadeIn { from { opacity: 0; transform: translateY(-5px); } to { opacity: 1; transform: translateY(0); } }
-
-/* ▲▲▲ 追加ここまで ▲▲▲ */
+    #affiliateNotice { position: fixed; right: 12px; bottom: 12px; background: rgba(255, 255, 255, 0.8); color: #555; font-size: 11px; border-radius: 6px; padding: 4px 8px; box-shadow: 0 2px 6px rgba(0,0,0,0.1); z-index: 999; }
+    @keyframes blinkEffect { 0% { opacity: 1; } 50% { opacity: 0.3; } 100% { opacity: 1; } }
+    .new-mark { color: #ff0000; font-weight: bold; font-size: 0.8em; margin-left: 5px; animation: blinkEffect 1.2s infinite; vertical-align: super; }
+    
+    @media(max-width:900px){ .block{flex-direction:column;} }
   </style>
 </head>
 <body>
 
 <header>
-    <div class="container">
+    <div class="container" style="margin:0 auto;">
         <h1>
             <a href="index.html" style="text-decoration:none; color:inherit;">
                 Essential Beauty Needs
@@ -348,7 +192,7 @@ details[open] summary.menu-btn::after { content: " ▲"; }
                 <a href="note-archive.html">📕 公式Note</a>
             </div>
         </details>
-        </div>
+    </div>
 </header>
 
 <div class="diagnosis-banner">
@@ -361,7 +205,8 @@ details[open] summary.menu-btn::after { content: " ▲"; }
         ✨ 今すぐ肌診断をする！ ✨
     </a>
 </div>
-<div style="border:2px solid #f4b5b5; border-radius:12px; padding:20px; margin:25px auto; background:#fff1f1; color:#503535; font-size:16px; line-height:1.6; width:90%; max-width:600px;">
+
+<div style="border:2px solid #f4b5b5; border-radius:12px; padding:20px; margin:25px auto; background:#fff1f1; color:#503535; font-size:16px; line-height:1.6; width:90%; max-width:600px; text-align:center;">
   結婚式の準備は想像以上に忙しいもの。でも、スキンケアは毎日の積み重ねが大切です。<br>
   「仕事が忙しくて時間がない」「彼と一緒にケアしたい」など、あなたのライフスタイルに合わせた無理のないケアで、当日最高の笑顔を迎えましょう。
 </div>
@@ -392,7 +237,7 @@ details[open] summary.menu-btn::after { content: " ▲"; }
                 <li><strong>シンプルステップ：</strong> 洗顔から保湿までこれ一つで完了するベーシックセット。</li>
             </ul>
         </div>
-        </div>
+      </div>
     </div>
     <div style="text-align:center;margin-top:12px;"><a class="internal-link" href="#time-saving">次：忙しい花嫁（時短ケア） →</a></div>
   </section>
@@ -421,7 +266,7 @@ details[open] summary.menu-btn::after { content: " ▲"; }
                 <li><strong>高機能なのに時短：</strong> 手抜きに見えてしっかり潤う、忙しい花嫁の強い味方。</li>
             </ul>
         </div>
-        </div>
+      </div>
     </div>
     <div style="text-align:center;margin-top:12px;"><a class="internal-link" href="#active">次：アクティブ花嫁（前撮り・リゾート） →</a></div>
   </section>
@@ -463,7 +308,7 @@ details[open] summary.menu-btn::after { content: " ▲"; }
                 <li><strong>肌に優しい：</strong> 強い薬剤を使わず、大事な肌を守ります。</li>
             </ul>
         </div>
-        </div>
+      </div>
     </div>
     <div style="text-align:center;margin-top:12px;"><a class="internal-link" href="#night">次：寝不足花嫁（ナイトケア） →</a></div>
   </section>
@@ -471,7 +316,7 @@ details[open] summary.menu-btn::after { content: " ▲"; }
   <section class="section" id="night">
     <h2>🌙 寝不足・ストレスフル花嫁（ナイトケア）</h2>
 
-    <div style="border:2px solid #f4b5b5; border-radius:12px; padding:20px; margin:25px auto; background:#fff1f1; color:#503535; font-size:16px; line-height:1.6; width:90%; max-width:600px;">
+    <div style="border:2px solid #f4b5b5; border-radius:12px; padding:20px; margin:25px auto; background:#fff1f1; color:#503535; font-size:16px; line-height:1.6; width:90%; max-width:600px; text-align:center;">
         準備やマリッジブルーで寝不足になっていませんか？<br>
         睡眠中は美肌を作るゴールデンタイム。寝ている間にダメージを修復する「塗って寝るだけ」の高機能クリームで、翌朝の肌を復活させましょう。
     </div>
@@ -486,7 +331,7 @@ details[open] summary.menu-btn::after { content: " ▲"; }
         c.getElementById(a)||(d=c.createElement(f),d.src=g,
         d.id=a,e=c.getElementsByTagName("body")[0],e.appendChild(d))})
         (window,document,"script","//dn.msmstatic.com/site/cardlink/bundle.js?20220329","msmaflink");
-        msmaflink({"n":"RUHAKU （琉白） 月桃モイストクリームS 30g 保湿クリーム フェイスクリーム 敏感肌 乾燥肌 セラミド配合 シア脂 オーガニック 無添加 冬の乾燥対策 ナイトケア ギフトにも最適","b":"","t":"","d":"https:\/\/thumbnail.image.rakuten.co.jp","c_p":"\/@0_mall\/ruhaku\/cabinet\/day_moist_cream_s","p":["\/imgrc0112859665.jpg","\/imgrc0113170227.jpg","\/02.jpg"],"u":{"u":"https:\/\/item.rakuten.co.jp\/ruhaku\/ss_gettou_day_moist_cream\/","t":"rakuten","r_v":""},"v":"2.1","b_l":[{"id":1,"u_tx":"楽天市場で見る","u_bc":"#87c209","u_url":"https:\/\/item.rakuten.co.jp\/ruhaku\/ss_gettou_day_moist_cream\/","a_id":5267359,"p_id":54,"pl_id":27059,"pc_id":54,"s_n":"rakuten","u_so":1},{"id":5,"u_tx":"Amazonで見る","u_bc":"#184f5c","u_url":"https:\/\/amzn.to\/48au19G","a_id":0,"p_id":0,"pl_id":0,"pc_id":0,"s_n":"custom_10","u_so":2},{"id":4,"u_tx":"Yahoo!ショッピングで見る","u_bc":"#bf0000","u_url":"https:\/\/shopping.yahoo.co.jp\/search?first=1\u0026p=RUHAKU%20%EF%BC%88%E7%90%89%E7%99%BD%EF%BC%89%20%E6%9C%88%E6%A1%83%E3%83%A2%E3%82%A4%E3%82%B9%E3%83%88%E3%82%AF%E3%83%AA%E3%83%BC%E3%83%A0S%2030g%20%E4%BF%9D%E6%B9%BF%E3%82%AF%E3%83%AA%E3%83%BC%E3%83%A0%20%E3%83%95%E3%82%A7%E3%82%A4%E3%82%B9%E3%82%AF%E3%83%AA%E3%83%BC%E3%83%A0%20%E6%95%8F%E6%84%9F%E8%82%8C%20%E4%B9%BE%E7%87%A5%E8%82%8C%20%E3%82%BB%E3%83%A9%E3%83%9F%E3%83%89%E9%85%8D%E5%90%88%20%E3%82%B7%E3%82%A2%E8%84%82%20%E3%82%AA%E3%83%BC%E3%82%AC%E3%83%8B%E3%83%83%E3%82%AF%20%E7%84%A1%E6%B7%BB%E5%8A%A0%20%E5%86%AC%E3%81%AE%E4%B9%BE%E7%87%A5%E5%AF%BE%E7%AD%96%20%E3%83%8A%E3%82%A4%E3%83%88%E3%82%B1%E3%82%A2%20%E3%82%AE%E3%83%95%E3%83%88%E3%81%AB%E3%82%82%E6%9C%80%E9%81%A9","a_id":5267465,"p_id":1225,"pl_id":27061,"pc_id":1925,"s_n":"yahoo","u_so":3}],"eid":"r9mo3","s":"s"});
+        msmaflink({"n":"RUHAKU （琉白） 月桃モイストクリームS 30g 保湿クリーム フェイスクリーム 敏感肌 乾燥肌 セラミド配合 シア脂 オーガニック 無添加 冬の乾燥対策 ナイトケア ギフトにも最適","b":"","t":"","d":"https:\/\/thumbnail.image.rakuten.co.jp","c_p":"\/@0_mall\/ruhaku\/cabinet\/day_moist_cream_s","p":["\/imgrc0112859665.jpg","\/imgrc0113170227.jpg","\/02.jpg"],"u":{"u":"https:\/\/item.rakuten.co.jp\/ruhaku\/ss_gettou_day_moist_cream\/","t":"rakuten","r_v":""},"v":"2.1","b_l":[{"id":1,"u_tx":"楽天市場で見る","u_bc":"#87c209","u_url":"https:\/\/item.rakuten.co.jp\/ruhaku\/ss_gettou_day_moist_cream\/","a_id":5267359,"p_id":54,"pl_id":27059,"pc_id":54,"s_n":"rakuten","u_so":1},{"id":5,"u_tx":"Amazonで見る","u_bc":"#184f5c","u_url":"https:\/\/amzn.to\/48au19G","a_id":0,"p_id":0,"pl_id":0,"pc_id":0,"s_n":"custom_10","u_so":2},{"id":4,"u_tx":"Yahoo!ショッピングで見る","u_bc":"#bf0000","u_url":"https:\/\/shopping.yahoo.co.jp\/search?first=1\u0026p=RUHAKU%20%EF%BC%88%E7%90%89%E7%99%BD%EF%BC%89%20%E6%9C%88%E6%A1%83%E3%83%A2%E3%82%A4%E3%82%B9%E3%83%88%E3%82%AF%E3%83%AA%E3%83%BC%E3%83%A0S%2030g%20%E4%BF%9D%E6%B9%BF%E3%82%AF%E3%83%AA%E3%83%BC%E3%83%A0%20%E3%83%95%E3%82%A7%E3%82%A4%E3%82%B9%E3%82%AF%E3%83%AA%E3%83%BC%E3%83%A0%20%E6%95%8F%E6%84%9F%E8%82%8C%20%E4%B9%BE%E7%87%A5%E8%82%8C%20%E3%82%BB%E3%83%A9%E3%83%AB%E9%85%8D%E5%90%88%20%E3%82%B7%E3%82%A2%E8%84%82%20%E3%82%AA%E3%83%BC%E3%82%AC%E3%83%8B%E3%83%83%E3%82%AF%20%E7%84%A1%E6%B7%BB%E5%8A%A0%20%E5%86%AC%E3%81%AE%E4%B9%BE%E7%87%A5%E5%AF%BE%E7%AD%96%20%E3%83%8A%E3%82%A4%E3%83%88%E3%82%B1%E3%82%A2%20%E3%82%AE%E3%83%95%E3%83%88%E3%81%AB%E3%82%82%E6%9C%80%E9%81%A9","a_id":5267465,"p_id":1225,"pl_id":27061,"pc_id":1925,"s_n":"yahoo","u_so":3}],"eid":"r9mo3","s":"s"});
         </script>
         <div id="msmaflink-r9mo3">リンク</div>
 
@@ -498,11 +343,11 @@ details[open] summary.menu-btn::after { content: " ▲"; }
                 <li><strong>癒やしの香り：</strong> 深呼吸したくなる香りで、安眠を誘います。</li>
             </ul>
         </div>
-        </div>
+      </div>
     </div>
   </section>
 
-  <div style="border:2px solid #f4b5b5; border-radius:12px; padding:20px; margin:25px auto; background:#fff1f1; color:#503535; font-size:16px; line-height:1.6; width:90%; max-width:600px;">
+  <div style="border:2px solid #f4b5b5; border-radius:12px; padding:20px; margin:25px auto; background:#fff1f1; color:#503535; font-size:16px; line-height:1.6; width:90%; max-width:600px; text-align:center;">
     無理なケアは続きません。あなたの今のライフスタイルに合ったアイテムを一つ取り入れるだけで、肌は応えてくれます。<br>
     自分を大切に慈しむ時間が、挙式当日の自信に繋がりますよ。
   </div>
@@ -577,47 +422,38 @@ details[open] summary.menu-btn::after { content: " ▲"; }
     </a>
   </div>
 
+  <div style="max-width: 650px; margin: 50px auto; padding: 5px; background: linear-gradient(135deg, #f7a8a8 0%, #ffdecb 100%); border-radius: 20px; box-shadow: 0 10px 25px rgba(247, 168, 168, 0.25);">
+    <div style="background: #ffffff; border-radius: 15px; padding: 30px 20px; text-align: center; position: relative; overflow: hidden;">
+      
+      <span style="display: inline-block; background: #e74c3c; color: #fff; font-size: 12px; font-weight: bold; padding: 4px 12px; border-radius: 20px; vertical-align: middle; box-shadow: 0 2px 5px rgba(231, 76, 60, 0.3); margin-bottom: 10px;">
+        保存版・アーカイブ完成
+      </span>
+
+      <h3 style="margin: 5px 0 15px; font-size: 22px; color: #503535; font-family: 'Playfair Display', serif, sans-serif; line-height: 1.4;">
+        <span style="font-size: 0.8em; color: #d4a373;">栄養士Yuriの全ノウハウ公開</span><br>
+        読むだけで変わる「花嫁美容」Note
+      </h3>
+
+      <div style="background: #fffaf4; border: 1px dashed #d4a373; border-radius: 10px; padding: 15px; margin: 15px auto; max-width: 90%; text-align: left; font-size: 15px; color: #555;">
+        <p style="margin: 5px 0;">👰 <strong>プレ花嫁講座</strong>：ドレス姿を変える食事術</p>
+        <p style="margin: 5px 0;">📖 <strong>自己紹介</strong>：私が発信を続ける理由</p>
+        <p style="margin: 5px 0;">✨ <strong>高級美容液より効く</strong>「美肌定食」とは？</p>
+      </div>
+
+      <a href="note-archive.html" class="shiny-btn" style="display: block; width: 100%; max-width: 320px; margin: 20px auto 10px; background: linear-gradient(45deg, #f7a8a8, #d68e33); color: #fff; text-decoration: none; font-weight: bold; font-size: 18px; padding: 18px 0; border-radius: 50px; box-shadow: 0 5px 15px rgba(247, 168, 168, 0.4); position: relative; overflow: hidden; transition: transform 0.2s;">
+        全記事一覧を無料で見る ▶
+      </a>
+      
+      <p style="font-size: 12px; color: #999; margin-top: 10px;">※プレ花嫁様以外も役立つ情報満載です</p>
+    </div>
+  </div>
+
   <a href="#top" class="back-to-top" onclick="window.scrollTo({top:0,behavior:'smooth'});return false;">⬆ ページトップへ</a>
 
 </main>
 
- <div style="max-width: 650px; margin: 50px auto; padding: 5px; background: linear-gradient(135deg, #f7a8a8 0%, #ffdecb 100%); border-radius: 20px; box-shadow: 0 10px 25px rgba(247, 168, 168, 0.25);">
-  <div style="background: #ffffff; border-radius: 15px; padding: 30px 20px; text-align: center; position: relative; overflow: hidden;">
-    
-    <style>
-      @keyframes shine { 0% { transform: translateX(-100%) skewX(-15deg); } 100% { transform: translateX(200%) skewX(-15deg); } }
-      .shiny-btn::after {
-        content: ''; position: absolute; top: 0; left: 0; width: 50%; height: 100%;
-        background: linear-gradient(to right, rgba(255,255,255,0) 0%, rgba(255,255,255,0.3) 50%, rgba(255,255,255,0) 100%);
-        transform: skewX(-15deg); animation: shine 3s infinite;
-      }
-    </style>
-
-    <span style="display: inline-block; background: #e74c3c; color: #fff; font-size: 12px; font-weight: bold; padding: 4px 12px; border-radius: 20px; vertical-align: middle; box-shadow: 0 2px 5px rgba(231, 76, 60, 0.3); margin-bottom: 10px;">
-      保存版・アーカイブ完成
-    </span>
-
-    <h3 style="margin: 5px 0 15px; font-size: 22px; color: #503535; font-family: 'Playfair Display', serif, sans-serif; line-height: 1.4;">
-      <span style="font-size: 0.8em; color: #d4a373;">栄養士Yuriの全ノウハウ公開</span><br>
-      読むだけで変わる「花嫁美容」Note
-    </h3>
-
-    <div style="background: #fffaf4; border: 1px dashed #d4a373; border-radius: 10px; padding: 15px; margin: 15px auto; max-width: 90%; text-align: left; font-size: 15px; color: #555;">
-      <p style="margin: 5px 0;">👰 <strong>プレ花嫁講座</strong>：ドレス姿を変える食事術</p>
-      <p style="margin: 5px 0;">📖 <strong>自己紹介</strong>：私が発信を続ける理由</p>
-      <p style="margin: 5px 0;">✨ <strong>高級美容液より効く</strong>「美肌定食」とは？</p>
-    </div>
-
-    <a href="note-archive.html" class="shiny-btn" style="display: block; width: 100%; max-width: 320px; margin: 20px auto 10px; background: linear-gradient(45deg, #f7a8a8, #d68e33); color: #fff; text-decoration: none; font-weight: bold; font-size: 18px; padding: 18px 0; border-radius: 50px; box-shadow: 0 5px 15px rgba(247, 168, 168, 0.4); position: relative; overflow: hidden; transition: transform 0.2s;">
-      全記事一覧を無料で見る ▶
-    </a>
-    
-    <p style="font-size: 12px; color: #999; margin-top: 10px;">※プレ花嫁様以外も役立つ情報満載です</p>
-  </div>
-</div>
  <footer>
   <div class="footer-container">
-    
     <div class="footer-col">
       <h3>🌸 スキンケア・悩み別</h3>
       <a href="bridal-care.html">👰 結婚式直前！背中・二の腕ケア<span class="new-mark">New!!</span></a>
@@ -648,7 +484,6 @@ details[open] summary.menu-btn::after { content: " ▲"; }
       <a href="sonoko-diet.html">食べて痩せる肌診断 <span class="new-mark">New!!</span></a>
       <a href="about.html">当サイトについて (About)</a>
     </div>
-
   </div>
    
   <div class="footer-bottom">
@@ -660,6 +495,7 @@ details[open] summary.menu-btn::after { content: " ▲"; }
       <a href="privacy-policy.html" style="color:#888; text-decoration:none; font-size:12px;">プライバシーポリシー</a>
   </div>
 </footer>
+
 <div id="affiliateNotice">※当サイトはアフィリエイト広告（Amazonアソシエイト含む）を利用しています</div>
 
 </body>
