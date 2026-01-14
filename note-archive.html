@@ -38,7 +38,7 @@
         h1{font-family:'Playfair Display',serif;font-size:28px;letter-spacing:1px;margin-bottom:8px;}
         .lead{font-size:14px;color:#5a4545; margin-bottom: 20px;}
 
-        /* メインナビ（重要なものだけ表示） */
+        /* メインナビ */
         .main-nav { display: flex; justify-content: center; gap: 15px; margin-bottom: 15px; }
         .main-nav a {
             background: rgba(255,255,255,0.9); padding: 8px 16px; border-radius: 20px;
@@ -47,7 +47,7 @@
         }
         .main-nav a:hover { transform: translateY(-2px); color: #c63535; }
 
-        /* 開閉式メニュー（その他はここに隠す） */
+        /* 開閉式メニュー */
         details.menu-toggle { margin: 0 auto; max-width: 400px; cursor: pointer; }
         summary.menu-btn {
             list-style: none; font-size: 13px; color: #888; font-weight: bold;
@@ -107,7 +107,6 @@
             .note-content { padding: 10px; }
             .arrow-icon { display: none; }
             
-            /* バナーレスポンシブ */
             .banner-container { flex-direction: column; text-align: center; padding: 20px 15px; }
             .banner-content { text-align: center; }
             .banner-image { max-width: 60%; margin: 0 auto; }
@@ -120,7 +119,26 @@
         .footer-col h3 { font-size: 15px; color: #d6336c; border-bottom: 1px dashed #f4b5b5; padding-bottom: 5px; margin-bottom: 10px; font-weight: bold; }
         .footer-col a { display: block; color: #666; text-decoration: none; margin-bottom: 8px; }
         .footer-col a:hover { color: #d6336c; }
+        
+        /* New!! マークの点滅アニメーション */
+        @keyframes blinkEffect { 0% { opacity: 1; } 50% { opacity: 0.3; } 100% { opacity: 1; } }
+        .new-mark { color: #ff0000; font-weight: bold; font-size: 0.8em; margin-left: 5px; animation: blinkEffect 1.2s infinite; vertical-align: super; }
+
+        /* 楽天ROOMボタンのデザイン復活 */
         .footer-bottom { text-align: center; margin-top: 30px; border-top: 1px solid #eee; padding-top: 20px; }
+        .footer-room-link {
+            display: inline-block;
+            color: #c63535;
+            font-weight: bold;
+            border: 1px solid #c63535; /* 赤い枠線 */
+            padding: 10px 25px;
+            border-radius: 30px; /* 角丸 */
+            text-decoration: none;
+            background: #fff;
+            transition: 0.3s;
+            margin-bottom: 20px;
+        }
+        .footer-room-link:hover { background: #c63535; color: #fff; }
         
         #affiliateNotice { position: fixed; right: 10px; bottom: 10px; background: rgba(255,255,255,0.9); font-size: 10px; padding: 3px 6px; border: 1px solid #eee; border-radius: 4px; z-index: 999; }
     </style>
@@ -178,7 +196,7 @@
             <li class="note-item">
                 <a href="https://note.com/yuri_organic/n/n41e16581ada4?sub_rt=share_sb" class="note-link" target="_blank">
                     <div class="note-thumb-box">
-                        <img src="https://placehold.co/150x110/fcece3/d4a373?text=Vol.2" class="note-thumb" onerror="handleImageError(this)" alt="Vol.2 サムネイル">
+                        <img src="https://assets.st-note.com/production/uploads/images/243192674/rectangle_large_type_2_74c70bdb5682f90475644d64fe97b1c9.jpeg?width=1280" class="note-thumb" onerror="handleImageError(this)" alt="Vol.2 サムネイル">
                     </div>
                     <div class="note-content">
                         <span class="note-title">【花嫁講座②】気になる「二の腕・背中」は、揉むより〇〇を食べて流す。エステいらずの「飲むデトックス」術</span>
@@ -190,7 +208,7 @@
             <li class="note-item">
                 <a href="https://note.com/yuri_organic/n/na58ba68eb743?sub_rt=share_sb" class="note-link" target="_blank">
                     <div class="note-thumb-box">
-                         <img src="https://placehold.co/150x110/fcece3/d4a373?text=Vol.3" class="note-thumb" onerror="handleImageError(this)" alt="Vol.3 サムネイル">
+                        <img src="https://assets.st-note.com/production/uploads/images/243446180/rectangle_large_type_2_e98275fb159fa6e7e62527838c20fb66.jpeg?width=1280" class="note-thumb" onerror="handleImageError(this)" alt="Vol.3 サムネイル">
                     </div>
                     <div class="note-content">
                         <span class="note-title">【花嫁講座③】純白のドレスが「似合わない」原因は肌の黄ばみ？高い美白美容液より効く「透明感」の作り方</span>
@@ -202,7 +220,7 @@
             <li class="note-item">
                 <a href="https://note.com/yuri_organic/n/nfdaa221936d5?sub_rt=share_sb" class="note-link" target="_blank">
                     <div class="note-thumb-box">
-                         <img src="https://placehold.co/150x110/fcece3/d4a373?text=Vol.4" class="note-thumb" onerror="handleImageError(this)" alt="Vol.4 サムネイル">
+                        <img src="https://assets.st-note.com/production/uploads/images/243448952/rectangle_large_type_2_00b49828ef8e9e43ddaa9fa929708b7f.png?width=1280" class="note-thumb" onerror="handleImageError(this)" alt="Vol.4 サムネイル">
                     </div>
                     <div class="note-content">
                         <span class="note-title">【花嫁講座④】「甘いもの」を我慢してストレス爆発…😭となる前に。栄養士が選ぶ「食べても罪悪感ゼロ」の魔法の救済おやつ5選</span>
@@ -285,7 +303,6 @@
     <div class="section-wrapper" id="skincare">
         <h2 class="section-title">Skin Care</h2>
         <ul class="note-list">
-            
             <li class="note-item">
                 <a href="https://note.com/yuri_organic/n/nb8a8a082b1f4" class="note-link" target="_blank">
                     <div class="note-thumb-box">
