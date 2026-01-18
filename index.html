@@ -77,7 +77,7 @@
       position:relative;
       text-align:center;
       color:var(--text-main);
-      padding:80px 20px 30px; /* パディング調整 */
+      padding:80px 20px 30px;
       background-color: #f7a8a8;
       background-image:url('images/header_rose.jpg');
       background-size:cover;
@@ -129,6 +129,25 @@
     @keyframes fadeIn { from { opacity: 0; transform: translateY(-5px); } to { opacity: 1; transform: translateY(0); } }
 
     .container{max-width:980px;margin:0 auto;padding:0 16px;}
+
+    /* --- 診断ツール用CSS (追加分) --- */
+    .diag-container {
+        background: #fff; padding: 30px; border-radius: 20px; 
+        box-shadow: 0 10px 30px rgba(247, 168, 168, 0.2);
+        border: 2px solid #f7a8a8; max-width: 700px; margin: 30px auto; text-align: center;
+    }
+    .diag-title { font-size: 24px; color: #d6336c; font-weight: bold; margin-bottom: 20px; }
+    .diag-btn { 
+        display: block; width: 100%; padding: 16px; margin: 12px 0; 
+        background-color: #fff0f0; border: 2px solid #f7a8a8; 
+        border-radius: 10px; color: #5c4033; font-size: 18px; font-weight: bold;
+        cursor: pointer; transition: 0.3s; text-align: center; text-decoration: none;
+    }
+    .diag-btn:hover { background-color: #f7a8a8; color: #fff; transform: translateY(-2px); }
+    .question { display: none; animation: fadeIn 0.5s; }
+    .question.active { display: block; }
+    .result { display: none; animation: fadeIn 0.5s; padding: 20px; background: #fffaf4; border-radius: 15px; }
+    .tag { display: inline-block; background: #d6336c; color: #fff; padding: 5px 15px; border-radius: 20px; font-size: 14px; margin-bottom: 15px; }
 
     /* Concept & Benefits Section */
     .concept-box {
@@ -207,78 +226,12 @@
       box-shadow: 0 6px 18px rgba(0,0,0,0.2);
     }
 
-    /* Diagnosis Banner Animation */
-    @keyframes pulse-glow {
-      0% { box-shadow: 0 0 0 0 rgba(230, 126, 34, 0.4); transform: scale(1); }
-      50% { box-shadow: 0 0 0 10px rgba(230, 126, 34, 0); transform: scale(1.02); }
-      100% { box-shadow: 0 0 0 0 rgba(230, 126, 34, 0); transform: scale(1); }
-    }
-    .diagnosis-banner {
-      background: #fff;
-      border: 3px solid #f39c12;
-      border-radius: 15px;
-      padding: 25px;
-      text-align: center;
-      margin: 30px 0;
-      position: relative;
-    }
-    .diagnosis-badge {
-        background: #d35400; color: #fff; padding: 5px 15px; border-radius: 5px;
-        font-weight: bold; font-size: 12px; position: absolute; top: -15px; left: 50%;
-        transform: translateX(-50%); box-shadow: 0 2px 5px rgba(0,0,0,0.2);
-    }
-    .diagnosis-btn {
-      display: inline-block;
-      background: linear-gradient(45deg, #e67e22, #f39c12);
-      color: #fff;
-      font-size: 20px;
-      font-weight: bold;
-      padding: 15px 40px;
-      border-radius: 50px;
-      text-decoration: none;
-      margin-top: 15px;
-      box-shadow: 0 4px 15px rgba(230, 126, 34, 0.4);
-      animation: pulse-glow 2s infinite;
-    }
-    .diagnosis-btn:hover {
-        opacity: 0.9;
-        transform: translateY(-2px);
-    }
-
     /* Images */
     .responsive-img {
         max-width: 100%;
         height: auto;
         border-radius: 10px;
         box-shadow: 0 5px 15px rgba(0,0,0,0.1);
-    }
-
-    /* 楽天ROOM */
-    .room-promo {
-        background: #fff;
-        border: 2px dashed var(--room-color);
-        border-radius: 15px;
-        padding: 25px;
-        text-align: center;
-        margin: 50px 0;
-        color: var(--text-main);
-    }
-    .room-btn {
-        display: inline-block;
-        background: var(--room-color);
-        color: #fff;
-        padding: 12px 30px;
-        border-radius: 30px;
-        text-decoration: none;
-        font-weight: bold;
-        margin-top: 15px;
-        box-shadow: 0 4px 10px rgba(198, 53, 53, 0.3);
-        transition: 0.3s;
-    }
-    .room-btn:hover {
-        background: #a82525;
-        transform: translateY(-2px);
-        box-shadow: 0 6px 14px rgba(198, 53, 53, 0.4);
     }
 
     /* Footer */
@@ -335,23 +288,16 @@
       header {padding-top: 60px;}
     }
 
-    /* 横揺れ防止 */
-    html, body { overflow-x: hidden; width: 100%; }
-    img { max-width: 100%; height: auto; }
-
-    /* New!! 点滅 */
-    @keyframes blinkEffect { 0% { opacity: 1; } 50% { opacity: 0.3; } 100% { opacity: 1; } }
-    .new-mark {
-        color: #ff0000; font-weight: bold; font-size: 0.8em; margin-left: 5px; animation: blinkEffect 1.2s infinite; vertical-align: super;
-    }
-
-    /* Noteキラキラボタン用アニメーション */
+    /* Noteキラキラボタン用 */
     @keyframes shine { 0% { transform: translateX(-100%) skewX(-15deg); } 100% { transform: translateX(200%) skewX(-15deg); } }
     .shiny-btn::after {
       content: ''; position: absolute; top: 0; left: 0; width: 50%; height: 100%;
       background: linear-gradient(to right, rgba(255,255,255,0) 0%, rgba(255,255,255,0.3) 50%, rgba(255,255,255,0) 100%);
       transform: skewX(-15deg); animation: shine 3s infinite;
     }
+    /* New!! 点滅 */
+    @keyframes blinkEffect { 0% { opacity: 1; } 50% { opacity: 0.3; } 100% { opacity: 1; } }
+    .new-mark { color: #ff0000; font-weight: bold; font-size: 0.8em; margin-left: 5px; animation: blinkEffect 1.2s infinite; vertical-align: super; }
   </style>
 </head>
 <body>
@@ -371,74 +317,83 @@
 
     <nav class="main-nav">
         <a href="index.html">🏠 公式サイトTOP</a>
-        <a href="bridal-care.html">👰 花嫁ケア診断</a>
+        <a href="#diagnosis-area">👰 花嫁ケア診断</a>
     </nav>
 
     <details class="menu-toggle">
         <summary class="menu-btn">その他のメニューを表示</summary>
         <div class="hidden-links">
             <a href="skin-ranking.html">✨ ランキング</a>
-            <a href="trial-sets.html">🔰 お試しセット</a>
-            <a href="seasons-skin.html">🌸 季節別ケア</a>
-            <a href="age-skincare.html">👩 年齢別ケア</a>
-            <a href="lifestyle-skincare.html">💆‍♀️ 生活リズム別</a>
-            <a href="organic-science.html">🔬 成分の科学</a>
+            <a href="note-archive.html">📖 Note記事一覧</a>
+            <a href="accept-gym.html">💪 短期集中ジム</a>
             <a href="beauty-column.html">💄 コラム</a>
-            <a href="diet-beauty.html">🍃 インナービューティー</a>
         </div>
     </details>
-
   </div>
 </header>
 
 <main class="container">
 
-<div style="text-align: center; margin-top: 30px; margin-bottom: 20px;">
-    <img src="images/bride1.jpg" class="responsive-img" style="max-width: 50%;" onerror="handleImageError(this)" alt="幸せな花嫁">
-</div>
+  <div id="diagnosis-area" class="diag-container">
+    <div class="diag-title">⚡ あなたに最適なケアはどれ？<br><span style="font-size:0.7em; color:#555;">30秒でわかる花嫁美容診断</span></div>
 
-<div class="diagnosis-banner">
-      <span class="diagnosis-badge">栄養士監修・無料ツール</span>
-      <h3 style="color:#d35400; margin-bottom:10px; font-size:22px;">⚡ 緊急開催！あなたの肌は大丈夫？</h3>
-      <p style="margin-bottom:5px;">挙式やイベント直前、背中や二の腕の「ブツブツ・ザラつき」に焦っていませんか？<br>
-      今のあなたの肌状態と、必要なケア方法を<strong>30秒で診断</strong>します。</p>
-      
-      <a href="bridal-care.html" class="diagnosis-btn">
-          ✨ 今すぐ肌診断をする！ ✨
-      </a>
-      <p style="font-size:12px; color:#888; margin-top:10px;">（クリックして緊急マニュアルを読む ＞）</p>
+    <div id="q1" class="question active">
+        <p style="font-size:18px; margin-bottom:20px;">Q1. 結婚式まで、あとどのくらい？</p>
+        <button class="diag-btn" onclick="nextQ('q2a')">半年以上ある（じっくり派）🐢</button>
+        <button class="diag-btn" onclick="nextQ('q2b')">3ヶ月以内（焦ってる💦）🐇</button>
+    </div>
+
+    <div id="q2a" class="question">
+        <p style="font-size:18px; margin-bottom:20px;">Q2. 一番解決したい悩みは？</p>
+        <button class="diag-btn" onclick="showResult('result_skin')">背中の肌荒れ・ニキビ 😱</button>
+        <button class="diag-btn" onclick="showResult('result_diet')">二の腕・背中のハミ肉 🐷</button>
+    </div>
+
+    <div id="q2b" class="question">
+        <p style="font-size:18px; margin-bottom:20px;">Q2. ぶっちゃけ、予算は？</p>
+        <button class="diag-btn" onclick="showResult('result_diet')">コスパ重視でなんとかしたい 👛</button>
+        <button class="diag-btn" onclick="showResult('result_vip')">高くても確実に結果を出したい 💎</button>
+    </div>
+
+    <div id="result_skin" class="result">
+        <span class="tag">#肌質改善タイプ</span>
+        <h2 style="color:#d6336c; margin-top:10px;">背中美人コース</h2>
+        <p>時間はまだあります！今のうちに「土台」を整えましょう。<br>医療監修のケアで、当日は発光するような背中に✨</p>
+        
+        <a href="https://px.a8.net/..." class="btn-main" style="display:block; margin:20px auto; max-width:300px;">おすすめの背中ケアを見る ➤</a>
+        
+        <p style="font-size:12px; color:#999;">※Yuri提携の限定キャンペーンを確認する</p>
+    </div>
+
+    <div id="result_diet" class="result">
+        <span class="tag">#ラインシェイプタイプ</span>
+        <h2 style="color:#d6336c; margin-top:10px;">駆け込みエステコース</h2>
+        <p>脂肪を柔らかくして流すのが最短ルートです。<br>まずは「体験」で自分に合うかチェック！</p>
+        
+        <a href="https://px.a8.net/..." class="btn-main" style="display:block; margin:20px auto; max-width:300px;">おすすめの痩身エステを見る ➤</a>
+    </div>
+
+    <div id="result_vip" class="result">
+        <span class="tag" style="background:#000;">#短期集中VIPタイプ</span>
+        <h2 style="margin-top:10px;">結果コミット特別プラン</h2>
+        <p>あなたは「本気」の花嫁様ですね。<br>一般には出回らない、私が唯一信頼する<br>短期集中プログラムへの招待状です💌</p>
+        
+        <a href="accept-gym.html" class="btn-main" style="background:#000; display:block; margin:20px auto; max-width:300px;">VIPプラン詳細を見る ➤</a>
+    </div>
   </div>
-
-  <div style="max-width: 700px; margin: 40px auto; padding: 5px; background: linear-gradient(135deg, #f7a8a8 0%, #ffdecb 100%); border-radius: 20px; box-shadow: 0 10px 25px rgba(247, 168, 168, 0.25);">
+  <div style="max-width: 700px; margin: 40px auto; padding: 5px; background: linear-gradient(135deg, #f7a8a8 0%, #ffdecb 100%); border-radius: 20px;">
     <div style="background: #ffffff; border-radius: 15px; padding: 30px 20px; text-align: center; position: relative; overflow: hidden;">
-      
-      <span style="display: inline-block; background: #e74c3c; color: #fff; font-size: 12px; font-weight: bold; padding: 4px 12px; border-radius: 20px; vertical-align: middle; box-shadow: 0 2px 5px rgba(231, 76, 60, 0.3); margin-bottom: 10px;">
-        保存版・アーカイブ完成
+      <span style="display: inline-block; background: #e74c3c; color: #fff; font-size: 12px; font-weight: bold; padding: 4px 12px; border-radius: 20px; margin-bottom: 10px;">
+        保存版・アーカイブ
       </span>
-
-      <h3 style="margin: 5px 0 15px; font-size: 22px; color: #503535; font-family: 'Playfair Display', serif, sans-serif; line-height: 1.4;">
+      <h3 style="margin: 5px 0 15px; font-size: 22px; color: #503535; font-family: 'Playfair Display', serif;">
         <span style="font-size: 0.8em; color: #d4a373;">栄養士Yuriの全ノウハウ公開</span><br>
         読むだけで変わる「花嫁美容」Note
       </h3>
-
-      <div style="background: #fffaf4; border: 1px dashed #d4a373; border-radius: 10px; padding: 15px; margin: 15px auto; max-width: 90%; text-align: left; font-size: 15px; color: #555;">
-        <p style="margin: 5px 0;">👰 <strong>プレ花嫁講座</strong>：ドレス姿を変える食事術</p>
-        <p style="margin: 5px 0;">📖 <strong>自己紹介</strong>：私が発信を続ける理由</p>
-        <p style="margin: 5px 0;">✨ <strong>高級美容液より効く</strong>「美肌定食」とは？</p>
-      </div>
-
-      <a href="note-archive.html" class="shiny-btn" style="display: block; width: 100%; max-width: 320px; margin: 20px auto 10px; background: linear-gradient(45deg, #f7a8a8, #d68e33); color: #fff; text-decoration: none; font-weight: bold; font-size: 18px; padding: 18px 0; border-radius: 50px; box-shadow: 0 5px 15px rgba(247, 168, 168, 0.4); position: relative; overflow: hidden; transition: transform 0.2s;">
+      <a href="note-archive.html" class="shiny-btn" style="display: block; width: 100%; max-width: 320px; margin: 20px auto 10px; background: linear-gradient(45deg, #f7a8a8, #d68e33); color: #fff; text-decoration: none; font-weight: bold; font-size: 18px; padding: 18px 0; border-radius: 50px;">
         全記事一覧を無料で見る ▶
       </a>
-      
-      <p style="font-size: 12px; color: #999; margin-top: 10px;">※プレ花嫁様以外も役立つ情報満載です</p>
     </div>
-  </div>
-  <div style="background:#fffaf0; border:2px dashed #f7a8a8; padding:15px; margin:40px 0; text-align:center; border-radius:10px;">
-      <p style="margin:0 0 10px; font-weight:bold; color:#d6336c;">\ 迷ったらコレを見て！ /</p>
-      <p style="margin:0; font-size:14px;">栄養士が成分で厳選した<br>
-      <a href="skin-ranking.html" style="font-size:18px; font-weight:bold; color:#c63535; text-decoration:underline;">🏆 最新スキンケアランキング</a>
-      </p>
   </div>
 
   <section class="concept-box">
@@ -453,196 +408,83 @@
     </p>
   </section>
 
-  <div style="text-align: center; margin-top: 30px; margin-bottom: 30px;">
-    <img src="images/organic1.jpg" class="responsive-img" style="max-width: 40%;" onerror="handleImageError(this)" alt="オーガニックイメージ">
-  </div>
-    
   <section>
     <h2>挙式直前でも安心！ 3つのメリット</h2>
     <div class="benefit-grid">
-        
       <div class="benefit-card">
         <span class="benefit-icon">🍃</span>
         <h3>1. 敏感な時期でも安心</h3>
-        <p>
-          挙式前のストレスでゆらぐ肌にも優しく浸透。石油系成分を使わないため、式直前の「もしも」の肌トラブルリスクを最小限に抑えられます。
-        </p>
+        <p>挙式前のストレスでゆらぐ肌にも優しく浸透。石油系成分を使わないため、式直前の「もしも」の肌トラブルリスクを最小限に抑えられます。</p>
       </div>
-
       <div class="benefit-card">
         <span class="benefit-icon">💧</span>
         <h3>2. 化粧ノリが一日続く</h3>
-        <p>
-          植物オイルが角質層のバリア機能を強化。長時間の披露宴や撮影でも、乾燥によるメイク崩れを防ぎ、潤いのある肌をキープします。
-        </p>
+        <p>植物オイルが角質層のバリア機能を強化。長時間の披露宴や撮影でも、乾燥によるメイク崩れを防ぎ、潤いのある肌をキープします。</p>
       </div>
-
       <div class="benefit-card">
         <span class="benefit-icon">✨</span>
         <h3>3. 写真映えする透明感</h3>
-        <p>
-          豊富なビタミンと抗酸化成分が、くすみを払いトーンアップ。高画質のカメラでも自信が持てる、内側から輝くような肌を育みます。
-        </p>
+        <p>豊富なビタミンと抗酸化成分が、くすみを払いトーンアップ。高画質のカメラでも自信が持てる、内側から輝くような肌を育みます。</p>
       </div>
-
     </div>
-  </section>
-
-  <div style="text-align: center; margin-top: 60px; margin-bottom: 20px;">
-    <img src="images/bride3.jpg" class="responsive-img" style="max-width: 50%;" onerror="handleImageError(this)" alt="スキンケアアドバイザーおすすめ">
-  </div>
-
-  <section style="text-align:center; margin: 0 0 60px 0; background:#fff4f4; padding:40px; border-radius:20px;">
-    <h3 style="margin-bottom:20px;">スキンケアアドバイザー厳選</h3>
-    <p style="margin-bottom:30px;">
-      「失敗できない」花嫁様のために。<br>
-      成分、即効性、コスパを徹底比較して厳選しました。
-    </p>
-    <a href="skin-ranking.html" class="btn-main">
-      ▶ おすすめランキングを見る
-    </a>
   </section>
 
   <section class="recommend-box">
     <h2>こんなお悩みを持つ花嫁様に最適です</h2>
-    <p style="margin-bottom:30px;">Essential Beauty Needsは、以下のような悩みを持つ方の味方です。</p>
-      
     <ul class="check-list">
-      <li><strong>背中や二の腕を出すドレスに自信がない</strong><br>
-          <span style="font-size:14px; color:#888;">→ 栄養士が教える「内側×外側」のWケアで解決します。</span></li>
-        
-      <li><strong>エステに行く予算も時間も足りない</strong><br>
-          <span style="font-size:14px; color:#888;">→ 自宅でエステ級のケアができるオーガニックアイテムを厳選。</span></li>
-        
-      <li><strong>当日、肌荒れしないか不安でたまらない</strong><br>
-          <span style="font-size:14px; color:#888;">→ 刺激の少ない「お守りコスメ」で、心も肌も安定させます。</span></li>
-            
-      <li><strong>香りでリラックスして準備を楽しみたい</strong><br>
-          <span style="font-size:14px; color:#888;">→ 本物の精油の香りで、忙しい準備期間を癒やしの時間に変えます。</span></li>
+      <li><strong>背中や二の腕を出すドレスに自信がない</strong></li>
+      <li><strong>エステに行く予算も時間も足りない</strong></li>
+      <li><strong>当日、肌荒れしないか不安でたまらない</strong></li>
+      <li><strong>香りでリラックスして準備を楽しみたい</strong></li>
     </ul>
   </section>
-  <section style="margin-top:60px; text-align:center;">
-    <h2>花嫁美容コラム</h2>
-    <div style="display:flex; flex-wrap:wrap; justify-content:center; gap:20px; margin-top:20px;">
-      <div style="width:300px; text-align:left;">
-        <img src="images/article1.jpg" style="width:100%; border-radius:10px; margin-bottom:10px;" onerror="handleImageError(this)" alt="コラム画像1">
-        <h3 style="font-size:18px;">挙式前は「引き算」が重要？</h3>
-        <p style="font-size:14px; color:#666;">無添加とオーガニックの違いを知り、肌に負担をかけない選び方を。</p>
-        <a href="beauty-column.html" style="color:var(--accent-hover); font-weight:bold; text-decoration:none;">続きを読む &rarr;</a>
-      </div>
-      <div style="width:300px; text-align:left;">
-        <img src="images/article2.jpg" style="width:100%; border-radius:10px; margin-bottom:10px;" onerror="handleImageError(this)" alt="コラム画像2">
-        <h3 style="font-size:18px;">朝と夜の「花嫁スキンケア」</h3>
-        <p style="font-size:14px; color:#666;">肌のリズムに合わせてケアを変えれば、当日の化粧ノリが劇変します。</p>
-        <a href="beauty-column.html" style="color:var(--accent-hover); font-weight:bold; text-decoration:none;">続きを読む &rarr;</a>
-      </div>
-    </div>
-  </section>
-<div style="background:#fff5f5; border-radius:15px; padding:30px; margin:40px 0; border:2px solid #ffdecb;">
-        <h2 style="color:#d68e33; text-align:center; margin-top:0; border-bottom:none;">🍽️ あなたの「好物」でバレる！？<br>肌トラブル診断</h2>
-        <p style="text-align:center; font-size:14px;">好きな食べ物は、今の体内の栄養バランスと肌状態を映す鏡です。<br>当てはまるものをチェックしてみましょう。</p>
-
-        <details style="margin-bottom:15px; background:#fff; padding:15px; border-radius:10px; cursor:pointer;">
-            <summary style="font-weight:bold; color:#c04b4b;">🍰 甘いもの（ケーキ・チョコ）が大好き</summary>
-            <div style="margin-top:10px; font-size:15px;">
-                <p><strong>診断：脂性肌～混合肌（ニキビ・黄ぐすみ）</strong></p>
-                <p>糖質の摂りすぎはTゾーンのベタつきや、肌が黄色くくすむ「糖化」の原因に。ハリの低下にも要注意です。<br>
-                <span style="color:#d68e33;">👉 おすすめケア：</span>低GIのナッツをおやつにするか、食事で血糖値を急上昇させない工夫を。
-                </p>
-            </div>
-        </details>
-
-        <details style="margin-bottom:15px; background:#fff; padding:15px; border-radius:10px; cursor:pointer;">
-            <summary style="font-weight:bold; color:#c04b4b;">🌶️ 辛いもの（唐辛子など）が大好き</summary>
-            <div style="margin-top:10px; font-size:15px;">
-                <p><strong>診断：脂性肌～敏感肌（炎症リスク）</strong></p>
-                <p>発汗作用で皮脂が増えるほか、刺激で肌の赤みや炎症を引き起こしやすくなっています。<br>
-                <span style="color:#d68e33;">👉 おすすめケア：</span>抗酸化作用のあるトマトなどの野菜をたっぷり摂って炎症を鎮火！
-                </p>
-            </div>
-        </details>
-
-        <details style="margin-bottom:15px; background:#fff; padding:15px; border-radius:10px; cursor:pointer;">
-            <summary style="font-weight:bold; color:#c04b4b;">🍤 油っこいもの・スナックが大好き</summary>
-            <div style="margin-top:10px; font-size:15px;">
-                <p><strong>診断：脂性肌（毛穴詰まり・ニキビ）</strong></p>
-                <p>悪い油の摂りすぎは、そのままドロドロの皮脂となり毛穴を詰まらせます。酸化した油は肌老化の最大要因！<br>
-                <span style="color:#d68e33;">👉 おすすめケア：</span>揚げ物を減らし、SONOKOのような「ノンオイル調理」で肌を休ませて。
-                </p>
-            </div>
-        </details>
-        
-        <details style="margin-bottom:15px; background:#fff; padding:15px; border-radius:10px; cursor:pointer;">
-            <summary style="font-weight:bold; color:#c04b4b;">🧂 味の濃いもの・塩辛いものが大好き</summary>
-            <div style="margin-top:10px; font-size:15px;">
-                <p><strong>診断：乾燥肌～むくみ肌</strong></p>
-                <p>塩分過多は体内の水分を奪い、肌の乾燥を招きます。同時に顔のむくみも引き起こすダブルパンチ。<br>
-                <span style="color:#d68e33;">👉 おすすめケア：</span>カリウムを含む野菜や海藻を摂って、余分な塩分を排出しましょう。
-                </p>
-            </div>
-        </details>
-        
-        <p style="margin-top:20px; font-weight:bold; text-align:center;">
-            「わかってるけど、食事を変えるのは難しい…」<br>
-            そう思ったあなたにおすすめなのが、これです👇
-        </p>
-      </div>
-      
-    
-   <div class="nav-links" style="text-align:center">
-      <a href="#" style="color:var(--muted); text-decoration:none;">⬆ ページトップへ</a>
-          <div class="nav-break"></div>
 
 </main>
 
- <footer>
+<footer>
   <div class="footer-container">
-    
     <div class="footer-col">
       <h3>🌸 スキンケア・悩み別</h3>
-      <a href="bridal-care.html">👰 結婚式直前！背中・二の腕ケア<span class="new-mark">New!!</span></a>
+      <a href="#diagnosis-area">👰 結婚式直前！花嫁診断<span class="new-mark">New!!</span></a>
       <a href="skin-ranking.html">おすすめスキンケアランキング</a>
-      <a href="seasons-skin.html">季節別スキンケア（春夏秋冬）</a>
-      <a href="age-skincare.html">40代・50代 年齢別ケア</a>
       <a href="acne-care.html">肌荒れ・敏感肌・ニキビケア</a>
-      <a href="lifestyle-skincare.html">生活リズム別（時短・夜型など）</a>
     </div>
-
     <div class="footer-col">
       <h3>🛁 ボディ・ヘア・インナー</h3>
-      <a href="hair-care.html">ヘアケア・頭皮ケア特集</a>
-      <a href="diet-beauty.html">インナービューティー＆ダイエット</a>
+      <a href="diet-beauty.html">インナービューティー</a>
       <a href="accept-gym.html">銀座・完全個室ジムACCEPT体験記</a>
-      <a href="smoothie-recipes.html">栄養士おすすめ！スムージーのレシピ<span class="new-mark">New!!</span></a>
-      <a href="amazon-oil-review.html">本当に効く！オイルレビュー</a>
-      <a href="organic-science.html">オーガニック成分の科学</a>
+      <a href="smoothie-recipes.html">栄養士おすすめスムージー<span class="new-mark">New!!</span></a>
     </div>
-
     <div class="footer-col">
       <h3>🎁 特集・コラム・その他</h3>
       <a href="note-archive.html">栄養士Yuriの公式Note一覧<span class="new-mark">New!!</span></a>
-      <a href="gift-selection.html">心をつなぐオーガニックギフト</a>
-      <a href="trial-sets.html">失敗しない！お試しセット比較</a>
-      <a href="winter-selection.html">冬のベストセレクション</a>
       <a href="beauty-column.html">ビューティーコラム一覧</a>
-      <a href="sonoko-diet.html">食べて痩せる肌診断 <span class="new-mark">New!!</span></a>
-      <a href="about.html">当サイトについて (About)</a>
     </div>
-
   </div>
-   
   <div class="footer-bottom">
       <a href="https://room.rakuten.co.jp/room_e0dd63a90a/items" target="_blank" rel="noopener" class="footer-room-link">
         🏠 管理人Yuriの楽天ROOMを見る
       </a>
       <br>
-      © 2025 Essential Beauty Needs<br><br>
+      © 2026 Essential Beauty Needs<br><br>
       <a href="privacy-policy.html" style="color:#888; text-decoration:none; font-size:12px;">プライバシーポリシー</a>
   </div>
 </footer>
 
 <div id="affiliateNotice">※当サイトはアフィリエイト広告（Amazonアソシエイト含む）を利用しています</div>
 
+<script>
+    function nextQ(nextId) {
+        document.querySelectorAll('.question').forEach(el => el.classList.remove('active'));
+        document.getElementById(nextId).classList.add('active');
+    }
+    function showResult(resultId) {
+        document.querySelectorAll('.question').forEach(el => el.classList.remove('active'));
+        document.getElementById(resultId).style.display = 'block';
+        // 結果までスクロール
+        document.getElementById('diagnosis-area').scrollIntoView({behavior: 'smooth'});
+    }
+</script>
+
 </body>
 </html>
-
