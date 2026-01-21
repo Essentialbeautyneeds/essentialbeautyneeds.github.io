@@ -20,7 +20,7 @@
       gtag('js', new Date());
       gtag('config', 'G-2HGEPHVZYY');
     }
-    // 画像エラー時にプレースホルダーを表示（他のジム用）
+    // 画像エラー時にプレースホルダーを表示
     function handleImageError(imgElement, width, height, text) { 
          imgElement.onerror = null; 
          imgElement.src = `https://placehold.co/${width}x${height}/f0f0f0/aaaaaa?text=${encodeURIComponent(text)}`;
@@ -62,10 +62,17 @@
         margin-bottom: 30px;
         box-shadow: 0 4px 15px rgba(0,0,0,0.08);
     }
+    .article-img-small {
+        width: 100%;
+        max-height: 300px;
+        object-fit: cover;
+        border-radius: 10px;
+        margin-bottom: 15px;
+    }
     /* ギャラリー風グリッド */
     .image-gallery {
         display: grid;
-        grid-template-columns: repeat(auto-fit, minmax(200px, 1fr));
+        grid-template-columns: repeat(auto-fit, minmax(250px, 1fr));
         gap: 15px;
         margin-bottom: 25px;
     }
@@ -90,9 +97,42 @@
     .shop-link::after { content: "→"; position: absolute; right: 20px; color: var(--accent); }
     .shop-link:hover { background: #ffe6e6; transform: translateX(5px); }
     
-    /* 栄養士コメント */
+    /* 栄養士コメント・特徴リスト */
     .pro-comment { background: #f9f9f9; padding: 20px; border-radius: 10px; margin-top: 20px; font-size: 15px; border-left: 4px solid #b0c4de; }
     .pro-comment strong { color: #4682b4; }
+    
+    .feature-list { list-style: none; padding: 0; margin: 20px 0; }
+    .feature-list li { position: relative; padding-left: 25px; margin-bottom: 10px; font-weight: 500; }
+    .feature-list li::before { content: "✔"; position: absolute; left: 0; color: var(--gold); font-weight: bold; }
+
+    /* キャンペーンBOX */
+    .campaign-box {
+        background: linear-gradient(135deg, #fff0f5, #ffe6e6);
+        border: 2px dashed #d6336c;
+        border-radius: 12px;
+        padding: 25px;
+        text-align: center;
+        margin-top: 30px;
+    }
+    .campaign-title { font-weight: bold; color: #d6336c; font-size: 18px; margin-bottom: 10px; display: block; }
+    .campaign-btn {
+        display: inline-block;
+        background: #d6336c;
+        color: #fff;
+        font-weight: bold;
+        text-decoration: none;
+        padding: 15px 40px;
+        border-radius: 50px;
+        margin-top: 15px;
+        box-shadow: 0 4px 15px rgba(214, 51, 108, 0.3);
+        transition: transform 0.2s;
+    }
+    .campaign-btn:hover { transform: translateY(-2px); opacity: 0.9; }
+
+    /* NAP情報テーブル（SEO対策） */
+    .nap-table { width: 100%; border-collapse: collapse; margin-top: 20px; font-size: 14px; }
+    .nap-table th, .nap-table td { border: 1px solid #eee; padding: 12px; text-align: left; }
+    .nap-table th { background: #f9f9f9; width: 30%; color: #555; }
 
     /* 診断バナー */
     .diagnosis-banner { background: #fff; border: 3px solid #f39c12; border-radius: 15px; padding: 25px; text-align: center; margin: 30px auto; position: relative; max-width: 650px; }
@@ -167,23 +207,62 @@
     <h2>💎 銀座エリア（本気のボディメイク）</h2>
     <div class="gym-card">
         <span class="area-badge">銀座</span>
-        <h3>完全個室プライベートジム ACCEPT</h3>
         
-        <div class="image-gallery">
-            <img src="images/IMG_2138_Original.JPG" alt="Before After" class="gallery-img">
-            <img src="images/IMG_3722_Original.JPG" alt="トレーニング風景" class="gallery-img">
-            <img src="images/IMG_2076_Original.JPG" alt="美しい背中のライン" class="gallery-img" style="object-position:top;">
-            <img src="images/IMG_2078_Original.JPG" alt="ヒップアップ" class="gallery-img">
+        <div class="image-gallery" style="display: grid; grid-template-columns: repeat(auto-fit, minmax(250px, 1fr)); gap: 15px; margin-bottom: 25px;">
+            <img src="images/IMG_2138_Original.JPG" alt="Before After" class="gallery-img" style="width: 100%; height: 250px; object-fit: cover; border-radius: 10px; box-shadow: 0 2px 10px rgba(0,0,0,0.1);">
+            
+            <img src="images/E14DFBF1-012A-4CF1-B570-EADF53AE25C2.jpg" alt="多数の成功実績" class="gallery-img" style="width: 100%; height: 250px; object-fit: cover; border-radius: 10px; box-shadow: 0 2px 10px rgba(0,0,0,0.1);">
+            
+            <img src="images/IMG_3722_Original.jpg" alt="スクワット指導" class="gallery-img" style="width: 100%; height: 250px; object-fit: cover; border-radius: 10px; box-shadow: 0 2px 10px rgba(0,0,0,0.1);">
+            
+            <img src="images/IMG_3697_Original.jpg" alt="丁寧なカウンセリング" class="gallery-img" style="width: 100%; height: 250px; object-fit: cover; border-radius: 10px; box-shadow: 0 2px 10px rgba(0,0,0,0.1);">
+
+            <img src="images/IMG_2076_Original.JPG" alt="美しい背中のライン" class="gallery-img" style="width: 100%; height: 250px; object-fit: cover; object-position: top; border-radius: 10px; box-shadow: 0 2px 10px rgba(0,0,0,0.1);">
+            
+            <img src="images/IMG_2078_Original.JPG" alt="ヒップアップ" class="gallery-img" style="width: 100%; height: 250px; object-fit: cover; border-radius: 10px; box-shadow: 0 2px 10px rgba(0,0,0,0.1);">
         </div>
 
+        <h3>完全個室プライベートジム ACCEPT</h3>
         <p>
-            「誰にも会わずに集中したい」という花嫁様のための隠れ家ジム。<br>
-            ただ痩せるだけでなく、ドレスが似合う「砂時計ボディ」を作るための指導が受けられます。<br>
-            食事指導も徹底しているので、リバウンドの心配もありません。
+            「ボディメイクを一生の習慣に」をコンセプトに、無理なく続けられる楽しさを大切にする銀座の隠れ家ジム。<br>
+            ただ痩せるだけでなく、ドレスが似合う「砂時計ボディ」を作るための指導が受けられます。
         </p>
+
+        <ul class="feature-list">
+            <li><strong>世界レベルの指導：</strong> 30歳・56歳の大会優勝トレーナーが在籍。年齢を問わず理想の体へ。</li>
+            <li><strong>生活習慣に寄り添う：</strong> 会食やお酒が多い方でもOK。LINEで24時間食事サポート。</li>
+            <li><strong>利用期限なし：</strong> 忙しい花嫁様も、自分のペースでチケットを消化できます。</li>
+            <li><strong>手ぶらでOK：</strong> ウェア・タオル・水素水が無料。銀座駅から徒歩5分の好立地。</li>
+        </ul>
+
         <div class="pro-comment">
             <strong>👩‍⚕️ 栄養士のCheck：</strong><br>
-            銀座という立地柄、美容意識の高い会員様が多く、トレーナーの質もトップレベル。本気で変わりたいならここ一択です。
+            大手ジムではトレーナーがコロコロ変わることがありますが、ここは有資格のベテランが一貫して見てくれるのが最大の強み。<br>
+            一流ホテルで培ったホスピタリティもあり、初めての方でも安心して通えます。
+        </div>
+
+        <div class="campaign-box">
+            <span class="campaign-title">🎁 Essential Beauty Needs読者様へ 特別キャンペーン</span>
+            <p style="margin:0;">
+                1. <strong>無料体験トレーニング</strong> 実施中！<br>
+                2. <strong>入会金33,000円が無料</strong>（※先着3名様）<br><br>
+                「人生最後のボディメイク」を始めるチャンスです。<br>
+                まずは無料体験で、プロの指導を体感してみてください。
+            </p>
+            <a href="https://www.accept-gym.jp" target="_blank" rel="noopener" class="campaign-btn">
+                公式サイトで無料体験を予約する →
+            </a>
+        </div>
+
+        <div style="margin-top:30px; border-top:1px dashed #eee; padding-top:20px;">
+            <p style="font-size:12px; color:#999; margin-bottom:10px;">■ 店舗情報</p>
+            <table class="nap-table">
+                <tr><th>店舗名</th><td>【銀座】パーソナルジム ACCEPT</td></tr>
+                <tr><th>住所</th><td>〒104-0061 東京都中央区銀座２丁目１２−４ アジリア銀座 J's402</td></tr>
+                <tr><th>電話番号</th><td>080-7052-5320</td></tr>
+                <tr><th>営業時間</th><td>10:00〜22:00</td></tr>
+                <tr><th>定休日</th><td>年末年始のみ(12/31〜1/1)</td></tr>
+            </table>
         </div>
     </div>
 
@@ -192,7 +271,7 @@
     <div class="gym-card">
         <span class="area-badge">全国（主要都市）</span>
         
-        <img src="" alt="スリムレッグ イメージ" class="article-img" style="max-height:250px;" onerror="handleImageError(this, 800, 250, 'Slim Legs Concept')">
+        <img src="https://placehold.co/800x250/fffafa/e6e6e6?text=Slim+Legs+Image" alt="スリムレッグ イメージ" class="article-img" style="max-height:250px;" onerror="handleImageError(this, 800, 250, 'Slim Legs Concept')">
 
         <h3>【下半身痩せ特化】マーメイドラインを着たいなら</h3>
         <p>
@@ -211,7 +290,7 @@
     <div class="gym-card">
         <span class="area-badge">六本木・表参道</span>
         
-        <img src="" alt="女性専用ジム イメージ" class="article-img" style="max-height:250px;" onerror="handleImageError(this, 800, 250, 'Stylish Gym Concept')">
+        <img src="https://placehold.co/800x250/fffafa/e6e6e6?text=Stylish+Women+Gym" alt="女性専用ジム イメージ" class="article-img" style="max-height:250px;" onerror="handleImageError(this, 800, 250, 'Stylish Gym Concept')">
 
         <h3>【女性トレーナーのみ】おしゃれに痩せたい</h3>
         <p>
@@ -243,6 +322,8 @@
 
     <h2>🏠 お家でこっそり！秘密の矯正アイテム</h2>
     
+    <img src="https://placehold.co/800x300/fffafa/e6e6e6?text=Home+Care+Items" alt="お家ケア" class="article-img" style="max-height:300px;" onerror="handleImageError(this, 800, 300, 'Home Care')">
+
     <div class="gym-card" style="border-left: 5px solid #ffb6c1;">
         <h3>履いた瞬間、魔法にかかる「骨盤ショーツ」</h3>
         <p>
