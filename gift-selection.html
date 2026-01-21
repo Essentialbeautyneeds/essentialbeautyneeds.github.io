@@ -11,9 +11,7 @@
   <link href="https://fonts.googleapis.com/css2?family=Playfair+Display:wght@600&family=Quicksand:wght@400;600&display=swap" rel="stylesheet">
 
   <script>
-    function isInternalUser() {
-      return document.cookie.split(';').some(c => c.trim().startsWith('internal_user=true'));
-    }
+    function isInternalUser() { return document.cookie.split(';').some(c => c.trim().startsWith('internal_user=true')); }
     if (!isInternalUser()) {
       var gaScript = document.createElement('script');
       gaScript.async = true;
@@ -23,10 +21,7 @@
       function gtag(){dataLayer.push(arguments);}
       gtag('js', new Date());
       gtag('config', 'G-2HGEPHVZYY');
-    } else {
-        console.log('✅ Internal traffic excluded.');
     }
-
     function handleImageError(imgElement, width, height, text) { 
          imgElement.onerror = null; 
          imgElement.src = `https://placehold.co/${width}x${height}/f7a8a8/ffffff?text=${encodeURIComponent(text)}`;
@@ -34,47 +29,24 @@
   </script>
 
   <style>
-    /* 共通設定（既存デザインを踏襲） */
+    /* 共通設定 */
     :root {
       --bg: #fff8f8;
       --accent: #f7a8a8;
       --accent-hover: #f48b8b;
       --text-main: #503535;
       --card-bg: #ffffff;
-      --gold: #c5a059; /* ギフト用の特別カラー（ゴールド） */
-      --room-color: #c63535; /* 楽天ROOM用カラー */
+      --gold: #c5a059;
+      --room-color: #c63535;
     }
     *, *::before, *::after { box-sizing: border-box; }
 
-    body {
-      font-family: 'Quicksand', sans-serif;
-      margin: 0;
-      background: var(--bg);
-      color: #555;
-      line-height: 1.8;
-    }
+    body { font-family: 'Quicksand', sans-serif; margin: 0; background: var(--bg); color: #555; line-height: 1.8; }
 
     /* ヘッダー */
-    header {
-      background: linear-gradient(135deg, #fff0f5, #ffe6e6);
-      text-align: center;
-      padding: 80px 20px 50px;
-      color: var(--text-main);
-      border-bottom: 3px solid #e6b7b3;
-    }
-    header h1 {
-      font-family: 'Playfair Display', serif;
-      font-size: 36px;
-      margin: 0;
-      color: #d6336c;
-      letter-spacing: 1px;
-    }
-    header p {
-      font-size: 16px;
-      margin-top: 10px;
-      font-weight: 600;
-      color: var(--text-main);
-    }
+    header { background: linear-gradient(135deg, #fff0f5, #ffe6e6); text-align: center; padding: 80px 20px 50px; color: var(--text-main); border-bottom: 3px solid #e6b7b3; }
+    header h1 { font-family: 'Playfair Display', serif; font-size: 36px; margin: 0; color: #d6336c; letter-spacing: 1px; }
+    header p { font-size: 16px; margin-top: 10px; font-weight: 600; color: var(--text-main); }
 
     /* ナビゲーション */
     .nav-links{display:flex;gap:12px;justify-content:center;margin-top:25px;flex-wrap:wrap;}
@@ -83,230 +55,56 @@
     .nav-break { flex-basis: 100%; height: 0; margin: 5px 0; }
 
     /* メインコンテンツ */
-    main {
-      max-width: 900px;
-      margin: 40px auto;
-      padding: 0 20px;
-    }
+    main { max-width: 900px; margin: 40px auto; padding: 0 20px; }
 
     /* 導入文 */
-    .intro-message {
-      background: #fff;
-      padding: 30px;
-      border-radius: 12px;
-      text-align: center;
-      box-shadow: 0 4px 15px rgba(0,0,0,0.05);
-      margin-bottom: 50px;
-      border: 1px solid #fceeee;
-    }
+    .intro-message { background: #fff; padding: 30px; border-radius: 12px; text-align: center; box-shadow: 0 4px 15px rgba(0,0,0,0.05); margin-bottom: 50px; border: 1px solid #fceeee; }
 
     /* セクション見出し */
-    h2.gift-heading {
-      font-family: 'Playfair Display', serif;
-      text-align: center;
-      color: var(--text-main);
-      font-size: 26px;
-      margin: 60px 0 30px;
-      position: relative;
-    }
-    h2.gift-heading::before, h2.gift-heading::after {
-      content: "🎁";
-      font-size: 20px;
-      margin: 0 10px;
-      vertical-align: middle;
-    }
+    h2.gift-heading { font-family: 'Playfair Display', serif; text-align: center; color: var(--text-main); font-size: 26px; margin: 60px 0 30px; position: relative; }
+    h2.gift-heading::before, h2.gift-heading::after { content: "🎁"; font-size: 20px; margin: 0 10px; vertical-align: middle; }
 
-    /* ギフトカード（商品紹介枠） */
-    .gift-card {
-      background: var(--card-bg);
-      border-radius: 15px;
-      padding: 25px;
-      margin-bottom: 40px;
-      box-shadow: 0 5px 15px rgba(0,0,0,0.05);
-      position: relative;
-      border-top: 5px solid var(--accent); /* 上部にアクセントライン */
-    }
+    /* ギフトカード */
+    .gift-card { background: var(--card-bg); border-radius: 15px; padding: 25px; margin-bottom: 40px; box-shadow: 0 5px 15px rgba(0,0,0,0.05); position: relative; border-top: 5px solid var(--accent); }
+    .price-label { position: absolute; top: -15px; left: 20px; background: var(--gold); color: #fff; padding: 5px 15px; border-radius: 20px; font-weight: bold; font-size: 14px; box-shadow: 0 2px 5px rgba(0,0,0,0.2); }
 
-    /* 価格帯ラベル */
-    .price-label {
-        position: absolute;
-        top: -15px;
-        left: 20px;
-        background: var(--gold);
-        color: #fff;
-        padding: 5px 15px;
-        border-radius: 20px;
-        font-weight: bold;
-        font-size: 14px;
-        box-shadow: 0 2px 5px rgba(0,0,0,0.2);
-    }
+    /* おすすめポイント */
+    .gift-point { background: #fffaf4; border: 1px dashed #f4b5b5; border-radius: 10px; padding: 15px; margin-top: 20px; }
+    .gift-point h4 { margin: 0 0 10px; color: #d6336c; font-size: 15px; display: flex; align-items: center; gap: 5px; }
+    .gift-point ul { margin: 0; padding-left: 20px; font-size: 14px; color: #555; }
+    .gift-point li { margin-bottom: 5px; }
 
-    /* 編集部のおすすめポイント（口コミの代わり） */
-    .gift-point {
-        background: #fffaf4;
-        border: 1px dashed #f4b5b5;
-        border-radius: 10px;
-        padding: 15px;
-        margin-top: 20px;
-    }
-    .gift-point h4 {
-        margin: 0 0 10px;
-        color: #d6336c;
-        font-size: 15px;
-        display: flex;
-        align-items: center;
-        gap: 5px;
-    }
-    .gift-point ul {
-        margin: 0;
-        padding-left: 20px;
-        font-size: 14px;
-        color: #555;
-    }
-    .gift-point li {
-        margin-bottom: 5px;
-    }
+    /* 診断バナー */
+    .diagnosis-banner { background: #fff; border: 3px solid #f39c12; border-radius: 15px; padding: 25px; text-align: center; margin: 30px auto; position: relative; max-width: 650px; }
+    .diagnosis-badge { background: #d35400; color: #fff; padding: 5px 15px; border-radius: 5px; font-weight: bold; font-size: 12px; position: absolute; top: -15px; left: 50%; transform: translateX(-50%); box-shadow: 0 2px 5px rgba(0,0,0,0.2); }
+    .diagnosis-btn { display: inline-block; background: linear-gradient(45deg, #e67e22, #f39c12); color: #fff; font-size: 18px; font-weight: bold; padding: 15px 35px; border-radius: 50px; text-decoration: none; margin-top: 15px; box-shadow: 0 4px 15px rgba(230, 126, 34, 0.4); animation: pulse-glow 2s infinite; }
+    @keyframes pulse-glow { 0% { box-shadow: 0 0 0 0 rgba(230, 126, 34, 0.4); transform: scale(1); } 50% { box-shadow: 0 0 0 10px rgba(230, 126, 34, 0); transform: scale(1.02); } 100% { box-shadow: 0 0 0 0 rgba(230, 126, 34, 0); transform: scale(1); } }
 
-    /* 楽天ROOMリンク用スタイル（ご指定のコード版） */
-    .room-promo {
-        background: #fff;
-        border: 2px dashed var(--room-color);
-        border-radius: 15px;
-        padding: 25px;
-        text-align: center;
-        margin: 50px 0;
-        color: var(--text-main);
-    }
-    .room-btn {
-        display: inline-block;
-        background: var(--room-color);
-        color: #fff;
-        padding: 12px 30px;
-        border-radius: 30px;
-        text-decoration: none;
-        font-weight: bold;
-        margin-top: 15px;
-        box-shadow: 0 4px 10px rgba(198, 53, 53, 0.3);
-        transition: 0.3s;
-    }
-    .room-btn:hover {
-        background: #a82525;
-        transform: translateY(-2px);
-        box-shadow: 0 6px 14px rgba(198, 53, 53, 0.4);
-    }
+    /* Noteバナー */
+    .note-banner { max-width: 650px; margin: 50px auto; padding: 5px; background: linear-gradient(135deg, #f7a8a8 0%, #ffdecb 100%); border-radius: 20px; box-shadow: 0 10px 25px rgba(247, 168, 168, 0.25); }
+    .note-inner { background: #ffffff; border-radius: 15px; padding: 30px 20px; text-align: center; }
+    .shiny-btn { display: block; width: 100%; max-width: 320px; margin: 20px auto 10px; background: linear-gradient(45deg, #f7a8a8, #d68e33); color: #fff; text-decoration: none; font-weight: bold; font-size: 18px; padding: 18px 0; border-radius: 50px; position: relative; overflow: hidden; }
+    @keyframes shine { 0% { transform: translateX(-100%) skewX(-15deg); } 100% { transform: translateX(200%) skewX(-15deg); } }
+    .shiny-btn::after { content: ''; position: absolute; top: 0; left: 0; width: 50%; height: 100%; background: linear-gradient(to right, rgba(255,255,255,0) 0%, rgba(255,255,255,0.3) 50%, rgba(255,255,255,0) 100%); transform: skewX(-15deg); animation: shine 3s infinite; }
 
-    /* ▼▼▼ 追加：診断ボタン用のアニメーション ▼▼▼ */
-    @keyframes pulse-glow {
-      0% { box-shadow: 0 0 0 0 rgba(230, 126, 34, 0.4); transform: scale(1); }
-      50% { box-shadow: 0 0 0 10px rgba(230, 126, 34, 0); transform: scale(1.02); }
-      100% { box-shadow: 0 0 0 0 rgba(230, 126, 34, 0); transform: scale(1); }
-    }
-    .diagnosis-banner {
-      background: #fff;
-      border: 3px solid #f39c12; /* 目立つオレンジ/ゴールド系 */
-      border-radius: 15px;
-      padding: 25px;
-      text-align: center;
-      margin: 30px auto; /* 中央寄せ */
-      position: relative;
-      max-width: 650px;
-    }
-    /* 「NEW!」などのバッジ */
-    .diagnosis-badge {
-        background: #d35400; color: #fff; padding: 5px 15px; border-radius: 5px;
-        font-weight: bold; font-size: 12px; position: absolute; top: -15px; left: 50%;
-        transform: translateX(-50%); box-shadow: 0 2px 5px rgba(0,0,0,0.2);
-    }
-    .diagnosis-btn {
-      display: inline-block;
-      background: linear-gradient(45deg, #e67e22, #f39c12);
-      color: #fff;
-      font-size: 18px;
-      font-weight: bold;
-      padding: 15px 35px;
-      border-radius: 50px;
-      text-decoration: none;
-      margin-top: 15px;
-      box-shadow: 0 4px 15px rgba(230, 126, 34, 0.4);
-      /* ここでキラキラさせます */
-      animation: pulse-glow 2s infinite;
-    }
-    .diagnosis-btn:hover {
-        opacity: 0.9;
-        transform: translateY(-2px);
-    }
-    /* ▲▲▲ 追加ここまで ▲▲▲ */
-
-    /* フッター（リンク網羅型） */
-    footer {
-        background: #fffaf4;
-        border-top: 3px solid #f7a8a8;
-        padding: 50px 20px 60px;
-        margin-top: 60px;
-        color: #555;
-        font-size: 14px;
-    }
-    .footer-container {
-        max-width: 960px;
-        margin: 0 auto;
-        display: flex;
-        flex-wrap: wrap;
-        justify-content: space-between;
-        gap: 30px;
-        text-align: left;
-    }
+    /* フッター */
+    footer { background: #fffaf4; border-top: 3px solid #f7a8a8; padding: 50px 20px 60px; margin-top: 60px; color: #555; font-size: 14px; }
+    .footer-container { max-width: 960px; margin: 0 auto; display: flex; flex-wrap: wrap; justify-content: space-between; gap: 30px; text-align: left; }
     .footer-col { flex: 1; min-width: 200px; }
-    .footer-col h3 {
-        font-size: 16px;
-        color: #d6336c;
-        border-bottom: 1px dashed #f4b5b5;
-        padding-bottom: 8px;
-        margin-bottom: 15px;
-        font-weight: bold;
-    }
-    .footer-col a {
-        display: block; color: #666; text-decoration: none; margin-bottom: 10px; transition: 0.3s; position: relative; padding-left: 10px;
-    }
+    .footer-col h3 { font-size: 16px; color: #d6336c; border-bottom: 1px dashed #f4b5b5; padding-bottom: 8px; margin-bottom: 15px; font-weight: bold; }
+    .footer-col a { display: block; color: #666; text-decoration: none; margin-bottom: 10px; transition: 0.3s; position: relative; padding-left: 10px; }
     .footer-col a::before { content: "・"; position: absolute; left: 0; color: #f7a8a8; }
     .footer-col a:hover { color: #d6336c; padding-left: 15px; }
     .footer-bottom { text-align: center; margin-top: 50px; padding-top: 30px; border-top: 1px solid #eee; }
-    .footer-room-link {
-        display: inline-block; color: #c63535; font-weight: bold; border: 1px solid #c63535; padding: 8px 20px; border-radius: 20px; text-decoration: none; margin-bottom: 20px; background: #fff; transition: 0.3s;
-    }
+    .footer-room-link { display: inline-block; color: #c63535; font-weight: bold; border: 1px solid #c63535; padding: 8px 20px; border-radius: 20px; text-decoration: none; margin-bottom: 20px; background: #fff; transition: 0.3s; }
     .footer-room-link:hover { background: #c63535; color: #fff; }
 
-    #affiliateNotice {
-      position: fixed; right: 12px; bottom: 12px;
-      background: rgba(255, 255, 255, 0.8);
-      color: #555; font-size: 11px;
-      border-radius: 6px; padding: 4px 8px;
-      box-shadow: 0 2px 6px rgba(0,0,0,0.1);
-      z-index: 999;
-    }
-    
+    #affiliateNotice { position: fixed; right: 12px; bottom: 12px; background: rgba(255, 255, 255, 0.8); color: #555; font-size: 11px; border-radius: 6px; padding: 4px 8px; box-shadow: 0 2px 6px rgba(0,0,0,0.1); z-index: 999; }
     .back-btn { text-align: center; margin: 50px 0; }
     .back-btn a { color: #777; text-decoration: none; border-bottom: 1px solid #ccc; }
 
-    @media(max-width: 600px) {
-        header h1 { font-size: 28px; }
-        .gift-card { padding: 15px; }
-    }
-    /* ▼▼▼ 追加：New!! 点滅用スタイル ▼▼▼ */
-@keyframes blinkEffect {
-    0% { opacity: 1; }
-    50% { opacity: 0.3; }
-    100% { opacity: 1; }
-}
-
-.new-mark {
-    color: #ff0000;       /* 文字色を赤にする */
-    font-weight: bold;    /* 太文字にする */
-    font-size: 0.8em;     /* リンク文字より少し小さくする */
-    margin-left: 5px;     /* 前の文字と少し間隔を空ける */
-    animation: blinkEffect 1.2s infinite; /* 1.2秒間隔で点滅を繰り返す */
-    vertical-align: super; /* 少し上付き文字にする */
-}
-/* ▲▲▲ 追加ここまで ▲▲▲ */
+    @keyframes blinkEffect { 0% { opacity: 1; } 50% { opacity: 0.3; } 100% { opacity: 1; } }
+    .new-mark { color: #ff0000; font-weight: bold; font-size: 0.8em; margin-left: 5px; animation: blinkEffect 1.2s infinite; vertical-align: super; }
   </style>
 </head>
 <body>
@@ -332,11 +130,9 @@
     <h3 style="color:#d35400; margin-bottom:10px; font-size:20px;">⚡ 背中の「ブツブツ」ドレス試着で焦ってない？</h3>
     <p style="margin-bottom:5px;">挙式までに間に合わせる！<br>
     今の肌状態と、必要なケア方法を<strong>30秒で診断</strong>します。</p>
-    
-    <a href="bridal-care.html" class="diagnosis-btn">
-        ✨ 今すぐ肌診断をする！ ✨
-    </a>
+    <a href="bridal-care.html" class="diagnosis-btn">✨ 今すぐ肌診断をする！ ✨</a>
 </div>
+
 <main>
 
   <div class="intro-message">
@@ -357,16 +153,17 @@
     <div class="price-label">Under ¥3,000</div>
     
     <script type="text/javascript">
-(function(b,c,f,g,a,d,e){b.MoshimoAffiliateObject=a;
-b[a]=b[a]||function(){arguments.currentScript=c.currentScript
-||c.scripts[c.scripts.length-2];(b[a].q=b[a].q||[]).push(arguments)};
-c.getElementById(a)||(d=c.createElement(f),d.src=g,
-d.id=a,e=c.getElementsByTagName("body")[0],e.appendChild(d))})
-(window,document,"script","//dn.msmstatic.com/site/cardlink/bundle.js?20220329","msmaflink");
-msmaflink({"n":"スキンケア TOCCA トッカ ハンドクリーム クレオパトラの香り ギフト お祝い 内祝い 結婚 出産 引き出物 お返し お礼 誕生日 プレゼント 女性 おしゃれ ボディケア その他 オーガニック 手荒れ ギフトセット 香り ハンド クリーム 入学祝い お返し ギフト ギフト","b":"","t":"","d":"https:\/\/thumbnail.image.rakuten.co.jp","c_p":"\/@0_mall\/auc-concent\/cabinet","p":["\/items18\/2096414.jpg","\/option_banner.jpg"],"u":{"u":"https:\/\/item.rakuten.co.jp\/auc-concent\/2096414\/","t":"rakuten","r_v":""},"v":"2.1","b_l":[{"id":1,"u_tx":"楽天市場で見る","u_bc":"#87c209","u_url":"https:\/\/item.rakuten.co.jp\/auc-concent\/2096414\/","a_id":5267359,"p_id":54,"pl_id":27059,"pc_id":54,"s_n":"rakuten","u_so":0},{"u_bc":"#125592","u_tx":"Amazonで見る","u_url":"https:\/\/amzn.to\/4pL2v95","s_n":"custom_4","u_so":1,"a_id":0,"p_id":0,"pc_id":0,"pl_id":0,"id":8},{"u_bc":"#bf0000","u_tx":"Yahoo!ショッピングで見る","u_url":"https:\/\/shopping.yahoo.co.jp\/search?first=1\u0026p=%E3%82%B9%E3%82%AD%E3%83%B3%E3%82%B1%E3%82%A2%20TOCCA%20%E3%83%88%E3%83%83%E3%82%AB%20%E3%83%8F%E3%83%B3%E3%83%89%E3%82%AF%E3%83%AA%E3%83%BC%E3%83%A0%20%E3%82%AF%E3%83%AC%E3%82%AA%E3%83%91%E3%83%88%E3%83%A9%E3%81%AE%E9%A6%99%E3%82%8A%20%E3%82%AE%E3%83%95%E3%83%88%20%E3%81%8A%E7%A5%9D%E3%81%84%20%E5%86%85%E7%A5%9D%E3%81%84%20%E7%B5%90%E5%A9%9A%20%E5%87%BA%E7%94%A3%20%E5%BC%95%E3%81%8D%E5%87%BA%E7%89%A9%20%E3%81%8A%E8%BF%94%E3%81%97%20%E3%81%8A%E7%A4%BC%20%E8%AA%95%E7%94%9F%E6%97%A5%20%E3%83%97%E3%83%AC%E3%82%BC%E3%83%B3%E3%83%88%20%E5%A5%B3%E6%80%A7%20%E3%81%8A%E3%81%97%E3%82%83%E3%82%8C%20%E3%83%9C%E3%83%87%E3%82%A3%E3%82%B1%E3%82%A2%20%E3%81%9D%E3%81%AE%E4%BB%96%20%E3%82%AA%E3%83%BC%E3%82%AC%E3%83%8B%E3%83%83%E3%82%AF%20%E6%89%8B%E8%8D%92%E3%82%8C%20%E3%82%AE%E3%83%95%E3%83%88%E3%82%BB%E3%83%83%E3%83%88%20%E9%A6%99%E3%82%8A%20%E3%83%8F%E3%83%B3%E3%83%89%20%E3%82%AF%E3%83%AA%E3%83%BC%E3%83%A0%20%E5%85%A5%E5%AD%A6%E7%A5%9D%E3%81%84%20%E3%81%8A%E8%BF%94%E3%81%97%20%E3%82%AE%E3%83%95%E3%83%88%20%E3%82%AE%E3%83%95%E3%83%88","s_n":"yahoo","u_so":5,"a_id":5267465,"p_id":1225,"pc_id":1925,"pl_id":27061,"id":9}],"eid":"Vyyao","s":"s"});
-</script>
-<div id="msmaflink-Vyyao">リンク</div>
-<div class="gift-point">
+    (function(b,c,f,g,a,d,e){b.MoshimoAffiliateObject=a;
+    b[a]=b[a]||function(){arguments.currentScript=c.currentScript
+    ||c.scripts[c.scripts.length-2];(b[a].q=b[a].q||[]).push(arguments)};
+    c.getElementById(a)||(d=c.createElement(f),d.src=g,
+    d.id=a,e=c.getElementsByTagName("body")[0],e.appendChild(d))})
+    (window,document,"script","//dn.msmstatic.com/site/cardlink/bundle.js?20220329","msmaflink");
+    msmaflink({"n":"スキンケア TOCCA トッカ ハンドクリーム クレオパトラの香り ギフト お祝い 内祝い 結婚 出産 引き出物 お返し お礼 誕生日 プレゼント 女性 おしゃれ ボディケア その他 オーガニック 手荒れ ギフトセット 香り ハンド クリーム 入学祝い お返し ギフト ギフト","b":"","t":"","d":"https:\/\/thumbnail.image.rakuten.co.jp","c_p":"\/@0_mall\/auc-concent\/cabinet","p":["\/items18\/2096414.jpg","\/option_banner.jpg"],"u":{"u":"https:\/\/item.rakuten.co.jp\/auc-concent\/2096414\/","t":"rakuten","r_v":""},"v":"2.1","b_l":[{"id":1,"u_tx":"楽天市場で見る","u_bc":"#87c209","u_url":"https:\/\/item.rakuten.co.jp\/auc-concent\/2096414\/","a_id":5267359,"p_id":54,"pl_id":27059,"pc_id":54,"s_n":"rakuten","u_so":0},{"u_bc":"#125592","u_tx":"Amazonで見る","u_url":"https:\/\/amzn.to\/4pL2v95","s_n":"custom_4","u_so":1,"a_id":0,"p_id":0,"pc_id":0,"pl_id":0,"id":8},{"u_bc":"#bf0000","u_tx":"Yahoo!ショッピングで見る","u_url":"https:\/\/shopping.yahoo.co.jp\/search?first=1\u0026p=%E3%82%B9%E3%82%AD%E3%83%B3%E3%82%B1%E3%82%A2%20TOCCA%20%E3%83%88%E3%83%83%E3%82%AB%20%E3%83%8F%E3%83%B3%E3%83%89%E3%82%AF%E3%83%AA%E3%83%BC%E3%83%A0%20%E3%82%AF%E3%83%AC%E3%82%AA%E3%83%91%E3%83%88%E3%83%A9%E3%81%AE%E9%A6%99%E3%82%8A%20%E3%82%AE%E3%83%95%E3%83%88%20%E3%81%8A%E7%A5%9D%E3%81%84%20%E5%86%85%E7%A5%9D%E3%81%84%20%E7%B5%90%E5%A9%9A%20%E5%87%BA%E7%94%A3%20%E5%BC%95%E3%81%8D%E5%87%BA%E7%89%A9%20%E3%81%8A%E8%BF%94%E3%81%97%20%E3%81%8A%E7%A4%BC%20%E8%AA%95%E7%94%9F%E6%97%A5%20%E3%83%97%E3%83%AC%E3%82%BC%E3%83%B3%E3%83%88%20%E5%A5%B3%E6%80%A7%20%E3%81%8A%E3%81%97%E3%82%83%E3%82%8C%20%E3%83%9C%E3%83%87%E3%82%A3%E3%82%B1%E3%82%A2%20%E3%81%9D%E3%81%AE%E4%BB%96%20%E3%82%AA%E3%83%BC%E3%82%AC%E3%83%8B%E3%83%83%E3%82%AF%20%E6%89%8B%E8%8D%92%E3%82%8C%20%E3%82%AE%E3%83%95%E3%83%88%E3%82%BB%E3%83%83%E3%83%88%20%E9%A6%99%E3%82%8A%20%E3%83%8F%E3%83%B3%E3%83%89%20%E3%82%AF%E3%83%AA%E3%83%BC%E3%83%A0%20%E5%85%A5%E5%AD%A6%E7%A5%9D%E3%81%84%20%E3%81%8A%E8%BF%94%E3%81%97%20%E3%82%AE%E3%83%95%E3%83%88%20%E3%82%AE%E3%83%95%E3%83%88","s_n":"yahoo","u_so":5,"a_id":5267465,"p_id":1225,"pc_id":1925,"pl_id":27061,"id":9}],"eid":"Vyyao","s":"s"});
+    </script>
+    <div id="msmaflink-Vyyao">リンク</div>
+    
+    <div class="gift-point">
         <h4>💐 花嫁のおすすめポイント</h4>
         <ul>
             <li><strong>受付のお礼に最適：</strong> パッケージが可愛く、そのまま渡しても様になります。</li>
@@ -382,16 +179,17 @@ msmaflink({"n":"スキンケア TOCCA トッカ ハンドクリーム クレオ�
     <div class="price-label">¥3,000 - ¥5,000</div>
     
     <script type="text/javascript">
-(function(b,c,f,g,a,d,e){b.MoshimoAffiliateObject=a;
-b[a]=b[a]||function(){arguments.currentScript=c.currentScript
-||c.scripts[c.scripts.length-2];(b[a].q=b[a].q||[]).push(arguments)};
-c.getElementById(a)||(d=c.createElement(f),d.src=g,
-d.id=a,e=c.getElementsByTagName("body")[0],e.appendChild(d))})
-(window,document,"script","//dn.msmstatic.com/site/cardlink/bundle.js?20220329","msmaflink");
-msmaflink({"n":"Health Nuts はとむぎバスソルト・入浴剤 730g \/ 天然素材 100%完全無添加 安心でやさしい バスソルト","b":"","t":"","d":"https:\/\/thumbnail.image.rakuten.co.jp","c_p":"\/@0_mall\/zakkagenesis\/cabinet\/bulk_502","p":["\/1000000116684_1.jpg","\/1000000116684_2.jpg","\/1000000116684_3.jpg"],"u":{"u":"https:\/\/item.rakuten.co.jp\/zakkagenesis\/1000000116684\/","t":"rakuten","r_v":""},"v":"2.1","b_l":[{"id":1,"u_tx":"楽天市場で見る","u_bc":"#87c209","u_url":"https:\/\/item.rakuten.co.jp\/zakkagenesis\/1000000116684\/","a_id":5267359,"p_id":54,"pl_id":27059,"pc_id":54,"s_n":"rakuten","u_so":1},{"id":8,"u_tx":"Amazonで見る","u_bc":"#125592","u_url":"https:\/\/amzn.to\/4qcODo5","a_id":0,"p_id":0,"pl_id":0,"pc_id":0,"s_n":"custom_4","u_so":2},{"id":9,"u_tx":"Yahoo!ショッピングで見る","u_bc":"#bf0000","u_url":"https:\/\/shopping.yahoo.co.jp\/search?first=1\u0026p=Health%20Nuts%20%E3%81%AF%E3%81%A8%E3%82%80%E3%81%8E%E3%83%90%E3%82%B9%E3%82%BD%E3%83%AB%E3%83%88%E3%83%BB%E5%85%A5%E6%B5%B4%E5%89%A4%20730g%20%2F%20%E5%A4%A9%E7%84%B6%E7%B4%A0%E6%9D%90%20100%25%E5%AE%8C%E5%85%A8%E7%84%A1%E6%B7%BB%E5%8A%A0%20%E5%AE%89%E5%BF%83%E3%81%A7%E3%82%84%E3%81%95%E3%81%97%E3%81%84%20%E3%83%90%E3%82%B9%E3%82%BD%E3%83%AB%E3%83%88","a_id":5267465,"p_id":1225,"pl_id":27061,"pc_id":1925,"s_n":"yahoo","u_so":3}],"eid":"Qoglv","s":"s"});
-</script>
-<div id="msmaflink-Qoglv">リンク</div>
-<div class="gift-point">
+    (function(b,c,f,g,a,d,e){b.MoshimoAffiliateObject=a;
+    b[a]=b[a]||function(){arguments.currentScript=c.currentScript
+    ||c.scripts[c.scripts.length-2];(b[a].q=b[a].q||[]).push(arguments)};
+    c.getElementById(a)||(d=c.createElement(f),d.src=g,
+    d.id=a,e=c.getElementsByTagName("body")[0],e.appendChild(d))})
+    (window,document,"script","//dn.msmstatic.com/site/cardlink/bundle.js?20220329","msmaflink");
+    msmaflink({"n":"Health Nuts はとむぎバスソルト・入浴剤 730g \/ 天然素材 100%完全無添加 安心でやさしい バスソルト","b":"","t":"","d":"https:\/\/thumbnail.image.rakuten.co.jp","c_p":"\/@0_mall\/zakkagenesis\/cabinet\/bulk_502","p":["\/1000000116684_1.jpg","\/1000000116684_2.jpg","\/1000000116684_3.jpg"],"u":{"u":"https:\/\/item.rakuten.co.jp\/zakkagenesis\/1000000116684\/","t":"rakuten","r_v":""},"v":"2.1","b_l":[{"id":1,"u_tx":"楽天市場で見る","u_bc":"#87c209","u_url":"https:\/\/item.rakuten.co.jp\/zakkagenesis\/1000000116684\/","a_id":5267359,"p_id":54,"pl_id":27059,"pc_id":54,"s_n":"rakuten","u_so":1},{"id":8,"u_tx":"Amazonで見る","u_bc":"#125592","u_url":"https:\/\/amzn.to\/4qcODo5","a_id":0,"p_id":0,"pl_id":0,"pc_id":0,"s_n":"custom_4","u_so":2},{"id":9,"u_tx":"Yahoo!ショッピングで見る","u_bc":"#bf0000","u_url":"https:\/\/shopping.yahoo.co.jp\/search?first=1\u0026p=Health%20Nuts%20%E3%81%AF%E3%81%A8%E3%82%80%E3%81%8E%E3%83%90%E3%82%B9%E3%82%BD%E3%83%AB%E3%83%88%E3%83%BB%E5%85%A5%E6%B5%B4%E5%89%A4%20730g%20%2F%20%E5%A4%A9%E7%84%B6%E7%B4%A0%E6%9D%90%20100%25%E5%AE%8C%E5%85%A8%E7%84%A1%E6%B7%BB%E5%8A%A0%20%E5%AE%89%E5%BF%83%E3%81%A7%E3%82%84%E3%81%95%E3%81%97%E3%81%84%20%E3%83%90%E3%82%B9%E3%82%BD%E3%83%AB%E3%83%88","a_id":5267465,"p_id":1225,"pl_id":27061,"pc_id":1925,"s_n":"yahoo","u_so":3}],"eid":"Qoglv","s":"s"});
+    </script>
+    <div id="msmaflink-Qoglv">リンク</div>
+    
+    <div class="gift-point">
         <h4>💐 花嫁のおすすめポイント</h4>
         <ul>
             <li><strong>花嫁のデトックスに：</strong> たっぷり汗をかいて、ドレスから出る二の腕や背中をすっきりさせたい時に。</li>
@@ -406,17 +204,18 @@ msmaflink({"n":"Health Nuts はとむぎバスソルト・入浴剤 730g \/ 天�
   <div class="gift-card">
     <div class="price-label">Over ¥5,000</div>
     
-   <script type="text/javascript">
-(function(b,c,f,g,a,d,e){b.MoshimoAffiliateObject=a;
-b[a]=b[a]||function(){arguments.currentScript=c.currentScript
-||c.scripts[c.scripts.length-2];(b[a].q=b[a].q||[]).push(arguments)};
-c.getElementById(a)||(d=c.createElement(f),d.src=g,
-d.id=a,e=c.getElementsByTagName("body")[0],e.appendChild(d))})
-(window,document,"script","//dn.msmstatic.com/site/cardlink/bundle.js?20220329","msmaflink");
-msmaflink({"n":"NANOA スキンケア 素肌潤うギフトセット ( 化粧水 \/ 保湿クリーム ) スキンケア ヒト幹細胞 エクソソーム EGF スキンケア セラミド 保湿セット 保湿 乾燥肌 スキンケア 保湿 うるおい クリーム 肌 基礎化粧品 30代 40代 50代","b":"","t":"","d":"https:\/\/thumbnail.image.rakuten.co.jp","c_p":"\/@0_mall\/hiragana1\/cabinet","p":["\/tuzyou\/na-giftset-05.jpg","\/09360223\/11706109\/11707119\/1.jpg","\/09360223\/11706109\/11707119\/2.jpg"],"u":{"u":"https:\/\/item.rakuten.co.jp\/hiragana1\/na-giftset-05\/","t":"rakuten","r_v":""},"v":"2.1","b_l":[{"id":1,"u_tx":"楽天市場で見る","u_bc":"#87c209","u_url":"https:\/\/item.rakuten.co.jp\/hiragana1\/na-giftset-05\/","a_id":5267359,"p_id":54,"pl_id":27059,"pc_id":54,"s_n":"rakuten","u_so":0},{"u_bc":"#125592","u_tx":"Amazonで見る","u_url":"https:\/\/amzn.to\/4q54eWz","s_n":"custom_4","u_so":1,"a_id":0,"p_id":0,"pc_id":0,"pl_id":0,"id":8},{"u_bc":"#bf0000","u_tx":"Yahoo!ショッピングで見る","u_url":"https:\/\/shopping.yahoo.co.jp\/search?first=1\u0026p=NANOA%20%E3%82%B9%E3%82%AD%E3%83%B3%E3%82%B1%E3%82%A2%20%E7%B4%A0%E8%82%8C%E6%BD%A4%E3%81%86%E3%82%AE%E3%83%95%E3%83%88%E3%82%BB%E3%83%83%E3%83%88%20(%20%E5%8C%96%E7%B2%A7%E6%B0%B4%20%2F%20%E4%BF%9D%E6%B9%BF%E3%82%AF%E3%83%AA%E3%83%BC%E3%83%A0%20)%20%E3%82%B9%E3%82%AD%E3%83%B3%E3%82%B1%E3%82%A2%20%E3%83%92%E3%83%88%E5%B9%B9%E7%B4%B0%E8%83%9E%20%E3%82%A8%E3%82%AF%E3%82%BD%E3%82%BD%E3%83%BC%E3%83%A0%20EGF%20%E3%82%B9%E3%82%AD%E3%83%B3%E3%82%B1%E3%82%A2%20%E3%82%BB%E3%83%A9%E3%83%9F%E3%83%89%20%E4%BF%9D%E6%B9%BF%E3%82%BB%E3%83%83%E3%83%88%20%E4%BF%9D%E6%B9%BF%20%E4%B9%BE%E7%87%A5%E8%82%8C%20%E3%82%B9%E3%82%AD%E3%83%B3%E3%82%B1%E3%82%A2%20%E4%BF%9D%E6%B9%BF%20%E3%81%86%E3%82%8B%E3%81%8A%E3%81%84%20%E3%82%AF%E3%83%AA%E3%83%BC%E3%83%A0%20%E8%82%8C%20%E5%9F%BA%E7%A4%8E%E5%8C%96%E7%B2%A7%E5%93%81%2030%E4%BB%A3%2040%E4%BB%A3%2050%E4%BB%A3","s_n":"yahoo","u_so":5,"a_id":5267465,"p_id":1225,"pc_id":1925,"pl_id":27061,"id":9}],"eid":"RFWY8","s":"s"});
-</script>
-<div id="msmaflink-RFWY8">リンク</div>
-<div class="gift-point">
+    <script type="text/javascript">
+    (function(b,c,f,g,a,d,e){b.MoshimoAffiliateObject=a;
+    b[a]=b[a]||function(){arguments.currentScript=c.currentScript
+    ||c.scripts[c.scripts.length-2];(b[a].q=b[a].q||[]).push(arguments)};
+    c.getElementById(a)||(d=c.createElement(f),d.src=g,
+    d.id=a,e=c.getElementsByTagName("body")[0],e.appendChild(d))})
+    (window,document,"script","//dn.msmstatic.com/site/cardlink/bundle.js?20220329","msmaflink");
+    msmaflink({"n":"NANOA スキンケア 素肌潤うギフトセット ( 化粧水 \/ 保湿クリーム ) スキンケア ヒト幹細胞 エクソソーム EGF スキンケア セラミド 保湿セット 保湿 乾燥肌 スキンケア 保湿 うるおい クリーム 肌 基礎化粧品 30代 40代 50代","b":"","t":"","d":"https:\/\/thumbnail.image.rakuten.co.jp","c_p":"\/@0_mall\/hiragana1\/cabinet","p":["\/tuzyou\/na-giftset-05.jpg","\/09360223\/11706109\/11707119\/1.jpg","\/09360223\/11706109\/11707119\/2.jpg"],"u":{"u":"https:\/\/item.rakuten.co.jp\/hiragana1\/na-giftset-05\/","t":"rakuten","r_v":""},"v":"2.1","b_l":[{"id":1,"u_tx":"楽天市場で見る","u_bc":"#87c209","u_url":"https:\/\/item.rakuten.co.jp\/hiragana1\/na-giftset-05\/","a_id":5267359,"p_id":54,"pl_id":27059,"pc_id":54,"s_n":"rakuten","u_so":0},{"u_bc":"#125592","u_tx":"Amazonで見る","u_url":"https:\/\/amzn.to\/4q54eWz","s_n":"custom_4","u_so":1,"a_id":0,"p_id":0,"pc_id":0,"pl_id":0,"id":8},{"u_bc":"#bf0000","u_tx":"Yahoo!ショッピングで見る","u_url":"https:\/\/shopping.yahoo.co.jp\/search?first=1\u0026p=NANOA%20%E3%82%B9%E3%82%AD%E3%83%B3%E3%82%B1%E3%82%A2%20%E7%B4%A0%E8%82%8C%E6%BD%A4%E3%81%86%E3%82%AE%E3%83%95%E3%83%88%E3%82%BB%E3%83%83%E3%83%88%20(%20%E5%8C%96%E7%B2%A7%E6%B0%B4%20%2F%20%E4%BF%9D%E6%B9%BF%E3%82%AF%E3%83%AA%E3%83%BC%E3%83%A0%20)%20%E3%82%B9%E3%82%AD%E3%83%B3%E3%82%B1%E3%82%A2%20%E3%83%92%E3%83%88%E5%B9%B9%E7%B4%B0%E8%83%9E%20%E3%82%A8%E3%82%AF%E3%82%BD%E3%82%BD%E3%83%BC%E3%83%A0%20EGF%20%E3%82%B9%E3%82%AD%E3%83%B3%E3%82%B1%E3%82%A2%20%E3%82%BB%E3%83%A9%E3%83%9F%E3%83%89%20%E4%BF%9D%E6%B9%BF%E3%82%BB%E3%83%83%E3%83%88%20%E4%BF%9D%E6%B9%BF%20%E4%B9%BE%E7%87%A5%E8%82%8C%20%E3%82%B9%E3%82%AD%E3%83%B3%E3%82%B1%E3%82%A2%20%E4%BF%9D%E6%B9%BF%20%E3%81%86%E3%82%8B%E3%81%8A%E3%81%84%20%E3%82%AF%E3%83%AA%E3%83%BC%E3%83%A0%20%E8%82%8C%20%E5%9F%BA%E7%A4%8E%E5%8C%96%E7%B2%A7%E5%93%81%2030%E4%BB%A3%2040%E4%BB%A3%2050%E4%BB%A3","s_n":"yahoo","u_so":5,"a_id":5267465,"p_id":1225,"pc_id":1925,"pl_id":27061,"id":9}],"eid":"RFWY8","s":"s"});
+    </script>
+    <div id="msmaflink-RFWY8">リンク</div>
+    
+    <div class="gift-point">
         <h4>💐 花嫁のおすすめポイント</h4>
         <ul>
             <li><strong>自分へのご褒美に：</strong> 挙式直前の「追い込み美容」として、エステ代わりに投入したい贅沢セット。</li>
@@ -426,12 +225,16 @@ msmaflink({"n":"NANOA スキンケア 素肌潤うギフトセット ( 化粧水
     </div>
   </div>
 
-  <div class="room-promo">
-      <h3 style="margin-top:0; color: #c63535; font-size:18px;">\ 管理人 Yuriの愛用品コレクション /</h3>
-      <p style="font-size:14px;">栄養士Yuriが厳選した、肌と体にやさしいアイテムを楽天ROOMで公開中。<br>ブログで紹介しきれなかった商品も載せています♪</p>
-      <a href="https://room.rakuten.co.jp/room_e0dd63a90a/items" target="_blank" rel="noopener" class="room-btn">
-          楽天ROOMで見る →
-      </a>
+  <div class="note-banner">
+    <div class="note-inner">
+      <span style="display: inline-block; background: #e74c3c; color: #fff; font-size: 12px; font-weight: bold; padding: 4px 12px; border-radius: 20px; vertical-align: middle; margin-bottom: 10px;">保存版・アーカイブ完成</span>
+      <h3 style="margin: 5px 0 15px; font-size: 22px; color: #503535; font-family: 'Playfair Display', serif;">栄養士Yuriの全ノウハウ公開<br>読むだけで変わる「花嫁美容」Note</h3>
+      <div style="background: #fffaf4; border: 1px dashed #d4a373; border-radius: 10px; padding: 15px; margin: 15px auto; max-width: 90%; text-align: left; font-size: 15px; color: #555;">
+        <p style="margin: 5px 0;">👰 <strong>プレ花嫁講座</strong>：ドレス姿を変える食事術</p>
+        <p style="margin: 5px 0;">✨ <strong>高級美容液より効く</strong>「美肌定食」とは？</p>
+      </div>
+      <a href="note-archive.html" class="shiny-btn">全記事一覧を無料で見る ▶</a>
+    </div>
   </div>
 
   <div class="back-btn">
@@ -440,45 +243,8 @@ msmaflink({"n":"NANOA スキンケア 素肌潤うギフトセット ( 化粧水
 
 </main>
 
-<div id="affiliateNotice">※当サイトはアフィリエイト広告（Amazonアソシエイト含む）を利用しています</div>
-
- <div style="max-width: 650px; margin: 50px auto; padding: 5px; background: linear-gradient(135deg, #f7a8a8 0%, #ffdecb 100%); border-radius: 20px; box-shadow: 0 10px 25px rgba(247, 168, 168, 0.25);">
-  <div style="background: #ffffff; border-radius: 15px; padding: 30px 20px; text-align: center; position: relative; overflow: hidden;">
-    
-    <style>
-      @keyframes shine { 0% { transform: translateX(-100%) skewX(-15deg); } 100% { transform: translateX(200%) skewX(-15deg); } }
-      .shiny-btn::after {
-        content: ''; position: absolute; top: 0; left: 0; width: 50%; height: 100%;
-        background: linear-gradient(to right, rgba(255,255,255,0) 0%, rgba(255,255,255,0.3) 50%, rgba(255,255,255,0) 100%);
-        transform: skewX(-15deg); animation: shine 3s infinite;
-      }
-    </style>
-
-    <span style="display: inline-block; background: #e74c3c; color: #fff; font-size: 12px; font-weight: bold; padding: 4px 12px; border-radius: 20px; vertical-align: middle; box-shadow: 0 2px 5px rgba(231, 76, 60, 0.3); margin-bottom: 10px;">
-      保存版・アーカイブ完成
-    </span>
-
-    <h3 style="margin: 5px 0 15px; font-size: 22px; color: #503535; font-family: 'Playfair Display', serif, sans-serif; line-height: 1.4;">
-      <span style="font-size: 0.8em; color: #d4a373;">栄養士Yuriの全ノウハウ公開</span><br>
-      読むだけで変わる「花嫁美容」Note
-    </h3>
-
-    <div style="background: #fffaf4; border: 1px dashed #d4a373; border-radius: 10px; padding: 15px; margin: 15px auto; max-width: 90%; text-align: left; font-size: 15px; color: #555;">
-      <p style="margin: 5px 0;">👰 <strong>プレ花嫁講座</strong>：ドレス姿を変える食事術</p>
-      <p style="margin: 5px 0;">📖 <strong>自己紹介</strong>：私が発信を続ける理由</p>
-      <p style="margin: 5px 0;">✨ <strong>高級美容液より効く</strong>「美肌定食」とは？</p>
-    </div>
-
-    <a href="note-archive.html" class="shiny-btn" style="display: block; width: 100%; max-width: 320px; margin: 20px auto 10px; background: linear-gradient(45deg, #f7a8a8, #d68e33); color: #fff; text-decoration: none; font-weight: bold; font-size: 18px; padding: 18px 0; border-radius: 50px; box-shadow: 0 5px 15px rgba(247, 168, 168, 0.4); position: relative; overflow: hidden; transition: transform 0.2s;">
-      全記事一覧を無料で見る ▶
-    </a>
-    
-    <p style="font-size: 12px; color: #999; margin-top: 10px;">※プレ花嫁様以外も役立つ情報満載です</p>
-  </div>
-</div>
- <footer>
+<footer>
   <div class="footer-container">
-    
     <div class="footer-col">
       <h3>🌸 スキンケア・悩み別</h3>
       <a href="bridal-care.html">👰 結婚式直前！背中・二の腕ケア<span class="new-mark">New!!</span></a>
@@ -509,9 +275,8 @@ msmaflink({"n":"NANOA スキンケア 素肌潤うギフトセット ( 化粧水
       <a href="sonoko-diet.html">食べて痩せる肌診断 <span class="new-mark">New!!</span></a>
       <a href="about.html">当サイトについて (About)</a>
     </div>
-
   </div>
-   
+    
   <div class="footer-bottom">
       <a href="https://room.rakuten.co.jp/room_e0dd63a90a/items" target="_blank" rel="noopener" class="footer-room-link">
         🏠 管理人Yuriの楽天ROOMを見る
@@ -521,6 +286,8 @@ msmaflink({"n":"NANOA スキンケア 素肌潤うギフトセット ( 化粧水
       <a href="privacy-policy.html" style="color:#888; text-decoration:none; font-size:12px;">プライバシーポリシー</a>
   </div>
 </footer>
+
+<div id="affiliateNotice">※当サイトはアフィリエイト広告（Amazonアソシエイト含む）を利用しています</div>
 
 </body>
 </html>
