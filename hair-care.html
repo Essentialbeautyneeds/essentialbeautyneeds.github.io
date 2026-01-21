@@ -5,15 +5,10 @@
   <meta name="viewport" content="width=device-width,initial-scale=1" />
   <title>挙式当日に天使の輪を作る！花嫁のための美髪ケア</title>
   <meta name="description" content="ドレスに負けないツヤ髪を作るには？挙式直前でも間に合う、頭皮ケアから始めるオーガニックシャンプー＆トリートメントの選び方。">
-  <meta name="keywords" content="花嫁ヘア, ブライダルヘア, ヘアケア, オーガニックシャンプー, 天使の輪, 頭皮ケア, 美髪">
-  <link rel="canonical" href="https://essential-beauty-needs.com/hair-care.html" />
-
   <link href="https://fonts.googleapis.com/css2?family=Playfair+Display:wght@600&family=Quicksand:wght@400;600&display=swap" rel="stylesheet">
 
   <script>
-    function isInternalUser() {
-      return document.cookie.split(';').some(c => c.trim().startsWith('internal_user=true'));
-    }
+    function isInternalUser() { return document.cookie.split(';').some(c => c.trim().startsWith('internal_user=true')); }
     if (!isInternalUser()) {
       var gaScript = document.createElement('script');
       gaScript.async = true;
@@ -23,13 +18,10 @@
       function gtag(){dataLayer.push(arguments);}
       gtag('js', new Date());
       gtag('config', 'G-2HGEPHVZYY');
-    } else {
-        console.log('✅ Internal traffic excluded.');
     }
-
     function handleImageError(imgElement, width, height, text) { 
          imgElement.onerror = null; 
-         imgElement.src = "https://placehold.co/600x400/e6e6fa/888888?text=Hair+Care+Image";
+         imgElement.src = `https://placehold.co/${width}x${height}/e6e6fa/504050?text=${encodeURIComponent(text)}`;
          imgElement.style.objectFit = "cover";
     }
   </script>
@@ -38,280 +30,76 @@
     /* 共通設定 */
     :root {
       --bg: #fffbfb; /* ほんのりラベンダー寄りの白 */
-      --accent: #d8bfd8; /* ラベンダーピンク（ヘアケアの癒やしイメージ） */
-      --accent-dark: #bca0bc;
+      --accent: #d8bfd8; /* ラベンダーピンク */
+      --accent-dark: #8e6e8e;
       --text-main: #504050;
       --card-bg: #ffffff;
-      --room-color: #c63535; /* 楽天ROOM用カラー */
+      --room-color: #c63535;
     }
     *, *::before, *::after { box-sizing: border-box; }
 
-    body {
-      font-family: 'Quicksand', sans-serif;
-      margin: 0;
-      background: var(--bg);
-      color: #555;
-      line-height: 1.8;
-    }
+    body { font-family: 'Quicksand', sans-serif; margin: 0; background: var(--bg); color: #555; line-height: 1.8; }
 
     /* ヘッダー */
-    header {
-      background: linear-gradient(135deg, #fdf5ff, #f3e5f5);
-      text-align: center;
-      padding: 80px 20px 50px;
-      color: var(--text-main);
-      border-bottom: 3px solid #e0d0e0;
-    }
-    header h1 {
-      font-family: 'Playfair Display', serif;
-      font-size: 34px;
-      margin: 0;
-      color: #8e6e8e; /* 落ち着いたパープル系 */
-      letter-spacing: 1px;
-    }
-    header p {
-      font-size: 16px;
-      margin-top: 10px;
-      font-weight: 600;
-      color: var(--text-main);
-    }
+    header { background: linear-gradient(135deg, #fdf5ff, #f3e5f5); text-align: center; padding: 80px 20px 50px; color: var(--text-main); border-bottom: 3px solid #e0d0e0; }
+    header h1 { font-family: 'Playfair Display', serif; font-size: 34px; margin: 0; color: var(--accent-dark); letter-spacing: 1px; }
+    header p { font-size: 16px; margin-top: 10px; font-weight: 600; color: var(--text-main); }
 
     /* ナビゲーション */
     .nav-links{display:flex;gap:10px;justify-content:center;margin-top:25px;flex-wrap:wrap;}
-    .nav-links a{
-        background:rgba(255,255,255,0.7);
-        padding:8px 15px;
-        border-radius:20px;
-        text-decoration:none;
-        color:#503535;
-        font-weight:600; 
-        font-size:13px; 
-        box-shadow: 0 2px 5px rgba(0,0,0,0.05); 
-        transition:0.3s;
-    }
-    .nav-links a:hover{
-        background:var(--accent);
-        color:#fff; 
-        transform:translateY(-2px);
-    }
+    .nav-links a{ background:rgba(255,255,255,0.7); padding:8px 15px; border-radius:20px; text-decoration:none; color:#503535; font-weight:600; font-size:13px; box-shadow: 0 2px 5px rgba(0,0,0,0.05); transition:0.3s; }
+    .nav-links a:hover{ background:var(--accent); color:#fff; transform:translateY(-2px); }
     .nav-break { flex-basis: 100%; height: 0; margin: 3px 0; }
 
     /* メインコンテンツ */
-    main {
-      max-width: 900px;
-      margin: 40px auto;
-      padding: 0 20px;
-    }
+    main { max-width: 900px; margin: 40px auto; padding: 0 20px; }
 
-    /* 導入メッセージ */
-    .intro-box {
-      background: #fff;
-      padding: 30px;
-      border-radius: 12px;
-      border-left: 5px solid var(--accent);
-      box-shadow: 0 4px 10px rgba(0,0,0,0.05);
-      margin-bottom: 50px;
-    }
+    /* 診断バナー */
+    .diagnosis-banner { background: #fff; border: 3px solid #f39c12; border-radius: 15px; padding: 25px; text-align: center; margin: 30px auto; position: relative; max-width: 650px; }
+    .diagnosis-badge { background: #d35400; color: #fff; padding: 5px 15px; border-radius: 5px; font-weight: bold; font-size: 12px; position: absolute; top: -15px; left: 50%; transform: translateX(-50%); box-shadow: 0 2px 5px rgba(0,0,0,0.2); }
+    .diagnosis-btn { display: inline-block; background: linear-gradient(45deg, #e67e22, #f39c12); color: #fff; font-size: 18px; font-weight: bold; padding: 15px 35px; border-radius: 50px; text-decoration: none; margin-top: 15px; box-shadow: 0 4px 15px rgba(230, 126, 34, 0.4); animation: pulse-glow 2s infinite; }
+    @keyframes pulse-glow { 0% { box-shadow: 0 0 0 0 rgba(230, 126, 34, 0.4); transform: scale(1); } 50% { box-shadow: 0 0 0 10px rgba(230, 126, 34, 0); transform: scale(1.02); } 100% { box-shadow: 0 0 0 0 rgba(230, 126, 34, 0); transform: scale(1); } }
 
-    /* セクション見出し */
-    h2 {
-      font-family: 'Playfair Display', serif;
-      text-align: center;
-      color: var(--text-main);
-      font-size: 26px;
-      margin: 60px 0 30px;
-      position: relative;
-    }
-    h2::after {
-      content: "";
-      display: block;
-      width: 50px;
-      height: 3px;
-      background: var(--accent);
-      margin: 15px auto 0;
-    }
+    /* 記事エリア */
+    .article-content { background: #fff; padding: 40px; border-radius: 15px; box-shadow: 0 5px 20px rgba(0,0,0,0.03); margin-bottom: 40px; }
+    .article-content h2 { font-family: 'Playfair Display', serif; text-align: center; color: var(--accent-dark); font-size: 26px; margin: 0 0 30px; position: relative; }
+    .article-content h2::after { content: ""; display: block; width: 50px; height: 3px; background: var(--accent); margin: 15px auto 0; }
+    .article-content h3 { color: var(--text-main); font-size: 20px; border-left: 5px solid var(--accent); padding-left: 15px; margin-top: 40px; margin-bottom: 20px; }
+    .article-content p { text-align: justify; margin-bottom: 20px; }
 
-    /* 商品カード */
-    .item-card {
-      background: #fff;
-      border-radius: 15px;
-      padding: 25px;
-      margin-bottom: 40px;
-      box-shadow: 0 5px 15px rgba(0,0,0,0.05);
-      border: 1px solid #f0e6f0;
-    }
-    
-    .check-points {
-        background: #fdfafd;
-        border: 1px dashed var(--accent);
-        padding: 15px 20px;
-        border-radius: 8px;
-        margin-top: 20px;
-    }
-    .check-points h4 {
-        margin: 0 0 10px;
-        color: #8e6e8e;
-        font-size: 16px;
-    }
-    .check-points ul {
-        margin: 0;
-        padding-left: 20px;
-        font-size: 14px;
-        color: #555;
-    }
-    .check-points li {
-        margin-bottom: 5px;
-    }
+    /* アドバイスBOX */
+    .advice-box { background: #fbf5fb; border: 1px dashed var(--accent-dark); padding: 25px; border-radius: 10px; margin: 30px 0; }
+    .advice-box h4 { margin: 0 0 15px; color: var(--accent-dark); font-size: 18px; display: flex; align-items: center; gap: 8px; }
+    .check-list { list-style: none; padding: 0; margin: 0; }
+    .check-list li { position: relative; padding-left: 25px; margin-bottom: 10px; font-weight: 500; }
+    .check-list li::before { content: "✔"; position: absolute; left: 0; color: var(--accent-dark); font-weight: bold; }
 
-    /* バナーエリア */
-    .banner-area {
-        text-align: center;
-        margin: 40px 0;
-        padding: 20px;
-        background: #fff;
-        border-radius: 12px;
-    }
+    /* Noteバナー */
+    .note-banner { max-width: 650px; margin: 50px auto; padding: 5px; background: linear-gradient(135deg, #f7a8a8 0%, #ffdecb 100%); border-radius: 20px; box-shadow: 0 10px 25px rgba(247, 168, 168, 0.25); }
+    .note-inner { background: #ffffff; border-radius: 15px; padding: 30px 20px; text-align: center; }
+    .shiny-btn { display: block; width: 100%; max-width: 320px; margin: 20px auto 10px; background: linear-gradient(45deg, #f7a8a8, #d68e33); color: #fff; text-decoration: none; font-weight: bold; font-size: 18px; padding: 18px 0; border-radius: 50px; position: relative; overflow: hidden; }
+    @keyframes shine { 0% { transform: translateX(-100%) skewX(-15deg); } 100% { transform: translateX(200%) skewX(-15deg); } }
+    .shiny-btn::after { content: ''; position: absolute; top: 0; left: 0; width: 50%; height: 100%; background: linear-gradient(to right, rgba(255,255,255,0) 0%, rgba(255,255,255,0.3) 50%, rgba(255,255,255,0) 100%); transform: skewX(-15deg); animation: shine 3s infinite; }
 
-    /* 楽天ROOMリンク用スタイル */
-    .room-promo {
-        background: #fff;
-        border: 2px dashed var(--room-color);
-        border-radius: 15px;
-        padding: 25px;
-        text-align: center;
-        margin: 50px 0;
-        color: var(--text-main);
-    }
-    .room-btn {
-        display: inline-block;
-        background: var(--room-color);
-        color: #fff;
-        padding: 12px 30px;
-        border-radius: 30px;
-        text-decoration: none;
-        font-weight: bold;
-        margin-top: 15px;
-        box-shadow: 0 4px 10px rgba(198, 53, 53, 0.3);
-        transition: 0.3s;
-    }
-    .room-btn:hover {
-        background: #a82525;
-        transform: translateY(-2px);
-        box-shadow: 0 6px 14px rgba(198, 53, 53, 0.4);
-    }
-
-    /* ▼▼▼ 追加：診断ボタン用のアニメーション ▼▼▼ */
-    @keyframes pulse-glow {
-      0% { box-shadow: 0 0 0 0 rgba(230, 126, 34, 0.4); transform: scale(1); }
-      50% { box-shadow: 0 0 0 10px rgba(230, 126, 34, 0); transform: scale(1.02); }
-      100% { box-shadow: 0 0 0 0 rgba(230, 126, 34, 0); transform: scale(1); }
-    }
-    .diagnosis-banner {
-      background: #fff;
-      border: 3px solid #f39c12; /* 目立つオレンジ/ゴールド系 */
-      border-radius: 15px;
-      padding: 25px;
-      text-align: center;
-      margin: 30px auto; /* 中央寄せ */
-      position: relative;
-      max-width: 650px;
-    }
-    /* 「NEW!」などのバッジ */
-    .diagnosis-badge {
-        background: #d35400; color: #fff; padding: 5px 15px; border-radius: 5px;
-        font-weight: bold; font-size: 12px; position: absolute; top: -15px; left: 50%;
-        transform: translateX(-50%); box-shadow: 0 2px 5px rgba(0,0,0,0.2);
-    }
-    .diagnosis-btn {
-      display: inline-block;
-      background: linear-gradient(45deg, #e67e22, #f39c12);
-      color: #fff;
-      font-size: 18px;
-      font-weight: bold;
-      padding: 15px 35px;
-      border-radius: 50px;
-      text-decoration: none;
-      margin-top: 15px;
-      box-shadow: 0 4px 15px rgba(230, 126, 34, 0.4);
-      /* ここでキラキラさせます */
-      animation: pulse-glow 2s infinite;
-    }
-    .diagnosis-btn:hover {
-        opacity: 0.9;
-        transform: translateY(-2px);
-    }
-    /* ▲▲▲ 追加ここまで ▲▲▲ */
-
-    /* フッター（リンク網羅型） */
-    footer {
-        background: #fffaf4;
-        border-top: 3px solid #f7a8a8;
-        padding: 50px 20px 60px;
-        margin-top: 60px;
-        color: #555;
-        font-size: 14px;
-    }
-    .footer-container {
-        max-width: 960px;
-        margin: 0 auto;
-        display: flex;
-        flex-wrap: wrap;
-        justify-content: space-between;
-        gap: 30px;
-        text-align: left;
-    }
+    /* フッター */
+    footer { background: #fffaf4; border-top: 3px solid #f7a8a8; padding: 50px 20px 60px; margin-top: 60px; color: #555; font-size: 14px; }
+    .footer-container { max-width: 960px; margin: 0 auto; display: flex; flex-wrap: wrap; gap: 30px; }
     .footer-col { flex: 1; min-width: 200px; }
-    .footer-col h3 {
-        font-size: 16px;
-        color: #d6336c;
-        border-bottom: 1px dashed #f4b5b5;
-        padding-bottom: 8px;
-        margin-bottom: 15px;
-        font-weight: bold;
-    }
-    .footer-col a {
-        display: block; color: #666; text-decoration: none; margin-bottom: 10px; transition: 0.3s; position: relative; padding-left: 10px;
-    }
+    .footer-col h3 { font-size: 16px; color: #d6336c; border-bottom: 1px dashed #f4b5b5; padding-bottom: 8px; margin-bottom: 15px; font-weight: bold; }
+    .footer-col a { display: block; color: #666; text-decoration: none; margin-bottom: 10px; transition: 0.3s; padding-left: 10px; position: relative; }
     .footer-col a::before { content: "・"; position: absolute; left: 0; color: #f7a8a8; }
     .footer-col a:hover { color: #d6336c; padding-left: 15px; }
     .footer-bottom { text-align: center; margin-top: 50px; padding-top: 30px; border-top: 1px solid #eee; }
-    
-    .footer-room-link {
-        display: inline-block; color: #c63535; font-weight: bold; border: 1px solid #c63535; padding: 8px 20px; border-radius: 20px; text-decoration: none; margin-bottom: 20px; background: #fff; transition: 0.3s;
-    }
+    .footer-room-link { display: inline-block; color: #c63535; font-weight: bold; border: 1px solid #c63535; padding: 8px 20px; border-radius: 20px; text-decoration: none; margin-bottom: 20px; background: #fff; transition: 0.3s; }
     .footer-room-link:hover { background: #c63535; color: #fff; }
 
-    #affiliateNotice {
-      position: fixed; right: 12px; bottom: 12px;
-      background: rgba(255, 255, 255, 0.8);
-      color: #555; font-size: 11px;
-      border-radius: 6px; padding: 4px 8px;
-      box-shadow: 0 2px 6px rgba(0,0,0,0.1);
-      z-index: 999;
-    }
-    
+    #affiliateNotice { position: fixed; right: 12px; bottom: 12px; background: rgba(255, 255, 255, 0.8); color: #555; font-size: 11px; border-radius: 6px; padding: 4px 8px; box-shadow: 0 2px 6px rgba(0,0,0,0.1); z-index: 999; }
     .back-btn { text-align: center; margin: 50px 0; }
     .back-btn a { color: #777; text-decoration: none; border-bottom: 1px solid #ccc; }
-
-    @media(max-width: 600px) {
-        header h1 { font-size: 28px; }
-    }
-
-    @keyframes blinkEffect {
-    0% { opacity: 1; }
-    50% { opacity: 0.3; }
-    100% { opacity: 1; }
-}
-
-.new-mark {
-    color: #ff0000;       /* 文字色を赤にする */
-    font-weight: bold;    /* 太文字にする */
-    font-size: 0.8em;     /* リンク文字より少し小さくする */
-    margin-left: 5px;     /* 前の文字と少し間隔を空ける */
-    animation: blinkEffect 1.2s infinite; /* 1.2秒間隔で点滅を繰り返す */
-    vertical-align: super; /* 少し上付き文字にする */
-}
+    @media(max-width: 600px) { header h1 { font-size: 28px; } }
     
+    @keyframes blinkEffect { 0% { opacity: 1; } 50% { opacity: 0.3; } 100% { opacity: 1; } }
+    .new-mark { color: #ff0000; font-weight: bold; font-size: 0.8em; margin-left: 5px; animation: blinkEffect 1.2s infinite; vertical-align: super; }
   </style>
 </head>
 <body>
@@ -326,8 +114,9 @@
       <a href="skin-ranking.html">✨ ランキング</a>
       <a href="trial-sets.html">🔰 お試しセット</a>
       <div class="nav-break"></div>
-      <a href="amazon-oil-review.html">🔥 オイルレビュー</a>
       <a href="seasons-skin.html">🌸 季節別ケア</a>
+      <a href="age-skincare.html">👩 年齢別ケア</a>
+      <a href="organic-science.html">🔬 成分の科学</a>
       <a href="beauty-column.html">💄 コラム</a>
   </div>
 </header>
@@ -337,228 +126,72 @@
     <h3 style="color:#d35400; margin-bottom:10px; font-size:20px;">⚡ 髪より先に「背中」のケアは済んだ？</h3>
     <p style="margin-bottom:5px;">ヘアメイクが決まっても、背中が荒れていたら台無し！<br>
     今の肌状態と、緊急ケア方法を<strong>30秒で診断</strong>します。</p>
-    
-    <a href="bridal-care.html" class="diagnosis-btn">
-        ✨ 今すぐ肌診断をする！ ✨
-    </a>
+    <a href="bridal-care.html" class="diagnosis-btn">✨ 今すぐ肌診断をする！ ✨</a>
 </div>
-<main>
 
- <div class="intro-box">
-    <h3 style="margin-top:0; color:#8e6e8e;">ヘアメイクの仕上がりは「土台」で変わる</h3>
+<main>
+  
+  <article class="article-content">
+    <h2>ヘアメイクの仕上がりは「土台」で変わる</h2>
     <p>
         「当日のヘアセット、思うようにボリュームが出なかったらどうしよう…」<br>
-        「スポットライトで髪のパサつきが目立つのが怖い…」<br><br>
-        そんな花嫁様の不安を解消するのは、実は毎日のシャンプーです。<br>
+        「スポットライトで髪のパサつきが目立つのが怖い…」
+    </p>
+    <p>
+        花嫁様からよく聞くこの不安。高いトリートメントをすれば解決すると思っていませんか？<br>
+        実は、美しい髪を育てる鍵は「毛先」ではなく<strong>「頭皮」</strong>にあります。
+    </p>
+    <p>
         頭皮は顔と一枚皮で繋がっています。頭皮が乾燥してたるむと、実は<strong>顔のフェイスラインまでたるんでしまう</strong>ことをご存知ですか？<br>
-        挙式当日のリフトアップとツヤ髪のために、今すぐ頭皮ケアを見直しましょう。
+        挙式当日のリフトアップと、内側から発光するようなツヤ髪のために、今すぐ見直すべきは「頭皮の土壌改良」です。
     </p>
- </div>
 
- <section class="hair-column">
-      <h2 style="margin-top:0; margin-bottom:20px;">頭皮ケアは、最高のリフトアップ美容</h2>
-      
-      <h3>植物の力で「土壌」を耕す</h3>
-      <p>
-          洗浄力の強すぎるシャンプーは、頭皮を乾燥させ、顔のたるみや髪のパサつきの原因になります。<br>
-          オーガニックヘアケアの真髄は、植物の力で頭皮という「土壌」を整えること。<br>
-          アミノ酸系の優しい泡で洗い、ハーブエキスで血行を促進することで、根元から立ち上がる元気な髪と、キュッと引き締まったフェイスラインを目指せます。
-      </p>
-  
-      <h3>「きしみ」は再生への通過点</h3>
-      <p>
-          オーガニックに変えた直後、髪がきしむことがありますが、これはシリコンが剥がれて「素髪」に戻ろうとしている証拠。<br>
-          この時期を乗り越えれば、人工的なツヤではなく、内側から発光するような「天使の輪」が現れます。
-      </p>
-  
-      <div class="hair-advice-box">
-          <h4 style="margin-top:0; color:#503535; font-size:18px;">💡 花嫁のための美髪テクニック</h4>
-          <p style="margin-bottom:0; font-size:15px;">
-              効果を最大化するコツは<strong>「頭皮マッサージ」</strong>と<strong>「泡パック」</strong>。<br>
-              シャンプーの際、下から上へと頭皮を引き上げるようにマッサージし、植物成分たっぷりの泡を1分ほど置いてパックしてください。<br>
-              お風呂上がりの顔色が、ワントーン明るくなりますよ。
-          </p>
-      </div>
- </section>
+    <h3>1. なぜオーガニックが花嫁髪にいいの？</h3>
+    <p>
+        市販の洗浄力が強いシャンプーは、必要な皮脂まで落としてしまい、頭皮を乾燥させてしまいます。<br>
+        対してオーガニックシャンプー（特にアミノ酸系）は、頭皮に必要な潤いを残しながら洗うことができます。
+    </p>
+    <p>
+        最初は「泡立ちが悪い」「きしむ」と感じるかもしれません。でもそれは、髪に付着していたシリコンが剥がれ、<strong>「素髪」に戻ろうとしているサイン</strong>です。<br>
+        この期間を乗り越えると、人工的なコーティングではない、髪本来の強さとツヤ（天使の輪）が現れます。
+    </p>
 
- <h2>🧴 花嫁におすすめ！実力派オーガニックシャンプー</h2>
-
- <div class="item-card">
-   <script type="text/javascript">
-(function(b,c,f,g,a,d,e){b.MoshimoAffiliateObject=a;
-b[a]=b[a]||function(){arguments.currentScript=c.currentScript
-||c.scripts[c.scripts.length-2];(b[a].q=b[a].q||[]).push(arguments)};
-c.getElementById(a)||(d=c.createElement(f),d.src=g,
-d.id=a,e=c.getElementsByTagName("body")[0],e.appendChild(d))})
-(window,document,"script","//dn.msmstatic.com/site/cardlink/bundle.js?20220329","msmaflink");
-msmaflink({"n":"オルナ オーガニック シャンプー トリートメント ヘアオイル 3点 セット 無添加 保湿 ダメージ補修","b":"","t":"","d":"https:\/\/thumbnail.image.rakuten.co.jp","c_p":"\/@0_mall\/zestnationjapan-03\/cabinet\/10848229","p":["\/30904568_1.jpg","\/30904568_2.jpg","\/30904568_3.jpg"],"u":{"u":"https:\/\/item.rakuten.co.jp\/zestnationjapan-03\/eahrcgm6v3nlrfmclydylvxocu\/","t":"rakuten","r_v":""},"v":"2.1","b_l":[{"id":1,"u_tx":"楽天市場で見る","u_bc":"#87c209","u_url":"https:\/\/item.rakuten.co.jp\/zestnationjapan-03\/eahrcgm6v3nlrfmclydylvxocu\/","a_id":5267359,"p_id":54,"pl_id":27059,"pc_id":54,"s_n":"rakuten","u_so":1},{"id":8,"u_tx":"Amazonで見る","u_bc":"#125592","u_url":"https:\/\/amzn.to\/3L05QSz","a_id":0,"p_id":0,"pl_id":0,"pc_id":0,"s_n":"custom_4","u_so":2},{"id":9,"u_tx":"Yahoo!ショッピングで見る","u_bc":"#bf0000","u_url":"https:\/\/shopping.yahoo.co.jp\/search?first=1\u0026p=%E3%82%AA%E3%83%AB%E3%83%8A%20%E3%82%AA%E3%83%BC%E3%82%AC%E3%83%8B%E3%83%83%E3%82%AF%20%E3%82%B7%E3%83%A3%E3%83%B3%E3%83%97%E3%83%BC%20%E3%83%88%E3%83%AA%E3%83%BC%E3%83%88%E3%83%A1%E3%83%B3%E3%83%88%20%E3%83%98%E3%82%A2%E3%82%AA%E3%82%A4%E3%83%AB%203%E7%82%B9%20%E3%82%BB%E3%83%83%E3%83%88%20%E7%84%A1%E6%B7%BB%E5%8A%A0%20%E4%BF%9D%E6%B9%BF%20%E3%83%80%E3%83%A1%E3%83%BC%E3%82%B8%E8%A3%9C%E4%BF%AE","a_id":5267465,"p_id":1225,"pl_id":27061,"pc_id":1925,"s_n":"yahoo","u_so":3}],"eid":"GuV8M","s":"s"});
-</script>
-<div id="msmaflink-GuV8M">リンク</div>
-</div>
-
-   <div class="check-points">
-       <h4>💡 編集部のおすすめポイント</h4>
-       <ul>
-           <li><strong>サロン品質のツヤ：</strong> 厳選された植物オイルが、カラーやパーマで傷んだ髪を補修。</li>
-           <li><strong>アロマの癒やし：</strong> バスタイムが極上のリラックスタイムに。準備疲れも癒やされます。</li>
-           <li><strong>コスパ◎：</strong> 挙式までたっぷり使える3点セットで、髪の芯から美しく。</li>
-       </ul>
-   </div>
- </div>
-
- <h2>💧 プロも愛用！頭皮コンディショニング</h2>
-
-    <div class="item-card">
- <script type="text/javascript">
-(function(b,c,f,g,a,d,e){b.MoshimoAffiliateObject=a;
-b[a]=b[a]||function(){arguments.currentScript=c.currentScript
-||c.scripts[c.scripts.length-2];(b[a].q=b[a].q||[]).push(arguments)};
-c.getElementById(a)||(d=c.createElement(f),d.src=g,
-d.id=a,e=c.getElementsByTagName("body")[0],e.appendChild(d))})
-(window,document,"script","//dn.msmstatic.com/site/cardlink/bundle.js?20220329","msmaflink");
-msmaflink({"n":"【公式】ジョンマスターオーガニック John Masters Organics Z＆Sコンディショニングシャンプー N(ジン＆セージ) 473mL【送料無料】|ジョンマスター シャンプー 頭皮ケア ヘアシャンプー オーガニック いい 香り スカルプケア ヘアケア 髪 ヘア 化粧品 美容 ダメージ","b":"","t":"","d":"https:\/\/thumbnail.image.rakuten.co.jp","c_p":"\/@0_mall\/johnmastersorganics\/cabinet","p":["\/08193645\/imgrc0096138851.jpg","\/10995272\/imgrc0121230513.jpg","\/10995272\/imgrc0121230514.jpg"],"u":{"u":"https:\/\/item.rakuten.co.jp\/johnmastersorganics\/20055\/","t":"rakuten","r_v":""},"v":"2.1","b_l":[{"id":1,"u_tx":"楽天市場で見る","u_bc":"#87c209","u_url":"https:\/\/item.rakuten.co.jp\/johnmastersorganics\/20055\/","a_id":5267359,"p_id":54,"pl_id":27059,"pc_id":54,"s_n":"rakuten","u_so":1},{"id":8,"u_tx":"Amazonで見る","u_bc":"#125592","u_url":"https:\/\/amzn.to\/3XOijvz","a_id":0,"p_id":0,"pl_id":0,"pc_id":0,"s_n":"custom_4","u_so":2},{"id":9,"u_tx":"Yahoo!ショッピングで見る","u_bc":"#bf0000","u_url":"https:\/\/shopping.yahoo.co.jp\/search?first=1\u0026p=%E3%80%90%E5%85%AC%E5%BC%8F%E3%80%91%E3%82%B8%E3%83%A7%E3%83%B3%E3%83%9E%E3%82%B9%E3%82%BF%E3%83%BC%E3%82%AA%E3%83%BC%E3%82%AC%E3%83%8B%E3%83%83%E3%82%AF%20John%20Masters%20Organics%20Z%EF%BC%86S%E3%82%B3%E3%83%B3%E3%83%87%E3%82%A3%E3%82%B7%E3%83%A7%E3%83%8B%E3%83%B3%E3%82%B0%E3%82%B7%E3%83%A3%E3%83%B3%E3%83%97%E3%83%BC%20N(%E3%82%B8%E3%83%B3%EF%BC%86%E3%82%BB%E3%83%BC%E3%82%B8)%20473mL%E3%80%90%E9%80%81%E6%96%99%E7%84%A1%E6%96%99%E3%80%91%7C%E3%82%B8%E3%83%A7%E3%83%B3%E3%83%9E%E3%82%B9%E3%82%BF%E3%83%BC%20%E3%82%B7%E3%83%A3%E3%83%B3%E3%83%97%E3%83%BC%20%E9%A0%AD%E7%9A%AE%E3%82%B1%E3%82%A2%20%E3%83%98%E3%82%A2%E3%82%B7%E3%83%A3%E3%83%B3%E3%83%97%E3%83%BC%20%E3%82%AA%E3%83%BC%E3%82%AC%E3%83%8B%E3%83%83%E3%82%AF%20%E3%81%84%E3%81%84%20%E9%A6%99%E3%82%8A%20%E3%82%B9%E3%82%AB%E3%83%AB%E3%83%97%E3%82%B1%E3%82%A2%20%E3%83%98%E3%82%A2%E3%82%B1%E3%82%A2%20%E9%AB%AA%20%E3%83%98%E3%82%A2%20%E5%8C%96%E7%B2%A7%E5%93%81%20%E7%BE%8E%E5%AE%B9%20%E3%83%80%E3%83%A1%E3%83%BC%E3%82%B8","a_id":5267465,"p_id":1225,"pl_id":27061,"pc_id":1925,"s_n":"yahoo","u_so":3}],"eid":"N0o1S","s":"s"});
-</script>
-<div id="msmaflink-N0o1S">リンク</div>
-<div class="check-points">
-       <h4>💡 編集部のおすすめポイント</h4>
-       <ul>
-           <li><strong>頭皮ケアの決定版：</strong> 亜鉛やセージ葉エキスが頭皮環境を整え、健康な髪を育成します。</li>
-           <li><strong>フェイスラインもすっきり：</strong> 頭皮を引き締めることで、顔のリフトアップ効果も期待大。</li>
-           <li><strong>男性にもおすすめ：</strong> 新郎様と一緒に使える、甘すぎない柑橘＆ハーブの香り。</li>
-       </ul>
-   </div>
-   </div>
-<div style="background:#fff5f5; border-radius:15px; padding:30px; margin:40px 0; border:2px solid #ffdecb;">
-        <h2 style="color:#d68e33; text-align:center; margin-top:0; border-bottom:none;">🍽️ あなたの「好物」でバレる！？<br>肌トラブル診断</h2>
-        <p style="text-align:center; font-size:14px;">好きな食べ物は、今の体内の栄養バランスと肌状態を映す鏡です。<br>当てはまるものをチェックしてみましょう。</p>
-
-        <details style="margin-bottom:15px; background:#fff; padding:15px; border-radius:10px; cursor:pointer;">
-            <summary style="font-weight:bold; color:#c04b4b;">🍰 甘いもの（ケーキ・チョコ）が大好き</summary>
-            <div style="margin-top:10px; font-size:15px;">
-                <p><strong>診断：脂性肌～混合肌（ニキビ・黄ぐすみ）</strong></p>
-                <p>糖質の摂りすぎはTゾーンのベタつきや、肌が黄色くくすむ「糖化」の原因に。ハリの低下にも要注意です。<br>
-                <span style="color:#d68e33;">👉 おすすめケア：</span>低GIのナッツをおやつにするか、食事で血糖値を急上昇させない工夫を。
-                </p>
-            </div>
-        </details>
-
-        <details style="margin-bottom:15px; background:#fff; padding:15px; border-radius:10px; cursor:pointer;">
-            <summary style="font-weight:bold; color:#c04b4b;">🌶️ 辛いもの（唐辛子など）が大好き</summary>
-            <div style="margin-top:10px; font-size:15px;">
-                <p><strong>診断：脂性肌～敏感肌（炎症リスク）</strong></p>
-                <p>発汗作用で皮脂が増えるほか、刺激で肌の赤みや炎症を引き起こしやすくなっています。<br>
-                <span style="color:#d68e33;">👉 おすすめケア：</span>抗酸化作用のあるトマトなどの野菜をたっぷり摂って炎症を鎮火！
-                </p>
-            </div>
-        </details>
-
-        <details style="margin-bottom:15px; background:#fff; padding:15px; border-radius:10px; cursor:pointer;">
-            <summary style="font-weight:bold; color:#c04b4b;">🍤 油っこいもの・スナックが大好き</summary>
-            <div style="margin-top:10px; font-size:15px;">
-                <p><strong>診断：脂性肌（毛穴詰まり・ニキビ）</strong></p>
-                <p>悪い油の摂りすぎは、そのままドロドロの皮脂となり毛穴を詰まらせます。酸化した油は肌老化の最大要因！<br>
-                <span style="color:#d68e33;">👉 おすすめケア：</span>揚げ物を減らし、SONOKOのような「ノンオイル調理」で肌を休ませて。
-                </p>
-            </div>
-        </details>
-        
-        <details style="margin-bottom:15px; background:#fff; padding:15px; border-radius:10px; cursor:pointer;">
-            <summary style="font-weight:bold; color:#c04b4b;">🧂 味の濃いもの・塩辛いものが大好き</summary>
-            <div style="margin-top:10px; font-size:15px;">
-                <p><strong>診断：乾燥肌～むくみ肌</strong></p>
-                <p>塩分過多は体内の水分を奪い、肌の乾燥を招きます。同時に顔のむくみも引き起こすダブルパンチ。<br>
-                <span style="color:#d68e33;">👉 おすすめケア：</span>カリウムを含む野菜や海藻を摂って、余分な塩分を排出しましょう。
-                </p>
-            </div>
-        </details>
-        
-        <p style="margin-top:20px; font-weight:bold; text-align:center;">
-            「わかってるけど、食事を変えるのは難しい…」<br>
-            そう思ったあなたにおすすめなのが、これです👇
-        </p>
-      </div>
-     <h2> 🌧お直しにも！ヘアミスト</h2>
-
-    <div class="item-card">
-<script type="text/javascript">
-(function(b,c,f,g,a,d,e){b.MoshimoAffiliateObject=a;
-b[a]=b[a]||function(){arguments.currentScript=c.currentScript
-||c.scripts[c.scripts.length-2];(b[a].q=b[a].q||[]).push(arguments)};
-c.getElementById(a)||(d=c.createElement(f),d.src=g,
-d.id=a,e=c.getElementsByTagName("body")[0],e.appendChild(d))})
-(window,document,"script","//dn.msmstatic.com/site/cardlink/bundle.js?20220329","msmaflink");
-msmaflink({"n":"ジョンマスターオーガニック グリーンティー＆カレンデュラ リーブインコンディショニングミスト 125ml \/ John Masters Organics ミスト ヘアケア スプレー","b":"","t":"","d":"https:\/\/thumbnail.image.rakuten.co.jp","c_p":"\/@0_mall\/onestep\/cabinet","p":["\/life\/johnmas\/ks1562_1.jpg","\/life\/johnmas\/ks1562_2.jpg","\/parts02\/storepr_sub01.jpg"],"u":{"u":"https:\/\/item.rakuten.co.jp\/onestep\/ks1562\/","t":"rakuten","r_v":""},"v":"2.1","b_l":[{"id":1,"u_tx":"楽天市場で見る","u_bc":"#87c209","u_url":"https:\/\/item.rakuten.co.jp\/onestep\/ks1562\/","a_id":5267359,"p_id":54,"pl_id":27059,"pc_id":54,"s_n":"rakuten","u_so":1},{"id":8,"u_tx":"Amazonで見る","u_bc":"#125592","u_url":"https:\/\/amzn.to\/4pAI3aX","a_id":0,"p_id":0,"pl_id":0,"pc_id":0,"s_n":"custom_4","u_so":2},{"id":9,"u_tx":"Yahoo!ショッピングで見る","u_bc":"#bf0000","u_url":"https:\/\/shopping.yahoo.co.jp\/search?first=1\u0026p=%E3%82%B8%E3%83%A7%E3%83%B3%E3%83%9E%E3%82%B9%E3%82%BF%E3%83%BC%E3%82%AA%E3%83%BC%E3%82%AC%E3%83%8B%E3%83%83%E3%82%AF%20%E3%82%B0%E3%83%AA%E3%83%BC%E3%83%B3%E3%83%86%E3%82%A3%E3%83%BC%EF%BC%86%E3%82%AB%E3%83%AC%E3%83%B3%E3%83%87%E3%83%A5%E3%83%A9%20%E3%83%AA%E3%83%BC%E3%83%96%E3%82%A4%E3%83%B3%E3%82%B3%E3%83%B3%E3%83%87%E3%82%A3%E3%82%B7%E3%83%A7%E3%83%8B%E3%83%B3%E3%82%B0%E3%83%9F%E3%82%B9%E3%83%88%20125ml%20%2F%20John%20Masters%20Organics%20%E3%83%9F%E3%82%B9%E3%83%88%20%E3%83%98%E3%82%A2%E3%82%B1%E3%82%A2%20%E3%82%B9%E3%83%97%E3%83%AC%E3%83%BC","a_id":5267465,"p_id":1225,"pl_id":27061,"pc_id":1925,"s_n":"yahoo","u_so":3}],"eid":"9bVsL","s":"s"});
-</script>
-<div id="msmaflink-9bVsL">リンク</div>
-<div class="check-points">
-       <h4>💡 編集部のおすすめポイント</h4>
-       <ul>
-           <li><strong>当日のヘアメイク直しに：</strong> 挙式当日、控室に一本あると安心。乾燥した髪に潤いチャージ。</li>
-           <li><strong>ツヤ出し仕上げ：</strong> ブロー前にシュッと一吹きで、キューティクルが整い天使の輪が復活。</li>
-           <li><strong>香りのお守り：</strong> イランイランの香りで、挙式直前の緊張をほぐしてくれます。</li>
-       </ul>
-   </div>
-   </div>
-
-  <div class="banner-area">
-      <p style="font-weight:bold; color:#8e6e8e;">＼ 髪にも使える万能オイルはこちら ／</p>
-      <a href="amazon-oil-review.html" style="display:inline-block; padding:12px 30px; background:#d8bfd8; color:#fff; text-decoration:none; border-radius:30px; font-weight:bold; box-shadow:0 4px 10px rgba(0,0,0,0.1); transition:0.3s;">
-          おすすめオイル3選を見る &rarr;
-      </a>
-  </div>
-
- <div style="
-    background: #1a2f4b; /* ネイビー背景 */
-    background: linear-gradient(135deg, #1a2f4b, #2c4a70);
-    border-radius: 12px;
-    padding: 30px;
-    margin: 40px auto;
-    text-align: center;
-    color: #fff;
-    box-shadow: 0 5px 20px rgba(0,0,0,0.15);
-    max-width: 700px;
-    position: relative;
-    overflow: hidden;
-">
-    <div style="
-        position: absolute; top: 10px; left: 10px; right: 10px; bottom: 10px;
-        border: 1px solid rgba(212, 175, 55, 0.5); border-radius: 8px; pointer-events: none;
-    "></div>
-
-    <span style="
-        background: #d4af37; color: #fff; font-size: 11px; font-weight: bold;
-        padding: 4px 12px; border-radius: 20px; text-transform: uppercase; letter-spacing: 1px;
-    ">
-        New Arrival
-    </span>
-
-    <h3 style="
-        font-family: 'Playfair Display', serif; color: #fff; margin: 15px 0 10px; font-size: 22px;
-        border-bottom: none;
-    ">
-        銀座で叶える、一生モノの美ボディ
-    </h3>
+    <h3>2. 天使の輪を作る「3つの鉄則」</h3>
+    <p>
+        シャンプーを変えるだけでなく、日々のちょっとした習慣で髪質は劇的に変わります。
+    </p>
     
-    <p style="font-size: 14px; line-height: 1.6; margin-bottom: 25px; color: #e0e0e0;">
-        「結婚式までに確実に痩せたい」<br>
-        「食事制限でリバウンドしたくない」<br>
-        そんな花嫁様へ。世界レベルのトレーナーが指導する<br>
-        完全個室のプライベートジムを取材しました。
-    </p>
+    <div class="advice-box">
+        <h4>💆‍♀️ 栄養士Yuriの美髪メソッド</h4>
+        <ul class="check-list">
+            <li><strong>ブラッシングは「洗髪前」に：</strong> シャンプー前に汚れを浮かせ、頭皮の血行を良くします。これだけで泡立ちが変わります。</li>
+            <li><strong>「予洗い」を2分間：</strong> シャンプーをつける前に、お湯だけでしっかり汚れを落としましょう。</li>
+            <li><strong>即ドライヤー：</strong> 自然乾燥はNG。濡れた髪はキューティクルが開いており、雑菌が繁殖してニオイの原因になります。</li>
+        </ul>
+    </div>
 
-    <a href="accept-gym.html" style="
-        display: inline-block;
-        background: #d4af37;
-        color: #fff;
-        font-weight: bold;
-        text-decoration: none;
-        padding: 12px 35px;
-        border-radius: 50px;
-        box-shadow: 0 4px 15px rgba(0,0,0,0.3);
-        transition: transform 0.2s;
-    " onmouseover="this.style.transform='translateY(-2px)'" onmouseout="this.style.transform='translateY(0)'">
-        記事を読む &raquo;
-    </a></div>
+    <h3>3. インナーケアで髪を育てる</h3>
+    <p>
+        髪の主成分は「ケラチン」というタンパク質です。<br>
+        無理なダイエットでタンパク質が不足すると、髪は細くなり、パサついてしまいます。
+    </p>
+    <p>
+        <strong>卵、大豆製品、赤身の肉</strong>などを意識して摂りましょう。また、亜鉛（牡蠣やナッツ類）も髪の生成には欠かせません。<br>
+        「食べるケア」と「守るケア」の両輪で、当日誰よりも輝く花嫁姿を目指しましょう。
+    </p>
+  </article>
+
+  <div class="note-banner">
+    <div class="note-inner">
+      <span style="display: inline-block; background: #e74c3c; color: #fff; font-size: 12px; font-weight: bold; padding: 4px 12px; border-radius: 20px; vertical-align: middle; margin-bottom: 10px;">保存版・アーカイブ完成</span>
+      <h3 style="margin: 5px 0 15px; font-size: 22px; color: #503535; font-family: 'Playfair Display', serif;">栄養士Yuriの全ノウハウ公開<br>読むだけで変わる「花嫁美容」Note</h3>
+      <div style="background: #fffaf4; border: 1px dashed #d4a373; border-radius: 10px; padding: 15px; margin: 15px auto; max-width: 90%; text-align: left; font-size: 15px; color: #555;">
+        <p style="margin: 5px 0;">👰 <strong>プレ花嫁講座</strong>：ドレス姿を変える食事術</p>
+        <p style="margin: 5px 0;">✨ <strong>高級美容液より効く</strong>「美肌定食」とは？</p>
+      </div>
+      <a href="note-archive.html" class="shiny-btn">全記事一覧を無料で見る ▶</a>
+    </div>
+  </div>
 
   <div class="back-btn">
     <a href="index.html">← トップページへ戻る</a>
@@ -566,45 +199,8 @@ msmaflink({"n":"ジョンマスターオーガニック グリーンティー＆
 
 </main>
 
-<div id="affiliateNotice">※当サイトはアフィリエイト広告（Amazonアソシエイト含む）を利用しています</div>
-
- <div style="max-width: 650px; margin: 50px auto; padding: 5px; background: linear-gradient(135deg, #f7a8a8 0%, #ffdecb 100%); border-radius: 20px; box-shadow: 0 10px 25px rgba(247, 168, 168, 0.25);">
-  <div style="background: #ffffff; border-radius: 15px; padding: 30px 20px; text-align: center; position: relative; overflow: hidden;">
-    
-    <style>
-      @keyframes shine { 0% { transform: translateX(-100%) skewX(-15deg); } 100% { transform: translateX(200%) skewX(-15deg); } }
-      .shiny-btn::after {
-        content: ''; position: absolute; top: 0; left: 0; width: 50%; height: 100%;
-        background: linear-gradient(to right, rgba(255,255,255,0) 0%, rgba(255,255,255,0.3) 50%, rgba(255,255,255,0) 100%);
-        transform: skewX(-15deg); animation: shine 3s infinite;
-      }
-    </style>
-
-    <span style="display: inline-block; background: #e74c3c; color: #fff; font-size: 12px; font-weight: bold; padding: 4px 12px; border-radius: 20px; vertical-align: middle; box-shadow: 0 2px 5px rgba(231, 76, 60, 0.3); margin-bottom: 10px;">
-      保存版・アーカイブ完成
-    </span>
-
-    <h3 style="margin: 5px 0 15px; font-size: 22px; color: #503535; font-family: 'Playfair Display', serif, sans-serif; line-height: 1.4;">
-      <span style="font-size: 0.8em; color: #d4a373;">栄養士Yuriの全ノウハウ公開</span><br>
-      読むだけで変わる「花嫁美容」Note
-    </h3>
-
-    <div style="background: #fffaf4; border: 1px dashed #d4a373; border-radius: 10px; padding: 15px; margin: 15px auto; max-width: 90%; text-align: left; font-size: 15px; color: #555;">
-      <p style="margin: 5px 0;">👰 <strong>プレ花嫁講座</strong>：ドレス姿を変える食事術</p>
-      <p style="margin: 5px 0;">📖 <strong>自己紹介</strong>：私が発信を続ける理由</p>
-      <p style="margin: 5px 0;">✨ <strong>高級美容液より効く</strong>「美肌定食」とは？</p>
-    </div>
-
-    <a href="note-archive.html" class="shiny-btn" style="display: block; width: 100%; max-width: 320px; margin: 20px auto 10px; background: linear-gradient(45deg, #f7a8a8, #d68e33); color: #fff; text-decoration: none; font-weight: bold; font-size: 18px; padding: 18px 0; border-radius: 50px; box-shadow: 0 5px 15px rgba(247, 168, 168, 0.4); position: relative; overflow: hidden; transition: transform 0.2s;">
-      全記事一覧を無料で見る ▶
-    </a>
-    
-    <p style="font-size: 12px; color: #999; margin-top: 10px;">※プレ花嫁様以外も役立つ情報満載です</p>
-  </div>
-</div>
- <footer>
+<footer>
   <div class="footer-container">
-    
     <div class="footer-col">
       <h3>🌸 スキンケア・悩み別</h3>
       <a href="bridal-care.html">👰 結婚式直前！背中・二の腕ケア<span class="new-mark">New!!</span></a>
@@ -635,9 +231,8 @@ msmaflink({"n":"ジョンマスターオーガニック グリーンティー＆
       <a href="sonoko-diet.html">食べて痩せる肌診断 <span class="new-mark">New!!</span></a>
       <a href="about.html">当サイトについて (About)</a>
     </div>
-
   </div>
-   
+    
   <div class="footer-bottom">
       <a href="https://room.rakuten.co.jp/room_e0dd63a90a/items" target="_blank" rel="noopener" class="footer-room-link">
         🏠 管理人Yuriの楽天ROOMを見る
@@ -647,6 +242,8 @@ msmaflink({"n":"ジョンマスターオーガニック グリーンティー＆
       <a href="privacy-policy.html" style="color:#888; text-decoration:none; font-size:12px;">プライバシーポリシー</a>
   </div>
 </footer>
+
+<div id="affiliateNotice">※当サイトはアフィリエイト広告（Amazonアソシエイト含む）を利用しています</div>
 
 </body>
 </html>
