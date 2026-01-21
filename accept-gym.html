@@ -20,9 +20,11 @@
       gtag('js', new Date());
       gtag('config', 'G-2HGEPHVZYY');
     }
+    // 画像エラー時にプレースホルダーを表示（他のジム用）
     function handleImageError(imgElement, width, height, text) { 
          imgElement.onerror = null; 
-         imgElement.src = `https://placehold.co/${width}x${height}/f7a8a8/ffffff?text=${encodeURIComponent(text)}`;
+         imgElement.src = `https://placehold.co/${width}x${height}/f0f0f0/aaaaaa?text=${encodeURIComponent(text)}`;
+         imgElement.style.objectFit = "cover";
     }
   </script>
   
@@ -51,6 +53,30 @@
     /* メインコンテンツ */
     .container { max-width: 900px; margin: 40px auto; padding: 0 20px; }
     
+    /* 記事用画像スタイル */
+    .article-img {
+        width: 100%;
+        max-height: 450px; 
+        object-fit: cover;
+        border-radius: 12px;
+        margin-bottom: 30px;
+        box-shadow: 0 4px 15px rgba(0,0,0,0.08);
+    }
+    /* ギャラリー風グリッド */
+    .image-gallery {
+        display: grid;
+        grid-template-columns: repeat(auto-fit, minmax(200px, 1fr));
+        gap: 15px;
+        margin-bottom: 25px;
+    }
+    .gallery-img {
+        width: 100%;
+        height: 250px;
+        object-fit: cover;
+        border-radius: 10px;
+        box-shadow: 0 2px 10px rgba(0,0,0,0.1);
+    }
+
     /* 見出し */
     h2 { font-family: 'Playfair Display', serif; text-align: center; color: var(--text-main); font-size: 26px; margin: 60px 0 30px; position: relative; border-bottom: 2px solid #f7dada; padding-bottom: 15px; }
     h3 { color: var(--gold); margin: 30px 0 15px; font-size: 20px; border-left: 4px solid var(--accent); padding-left: 15px; }
@@ -129,6 +155,8 @@
 
 <main class="container">
 
+    <img src="images/IMG_2080_Original.JPG" alt="理想の花嫁ボディ" class="article-img" onerror="handleImageError(this, 900, 400, 'Bridal Body')">
+
     <div style="background:#fff; padding:30px; border-radius:15px; margin-bottom:40px; box-shadow:0 4px 15px rgba(0,0,0,0.05);">
         <p>「結婚式までに痩せなきゃ！」と焦って食事を抜くのは一番のNG。<br>
         肌がボロボロになり、ドレスのサイズは落ちても「やつれた花嫁」になってしまいます。</p>
@@ -140,6 +168,14 @@
     <div class="gym-card">
         <span class="area-badge">銀座</span>
         <h3>完全個室プライベートジム ACCEPT</h3>
+        
+        <div class="image-gallery">
+            <img src="images/IMG_2138_Original.JPG" alt="Before After" class="gallery-img">
+            <img src="images/IMG_3722_Original.jpg" alt="トレーニング風景" class="gallery-img">
+            <img src="images/IMG_2076_Original.JPG" alt="美しい背中のライン" class="gallery-img" style="object-position:top;">
+            <img src="images/IMG_2078_Original.JPG" alt="ヒップアップ" class="gallery-img">
+        </div>
+
         <p>
             「誰にも会わずに集中したい」という花嫁様のための隠れ家ジム。<br>
             ただ痩せるだけでなく、ドレスが似合う「砂時計ボディ」を作るための指導が受けられます。<br>
@@ -149,12 +185,15 @@
             <strong>👩‍⚕️ 栄養士のCheck：</strong><br>
             銀座という立地柄、美容意識の高い会員様が多く、トレーナーの質もトップレベル。本気で変わりたいならここ一択です。
         </div>
-        </div>
+    </div>
 
     <h2>🗾 エリア別・悩み別おすすめジム＆整体</h2>
     
     <div class="gym-card">
         <span class="area-badge">全国（主要都市）</span>
+        
+        <img src="" alt="スリムレッグ イメージ" class="article-img" style="max-height:250px;" onerror="handleImageError(this, 800, 250, 'Slim Legs Concept')">
+
         <h3>【下半身痩せ特化】マーメイドラインを着たいなら</h3>
         <p>
             「上半身は痩せているのに、下半身が太い…」そんな悩みを持つ花嫁様に。<br>
@@ -171,6 +210,9 @@
 
     <div class="gym-card">
         <span class="area-badge">六本木・表参道</span>
+        
+        <img src="" alt="女性専用ジム イメージ" class="article-img" style="max-height:250px;" onerror="handleImageError(this, 800, 250, 'Stylish Gym Concept')">
+
         <h3>【女性トレーナーのみ】おしゃれに痩せたい</h3>
         <p>
             「男性トレーナーだと緊張する…」という方におすすめ。<br>
