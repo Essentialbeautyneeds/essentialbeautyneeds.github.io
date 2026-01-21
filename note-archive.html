@@ -102,15 +102,18 @@
         .note-content { padding: 12px 15px; flex: 1; }
         .note-title { font-size: 15px; font-weight: bold; margin: 0; display: block; color: var(--text-main); line-height: 1.5; }
         .arrow-icon { color: #f4b5b5; font-size: 18px; margin-left: 10px; margin-right: 15px; }
+        
+        /* 価格タグ（有料記事用） */
+        .price-tag { display: inline-block; background: #eee; color: #555; font-size: 11px; padding: 1px 6px; border-radius: 4px; margin-left: 8px; vertical-align: middle; }
 
         /* プレミアムバナー */
-        .premium-banner { background-color: #f4f7f5; padding: 30px 15px; margin: 40px 0; border-radius: 8px; border: 1px solid #e0e0e0; }
+        .premium-banner { background-color: #fffaf4; padding: 30px 15px; margin: 40px 0; border-radius: 8px; border: 2px solid #f4b5b5; }
         .banner-container { max-width: 800px; margin: 0 auto; display: flex; align-items: center; justify-content: center; gap: 20px; background: #fff; padding: 25px; border-radius: 12px; box-shadow: 0 8px 25px rgba(0,0,0,0.05); }
         .banner-image { flex: 1; max-width: 250px; }
-        .banner-image img { width: 100%; height: auto; border-radius: 6px; box-shadow: 0 4px 10px rgba(0,0,0,0.1); }
+        .banner-image img { width: 100%; height: auto; border-radius: 6px; box-shadow: 0 4px 10px rgba(0,0,0,0.1); object-fit: cover; }
         .banner-content { flex: 1.5; text-align: left; }
-        .banner-tag { display: inline-block; background-color: #8fa193; color: #fff; font-size: 11px; font-weight: bold; padding: 3px 10px; border-radius: 15px; margin-bottom: 10px; }
-        .banner-title { font-family: "Times New Roman", serif; font-size: 24px; color: #333; margin-bottom: 10px; line-height: 1.3; }
+        .banner-tag { display: inline-block; background-color: #d6336c; color: #fff; font-size: 11px; font-weight: bold; padding: 3px 10px; border-radius: 15px; margin-bottom: 10px; }
+        .banner-title { font-family: "Times New Roman", serif; font-size: 22px; color: #333; margin-bottom: 10px; line-height: 1.3; font-weight: bold; }
         .banner-text { font-size: 13px; line-height: 1.6; color: #666; margin-bottom: 20px; }
         .banner-button { display: inline-block; background: linear-gradient(135deg, #d4af37 0%, #c5a028 100%); color: #fff; font-weight: bold; text-decoration: none; padding: 10px 25px; border-radius: 25px; font-size: 14px; box-shadow: 0 4px 10px rgba(212, 175, 55, 0.3); transition: all 0.3s ease; }
         .banner-button:hover { transform: translateY(-2px); opacity: 0.95; }
@@ -196,8 +199,41 @@
 
     <div class="section-wrapper" id="diet">
         <h2 class="section-title">Bridal Course & Diet</h2>
+        
+        <section class="premium-banner">
+            <div class="banner-container">
+                <div class="banner-image">
+                    <img src="https://placehold.co/300x200/fcece3/d4a373?text=Bridal+Roadmap" alt="式まで残り3ヶ月のロードマップ">
+                </div>
+                <div class="banner-content">
+                    <span class="banner-tag">人気No.1 / 有料Note</span>
+                    <h3 class="banner-title">【式まで残り3ヶ月】<br>ドレスのチャックが閉まらない時の<br>緊急リセット・ロードマップ</h3>
+                    <p class="banner-text">
+                        「お母さん、背中汚いよ」と言われないために。<br>
+                        エステに課金する前に読む、栄養士の本気の献立＆ケア。<br>
+                        一生に一度のドレスを最高に美しく着るためのバイブルです。
+                    </p>
+                    <a href="https://note.com/yuri_organic/n/naf93d0548ba1" class="banner-button" target="_blank">
+                        ロードマップを読む（¥980） <span>→</span>
+                    </a>
+                </div>
+            </div>
+        </section>
+
         <ul class="note-list">
             
+            <li class="note-item">
+                <a href="https://note.com/yuri_organic/n/n1f22eb638e97" class="note-link" target="_blank">
+                    <div class="note-thumb-box">
+                        <img src="https://placehold.co/160x90/f7a8a8/fff?text=New+Diagnosis" class="note-thumb" onerror="handleImageError(this)" alt="診断チャート">
+                    </div>
+                    <div class="note-content">
+                        <span class="note-title">【無料診断】エステ課金は待って！⛔栄養士が判定する 「花嫁タイプ別」最短美容ルート３選✨<span class="new-mark">New!!</span></span>
+                    </div>
+                    <span class="arrow-icon">▶</span>
+                </a>
+            </li>
+
             <li class="note-item">
                 <a href="https://note.com/yuri_organic/n/n7953338e3de7" class="note-link" target="_blank">
                     <div class="note-thumb-box">
@@ -246,39 +282,18 @@
                 </a>
             </li>
 
-            <li class="note-item" style="opacity: 0.8;">
-                <a href="#" class="note-link" onclick="if(this.getAttribute('href')=='#'){alert('明日公開予定です！お楽しみに！'); return false;}">
+            <li class="note-item">
+                <a href="https://note.com/yuri_organic/n/n201deca86055" class="note-link" target="_blank">
                     <div class="note-thumb-box">
-                        <img src="https://placehold.co/160x90/eee/999?text=Coming+Soon" class="note-thumb" alt="Coming Soon">
+                        <img src="https://assets.st-note.com/production/uploads/images/243884975/rectangle_large_type_2_c04d9a49246877b83d57b34d2a99e390.png?width=1280" class="note-thumb" onerror="handleImageError(this)" alt="Vol.5 サムネイル">
                     </div>
                     <div class="note-content">
-                        <span class="note-title" style="color:#666;">【花嫁講座⑤完】式が終わっても「綺麗だね」と言われたい。リバウンド地獄を回避し、一生「太らない妻」になる方法（明日公開）</span>
+                        <span class="note-title">【花嫁講座⑤完】式が終わっても「綺麗だね」と言われたい。リバウンド地獄を回避し、一生「太らない妻」になる方法</span>
                     </div>
-                    <span class="arrow-icon">🔒</span>
+                    <span class="arrow-icon">▶</span>
                 </a>
             </li>
-
         </ul>
-
-        <section class="premium-banner">
-            <div class="banner-container">
-                <div class="banner-image">
-                    <img src="https://placehold.co/300x400/eee/999?text=Bridal+Bible" alt="一生太らない花嫁バイブル">
-                </div>
-                <div class="banner-content">
-                    <span class="banner-tag">Premium Content</span>
-                    <h2 class="banner-title">一生太らない<br>花嫁バイブル</h2>
-                    <p class="banner-text">
-                        エステに課金する前に、やるべきことがあります。<br>
-                        3ヶ月前〜当日までの「食べるエステ」完全スケジュール。<br>
-                        プロが教える、人生最高に美しくなるための教科書。
-                    </p>
-                    <a href="#" class="banner-button" target="_blank">
-                        バイブルを今すぐ読む <span>→</span>
-                    </a>
-                </div>
-            </div>
-        </section>
 
         <ul class="note-list">
              <li class="note-item">
@@ -320,6 +335,19 @@
     <div class="section-wrapper" id="skincare">
         <h2 class="section-title">Skin Care</h2>
         <ul class="note-list">
+            
+            <li class="note-item">
+                <a href="https://note.com/yuri_organic/n/n27951264a1b5" class="note-link" target="_blank">
+                    <div class="note-thumb-box">
+                        <img src="https://placehold.co/160x90/e0f7fa/006064?text=Pollen+Care" class="note-thumb" onerror="handleImageError(this)" alt="記事サムネイル">
+                    </div>
+                    <div class="note-content">
+                        <span class="note-title">【花嫁の緊急事態】式当日に「鼻赤・涙目」で台無しにしないために。栄養士が1月から仕込む「薬に頼らない」花粉対策アイテム3選</span>
+                    </div>
+                    <span class="arrow-icon">▶</span>
+                </a>
+            </li>
+
             <li class="note-item">
                 <a href="https://note.com/yuri_organic/n/nb8a8a082b1f4" class="note-link" target="_blank">
                     <div class="note-thumb-box">
@@ -435,12 +463,36 @@
         <ul class="note-list">
             
             <li class="note-item">
+                <a href="https://note.com/yuri_organic/n/n43c412720aea" class="note-link" target="_blank">
+                    <div class="note-thumb-box">
+                        <img src="https://placehold.co/160x90/d4a373/fff?text=Mom+Gift" class="note-thumb" onerror="handleImageError(this)" alt="記事サムネイル">
+                    </div>
+                    <div class="note-content">
+                        <span class="note-title">【式まであと◯ヶ月】「お母さん、老けた？」と後悔しないために。栄養士が実母に贈った「本気の若見え」ギフト2選</span>
+                    </div>
+                    <span class="arrow-icon">▶</span>
+                </a>
+            </li>
+
+            <li class="note-item">
                 <a href="https://note.com/yuri_organic/n/n40a06a10e164" class="note-link" target="_blank">
                     <div class="note-thumb-box">
                         <img src="https://assets.st-note.com/production/uploads/images/237793695/rectangle_large_type_2_3409b8f981587a6c1300a22e89517c64.jpeg?width=1280" class="note-thumb" onerror="handleImageError(this)" alt="記事サムネイル">
                     </div>
                     <div class="note-content">
                         <span class="note-title">【自己紹介】メルボルン育ち　栄養士が、「完璧なごはん」を手放した理由。</span>
+                    </div>
+                    <span class="arrow-icon">▶</span>
+                </a>
+            </li>
+            
+             <li class="note-item">
+                <a href="https://note.com/yuri_organic/n/nd610314e4ebd" class="note-link" target="_blank">
+                    <div class="note-thumb-box">
+                        <img src="https://placehold.co/160x90/f7a8a8/fff?text=Mental+Care" class="note-thumb" onerror="handleImageError(this)" alt="記事サムネイル">
+                    </div>
+                    <div class="note-content">
+                        <span class="note-title">【栄養士が解説】マリッジブルーの正体は「性格」ではなく「低血糖」でした。彼と喧嘩する前に飲むべき「メンタル安定剤」3選（※薬ではありません）</span>
                     </div>
                     <span class="arrow-icon">▶</span>
                 </a>
@@ -615,7 +667,7 @@
       <a href="about.html">当サイトについて (About)</a>
     </div>
   </div>
-   
+    
   <div class="footer-bottom">
       <a href="https://room.rakuten.co.jp/room_e0dd63a90a/items" target="_blank" rel="noopener" class="footer-room-link">
         🏠 管理人Yuriの楽天ROOMを見る
