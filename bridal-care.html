@@ -46,46 +46,33 @@
 * { box-sizing: border-box; margin: 0; padding: 0; }
 body { font-family: 'Quicksand', sans-serif; background: var(--bg); color: #333; line-height: 1.8; }
 
-/* ▼▼▼ Header (修正箇所) ▼▼▼ */
 header {
     text-align: center;
-    /* 背景画像の設定 */
-    background-image: url('images/bride3.jpg'); /* 画像パスは環境に合わせて調整してください */
-    background-size: cover; /* 画像をエリア全体に広げる */
-    background-position: center center; /* 画像の中央を表示 */
+    background-image: url('images/bride3.jpg'); 
+    background-size: cover; 
+    background-position: center center; 
     background-repeat: no-repeat;
-    
-    position: relative; /* オーバーレイのために必要 */
-    padding: 60px 20px; /* 高さを少し広げてブライダル感を出す */
+    position: relative; 
+    padding: 60px 20px; 
     border-bottom: 3px solid #e6b7b3;
     margin-bottom: 40px;
-    color: #fff; /* 文字色を白にして視認性を高める */
+    color: #fff; 
 }
-
-/* 背景画像を少し暗くするためのオーバーレイ */
 header::before {
     content: '';
     position: absolute;
-    top: 0;
-    left: 0;
-    right: 0;
-    bottom: 0;
-    background: rgba(255, 240, 240, 0.6); /* 薄いピンクのフィルターをかける */
+    top: 0; left: 0; right: 0; bottom: 0;
+    background: rgba(255, 240, 240, 0.6); 
     z-index: 1;
 }
-
-/* ヘッダー内の文字をオーバーレイの上に表示 */
-header h1, header p {
-    position: relative;
-    z-index: 2;
-}
+header h1, header p { position: relative; z-index: 2; }
 
 h1 {
     font-family: 'Playfair Display', serif;
     font-size: 32px;
-    color: var(--text-main); /* 文字色は元の茶色に戻す（フィルターで少し白っぽくなるので） */
+    color: var(--text-main); 
     margin-bottom: 10px;
-    text-shadow: 1px 1px 3px rgba(255,255,255,0.8); /* 白い影をつけて視認性アップ */
+    text-shadow: 1px 1px 3px rgba(255,255,255,0.8);
 }
 p.lead {
     font-size: 16px;
@@ -93,11 +80,8 @@ p.lead {
     font-weight: 600;
     text-shadow: 1px 1px 2px rgba(255,255,255,0.8);
 }
-/* ▲▲▲ Header 修正ここまで ▲▲▲ */
-
 
 .container { max-width: 900px; margin: 0 auto; padding: 0 20px; }
-
 .lp-section { margin-bottom: 60px; }
 
 .lp-h2 {
@@ -117,13 +101,12 @@ p.lead {
     margin-top: 30px;
 }
 
-/* 悩みチェックボックス（一番目立つように調整） */
 .check-box {
     background-color: #fff0f5;
     padding: 30px;
     border-radius: 15px;
     border: 2px dashed var(--accent);
-    margin-top: 0; /* マージンリセット */
+    margin-top: 0; 
 }
 .check-list li {
     list-style: none;
@@ -140,24 +123,6 @@ p.lead {
     left: 0;
     color: #d6336c;
     font-size: 20px;
-}
-
-/* 栄養士アドバイス枠 */
-.expert-box {
-    background: #fdfdfd;
-    border-left: 5px solid #88c088;
-    padding: 20px;
-    border-radius: 5px;
-    box-shadow: 0 2px 8px rgba(0,0,0,0.05);
-    margin: 30px 0;
-}
-.expert-title {
-    display: flex;
-    align-items: center;
-    color: #2e5c2e;
-    font-weight: bold;
-    font-size: 18px;
-    margin-bottom: 15px;
 }
 
 /* アフィリエイト商品紹介エリア */
@@ -178,7 +143,36 @@ p.lead {
     border-radius: 20px;
 }
 
-/* Footer & Nav */
+/* ボタン（CTA）スタイル */
+.cta-btn {
+    display: block;
+    width: 100%;
+    max-width: 320px;
+    margin: 15px auto;
+    padding: 15px;
+    background: linear-gradient(45deg, #f7a8a8, #f48b8b);
+    color: #fff;
+    font-weight: bold;
+    text-decoration: none;
+    border-radius: 30px;
+    box-shadow: 0 4px 10px rgba(247, 168, 168, 0.4);
+    transition: transform 0.2s, box-shadow 0.2s;
+    text-align: center;
+    font-size: 16px;
+}
+.cta-btn:hover {
+    transform: translateY(-2px);
+    box-shadow: 0 6px 15px rgba(247, 168, 168, 0.6);
+}
+.cta-micro {
+    font-size: 12px;
+    color: #d6336c;
+    font-weight: bold;
+    display: block;
+    margin-bottom: 5px;
+    text-align: center;
+}
+
 footer {
     background: #fffaf4;
     border-top: 3px solid #f7a8a8;
@@ -227,51 +221,7 @@ footer {
 
 @media(max-width:600px){
     h1{font-size:24px;}
-    header { padding: 40px 20px; } /* スマホではヘッダー高さを少し抑える */
-}
-
-/* もしもアフィリエイト調整 */
-div[id^="msmaflink"] {
-    max-width: 100% !important;
-    width: 100% !important;
-    margin: 20px auto !important;
-    box-sizing: border-box !important;
-}
-div[id^="msmaflink"] .msmaflink-btns {
-    display: flex !important;
-    flex-direction: row !important;
-    flex-wrap: nowrap !important;
-    justify-content: space-between !important;
-    gap: 8px !important;
-    margin-top: 10px !important;
-    width: 100% !important;
-}
-div[id^="msmaflink"] .msmaflink-btns a {
-    flex: 1 !important;
-    width: auto !important;
-    margin: 0 !important;
-    font-size: 11px !important;
-    line-height: 1.2 !important;
-    padding: 12px 0 !important;
-    display: flex !important;
-    align-items: center !important;
-    justify-content: center !important;
-    box-sizing: border-box !important;
-}
-@media (min-width: 600px) {
-     div[id^="msmaflink"] > div {
-         display: flex !important;
-         align-items: center !important;
-     }
-     div[id^="msmaflink"] .msmaflink-image {
-         margin-right: 20px !important;
-     }
-     div[id^="msmaflink"] .msmaflink-btns a {
-        font-size: 13px !important;
-     }
-}
-@media screen and (max-width: 480px) {
-    .lp-h2 { font-size: 17px; }
+    header { padding: 40px 20px; } 
 }
 
 /* 点滅エフェクト */
@@ -379,7 +329,6 @@ div[id^="msmaflink"] .msmaflink-btns a {
         
         <div style="margin-top: 30px; line-height: 2;">
             <p>こんにちは、栄養士でスキンケアアドバイザーのYuriです。</p>
-            <p>コンサルティングで多くの花嫁様が<strong>「顔のケアは完璧だったのに、背中のケアを忘れていた！」</strong>と、最終フィッティングで青ざめる姿を見てきました。</p>
             <p>当日のスポットライトは、残酷なほど肌の凹凸を照らし出します。<br>
             でも、諦めないでください。栄養士の視点（内側）と、正しい専用ケア（外側）を組み合わせれば、<strong>短期間でも肌の印象は劇的に変えられます。</strong></p>
         </div>
@@ -387,296 +336,95 @@ div[id^="msmaflink"] .msmaflink-btns a {
 
     <section class="lp-section">
     <h2 class="lp-h2">Step 1：挙式3日前でも変わる！栄養士の「緊急・肌再生」マニュアル</h2>
-    <p>「もう時間がない！」と諦めないでください。皮膚の細胞は毎日入れ替わっています。<br>
-    私が担当した花嫁様にも実践してもらった、<strong>背中・二の腕のザラつき（炎症）を鎮めるための「3日間限定ルール」</strong>を公開します。</p>
+    <p>「もう時間がない！」と諦めないでください。まずは以下の3日間ルールで体内炎症を抑えましょう。</p>
 
     <div style="background:#fff; border:2px solid #88c088; border-radius:10px; padding:20px; margin-top:20px;">
         <h3 class="lp-h3" style="margin-top:0;">🛑 ルール1：炎症の「燃料」を断つ</h3>
-        <p>背中の赤みやブツブツは、体の中で起きている「火事（炎症）」です。<br>
-        この3日間だけは、火に油を注ぐ<strong>「白い砂糖」と「酸化した油（スナック菓子・揚げ物）」を完全にストップ</strong>してください。<br>
-        <small>※甘いものが欲しい時は、抗酸化作用の強い「高カカオチョコ（70%以上）」か「素焼きアーモンド」ならOKです！</small></p>
-
+        <p>「白い砂糖」と「酸化した油（スナック菓子・揚げ物）」を完全にストップしてください。</p>
         <h3 class="lp-h3">💧 ルール2：肌の「水風船」を膨らませる</h3>
-        <p>乾燥した肌はバリア機能が弱まり、少しの刺激で荒れます。<br>
-        体重×30ml（例：50kgなら1.5リットル）の<strong>「常温の水」</strong>を、1時間にコップ1杯ずつチビチビ飲んでください。<br>
-        内側から水分で満たすだけで、肌のトーンと透明感は確実に変わります。</p>
-
+        <p>体重×30mlの常温水を、1時間にコップ1杯ずつチビチビ飲んでください。</p>
         <h3 class="lp-h3">🥚 ルール3：朝食に「ビタミンB群」を投入する</h3>
-        <p>皮脂分泌をコントロールし、肌のターンオーバーを促すのがビタミンB群。<br>
-        一番手軽なのは<strong>「納豆卵かけご飯」</strong>です。時間がなければ、コンビニの<strong>「ゆで卵」と「バナナ」</strong>だけでも食べてください。<br>
-        サプリに頼るのも良いですが、まずは朝の食事でスイッチを入れることが重要です。</p>
+        <p>納豆卵かけご飯や、ゆで卵とバナナで皮脂コントロールを。</p>
     </div>
-</section>
-
-<div style="
-    background: #1a2f4b;
-    background: linear-gradient(135deg, #1a2f4b, #2c4a70);
-    border-radius: 12px;
-    padding: 30px;
-    margin: 40px auto;
-    text-align: center;
-    color: #fff;
-    box-shadow: 0 5px 20px rgba(0,0,0,0.15);
-    max-width: 700px;
-    position: relative;
-    overflow: hidden;
-">
-    <div style="
-        position: absolute; top: 10px; left: 10px; right: 10px; bottom: 10px;
-        border: 1px solid rgba(212, 175, 55, 0.5); border-radius: 8px; pointer-events: none;
-    "></div>
-
-    <span style="
-        background: #d4af37; color: #fff; font-size: 11px; font-weight: bold;
-        padding: 4px 12px; border-radius: 20px; text-transform: uppercase; letter-spacing: 1px;
-    ">
-        New Arrival
-    </span>
-
-    <h3 style="
-        font-family: 'Playfair Display', serif; color: #fff; margin: 15px 0 10px; font-size: 22px;
-        border-bottom: none;
-    ">
-        銀座で叶える、一生モノの美ボディ
-    </h3>
-    
-    <p style="font-size: 14px; line-height: 1.6; margin-bottom: 25px; color: #e0e0e0;">
-        「結婚式までに確実に痩せたい」<br>
-        「食事制限でリバウンドしたくない」<br>
-        そんな花嫁様へ。世界レベルのトレーナーが指導する<br>
-        完全個室のプライベートジムを取材しました。
-    </p>
-
-    <a href="accept-gym.html" style="
-        display: inline-block;
-        background: #d4af37;
-        color: #fff;
-        font-weight: bold;
-        text-decoration: none;
-        padding: 12px 35px;
-        border-radius: 50px;
-        box-shadow: 0 4px 15px rgba(0,0,0,0.3);
-        transition: transform 0.2s;
-    " onmouseover="this.style.transform='translateY(-2px)'" onmouseout="this.style.transform='translateY(0)'">
-        記事を読む &raquo;
-    </a>
-</div>
+    </section>
 
     <section class="lp-section">
+        <h2 class="lp-h2">Step 1.5：プロの手を借りる「短期決戦」の裏技</h2>
+        <p>食事制限だけでは、どうしても「姿勢（猫背）」や「血行不良によるくすみ」は治せません。<br>
+        <strong>「一生残る写真で後悔したくない」</strong>という方だけ、私が実際に頼ったプロの力を借りてください。</p>
+
+        <div style="background:#fffaf0; border-radius:12px; padding:25px; margin-top:20px; box-shadow:0 2px 10px rgba(0,0,0,0.05);">
+            <h3 style="color:#e67e22; font-weight:bold; font-size:18px; margin-bottom:10px;">① 「埋もれた鎖骨・肩甲骨」を掘り起こす</h3>
+            <p style="font-size:14px; margin-bottom:15px;">
+                どんなに痩せても、猫背だとドレスにお肉が乗っかります。<br>
+                マッサージでは届かない「骨格」を整えるなら、今話題のマシンピラティス一択です。<br>
+                <span style="background:#ffffcc;">※女性専用・姿勢改善に特化したスタジオです</span>
+            </p>
+            <span class="cta-micro">＼ 今なら体験キャンペーン中 ／</span>
+            <a href="https://px.a8.net/svt/ejp?a8mat=4AVEZZ+25EE6Y+5FZU+5YRHE" rel="nofollow" class="cta-btn">
+                🌿 Repilatesの体験空き枠を見る ＞
+            </a>
+        </div>
+
+        <div style="background:#fffaf0; border-radius:12px; padding:25px; margin-top:20px; box-shadow:0 2px 10px rgba(0,0,0,0.05);">
+            <h3 style="color:#e67e22; font-weight:bold; font-size:18px; margin-bottom:10px;">② 「発光する肌」を作る最強のデトックス</h3>
+            <p style="font-size:14px; margin-bottom:15px;">
+                高級エステに1回行くより、ホットヨガで「滝汗」をかいて老廃物を出し切った方が、肌のトーンは劇的に上がります。<br>
+                内側から輝くようなツヤ肌を作りたい花嫁様に。
+            </p>
+            <span class="cta-micro">＼ 手ぶら体験セットあり ／</span>
+            <a href="https://px.a8.net/svt/ejp?a8mat=4AVEZZ+247IZE+1O96+5YZ76" rel="nofollow" class="cta-btn">
+                🔥 LAVAのお得な体験を見る ＞
+            </a>
+        </div>
+    </section>
+    <section class="lp-section">
         <h2 class="lp-h2">Step 2：時間がない花嫁のための「即効」外側ケア</h2>
-        <p>食事での体質改善は重要ですが、効果が出るまでには時間がかかります。<br>挙式まで時間がない場合は、<strong>「悩み別の専用ケア」</strong>の力を借りるのが賢い選択です。</p>
         <p>背中や二の腕の皮膚は顔よりも厚いため、普通のボディクリームでは届きません。浸透力に優れた専用アイテムを選びました。</p>
 
         <div class="product-category">
             <h3>悩み① 背中のニキビ・黒ずみ</h3>
             <p style="font-size:14px; margin-bottom:15px;">「背中ニキビといえばコレ」というほどの定番ジェル。厚い皮膚にも浸透し、美白成分も配合。</p>
             
-           <div style="
-    background: #ffffff;
-    border: 1px solid #e0e0e0;
-    border-radius: 8px;
-    padding: 20px;
-    text-align: center;
-    box-shadow: 0 4px 10px rgba(0,0,0,0.05);
-    max-width: 500px;
-    margin: 20px auto;
-">
-    <p style="
-        color: #d6336c;
-        font-weight: bold;
-        font-size: 14px;
-        margin-bottom: 15px;
-        background: #fff0f5;
-        display: inline-block;
-        padding: 5px 15px;
-        border-radius: 20px;
-    ">
-        👑 栄養士Yuriのイチオシ
-    </p>
-
-    <div style="margin-bottom: 15px;">
-        <a href="https://px.a8.net/svt/ejp?a8mat=45KRG0+5SDRA2+2BHA+3H2QRL" rel="nofollow">
-            <img border="0" width="320" height="50" alt="" src="https://www26.a8.net/svt/bgt?aid=251231472350&wid=002&eno=01&mid=s00000010819021008000&mc=1" style="max-width: 100%; height: auto;">
-        </a>
-        <img border="0" width="1" height="1" src="https://www17.a8.net/0.gif?a8mat=45KRG0+5SDRA2+2BHA+3H2QRL" alt="">
-    </div>
-
-    <p style="font-weight: bold; font-size: 16px; margin-bottom: 10px; line-height: 1.5;">
-        Jewel Rain（ジュエルレイン）
-    </p>
-    <p style="font-size: 13px; color: #666; text-align: left; margin-bottom: 20px; line-height: 1.6;">
-        「背中ニキビ専用」として開発された、浸透力特化のジェル。
-        厚い背中の皮膚にもスーッと入り込み、繰り返しできるブツブツを防ぎます。
-        式当日に「背中キレイ！」と褒められたいなら、まずはこれ。
-    </p>
-
-    <a href="https://px.a8.net/svt/ejp?a8mat=45KRG0+5SDRA2+2BHA+3H1GGY" rel="nofollow" style="
-        display: block;
-        width: 100%;
-        max-width: 280px;
-        margin: 0 auto;
-        padding: 15px;
-        background: linear-gradient(45deg, #f7a8a8, #f48b8b);
-        color: #fff;
-        font-weight: bold;
-        text-decoration: none;
-        border-radius: 30px;
-        box-shadow: 0 4px 10px rgba(247, 168, 168, 0.4);
-        transition: transform 0.2s;
-    " onmouseover="this.style.transform='translateY(-2px)'" onmouseout="this.style.transform='translateY(0)'">
-        公式サイトでお得に見る ＞
-    </a>
-    
-    <p style="font-size: 11px; color: #999; margin-top: 10px;">
-        ※60日間の返金保証付きで安心です
-    </p>
-</div>
+           <div style="background: #ffffff; border: 1px solid #e0e0e0; border-radius: 8px; padding: 20px; text-align: center; box-shadow: 0 4px 10px rgba(0,0,0,0.05); max-width: 500px; margin: 20px auto;">
+                <p style="color: #d6336c; font-weight: bold; font-size: 14px; margin-bottom: 15px; background: #fff0f5; display: inline-block; padding: 5px 15px; border-radius: 20px;">
+                    👑 栄養士Yuriのイチオシ
+                </p>
+                <p style="font-weight: bold; font-size: 16px; margin-bottom: 10px; line-height: 1.5;">Jewel Rain（ジュエルレイン）</p>
+                <p style="font-size: 13px; color: #666; text-align: left; margin-bottom: 20px; line-height: 1.6;">
+                    「背中ニキビ専用」として開発された、浸透力特化のジェル。厚い背中の皮膚にもスーッと入り込みます。
+                </p>
+                <a href="https://px.a8.net/svt/ejp?a8mat=45KRG0+5SDRA2+2BHA+3H1GGY" rel="nofollow" class="cta-btn">公式サイトでお得に見る ＞</a>
+                <p style="font-size: 11px; color: #999; margin-top: 10px;">※60日間の返金保証付き</p>
             </div>
+        </div>
 
         <div class="product-category">
             <h3>悩み② 二の腕のザラつき</h3>
-            <p style="font-size:14px; margin-bottom:15px;">二の腕のプツプツ（毛孔性苔癬）対策に。植物由来の角質ケアで、ドレスの似合うスベスベ肌へ。</p>
-            
-            <div style="
-    background: #ffffff;
-    border: 1px solid #e0e0e0;
-    border-radius: 8px;
-    padding: 20px;
-    text-align: center;
-    box-shadow: 0 4px 10px rgba(0,0,0,0.05);
-    max-width: 500px;
-    margin: 20px auto;
-">
-    <p style="
-        color: #d6336c;
-        font-weight: bold;
-        font-size: 14px;
-        margin-bottom: 15px;
-        background: #fff0f5;
-        display: inline-block;
-        padding: 5px 15px;
-        border-radius: 20px;
-    ">
-        👑 諦めていた「ザラザラ」に
-    </p>
-
-    <div style="margin-bottom: 15px;">
-        <a href="https://px.a8.net/svt/ejp?a8mat=45I9PD+4CL0VM+4GNW+HVV0H" rel="nofollow">
-            <img border="0" width="300" height="250" alt="" src="https://www26.a8.net/svt/bgt?aid=251115169263&wid=001&eno=01&mid=s00000020822003004000&mc=1" style="max-width: 100%; height: auto;">
-        </a>
-        <img border="0" width="1" height="1" src="https://www19.a8.net/0.gif?a8mat=45I9PD+4CL0VM+4GNW+HVV0H" alt="">
-    </div>
-
-    <p style="font-weight: bold; font-size: 16px; margin-bottom: 10px; line-height: 1.5;">
-        新発想！「塗る」角質ケアクリーム
-    </p>
-    <p style="font-size: 13px; color: #666; text-align: left; margin-bottom: 20px; line-height: 1.6;">
-        二の腕のプツプツやザラつき、隠そうとしていませんか？
-        これは「ターンオーバーの乱れ」が原因。
-        話題の成分「レチノール」配合のクリームで、脱ぎたくなるようなスベスベ肌へ。
-    </p>
-
-    <a href="https://px.a8.net/svt/ejp?a8mat=45I9PD+4CL0VM+4GNW+HVFKY" rel="nofollow" style="
-        display: block;
-        width: 100%;
-        max-width: 280px;
-        margin: 0 auto;
-        padding: 15px;
-        background: linear-gradient(45deg, #f7a8a8, #f48b8b);
-        color: #fff;
-        font-weight: bold;
-        text-decoration: none;
-        border-radius: 30px;
-        box-shadow: 0 4px 10px rgba(247, 168, 168, 0.4);
-        transition: transform 0.2s;
-    " onmouseover="this.style.transform='translateY(-2px)'" onmouseout="this.style.transform='translateY(0)'">
-        公式サイトで詳細を見る ＞
-    </a>
-    <img border="0" width="1" height="1" src="https://www13.a8.net/0.gif?a8mat=45I9PD+4CL0VM+4GNW+HVFKY" alt="">
-    
-    <p style="font-size: 11px; color: #999; margin-top: 10px;">
-        ※初回限定のキャンペーン中
-    </p>
-</div>
+            <div style="background: #ffffff; border: 1px solid #e0e0e0; border-radius: 8px; padding: 20px; text-align: center; box-shadow: 0 4px 10px rgba(0,0,0,0.05); max-width: 500px; margin: 20px auto;">
+                 <p style="font-weight: bold; font-size: 16px; margin-bottom: 10px; line-height: 1.5;">新発想！「塗る」角質ケアクリーム</p>
+                 <a href="https://px.a8.net/svt/ejp?a8mat=45I9PD+4CL0VM+4GNW+HVFKY" rel="nofollow" class="cta-btn">公式サイトで詳細を見る ＞</a>
             </div>
-
-        <div class="product-category">
-            <h3>悩み③ サロンに行く時間がない！</h3>
-            <p style="font-size:14px; margin-bottom:15px;">
-                「エステに通う時間がない…」そんな花嫁様の救世主。<br>
-                エステ発のプロ用ブランド「エステダム」で、サロン帰りのような、なめらかで発光する肌へ。
-            </p>
-            
-            <div style="
-    background: #ffffff;
-    border: 1px solid #e0e0e0;
-    border-radius: 8px;
-    padding: 20px;
-    text-align: center;
-    box-shadow: 0 4px 10px rgba(0,0,0,0.05);
-    max-width: 500px;
-    margin: 20px auto;
-">
-    <p style="
-        color: #d6336c;
-        font-weight: bold;
-        font-size: 14px;
-        margin-bottom: 15px;
-        background: #fff0f5;
-        display: inline-block;
-        padding: 5px 15px;
-        border-radius: 20px;
-    ">
-        👑 忙しい花嫁の救世主
-    </p>
-
-    <div style="margin-bottom: 15px;">
-        <a href="https://px.a8.net/svt/ejp?a8mat=45KRG0+5RSBOA+53L6+601S1" rel="nofollow">
-            <img border="0" width="468" height="60" alt="" src="https://www25.a8.net/svt/bgt?aid=251231472349&wid=002&eno=01&mid=s00000023793001008000&mc=1" style="max-width: 100%; height: auto;">
-        </a>
-        <img border="0" width="1" height="1" src="https://www10.a8.net/0.gif?a8mat=45KRG0+5RSBOA+53L6+601S1" alt="">
-    </div>
-
-    <p style="font-weight: bold; font-size: 16px; margin-bottom: 10px; line-height: 1.5;">
-        サロン級のケアを、自宅で好きな時に。
-    </p>
-    <p style="font-size: 13px; color: #666; text-align: left; margin-bottom: 20px; line-height: 1.6;">
-        「エステの予約が取れない」「通う時間がない」と焦っていませんか？
-        最高峰のパワーを持つこの光美容器なら、背中のムダ毛も肌質ケアも、自宅でこっそり完了できます。
-        式が終わってからもずっと使える、一生モノの投資です。
-    </p>
-
-    <a href="https://px.a8.net/svt/ejp?a8mat=45KRG0+5RSBOA+53L6+5YJRM" rel="nofollow" style="
-        display: block;
-        width: 100%;
-        max-width: 280px;
-        margin: 0 auto;
-        padding: 15px;
-        background: linear-gradient(45deg, #f7a8a8, #f48b8b);
-        color: #fff;
-        font-weight: bold;
-        text-decoration: none;
-        border-radius: 30px;
-        box-shadow: 0 4px 10px rgba(247, 168, 168, 0.4);
-        transition: transform 0.2s;
-    " onmouseover="this.style.transform='translateY(-2px)'" onmouseout="this.style.transform='translateY(0)'">
-        公式サイトを見てみる ＞
-    </a>
-    <img border="0" width="1" height="1" src="https://www14.a8.net/0.gif?a8mat=45KRG0+5RSBOA+53L6+5YJRM" alt="">
-</div>
-            </div>
-
+        </div>
     </section>
 
+    <div style="background: #fdf2f2; border: 3px double #f7a8a8; padding: 30px 20px; margin-top: 60px; text-align: center; border-radius: 10px;">
+        <h3 style="color:#c0392b; font-family:'Playfair Display',serif; font-size:22px; margin-bottom:15px;">Only for Brides who want Perfection.</h3>
+        <p style="font-weight:bold; margin-bottom:10px;">「もう式まで1ヶ月を切ってしまった…」<br>「どうしても二の腕の2cmが落ちない」</p>
+        <p style="font-size:14px; margin-bottom:20px;">そんな緊急事態の花嫁様へ。<br>最後はプロの技術（エステ）で、物理的に脂肪とむくみを流してもらうのが確実です。</p>
+        
+        <span class="cta-micro">＼ 初回体験 5,500円〜 ／</span>
+        <a href="https://px.a8.net/svt/ejp?a8mat=4AVAC6+2SMASA+1OGO+6B70I" rel="nofollow" class="cta-btn" style="background: linear-gradient(45deg, #c0392b, #e74c3c); max-width:350px;">
+            💎 ミスパリ「ブライダルエステ」体験予約 ＞
+        </a>
+        <p style="font-size:12px; color:#666; margin-top:10px;">※無理な勧誘はありませんでした。体験だけでも肌が変わります。</p>
+    </div>
     <section class="lp-section" style="text-align:center; margin-top:80px;">
         <h2 style="font-family:'Playfair Display',serif; font-size:28px; color:#d6336c;">Confidence creates Beauty.</h2>
         <p style="margin-top:20px;">
             背中や肌が整うと、当日の立ち振る舞いに自信が出ます。<br>
-            ゲストの視線を気にせず、最高の笑顔でドレスを着こなすために。<br>
             「あの時ケアしておけばよかった」と後悔しないよう、今すぐできることから始めましょう。
         </p>
-        <p style="margin-top:30px; font-weight:bold;">あなたの結婚式が、最高に美しい一日になりますように。</p>
-        
         <div style="margin-top:50px;">
             <img src="images/Yuri.jpg" style="width:80px; height:80px; border-radius:50%; object-fit:cover;" alt="Yuri" onerror="handleImageError(this, 80, 80, 'Yuri')">
             <p style="font-size:14px; color:#999; margin-top:10px;">Managed by Yuri (Registered Dietitian)</p>
@@ -687,85 +435,41 @@ div[id^="msmaflink"] .msmaflink-btns a {
 
  <div style="max-width: 650px; margin: 50px auto; padding: 5px; background: linear-gradient(135deg, #f7a8a8 0%, #ffdecb 100%); border-radius: 20px; box-shadow: 0 10px 25px rgba(247, 168, 168, 0.25);">
   <div style="background: #ffffff; border-radius: 15px; padding: 30px 20px; text-align: center; position: relative; overflow: hidden;">
-    
-    <style>
-      @keyframes shine { 0% { transform: translateX(-100%) skewX(-15deg); } 100% { transform: translateX(200%) skewX(-15deg); } }
-      .shiny-btn::after {
-        content: ''; position: absolute; top: 0; left: 0; width: 50%; height: 100%;
-        background: linear-gradient(to right, rgba(255,255,255,0) 0%, rgba(255,255,255,0.3) 50%, rgba(255,255,255,0) 100%);
-        transform: skewX(-15deg); animation: shine 3s infinite;
-      }
-    </style>
-
     <span style="display: inline-block; background: #e74c3c; color: #fff; font-size: 12px; font-weight: bold; padding: 4px 12px; border-radius: 20px; vertical-align: middle; box-shadow: 0 2px 5px rgba(231, 76, 60, 0.3); margin-bottom: 10px;">
       保存版・アーカイブ完成
     </span>
-
     <h3 style="margin: 5px 0 15px; font-size: 22px; color: #503535; font-family: 'Playfair Display', serif, sans-serif; line-height: 1.4;">
       <span style="font-size: 0.8em; color: #d4a373;">栄養士Yuriの全ノウハウ公開</span><br>
       読むだけで変わる「花嫁美容」Note
     </h3>
-
-    <div style="background: #fffaf4; border: 1px dashed #d4a373; border-radius: 10px; padding: 15px; margin: 15px auto; max-width: 90%; text-align: left; font-size: 15px; color: #555;">
-      <p style="margin: 5px 0;">👰 <strong>プレ花嫁講座</strong>：ドレス姿を変える食事術</p>
-      <p style="margin: 5px 0;">📖 <strong>自己紹介</strong>：私が発信を続ける理由</p>
-      <p style="margin: 5px 0;">✨ <strong>高級美容液より効く</strong>「美肌定食」とは？</p>
-    </div>
-
-    <a href="note-archive.html" class="shiny-btn" style="display: block; width: 100%; max-width: 320px; margin: 20px auto 10px; background: linear-gradient(45deg, #f7a8a8, #d68e33); color: #fff; text-decoration: none; font-weight: bold; font-size: 18px; padding: 18px 0; border-radius: 50px; box-shadow: 0 5px 15px rgba(247, 168, 168, 0.4); position: relative; overflow: hidden; transition: transform 0.2s;">
+    <a href="note-archive.html" class="cta-btn" style="background: linear-gradient(45deg, #f7a8a8, #d68e33);">
       全記事一覧を無料で見る ▶
     </a>
-    
-    <p style="font-size: 12px; color: #999; margin-top: 10px;">※プレ花嫁様以外も役立つ情報満載です</p>
   </div>
 </div>
+
  <footer>
   <div class="footer-container">
-    
     <div class="footer-col">
       <h3>🌸 スキンケア・悩み別</h3>
       <a href="bridal-care.html">👰 結婚式直前！背中・二の腕ケア<span class="new-mark">New!!</span></a>
       <a href="skin-ranking.html">おすすめスキンケアランキング</a>
       <a href="seasons-skin.html">季節別スキンケア（春夏秋冬）</a>
-      <a href="age-skincare.html">40代・50代 年齢別ケア</a>
-      <a href="acne-care.html">肌荒れ・敏感肌・ニキビケア</a>
-      <a href="lifestyle-skincare.html">生活リズム別（時短・夜型など）</a>
     </div>
-
-    <div class="footer-col">
-      <h3>🛁 ボディ・ヘア・インナー</h3>
-      <a href="hair-care.html">ヘアケア・頭皮ケア特集</a>
-      <a href="diet-beauty.html">インナービューティー＆ダイエット</a>
-      <a href="accept-gym.html">銀座・完全個室ジムACCEPT体験記</a>
-      <a href="smoothie-recipes.html">栄養士おすすめ！スムージーのレシピ<span class="new-mark">New!!</span></a>
-      <a href="amazon-oil-review.html">本当に効く！オイルレビュー</a>
-      <a href="organic-science.html">オーガニック成分の科学</a>
-    </div>
-
     <div class="footer-col">
       <h3>🎁 特集・コラム・その他</h3>
       <a href="note-archive.html">栄養士Yuriの公式Note一覧<span class="new-mark">New!!</span></a>
-      <a href="gift-selection.html">心をつなぐオーガニックギフト</a>
-      <a href="trial-sets.html">失敗しない！お試しセット比較</a>
-      <a href="winter-selection.html">冬のベストセレクション</a>
-      <a href="beauty-column.html">ビューティーコラム一覧</a>
       <a href="sonoko-diet.html">食べて痩せる肌診断 <span class="new-mark">New!!</span></a>
       <a href="about.html">当サイトについて (About)</a>
     </div>
-
   </div>
-   
   <div class="footer-bottom">
       <a href="https://room.rakuten.co.jp/room_e0dd63a90a/items" target="_blank" rel="noopener" class="footer-room-link">
         🏠 管理人Yuriの楽天ROOMを見る
       </a>
-      <br>
-      © 2025 Essential Beauty Needs<br><br>
-      <a href="privacy-policy.html" style="color:#888; text-decoration:none; font-size:12px;">プライバシーポリシー</a>
+      <br>© 2025 Essential Beauty Needs
   </div>
 </footer>
-
-<div id="affiliateNotice">※当サイトはアフィリエイト広告（Amazonアソシエイト含む）を利用しています</div>
-
+<div id="affiliateNotice">※当サイトはアフィリエイト広告を利用しています</div>
 </body>
 </html>
