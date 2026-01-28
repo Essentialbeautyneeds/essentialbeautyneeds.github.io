@@ -20,6 +20,12 @@
       gtag('js', new Date());
       gtag('config', 'G-2HGEPHVZYY');
     }
+    // 画像エラー時にプレースホルダーを表示
+    function handleImageError(imgElement, width, height, text) { 
+         imgElement.onerror = null; 
+         imgElement.src = `https://placehold.co/${width}x${height}/f0f0f0/aaaaaa?text=${encodeURIComponent(text)}`;
+         imgElement.style.objectFit = "cover";
+    }
   </script>
   
   <style>
@@ -56,7 +62,7 @@
     /* 画像エリア */
     .gym-img-area { 
         width: 100%; 
-        min-height: 250px; 
+        height: 300px; /* 高さを統一 */
         background: #f9f9f9; 
         display: flex; 
         align-items: center; 
@@ -65,7 +71,15 @@
         margin-bottom: 20px;
         overflow: hidden;
     }
-    .gym-img-area img { max-width: 100%; height: auto; object-fit: cover; }
+    .gym-img-area img { 
+        width: 100%; 
+        height: 100%; 
+        object-fit: cover; /* 画像を枠いっぱいにトリミングして表示 */
+        transition: transform 0.5s ease;
+    }
+    .gym-card:hover .gym-img-area img {
+        transform: scale(1.05); /* ホバー時に少しズーム */
+    }
     
     /* 特徴リスト */
     .feature-point { background: #fdf5e6; padding: 15px; border-radius: 8px; margin-bottom: 20px; font-weight: bold; color: #d35400; text-align: center; font-size: 15px; border: 1px dashed #f39c12; }
@@ -141,8 +155,9 @@
         <span class="rank-badge badge-mmm">👑 総合力No.1：バストアップ＆痩身</span>
         
         <div class="gym-img-area">
-            <img src="https://placehold.co/800x400/d8bfd8/ffffff?text=MMM+Private+Gym+(Image)" alt="MMMジムイメージ">
+            <img src="images/mmm.jpg" alt="MMM 女性トレーナーによる指導" onerror="handleImageError(this, 800, 400, 'MMM Private Gym')">
         </div>
+        
         <h3 class="card-title">MMM（トリプルエム）</h3>
         <p class="feature-point">「胸を落とさず痩せる」花嫁の理想形</p>
         
@@ -175,8 +190,9 @@
         <span class="rank-badge badge-bc">🦵 下半身特化：マーメイドドレス向け</span>
         
         <div class="gym-img-area">
-             <img src="https://placehold.co/800x400/8fbc8f/ffffff?text=B-Concept+(Image)" alt="B-Conceptイメージ">
+             <img src="images/legs.jpg" alt="B-Concept 美脚メソッド" onerror="handleImageError(this, 800, 400, 'Legs Slimming')">
         </div>
+        
         <h3 class="card-title">B-CONCEPT（ビーコンセプト）</h3>
         <p class="feature-point">医師×トレーナー共同開発の「脚痩せメソッド」</p>
         
@@ -207,8 +223,9 @@
         <span class="rank-badge badge-mp">💎 ブランド力：運動なしで痩せる</span>
         
         <div class="gym-img-area">
-             <img src="https://placehold.co/800x400/d4af37/ffffff?text=Miss+Paris+(Image)" alt="ミスパリイメージ">
+             <img src="images/esthe.png" alt="ミスパリ 痩身施術イメージ" onerror="handleImageError(this, 800, 400, 'Miss Paris Esthetic')">
         </div>
+        
         <h3 class="card-title">ミスパリ ダイエットセンター</h3>
         <p class="feature-point">「医学的・科学的」に脂肪を燃やす</p>
         
