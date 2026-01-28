@@ -23,13 +23,10 @@
       function gtag(){dataLayer.push(arguments);}
       gtag('js', new Date());
       gtag('config', 'G-2HGEPHVZYY');
-    } else {
-        console.log('✅ Internal traffic excluded.');
     }
 
     function handleImageError(imgElement, width, height, text) { 
          imgElement.onerror = null; 
-         // 代替画像を表示（バナーの場合は非表示にするなどの処理も可能）
          imgElement.style.display = 'none';
     }
   </script>
@@ -42,7 +39,8 @@
       --color-bg-light: #fffaf9;
       --color-text: #444;
       --color-shadow: rgba(0,0,0,0.1);
-      --room-color: #c63535; /* 楽天ROOM用カラー */
+      --room-color: #c63535;
+      --text-highlight: #d6336c; /* 強調色 */
     }
     body{
       font-family:'Quicksand',sans-serif;
@@ -56,24 +54,24 @@
     }
     header{
       text-align:center;
-      padding:80px 20px 40px;
+      padding:60px 20px 30px; /* 余白を縮小 */
       background:linear-gradient(90deg,#e0f0f9,#f7f8fc);
       color:var(--color-primary);
     }
     header h1{
       font-family:'Playfair Display',serif;
-      font-size:36px;
+      font-size:32px;
       margin-bottom:10px;
       letter-spacing:1px;
     }
     header p{
-      font-size:16px;
+      font-size:15px;
       color:#507080;
     }
 
     main{
       max-width:900px;
-      margin:60px auto;
+      margin:40px auto;
       padding:0 20px;
       flex-grow: 1;
     }
@@ -96,25 +94,24 @@
         opacity: 0.6;
     }
 
-    /* ナビゲーション（共通スタイル） */
-    .nav-links{display:flex;gap:12px;justify-content:center;margin-top:25px;flex-wrap:wrap;}
+    /* シンプル化したナビゲーション */
+    .nav-links{display:flex;gap:15px;justify-content:center;margin-top:20px;}
     .nav-links a{
-        background: linear-gradient(45deg,var(--color-accent),var(--color-secondary));
-        padding: 8px 18px;
+        background: #fff;
+        padding: 8px 20px;
         border-radius: 20px;
         text-decoration: none;
-        color: #fff;
-        font-weight: 600;
+        color: var(--color-primary);
+        font-weight: bold;
         font-size: 14px;
         box-shadow: 0 2px 5px rgba(0,0,0,0.1);
         transition: 0.3s;
+        border: 1px solid #e0f0f9;
     }
     .nav-links a:hover{
-        background: linear-gradient(45deg,#3f5d85,#5f97c4);
         transform: translateY(-2px);
-        box-shadow: 0 4px 10px rgba(0,0,0,0.2);
+        color: var(--color-secondary);
     }
-    .nav-break { flex-basis: 100%; height: 0; margin: 5px 0; }
 
     .selection-list {
       display: flex;
@@ -124,9 +121,9 @@
 
     .item-wrapper {
         background: #fff;
-        padding: 20px; /* パディングを少し増やしました */
+        padding: 20px;
         border-radius: 8px;
-        box-shadow: 0 2px 8px rgba(0,0,0,0.05); /* 影を追加 */
+        box-shadow: 0 2px 8px rgba(0,0,0,0.05);
     }
 
     .back-btn{
@@ -146,7 +143,7 @@
       box-shadow:0 6px 16px rgba(0,0,0,0.2);
     }
 
-    /* 記事エリアのスタイル */
+    /* 記事エリアのスタイル（装飾強化） */
     .info-box {
       background: #f4f9fc;
       border-left: 5px solid #6aa8d4;
@@ -154,34 +151,31 @@
       margin: 40px 0;
       border-radius: 8px;
       color: #355060;
-      line-height: 1.8;
+      line-height: 1.9;
       box-shadow: 0 2px 8px rgba(0,0,0,0.05);
       font-size: 15px;
     }
-    .info-box p {
-      margin-bottom: 1.5em;
-    }
-    .info-box p:last-child {
-      margin-bottom: 0;
+    .info-box p { margin-bottom: 1.5em; }
+    .info-box p:last-child { margin-bottom: 0; }
+    
+    /* 強調文字用クラス */
+    .highlight {
+        color: var(--text-highlight);
+        font-weight: bold;
+        background: linear-gradient(transparent 70%, #ffe6e6 70%);
     }
 
-    /* ▼▼▼ 追加：診断ボタン用のアニメーション ▼▼▼ */
-    @keyframes pulse-glow {
-      0% { box-shadow: 0 0 0 0 rgba(230, 126, 34, 0.4); transform: scale(1); }
-      50% { box-shadow: 0 0 0 10px rgba(230, 126, 34, 0); transform: scale(1.02); }
-      100% { box-shadow: 0 0 0 0 rgba(230, 126, 34, 0); transform: scale(1); }
-    }
+    /* 診断バナー */
     .diagnosis-banner {
       background: #fff;
-      border: 3px solid #f39c12; /* 目立つオレンジ/ゴールド系 */
+      border: 3px solid #f39c12;
       border-radius: 15px;
       padding: 25px;
       text-align: center;
-      margin: 30px auto; /* 中央寄せ */
+      margin: 30px auto;
       position: relative;
       max-width: 650px;
     }
-    /* 「NEW!」などのバッジ */
     .diagnosis-badge {
         background: #d35400; color: #fff; padding: 5px 15px; border-radius: 5px;
         font-weight: bold; font-size: 12px; position: absolute; top: -15px; left: 50%;
@@ -198,44 +192,15 @@
       text-decoration: none;
       margin-top: 15px;
       box-shadow: 0 4px 15px rgba(230, 126, 34, 0.4);
-      /* ここでキラキラさせます */
       animation: pulse-glow 2s infinite;
     }
-    .diagnosis-btn:hover {
-        opacity: 0.9;
-        transform: translateY(-2px);
-    }
-    /* ▲▲▲ 追加ここまで ▲▲▲ */
-
-    /* 楽天ROOMリンク用スタイル（コード版） */
-    .room-promo {
-        background: #fff;
-        border: 2px dashed var(--room-color);
-        border-radius: 15px;
-        padding: 25px;
-        text-align: center;
-        margin: 50px 0;
-        color: #444;
-    }
-    .room-btn {
-        display: inline-block;
-        background: var(--room-color);
-        color: #fff;
-        padding: 12px 30px;
-        border-radius: 30px;
-        text-decoration: none;
-        font-weight: bold;
-        margin-top: 15px;
-        box-shadow: 0 4px 10px rgba(198, 53, 53, 0.3);
-        transition: 0.3s;
-    }
-    .room-btn:hover {
-        background: #a82525;
-        transform: translateY(-2px);
-        box-shadow: 0 6px 14px rgba(198, 53, 53, 0.4);
+    @keyframes pulse-glow {
+      0% { box-shadow: 0 0 0 0 rgba(230, 126, 34, 0.4); transform: scale(1); }
+      50% { box-shadow: 0 0 0 10px rgba(230, 126, 34, 0); transform: scale(1.02); }
+      100% { box-shadow: 0 0 0 0 rgba(230, 126, 34, 0); transform: scale(1); }
     }
 
-    /* フッター（リンク網羅型） */
+    /* フッター */
     footer {
         background: #fffaf4;
         border-top: 3px solid #f7a8a8;
@@ -284,48 +249,33 @@
     }
     
     @media (max-width: 768px) {
-        header { padding: 60px 15px 30px; }
-        header h1 { font-size: 28px; }
+        header { padding: 40px 15px 20px; }
+        header h1 { font-size: 26px; }
         .info-box { padding: 20px; font-size: 14px; }
     }
-    /* ▼▼▼ 追加：New!! 点滅用スタイル ▼▼▼ */
-@keyframes blinkEffect {
-    0% { opacity: 1; }
-    50% { opacity: 0.3; }
-    100% { opacity: 1; }
-}
-
-.new-mark {
-    color: #ff0000;       /* 文字色を赤にする */
-    font-weight: bold;    /* 太文字にする */
-    font-size: 0.8em;     /* リンク文字より少し小さくする */
-    margin-left: 5px;     /* 前の文字と少し間隔を空ける */
-    animation: blinkEffect 1.2s infinite; /* 1.2秒間隔で点滅を繰り返す */
-    vertical-align: super; /* 少し上付き文字にする */
-}
-/* ▲▲▲ 追加ここまで ▲▲▲ */
+    
+    /* New!! 点滅 */
+    @keyframes blinkEffect {
+        0% { opacity: 1; }
+        50% { opacity: 0.3; }
+        100% { opacity: 1; }
+    }
+    .new-mark {
+        color: #ff0000; font-weight: bold; font-size: 0.8em; margin-left: 5px; animation: blinkEffect 1.2s infinite; vertical-align: super;
+    }
   </style>
 </head>
 
 <body>
   <header>
-    <h1>冬挙式の花嫁へ<br>集中保湿セレクション</h1>
-    <p>乾燥と冷えに負けない、当日までの「追い込み」スキンケア。</p>
+    <h1>Winter Bridal Selection</h1>
+    <p>❄️ 乾燥と冷えに負けない「集中保湿」アイテム</p>
 
-    <div class="nav-links">
-      <a href="seasons-skin.html">🌸 季節別スキンケア</a>
-      <a href="skin-ranking.html">✨ スキンケアランキング</a>
-      <a href="age-skincare.html">👩 40代・50代向け 肌質別</a>
-      <a href="organic-science.html">🔬 成分の科学</a>
-      <div class="nav-break"></div>
-      <a href="diet-beauty.html">🍃 インナービューティー</a>
-      <a href="beauty-column.html">💄 ビューティーコラム</a>
-      <div class="nav-break"></div>
-      <a href="amazon-oil-review.html">🔥 オイルレビュー</a>
-      <a href="acne-care.html">🧴 ニキビ・敏感肌ケア</a>
-      <a href="lifestyle-skincare.html">💆‍♀️ 生活リズム別</a>
-      <a href="index.html" style="background:#fff; color:#305060; border:1px solid #ddd;">🏠 トップ</a>
-    </div>
+    <nav class="nav-links">
+      <a href="index.html">🏠 トップ</a>
+      <a href="bridal-care.html">👰 花嫁ケア診断</a>
+      <a href="note-archive.html">📕 公式Note</a>
+    </nav>
   </header>
 
 <div class="diagnosis-banner">
@@ -338,15 +288,21 @@
         ✨ 今すぐ肌診断をする！ ✨
     </a>
 </div>
+
 <main>
     <h2>挙式直前の「乾燥」は最大のリスク</h2>
 
     <div class="info-box">
-      <p>冬の挙式や前撮りは、空気が澄んでいてとてもロマンチック。しかし、肌にとっては過酷な季節でもあります。</p>
-      <p>冷たい外気と暖房による乾燥で、肌の水分は急速に奪われます。水分不足の肌は、ファンデーションが割れたり、くすんで見えたりと、<strong>「写真映り」に直結するトラブル</strong>を引き起こします。</p>
+      <p>冬の挙式や前撮りは、空気が澄んでいてとてもロマンチック❄️💍<br>
+      しかし、肌にとっては<strong>最も過酷な季節</strong>でもあります。</p>
+      
+      <p>冷たい外気と暖房による乾燥で、肌の水分は急速に奪われます。<br>
+      水分不足の肌は、ファンデーションが割れたり、くすんで見えたりと、<span class="highlight">「写真映り」に直結するトラブル</span>を引き起こします😱</p>
+      
       <p>さらに怖いのは、冬の乾燥ダメージが蓄積すると、春になってから「ゆらぎ肌」として爆発すること。<br>
-      未来の美肌のためにも、今この瞬間の「集中保湿」が運命を分けます。</p>
-      <p>ここでは、花嫁様が挙式当日を潤いに満ちた「発光肌」で迎えるための、高保湿・オーガニックアイテムを厳選しました。</p>
+      未来の美肌のためにも、今この瞬間の<strong>「集中保湿」</strong>が運命を分けます。</p>
+      
+      <p>ここでは、花嫁様が挙式当日を潤いに満ちた<strong>「発光肌✨」</strong>で迎えるための、高保湿・オーガニックアイテムを厳選しました🌿</p>
     </div>
       
     <h2>・Winter Bridal Selection・</h2>
@@ -374,7 +330,7 @@
           c.getElementById(a)||(d=c.createElement(f),d.src=g,
           d.id=a,e=c.getElementsByTagName("body")[0],e.appendChild(d))})
           (window,document,"script","//dn.msmstatic.com/site/cardlink/bundle.js?20220329","msmaflink");
-          msmaflink({"n":"RUHAKU （琉白） 月桃エンリッチクリーミーシートマスク 1箱 5枚入り フェイスマスク 保湿 敏感肌 乾燥肌 セラミド配合 オーガニック 無添加 冬の乾燥対策 ご褒美マスク ナイトケア ギフトにも最適","b":"","t":"","d":"https:\/\/thumbnail.image.rakuten.co.jp","c_p":"\/@0_mall\/ruhaku\/cabinet\/gettou_sheet_mask5","p":["\/imgrc0120403415.jpg","\/gt-ecsm_thum-2.jpg","\/gt-ecsm_thum-3.jpg"],"u":{"u":"https:\/\/item.rakuten.co.jp\/ruhaku\/ss_gettou_sheet_mask5\/","t":"rakuten","r_v":""},"v":"2.1","b_l":[{"id":1,"u_tx":"楽天市場で見る","u_bc":"#87c209","u_url":"https:\/\/item.rakuten.co.jp\/ruhaku\/ss_gettou_sheet_mask5\/","a_id":5267359,"p_id":54,"pl_id":27059,"pc_id":54,"s_n":"rakuten","u_so":1},{"id":5,"u_tx":"Amazonで見る","u_bc":"#184f5c","u_url":"https:\/\/amzn.to\/43VXnpM","a_id":0,"p_id":0,"pl_id":0,"pc_id":0,"s_n":"custom_10","u_so":2},{"id":4,"u_tx":"Yahoo!ショッピングで見る","u_bc":"#bf0000","u_url":"https:\/\/shopping.yahoo.co.jp\/search?first=1\u0026p=RUHAKU%20%EF%BC%88%E7%90%89%E7%99%BD%EF%BC%89%20%E6%9C%88%E6%A1%83%E3%82%A8%E3%83%B3%E3%83%AA%E3%83%83%E3%83%81%E3%82%AF%E3%83%AA%E3%83%BC%E3%83%9F%E3%83%BC%E3%82%B7%E3%83%BC%E3%83%88%E3%83%9E%E3%82%B9%E3%82%AF%201%E7%AE%B1%205%E6%9E%9A%E5%85%A5%E3%82%8A%20%E3%83%95%E3%82%A7%E3%82%A4%E3%82%B9%E3%83%9E%E3%82%B9%E3%82%AF%20%E4%BF%9D%E6%B9%BF%20%E6%95%8F%E6%84%9F%E8%82%8C%20%E4%B9%BE%E7%87%A5%E8%82%8C%20%E3%82%BB%E3%83%A9%E3%83%9F%E3%83%89%E9%85%8D%E5%90%88%20%E3%82%AA%E3%83%BC%E3%82%AC%E3%83%8B%E3%83%83%E3%82%AF%20%E7%84%A1%E6%B7%BB%E5%8A%A0%20%E5%86%AC%E3%81%AE%E4%B9%BE%E7%87%A5%E5%AF%BE%E7%AD%96%20%E3%81%94%E8%A4%92%E7%BE%8E%E3%83%9E%E3%82%B9%E3%82%AF%20%E3%83%8A%E3%82%A4%E3%83%88%E3%82%B1%E3%82%A2%20%E3%82%AE%E3%83%95%E3%83%88%E3%81%AB%E3%82%82%E6%9C%80%E9%81%A9","a_id":5267465,"p_id":1225,"pl_id":27061,"pc_id":1925,"s_n":"yahoo","u_so":3}],"eid":"lhSB9","s":"s"});
+          msmaflink({"n":"RUHAKU （琉白） 月桃エンリッチクリーミーシートマスク 1箱 5枚入り フェイスマスク 保湿 敏感肌 乾燥肌 セラミド配合 オーガニック 無添加 冬の乾燥対策 ご褒美マスク ナイトケア ギフトにも最適","b":"","t":"","d":"https:\/\/thumbnail.image.rakuten.co.jp","c_p":"\/@0_mall\/ruhaku\/cabinet\/gettou_sheet_mask5","p":["\/imgrc0120403415.jpg","\/gt-ecsm_thum-2.jpg","\/gt-ecsm_thum-3.jpg"],"u":{"u":"https:\/\/item.rakuten.co.jp\/ruhaku\/ss_gettou_sheet_mask5\/","t":"rakuten","r_v":""},"v":"2.1","b_l":[{"id":1,"u_tx":"楽天市場で見る","u_bc":"#87c209","u_url":"https:\/\/item.rakuten.co.jp\/ruhaku\/ss_gettou_sheet_mask5\/","a_id":5267359,"p_id":54,"pl_id":27059,"pc_id":54,"s_n":"rakuten","u_so":1},{"id":5,"u_tx":"Amazonで見る","u_bc":"#184f5c","u_url":"https:\/\/amzn.to\/43VXnpM","a_id":0,"p_id":0,"pl_id":0,"pc_id":0,"s_n":"custom_10","u_so":2},{"id":4,"u_tx":"Yahoo!ショッピングで見る","u_bc":"#bf0000","u_url":"https:\/\/shopping.yahoo.co.jp\/search?first=1\u0026p=RUHAKU%20%EF%BC%88%E7%90%89%E7%99%BD%EF%BC%89%20%E6%9C%88%E6%A1%83%E3%82%A8%E3%83%B3%E3%83%AA%E3%83%83%E3%83%81%E3%82%AF%E3%83%AA%E3%83%BC%E3%83%9F%E3%83%BC%E3%82%B7%E3%83%BC%E3%83%88%E3%83%9E%E3%82%B9%E3%82%AF%201%E7%AE%B1%205%E6%9E%9A%E5%85%A5%E3%82%8A%20%E3%83%95%E3%82%A7%E3%82%A4%E3%82%B9%E3%83%9E%E3%82%B9%E3%82%AF%20%E4%BF%9D%E6%B9%BF%20%E6%95%8F%E6%84%9F%E8%82%8C%20%E4%B9%BE%E7%87%A5%E8%82%8C%20%E3%82%BB%E3%83%A9%E3%83%9F%E3%83%89%E9%85%8D%E5%90%88%20%E3%82%AA%E3%83%BC%E3%82%AC%E3%83%8B%E3%83%83%E3%82%AF%20%E7%84%A1%E6%B7%BB%E5%8A%A0%20%E5%86%AC%E3%81%AE%E4%B9%BE%E7%87%A5%E5%AF%BE%E7%AD%96%20%E3%81%94%E8%A4%92%E7%BE%8E%E3%83%9E%E3%82%AF%20%E3%83%8A%E3%82%A4%E3%83%88%E3%82%B1%E3%82%A2%20%E3%82%AE%E3%83%95%E3%83%88%E3%81%AB%E3%82%82%E6%9C%80%E9%81%A9","a_id":5267465,"p_id":1225,"pl_id":27061,"pc_id":1925,"s_n":"yahoo","u_so":3}],"eid":"lhSB9","s":"s"});
           </script>
           <div id="msmaflink-lhSB9">リンク</div>
         </div>
@@ -418,7 +374,7 @@
       box-shadow: 0 2px 6px rgba(0,0,0,0.05);
     ">
       <p style="font-size: 14px; color:#555; margin-bottom:15px;">
-        <strong>花嫁様におすすめ！</strong>
+        <strong>乾燥対策にプラスワン！</strong>
       </p>
 
       <a href="https://px.a8.net/svt/ejp?a8mat=45IB9B+J1WWQ+3NI6+60H7L" 
@@ -442,64 +398,32 @@
     <h2>⛄まとめ</h2>
 
     <div class="info-box">
-      <p>最後までご覧いただき、ありがとうございます。冬挙式や前撮りに向けた、お気に入りのアイテムは見つかりましたでしょうか？</p>
-      <p>冬のスキンケアは、寒さで強張った心と体をほぐす、大切なリラックスタイムでもあります。「心地よい香り」「肌に吸い付くようなテクスチャー」を楽しみながら、自分自身をいたわってあげてください。</p>
+      <p>最後までご覧いただき、ありがとうございます🕊️<br>
+      冬挙式や前撮りに向けた、お気に入りのアイテムは見つかりましたでしょうか？</p>
+      
+      <p>冬のスキンケアは、寒さで強張った心と体をほぐす、大切な<strong>リラックスタイム</strong>でもあります🛁<br>
+      「心地よい香り」「肌に吸い付くようなテクスチャー」を楽しみながら、自分自身をいたわってあげてください。</p>
+      
       <p>温かいお風呂にゆっくり浸かったり、好きなアロマの香りに包まれたりすることは、自律神経を整え、肌の再生力を高めることにも繋がります。</p>
-      <p>厳しい冬を乗り越えた先には、最高の当日が待っています。その時、あなたの肌が自信に満ちた輝きを放っているように。そして何より、あなた自身が健康で笑顔でいられるように。ぜひ、今日から少しだけ贅沢な保湿ケアを取り入れてみてください。</p>
+      
+      <p>厳しい冬を乗り越えた先には、最高の当日が待っています💒<br>
+      その時、あなたの肌が自信に満ちた輝きを放っているように。<br>
+      ぜひ、今日から少しだけ贅沢な保湿ケアを取り入れてみてくださいね✨</p>
     </div>
 
-   <div style="
-    background: #1a2f4b; /* ネイビー背景 */
-    background: linear-gradient(135deg, #1a2f4b, #2c4a70);
-    border-radius: 12px;
-    padding: 30px;
-    margin: 40px auto;
-    text-align: center;
-    color: #fff;
-    box-shadow: 0 5px 20px rgba(0,0,0,0.15);
-    max-width: 700px;
-    position: relative;
-    overflow: hidden;
-">
-    <div style="
-        position: absolute; top: 10px; left: 10px; right: 10px; bottom: 10px;
-        border: 1px solid rgba(212, 175, 55, 0.5); border-radius: 8px; pointer-events: none;
-    "></div>
+    <div style="background: #1a2f4b; background: linear-gradient(135deg, #1a2f4b, #2c4a70); border-radius: 12px; padding: 30px; margin: 40px auto; text-align: center; color: #fff; box-shadow: 0 5px 20px rgba(0,0,0,0.15); max-width: 700px; position: relative; overflow: hidden;">
+        <div style="position: absolute; top: 10px; left: 10px; right: 10px; bottom: 10px; border: 1px solid rgba(212, 175, 55, 0.5); border-radius: 8px; pointer-events: none;"></div>
+        <span style="background: #d4af37; color: #fff; font-size: 11px; font-weight: bold; padding: 4px 12px; border-radius: 20px; text-transform: uppercase; letter-spacing: 1px;">New Selection</span>
+        <h3 style="font-family: 'Playfair Display', serif; color: #fff; margin: 15px 0 10px; font-size: 22px; border-bottom: none; text-align:center;">失敗しない！<br>花嫁ボディメイク厳選<br>3選</h3>
+        <p style="font-size: 14px; line-height: 1.6; margin-bottom: 25px; color: #e0e0e0;">
+            「バストアップ」<br>「下半身痩せ」<br>「運動なし」<br>
+            あなたのワガママを叶える<br>
+            ベストな選択肢を栄養士が比較。<br>
+            もう、ジム選びで迷わせません。
+        </p>
+        <a href="accept-gym.html" style="display: inline-block; background: #d4af37; color: #fff; font-weight: bold; text-decoration: none; padding: 12px 35px; border-radius: 50px; box-shadow: 0 4px 15px rgba(0,0,0,0.3); transition: transform 0.2s;" onmouseover="this.style.transform='translateY(-2px)'" onmouseout="this.style.transform='translateY(0)'">厳選3選を見る &raquo;</a>
+    </div>
 
-    <span style="
-        background: #d4af37; color: #fff; font-size: 11px; font-weight: bold;
-        padding: 4px 12px; border-radius: 20px; text-transform: uppercase; letter-spacing: 1px;
-    ">
-        New Arrival
-    </span>
-
-    <h3 style="
-        font-family: 'Playfair Display', serif; color: #fff; margin: 15px 0 10px; font-size: 22px;
-        border-bottom: none;
-    ">
-        銀座で叶える、一生モノの美ボディ
-    </h3>
-    
-    <p style="font-size: 14px; line-height: 1.6; margin-bottom: 25px; color: #e0e0e0;">
-        「結婚式までに確実に痩せたい」<br>
-        「食事制限でリバウンドしたくない」<br>
-        そんな花嫁様へ。世界レベルのトレーナーが指導する<br>
-        完全個室のプライベートジムを取材しました。
-    </p>
-
-    <a href="accept-gym.html" style="
-        display: inline-block;
-        background: #d4af37;
-        color: #fff;
-        font-weight: bold;
-        text-decoration: none;
-        padding: 12px 35px;
-        border-radius: 50px;
-        box-shadow: 0 4px 15px rgba(0,0,0,0.3);
-        transition: transform 0.2s;
-    " onmouseover="this.style.transform='translateY(-2px)'" onmouseout="this.style.transform='translateY(0)'">
-        記事を読む &raquo;
-    </a></div>
     <div style="text-align:center; margin-top:40px;">
 
       <a href="https://px.a8.net/svt/ejp?a8mat=45I9PD+4HCIHM+37D2+609HT" 
@@ -546,7 +470,7 @@
 
     <h3 style="margin: 5px 0 15px; font-size: 22px; color: #503535; font-family: 'Playfair Display', serif, sans-serif; line-height: 1.4;">
       <span style="font-size: 0.8em; color: #d4a373;">栄養士Yuriの全ノウハウ公開</span><br>
-      読むだけで変わる「花嫁美容」Note
+      読むだけで変わる<br>「花嫁美容」Note
     </h3>
 
     <div style="background: #fffaf4; border: 1px dashed #d4a373; border-radius: 10px; padding: 15px; margin: 15px auto; max-width: 90%; text-align: left; font-size: 15px; color: #555;">
@@ -572,17 +496,15 @@
       <a href="seasons-skin.html">季節別スキンケア（春夏秋冬）</a>
       <a href="age-skincare.html">40代・50代 年齢別ケア</a>
       <a href="acne-care.html">肌荒れ・敏感肌・ニキビケア</a>
-      <a href="lifestyle-skincare.html">生活リズム別（時短・夜型など）</a>
     </div>
 
     <div class="footer-col">
       <h3>🛁 ボディ・ヘア・インナー</h3>
       <a href="hair-care.html">ヘアケア・頭皮ケア特集</a>
       <a href="diet-beauty.html">インナービューティー＆ダイエット</a>
-      <a href="accept-gym.html">銀座・完全個室ジムACCEPT体験記</a>
+      <a href="accept-gym.html">花嫁ボディメイク厳選3選<span class="new-mark">New!!</span></a>
       <a href="smoothie-recipes.html">栄養士おすすめ！スムージーのレシピ<span class="new-mark">New!!</span></a>
       <a href="amazon-oil-review.html">本当に効く！オイルレビュー</a>
-      <a href="organic-science.html">オーガニック成分の科学</a>
     </div>
 
     <div class="footer-col">
