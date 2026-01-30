@@ -3,8 +3,8 @@
 <head>
   <meta charset="utf-8" />
   <meta name="viewport" content="width=device-width,initial-scale=1" />
-  <title>【決定版】花嫁ボディメイク厳選3選｜バストアップ・下半身痩せ・痩身エステ</title>
-  <meta name="description" content="ただ痩せるだけではドレスは似合いません。「胸を残して痩せる」「下半身だけ削る」「運動なしで痩せる」。花嫁のワガママを叶える厳選3社を栄養士が徹底比較。">
+  <title>【決定版】花嫁ボディメイク厳選4選｜バストアップ・全額返金・寝たまま痩せ</title>
+  <meta name="description" content="「胸を残して痩せる」「全額返金保証」「運動なしで痩せる」。花嫁のワガママを叶える厳選4社を栄養士が徹底比較。失敗しないボディメイクの決定版。">
   <link rel="canonical" href="https://essential-beauty-needs.com/accept-gym.html" />
   <link href="https://fonts.googleapis.com/css2?family=Playfair+Display:wght@600&family=Quicksand:wght@400;600&display=swap" rel="stylesheet">
   
@@ -20,7 +20,6 @@
       gtag('js', new Date());
       gtag('config', 'G-2HGEPHVZYY');
     }
-    // 画像エラー時にプレースホルダーを表示
     function handleImageError(imgElement, width, height, text) { 
          imgElement.onerror = null; 
          imgElement.src = `https://placehold.co/${width}x${height}/f0f0f0/aaaaaa?text=${encodeURIComponent(text)}`;
@@ -33,18 +32,19 @@
     :root {
       --bg: #fff8f8;
       --accent: #f7a8a8;
-      --accent-hover: #f48b8b;
       --text-main: #503535;
       --gold: #c5a059;
-      --mmm-color: #d8bfd8; /* MMM用のラベンダー */
-      --bc-color: #8fbc8f; /* B-Concept用のグリーン */
-      --mp-color: #d4af37; /* ミスパリ用のゴールド */
+      --mmm-color: #d8bfd8; /* MMM: ラベンダー */
+      --bc-color: #8fbc8f; /* B-Concept: グリーン */
+      --mp-color: #d4af37; /* ミスパリ: ゴールド */
+      --hb-color: #e74c3c; /* HABIT: レッド（返金・インパクト） */
+      --cloud-color: #87ceeb; /* Cloud: 空色 */
     }
     * { box-sizing: border-box; margin: 0; padding: 0; }
     body { font-family: 'Quicksand', sans-serif; background: var(--bg); color: #555; line-height: 1.8; }
     
     header { text-align: center; padding: 60px 20px 40px; background: linear-gradient(135deg, #fceeee, #fff8f8); color: var(--text-main); border-bottom: 3px solid #e6b7b3; }
-    header h1 { font-family: 'Playfair Display', serif; font-size: 32px; margin-bottom: 10px; }
+    header h1 { font-family: 'Playfair Display', serif; font-size: 28px; margin-bottom: 10px; }
     
     .container { max-width: 800px; margin: 0 auto; padding: 0 20px; }
     
@@ -56,30 +56,17 @@
     .badge-mmm { background: linear-gradient(45deg, #ba55d3, #dda0dd); }
     .badge-bc { background: linear-gradient(45deg, #2e8b57, #3cb371); }
     .badge-mp { background: linear-gradient(45deg, #b8860b, #daa520); }
+    .badge-hb { background: linear-gradient(45deg, #e74c3c, #ff7f50); }
 
     .card-title { font-size: 22px; font-weight: bold; margin-top: 10px; margin-bottom: 15px; border-bottom: 2px solid #eee; padding-bottom: 10px; color: var(--text-main); }
     
     /* 画像エリア */
     .gym-img-area { 
-        width: 100%; 
-        height: 300px; /* 高さを統一 */
-        background: #f9f9f9; 
-        display: flex; 
-        align-items: center; 
-        justify-content: center;
-        border-radius: 10px; 
-        margin-bottom: 20px;
-        overflow: hidden;
+        width: 100%; height: 250px; background: #f9f9f9; display: flex; align-items: center; justify-content: center;
+        border-radius: 10px; margin-bottom: 20px; overflow: hidden;
     }
-    .gym-img-area img { 
-        width: 100%; 
-        height: 100%; 
-        object-fit: cover; /* 画像を枠いっぱいにトリミングして表示 */
-        transition: transform 0.5s ease;
-    }
-    .gym-card:hover .gym-img-area img {
-        transform: scale(1.05); /* ホバー時に少しズーム */
-    }
+    .gym-img-area img { width: 100%; height: 100%; object-fit: cover; transition: transform 0.5s ease; }
+    .gym-card:hover .gym-img-area img { transform: scale(1.05); }
     
     /* 特徴リスト */
     .feature-point { background: #fdf5e6; padding: 15px; border-radius: 8px; margin-bottom: 20px; font-weight: bold; color: #d35400; text-align: center; font-size: 15px; border: 1px dashed #f39c12; }
@@ -90,6 +77,8 @@
     .btn-mmm { background: linear-gradient(45deg, #ba55d3, #dda0dd); }
     .btn-bc { background: linear-gradient(45deg, #2e8b57, #3cb371); }
     .btn-mp { background: linear-gradient(45deg, #b8860b, #daa520); }
+    .btn-hb { background: linear-gradient(45deg, #e74c3c, #ff7f50); }
+    .btn-cloud { background: linear-gradient(45deg, #87ceeb, #00bfff); }
 
     /* 栄養士コメント */
     .yuri-memo { background: #f0f8ff; border-left: 5px solid #4682b4; padding: 15px; margin-top: 20px; font-size: 14px; border-radius: 5px; }
@@ -98,7 +87,12 @@
     .main-nav { display: flex; justify-content: center; gap: 15px; margin-bottom: 15px; flex-wrap: wrap; }
     .main-nav a { background: rgba(255,255,255,0.9); padding: 8px 16px; border-radius: 20px; text-decoration: none; color: #503535; font-weight: bold; font-size: 14px; box-shadow: 0 2px 5px rgba(0,0,0,0.05); transition: 0.3s; }
     
-    /* フッターなどの既存スタイル */
+    /* ミニカラム（サプリ・オンライン） */
+    .mini-column { display: flex; gap: 20px; margin-top: 40px; flex-wrap: wrap; }
+    .mini-card { flex: 1; min-width: 280px; background: #fff; padding: 20px; border-radius: 12px; border: 1px solid #eee; text-align: center; box-shadow: 0 3px 10px rgba(0,0,0,0.03); }
+    .mini-title { font-size: 16px; font-weight: bold; color: var(--text-main); margin-bottom: 10px; border-bottom: 2px dashed #f7a8a8; padding-bottom: 5px; display: inline-block; }
+
+    /* フッター等は既存維持 */
     footer { background: #fffaf4; border-top: 3px solid #f7a8a8; padding: 50px 20px 60px; margin-top: 60px; color: #555; font-size: 14px; }
     .footer-container { max-width: 960px; margin: 0 auto; display: flex; flex-wrap: wrap; justify-content: space-between; gap: 30px; text-align: left; }
     .footer-col { flex: 1; min-width: 200px; }
@@ -113,17 +107,7 @@
     
     @keyframes blinkEffect { 0% { opacity: 1; } 50% { opacity: 0.3; } 100% { opacity: 1; } }
     .new-mark { color: #ff0000; font-weight: bold; font-size: 0.8em; margin-left: 5px; animation: blinkEffect 1.2s infinite; vertical-align: super; }
-
-    /* 比較用のCTAエリア */
-    .compare-link {
-        margin-top: 40px;
-        background: #fdf2f2;
-        border: 2px dashed #f7a8a8;
-        padding: 20px;
-        text-align: center;
-        border-radius: 12px;
-    }
-</style>
+  </style>
 </head>
 <body>
 
@@ -147,120 +131,118 @@
         <h2 style="font-size:18px; color:var(--text-main); margin-bottom:10px;">「どこに行けばいいか分からない」花嫁様へ</h2>
         <p style="font-size:15px; line-height:1.8;">
             ただ痩せるだけのジムに行くと、必要な胸まで落ちたり、逆に筋肉で太くなったりします。<br>
-            ここでは<strong>「ドレスを美しく着る」</strong>ことに特化した、失敗しない3つの選択肢を厳選しました。
+            ここでは<strong>「ドレスを美しく着る」</strong>ことに特化した、失敗しない4つの選択肢を厳選しました。
         </p>
     </div>
 
     <div class="gym-card">
         <span class="rank-badge badge-mmm">👑 総合力No.1：バストアップ＆痩身</span>
-        
         <div class="gym-img-area">
             <img src="images/mmm.jpg" alt="MMM 女性トレーナーによる指導" onerror="handleImageError(this, 800, 400, 'MMM Private Gym')">
         </div>
-        
         <h3 class="card-title">MMM（トリプルエム）</h3>
         <p class="feature-point">「胸を落とさず痩せる」<br>花嫁の理想形</p>
-        
         <p>
             六本木・表参道など一等地に構える、女性トレーナーだけの完全プライベートジム。<br>
-            「痩せたいけど胸は残したい」という花嫁特有のワガママを、独自のメソッドで叶えてくれます。<br>
-            エステのような洗練された空間で、誰にも会わずに体を作れます。
+            「痩せたいけど胸は残したい」という花嫁特有のワガママを、独自のメソッドで叶えてくれます。
         </p>
-
-        <ul style="margin: 20px 0 20px 20px; font-size: 15px;">
-            <li>女性トレーナーのみ（男性の目線が気にならない）</li>
-            <li>「バストアップ」しながら痩せる希少な指導</li>
-            <li>ウェア・タオル完備で手ぶらOK</li>
-        </ul>
-
         <div class="yuri-memo">
             <strong>👩‍⚕️ 栄養士Yuriの推奨ポイント：</strong><br>
             ここはジムというより「ボディメイクサロン」です。
             ただ痩せるだけでなく、デコルテを綺麗に見せたいならここ一択。
-            卒業後もリバウンドしにくい食事指導がついているのも安心です◎
         </div>
-
-        <a href="https://px.a8.net/svt/ejp?a8mat=4AVAC8+7AK7BU+3PFW+BX3J6" rel="nofollow" class="cta-btn btn-mmm">
-            MMM体験プランを見る＞
-        </a>
+        <a href="https://px.a8.net/svt/ejp?a8mat=4AVAC8+7AK7BU+3PFW+BX3J6" rel="nofollow" class="cta-btn btn-mmm">MMM体験プランを見る＞</a>
         <img border="0" width="1" height="1" src="https://www16.a8.net/0.gif?a8mat=4AVAC8+7AK7BU+3PFW+BX3J6" alt="">
     </div>
 
     <div class="gym-card">
         <span class="rank-badge badge-bc">🦵 下半身特化：マーメイドドレス向け</span>
-        
         <div class="gym-img-area">
              <img src="images/legs.jpg" alt="B-Concept 美脚メソッド" onerror="handleImageError(this, 800, 400, 'Legs Slimming')">
         </div>
-        
-        <h3 class="card-title">B-CONCEPT<br>（ビーコンセプト）</h3>
+        <h3 class="card-title">B-CONCEPT（ビーコンセプト）</h3>
         <p class="feature-point">医師×トレーナー共同開発の「脚痩せメソッド」</p>
-        
         <p>
             「上半身は細いのに、下半身だけ太い…」という悩みを持つ花嫁様の駆け込み寺。<br>
             マーメイドドレスやスレンダーラインを着たいなら、体重を落とすより、ここの「脚痩せメソッド」を受ける方が近道です。
         </p>
-
-        <ul style="margin: 20px 0 20px 20px; font-size: 15px;">
-            <li>太もも・お尻・ふくらはぎの「部分痩せ」に特化</li>
-            <li>全国展開（東京・大阪・名古屋・福岡など多数）</li>
-            <li>リバウンド防止のアフターフォローが手厚い</li>
-        </ul>
-
         <div class="yuri-memo">
             <strong>👩‍⚕️ 栄養士Yuriの推奨ポイント：</strong><br>
             自己流のスクワットは前ももが張って余計に足が太くなりますが、ここはプロが「効かせ方」をミリ単位で修正してくれます。
-            下半身コンプレックスがある方は迷わずここです。
         </div>
-
-        <a href="https://px.a8.net/svt/ejp?a8mat=4AVAC6+2V017E+3UK2+5ZMCI" rel="nofollow" class="cta-btn btn-bc">
-            ビーコンセプトの<br>脚痩せ体験を見る ＞
-        </a>
+        <a href="https://px.a8.net/svt/ejp?a8mat=4AVAC6+2V017E+3UK2+5ZMCI" rel="nofollow" class="cta-btn btn-bc">ビーコンセプト体験を見る ＞</a>
         <img border="0" width="1" height="1" src="https://www10.a8.net/0.gif?a8mat=4AVAC6+2V017E+3UK2+5ZMCI" alt="">
     </div>
 
     <div class="gym-card">
-        <span class="rank-badge badge-mp">💎 ブランド力：運動なしで痩せる</span>
-        
+        <span class="rank-badge badge-mp">💎 エステ枠：運動なしで痩せる</span>
         <div class="gym-img-area">
              <img src="images/esthe.png" alt="ミスパリ 痩身施術イメージ" onerror="handleImageError(this, 800, 400, 'Miss Paris Esthetic')">
         </div>
-        
-        <h3 class="card-title">ミス・パリ <br>ダイエットセンター</h3>
+        <h3 class="card-title">ミス・パリ ダイエットセンター</h3>
         <p class="feature-point">「医学的・科学的」に脂肪を燃やす</p>
-        
         <p>
             「運動は絶対に続かない…でも痩せなきゃ」という方の最終手段。<br>
-            歴史あるミス・パリの技術で、寝ているだけで有酸素運動効果を得られるマシンや、プロのハンド技術でセルライトを潰します。
+            寝ているだけで有酸素運動効果を得られるマシンや、プロのハンド技術でセルライトを潰します。
         </p>
-
-        <ul style="margin: 20px 0 20px 20px; font-size: 15px;">
-            <li>大学や医療機関と研究した「痩せるシステム」</li>
-            <li>ジムのような運動は一切なし</li>
-            <li>全国の百貨店やモールにあり通いやすい</li>
-        </ul>
-
         <div class="yuri-memo">
             <strong>👩‍⚕️ 栄養士Yuriの推奨ポイント：</strong><br>
-            「エステでしょ？」と侮るなかれ。ここは「ダイエットセンター」という名前の通り、本気で数値を落としにかかります。
+            ここは「ダイエットセンター」という名前の通り、本気で数値を落としにかかります。
             体験だけでも全身のサイズが変わる感動があるので、一度行ってみる価値ありです。
         </div>
-
-        <a href="https://px.a8.net/svt/ejp?a8mat=4AVAC8+4OHPQY+1OGO+C2102" rel="nofollow" class="cta-btn btn-mp">
-            ミス・パリのダイエット体験を見る ＞
-        </a>
+        <a href="https://px.a8.net/svt/ejp?a8mat=4AVAC8+4OHPQY+1OGO+C2102" rel="nofollow" class="cta-btn btn-mp">ミス・パリの体験を見る ＞</a>
         <img border="0" width="1" height="1" src="https://www12.a8.net/0.gif?a8mat=4AVAC8+4OHPQY+1OGO+C2102" alt="">
     </div>
 
-    <div class="compare-link">
-        <h3 style="color:#d6336c; font-size:18px; margin-bottom:10px;">💰 「もう少し予算を抑えたい」という方へ</h3>
-        <p style="font-size:14px; margin-bottom:15px;">
-            本格的なボディメイクも良いけど、まずは手軽なヨガやピラティスから始めたい。<br>
-            そんな方向けに、体験0円〜3,000円で通えるスポットをまとめました。
+    <div class="gym-card" style="border: 2px solid var(--hb-color);">
+        <span class="rank-badge badge-hb">💰 コスパ最強：全額返金保証付き</span>
+        <div class="gym-img-area">
+             <img src="images/habit.jpg" alt="HABIT パーソナルジム" onerror="handleImageError(this, 800, 400, 'HABIT Personal Gym')">
+        </div>
+        <h3 class="card-title">ハビットパーソナルジム</h3>
+        <p class="feature-point">「痩せなかったら全額返金」の自信</p>
+        <p>
+            「高いお金を払って痩せなかったらどうしよう…」<br>
+            そんな不安を一掃してくれるのが、医師監修のこのジム。<br>
+            <strong>2ヶ月で目標体重に届かなければ全額返金</strong>という、驚きの保証制度があります。
         </p>
-        <a href="bridal-care.html" style="display:inline-block; background:#fff; color:#d6336c; border:1px solid #d6336c; padding:10px 25px; border-radius:30px; text-decoration:none; font-weight:bold;">
-            体験荒らしもOK？ 賢い節約美容はこちら ＞
-        </a>
+        <ul style="margin: 20px 0 20px 20px; font-size: 15px;">
+            <li>結果が出なければ「全額返金保証」</li>
+            <li>月額5万円台〜と、パーソナルにしては破格</li>
+            <li>医師監修のメソッドで無理なく痩せる</li>
+        </ul>
+        <div class="yuri-memo">
+            <strong>👩‍⚕️ 栄養士Yuriの推奨ポイント：</strong><br>
+            「絶対に損をしたくない！」という堅実派の花嫁様に。
+            返金保証があるのは、それだけ結果を出す自信がある証拠。コスパ重視ならここが最強です。
+        </div>
+        <a href="https://px.a8.net/svt/ejp?a8mat=4AVIVW+B43C2I+56HC+5YJRM" rel="nofollow" class="cta-btn btn-hb">全額返金保証の詳細を見る ＞</a>
+        <img border="0" width="1" height="1" src="https://www15.a8.net/0.gif?a8mat=4AVIVW+B43C2I+56HC+5YJRM" alt="">
+    </div>
+
+    <h3 style="text-align:center; color:var(--text-main); margin-top:50px;">💡 「ジム以外」で差をつけるなら</h3>
+    <div class="mini-column">
+        
+        <div class="mini-card">
+            <span class="mini-title">飲む美容液プロテイン</span>
+            <p style="font-size:14px; margin:10px 0;">
+                運動効果を倍増させるなら、タンパク質は必須。<br>
+                美容成分たっぷりで、飲むだけで肌も髪もツヤツヤに✨
+            </p>
+            <a href="https://px.a8.net/svt/ejp?a8mat=4AVIVW+BLYC7U+4ZUQ+HV7V6" rel="nofollow" style="color:#d6336c; font-weight:bold; font-size:14px;">詳細をチェック ＞</a>
+            <img border="0" width="1" height="1" src="https://www16.a8.net/0.gif?a8mat=4AVIVW+BLYC7U+4ZUQ+HV7V6" alt="">
+        </div>
+
+        <div class="mini-card">
+            <span class="mini-title" style="border-bottom:2px dashed #87ceeb;">通うのが面倒な方へ</span>
+            <p style="font-size:14px; margin:10px 0;">
+                「忙しくてジムに行けない…」<br>
+                それなら、自宅でプロの指導が受けられるオンラインパーソナルが正解！
+            </p>
+            <a href="https://px.a8.net/svt/ejp?a8mat=4AVIVW+BFEKKA+2UOE+5YEENM" rel="nofollow" style="color:#4682b4; font-weight:bold; font-size:14px;">CLOUD GYMを見る ＞</a>
+            <img border="0" width="1" height="1" src="https://www14.a8.net/0.gif?a8mat=4AVIVW+BFEKKA+2UOE+5YEENM" alt="">
+        </div>
+
     </div>
 
 </main>
@@ -273,17 +255,14 @@
       <a href="skin-ranking.html">おすすめスキンケアランキング</a>
       <a href="seasons-skin.html">季節別スキンケア（春夏秋冬）</a>
       <a href="age-skincare.html">40代・50代 年齢別ケア</a>
-      <a href="acne-care.html">肌荒れ・敏感肌・ニキビケア</a>
     </div>
-
     <div class="footer-col">
       <h3>🛁 ボディ・ヘア・インナー</h3>
       <a href="hair-care.html">ヘアケア・頭皮ケア特集</a>
       <a href="diet-beauty.html">インナービューティー＆ダイエット</a>
-      <a href="accept-gym.html">花嫁ボディメイク厳選3選<span class="new-mark">New!!</span></a>
+      <a href="accept-gym.html">花嫁ボディメイク厳選4選<span class="new-mark">New!!</span></a>
       <a href="smoothie-recipes.html">栄養士おすすめ！スムージーのレシピ</a>
     </div>
-
     <div class="footer-col">
       <h3>🎁 特集・コラム・その他</h3>
       <a href="note-archive.html">栄養士Yuriの公式Note一覧<span class="new-mark">New!!</span></a>
@@ -291,7 +270,6 @@
       <a href="about.html">当サイトについて (About)</a>
     </div>
   </div>
-    
   <div class="footer-bottom">
       <a href="https://room.rakuten.co.jp/room_e0dd63a90a/items" target="_blank" rel="noopener" class="footer-room-link">
         🏠 管理人Yuriの楽天ROOMを見る
