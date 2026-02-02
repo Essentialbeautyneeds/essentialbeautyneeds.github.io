@@ -3,13 +3,12 @@
 <head>
   <meta charset="utf-8" />
   <meta name="viewport" content="width=device-width,initial-scale=1" />
-  <title>管理栄養士Yuriのプロフィール｜花嫁美容・スキンケア情報サイト</title>
-  <meta name="description" content="管理栄養士・スキンケアアドバイザーYuriのプロフィール。挙式直前の花嫁向けに、背中・二の腕ケアや食事改善・オーガニック美容法を発信しています。">
+  <title>プロフィール・運営者情報 | Essential Beauty Needs</title>
+  <meta name="description" content="管理栄養士・スキンケアアドバイザーYuriのプロフィール。オーストラリアで学んだ自然療法と栄養学をベースに、花嫁のための美容メソッドを発信しています。">
   <link rel="canonical" href="https://essential-beauty-needs.com/about.html">
   <link href="https://fonts.googleapis.com/css2?family=Playfair+Display:wght@600&family=Quicksand:wght@400;600&display=swap" rel="stylesheet">
-
+  
   <script>
-    // 内部トラフィック除外
     function isInternalUser() {
       return document.cookie.split(';').some(c => c.trim().startsWith('internal_user=true'));
     }
@@ -23,19 +22,18 @@
       gtag('js', new Date());
       gtag('config', 'G-2HGEPHVZYY');
     } else {
-      console.log('✅ Internal traffic excluded.');
+        console.log('✅ Internal traffic excluded.');
     }
 
-    // 画像読み込みエラー時の代替
     function handleImageError(imgElement, width, height, text) { 
          imgElement.onerror = null; 
          imgElement.src = `https://placehold.co/${width}x${height}/f7a8a8/ffffff?text=${encodeURIComponent(text)}`;
     }
   </script>
-
+  
   <style>
-    /* 全体設定 */
-    body {
+    /* ===== Aboutページ専用スタイル ===== */
+    body.about-page {
       font-family: 'Quicksand', "Helvetica Neue", Arial, sans-serif;
       background: #fff0f5;
       color: #555;
@@ -44,37 +42,37 @@
       line-height: 1.8;
     }
 
-    header {
+    body.about-page header {
       text-align: center;
-      padding: 80px 20px 100px;
+      padding: 120px 20px 160px; /* 顔写真とタイトルの被りを解消 */
       background: linear-gradient(90deg, #fbeaea, #f9d9d7);
     }
 
-    h1 {
+    body.about-page h1 {
       font-family: 'Playfair Display', serif;
       font-size: 28px;
       color: #503535;
       margin: 0;
     }
 
-    main {
+    body.about-page main {
       max-width: 700px;
-      margin: -60px auto 40px;
+      margin: -60px auto 40px; /* ヘッダーに被せすぎない */
       padding: 0 20px;
       position: relative;
     }
 
-    /* 白カード */
     .profile-card {
       background: #ffffff;
       padding: 40px;
       border-radius: 20px;
       box-shadow: 0 10px 25px rgba(0,0,0,0.05);
+      position: relative;
     }
 
     .profile-image-container {
       text-align: center;
-      margin-top: -80px;
+      margin-top: -80px; 
       margin-bottom: 30px;
       position: relative;
       z-index: 10;
@@ -106,66 +104,35 @@
       margin-top: 30px;
       border-left: 4px solid #f48b8b;
     }
-
-    .policy-box h2 {
-      margin-top: 0;
-      font-size: 16px;
-      color: #d88e8e;
-      font-weight: bold;
-      margin-bottom: 10px;
-    }
-
+    
     .diagnosis-link {
-      display: block;
-      background: #fff4e6;
-      border: 2px dashed #e67e22;
-      color: #d35400;
-      text-align: center;
-      padding: 15px;
-      border-radius: 10px;
-      text-decoration: none;
-      font-weight: bold;
-      margin: 30px 0;
-      transition: 0.3s;
+        display: block;
+        background: #fff4e6;
+        border: 2px dashed #e67e22;
+        color: #d35400;
+        text-align: center;
+        padding: 15px;
+        border-radius: 10px;
+        text-decoration: none;
+        font-weight: bold;
+        margin: 30px 0;
+        transition: 0.3s;
     }
-
     .diagnosis-link:hover {
-      background: #ffe0b2;
-      transform: translateY(-2px);
+        background: #ffe0b2;
+        transform: translateY(-2px);
     }
 
-    .nav-links {
-      display: flex;
-      gap: 10px;
-      justify-content: center;
-      margin-top: 40px;
-      flex-wrap: wrap;
-    }
-
-    .nav-links a {
-      background: rgba(255,255,255,0.6);
-      padding: 8px 15px;
-      border-radius: 20px;
-      text-decoration: none;
-      color: #503535;
-      font-weight: 600;
-      font-size: 13px;
-      border: 1px solid #eee;
-      transition: 0.3s;
-    }
-
-    .nav-links a:hover {
-      background: #f48b8b;
-      color: #fff;
-      border-color: #f48b8b;
-    }
+    .nav-links{display:flex;gap:10px;justify-content:center;margin-top:40px;flex-wrap:wrap;}
+    .nav-links a{background:rgba(255,255,255,0.6);padding:8px 15px;border-radius:20px;text-decoration:none;color:#503535;font-weight:600; font-size:13px; border:1px solid #eee; transition:0.3s;}
+    .nav-links a:hover{background:#f48b8b;color:#fff; border-color:#f48b8b;}
 
     .footer-links {
       text-align: center;
       margin-top: 30px;
       font-size: 14px;
     }
-
+    
     footer {
       text-align: center;
       color: #999;
@@ -177,96 +144,96 @@
       .profile-card {
         padding: 30px 20px;
       }
-      header {
-        padding-bottom: 80px; 
+      body.about-page header {
+        padding-bottom: 120px; 
       }
     }
   </style>
 </head>
 
-<body>
+<body class="about-page">
 
-<header>
-  <h1>管理栄養士Yuriのプロフィール</h1>
-</header>
+  <header>
+    <h1>Profile / 運営者情報</h1>
+  </header>
 
-<main>
-  <div class="profile-card">
+ <main>
+    <div class="profile-card">
 
-    <div class="profile-image-container">
-      <img src="images/Yuri.jpg" alt="Yuri 栄養士・花嫁美容アドバイザー" class="profile-image" onerror="handleImageError(this, 140, 140, 'Yuri')">
-    </div>
+      <div class="profile-image-container">
+          <img src="images/Yuri.jpg" alt="管理人の顔写真" class="profile-image" onerror="handleImageError(this, 140, 140, 'Yuri')">
+      </div>
 
-    <p>はじめまして。管理人の<strong>Yuri</strong>です。<br>
-    栄養士・スキンケアアドバイザーとして、結婚式を控えた花嫁様を中心に、肌と食のカウンセリングを行っています。</p>
-    
-    <p>私はオーストラリア・メルボルンの大学で栄養学を学び、約15年間を現地で過ごしました。<br>
-    オーガニック先進国であるメルボルンで学んだことは、「肌の美しさは塗るものだけでなく、食べるものと心の状態で決まる」という事実です。</p>
+      <p>はじめまして。管理人の<strong>Yuri</strong>です。<br>
+      栄養士・スキンケアアドバイザーとして、結婚式を控えた花嫁様を中心に、肌と食のカウンセリングを行っています。</p>
       
-    <p>結婚式という人生の晴れ舞台。しかし、準備のストレスやダイエットで肌荒れを起こし、自信をなくしてしまう花嫁様をこれまで数多く見てきました。</p>
+      <p>私はオーストラリア・メルボルンの大学で栄養学を学び、約15年間を現地で過ごしました。<br>
+      オーガニック先進国であるメルボルンで学んだことは、「肌の美しさは、塗るものだけでなく、食べるものと心の状態で決まる」という事実です。</p>
+        
+      <p>結婚式という人生の晴れ舞台。しかし、準備のストレスやダイエットで肌荒れを起こし、自信をなくしてしまう花嫁様をこれまで数多く見てきました。</p>
 
-    <p><strong>『Essential Beauty Needs』</strong>は、そんな花嫁様のために立ち上げた美容情報サイトです。</p>
-    
-    <p>「エステに行く時間がない」「背中の荒れが治らない」<br>
-    そんな切実な悩みに、栄養学に基づいたインナーケアと、肌本来の力を引き出すオーガニックコスメの両面からアプローチします。</p>
-    
-    <a href="bridal-care.html" class="diagnosis-link">
-        👰 挙式直前でも間に合う！<br>
-        「背中・二の腕」緊急ケア診断はこちら ＞
-    </a>
+      <p><strong>『Essential Beauty Needs』</strong>は、そんな花嫁様のために立ち上げた美容情報サイトです。</p>
+      
+      <p>「エステに行く時間がない」「背中の荒れが治らない」<br>
+      そんな切実な悩みに、栄養学に基づいたインナーケアと、肌本来の力を引き出すオーガニックコスメの両面からアプローチします。</p>
+      
+      <a href="bridal-care.html" class="diagnosis-link">
+          👰 挙式直前でも間に合う！<br>
+          「背中・二の腕」緊急ケア診断はこちら ＞
+      </a>
 
-    <div class="policy-box">
-      <h2>運営ポリシー・免責事項</h2>
-      <p>当サイトの記事は、栄養士としての知見や成分リサーチに基づき作成しています。</p>
-      <p style="font-size: 0.85em; color: #777;">
-        Amazonアソシエイトとして、Essential Beauty Needsは適格販売により収入を得ています。<br>
-        本サイトは「もしもアフィリエイト」等を通じて商品を紹介しています。紹介料の有無に関わらず、花嫁様が安心して使える「本物」のみを掲載します。
+      <div class="policy-box">
+        <strong>【運営ポリシー・免責事項】</strong><br>
+        <p style="margin-bottom:10px;">当サイトの記事は、栄養士としての知見や成分リサーチに基づき作成しています。</p>
+        
+        <p style="font-size: 0.85em; color: #777;">
+        Amazonのアソシエイトとして、Essential Beauty Needsは適格販売により収入を得ています。<br>
+        また、本サイトは「もしもアフィリエイト」等のASPを通じて商品を紹介しています。紹介料の有無に関わらず、花嫁様が安心して使える「本物」のみを厳選して掲載することをお約束します。
+        </p>
+      </div>
+
+      <p style="text-align: center; margin-top: 30px; font-weight: bold; color: #503535;">
+        一生に一度の写真を、<br>
+        最高に輝く笑顔と素肌で残しましょう。
       </p>
+
+      <p style="text-align: right; margin-top: 20px;">
+        <strong>Yuri</strong><br>
+        <span style="font-size:12px; color:#888;">Nutritionist / Skincare Advisor</span>
+      </p>
+
+      <div style="text-align:right; margin-top:20px; font-size: 0.95em;">
+        <span style="color:#999; font-size:0.85em; margin-right:5px;">Follow me:</span>
+        
+        <a href="https://www.instagram.com/yuri.ebn?igsh=d2JqOGJqd2J4Z2Rw" target="_blank" style="text-decoration:none; margin-left:8px; color:#d62976; font-weight:600;">
+          📷 Insta
+        </a>
+
+        <a href="https://www.threads.net/@yuri.ebn" target="_blank" style="text-decoration:none; margin-left:12px; color:#333; font-weight:600;">
+          💬 Threads
+        </a>
+
+        <a href="https://note.com/yuri_organic" target="_blank" style="text-decoration:none; margin-left:12px; color:#2caf7e; font-weight:600;">
+          📝 Note
+        </a>
+      </div>
+    </div>
+    
+    <div class="nav-links">
+        <a href="index.html">🏠 トップ</a>
+        <a href="bridal-care.html">👰 花嫁ケア診断</a>
+        <a href="skin-ranking.html">✨ ランキング</a>
+        <a href="beauty-column.html">💄 コラム</a>
+        <a href="organic-science.html">🔬 成分の科学</a>
     </div>
 
-    <p style="text-align: center; margin-top: 30px; font-weight: bold; color: #503535;">
-      一生に一度の写真を、<br>
-      最高に輝く笑顔と素肌で残しましょう。
-    </p>
-
-    <p style="text-align: right; margin-top: 20px;">
-      <strong>Yuri</strong><br>
-      <span style="font-size:12px; color:#888;">Nutritionist / Skincare Advisor</span>
-    </p>
-
-    <div style="text-align:right; margin-top:20px; font-size: 0.95em;">
-      <span style="color:#999; font-size:0.85em; margin-right:5px;">Follow me:</span>
-      <a href="https://www.instagram.com/yuri.ebn?igsh=d2JqOGJqd2J4Z2Rw" target="_blank" style="text-decoration:none; margin-left:8px; color:#d62976; font-weight:600;">📷 Insta</a>
-      <a href="https://www.threads.net/@yuri.ebn" target="_blank" style="text-decoration:none; margin-left:12px; color:#333; font-weight:600;">💬 Threads</a>
-      <a href="https://note.com/yuri_organic" target="_blank" style="text-decoration:none; margin-left:12px; color:#2caf7e; font-weight:600;">📝 Note</a>
+    <div class="footer-links">
+      <p style="font-size:11px; color: #888; margin-top:20px;">お問合せ先：essential.beauty.needs.ebn@gmail.com</p>
     </div>
 
-  </div>
+  </main>
 
-  <div class="nav-links">
-    <a href="index.html">🏠 トップ</a>
-    <a href="bridal-care.html">👰 花嫁ケア診断</a>
-    <a href="skin-ranking.html">✨ ランキング</a>
-    <a href="beauty-column.html">💄 コラム</a>
-    <a href="organic-science.html">🔬 成分の科学</a>
-  </div>
-
-  <div class="footer-links">
-    <p style="font-size:11px; color: #888; margin-top:20px;">お問合せ先：essential.beauty.needs.ebn@gmail.com</p>
-  </div>
-
-</main>
-
-<footer>
-  <p>© 2026 Essential Beauty Needs</p>
-  <nav class="nav-links-footer">
-    <a href="index.html">トップ</a> |
-    <a href="bridal-care.html">花嫁ケア診断</a> |
-    <a href="skin-ranking.html">ランキング</a> |
-    <a href="beauty-column.html">コラム</a> |
-    <a href="organic-science.html">成分の科学</a>
-  </nav>
-</footer>
+  <footer>© 2025 Essential Beauty Needs</footer>
 
 </body>
 </html>
