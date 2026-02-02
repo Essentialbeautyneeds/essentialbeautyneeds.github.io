@@ -2,12 +2,12 @@
 <html lang="ja">
 <head>
 <meta charset="utf-8">
+
+<!-- 内部トラフィック除外＋GA4 -->
 <script>
-    // 1. 内部トラフィック除外設定
     function isInternalUser() {
         return document.cookie.split(';').some(c => c.trim().startsWith('internal_user=true'));
     }
-    // 2. GA4読み込み
     if (!isInternalUser()) {
         var gaScript = document.createElement('script');
         gaScript.async = true;
@@ -18,20 +18,20 @@
         gtag('js', new Date());
         gtag('config', 'G-2HGEPHVZYY');
     }
-    // 3. 画像読み込みエラー時のフォールバック処理
     function handleImageError(imgElement, width, height, text) {
         imgElement.onerror = null; 
         imgElement.src = `https://placehold.co/${width}x${height}/f7a8a8/ffffff?text=${encodeURIComponent(text)}`;
     }
 </script>
-    
+
 <meta name="viewport" content="width=device-width,initial-scale=1">
-<title>【緊急】挙式直前！背中・二の腕のブツブツを撃退する栄養士の美肌メソッド | Essential Beauty Needs</title>
-<meta name="description" content="ドレス試着で背中ニキビや二の腕のザラつきに気づいた花嫁様へ。栄養士が教える、挙式までに間に合わせるための「短期集中・外注ケア」の緊急マニュアル。">
+<title>【挙式直前】背中・二の腕のブツブツ対策｜体重を減らさない花嫁美容を教える栄養士Yuri</title>
+<meta name="description" content="ドレス試着で背中ニキビや二の腕のザラつきに気づいた花嫁様へ。栄養士Yuriが教える、挙式までに間に合わせる短期集中・外注ケアの緊急マニュアル。">
 <meta name="keywords" content="背中ニキビ,二の腕ブツブツ,ブライダルエステ,花嫁美容,栄養士監修">
+
 <link href="https://fonts.googleapis.com/css2?family=Playfair+Display:wght@600&family=Quicksand:wght@400;600&display=swap" rel="stylesheet">
 <link rel="canonical" href="https://essential-beauty-needs.com/bridal-care.html" />
-    
+
 <style>
 :root {
     --bg: #fff8f8;
@@ -46,7 +46,7 @@
 }
 * { box-sizing: border-box; margin: 0; padding: 0; }
 body { font-family: 'Quicksand', sans-serif; background: var(--bg); color: #333; line-height: 1.8; }
-html { scroll-behavior: smooth; } /* スムーズスクロール追加 */
+html { scroll-behavior: smooth; }
 
 header {
     text-align: center;
@@ -81,7 +81,7 @@ p.lead {
     color: #5a4545;
     font-weight: 600;
     text-shadow: 1px 1px 2px rgba(255,255,255,0.8);
-    background: rgba(255,255,255,0.5); /* 読みやすさのために半透明背景追加 */
+    background: rgba(255,255,255,0.5);
     display: inline-block;
     padding: 5px 15px;
     border-radius: 5px;
@@ -113,7 +113,6 @@ p.lead {
     padding: 30px;
     border-radius: 15px;
     border: 2px dashed var(--accent);
-    margin-top: 0; 
 }
 .check-list li {
     list-style: none;
@@ -132,59 +131,10 @@ p.lead {
     font-size: 20px;
 }
 
-/* 診断ツールのスタイル */
-.quiz-container {
-    background-color: #f0f8ff; 
-    padding: 25px; 
-    border-radius: 12px; 
-    border: 1px dashed #4682b4; 
-    text-align: center;
-    margin-top: 40px;
-}
+/* 診断ツール */
+.quiz-container { background-color: #f0f8ff; padding: 25px; border-radius: 12px; border: 1px dashed #4682b4; text-align: center; margin-top: 40px; }
 
-/* メインCTA（Dione）周りの強化 */
-.hero-offer {
-    background: #fff;
-    border: 3px solid #f7a8a8;
-    border-radius: 15px;
-    padding: 30px 20px;
-    box-shadow: 0 10px 25px rgba(247, 168, 168, 0.15);
-    margin-top: 30px;
-    position: relative;
-}
-.hero-tag {
-    position: absolute;
-    top: -15px;
-    left: 50%;
-    transform: translateX(-50%);
-    background: var(--strong);
-    color: #fff;
-    padding: 5px 20px;
-    border-radius: 20px;
-    font-weight: bold;
-    font-size: 14px;
-    box-shadow: 0 4px 10px rgba(214, 51, 108, 0.3);
-}
-
-/* 緊急性アラート */
-.urgency-box {
-    background-color: var(--alert-bg);
-    border: 1px solid var(--alert-border);
-    padding: 12px;
-    border-radius: 8px;
-    margin: 20px auto 10px;
-    text-align: center;
-    max-width: 400px;
-}
-.urgency-text {
-    color: var(--alert-text);
-    font-weight: bold;
-    font-size: 14px;
-    margin: 0;
-    line-height: 1.5;
-}
-
-/* ボタン（CTA）スタイル */
+/* CTAボタン */
 .cta-btn {
     display: block;
     width: 100%;
@@ -209,7 +159,8 @@ p.lead {
     background: linear-gradient(45deg, #FFB6C1, #FF69B4);
     box-shadow: 0 4px 15px rgba(255, 105, 180, 0.4);
 }
-/* サブCTA（ジェル） */
+
+/* サブCTA */
 .sub-offer {
     background: #f9f9f9;
     border: 1px solid #ddd;
@@ -225,9 +176,7 @@ p.lead {
     max-width: 300px;
     box-shadow: none;
 }
-.cta-sub:hover {
-    background: #999;
-}
+.cta-sub:hover { background: #999; }
 
 .cta-micro {
     font-size: 13px;
@@ -269,7 +218,6 @@ footer {
 }
 .footer-col a::before { content: "・"; position: absolute; left: 0; color: #f7a8a8; }
 .footer-bottom { text-align: center; margin-top: 50px; padding-top: 30px; border-top: 1px solid #eee; width: 100%; }
-
 .footer-room-link {
     display: inline-block; color: #c63535; font-weight: bold; border: 1px solid #c63535; padding: 8px 20px; border-radius: 20px; text-decoration: none; margin-bottom: 20px; background: #fff; transition: 0.3s;
 }
@@ -308,178 +256,181 @@ footer {
 <body>
 
 <header>
-    <h1>Essential Beauty Needs</h1>
+    <h1>【挙式直前】背中・二の腕のブツブツを撃退する<br>栄養士監修・花嫁のための緊急美肌ケア</h1>
     <p class="lead">
     【挙式まで3ヶ月以内】<br>
     背中・二の腕のブツブツを<br>
     「今日から対処したい」花嫁様へ
     </p>
+    <p style="font-size:14px; margin-top:10px; color:#5a4545;">
+      体重を減らすより、ラインと肌で選ばれる花嫁へ。<br>
+      栄養士Yuriが提案する「外注も含めた現実的ブライダル美容」です。
+    </p>
 </header>
 
 <main class="container">
+  <!-- 悩みチェックボックス -->
+  <section class="lp-section">
+      <div class="check-box">
+          <p style="text-align: center; font-weight: bold; margin-bottom: 20px; font-size:18px;">こんな「見なかったことにしたい」悩みありませんか？</p>
+          <ul class="check-list">
+              <li>試着室の鏡で見た自分の背中が、思ったより荒れていた</li>
+              <li>二の腕の赤いプツプツ（毛孔性苔癬）がファンデで隠しきれない</li>
+              <li>エステに通う予算も時間も、もう残っていない</li>
+              <li>一生残る結婚式の写真で、絶対に後悔したくない</li>
+          </ul>
+      </div>
 
-    <section class="lp-section">
-        <div class="check-box">
-            <p style="text-align: center; font-weight: bold; margin-bottom: 20px; font-size:18px;">こんな「見なかったことにしたい」悩みありませんか？</p>
-            <ul class="check-list">
-                <li>試着室の鏡で見た自分の背中が、思ったより荒れていた</li>
-                <li>二の腕の赤いプツプツ（毛孔性苔癬）がファンデで隠しきれない</li>
-                <li>エステに通う予算も時間も、もう残っていない</li>
-                <li>一生残る結婚式の写真で、絶対に後悔したくない</li>
-            </ul>
-        </div>
-
-        <section class="lp-section" id="shindan-tool" style="scroll-margin-top: 40px;">
-            <div class="quiz-container">
-                <h3 style="color: #0056b3; margin-bottom: 20px; font-size: 20px;">🔍 栄養士Yuriの<br>【肌荒れ原因】無料診断</h3>
-                <p style="margin-bottom: 20px;">あなたの背中・二の腕荒れの「真の原因」は？<br>まずは現状をチェックしてみましょう。</p>
-                
-                <div id="quiz-area">
-                    <div class="question-box" style="margin-bottom: 15px; text-align: left;">
-                        <p style="font-weight:bold;">Q1. 最近、睡眠時間は足りていますか？</p>
-                        <label><input type="radio" name="q1" value="0"> 6時間以上ぐっすり寝ている</label><br>
-                        <label><input type="radio" name="q1" value="2"> 忙しくて睡眠不足気味…</label>
-                    </div>
-                    <div class="question-box" style="margin-bottom: 15px; text-align: left;">
-                        <p style="font-weight:bold;">Q2. 揚げ物やスナック菓子を週3回以上食べる？</p>
-                        <label><input type="radio" name="q2" value="2"> よく食べる（大好き！）</label><br>
-                        <label><input type="radio" name="q2" value="0"> あまり食べない</label>
-                    </div>
-                    <div class="question-box" style="margin-bottom: 15px; text-align: left;">
-                        <p style="font-weight:bold;">Q3. 乾燥を感じることは多い？</p>
-                        <label><input type="radio" name="q3" value="2"> カサカサして痒くなることがある</label><br>
-                        <label><input type="radio" name="q3" value="0"> 脂っぽい（ベタつき）が気になる</label>
-                    </div>
-
-                    <button onclick="calculateDiagnosis()" style="background: #e67e22; color: white; border: none; padding: 10px 30px; border-radius: 20px; font-size: 16px; cursor: pointer; margin-top: 10px; font-weight: bold;">診断する</button>
-                </div>
-
-                <div id="result-area" style="display: none; margin-top: 20px; padding: 15px; background: white; border-radius: 8px;">
-                    <h4 id="result-title" style="color: #d35400; font-size: 18px; font-weight: bold;"></h4>
-                    <p id="result-desc" style="font-size: 14px; line-height: 1.6; margin-top:10px; text-align:left;"></p>
-                </div>
-            </div>
-
-            <script>
-                function calculateDiagnosis() {
-                    const q1 = document.querySelector('input[name="q1"]:checked');
-                    const q2 = document.querySelector('input[name="q2"]:checked');
-                    const q3 = document.querySelector('input[name="q3"]:checked');
-
-                    if (!q1 || !q2 || !q3) {
-                        alert("すべての質問に答えてください！");
-                        return;
-                    }
-
-                    let score = parseInt(q1.value) + parseInt(q2.value) + parseInt(q3.value);
-                    
-                    let title = "";
-                    let desc = "";
-
-                    if (score >= 4) {
-                        title = "判定：『体内炎症＆バリア機能崩壊』タイプ";
-                        desc = "今のあなたは、ストレスと食事の乱れで肌の「火事」が起きている状態！まずは砂糖と油を控えて、外側からは「抗炎症成分」が入ったケアを大至急行ってください。";
-                    } else if (score >= 2) {
-                        title = "判定：『隠れ乾燥・インナードライ』タイプ";
-                        desc = "表面は大丈夫そうに見えても、内側の水分が枯渇しています。水をこまめに飲みつつ、保湿力の高い専用クリームで「蓋」をしないと、当日に化粧ノリが悪くなる危険性が！";
-                    } else {
-                        title = "判定：『優等生肌』タイプ…ですが油断大敵！";
-                        desc = "今の習慣は素晴らしいです！ですが、挙式直前のストレスは急な肌荒れを招きます。今のうちに「お守り代わりのケア」を準備して、万全の状態で当日を迎えましょう。";
-                    }
-
-                    document.getElementById('quiz-area').style.display = 'none';
-                    document.getElementById('result-area').style.display = 'block';
-                    document.getElementById('result-title').innerText = title;
-                    document.getElementById('result-desc').innerText = desc;
-                    document.getElementById('advice-section').style.display = 'block';
-                }
-            </script>
-        </section>
-    </section>
-
-    <div id="advice-section" style="display:none; animation: blinkEffect 0.5s;">
-        <div style="margin-top: 30px; line-height: 1.8; text-align:center; padding:0 10px;">
-            <p style="font-weight:bold; color:#503535; font-size:18px; margin-bottom:15px;">しかし、ここで残酷な真実をお伝えします。</p>
-            <p style="text-align:left; max-width:600px; margin:0 auto;">
-                栄養士として申し上げにくいのですが、<br>
-                <strong>「食事改善」だけで肌が生まれ変わるには、最低でも28日（ターンオーバーの周期）かかります。</strong><br><br>
-                もし、あなたの挙式が3ヶ月以内なら、内側のケアだけでは間に合いません。<br>
-                今のあなたに必要なのは、内側から整えつつ、<br>
-                <strong style="background: linear-gradient(transparent 70%, #ffcccc 70%);">「プロの手を借りて、強制的に美肌を作る（時間を買う）」</strong>という選択です。
-            </p>
-        </div>
-        
-        <p style="text-align:center; margin-top:20px; font-size:14px;">
-        👉 今すぐ「外注ケア」という選択肢を見る
-        </p>
-        <a href="#dione-cta" class="cta-btn" style="max-width:280px; font-size:14px;">
-        予約せずに、空き枠だけ見てみる
-        </a>
-    </div>
-
-    <section class="lp-section">
-        <div class="hero-offer" id="dione-cta">
-            <span class="hero-tag">栄養士Yuriの「緊急駆け込み」No.1推奨</span>
-            <h2 class="lp-h2" style="border:none; margin-bottom:10px;">敏感肌でも安心！<br>「発光する背中」を作る唯一の方法</h2>
+      <!-- 診断ツール -->
+      <section class="lp-section" id="shindan-tool" style="scroll-margin-top: 40px;">
+        <div class="quiz-container">
+            <h3 style="color: #0056b3; margin-bottom: 20px; font-size: 20px;">🔍 栄養士Yuriの<br>【肌荒れ原因】無料診断</h3>
+            <p style="margin-bottom: 20px;">あなたの背中・二の腕荒れの「真の原因」は？<br>まずは現状をチェックしてみましょう。</p>
             
-            <p style="font-size:15px; margin-bottom:20px; line-height:1.8;">
-                式直前の自己処理やシェービングは「カミソリ負け」で赤くなるリスクが大！<br>
-                敏感肌専門サロンDioneなら、<strong>3歳でも通えるほど痛くない・熱くない</strong>特殊な方法で、産毛のないツルツルの陶器肌になれます。<br>
-                さらに、施術の中に「美白ケア」が含まれているため、エステに行く時間がない方にも最適です。
-            </p>
+            <div id="quiz-area">
+                <div class="question-box" style="margin-bottom: 15px; text-align: left;">
+                    <p style="font-weight:bold;">Q1. 最近、睡眠時間は足りていますか？</p>
+                    <label><input type="radio" name="q1" value="0"> 6時間以上ぐっすり寝ている</label><br>
+                    <label><input type="radio" name="q1" value="2"> 忙しくて睡眠不足気味…</label>
+                </div>
+                <div class="question-box" style="margin-bottom: 15px; text-align: left;">
+                    <p style="font-weight:bold;">Q2. 揚げ物やスナック菓子を週3回以上食べる？</p>
+                    <label><input type="radio" name="q2" value="2"> よく食べる（大好き！）</label><br>
+                    <label><input type="radio" name="q2" value="0"> あまり食べない</label>
+                </div>
+                <div class="question-box" style="margin-bottom: 15px; text-align: left;">
+                    <p style="font-weight:bold;">Q3. 乾燥を感じることは多い？</p>
+                    <label><input type="radio" name="q3" value="2"> カサカサして痒くなることがある</label><br>
+                    <label><input type="radio" name="q3" value="0"> 脂っぽい（ベタつき）が気になる</label>
+                </div>
 
-            <div class="urgency-box">
-                <p class="urgency-text">
-                    ⚠ 挙式シーズンは予約が殺到します<br>
-                    <span style="font-size: 12px; font-weight: normal; color:#555;">「希望の日が空いていなかった」となる前に、<br>まずは空き枠の確認だけ済ませてください。</span>
-                </p>
+                <button onclick="calculateDiagnosis()" style="background: #e67e22; color: white; border: none; padding: 10px 30px; border-radius: 20px; font-size: 16px; cursor: pointer; margin-top: 10px; font-weight: bold;">診断する</button>
             </div>
 
-            <span class="cta-micro">＼ 今なら3,300円で美肌体験可 ／</span>
-            <a href="https://px.a8.net/svt/ejp?a8mat=4AVFRY+7N2B16+3W7I+BWVTE" rel="nofollow" class="cta-btn cta-dione">
-                ✨ Dioneの体験空き枠を見る ＞
-            </a>
-            <p style="text-align:center; font-size:12px; color:#999; margin-top:10px;">※無理な勧誘はありませんでした（体験談）</p>
+            <div id="result-area" style="display: none; margin-top: 20px; padding: 15px; background: white; border-radius: 8px;">
+                <h4 id="result-title" style="color: #d35400; font-size: 18px; font-weight: bold;"></h4>
+                <p id="result-desc" style="font-size: 14px; line-height: 1.6; margin-top:10px; text-align:left;"></p>
+            </div>
+        </div>
 
-            <p style="font-size:12px; color:#666; text-align:center; margin-top:8px;">
-            ※お近くに店舗がない場合は、<br>
-            「敏感肌対応のブライダル脱毛・シェービング専門店」を目安に探してください
+        <script>
+            function calculateDiagnosis() {
+                const q1 = document.querySelector('input[name="q1"]:checked');
+                const q2 = document.querySelector('input[name="q2"]:checked');
+                const q3 = document.querySelector('input[name="q3"]:checked');
+
+                if (!q1 || !q2 || !q3) { alert("すべての質問に答えてください！"); return; }
+
+                let score = parseInt(q1.value) + parseInt(q2.value) + parseInt(q3.value);
+                let title = "", desc = "";
+
+                if (score >= 4) {
+                    title = "判定：『体内炎症＆バリア機能崩壊』タイプ";
+                    desc = "今のあなたは、ストレスと食事の乱れで肌の「火事」が起きている状態！まずは砂糖と油を控え、外側からは「抗炎症成分」が入ったケアを大至急行ってください。";
+                } else if (score >= 2) {
+                    title = "判定：『隠れ乾燥・インナードライ』タイプ";
+                    desc = "表面は大丈夫そうに見えても、内側の水分が枯渇しています。水をこまめに飲みつつ、保湿力の高い専用クリームで「蓋」をしないと、当日に化粧ノリが悪くなる危険性が！";
+                } else {
+                    title = "判定：『優等生肌』タイプ…ですが油断大敵！";
+                    desc = "今の習慣は素晴らしいです！ですが、挙式直前のストレスは急な肌荒れを招きます。今のうちに「お守り代わりのケア」を準備して、万全の状態で当日を迎えましょう。";
+                }
+
+                document.getElementById('quiz-area').style.display = 'none';
+                document.getElementById('result-area').style.display = 'block';
+                document.getElementById('result-title').innerText = title;
+                document.getElementById('result-desc').innerText = desc;
+                document.getElementById('advice-section').style.display = 'block';
+            }
+        </script>
+    </section>
+
+      <!-- 前略：header～診断ツールまで省略済み -->
+
+<!-- 残酷な真実＆内部リンク -->
+<div id="advice-section" style="display:none; animation: blinkEffect 0.5s;">
+    <div style="margin-top: 30px; line-height: 1.8; text-align:center; padding:0 10px;">
+        <p style="font-weight:bold; color:#503535; font-size:18px; margin-bottom:15px;">しかし、ここで残酷な真実をお伝えします。</p>
+        <p style="text-align:left; max-width:600px; margin:0 auto;">
+            栄養士として申し上げにくいのですが、<br>
+            <strong>「食事改善」だけで肌が生まれ変わるには、最低でも28日（ターンオーバーの周期）かかります。</strong><br><br>
+            もし、あなたの挙式が3ヶ月以内なら、内側のケアだけでは間に合いません。<br>
+            今のあなたに必要なのは、内側から整えつつ、<br>
+            <strong style="background: linear-gradient(transparent 70%, #ffcccc 70%);">「プロの手を借りて、強制的に美肌を作る（時間を買う）」</strong>という選択です。
+        </p>
+    </div>
+
+    <p style="text-align:center; margin-top:20px; font-size:14px;">
+    👉 今すぐ「外注ケア」という選択肢を見る
+    </p>
+    <a href="#dione-cta" class="cta-btn" style="max-width:280px; font-size:14px;">
+    予約せずに、空き枠だけ見てみる
+    </a>
+</div>
+
+<!-- Dione CTA -->
+<section class="lp-section">
+    <div class="hero-offer" id="dione-cta">
+        <span class="hero-tag">栄養士Yuriの「緊急駆け込み」No.1推奨</span>
+        <h2 class="lp-h2" style="border:none; margin-bottom:10px;">敏感肌でも安心！<br>「発光する背中」を作る唯一の方法</h2>
+        
+        <p style="font-size:15px; margin-bottom:20px; line-height:1.8;">
+            式直前の自己処理やシェービングは「カミソリ負け」で赤くなるリスクが大！<br>
+            敏感肌専門サロンDioneなら、<strong>3歳でも通えるほど痛くない・熱くない</strong>特殊な方法で、産毛のないツルツルの陶器肌になれます。<br>
+            さらに、施術の中に「美白ケア」が含まれているため、エステに行く時間がない方にも最適です。
+        </p>
+
+        <div class="urgency-box">
+            <p class="urgency-text">
+                ⚠ 挙式シーズンは予約が殺到します<br>
+                <span style="font-size: 12px; font-weight: normal; color:#555;">「希望の日が空いていなかった」となる前に、まずは空き枠の確認だけ済ませてください。</span>
             </p>
         </div>
-    </section>
 
-    <section class="lp-section sub-offer">
-        <p style="font-size:13px; color:#999; margin-bottom:5px;">
-        ※正直、即効性はサロンには敵いません
-        </p>
-        <h3 style="font-size:16px; color:#666; font-weight:bold; margin-bottom:10px;">「どうしてもサロンに通う時間がない」という方へ</h3>
-        <p style="font-size:14px; margin-bottom:15px; text-align:left;">
-            もし通う時間がゼロなら、せめて自宅ケアだけは「専用」のものに変えてください。<br>
-            背中の分厚い皮膚に浸透するのは、普通のボディクリームではなく「背中専用ジェル」だけです。
-        </p>
-        <a href="https://px.a8.net/svt/ejp?a8mat=45KRG0+5SDRA2+2BHA+3H1GGY" rel="nofollow" class="cta-btn cta-sub">
-            🏠 自宅用：Jewel Rainを見る ＞
+        <span class="cta-micro">＼ 今なら3,300円で美肌体験可 ／</span>
+        <a href="https://px.a8.net/svt/ejp?a8mat=4AVFRY+7N2B16+3W7I+BWVTE" rel="nofollow" class="cta-btn cta-dione">
+            ✨ Dioneの体験空き枠を見る ＞
         </a>
-    </section>
-
-    <div style="max-width: 650px; margin: 50px auto; padding: 5px; background: linear-gradient(135deg, #f7a8a8 0%, #ffdecb 100%); border-radius: 20px; box-shadow: 0 10px 25px rgba(247, 168, 168, 0.25);">
-        <div style="background: #ffffff; border-radius: 15px; padding: 30px 20px; text-align: center; position: relative; overflow: hidden;">
-            <span style="display: inline-block; background: #e74c3c; color: #fff; font-size: 12px; font-weight: bold; padding: 4px 12px; border-radius: 20px; vertical-align: middle; box-shadow: 0 2px 5px rgba(231, 76, 60, 0.3); margin-bottom: 10px;">
-            保存版・アーカイブ完成
-            </span>
-            <h3 style="margin: 5px 0 15px; font-size: 20px; color: #503535; font-family: 'Playfair Display', serif, sans-serif; line-height: 1.4;">
-            <span style="font-size: 0.8em; color: #d4a373;">栄養士Yuriの全ノウハウ公開</span><br>
-            読むだけで変わる「花嫁美容」Note
-            </h3>
-            <p style="font-size:13px; margin-bottom:15px;">※根本からの体質改善や、ダイエット理論はこちらにまとめています。</p>
-            <a href="note-archive.html" class="cta-btn" style="background: linear-gradient(45deg, #f7a8a8, #d68e33); font-size:16px;">
-            全記事一覧を無料で見る ▶
-            </a>
-        </div>
+        <p style="text-align:center; font-size:12px; color:#999; margin-top:10px;">※無理な勧誘はありません（体験談）</p>
+        <p style="font-size:12px; color:#666; text-align:center; margin-top:8px;">
+        ※お近くに店舗がない場合は、<br>
+        「敏感肌対応のブライダル脱毛・シェービング専門店」を目安に探してください
+        </p>
     </div>
+</section>
+
+<!-- サブオファー（自宅ケア） -->
+<section class="lp-section sub-offer">
+    <p style="font-size:13px; color:#999; margin-bottom:5px;">※正直、即効性はサロンには敵いません</p>
+    <h3 style="font-size:16px; color:#666; font-weight:bold; margin-bottom:10px;">「どうしてもサロンに通う時間がない」という方へ</h3>
+    <p style="font-size:14px; margin-bottom:15px; text-align:left;">
+        もし通う時間がゼロなら、せめて自宅ケアだけは「専用」のものに変えてください。<br>
+        背中の分厚い皮膚に浸透するのは、普通のボディクリームではなく「背中専用ジェル」だけです。
+    </p>
+    <a href="https://px.a8.net/svt/ejp?a8mat=45KRG0+5SDRA2+2BHA+3H1GGY" rel="nofollow" class="cta-btn cta-sub">
+        🏠 自宅用：Jewel Rainを見る ＞
+    </a>
+</section>
+
+<!-- NoteアーカイブCTA -->
+<div style="max-width: 650px; margin: 50px auto; padding: 5px; background: linear-gradient(135deg, #f7a8a8 0%, #ffdecb 100%); border-radius: 20px; box-shadow: 0 10px 25px rgba(247, 168, 168, 0.25);">
+    <div style="background: #ffffff; border-radius: 15px; padding: 30px 20px; text-align: center; position: relative; overflow: hidden;">
+        <span style="display: inline-block; background: #e74c3c; color: #fff; font-size: 12px; font-weight: bold; padding: 4px 12px; border-radius: 20px; vertical-align: middle; box-shadow: 0 2px 5px rgba(231, 76, 60, 0.3); margin-bottom: 10px;">
+        保存版・アーカイブ完成
+        </span>
+        <h3 style="margin: 5px 0 15px; font-size: 20px; color: #503535; font-family: 'Playfair Display', serif, sans-serif; line-height: 1.4;">
+        <span style="font-size: 0.8em; color: #d4a373;">栄養士Yuriの全ノウハウ公開</span><br>
+        読むだけで変わる「花嫁美容」Note
+        </h3>
+        <p style="font-size:13px; margin-bottom:15px;">※根本からの体質改善や、ダイエット理論はこちらにまとめています。</p>
+        <a href="note-archive.html" class="cta-btn" style="background: linear-gradient(45deg, #f7a8a8, #d68e33); font-size:16px;">
+        全記事一覧を無料で見る ▶
+        </a>
+    </div>
+</div>
 
 </main>
 
+<!-- フッター -->
 <footer>
   <div class="footer-container">
     <div class="footer-col">
@@ -497,7 +448,7 @@ footer {
       <a href="https://room.rakuten.co.jp/room_e0dd63a90a/items" target="_blank" rel="noopener" class="footer-room-link">
         🏠 管理人Yuriの楽天ROOMを見る
       </a>
-      <br>© 2025 Essential Beauty Needs
+      <br>© 2026 Essential Beauty Needs
   </div>
 </footer>
 <div id="affiliateNotice">※当サイトはアフィリエイト広告を利用しています</div>
