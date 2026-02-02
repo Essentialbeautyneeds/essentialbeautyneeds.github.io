@@ -1,491 +1,161 @@
-<!doctype html>
+<!DOCTYPE html>
 <html lang="ja">
 <head>
-  <meta charset="utf-8" />
-  <meta name="author" content="Essential Beauty Needs">
-  <meta name="robots" content="index, follow">
-    
-  <meta property="og:title" content="挙式までに肌を整える花嫁の教科書 | Essential Beauty Needs">
-  <meta property="og:description" content="結婚式を控えたプレ花嫁様へ。栄養士・スキンケアアドバイザーが教える、ドレスが映える「背中・二の腕・顔」の短期集中ケアとオーガニック美容法。">
-  <meta property="og:image" content="https://essential-beauty-needs.com/images/header_rose.jpg">
-  <meta property="og:type" content="website">
-  <meta property="og:url" content="https://essential-beauty-needs.com/index.html">
-  <meta property="og:locale" content="ja_JP">
-  <meta property="og:site_name" content="Essential Beauty Needs">
-    
-  <meta name="twitter:card" content="summary_large_image">
-  <meta name="twitter:title" content="挙式までに肌を整える花嫁の教科書 | Essential Beauty Needs">
-  <meta name="twitter:description" content="結婚式を控えたプレ花嫁様へ。栄養士・スキンケアアドバイザーが教える、ドレスが映える「背中・二の腕・顔」の短期集中ケアとオーガニック美容法。">
-  <meta name="twitter:image" content="https://essential-beauty-needs.com/images/header_rose.jpg">
-    
-  <meta name="viewport" content="width=device-width,initial-scale=1" />
-  <link rel="icon" href="favicon.ico" type="image/x-icon">
-
-  <script>
-    // 1. 内部トラフィック除外設定
-    function isInternalUser() {
-      return document.cookie.split(';').some(c => c.trim().startsWith('internal_user=true'));
-    }
-      
-    // 2. GA4読み込み
-    if (!isInternalUser()) {
-      var gaScript = document.createElement('script');
-      gaScript.async = true;
-      gaScript.src = "https://www.googletagmanager.com/gtag/js?id=G-2HGEPHVZYY";
-      document.head.appendChild(gaScript);
-      window.dataLayer = window.dataLayer || [];
-      function gtag(){dataLayer.push(arguments);}
-      gtag('js', new Date());
-      gtag('config', 'G-2HGEPHVZYY');
-    } else {
-      console.log('✅ Internal traffic excluded.');
-    }
-
-    // 3. 画像読み込みエラー時のフォールバック処理
-    function handleImageError(imgElement) {
-      imgElement.onerror = null;
-      imgElement.src = "https://placehold.co/600x400/f0f0f0/cccccc?text=No+Image";
-      imgElement.style.objectFit = "cover";
-    }
-  </script>
-
-  <title>挙式までに肌を整える花嫁の教科書 | 栄養士が教える短期集中ケア</title>
-  <meta name="description" content="一生に一度の写真で後悔しないために。栄養士・スキンケアアドバイザーが教える、挙式直前でも間に合う「背中・二の腕・顔」の肌質改善メソッド。">
-  <meta name="keywords" content="花嫁美容, ブライダルエステ, 背中ニキビ, プレ花嫁, オーガニック, スキンケア">
-
-  <link href="https://fonts.googleapis.com/css2?family=Playfair+Display:wght@600&family=Quicksand:wght@400;600&display=swap" rel="stylesheet">
-  <link rel="canonical" href="https://essential-beauty-needs.com/index.html" />
-    
-  <style>
-    :root{
-      --bg:#fff8f8;
-      --card:#ffffff;
-      --accent:#f7a8a8;
-      --accent-hover:#f48b8b;
-      --muted:#666;
-      --btn-text:#fff;
-      --section-bg:#fff9f9;
-      --review-bg:#fff0f0;
-      --text-main: #503535;
-      --room-color: #c63535;
-    }
-    *{box-sizing:border-box;margin:0;padding:0;}
-    body{font-family:'Quicksand',sans-serif;background:var(--bg);color:#333; line-height: 1.8;}
-      
-    /* Header Styles */
-    header{
-      position:relative;
-      text-align:center;
-      color:var(--text-main);
-      padding:80px 20px 30px;
-      background-color: #f7a8a8;
-      background-image:url('images/header_rose.jpg');
-      background-size:cover;
-      background-position:center;
-      border-bottom:3px solid #e6b7b3;
-    }
-    header::after{
-      content:"";
-      position:absolute;top:0;left:0;right:0;bottom:0;
-      background:rgba(255,255,255,0.6);
-      backdrop-filter:blur(2px);
-    }
-    header .container{position:relative; z-index:2;}
-      
-    h1{font-family:'Playfair Display',serif;font-size:38px;letter-spacing:1px;margin-bottom:8px;}
-    h2{font-family:'Playfair Display',serif; text-align:center; color:var(--text-main); margin: 50px 0 30px; font-size: 28px;}
-    h3{color:var(--text-main); margin-bottom: 15px; font-size: 20px;}
-
-    p.lead{font-size:17px;color:#5a4545; margin-bottom: 25px;}
-
-    /* --- New Header Navigation (Clean Style) --- */
-    .main-nav { display: flex; justify-content: center; gap: 15px; margin-bottom: 15px; margin-top: 30px;}
-    .main-nav a {
-        background: rgba(255,255,255,0.9); padding: 10px 20px; border-radius: 25px;
-        text-decoration: none; color: #503535; font-weight: bold; font-size: 15px;
-        box-shadow: 0 2px 5px rgba(0,0,0,0.05); transition: 0.3s;
-    }
-    .main-nav a:hover { transform: translateY(-2px); color: #c63535; }
-
-    /* 開閉式メニュー */
-    details.menu-toggle { margin: 0 auto; max-width: 400px; cursor: pointer; }
-    summary.menu-btn {
-        list-style: none; font-size: 13px; color: #888; font-weight: bold;
-        padding: 8px 15px; border: 1px solid #e6b7b3; border-radius: 20px;
-        background: rgba(255,255,255,0.7); display: inline-block;
-    }
-    summary.menu-btn::after { content: " ▼"; font-size: 10px; }
-    details[open] summary.menu-btn::after { content: " ▲"; }
-    
-    .hidden-links {
-        display: flex; flex-wrap: wrap; justify-content: center; gap: 8px;
-        margin-top: 15px; padding: 15px; background: rgba(255,255,255,0.8);
-        border-radius: 12px; animation: fadeIn 0.3s ease;
-    }
-    .hidden-links a {
-        font-size: 13px; text-decoration: none; color: #555;
-        padding: 6px 12px; background: #fff; border-radius: 6px; border: 1px solid #eee;
-    }
-    @keyframes fadeIn { from { opacity: 0; transform: translateY(-5px); } to { opacity: 1; transform: translateY(0); } }
-
-    .container{max-width:980px;margin:0 auto;padding:0 16px;}
-
-    /* --- 診断ツール用CSS (追加分) --- */
-    .diag-container {
-        background: #fff; padding: 30px; border-radius: 20px; 
-        box-shadow: 0 10px 30px rgba(247, 168, 168, 0.2);
-        border: 2px solid #f7a8a8; max-width: 700px; margin: 30px auto; text-align: center;
-    }
-    .diag-title { font-size: 24px; color: #d6336c; font-weight: bold; margin-bottom: 20px; }
-    .diag-btn { 
-        display: block; width: 100%; padding: 16px; margin: 12px 0; 
-        background-color: #fff0f0; border: 2px solid #f7a8a8; 
-        border-radius: 10px; color: #5c4033; font-size: 18px; font-weight: bold;
-        cursor: pointer; transition: 0.3s; text-align: center; text-decoration: none;
-    }
-    .diag-btn:hover { background-color: #f7a8a8; color: #fff; transform: translateY(-2px); }
-    .question { display: none; animation: fadeIn 0.5s; }
-    .question.active { display: block; }
-    .result { display: none; animation: fadeIn 0.5s; padding: 20px; background: #fffaf4; border-radius: 15px; }
-    .tag { display: inline-block; background: #d6336c; color: #fff; padding: 5px 15px; border-radius: 20px; font-size: 14px; margin-bottom: 15px; }
-
-    /* Concept & Benefits Section */
-    .concept-box {
-      background: #fff;
-      padding: 40px;
-      border-radius: 20px;
-      box-shadow: 0 5px 20px rgba(0,0,0,0.05);
-      margin: 40px 0;
-      text-align: center;
-    }
-    .benefit-grid {
-      display: grid;
-      grid-template-columns: repeat(auto-fit, minmax(280px, 1fr));
-      gap: 30px;
-      margin-top: 40px;
-    }
-    .benefit-card {
-      background: #fff;
-      padding: 30px 20px;
-      border-radius: 16px;
-      text-align: center;
-      border: 1px solid #fceeee;
-    }
-    .benefit-icon {
-      font-size: 40px;
-      margin-bottom: 15px;
-      display: block;
-    }
-
-    /* "Recommended For" Section */
-    .recommend-box {
-      background: #fffaf4;
-      padding: 40px 20px;
-      border-radius: 20px;
-      margin-top: 40px;
-      border: 2px dashed #f7a8a8;
-      text-align: center;
-    }
-    .check-list {
-      list-style: none;
-      padding: 0;
-      max-width: 600px;
-      margin: 0 auto;
-      text-align: left;
-    }
-    .check-list li {
-      margin-bottom: 15px;
-      font-size: 18px;
-      color: #555;
-      padding-left: 30px;
-      position: relative;
-    }
-    .check-list li::before {
-      content: "✔";
-      position: absolute;
-      left: 0;
-      color: #f7a8a8;
-      font-weight: bold;
-      font-size: 20px;
-    }
-
-    /* Common Buttons */
-    .btn-main {
-      display:inline-block;
-      padding:14px 32px;
-      border-radius:30px;
-      background:linear-gradient(45deg,#f48b8b,#f7a8a8);
-      color: #fff;
-      text-decoration: none;
-      font-weight: bold;
-      box-shadow: 0 4px 12px rgba(0,0,0,0.15);
-      transition: 0.3s;
-    }
-    .btn-main:hover {
-      transform: translateY(-3px);
-      box-shadow: 0 6px 18px rgba(0,0,0,0.2);
-    }
-
-    /* Images */
-    .responsive-img {
-        max-width: 100%;
-        height: auto;
-        border-radius: 10px;
-        box-shadow: 0 5px 15px rgba(0,0,0,0.1);
-    }
-
-    /* Footer */
-    footer {
-        background: #fffaf4;
-        border-top: 3px solid #f7a8a8;
-        padding: 50px 20px 60px;
-        margin-top: 60px;
-        color: #555;
-        font-size: 14px;
-    }
-    .footer-container {
-        max-width: 960px;
-        margin: 0 auto;
-        display: flex;
-        flex-wrap: wrap;
-        justify-content: space-between;
-        gap: 30px;
-        text-align: left;
-    }
-    .footer-col { flex: 1; min-width: 200px; }
-    .footer-col h3 {
-        font-size: 16px;
-        color: #d6336c;
-        border-bottom: 1px dashed #f4b5b5;
-        padding-bottom: 8px;
-        margin-bottom: 15px;
-        font-weight: bold;
-    }
-    .footer-col a {
-        display: block; color: #666; text-decoration: none; margin-bottom: 10px; transition: 0.3s; position: relative; padding-left: 10px;
-    }
-    .footer-col a::before { content: "・"; position: absolute; left: 0; color: #f7a8a8; }
-    .footer-col a:hover { color: #d6336c; padding-left: 15px; }
-    .footer-bottom { text-align: center; margin-top: 50px; padding-top: 30px; border-top: 1px solid #eee; }
-      
-    .footer-room-link {
-        display: inline-block; color: #c63535; font-weight: bold; border: 1px solid #c63535; padding: 8px 20px; border-radius: 20px; text-decoration: none; margin-bottom: 20px; background: #fff; transition: 0.3s;
-    }
-    .footer-room-link:hover { background: #c63535; color: #fff; }
-
-    #affiliateNotice {
-      position: fixed; right: 12px; bottom: 12px;
-      background: rgba(255, 255, 255, 0.8);
-      color: #555; font-size: 11px;
-      border-radius: 6px; padding: 4px 8px;
-      box-shadow: 0 2px 6px rgba(0,0,0,0.1);
-      z-index: 999;
-    }
-      
-    @media(max-width:600px){
-      h1{font-size:28px;}
-      .concept-box {padding: 20px;}
-      header {padding-top: 60px;}
-    }
-
-    /* Noteキラキラボタン用 */
-    @keyframes shine { 0% { transform: translateX(-100%) skewX(-15deg); } 100% { transform: translateX(200%) skewX(-15deg); } }
-    .shiny-btn::after {
-      content: ''; position: absolute; top: 0; left: 0; width: 50%; height: 100%;
-      background: linear-gradient(to right, rgba(255,255,255,0) 0%, rgba(255,255,255,0.3) 50%, rgba(255,255,255,0) 100%);
-      transform: skewX(-15deg); animation: shine 3s infinite;
-    }
-    /* New!! 点滅 */
-    @keyframes blinkEffect { 0% { opacity: 1; } 50% { opacity: 0.3; } 100% { opacity: 1; } }
-    .new-mark { color: #ff0000; font-weight: bold; font-size: 0.8em; margin-left: 5px; animation: blinkEffect 1.2s infinite; vertical-align: super; }
-  </style>
+  <meta charset="UTF-8">
+  <title>体重を減らさない花嫁ダイエット｜栄養士が教える一生太らない花嫁バイブル</title>
+  <meta name="description" content="体重を減らさず、ドレスが一番きれいに見える体へ。痩せて後悔する花嫁をこれ以上増やさないために、栄養士が花嫁ダイエットの正解と順番を解説します。">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <link rel="stylesheet" href="style.css">
 </head>
+
 <body>
 
-<header>
-  <div class="container">
-    <h1>
-      <a href="index.html" style="text-decoration:none; color:inherit;">
-        花嫁のためのオーガニック・スキンケア<br>
-        <span style="font-size:0.6em; display:block; margin-top:5px;">一生に一度の写真を、最高の素肌で。</span>
-      </a>
-    </h1>
-    <p class="lead">
-      「エステに行く時間がない」「背中の荒れが治らない」<br>
-      そんな花嫁様の悩みを、栄養士視点の「内側ケア」とオーガニックの「優しさ」で解決します。
-    </p>
+<header class="hero">
+  <h1>体重を減らさない花嫁ダイエット</h1>
 
-    <nav class="main-nav">
-        <a href="index.html">🏠 公式サイトTOP</a>
-        <a href="#diagnosis-area">👰 花嫁ケア診断</a>
-    </nav>
+  <p class="hero-sub">
+    栄養士が教える、<br>
+    ドレスが一番きれいに見える体の整え方
+  </p>
 
-    <details class="menu-toggle">
-        <summary class="menu-btn">その他のメニューを表示</summary>
-        <div class="hidden-links">
-            <a href="skin-ranking.html">✨ ランキング</a>
-            <a href="note-archive.html">📖 Note記事一覧</a>
-            <a href="accept-gym.html">💪 短期集中ジム</a>
-            <a href="beauty-column.html">💄 コラム</a>
-        </div>
-    </details>
-  </div>
+  <p class="hero-catch">
+    痩せたのに、後悔する花嫁を<br>
+    これ以上増やさないために。
+  </p>
+
+  <a href="https://note.com/yuri_organic/n/n81b195407c3e" class="btn-main">
+    📘 無料の序章を読む
+  </a>
 </header>
 
-<main class="container">
+<main>
 
-  <div id="diagnosis-area" class="diag-container">
-    <div class="diag-title">⚡ あなたに最適なケアはどれ？<br><span style="font-size:0.7em; color:#555;">30秒でわかる花嫁美容診断</span></div>
+<section class="intro">
+  <h2>なぜ「体重を減らさない花嫁ダイエット」なのか</h2>
 
-    <div id="q1" class="question active">
-        <p style="font-size:18px; margin-bottom:20px;">Q1. 結婚式まで、あとどのくらい？</p>
-        <button class="diag-btn" onclick="nextQ('q2a')">半年以上ある（じっくり派）🐢</button>
-        <button class="diag-btn" onclick="nextQ('q2b')">3ヶ月以内（焦ってる💦）🐇</button>
-    </div>
+  <p>
+    結婚式前、多くのプレ花嫁さんが<br>
+    「とにかく体重を落とさなきゃ」と焦ります。
+  </p>
 
-    <div id="q2a" class="question">
-        <p style="font-size:18px; margin-bottom:20px;">Q2. 一番解決したい悩みは？</p>
-        <button class="diag-btn" onclick="showResult('result_skin')">背中の肌荒れ・ニキビ 😱</button>
-        <button class="diag-btn" onclick="showResult('result_diet')">二の腕・背中のハミ肉 🐷</button>
-    </div>
+  <p>
+    でも実際には、<br>
+    <strong>体重を減らそうとした花嫁ほど、当日の写真で後悔する</strong>
+    ケースを何度も見てきました。
+  </p>
 
-    <div id="q2b" class="question">
-        <p style="font-size:18px; margin-bottom:20px;">Q2. ぶっちゃけ、予算は？</p>
-        <button class="diag-btn" onclick="showResult('result_diet')">コスパ重視でなんとかしたい 👛</button>
-        <button class="diag-btn" onclick="showResult('result_vip')">高くても確実に結果を出したい 💎</button>
-    </div>
+  <ul>
+    <li>背中が貧相に見える</li>
+    <li>二の腕がたるむ</li>
+    <li>顔だけやつれる</li>
+  </ul>
 
-    <div id="result_skin" class="result">
-        <span class="tag">#肌質改善タイプ</span>
-        <h2 style="color:#d6336c; margin-top:10px;">背中美人コース</h2>
-        <p>時間はまだあります！今のうちに「土台」を整えましょう。<br>医療監修のケアで、当日は発光するような背中に✨</p>
-        
-        <a href="bridal-care.html" class="btn-main" style="display:block; margin:20px auto; max-width:300px;">おすすめの背中ケアを見る ➤</a>
-        
-        <p style="font-size:12px; color:#999;">※Yuri提携の限定キャンペーンを確認する</p>
-    </div>
+  <p>
+    これは努力不足ではありません。<br>
+    <strong>花嫁ダイエットの「順番」を間違えただけ</strong>です。
+  </p>
+</section>
 
-    <div id="result_diet" class="result">
-        <span class="tag">#ラインシェイプタイプ</span>
-        <h2 style="color:#d6336c; margin-top:10px;">駆け込みエステコース</h2>
-        <p>脂肪を柔らかくして流すのが最短ルートです。<br>まずは「体験」で自分に合うかチェック！</p>
-        
-        <a href="accept-gym.html" class="btn-main" style="display:block; margin:20px auto; max-width:300px;">おすすめの痩身エステを見る ➤</a>
-    </div>
+<section class="diagnosis">
+  <h2>花嫁ダイエットがうまくいかない本当の理由</h2>
 
-    <div id="result_vip" class="result">
-        <span class="tag" style="background:#000;">#短期集中VIPタイプ</span>
-        <h2 style="margin-top:10px;">結果コミット特別プラン</h2>
-        <p>あなたは「本気」の花嫁様ですね。<br>一般には出回らない、私が唯一信頼する<br>短期集中プログラムへの招待状です💌</p>
-        
-        <a href="accept-gym.html" class="btn-main" style="background:#000; display:block; margin:20px auto; max-width:300px;">VIPプラン詳細を見る ➤</a>
-    </div>
-  </div>
-  <div style="max-width: 700px; margin: 40px auto; padding: 5px; background: linear-gradient(135deg, #f7a8a8 0%, #ffdecb 100%); border-radius: 20px;">
-    <div style="background: #ffffff; border-radius: 15px; padding: 30px 20px; text-align: center; position: relative; overflow: hidden;">
-      <span style="display: inline-block; background: #e74c3c; color: #fff; font-size: 12px; font-weight: bold; padding: 4px 12px; border-radius: 20px; margin-bottom: 10px;">
-        保存版・アーカイブ
-      </span>
-      <h3 style="margin: 5px 0 15px; font-size: 22px; color: #503535; font-family: 'Playfair Display', serif;">
-        <span style="font-size: 0.8em; color: #d4a373;">栄養士Yuriの全ノウハウ公開</span><br>
-        読むだけで変わる<br>「花嫁美容」Note
-      </h3>
-      <a href="note-archive.html" class="shiny-btn" style="display: block; width: 100%; max-width: 320px; margin: 20px auto 10px; background: linear-gradient(45deg, #f7a8a8, #d68e33); color: #fff; text-decoration: none; font-weight: bold; font-size: 18px; padding: 18px 0; border-radius: 50px;">
-        全記事一覧を無料で見る ▶
-      </a>
-    </div>
+  <p>
+    花嫁が太る・むくむ・痩せない理由は、<br>
+    実は人によってまったく違います。
+  </p>
+
+  <div class="type-box">
+    <h3>むくみ・冷え型の花嫁</h3>
+    <p>朝と夜で体のサイズが違う／指輪が夕方きつくなる</p>
   </div>
 
-  <section class="concept-box">
-    <h2>なぜ今、花嫁に「オーガニック」なのか？</h2>
-    <p style="font-size:16px; text-align:left; line-height:2; margin-bottom:20px;">
-      結婚式前の肌は、ストレスや寝不足でとてもデリケート。<br>
-      焦って強力な成分が入ったコスメを使うと、当日に赤みが出てしまうリスクもあります。
-    </p>
-    <p style="font-size:16px; text-align:left; line-height:2;">
-      当サイトが提案するのは、<strong>「トラブルを隠す」のではなく「肌本来を鍛える」ケア。</strong><br>
-      植物が持つ抗酸化力と、栄養士視点のインナーケアで、写真映えする「発光するような素肌」を目指しませんか？
-    </p>
-  </section>
+  <div class="type-box">
+    <h3>脂肪固定型の花嫁</h3>
+    <p>二の腕・背中が硬く、運動しても落ちにくい</p>
+  </div>
 
-  <section>
-    <h2>挙式直前でも安心！<br> 3つのメリット</h2>
-    <div class="benefit-grid">
-      <div class="benefit-card">
-        <span class="benefit-icon">🍃</span>
-        <h3>1. 敏感な時期でも安心</h3>
-        <p>挙式前のストレスでゆらぐ肌にも優しく浸透。石油系成分を使わないため、式直前の「もしも」の肌トラブルリスクを最小限に抑えられます。</p>
-      </div>
-      <div class="benefit-card">
-        <span class="benefit-icon">💧</span>
-        <h3>2. 化粧ノリが一日続く</h3>
-        <p>植物オイルが角質層のバリア機能を強化。長時間の披露宴や撮影でも、乾燥によるメイク崩れを防ぎ、潤いのある肌をキープします。</p>
-      </div>
-      <div class="benefit-card">
-        <span class="benefit-icon">✨</span>
-        <h3>3. 写真映えする透明感</h3>
-        <p>豊富なビタミンと抗酸化成分が、くすみを払いトーンアップ。高画質のカメラでも自信が持てる、内側から輝くような肌を育みます。</p>
-      </div>
-    </div>
-  </section>
+  <div class="type-box">
+    <h3>腸内環境・炎症型の花嫁</h3>
+    <p>背中ニキビ・肌荒れ・甘いものがやめられない</p>
+  </div>
 
-  <section class="recommend-box">
-    <h2>こんなお悩みを持つ花嫁様に最適です</h2>
-    <ul class="check-list">
-      <li><strong>背中や二の腕を出すドレスに自信がない</strong></li>
-      <li><strong>エステに行く予算も時間も足りない</strong></li>
-      <li><strong>当日、肌荒れしないか不安でたまらない</strong></li>
-      <li><strong>香りでリラックスして準備を楽しみたい</strong></li>
-    </ul>
-  </section>
+  <div class="type-box">
+    <h3>ホルモン・ストレス型の花嫁</h3>
+    <p>生理前に体重が増える／疲れが取れない</p>
+  </div>
+
+  <p class="note">
+    ※ 多くの花嫁さんは、複数タイプが重なっています
+  </p>
+</section>
+
+<section class="bridge">
+  <h2>無料情報だけでは花嫁ダイエットが成功しない理由</h2>
+
+  <p>
+    SNSやブログ、YouTubeで<br>
+    正しい情報はすでに溢れています。
+  </p>
+
+  <p>
+    それでも変われない理由は、たった一つ。
+  </p>
+
+  <p class="em">
+    <strong>
+      あなたの体と、結婚式までの時期に合った<br>
+      「やる順番」が書かれていないからです。
+    </strong>
+  </p>
+
+  <p>
+    今は減らす？整える？守る？<br>
+    判断できないまま頑張るのが、一番危険です。
+  </p>
+
+  <a href="https://note.com/yuri_organic/n/n047d215e5da6" class="btn-sub">
+    📗 体重を減らさない花嫁ダイエット【序章・診断編】¥980
+  </a>
+</section>
+
+<section class="premium">
+  <h2>一生太らない花嫁バイブルとは</h2>
+
+  <p>
+    980円の序章は、<br>
+    間違った努力をやめるための入口です。
+  </p>
+
+  <p>
+    完全版では、
+  </p>
+
+  <ul>
+    <li>花嫁タイプ別の食事設計</li>
+    <li>3ヶ月前〜当日までの具体的な流れ</li>
+    <li>外食・仕事がある日の考え方</li>
+    <li>式後にリバウンドしない体の整え方</li>
+  </ul>
+
+  <p>
+    を、<strong>一つの設計図</strong>としてまとめています。
+  </p>
+
+  <a href="https://note.com/yuri_organic/n/naf93d0548ba1" class="btn-main">
+    📘 一生太らない花嫁バイブル（完全版）¥4,980
+  </a>
+</section>
 
 </main>
 
-<footer>
-  <div class="footer-container">
-    <div class="footer-col">
-      <h3>🌸 スキンケア・悩み別</h3>
-      <a href="#diagnosis-area">👰 結婚式直前！花嫁診断<span class="new-mark">New!!</span></a>
-      <a href="skin-ranking.html">おすすめスキンケアランキング</a>
-      <a href="acne-care.html">肌荒れ・敏感肌・ニキビケア</a>
-    </div>
-    <div class="footer-col">
-      <h3>🛁 ボディ・ヘア・インナー</h3>
-      <a href="diet-beauty.html">インナービューティー</a>
-      <a href="accept-gym.html">花嫁ボディメイク厳選4選<span class="new-mark">New!!</span></a>
-      <a href="smoothie-recipes.html">栄養士おすすめスムージー<span class="new-mark">New!!</span></a>
-    </div>
-    <div class="footer-col">
-      <h3>🎁 特集・コラム・その他</h3>
-      <a href="note-archive.html">栄養士Yuriの公式Note一覧<span class="new-mark">New!!</span></a>
-      <a href="beauty-column.html">ビューティーコラム一覧</a>
-    </div>
-  </div>
-  <div class="footer-bottom">
-      <a href="https://room.rakuten.co.jp/room_e0dd63a90a/items" target="_blank" rel="noopener" class="footer-room-link">
-        🏠 管理人Yuriの楽天ROOMを見る
-      </a>
-      <br>
-      © 2026 Essential Beauty Needs<br><br>
-      <a href="privacy-policy.html" style="color:#888; text-decoration:none; font-size:12px;">プライバシーポリシー</a>
-  </div>
+<footer class="footer">
+  <p>
+    栄養士｜Yuri 🌱<br>
+    体重ではなく、ラインで選ぶ花嫁へ
+  </p>
+
+  <a href="privacy-policy.html">プライバシーポリシー</a>
 </footer>
-
-<div id="affiliateNotice">※当サイトはアフィリエイト広告（Amazonアソシエイト含む）を利用しています</div>
-
-<script>
-    function nextQ(nextId) {
-        document.querySelectorAll('.question').forEach(el => el.classList.remove('active'));
-        document.getElementById(nextId).classList.add('active');
-    }
-    function showResult(resultId) {
-        document.querySelectorAll('.question').forEach(el => el.classList.remove('active'));
-        document.getElementById(resultId).style.display = 'block';
-        // 結果までスクロール
-        document.getElementById('diagnosis-area').scrollIntoView({behavior: 'smooth'});
-    }
-</script>
 
 </body>
 </html>
-
