@@ -1,18 +1,47 @@
-/* Reset & basic styling */
+/* =========================
+   Root variables（必須）
+========================= */
+:root {
+  --bg: #fffaf9;
+  --card: #ffffff;
+  --section-bg: #fff9f9;
+  --accent: #f7a8a8;
+  --accent-hover: #f48b8b;
+  --muted: #666;
+  --text-main: #503535;
+}
+
+/* =========================
+   Reset & basic styling
+========================= */
 body {
     font-family: 'Quicksand', sans-serif;
     margin: 0;
     padding: 0;
     line-height: 1.7;
     color: #444;
-    background: #fffaf9;
+    background: var(--bg);
 }
 
+img {
+    max-width: 100%;
+    height: auto;
+    border-radius: 12px;
+}
+
+a {
+    text-decoration: none;
+    color: inherit;
+}
+
+/* =========================
+   Header
+========================= */
 header {
     text-align: center;
     padding: 60px 20px 40px;
     background: linear-gradient(135deg, #ffe6e6, #ffdcdc);
-    color: #503535;
+    color: var(--text-main);
 }
 
 header h1 {
@@ -27,16 +56,21 @@ header p {
     margin-bottom: 14px;
 }
 
-/* 上部ナビリンク（中央揃え） */
-.top-links {
+/* =========================
+   Top navigation buttons
+========================= */
+.top-links,
+.nav-links {
     display: flex;
-    justify-content: center; /* 中央揃え */
-    flex-wrap: wrap;         /* 小さい画面で折り返す */
+    justify-content: center;
+    flex-wrap: wrap;
     gap: 12px;
-    margin: 20px 0 40px;
+    margin: 20px auto 40px;
+    padding: 0 20px;
 }
 
-.top-links a {
+.top-links a,
+.nav-links a {
     display: inline-flex;
     align-items: center;
     justify-content: center;
@@ -44,22 +78,24 @@ header p {
     background: #ffdcdc;
     color: #d6336c;
     font-weight: 600;
-    font-size: 1.15em;
-    text-decoration: none;
+    font-size: 15px;
     padding: 10px 22px;
     border-radius: 30px;
     box-shadow: 0 3px 8px rgba(0,0,0,0.08);
     transition: all 0.3s ease;
 }
 
-.top-links a:hover {
+.top-links a:hover,
+.nav-links a:hover {
     background: linear-gradient(135deg, #fcdcdc, #f48b8b);
     color: #fff;
     transform: translateY(-2px);
     box-shadow: 0 6px 15px rgba(0,0,0,0.12);
 }
 
-/* メイン */
+/* =========================
+   Main layout
+========================= */
 main {
     max-width: 900px;
     margin: 0 auto;
@@ -68,7 +104,7 @@ main {
 
 h2 {
     font-family: 'Playfair Display', serif;
-    color: #503535;
+    color: var(--text-main);
     font-size: 26px;
     text-align: center;
     margin: 50px 0 20px;
@@ -79,15 +115,11 @@ p {
     margin-bottom: 20px;
 }
 
-img {
-    width: 100%;
-    border-radius: 12px;
-    margin: 20px 0;
-}
-
-/* 商品カード */
+/* =========================
+   Card components
+========================= */
 .card {
-    background: #fff;
+    background: var(--card);
     border-radius: 14px;
     padding: 16px;
     box-shadow: 0 4px 16px rgba(0,0,0,0.06);
@@ -110,26 +142,23 @@ img {
 .card p {
     font-size: 14px;
     color: #444;
-    margin-bottom: 10px;
 }
 
 .card ul {
     font-size: 14px;
     color: #555;
     text-align: left;
-    margin: 10px auto 12px;
+    margin: 10px auto;
     max-width: 500px;
-    list-style: disc;
     padding-left: 20px;
 }
 
 .card a.btn {
     display: inline-block;
-    background: #f48b8b;
+    background: var(--accent-hover);
     color: #fff;
     padding: 10px 24px;
     border-radius: 28px;
-    text-decoration: none;
     font-weight: 700;
     box-shadow: 0 4px 12px rgba(0,0,0,0.12);
     transition: all .25s ease;
@@ -140,25 +169,12 @@ img {
     background: #f26a6a;
 }
 
-/* レビュー・ビフォーアフター */
+/* =========================
+   Review / Before After
+========================= */
 .review-box {
     text-align: center;
     margin: 30px 0;
-}
-
-.review-box img {
-    width: 100%;
-    max-width: 500px;
-    border-radius: 12px;
-    margin-bottom: 16px;
-}
-
-.review-box p {
-    font-size: 14px;
-    color: #333;
-    line-height: 1.6;
-    max-width: 700px;
-    margin: 0 auto;
 }
 
 .review-box p strong {
@@ -167,245 +183,110 @@ img {
     color: #d6336c;
 }
 
-/* 最下部トップページボタン */
-.back-btn {
-    text-align: center;
-    margin: 40px 0;
-}
-
-.back-btn a {
-    display: inline-block;
-    background: #f48b8b;
-    color: #fff;
-    padding: 12px 28px;
-    border-radius: 30px;
-    text-decoration: none;
-    font-weight: 600;
-    box-shadow: 0 4px 12px rgba(0,0,0,0.15);
-    transition: all .3s ease;
-}
-
-.back-btn a:hover {
-    transform: translateY(-3px);
-    background: #f26a6a;
-}
-
-/* 季節のおすすめカード */
+/* =========================
+   Seasonal section
+========================= */
 .seasonal-section {
     background: var(--section-bg);
-    padding: 60px 0;
-    margin-top: 60px;
+    padding: 30px 20px;
+    margin-top: 40px;
     text-align: center;
 }
 
 .seasonal-section h2 {
-    font-family: 'Playfair Display', serif;
     font-size: 28px;
-    color: #503535;
-    margin-bottom: 30px;
+    margin: 10px 0;
 }
 
 .seasonal-card {
     display: inline-block;
-    width: 80%;
+    width: 90%;
     max-width: 680px;
     background: var(--card);
     border-radius: 18px;
     box-shadow: 0 5px 15px rgba(0,0,0,0.08);
     overflow: hidden;
-    transition: transform .3s, box-shadow .3s;
+    transition: all .3s;
     text-align: left;
 }
 
 .seasonal-card:hover {
     transform: translateY(-5px);
-    box-shadow: 0 8px 25px rgba(0,0,0,0.15);
-}
-
-.seasonal-card img {
-    width: 100%;
-    height: auto;
-    display: block;
-    border-bottom: 3px solid var(--accent);
 }
 
 .seasonal-card-text {
     padding: 20px;
 }
 
-.seasonal-card-text h3 {
-    font-size: 20px;
-    color: #503535;
-    margin-bottom: 10px;
-}
-
-.seasonal-card-text p {
-    font-size: 14px;
-    color: var(--muted);
-    line-height: 1.6;
-}
-
-.seasonal-card-text .link-arrow {
-    display: inline-block;
-    margin-top: 8px;
-    color: var(--accent);
-    font-weight: 600;
-}
-
-@media(max-width: 600px) {
-    .seasonal-card {
-        width: 90%;
-    }
-}
-
-footer {
-    background: #d6336c;
-    color: #fff;
-    text-align: center;
-    padding: 20px;
-    font-size: 0.9em;
-}
-
-
-
-/* ボタンを中央に配置するラッパー */
+/* =========================
+   Seasonal buttons
+========================= */
 .seasonal-buttons {
     text-align: center;
     margin-top: 20px;
     display: flex;
     justify-content: center;
     gap: 20px;
-    flex-wrap: wrap; /* スマホでも折り返す */
+    flex-wrap: wrap;
 }
 
-/* グローボタン本体（既存の.season-btnと差し替え） */
 .season-btn {
-  /* レイアウトと配置 */
-  display: inline-flex; /* テキストとアイコンを横並びにする */
-  align-items: center; /* 垂直方向の中央揃え */
-  text-decoration: none; /* リンクの下線を削除 */
-  cursor: pointer;
-
-  /* サイズと余白 */
-  /* 上下 左右(アイコン側) 上下 テキスト側 */
-  padding: 10px 15px 10px 25px; 
-
-  /* デザイン */
-  background-color: #ffffff; /* 白い背景 */
-  border: none; /* 枠線は不要 */
-  border-radius: 50px; /* カプセル型 */
-  color: #d93a4a; /* 元画像に近い赤色 */
-
-  /* グロー（影）エフェクト */
-  box-shadow: 0 0 12px 4px rgba(255, 60, 70, 0.5); /* 赤いグロー */
-
-  /* トランジション（ホバーエフェクト用） */
-  transition: all 0.3s ease;
-}
-
-/* ホバー時のエフェクト */
-.season-btn:hover {
-  transform: scale(1.03); /* 少し拡大 */
-  box-shadow: 0 0 18px 6px rgba(255, 60, 70, 0.6); /* グローを強くする */
-}
-
-/* テキスト部分のスタイル */
-.season-btn .btn-text {
-  /* 既存のフォント（Quicksand）を継承しつつ太字に */
-  font-family: 'Quicksand', sans-serif; 
-  font-weight: bold; 
-  font-size: 16px; 
-  margin-right: 15px; /* テキストとアイコンの間隔 */
-}
-
-/* アイコンの円形背景 */
-.season-btn .btn-icon {
-  /* サイズ */
-  width: 32px;
-  height: 32px;
-
-  /* デザイン */
-  background-color: #d93a4a; /* テキストと同じ赤色 */
-  border-radius: 50%; /* 完璧な円 */
-
-  /* SVGを中央に配置 */
-  display: flex;
-  align-items: center;
-  justify-content: center;
-  flex-shrink: 0;
-}
-
-/* アイコン（SVG）のスタイル */
-.season-btn .btn-icon svg {
-  width: 12px;
-  height: 12px;
-  fill: #ffffff; /* 白い三角 */
-}
-
-body.page-beauty-column p { font-size: 18px !important; }
-body.page-beauty-column h2 { font-size: 32px !important; }
-
-/* --- 追加するCSS (トップナビゲーションのボタンデザイン) --- */
-
-/* 既存の .nav-links のスタイルを上書き/強化 */
-.nav-links {
-    display: flex;
-    justify-content: center; /* 中央揃え */
-    flex-wrap: wrap;         /* 小さい画面で折り返す */
-    gap: 12px;
-    margin: 20px auto 40px; /* 上下のマージンを調整 */
-    max-width: 1000px;
-    padding: 0 20px;
-}
-
-.nav-links a {
-    /* 以前のボタンデザインを適用 */
     display: inline-flex;
     align-items: center;
+    padding: 10px 15px 10px 25px;
+    background: #fff;
+    border-radius: 50px;
+    color: #d93a4a;
+    box-shadow: 0 0 12px rgba(255,60,70,.5);
+    transition: .3s;
+}
+
+.season-btn:hover {
+    transform: scale(1.03);
+}
+
+.season-btn .btn-text {
+    font-weight: bold;
+    font-size: 16px;
+    margin-right: 15px;
+}
+
+.season-btn .btn-icon {
+    width: 32px;
+    height: 32px;
+    background: #d93a4a;
+    border-radius: 50%;
+    display: flex;
+    align-items: center;
     justify-content: center;
-    gap: 6px;
-    background: #ffdcdc; /* 薄い赤色の背景 */
-    color: #d6336c; /* アクセントカラーのテキスト */
-    font-weight: 600;
-    font-size: 15px; /* サイズ調整 */
-    text-decoration: none;
-    padding: 10px 22px;
-    border-radius: 30px; /* 丸い角 */
-    box-shadow: 0 3px 8px rgba(0,0,0,0.08);
-    transition: all 0.3s ease;
 }
 
-.nav-links a:hover {
-    background: linear-gradient(135deg, #fcdcdc, #f48b8b);
-    color: #fff;
-    transform: translateY(-2px);
-    box-shadow: 0 6px 15px rgba(0,0,0,0.12);
-}
-/* --- 追加するCSS ここまで --- */
+/* =========================
+   Page specific tweaks
+========================= */
+body.page-beauty-column p { font-size: 18px; }
+body.page-beauty-column h2 { font-size: 32px; }
 
-/* ---- このページ専用のheroサイズ調整 ---- */
 .season-page .article img.hero {
-    max-height: 200px !important; /* 好きな高さに */
-
-.seasonal-section {
-    padding: 15px 20px; /* 60px → 30px に変更して上下スペースを半分に */
-    text-align: center;
+    max-height: 200px;
 }
 
-.seasonal-section h2 {
-    font-family: 'Playfair Display', serif;
-    font-size: 28px;
-    color: #503535;
-    margin: 10px 0; /* 50px → 20px に減らして上下スペースを狭く */
-}
-
-
-/* アフィリエイトボックス内の画像を固定 */
+/* =========================
+   Affiliate images
+========================= */
 .aff-box img {
-    width: auto !important;
-    max-width: 120px !important;
-    height: auto !important;
-    max-height: 60px !important;
-    object-fit: contain !important;
-    display: inline-block !important;
+    max-width: 120px;
+    max-height: 60px;
+    object-fit: contain;
+}
+
+/* =========================
+   Footer
+========================= */
+footer {
+    background: #d6336c;
+    color: #fff;
+    text-align: center;
+    padding: 20px;
+    font-size: 0.9em;
 }
