@@ -34,7 +34,6 @@
   </script>
   
   <style>
-    /* ===== Aboutページ専用スタイル ===== */
     body.about-page {
       font-family: 'Quicksand', 'Shippori Mincho', sans-serif;
       background: #fff0f5;
@@ -45,14 +44,13 @@
       letter-spacing: 0.03em;
     }
 
-    /* ヘッダーデザイン */
+    /* ヘッダー */
     body.about-page header {
       text-align: center;
-      padding: 100px 20px 140px; /* カードが重なる分の余白 */
+      padding: 100px 20px 140px;
       background: linear-gradient(135deg, #fff5f5, #f7a8a8);
       color: #503535;
     }
-
     body.about-page h1 {
       font-family: 'Playfair Display', serif;
       font-size: 32px;
@@ -60,16 +58,20 @@
       margin: 0;
       text-shadow: 1px 1px 2px rgba(255,255,255,0.5);
     }
+    body.about-page header p {
+      font-size:14px;
+      margin-top:5px;
+      opacity:0.8;
+    }
 
-    /* メインコンテンツ（カード型） */
+    /* メインカード */
     body.about-page main {
       max-width: 700px;
-      margin: -80px auto 40px; /* ヘッダーに被せる */
+      margin: -80px auto 40px;
       padding: 0 20px;
       position: relative;
       z-index: 10;
     }
-
     .profile-card {
       background: #ffffff;
       padding: 40px;
@@ -80,10 +82,9 @@
 
     .profile-image-container {
       text-align: center;
-      margin-top: -90px; /* 画像を上に突き出させる */
+      margin-top: -90px;
       margin-bottom: 25px;
     }
-    
     .profile-image {
       width: 150px;
       height: 150px;
@@ -118,7 +119,7 @@
         transform: translateY(-2px);
     }
 
-    /* ポリシーボックス（指定の文章用） */
+    /* ポリシーボックス */
     .policy-box {
       background-color: #f9f9f9;
       padding: 20px;
@@ -193,38 +194,32 @@
 
   <header>
     <h1>Profile</h1>
-    <p style="font-size:14px; margin-top:5px; opacity:0.8;">運営者情報</p>
+    <p>運営者情報</p>
   </header>
 
- <main>
+  <main>
     <div class="profile-card">
-
       <div class="profile-image-container">
           <img src="images/Yuri.jpg" alt="管理栄養士Yuri" class="profile-image" onerror="handleImageError(this, 150, 150, 'Yuri')">
       </div>
 
-      <p>はじめまして。管理人の<strong>Yuri</strong>です。<br>
-      栄養士・スキンケアアドバイザーとして、結婚式を控えた花嫁様を中心に、肌と食のカウンセリングを行っています。</p>
+      <p>はじめまして。管理人の<strong>Yuri</strong>です。栄養士・スキンケアアドバイザーとして、結婚式を控えた花嫁様を中心に、肌と食のカウンセリングを行っています。</p>
       
-      <p>私はオーストラリア・メルボルンの大学で栄養学を学び、約15年間を現地で過ごしました。<br>
-      オーガニック先進国であるメルボルンで学んだことは、「肌の美しさは、塗るものだけでなく、食べるものと心の状態で決まる」という事実です。</p>
+      <p>私はオーストラリア・メルボルンの大学で栄養学を学び、約15年間を現地で過ごしました。オーガニック先進国で学んだことは、「肌の美しさは、塗るものだけでなく、食べるものと心の状態で決まる」という事実です。</p>
         
-      <p>結婚式という人生の晴れ舞台。<br>
-      しかし、準備のストレスや無理なダイエットで肌荒れを起こし、自信をなくしてしまう花嫁様を数多く見てきました。</p>
+      <p>結婚式という人生の晴れ舞台。しかし、準備のストレスや無理なダイエットで肌荒れを起こし、自信をなくしてしまう花嫁様を数多く見てきました。</p>
 
       <p><strong>『Essential Beauty Needs』</strong>は、そんな花嫁様のために立ち上げた美容情報サイトです。</p>
       
-      <p>「エステに行く時間がない」「背中の荒れが治らない」<br>
-      そんな切実な悩みに、栄養学に基づいたインナーケアと、肌本来の力を引き出すオーガニックコスメの両面からアプローチします。</p>
+      <p>「エステに行く時間がない」「背中の荒れが治らない」そんな切実な悩みに、栄養学に基づいたインナーケアと、肌本来の力を引き出すオーガニックコスメの両面からアプローチします。</p>
       
       <a href="bridal-care.html" class="diagnosis-link">
-          👰 挙式直前でも間に合う！<br>
-          「背中・二の腕」緊急ケア診断はこちら ＞
+          👰 挙式直前でも間に合う！「背中・二の腕」緊急ケア診断はこちら ＞
       </a>
 
       <p style="text-align: center; margin-top: 30px; font-weight: bold; color: #503535; font-family:'Playfair Display', serif;">
         Let your inner beauty shine through.<br>
-        <span style="font-size:14px; font-family:'Shippori Mincho', serif; font-weight:normal;">一生に一度の写真を<br>最高に輝く笑顔と素肌で。</span>
+        <span style="font-size:14px; font-family:'Shippori Mincho', serif; font-weight:normal;">一生に一度の写真を最高に輝く笑顔と素肌で。</span>
       </p>
 
       <div style="margin-top: 30px; text-align: right;">
@@ -239,23 +234,18 @@
       </div>
 
       <div class="policy-box">
-        <strong>【運営ポリシー・広告掲載について】</strong><br>
-        <p style="margin-bottom:10px; margin-top:5px;">
-        当サイトの記事は、栄養士としての知見や成分リサーチに基づき作成しています。
-        </p>
-        <p style="margin-bottom:0;">
-        Amazonのアソシエイトとして、Essential Beauty Needsは適格販売により収入を得ています。<br>
-        また、本サイトは「もしもアフィリエイト」等のASPを通じて商品を紹介しています。紹介料の有無に関わらず、花嫁様が安心して使える「本物」のみを厳選して掲載することをお約束します。
-        </p>
+        <strong>【運営ポリシー・広告掲載について】</strong>
+        <p>当サイトの記事は、栄養士としての知見や成分リサーチに基づき作成しています。</p>
+        <p>Amazonのアソシエイトとして、Essential Beauty Needsは適格販売により収入を得ています。<br>
+        また、本サイトは「もしもアフィリエイト」等のASPを通じて商品を紹介しています。紹介料の有無に関わらず、花嫁様が安心して使える「本物」のみを厳選して掲載することをお約束します。</p>
       </div>
-
     </div>
     
     <div class="nav-links">
         <a href="index.html">🏠 トップ</a>
+        <a href="about.html">👩‍💼 運営者情報</a>
         <a href="bridal-care.html">👰 花嫁ケア診断</a>
-        <a href="skin-ranking.html">✨ ランキング</a>
-        <a href="beauty-column.html">💄 コラム</a>
+        <a href="note-archive.html">📕 公式Note</a>
     </div>
 
     <div class="footer-links">
