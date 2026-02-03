@@ -267,3 +267,32 @@ footer.footer a {
     border: 1px solid #eee; /* 薄い枠線 */
     pointer-events: none;  /* クリックの邪魔をしないようにする */
 }
+
+/* =========================
+   bridal-care.html 専用調整
+========================= */
+
+.bridal-care section {
+    text-align: left;
+}
+
+.bridal-care h2 {
+    text-align: center;
+}
+
+.bridal-care .card {
+    text-align: left;
+    padding: 28px;
+    margin: 40px 0;
+}
+
+.bridal-care ul {
+    margin-left: 20px;
+}
+
+.bridal-care .btn-main,
+.bridal-care .btn-sub {
+    display: block;
+    text-align: center;
+    margin: 25px auto;
+}
