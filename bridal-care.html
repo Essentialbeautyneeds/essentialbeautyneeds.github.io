@@ -9,7 +9,25 @@
 
   <link rel="stylesheet" href="style.css">
 
-  <!-- GA4 統一 -->
+  <style>
+    /* フローティングアフィリエイト表記の追加スタイル */
+    #affiliate-floating-notice {
+      position: fixed;
+      bottom: 20px; /* 画面下からの距離 */
+      left: 50%;
+      transform: translateX(-50%); /* 左右中央寄せ */
+      background-color: rgba(255, 255, 255, 0.95); /* 背景色（少し透過させて馴染ませる） */
+      color: #666; /* 文字色（落ち着いたグレー） */
+      font-size: 11px; /* フォントサイズ（小さめに） */
+      padding: 8px 16px; /* 内側の余白 */
+      border-radius: 20px; /* 角丸 */
+      box-shadow: 0 2px 8px rgba(0, 0, 0, 0.1); /* 軽く影をつけて浮かせる */
+      z-index: 9999; /* 他の要素より前面に表示 */
+      white-space: nowrap; /* テキストが折り返されないようにする */
+      pointer-events: none; /* 操作の邪魔にならないようにクリックを透過させる */
+    }
+  </style>
+
   <script>
     function isInternalUser() {
       return document.cookie.split(';').some(c => c.trim().startsWith('internal_user=true'));
@@ -132,6 +150,10 @@
   <a href="privacy-policy.html">プライバシーポリシー</a><br>
   © 2025 Essential Beauty Needs
 </footer>
+
+<div id="affiliate-floating-notice">
+  ※当サイトはアフィリエイト広告を利用しています
+</div>
 
 </body>
 </html>
