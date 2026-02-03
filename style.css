@@ -1,298 +1,138 @@
 @charset "UTF-8";
 
 /* =========================
-   1. 基本設定 (Root variables)
+   1. 基本設定
 ========================= */
 :root {
-  --bg: #fffaf9;             /* 全体の背景：ごく薄いピンクベージュ */
-  --card: #ffffff;           /* カード背景：白 */
-  --accent: #f7a8a8;         /* アクセント：やさしいピンク */
-  --accent-hover: #f48b8b;   /* ボタンホバー時 */
-  --accent-gold: #d4a373;    /* プレミアム感用ゴールド */
-  --text-main: #503535;      /* 文字色：こげ茶（黒よりやさしい） */
-  --text-muted: #886666;     /* 補足文字色 */
+  --bg: #fffaf9;
+  --card: #ffffff;
+  --accent: #f7a8a8;
+  --accent-hover: #f48b8b;
+  --accent-gold: #d4a373;
+  --text-main: #503535;
+  --text-muted: #886666;
 }
 
 body {
-    font-family: 'Quicksand', 'Shippori Mincho', serif; /* 英語はQuicksand、日本語は明朝体で上品に */
-    margin: 0;
-    padding: 0;
-    line-height: 1.8;
-    color: var(--text-main);
-    background: var(--bg);
-    letter-spacing: 0.05em;
+  font-family: 'Quicksand', 'Shippori Mincho', serif;
+  margin: 0;
+  padding: 0;
+  line-height: 1.8;
+  color: var(--text-main);
+  background: var(--bg);
 }
 
 a {
-    text-decoration: none;
-    transition: opacity 0.3s, transform 0.2s;
-    color: inherit;
-}
-a:hover {
-    opacity: 0.8;
+  text-decoration: none;
+  color: inherit;
 }
 
 img {
-    max-width: 100%;
-    height: auto;
-    border-radius: 8px;
+  max-width: 100%;
+  height: auto;
 }
 
 /* =========================
-   2. ヘッダー (Hero Section)
-   ※Index.htmlのデザインに合わせました
-========================= */
-.hero {
-    text-align: center;
-    padding: 80px 20px 60px;
-    background: linear-gradient(to bottom, #ffffff, var(--bg));
-}
-
-.hero h1 {
-    font-family: 'Playfair Display', serif;
-    font-size: 34px;
-    margin-bottom: 20px;
-    line-height: 1.4;
-    color: var(--text-main);
-}
-
-.hero p {
-    font-size: 15px;
-    color: var(--text-muted);
-    margin-bottom: 40px;
-    font-weight: 500;
-}
-
-/* =========================
-   3. ボタン (Buttons)
-========================= */
-/* メインボタン（ピンクグラデーション） */
-.btn-main {
-    display: inline-block;
-    background: linear-gradient(45deg, #f7a8a8, #e08e8e);
-    color: #fff;
-    padding: 15px 35px;
-    border-radius: 30px;
-    font-weight: bold;
-    box-shadow: 0 4px 10px rgba(247, 168, 168, 0.4);
-    font-size: 16px;
-}
-.btn-main:hover {
-    transform: translateY(-2px);
-    box-shadow: 0 6px 15px rgba(247, 168, 168, 0.6);
-}
-
-/* サブボタン（白ベース） */
-.btn-sub {
-    display: inline-block;
-    background: #fff;
-    color: var(--text-main);
-    border: 1px solid var(--accent);
-    padding: 12px 25px;
-    border-radius: 30px;
-    font-weight: bold;
-    font-size: 14px;
-    box-shadow: 0 2px 5px rgba(0,0,0,0.05);
-}
-
-/* =========================
-   4. コンテンツ共通レイアウト
+   共通レイアウト
 ========================= */
 main {
-    max-width: 800px;
-    margin: 0 auto;
-    padding: 0 20px;
+  max-width: 800px;
+  margin: 0 auto;
+  padding: 0 20px;
 }
 
 section {
-    margin-bottom: 80px;
-    text-align: center;
+  margin: 70px 0;
 }
 
 h2 {
-    font-family: 'Playfair Display', serif;
-    font-size: 24px;
-    margin-bottom: 25px;
-    color: var(--text-main);
-    display: inline-block;
-    border-bottom: 1px solid var(--accent);
-    padding-bottom: 10px;
+  font-family: 'Playfair Display', serif;
+  font-size: 24px;
+  text-align: center;
+  border-bottom: 1px solid var(--accent);
+  padding-bottom: 10px;
+  margin-bottom: 30px;
 }
 
 p {
-    margin-bottom: 20px;
+  margin-bottom: 20px;
 }
 
 /* =========================
-   5. Index専用パーツ (Diagnosis & Premium)
+   ボタン
 ========================= */
-/* 診断ボックス */
-.diagnosis .type-box {
-    background: var(--card);
-    border: 1px solid #f0e6e6;
-    padding: 20px;
-    margin-bottom: 15px;
-    border-radius: 12px;
-    text-align: left;
-    box-shadow: 0 4px 10px rgba(0,0,0,0.03);
-    transition: transform 0.2s;
-}
-.diagnosis .type-box:hover {
-    transform: translateY(-2px);
+.btn-main {
+  display: block;
+  width: fit-content;
+  margin: 30px auto;
+  background: linear-gradient(45deg, #f7a8a8, #e08e8e);
+  color: #fff;
+  padding: 14px 34px;
+  border-radius: 30px;
+  font-weight: bold;
 }
 
-.diagnosis h3 {
-    font-size: 17px;
-    color: var(--accent-gold); /* 診断名はゴールドでおしゃれに */
-    margin: 0 0 5px 0;
-    font-family: sans-serif;
-    font-weight: bold;
-}
-
-.diagnosis p {
-    font-size: 14px;
-    margin: 0;
-    color: #666;
-}
-
-.note {
-    font-size: 12px;
-    color: #999;
-    margin-top: 15px;
-}
-
-/* ブリッジ部分の強調 */
-.bridge .em {
-    font-size: 18px;
-    font-weight: bold;
-    background: linear-gradient(transparent 60%, #ffe0e0 60%);
-    padding: 0 5px;
-}
-
-/* プレミアム（バイブル紹介）エリア */
-.premium {
-    background-color: #fffcf5; /* 薄いゴールドベージュ */
-    padding: 40px 25px;
-    border-radius: 15px;
-    border: 1px dashed var(--accent-gold);
-    margin-top: 40px;
-}
-
-.premium ul {
-    text-align: left;
-    display: inline-block;
-    margin: 10px 0 30px;
-    padding-left: 20px;
-}
-.premium li {
-    margin-bottom: 8px;
-    font-size: 15px;
-    color: #5a4545;
+.btn-sub {
+  display: block;
+  width: fit-content;
+  margin: 20px auto;
+  background: #fff;
+  border: 1px solid var(--accent);
+  padding: 12px 26px;
+  border-radius: 30px;
+  font-weight: bold;
 }
 
 /* =========================
-   6. ナビゲーション & フッター
-========================= */
-.nav-links {
-    display: flex;
-    flex-wrap: wrap;
-    justify-content: center;
-    gap: 15px;
-    margin: 60px 0;
-    padding-top: 40px;
-    border-top: 1px solid #eee;
-}
-
-.nav-links a {
-    font-size: 13px;
-    color: #777;
-    border: 1px solid #eee;
-    padding: 8px 18px;
-    border-radius: 20px;
-    background: #fff;
-}
-.nav-links a:hover {
-    border-color: var(--accent);
-    color: var(--accent);
-}
-
-/* フッターは優しく */
-footer.footer {
-    text-align: center;
-    padding: 50px 20px;
-    background-color: #fcf8f8; /* 濃いピンクではなく優しい色に修正 */
-    border-top: 3px solid var(--accent);
-    font-size: 13px;
-    color: #888;
-}
-footer.footer p {
-    font-weight: bold;
-    color: var(--text-main);
-    margin-bottom: 15px;
-}
-footer.footer a {
-    color: #aaa;
-    text-decoration: underline;
-    font-size: 12px;
-}
-
-/* =========================
-   7. その他（他ページとの互換性用）
-   ※Yuriさんが元々書いていたスタイルも維持
-========================= */
-.card {
-    background: var(--card);
-    border-radius: 14px;
-    padding: 20px;
-    box-shadow: 0 4px 16px rgba(0,0,0,0.06);
-    margin: 20px 0;
-    text-align: center;
-}
-
-/* =========================
-   8. フローティングアフィリエイト表記
-   （全ページ共通で右下に固定表示）
+   フローティング：アフィリエイト表記
 ========================= */
 #affiliateNotice {
-    position: fixed;       /* 画面に固定 */
-    right: 12px;           /* 右から12px */
-    bottom: 12px;          /* 下から12px */
-    background: rgba(255, 255, 255, 0.9); /* 白背景（少し透けさせる） */
-    color: #666;           /* 文字はグレーで目立ちすぎないように */
-    font-size: 11px;       /* 小さめの文字 */
-    border-radius: 6px;    /* 角を丸く */
-    padding: 6px 12px;     /* 内側の余白 */
-    box-shadow: 0 2px 10px rgba(0,0,0,0.1); /* ふんわり影をつけて浮かす */
-    z-index: 9999;         /* 他の要素より手前に表示 */
-    border: 1px solid #eee; /* 薄い枠線 */
-    pointer-events: none;  /* クリックの邪魔をしないようにする */
+  position: fixed;
+  right: 12px;
+  bottom: 12px;
+  background: rgba(255,255,255,0.9);
+  font-size: 11px;
+  color: #666;
+  padding: 6px 12px;
+  border-radius: 6px;
+  box-shadow: 0 2px 8px rgba(0,0,0,0.1);
+  z-index: 9999;
+  pointer-events: none;
 }
 
 /* =========================
-   bridal-care.html 専用調整
+   bridal-care.html 専用
 ========================= */
-
-.bridal-care section {
-    text-align: left;
+body.bridal-care section {
+  text-align: left;
 }
 
-.bridal-care h2 {
-    text-align: center;
+body.bridal-care h1 {
+  font-family: 'Playfair Display', serif;
+  font-size: 28px;
+  text-align: center;
+  line-height: 1.6;
+  margin: 60px 0 30px;
 }
 
-.bridal-care .card {
-    text-align: left;
-    padding: 28px;
-    margin: 40px 0;
+body.bridal-care h1 span {
+  display: block;
 }
 
-.bridal-care ul {
-    margin-left: 20px;
+body.bridal-care ul {
+  list-style: disc;
+  padding-left: 22px;
+  margin: 20px 0;
 }
 
-.bridal-care .btn-main,
-.bridal-care .btn-sub {
-    display: block;
-    text-align: center;
-    margin: 25px auto;
+body.bridal-care li {
+  margin-bottom: 10px;
+}
+
+body.bridal-care .card {
+  background: var(--card);
+  border-radius: 14px;
+  padding: 28px;
+  margin: 40px 0;
+  box-shadow: 0 4px 14px rgba(0,0,0,0.05);
 }
