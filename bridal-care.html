@@ -2,7 +2,7 @@
 <html lang="ja">
 <head>
   <meta charset="UTF-8">
-  <title>【花嫁必見】背中・二の腕を即効で整えるブライダルケア完全ガイド</title>
+  <title>【緊急】挙式直前！背中・二の腕のブツブツを撃退する栄養士の美肌メソッド</title>
   <meta name="description" content="結婚式直前でも間に合う。背中ニキビ・二の腕のたるみを即効で整える花嫁ケアならDione。栄養士が仕組みと選び方を解説。">
   <meta name="viewport" content="width=device-width, initial-scale=1.0">
   <link rel="canonical" href="https://essential-beauty-needs.com/bridal-care.html">
@@ -14,120 +14,143 @@
 
   <style>
     /* =========================================
-       このページ専用の修正・追加スタイル
+       このページ専用の修正スタイル（style.cssを上書き）
        ========================================= */
     
-    /* ヘッダーの中央揃え強制 */
-    header.hero {
+    /* ヘッダー：強制的に中央揃えにする */
+    .lp-hero {
       text-align: center !important;
       padding: 80px 20px;
-      background: linear-gradient(to bottom, #fff, #fffaf9);
+      background: linear-gradient(rgba(255,255,255,0.9), rgba(255,255,255,0.95)), url('images/bride3.jpg') center/cover;
+      border-bottom: 3px solid #f7a8a8;
+      display: flex;
+      flex-direction: column;
+      align-items: center;
+      justify-content: center;
     }
-    header.hero h1 {
+    .lp-hero h1 {
       font-family: 'Shippori Mincho', serif;
-      font-size: 32px;
+      font-size: 28px; /* スマホで見やすいサイズ */
       color: #503535;
-      line-height: 1.4;
-      margin-bottom: 20px;
+      line-height: 1.5;
+      margin: 15px 0 0;
       width: 100%;
+      text-align: center;
     }
-    header.hero p {
-      font-size: 16px;
-      color: #886666;
+    .lp-hero .lead-badge {
+      background: #c0392b;
+      color: #fff;
+      padding: 5px 15px;
+      border-radius: 4px;
+      font-size: 13px;
+      font-weight: bold;
+      display: inline-block;
     }
 
-    /* Dioneセクション（ピンクのデザイン） */
+    /* Dioneセクション（ピンク枠・画像のデザイン再現） */
     .dione-box {
       border: 3px solid #f7a8a8;
-      border-radius: 15px;
+      border-radius: 20px;
       padding: 30px 20px;
       background: #fff;
-      margin: 40px 0;
-      box-shadow: 0 5px 15px rgba(247, 168, 168, 0.1);
+      margin: 40px auto;
+      box-shadow: 0 10px 25px rgba(247, 168, 168, 0.15);
+      max-width: 700px;
     }
+    
+    /* 予約殺到アラート（画像のデザイン） */
     .urgency-alert {
       background: #fff0f0;
       border: 1px solid #ffcccc;
-      color: #c0392b;
+      color: #c0392b; /* 赤文字 */
       padding: 15px;
-      border-radius: 8px;
+      border-radius: 10px;
       font-size: 14px;
       font-weight: bold;
-      margin: 15px 0;
+      margin: 20px 0;
       text-align: center;
+      line-height: 1.6;
     }
 
-    /* ジュエルレインセクション（グレーのデザイン） */
-    .jewel-box {
-      background: #f9f9f9; /* 薄いグレー */
-      border-radius: 12px;
-      padding: 30px 20px;
-      margin: 40px 0;
-      text-align: center;
-      border: 1px solid #eee;
-    }
-    .btn-gray {
-      display: inline-block;
-      background: #999;
-      color: #fff;
-      padding: 15px 30px;
-      border-radius: 50px;
-      text-decoration: none;
-      font-weight: bold;
-      margin-top: 15px;
-      box-shadow: 0 4px 10px rgba(0,0,0,0.1);
-      transition: 0.3s;
-    }
-    .btn-gray:hover {
-      background: #777;
-      transform: translateY(-2px);
-    }
-
-    /* フローティングアフィリエイト表記（画像のデザイン再現） */
-    #affiliate-floating-notice {
-      position: fixed;
-      bottom: 30px; /* 下から少し浮かせる */
-      left: 50%;
-      transform: translateX(-50%); /* ど真ん中に配置 */
-      background-color: rgba(255, 255, 255, 0.95); /* 白背景（少し透ける） */
-      color: #999; /* 文字は薄いグレー */
-      font-size: 11px;
-      padding: 8px 20px;
-      border-radius: 30px; /* 丸くする */
-      box-shadow: 0 2px 10px rgba(0, 0, 0, 0.1); /* ふんわり影 */
-      z-index: 9999;
-      white-space: nowrap;
-      pointer-events: none; /* クリックを邪魔しない */
-      border: 1px solid #eee;
-    }
-
-    /* ボタン（Dione用ピンク） */
-    .btn-pink {
+    /* Dioneボタン（ピンクグラデーション） */
+    .btn-pink-gradient {
       display: block;
       width: 100%;
       max-width: 350px;
       margin: 10px auto;
       padding: 18px;
-      background: linear-gradient(45deg, #FFB6C1, #FF69B4);
+      background: linear-gradient(90deg, #FFB6C1, #FF69B4); /* 横方向のグラデ */
       color: #fff;
       font-weight: bold;
       text-decoration: none;
       border-radius: 50px;
-      box-shadow: 0 4px 15px rgba(255, 105, 180, 0.4);
+      box-shadow: 0 5px 15px rgba(255, 105, 180, 0.4);
       text-align: center;
       font-size: 18px;
       transition: 0.3s;
+      border: none;
     }
-    .btn-pink:hover {
+    .btn-pink-gradient:hover {
       transform: translateY(-3px);
       box-shadow: 0 8px 20px rgba(255, 105, 180, 0.6);
+      opacity: 1; /* 透明にならないように */
     }
 
-    /* スマホ調整 */
-    @media(max-width:600px){
-      header.hero h1 { font-size: 26px; }
-      .dione-box, .jewel-box { padding: 25px 15px; }
+    /* ジュエルレインセクション（グレーのデザイン） */
+    .jewel-box {
+      background: #f9f9f9;
+      border: 1px solid #eee;
+      border-radius: 15px;
+      padding: 30px 20px;
+      margin: 50px auto;
+      text-align: center;
+      max-width: 700px;
     }
+    /* グレーボタン */
+    .btn-gray-simple {
+      display: inline-block;
+      background: #999;
+      color: #fff;
+      padding: 12px 30px;
+      border-radius: 30px;
+      text-decoration: none;
+      font-weight: bold;
+      margin-top: 15px;
+      font-size: 15px;
+    }
+
+    /* フローティングアフィリエイト表記（画像の通り白丸） */
+    #affiliate-floating-notice {
+      position: fixed;
+      bottom: 25px;
+      left: 50%;
+      transform: translateX(-50%);
+      background-color: rgba(255, 255, 255, 0.9);
+      color: #aaa;
+      font-size: 10px;
+      padding: 8px 20px;
+      border-radius: 30px;
+      box-shadow: 0 2px 10px rgba(0, 0, 0, 0.05);
+      z-index: 9999;
+      white-space: nowrap;
+      pointer-events: none;
+      border: 1px solid #f0f0f0;
+    }
+
+    /* チェックリスト */
+    .check-list { list-style: none; padding: 0; margin: 0; }
+    .check-list li {
+      position: relative; padding-left: 28px; margin-bottom: 12px;
+      font-weight: bold; color: #555; font-size: 16px; text-align: left;
+    }
+    .check-list li::before {
+      content: "✔"; position: absolute; left: 0; color: #d6336c; font-size: 18px;
+    }
+    .check-box {
+      background: #fff0f5; padding: 30px; border-radius: 15px;
+      border: 2px dashed #f7a8a8; margin: 30px auto; max-width: 700px;
+    }
+
   </style>
 
   <script>
@@ -149,118 +172,123 @@
 
 <body>
 
-<header class="hero">
-  <h1>背中・二の腕は<br>「痩せなくていい」</h1>
-  <p>
-    結婚式直前でも、<br>
-    ドレスラインは整えられます。
-  </p>
+<header class="lp-hero">
+  <span class="lead-badge">挙式まで3ヶ月を切った花嫁様へ</span>
+  <h1>背中・二の腕のブツブツを<br>「今日から何とかしたい」<br>緊急駆け込みマニュアル</h1>
+  <p style="font-weight:bold; color:#555; margin-top:10px;">栄養士監修｜即効性重視の特別プログラム</p>
 </header>
 
 <main>
 
-<section class="intro">
-  <p style="text-align:center; max-width:600px; margin:0 auto 40px;">
-    ドレスを試着した瞬間、<br>
-    背中や二の腕に目がいってしまった。<br>
-    それは<strong>あなたの努力不足ではありません</strong>。<br><br>
-    「脂肪を落とすべき場所」と「整えるべき場所」を混同しているだけです。
-  </p>
-</section>
+  <section>
+    <div class="check-box">
+      <p style="text-align: center; font-weight: bold; margin-bottom: 20px; font-size:18px; color:#d6336c;">こんな「見なかったことにしたい」悩み<br>ありませんか？</p>
+      <ul class="check-list">
+          <li>試着室の鏡で見た自分の背中が、思ったより荒れていた</li>
+          <li>二の腕の赤いプツプツ（毛孔性苔癬）がファンデで隠しきれない</li>
+          <li>エステに通う予算も時間も、もう残っていない</li>
+          <li>一生残る結婚式の写真で、絶対に後悔したくない</li>
+      </ul>
+    </div>
+  </section>
 
-<section class="mistake">
-  <h2>今すぐやめてほしい3つのこと</h2>
-  <ul style="list-style:none; padding:0; text-align:center; font-weight:bold; color:#555;">
-    <li style="margin-bottom:10px;">❌ 糖質を極端に減らす</li>
-    <li style="margin-bottom:10px;">❌ 二の腕を毎日筋トレする</li>
-    <li style="margin-bottom:10px;">❌ 背中をゴシゴシ洗う</li>
-  </ul>
-  <p style="text-align:center; margin-top:20px;">
-    これらはすべて、<strong>ドレス姿を悪化させる近道</strong>です。
-  </p>
-</section>
+  <section style="text-align:center; max-width:700px; margin:0 auto 50px; padding:0 20px;">
+    <h2 style="font-size:20px; color:#503535; border-bottom:none;">栄養士として、<br>残酷な真実をお伝えします。</h2>
+    <p style="text-align:left; line-height:1.9; margin-top:20px;">
+        肌質改善のための「食事療法」は、効果が出るまでに<strong>最低28日（ターンオーバーの周期）</strong>かかります。<br><br>
+        もし、あなたの挙式が目前に迫っているなら、<br>
+        <span style="background: linear-gradient(transparent 70%, #ffcccc 70%); font-weight:bold;">内側のケアだけでは間に合いません。</span>
+    </p>
+    <p style="text-align:left; font-weight:bold; margin-top:20px;">
+        今のあなたに必要なのは、<br>
+        「プロの手を借りて、強制的に美肌を作る（時間を買う）」という選択です。
+    </p>
+  </section>
 
-<section class="dione-box">
-  <h2 style="color:#d6336c; font-size:22px; text-align:center; border:none;">✨ Dione ブライダル背中・二の腕ケア</h2>
-  <p>
-    式直前の肌はデリケート。脱毛だけでなく、「炎症抑制・美肌ケア」を同時に行えるのが<strong>Dioneのブライダル対応</strong>です。
-  </p>
+  <section class="dione-box">
+    <h2 style="color:#d6336c; font-size:22px; text-align:center; border:none; margin-bottom:20px;">
+      ✨ Dione ブライダル背中・二の腕ケア
+    </h2>
+    
+    <p style="text-align:left; line-height:1.8;">
+      式直前の自己処理やシェービングは「カミソリ負け」で赤くなるリスクが大！<br>
+      敏感肌専門サロンDioneなら、<strong>3歳でも通えるほど痛くない・熱くない</strong>特殊な方法で、産毛のないツルツルの陶器肌になれます。<br>
+      さらに、施術の中に「美白ケア」が含まれているため、エステに行く時間がない方にも最適です。
+    </p>
+    
+    <div class="urgency-alert">
+      ⚠ 挙式シーズンは予約が殺到します<br>
+      <span style="font-size:12px; font-weight:normal; color:#333;">「希望の日が空いていなかった」となる前に、<br>まずは空き枠の確認だけ済ませてください。</span>
+    </div>
 
-  <ul style="list-style:none; padding:0; margin:20px 0; font-weight:bold; color:#555;">
-    <li>✔ 背中ニキビ・赤みが出にくい</li>
-    <li>✔ 産毛処理でドレス映え</li>
-    <li>✔ 敏感肌にも対応した施術</li>
-  </ul>
-  
-  <div class="urgency-alert">
-    ⚠ 挙式シーズンは予約が殺到します<br>
-    <span style="font-size:12px; font-weight:normal; color:#333;">「希望の日が空いていなかった」となる前に、<br>まずは空き枠の確認だけ済ませてください。</span>
+    <p style="text-align:center; color:#d6336c; font-weight:bold; font-size:13px; margin-bottom:5px;">＼ 今なら3,300円で美肌体験可 ／</p>
+    
+    <a href="https://px.a8.net/svt/ejp?a8mat=4AVFRY+7N2B16+3W7I+BWVTE" 
+       class="btn-pink-gradient" target="_blank" rel="nofollow sponsored noopener">
+      ✨ Dioneの体験空き枠を見る ＞
+    </a>
+
+    <p style="text-align:center; font-size:12px; color:#999; margin-top:10px;">※無理な勧誘はありませんでした（体験談）</p>
+    <p style="text-align:center; font-size:12px; color:#666; margin-top:10px; border-top:1px dashed #eee; padding-top:10px;">
+        ※お近くに店舗がない場合は、「敏感肌対応のブライダル脱毛・シェービング専門店」を目安に探してください
+    </p>
+  </section>
+
+  <section class="jewel-box">
+    <p style="font-size:12px; color:#999; margin-bottom:5px;">※正直、即効性はサロンには敵いません</p>
+    <h3 style="font-size:18px; color:#555; margin-bottom:15px; font-weight:bold;">「どうしてもサロンに通う時間がない」という方へ</h3>
+    
+    <p style="text-align:left; font-size:14px; line-height:1.8;">
+      もし通う時間がゼロなら、せめて自宅ケアだけは「専用」のものに変えてください。<br>
+      背中の分厚い皮膚に浸透するのは、普通のボディクリームではなく「背中専用ジェル」だけです。
+    </p>
+
+    <a href="https://px.a8.net/svt/ejp?a8mat=45KRG0+5SDRA2+2BHA+3H1GGY" 
+       class="btn-gray-simple" target="_blank" rel="nofollow sponsored noopener">
+      🏠 自宅用：Jewel Rainを見る ＞
+    </a>
+  </section>
+
+  <section style="text-align:center; margin-bottom:60px;">
+    <h2 style="font-size:20px; border-bottom:none; margin-bottom:10px;">迷いをなくすために</h2>
+    <p>
+      「どの部位から始めたらいい？」「肌が弱いけど大丈夫？」<br>
+      そんな花嫁さんには、一歩進んだ判断基準を用意しています。
+    </p>
+
+    <a href="https://note.com/yuri_organic/n/n047d215e5da6" 
+       class="btn-sub" target="_blank" rel="noopener">
+      📗 花嫁ケア診断（理論編）
+    </a>
+  </section>
+
+  <div class="nav-links">
+    <a href="index.html">🏠 トップへ戻る</a>
+    <a href="skin-ranking.html">✨ ランキング</a>
+    <a href="beauty-column.html">💄 コラム一覧</a>
   </div>
-
-  <p style="text-align:center; color:#d6336c; font-weight:bold; font-size:13px;">＼ 今なら3,300円で美肌体験可 ／</p>
-  
-  <a href="https://px.a8.net/svt/ejp?a8mat=4AVFRY+7N2B16+3W7I+BWVTE" 
-     class="btn-pink" target="_blank" rel="nofollow sponsored noopener">
-    ✨ Dioneの体験空き枠を見る ＞
-  </a>
-
-  <p style="text-align:center; font-size:12px; color:#999; margin-top:10px;">※無理な勧誘はありませんでした（体験談）</p>
-  <p style="text-align:center; font-size:12px; color:#666; margin-top:10px; border-top:1px dashed #eee; padding-top:10px;">
-      ※お近くに店舗がない場合は、「敏感肌対応のブライダル脱毛・シェービング専門店」を目安に探してください
-  </p>
-</section>
-
-<section class="jewel-box">
-  <p style="font-size:12px; color:#999; margin-bottom:5px;">※正直、即効性はサロンには敵いません</p>
-  <h3 style="font-size:18px; color:#555; margin-bottom:15px;">「どうしてもサロンに通う時間がない」という方へ</h3>
-  
-  <p style="text-align:left; font-size:14px;">
-    もし通う時間がゼロなら、せめて自宅ケアだけは「専用」のものに変えてください。<br>
-    背中の分厚い皮膚に浸透するのは、普通のボディクリームではなく「背中専用ジェル」だけです。
-  </p>
-
-  <a href="https://px.a8.net/svt/ejp?a8mat=45KRG0+5SDRA2+2BHA+3H1GGY" 
-     class="btn-gray" target="_blank" rel="nofollow sponsored noopener">
-    🏠 自宅用：Jewel Rainを見る ＞
-  </a>
-</section>
-
-<section class="bridge" style="text-align:center; margin-top:60px;">
-  <h2>迷いをなくすために</h2>
-  <p>
-    「どの部位から始めたらいい？」「肌が弱いけど大丈夫？」<br>
-    そんな花嫁さんには、一歩進んだ判断基準を用意しています。
-  </p>
-
-  <a href="https://note.com/yuri_organic/n/n047d215e5da6" 
-     class="btn-sub" target="_blank" rel="noopener">
-    📗 花嫁ケア診断（理論編）
-  </a>
-</section>
-
-<section class="nav-links">
-  <a href="index.html">🏠 トップへ戻る</a>
-  <a href="diet-beauty.html">🍽 食事ケア</a>
-  <a href="accept-gym.html">🏋️‍♀️ ジム選び</a>
-  <a href="beauty-column.html">💄 コラム一覧</a>
-</section>
 
 </main>
 
 <footer class="footer">
-  <p>栄養士 Yuri 🌱</p>
+  <p>
+    栄養士｜Yuri 🌱<br>
+    「体重ではなく、ラインで選ぶ花嫁へ」
+  </p>
+  
   <div style="margin-bottom:20px;">
       <a href="https://room.rakuten.co.jp/room_e0dd63a90a/items" target="_blank" rel="noopener" style="display:inline-block; border:1px solid #ccc; padding:5px 15px; border-radius:20px; font-size:12px; text-decoration:none; color:#666;">
         🏠 Yuriの楽天ROOM
       </a>
   </div>
-  <a href="privacy-policy.html">プライバシーポリシー</a><br>
-  
+
+  <a href="privacy-policy.html">プライバシーポリシー</a>
+
   <div style="margin-top: 20px; font-size: 10px; color: #aaa; line-height: 1.4;">
     ※Amazonのアソシエイトとして、<br>Essential Beauty Needsは適格販売により収入を得ています。
   </div>
-  
-  <br>
+
+  <br><br>
   © 2025 Essential Beauty Needs
 </footer>
 
