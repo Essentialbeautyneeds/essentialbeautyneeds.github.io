@@ -1,7 +1,7 @@
 <!DOCTYPE html>
 <html lang="ja">
 <head>
-  <meta charset="UTF-8">
+  <meta charset="utf-8">
   <title>【緊急】挙式直前！背中・二の腕のブツブツを撃退する栄養士の美肌メソッド</title>
   <meta name="description" content="結婚式直前でも間に合う。背中ニキビ・二の腕のたるみを即効で整える花嫁ケアならDione。栄養士が仕組みと選び方を解説。">
   <meta name="viewport" content="width=device-width, initial-scale=1.0">
@@ -14,30 +14,36 @@
 
   <style>
     /* =========================================
-       このページ専用の修正スタイル（style.cssを上書き）
+       【緊急LP専用】強制上書きスタイル
+       他のCSSの影響を受けないよう !important を使用
        ========================================= */
     
-    /* ヘッダー：強制的に中央揃えにする */
-    .lp-hero {
+    /* ヘッダー：絶対中央揃え */
+    header.lp-header {
+      width: 100% !important;
       text-align: center !important;
-      padding: 80px 20px;
-      background: linear-gradient(rgba(255,255,255,0.9), rgba(255,255,255,0.95)), url('images/bride3.jpg') center/cover;
-      border-bottom: 3px solid #f7a8a8;
-      display: flex;
-      flex-direction: column;
-      align-items: center;
-      justify-content: center;
+      padding: 80px 20px !important;
+      background: linear-gradient(rgba(255,255,255,0.9), rgba(255,255,255,0.95)), url('images/bride3.jpg') center/cover !important;
+      border-bottom: 3px solid #f7a8a8 !important;
+      display: flex !important;
+      flex-direction: column !important;
+      align-items: center !important;
+      justify-content: center !important;
+      box-sizing: border-box !important;
     }
-    .lp-hero h1 {
-      font-family: 'Shippori Mincho', serif;
-      font-size: 28px; /* スマホで見やすいサイズ */
-      color: #503535;
-      line-height: 1.5;
-      margin: 15px 0 0;
-      width: 100%;
-      text-align: center;
+    
+    header.lp-header h1 {
+      font-family: 'Shippori Mincho', serif !important;
+      font-size: 26px !important;
+      color: #503535 !important;
+      line-height: 1.6 !important;
+      margin: 15px 0 0 0 !important;
+      width: 100% !important;
+      max-width: 800px !important;
+      text-align: center !important;
     }
-    .lp-hero .lead-badge {
+
+    .lead-badge {
       background: #c0392b;
       color: #fff;
       padding: 5px 15px;
@@ -45,9 +51,17 @@
       font-size: 13px;
       font-weight: bold;
       display: inline-block;
+      margin-bottom: 5px;
     }
 
-    /* Dioneセクション（ピンク枠・画像のデザイン再現） */
+    /* メインコンテンツ幅 */
+    main {
+      max-width: 700px;
+      margin: 0 auto;
+      padding: 0 20px;
+    }
+
+    /* Dioneセクション（ピンク枠） */
     .dione-box {
       border: 3px solid #f7a8a8;
       border-radius: 20px;
@@ -55,14 +69,21 @@
       background: #fff;
       margin: 40px auto;
       box-shadow: 0 10px 25px rgba(247, 168, 168, 0.15);
-      max-width: 700px;
+      text-align: left; /* 基本は左揃え */
     }
-    
-    /* 予約殺到アラート（画像のデザイン） */
+    .dione-box h2 {
+      text-align: center;
+      color: #d6336c;
+      border: none;
+      font-size: 22px;
+      margin-bottom: 20px;
+    }
+
+    /* 予約殺到アラート */
     .urgency-alert {
       background: #fff0f0;
       border: 1px solid #ffcccc;
-      color: #c0392b; /* 赤文字 */
+      color: #c0392b;
       padding: 15px;
       border-radius: 10px;
       font-size: 14px;
@@ -72,14 +93,15 @@
       line-height: 1.6;
     }
 
-    /* Dioneボタン（ピンクグラデーション） */
+    /* ピンクグラデーションボタン */
     .btn-pink-gradient {
       display: block;
       width: 100%;
-      max-width: 350px;
+      max-width: 100%; /* 親要素に合わせる */
+      box-sizing: border-box;
       margin: 10px auto;
       padding: 18px;
-      background: linear-gradient(90deg, #FFB6C1, #FF69B4); /* 横方向のグラデ */
+      background: linear-gradient(90deg, #FFB6C1, #FF69B4);
       color: #fff;
       font-weight: bold;
       text-decoration: none;
@@ -87,16 +109,10 @@
       box-shadow: 0 5px 15px rgba(255, 105, 180, 0.4);
       text-align: center;
       font-size: 18px;
-      transition: 0.3s;
       border: none;
     }
-    .btn-pink-gradient:hover {
-      transform: translateY(-3px);
-      box-shadow: 0 8px 20px rgba(255, 105, 180, 0.6);
-      opacity: 1; /* 透明にならないように */
-    }
 
-    /* ジュエルレインセクション（グレーのデザイン） */
+    /* ジュエルレイン（グレー枠） */
     .jewel-box {
       background: #f9f9f9;
       border: 1px solid #eee;
@@ -104,9 +120,7 @@
       padding: 30px 20px;
       margin: 50px auto;
       text-align: center;
-      max-width: 700px;
     }
-    /* グレーボタン */
     .btn-gray-simple {
       display: inline-block;
       background: #999;
@@ -119,22 +133,48 @@
       font-size: 15px;
     }
 
-    /* フローティングアフィリエイト表記（画像の通り白丸） */
+    /* フッターのナビゲーション（崩れ修正） */
+    .lp-nav-links {
+      display: flex;
+      flex-wrap: wrap;
+      justify-content: center;
+      gap: 10px;
+      margin: 40px 0;
+      padding: 0;
+    }
+    .lp-nav-links a {
+      background: #fff;
+      border: 1px solid #ddd;
+      color: #555;
+      padding: 8px 16px;
+      border-radius: 20px;
+      font-size: 13px;
+      font-weight: bold;
+      text-decoration: none;
+      display: inline-block;
+    }
+    .lp-nav-links a:hover {
+      background: #f7a8a8;
+      color: #fff;
+      border-color: #f7a8a8;
+    }
+
+    /* フローティングアフィリエイト（白丸） */
     #affiliate-floating-notice {
       position: fixed;
       bottom: 25px;
       left: 50%;
       transform: translateX(-50%);
-      background-color: rgba(255, 255, 255, 0.9);
+      background-color: rgba(255, 255, 255, 0.95);
       color: #aaa;
       font-size: 10px;
       padding: 8px 20px;
       border-radius: 30px;
-      box-shadow: 0 2px 10px rgba(0, 0, 0, 0.05);
+      box-shadow: 0 2px 10px rgba(0, 0, 0, 0.1);
       z-index: 9999;
       white-space: nowrap;
       pointer-events: none;
-      border: 1px solid #f0f0f0;
+      border: 1px solid #ddd;
     }
 
     /* チェックリスト */
@@ -148,9 +188,8 @@
     }
     .check-box {
       background: #fff0f5; padding: 30px; border-radius: 15px;
-      border: 2px dashed #f7a8a8; margin: 30px auto; max-width: 700px;
+      border: 2px dashed #f7a8a8; margin: 30px auto;
     }
-
   </style>
 
   <script>
@@ -172,10 +211,10 @@
 
 <body>
 
-<header class="lp-hero">
+<header class="lp-header">
   <span class="lead-badge">挙式まで3ヶ月を切った花嫁様へ</span>
   <h1>背中・二の腕のブツブツを<br>「今日から何とかしたい」<br>緊急駆け込みマニュアル</h1>
-  <p style="font-weight:bold; color:#555; margin-top:10px;">栄養士監修｜即効性重視の特別プログラム</p>
+  <p style="font-weight:bold; color:#555; margin-top:10px; font-size:14px;">栄養士監修｜即効性重視の特別プログラム</p>
 </header>
 
 <main>
@@ -192,9 +231,9 @@
     </div>
   </section>
 
-  <section style="text-align:center; max-width:700px; margin:0 auto 50px; padding:0 20px;">
-    <h2 style="font-size:20px; color:#503535; border-bottom:none;">栄養士として、<br>残酷な真実をお伝えします。</h2>
-    <p style="text-align:left; line-height:1.9; margin-top:20px;">
+  <section style="text-align:center; margin: 50px auto;">
+    <h2 style="font-size:20px; color:#503535; border-bottom:none; margin-bottom:20px;">栄養士として、<br>残酷な真実をお伝えします。</h2>
+    <p style="text-align:left; line-height:1.9;">
         肌質改善のための「食事療法」は、効果が出るまでに<strong>最低28日（ターンオーバーの周期）</strong>かかります。<br><br>
         もし、あなたの挙式が目前に迫っているなら、<br>
         <span style="background: linear-gradient(transparent 70%, #ffcccc 70%); font-weight:bold;">内側のケアだけでは間に合いません。</span>
@@ -206,11 +245,9 @@
   </section>
 
   <section class="dione-box">
-    <h2 style="color:#d6336c; font-size:22px; text-align:center; border:none; margin-bottom:20px;">
-      ✨ Dione ブライダル背中・二の腕ケア
-    </h2>
+    <h2>✨ Dione ブライダル背中・二の腕ケア</h2>
     
-    <p style="text-align:left; line-height:1.8;">
+    <p style="line-height:1.8;">
       式直前の自己処理やシェービングは「カミソリ負け」で赤くなるリスクが大！<br>
       敏感肌専門サロンDioneなら、<strong>3歳でも通えるほど痛くない・熱くない</strong>特殊な方法で、産毛のないツルツルの陶器肌になれます。<br>
       さらに、施術の中に「美白ケア」が含まれているため、エステに行く時間がない方にも最適です。
@@ -257,12 +294,12 @@
     </p>
 
     <a href="https://note.com/yuri_organic/n/n047d215e5da6" 
-       class="btn-sub" target="_blank" rel="noopener">
+       class="btn-gray-simple" style="background:#fff; color:#555; border:1px solid #d7a3a3;" target="_blank" rel="noopener">
       📗 花嫁ケア診断（理論編）
     </a>
   </section>
 
-  <div class="nav-links">
+  <div class="lp-nav-links">
     <a href="index.html">🏠 トップへ戻る</a>
     <a href="skin-ranking.html">✨ ランキング</a>
     <a href="beauty-column.html">💄 コラム一覧</a>
@@ -270,7 +307,7 @@
 
 </main>
 
-<footer class="footer">
+<footer class="footer" style="text-align:center; padding:40px 20px; color:#666; font-size:13px;">
   <p>
     栄養士｜Yuri 🌱<br>
     「体重ではなく、ラインで選ぶ花嫁へ」
@@ -282,7 +319,7 @@
       </a>
   </div>
 
-  <a href="privacy-policy.html">プライバシーポリシー</a>
+  <a href="privacy-policy.html" style="color:#999;">プライバシーポリシー</a>
 
   <div style="margin-top: 20px; font-size: 10px; color: #aaa; line-height: 1.4;">
     ※Amazonのアソシエイトとして、<br>Essential Beauty Needsは適格販売により収入を得ています。
