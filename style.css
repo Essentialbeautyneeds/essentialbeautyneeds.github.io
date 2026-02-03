@@ -248,3 +248,22 @@ footer.footer a {
     margin: 20px 0;
     text-align: center;
 }
+
+/* =========================
+   8. フローティングアフィリエイト表記
+   （全ページ共通で右下に固定表示）
+========================= */
+#affiliateNotice {
+    position: fixed;       /* 画面に固定 */
+    right: 12px;           /* 右から12px */
+    bottom: 12px;          /* 下から12px */
+    background: rgba(255, 255, 255, 0.9); /* 白背景（少し透けさせる） */
+    color: #666;           /* 文字はグレーで目立ちすぎないように */
+    font-size: 11px;       /* 小さめの文字 */
+    border-radius: 6px;    /* 角を丸く */
+    padding: 6px 12px;     /* 内側の余白 */
+    box-shadow: 0 2px 10px rgba(0,0,0,0.1); /* ふんわり影をつけて浮かす */
+    z-index: 9999;         /* 他の要素より手前に表示 */
+    border: 1px solid #eee; /* 薄い枠線 */
+    pointer-events: none;  /* クリックの邪魔をしないようにする */
+}
