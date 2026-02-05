@@ -15,10 +15,9 @@
   <style>
     /* =========================================
        【緊急LP専用】強制上書きスタイル
-       他のCSSの影響を受けないよう !important を使用
        ========================================= */
     
-    /* ヘッダー：絶対中央揃え */
+    /* ヘッダー */
     header.lp-header {
       width: 100% !important;
       text-align: center !important;
@@ -61,17 +60,18 @@
       padding: 0 20px;
     }
 
-    /* Dioneセクション（ピンク枠） */
-    .dione-box {
+    /* ボックススタイル（共通） */
+    .dione-box, .missparis-box, .check-box {
       border: 3px solid #f7a8a8;
       border-radius: 20px;
       padding: 30px 20px;
       background: #fff;
       margin: 40px auto;
       box-shadow: 0 10px 25px rgba(247, 168, 168, 0.15);
-      text-align: left; /* 基本は左揃え */
+      text-align: left;
     }
-    .dione-box h2 {
+    
+    .dione-box h2, .missparis-box h2 {
       text-align: center;
       color: #d6336c;
       border: none;
@@ -79,25 +79,33 @@
       margin-bottom: 20px;
     }
 
-    /* 予約殺到アラート */
-    .urgency-alert {
-      background: #fff0f0;
-      border: 1px solid #ffcccc;
-      color: #c0392b;
+    /* 診断ツール専用スタイル */
+    #shindan-tool {
+      background-color: #fff0f5; /* 薄いピンク */
+      padding: 25px;
+      border-radius: 20px;
+      border: 2px dashed #d6336c; /* ローズピンクの点線 */
+      text-align: center;
+      margin: 50px auto; /* 上下マージン */
+    }
+    .question-box {
+      background: #fff;
       padding: 15px;
       border-radius: 10px;
-      font-size: 14px;
-      font-weight: bold;
-      margin: 20px 0;
-      text-align: center;
-      line-height: 1.6;
+      margin-bottom: 15px;
+      text-align: left;
+      border: 1px solid #ffdde5;
+    }
+    .question-box p {
+      color: #503535;
+      margin-bottom: 8px;
     }
 
     /* ピンクグラデーションボタン */
     .btn-pink-gradient {
       display: block;
       width: 100%;
-      max-width: 100%; /* 親要素に合わせる */
+      max-width: 100%;
       box-sizing: border-box;
       margin: 10px auto;
       padding: 18px;
@@ -110,6 +118,10 @@
       text-align: center;
       font-size: 18px;
       border: none;
+      cursor: pointer;
+    }
+    .btn-pink-gradient:hover {
+      opacity: 0.9;
     }
 
     /* ジュエルレイン（グレー枠） */
@@ -133,7 +145,21 @@
       font-size: 15px;
     }
 
-    /* フッターのナビゲーション（崩れ修正） */
+    /* チェックリスト */
+    .check-list { list-style: none; padding: 0; margin: 0; }
+    .check-list li {
+      position: relative; padding-left: 28px; margin-bottom: 12px;
+      font-weight: bold; color: #555; font-size: 16px; text-align: left;
+    }
+    .check-list li::before {
+      content: "✔"; position: absolute; left: 0; color: #d6336c; font-size: 18px;
+    }
+    .check-box {
+      background: #fff0f5; padding: 30px; border-radius: 15px;
+      border: 2px dashed #f7a8a8; margin: 30px auto;
+    }
+
+    /* ナビ・フッター */
     .lp-nav-links {
       display: flex;
       flex-wrap: wrap;
@@ -153,13 +179,6 @@
       text-decoration: none;
       display: inline-block;
     }
-    .lp-nav-links a:hover {
-      background: #f7a8a8;
-      color: #fff;
-      border-color: #f7a8a8;
-    }
-
-    /* フローティングアフィリエイト（白丸） */
     #affiliate-floating-notice {
       position: fixed;
       bottom: 25px;
@@ -175,20 +194,6 @@
       white-space: nowrap;
       pointer-events: none;
       border: 1px solid #ddd;
-    }
-
-    /* チェックリスト */
-    .check-list { list-style: none; padding: 0; margin: 0; }
-    .check-list li {
-      position: relative; padding-left: 28px; margin-bottom: 12px;
-      font-weight: bold; color: #555; font-size: 16px; text-align: left;
-    }
-    .check-list li::before {
-      content: "✔"; position: absolute; left: 0; color: #d6336c; font-size: 18px;
-    }
-    .check-box {
-      background: #fff0f5; padding: 30px; border-radius: 15px;
-      border: 2px dashed #f7a8a8; margin: 30px auto;
     }
   </style>
 
@@ -246,10 +251,71 @@
         <strong>プロの手を借りて、強制的に美肌を作る（時間を買う）</strong>という選択です。
     </p>
   </section>
+  <section id="shindan-tool">
+    <h3 style="color: #d6336c; margin-bottom: 20px; font-size: 20px; font-weight:bold;">🔍 栄養士Yuriの<br>【肌荒れ原因】無料診断</h3>
+    <p style="margin-bottom: 20px; font-size:14px; line-height:1.6;">あなたの背中・二の腕荒れの<br>「真の原因」は？<br>3つの質問に答えてチェックしてみましょう！</p>
+    
+    <div id="quiz-area">
+        <div class="question-box">
+            <p style="font-weight:bold;">Q1. 最近、睡眠時間は足りていますか？</p>
+            <label><input type="radio" name="q1" value="0"> 6時間以上ぐっすり寝ている</label><br>
+            <label><input type="radio" name="q1" value="2"> 忙しくて睡眠不足気味…</label>
+        </div>
+        <div class="question-box">
+            <p style="font-weight:bold;">Q2. 揚げ物やスナック菓子を週3回以上食べる？</p>
+            <label><input type="radio" name="q2" value="2"> よく食べる（大好き！）</label><br>
+            <label><input type="radio" name="q2" value="0"> あまり食べない</label>
+        </div>
+        <div class="question-box">
+            <p style="font-weight:bold;">Q3. 乾燥を感じることは多い？</p>
+            <label><input type="radio" name="q3" value="2"> カサカサして痒くなることがある</label><br>
+            <label><input type="radio" name="q3" value="0"> 脂っぽい（ベタつき）が気になる</label>
+        </div>
 
+        <button onclick="calculateDiagnosis()" class="btn-pink-gradient" style="max-width:200px; font-size:16px;">診断する</button>
+    </div>
 
-  <!-- メイン：ミス・パリ ダイエットセンター -->
-<section class="missparis-box">
+    <div id="result-area" style="display: none; margin-top: 20px; padding: 20px; background: white; border-radius: 12px; border: 2px solid #f7a8a8;">
+        <h4 id="result-title" style="color: #c0392b; font-size: 18px; font-weight: bold; margin-bottom:10px;"></h4>
+        <p id="result-desc" style="font-size: 14px; line-height: 1.6; color:#555; text-align:left;"></p>
+        <p style="background:#fff0f5; color:#d6336c; display:inline-block; padding:8px 15px; font-weight:bold; margin-top:15px; border-radius:20px; font-size:13px;">👇 あなたにおすすめの対策は下にあります</p>
+    </div>
+
+    <script>
+        function calculateDiagnosis() {
+            const q1 = document.querySelector('input[name="q1"]:checked');
+            const q2 = document.querySelector('input[name="q2"]:checked');
+            const q3 = document.querySelector('input[name="q3"]:checked');
+
+            if (!q1 || !q2 || !q3) {
+                alert("すべての質問に答えてください！");
+                return;
+            }
+
+            let score = parseInt(q1.value) + parseInt(q2.value) + parseInt(q3.value);
+            
+            let title = "";
+            let desc = "";
+
+            if (score >= 4) {
+                title = "判定：『体内炎症＆バリア機能崩壊』タイプ";
+                desc = "今のあなたは、ストレスと食事の乱れで肌の「火事」が起きている状態！まずは砂糖と油を控えて、外側からは「抗炎症成分」が入ったケアを大至急行ってください。";
+            } else if (score >= 2) {
+                title = "判定：『隠れ乾燥・インナードライ』タイプ";
+                desc = "表面は大丈夫そうに見えても、内側の水分が枯渇しています。水をこまめに飲みつつ、保湿力の高い専用クリームで「蓋」をしないと、当日に化粧ノリが悪くなる危険性が！";
+            } else {
+                title = "判定：『優等生肌』タイプ…ですが油断大敵！";
+                desc = "今の習慣は素晴らしいです！ですが、挙式直前のストレスは急な肌荒れを招きます。今のうちに「お守り代わりのケア」を準備して、万全の状態で当日を迎えましょう。";
+            }
+
+            document.getElementById('quiz-area').style.display = 'none';
+            document.getElementById('result-area').style.display = 'block';
+            document.getElementById('result-title').innerText = title;
+            document.getElementById('result-desc').innerText = desc;
+        }
+    </script>
+  </section>
+  <section class="missparis-box">
   <h2>✨ ブライダル前に「本気でサイズを落としたい」なら</h2>
 
   <div class="esthe-image" style="text-align:center; margin-bottom:20px;">
@@ -288,6 +354,7 @@
   <img border="0" width="1" height="1"
        src="https://www12.a8.net/0.gif?a8mat=4AVAC8+4OHPQY+1OGO+C2102" alt="">
 </section>
+
 <section class="bridal-checklist">
   <h2 style="font-size:20px; margin-bottom:15px;">
     💍 あなたはどっち？ブライダルケア判断チェック
@@ -353,7 +420,6 @@
   </div>
 </section>
   
-<!-- 補助：自宅ケア（Jewel Rain） -->
 <section class="jewel-box">
   <p style="font-size:12px; color:#999; margin-bottom:5px;">
     ※正直、即効性はサロンには敵いません
