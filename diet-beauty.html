@@ -3,11 +3,9 @@
 <head>
   <meta charset="utf-8" />
   <meta name="viewport" content="width=device-width,initial-scale=1" />
-  <title>花嫁のためのインナーケア｜食べて痩せる＆美肌を作る食事法</title>
-  <meta name="description" content="挙式までにドレスを美しく着こなすために。栄養士が教える、無理なく痩せて肌もきれいになるオーガニック・インナービューティーメソッド。">
-  <meta name="keywords" content="花嫁ダイエット, インナーケア, ブライダルエステ, むくみ解消, デトックス, 食べるスキンケア">
-
-  <link rel="canonical" href="https://essential-beauty-needs.com/diet-beauty.html" />
+  <title>ドレスのために絶食してない？栄養士が警告「肌がたるまない」花嫁ダイエットの正解 | Essential Beauty Needs</title>
+  <meta name="description" content="挙式直前の無理なダイエットは肌荒れの原因に。栄養士が推奨する「食べて痩せる」1週間集中プログラム『SONOKO式献立』を徹底レビュー。">
+  <link rel="canonical" href="https://essential-beauty-needs.com/sonoko-diet.html">
   
   <link rel="preconnect" href="https://fonts.googleapis.com">
   <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
@@ -41,14 +39,17 @@
       --text-main: #503535;
       --accent: #f7a8a8;
       --gold: #d4a373;
+      --alert-bg: #fff5f5;
+      --alert-border: #f8caca;
     }
 
     body {
         background-color: var(--bg);
         color: var(--text-main);
         font-family: 'Shippori Mincho', serif;
-        line-height: 1.8;
+        line-height: 1.9;
         margin: 0;
+        padding-bottom: 80px; /* 固定バーとの重なり防止 */
     }
 
     /* ヘッダー */
@@ -60,26 +61,17 @@
     }
     header.hero h1 {
         font-family: 'Playfair Display', serif;
-        font-size: 32px;
+        font-size: 28px;
         margin-bottom: 15px;
-        line-height: 1.4;
+        line-height: 1.5;
         color: var(--text-main);
     }
     header.hero p {
-        font-size: 15px;
+        font-size: 14px;
         color: #886666;
-        margin-bottom: 30px;
+        margin-bottom: 20px;
         font-weight: 500;
     }
-
-    /* ナビゲーション */
-    .nav-links { display: flex; gap: 10px; justify-content: center; flex-wrap: wrap; margin-bottom: 20px; }
-    .nav-links a {
-        font-size: 13px; color: #777; border: 1px solid #eee; padding: 8px 18px;
-        border-radius: 20px; background: #fff; text-decoration: none; transition: 0.3s;
-    }
-    .nav-links a:hover { background: #fff0f0; color: var(--text-main); }
-    .nav-break { flex-basis: 100%; height: 0; margin: 2px 0; }
 
     /* メインコンテンツ */
     main { max-width: 800px; margin: 0 auto; padding: 0 20px; }
@@ -95,90 +87,117 @@
     }
     
     h3 {
-        font-size: 20px; color: var(--text-main); border-bottom: 2px solid #ffe0e0;
-        padding-bottom: 10px; margin-top: 60px; margin-bottom: 25px;
+        font-size: 20px; color: var(--text-main); 
+        border-bottom: 2px solid #ffe0e0;
+        padding-bottom: 10px; margin-top: 50px; margin-bottom: 25px;
     }
 
-    /* コンテンツボックス（Indexのpremiumスタイルを応用） */
+    /* コンテンツボックス */
     .content-box {
-        background: #fff; padding: 30px; border-radius: 12px;
+        background: #fff; padding: 35px; border-radius: 12px;
         box-shadow: 0 4px 15px rgba(0,0,0,0.03); margin-bottom: 40px;
-        line-height: 1.9;
     }
-    .intro-box {
-        border: 2px solid #f7a8a8; text-align: center;
+
+    /* 警告ボックス（栄養士メモ） */
+    .nutrition-point {
+        background: var(--alert-bg);
+        border: 2px solid var(--alert-border);
+        border-radius: 12px; padding: 25px; margin: 30px 0;
+        position: relative;
+    }
+    .nutrition-point::before {
+        content: "👩‍⚕️ Nutritionist's Check";
+        display: block; font-weight: bold; color: #c04b4b;
+        margin-bottom: 10px; font-size: 14px; font-family: 'Quicksand', sans-serif;
     }
 
     /* 画像 */
-    .article-img {
+    .feature-img {
         width: 100%; height: auto; border-radius: 10px;
         box-shadow: 0 5px 15px rgba(0,0,0,0.05); margin: 30px 0;
     }
 
-    /* チェックリスト */
-    .check-list {
-        background: #fffcf5; padding: 25px; border-radius: 10px;
-        border: 1px dashed var(--gold); margin-top: 20px; list-style: none;
-    }
-    .check-list li {
-        position: relative; padding-left: 25px; margin-bottom: 10px; font-size: 15px; color: #5a4545;
-    }
-    .check-list li::before {
-        content: "✔"; position: absolute; left: 0; color: var(--gold); font-weight: bold;
-    }
-    .check-list strong { color: var(--text-main); text-decoration: underline text-decoration-color: #f7a8a8; }
-
-    /* 診断バナー（上品なゴールド） */
-    .diagnosis-banner {
+    /* 診断アコーディオン */
+    .diagnosis-area {
         background: #fff; border: 2px solid var(--gold); border-radius: 15px;
-        padding: 30px; text-align: center; margin: 40px auto; position: relative; max-width: 650px;
+        padding: 30px; margin: 50px 0; position: relative;
     }
-    .diagnosis-badge {
-        background: var(--gold); color: #fff; padding: 5px 15px; border-radius: 20px;
-        font-weight: bold; font-size: 12px; position: absolute; top: -15px; left: 50%;
-        transform: translateX(-50%); letter-spacing: 1px;
+    .diagnosis-label {
+        position: absolute; top: -15px; left: 50%; transform: translateX(-50%);
+        background: var(--gold); color: #fff; padding: 5px 20px;
+        border-radius: 20px; font-size: 13px; font-weight: bold; letter-spacing: 1px;
     }
-    .diagnosis-btn {
-        display: inline-block; background: linear-gradient(45deg, #d4a373, #e6b88a);
-        color: #fff; font-size: 16px; font-weight: bold; padding: 15px 40px;
-        border-radius: 50px; text-decoration: none; margin-top: 15px;
-        box-shadow: 0 4px 10px rgba(212, 163, 115, 0.4); transition: 0.3s;
+    
+    details {
+        margin-bottom: 15px; border-radius: 10px; border: 1px solid #eee;
+        transition: 0.3s; overflow: hidden;
     }
-    .diagnosis-btn:hover { transform: translateY(-2px); opacity: 0.9; }
+    details[open] { border-color: var(--accent); background: #fffaf9; }
+    
+    summary {
+        padding: 15px 20px; cursor: pointer; font-weight: bold; color: var(--text-main);
+        background: #fff; list-style: none; position: relative; transition: 0.2s;
+    }
+    summary:hover { background: #fafafa; }
+    summary::after {
+        content: "+"; position: absolute; right: 20px; top: 50%;
+        transform: translateY(-50%); font-size: 18px; color: var(--gold);
+    }
+    details[open] summary::after { content: "-"; }
+    
+    .diagnosis-content {
+        padding: 15px 20px 20px; font-size: 15px; color: #666;
+        border-top: 1px dashed #eee;
+    }
 
-    /* Noteバナー */
-    .note-banner {
-        margin: 60px auto; padding: 3px;
-        background: linear-gradient(135deg, #f7a8a8 0%, #ffdecb 100%);
-        border-radius: 20px; box-shadow: 0 10px 25px rgba(247, 168, 168, 0.2);
+    /* 商品紹介エリア */
+    .product-box {
+        text-align: center; background: #fff;
+        border: 1px solid #eee; border-radius: 15px;
+        padding: 40px 25px; margin: 50px 0;
+        box-shadow: 0 10px 30px rgba(0,0,0,0.05);
+        position: relative; overflow: hidden;
     }
-    .note-inner { background: #fff; border-radius: 18px; padding: 30px; text-align: center; }
-    .shiny-btn {
-        display: block; width: 100%; max-width: 300px; margin: 20px auto 0;
-        background: linear-gradient(45deg, #f7a8a8, #e08e8e); color: #fff;
-        text-decoration: none; font-weight: bold; font-size: 16px; padding: 15px 0;
-        border-radius: 50px; transition: 0.3s;
+    .product-box::before {
+        content: ""; position: absolute; top: 0; left: 0; width: 100%; height: 5px;
+        background: linear-gradient(90deg, #f7a8a8, #d4a373);
     }
-    .shiny-btn:hover { transform: translateY(-2px); box-shadow: 0 5px 15px rgba(247, 168, 168, 0.4); }
-
-    /* ジム・厳選3選バナー（IndexのTrial Banner風に統一） */
-    .selection-banner {
-        background-color: #fff;
-        border: 2px solid var(--text-main); /* シックな枠線 */
-        border-radius: 15px;
-        padding: 35px 25px;
-        margin: 60px auto;
-        box-shadow: 0 5px 15px rgba(0,0,0,0.05);
+    
+    /* ▼▼▼ 追加：SONOKO画像のサイズ調整 ▼▼▼ */
+    .sonoko-banner-container {
         text-align: center;
-        max-width: 700px;
-        position: relative;
+        margin: 25px 0;
     }
-    .selection-tag {
-        background: var(--text-main); color: #fff; font-size: 11px;
-        padding: 4px 15px; border-radius: 20px; font-weight: bold;
-        position: absolute; top: -12px; left: 50%; transform: translateX(-50%);
-        letter-spacing: 1px;
+    .sonoko-banner-container img {
+        max-width: 85%; /* PCでは85% */
+        height: auto;
+        border-radius: 12px;
+        box-shadow: 0 4px 12px rgba(0,0,0,0.1);
     }
+    @media (max-width: 600px) {
+        .sonoko-banner-container img {
+            max-width: 90%; /* スマホでは90%で見やすく */
+        }
+    }
+    /* ▲▲▲ 追加ここまで ▲▲▲ */
+    
+    .btn-main {
+        display: inline-block; width: 100%; max-width: 320px;
+        background: linear-gradient(45deg, #f7a8a8, #e08e8e);
+        color: #fff; padding: 18px 0; border-radius: 50px;
+        font-weight: bold; font-size: 16px; text-decoration: none;
+        box-shadow: 0 5px 15px rgba(247, 168, 168, 0.4);
+        transition: transform 0.3s; margin-top: 20px;
+    }
+    .btn-main:hover { transform: translateY(-3px); opacity: 0.95; }
+
+    /* ナビゲーション */
+    .nav-links { display: flex; gap: 10px; justify-content: center; flex-wrap: wrap; margin-bottom: 20px; }
+    .nav-links a {
+        font-size: 13px; color: #777; border: 1px solid #eee; padding: 8px 18px;
+        border-radius: 20px; background: #fff; text-decoration: none; transition: 0.3s;
+    }
+    .nav-links a:hover { background: #fff0f0; color: var(--text-main); }
 
     /* フッター */
     footer { background: #fffaf4; border-top: 3px solid #f7a8a8; padding: 50px 20px 60px; margin-top: 80px; color: #555; font-size: 14px; }
@@ -202,129 +221,167 @@
 </head>
 
 <body>
-  <header class="hero">
-    <h1>花嫁のための<br>インナーケア</h1>
-    <p>「食べるスキンケア」で<br>挙式までに内側から輝く体へ</p>
 
+  <header class="hero">
+    <h1>花嫁ダイエットの正解</h1>
+    <p>ドレスのために絶食していませんか？<br>栄養士が教える「肌がたるまない」痩せ方</p>
+    
     <nav class="nav-links">
         <a href="index.html">🏠 トップ</a>
         <a href="bridal-care.html">👰 花嫁ケア診断</a>
         <a href="skin-ranking.html">✨ ランキング</a>
-        <a href="acne-care.html">🧴 肌荒れケア</a>
-        <div class="nav-break"></div> 
-        <a href="amazon-oil-review.html">🔥 オイルレビュー</a>     
-        <a href="lifestyle-skincare.html">💆‍♀️ 生活リズム別</a>
-        <a href="beauty-column.html">💄 美容コラム</a>
+        <a href="diet-beauty.html">🥗 インナーケア一覧</a>
     </nav>
   </header>
 
   <main>
     
-    <div class="diagnosis-banner">
-      <span class="diagnosis-badge">栄養士監修・無料ツール</span>
-      <h3 style="color:#d4a373; margin-bottom:10px; font-size:20px;">⚡「むくみ」放置しないで！</h3>
-      <p style="margin-bottom:15px; font-size:14px; color:#666;">ダイエットしているのに痩せない…それは「食べ方」が原因かも。<br>
-      今の体質と、あなたに必要なケアを<strong>30秒で診断</strong>します。</p>
-      <a href="bridal-care.html" class="diagnosis-btn">✨ 今すぐ肌診断をする！✨</a>
-    </div>
+    <img src="images/healthy1.jpg" alt="ヘルシーな食事を楽しむ花嫁" class="feature-img" style="margin-top:0;" onerror="handleImageError(this, 'Healthy Bride')">
 
-    <h2>ドレスが似合う発光肌は<br>内臓から作る</h2>
-    
-    <div class="content-box intro-box">
-        <p>「ドレスの背中にお肉が乗るのが怖い」「ダイエットしたら肌がカサカサになった…」<br>
-        そんな花嫁様の悩みを解決するのは、高価なエステよりも、毎日の<strong>「食事」</strong>です。</p>
-        <p style="margin-bottom:0;">栄養士としてお伝えしたいのは、ただカロリーを減らすのではなく、<strong>「肌を輝かせながら、無駄なむくみを落とす」</strong>ための食べ方。<br>
-        オーガニック食材の力で腸内環境を整えれば、自然とウエストは引き締まり、肌は内側から発光し始めます。</p>
-    </div>
-
-    <img src="images/diet2.0.jpg" alt="オーガニック食材とキッチン" class="article-img" onerror="handleImageError(this)">
-
-    <h3>1. 挙式直前でも間に合う<br>「食べるスキンケア」</h3>
     <div class="content-box">
-        <p>
-            「食べる美容液」とも呼ばれる抗酸化成分をご存知ですか？<br>
-            挙式準備のストレスや紫外線で発生する「活性酸素」は、肌の老化や炎症の元凶です。これを撃退するのが、色の濃い野菜やフルーツに含まれる<strong>「フィトケミカル」</strong>です。
-        </p>
-        <p>
-            アサイーやベリー類、トマト、ブロッコリーなどを意識的に摂ることで、細胞レベルから錆びない体を作ります。<br>
-            特に朝のフルーツは、酵素も摂れてデトックス効果抜群。サプリに頼る前に、まずは旬の恵みをいただきましょう。
-        </p>
-        <ul class="check-list">
-            <li><strong>色の濃いベリー類</strong>：強力な抗酸化作用で、準備疲れによる肌のサビ（老化）を防ぎます。</li>
-            <li><strong>良質なオイル（亜麻仁油）</strong>：肌の乾燥を防ぎ、内側から潤いを保ちます。ダイエット中でも油抜きはNG！</li>
-        </ul>
+      <p>こんにちは、栄養士の<strong>Yuri</strong>です。</p>
+      <p>「ドレスの試着までにあと3kg痩せたい！」<br>
+      「背中のハミ肉をなんとかしたい…」</p>
+      
+      <p>そんな焦りから、<strong>「サラダだけ食べる」「夕食を抜く」</strong>といった無理なダイエットをしていませんか？</p>
+      
+      <div class="nutrition-point">
+         <strong>⚠️ 栄養士からの警告</strong><br>
+         挙式直前の栄養不足は、もっとも危険です。<br>
+         脂肪ではなく「筋肉」と「水分」が抜けてしまい、<strong>肌はカサカサ、髪はパサパサ、デコルテはげっそりと貧相に</strong>なってしまいます。
+      </div>
+
+      <p>「じゃあ、どうすればいいの？」<br>
+      その答えは、意外かもしれませんが<strong>「しっかり食べること」</strong>なんです。</p>
     </div>
 
-    <h3>2. むくみ撃退：ドレスのサイズダウンを目指す</h3>
-    <div style="text-align: center;">
-        <img src="images/diet2.1.jpg" alt="ヨガとリラックス空間" class="article-img" onerror="handleImageError(this)">
-    </div>
+    <h2>花嫁ダイエットの正解は<br>「代謝を上げる」こと</h2>
+      
+    <img src="images/healthy2.png" alt="新鮮な野菜とフルーツ" class="feature-img" onerror="handleImageError(this, 'Fruits & Vegetables')">
+
     <div class="content-box">
-        <p>
-            「体重は変わらないのに、ドレスがきつく感じる…」それは<strong>「むくみ」</strong>のせいかもしれません。<br><br>
-            塩分の摂りすぎは水風船のように体を膨らませます。カリウムを含むきゅうり、アボカド、海藻類を積極的に摂り、余分な水分を排出する「水はけの良い体」を目指しましょう。
-        </p>
-        <p>
-            また、冷たい飲み物は内臓を冷やし代謝を下げるので、常温の水や白湯をこまめに飲むのが鉄則です。<br><br>
-            体内の水分循環を良くすることで、鎖骨や肩甲骨がくっきりと現れ、見た目体重マイナス3kgの効果が期待できます。
-        </p>
-        <ul class="check-list">
-            <li><strong>朝の白湯</strong>：代謝スイッチをONにし、当日の顔のむくみを予防します。</li>
-            <li><strong>バスソルト入浴</strong>：ミネラル豊富な発汗で、ドレスから出る二の腕や背中をすっきりさせます。</li>
-            <li><strong>リンパマッサージ</strong>：入浴後、オーガニックオイルで鎖骨周りを流せば、デコルテラインが劇的に変わります。</li>
-        </ul>
+      <p>美しいラインを作るには、代謝を上げて脂肪を燃やす必要があります。<br>
+      そのためには、バランスの取れた食事で「燃やすための材料」を体に補給してあげなければなりません。</p>
+
+      <p>でも、忙しい準備期間中に、カロリー計算や自炊をするのは大変ですよね。<br>
+      そこで今回、栄養士の私が自信を持っておすすめできる<strong>「花嫁のための駆け込み寺」</strong>をご紹介します。</p>
     </div>
 
-    <h3>3. 「腸」を整えれば<br>メンタルも肌も安定する</h3>
-    <div class="content-box">
-        <p>
-            「肌は腸の鏡」と言われるほど、腸内環境は美肌に直結します。<br><br>
-            便秘は老廃物を体に溜め込んでいる状態。これではいくら高級な化粧品を使っても、肌はくすんでしまいます。
-        </p>
-        <p>
-            発酵食品（味噌、納豆、麹）や水溶性食物繊維（海藻、オクラ）を毎食一品プラスして、善玉菌を育てましょう。<br><br>
-        腸が整うと、幸せホルモン「セロトニン」の分泌も増え、マリッジブルーの予防にも繋がります。心も体も軽やかに、式当日を迎えられますよ。
-        </p>
-    </div>
-
-    <div class="note-banner">
-        <div class="note-inner">
-            <span style="display: inline-block; background: #e74c3c; color: #fff; font-size: 11px; font-weight: bold; padding: 4px 12px; border-radius: 20px; vertical-align: middle; margin-bottom: 10px;">アーカイブ</span>
-            <h3 style="margin: 5px 0 15px; font-size: 22px; color: var(--text-main); font-family: 'Playfair Display', serif;">
-                読むだけで変わる<br>「花嫁美容」Note
-            </h3>
-            <div style="background: #fffaf4; border: 1px dashed var(--gold); border-radius: 10px; padding: 15px; margin: 15px auto; max-width: 90%; text-align: left; font-size: 14px; color: #555;">
-                <p style="margin: 5px 0;">👰 <strong>プレ花嫁講座</strong>：ドレス姿を変える食事術</p>
-                <p style="margin: 5px 0;">✨ <strong>高級美容液より効く</strong>「美肌定食」とは？</p>
-            </div>
-            <a href="note-archive.html" class="shiny-btn">全記事一覧を無料で見る ▶</a>
-        </div>
-    </div>
-
-    <div class="selection-banner">
-        <span class="selection-tag">New Selection</span>
-        <h3 style="font-family: 'Playfair Display', serif; color: var(--text-main); margin: 15px 0 10px; font-size: 20px; border-bottom: none; text-align:center;">
-            失敗しない！<br>花嫁ボディメイク厳選3選
+    <div class="diagnosis-area">
+        <span class="diagnosis-label">🍽️ 好物でわかる肌診断</span>
+        <h3 style="text-align:center; border:none; margin-top:10px; font-size:22px; color:#d4a373;">
+            その「肌荒れ」<br>食べ物が原因かも？
         </h3>
-        <p style="font-size: 14px; line-height: 1.6; margin-bottom: 25px; color: #666;">
-            「バストアップ」「下半身痩せ」「運動なし」<br>
-            あなたのワガママを叶える<br>
-            ベストな選択肢を栄養士が比較。<br>
-            もう、ジム選びで迷わせません。
+        <p style="text-align:center; font-size:14px; margin-bottom:20px;">
+            好きな食べ物は、今の体内の栄養バランスと肌状態を映す鏡。<br>当てはまるものをタップしてチェック！
         </p>
-        <a href="accept-gym.html" class="diagnosis-btn" style="background:#503535; box-shadow:0 4px 10px rgba(0,0,0,0.2);">
-            厳選3選を見る &raquo;
-        </a>
-        <div style="margin-top:15px;">
-            <a href="trial-collection.html" style="font-size:13px; color:#d6336c; text-decoration:underline;">
-                または、無料体験ツアー一覧を見る ＞
-            </a>
+
+        <details>
+            <summary>🍰 甘いもの（ケーキ・チョコ）が大好き</summary>
+            <div class="diagnosis-content">
+                <p><strong>診断：脂性肌～混合肌（ニキビ・黄ぐすみ）</strong></p>
+                <p>糖質の摂りすぎはTゾーンのベタつきや、肌が黄色くくすむ「糖化」の原因に。ハリの低下にも要注意です。<br>
+                <span style="color:#d4a373; font-weight:bold;">👉 おすすめケア：</span>低GIのナッツをおやつにするか、食事で血糖値を急上昇させない工夫を。
+                </p>
+            </div>
+        </details>
+
+        <details>
+            <summary>🌶️ 辛いもの（唐辛子など）が大好き</summary>
+            <div class="diagnosis-content">
+                <p><strong>診断：脂性肌～敏感肌（炎症リスク）</strong></p>
+                <p>発汗作用で皮脂が増えるほか、刺激で肌の赤みや炎症を引き起こしやすくなっています。<br>
+                <span style="color:#d4a373; font-weight:bold;">👉 おすすめケア：</span>抗酸化作用のあるトマトなどの野菜をたっぷり摂って炎症を鎮火！
+                </p>
+            </div>
+        </details>
+
+        <details>
+            <summary>🍤 油っこいもの・スナックが大好き</summary>
+            <div class="diagnosis-content">
+                <p><strong>診断：脂性肌（毛穴詰まり・ニキビ）</strong></p>
+                <p>悪い油の摂りすぎは、そのままドロドロの皮脂となり毛穴を詰まらせます。酸化した油は肌老化の最大要因！<br>
+                <span style="color:#d4a373; font-weight:bold;">👉 おすすめケア：</span>揚げ物を減らし、SONOKOのような「ノンオイル調理」で肌を休ませて。
+                </p>
+            </div>
+        </details>
+        
+        <details>
+            <summary>🧂 味の濃いもの・塩辛いものが大好き</summary>
+            <div class="diagnosis-content">
+                <p><strong>診断：乾燥肌～むくみ肌</strong></p>
+                <p>塩分過多は体内の水分を奪い、肌の乾燥を招きます。同時に顔のむくみも引き起こすダブルパンチ。<br>
+                <span style="color:#d4a373; font-weight:bold;">👉 おすすめケア：</span>カリウムを含む野菜や海藻を摂って、余分な塩分を排出しましょう。
+                </p>
+            </div>
+        </details>
+        
+        <p style="margin-top:25px; font-weight:bold; text-align:center; color:#503535;">
+            「わかってるけど、食事を変えるのは難しい…」<br>
+            そう思ったあなたにおすすめなのが、これです👇
+        </p>
+    </div>
+
+    <h2>SONOKO式 8週間ダイエット献立<br>（1週間お試し）</h2>
+    
+    <div class="content-box">
+      <p>美容家・鈴木その子氏が提唱した「食べて美しく痩せる」メソッドを詰め込んだ、調理不要の献立セットです。<br>
+      私がこれをおすすめする理由は、以下の3つのポイントが<strong>「花嫁美容」に完璧にマッチしているから</strong>です。</p>
+
+      <h3>1. 添加物不使用・ノンオイル調理</h3>
+      <p>肌荒れの大敵である「悪い油」や「食品添加物」を徹底的にカット。<br>
+      消化への負担が少ないため、ダイエットだけでなく、挙式前の<strong>「内側からの肌ケア」</strong>としても非常に優秀です。</p>
+
+      <h3>2. 温めるだけで「完璧な栄養バランス」</h3>
+      <p>1日3食＋間食も含めて、カロリーと栄養バランスが計算され尽くしています。<br>
+      調理は電子レンジやお湯で温めるだけ。「今日は何を食べよう…」と悩むストレスから解放され、空いた時間をエステや準備に使えます。</p>
+
+      <h3>3. 「やつれない」健康的な美しさ</h3>
+      <p>しっかり食べるので、空腹によるイライラ（マリッジブルーの原因！）も防げます。<br>
+      げっそりするのではなく、内側から満たされた、ハリのある美しさを目指せます。</p>
+    </div>
+
+    <div class="product-box">
+        <h3 style="margin-top:0; border:none; font-size:22px; color:#c04b4b;">
+            💒 挙式前の<br>1週間集中ケア！
+        </h3>
+        <p>いきなり8週間は大変でも、<strong>「お試し1週間セット」</strong>なら取り入れやすいはず。<br>
+        「前撮り前の1週間」や「挙式1ヶ月前の調整」として、プロ渾身の食事に頼ってみませんか？</p>
+        
+        <div class="sonoko-banner-container">
+            <a href="//af.moshimo.com/af/c/click?a_id=5322925&p_id=3200&pc_id=7492&pl_id=41883" rel="nofollow" referrerpolicy="no-referrer-when-downgrade" attributionsrc><img src="//image.moshimo.com/af-img/2478/000000041883.jpg" style="border:none;" alt="SONOKO式ダイエット献立セット"></a><img src="//i.moshimo.com/af/i/impression?a_id=5322925&p_id=3200&pc_id=7492&pl_id=41883" width="1" height="1" style="border:none;" loading="lazy">
         </div>
+        <p style="font-size:14px; color:#d68e33; font-weight:bold; margin-bottom:5px;">
+            ＼ エステ1回分よりお得！ ／
+        </p>
+        <a href="//af.moshimo.com/af/c/click?a_id=5322925&p_id=3200&pc_id=7492&pl_id=41851" rel="nofollow" referrerpolicy="no-referrer-when-downgrade" attributionsrc class="btn-main">
+            お試しセットを見てみる ▶
+        </a>
+        <img src="//i.moshimo.com/af/i/impression?a_id=5322925&p_id=3200&pc_id=7492&pl_id=41851" width="1" height="1" style="border:none;" loading="lazy">
+
+        <p style="font-size:12px; margin-top:15px; color:#999;">
+            ※完売しやすいため、在庫状況は公式サイトでご確認ください
+        </p>
+    </div>
+
+    <div style="background-color:#fff; border:2px solid #f7a8a8; border-radius:15px; padding:35px 25px; margin-top:60px; text-align:center; box-shadow:0 5px 15px rgba(247,168,168,0.1);">
+        <span style="background:#d6336c; color:#fff; font-size:11px; padding:4px 12px; border-radius:20px; font-weight:bold; display:inline-block; margin-bottom:10px; letter-spacing:1px;">保存版</span>
+        <h2 style="border:none; margin:0 0 15px 0; font-size:22px; color:#503535;">プレ花嫁の「無料体験」ツアー</h2>
+        <p style="font-size:14px; color:#666; margin-bottom:20px; line-height:1.6;">
+            結婚式はお金がかかるからこそ。<br>
+            ジム・エステ・脱毛など、<br>
+            <strong>「0円〜」でプロの施術が受けられる</strong><br>
+            お得なスポットを厳選しました。
+        </p>
+        <a href="trial-collection.html" style="display:inline-block; background:#fff; color:#d6336c; border:1px solid #d6336c; padding:10px 25px; border-radius:30px; font-weight:bold; font-size:14px; text-decoration:none; width:100%; max-width:250px; transition:0.3s;" onmouseover="this.style.background='#fff0f0'" onmouseout="this.style.background='#fff'">
+            ✨ 賢く綺麗になるリストを見る
+        </a>
     </div>
 
     <div style="text-align:center;">
         <a href="index.html" class="back-btn">← トップページへ戻る</a>
     </div>
+
   </main>
   
   <footer>
