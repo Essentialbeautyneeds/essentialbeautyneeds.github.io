@@ -161,6 +161,12 @@
         content: ""; position: absolute; top: 0; left: 0; width: 100%; height: 5px;
         background: linear-gradient(90deg, #f7a8a8, #d4a373);
     }
+    /* ▼▼▼ 追加：SONOKO画像のサイズ調整 ▼▼▼ */
+    .product-box a img {
+        max-width: 85%; /* スマホで大きすぎないように制限 */
+        height: auto;
+    }
+    /* ▲▲▲ 追加ここまで ▲▲▲ */
     
     .btn-main {
         display: inline-block; width: 100%; max-width: 320px;
@@ -192,7 +198,22 @@
     .footer-room-link { display: inline-block; color: #c63535; font-weight: bold; border: 1px solid #c63535; padding: 8px 20px; border-radius: 20px; text-decoration: none; margin-bottom: 20px; background: #fff; transition: 0.3s; }
     .footer-room-link:hover { background: #c63535; color: #fff; }
 
-    #affiliateNotice { position: fixed; right: 12px; bottom: 12px; background: rgba(255, 255, 255, 0.9); color: #aaa; font-size: 10px; border-radius: 6px; padding: 4px 8px; box-shadow: 0 2px 6px rgba(0,0,0,0.1); z-index: 999; border: 1px solid #eee;}
+    /* ▼▼▼ 修正：フッターの固定バーのはみ出し対策 ▼▼▼ */
+    #affiliateNotice {
+        position: fixed;
+        bottom: 0;
+        left: 0;
+        width: 100%;
+        box-sizing: border-box; /* パディングを含めて幅100%にする */
+        padding: 8px;
+        text-align: center;
+        background: rgba(255, 255, 255, 0.95);
+        border-top: 1px solid #eee;
+        z-index: 999;
+        font-size: 10px;
+        color: #aaa;
+    }
+    /* ▲▲▲ 修正ここまで ▲▲▲ */
     
     .back-btn { display:inline-block; margin:40px auto; color:#777; text-decoration:none; border-bottom:1px solid #ccc; }
 
