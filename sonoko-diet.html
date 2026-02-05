@@ -49,6 +49,8 @@
         font-family: 'Shippori Mincho', serif;
         line-height: 1.9;
         margin: 0;
+        /* ▼▼▼ 修正：フッター重なり防止のため余白を拡大 ▼▼▼ */
+        padding-bottom: 120px;
     }
 
     /* ヘッダー */
@@ -149,7 +151,7 @@
         border-top: 1px dashed #eee;
     }
 
-    /* 商品紹介エリア（プレミアム感） */
+    /* 商品紹介エリア */
     .product-box {
         text-align: center; background: #fff;
         border: 1px solid #eee; border-radius: 15px;
@@ -161,12 +163,44 @@
         content: ""; position: absolute; top: 0; left: 0; width: 100%; height: 5px;
         background: linear-gradient(90deg, #f7a8a8, #d4a373);
     }
-    /* ▼▼▼ 追加：SONOKO画像のサイズ調整 ▼▼▼ */
-    .product-box a img {
-        max-width: 85%; /* スマホで大きすぎないように制限 */
-        height: auto;
+    
+    /* ▼▼▼ 修正：SONOKO画像をさらに小さく ▼▼▼ */
+    .sonoko-banner-container {
+        text-align: center;
+        margin: 25px 0;
     }
-    /* ▲▲▲ 追加ここまで ▲▲▲ */
+    .sonoko-banner-container img {
+        max-width: 70%; /* PCでは70%に縮小 */
+        height: auto;
+        border-radius: 12px;
+        box-shadow: 0 4px 12px rgba(0,0,0,0.1);
+    }
+    
+    /* ▼▼▼ 追加：バナー用クラス（Indexと統一） ▼▼▼ */
+    .trial-banner {
+        background-color: #fff;
+        border: 2px solid #f7a8a8;
+        border-radius: 15px;
+        padding: 35px 25px;
+        margin-top: 60px;
+        text-align: center;
+        box-shadow: 0 5px 15px rgba(247, 168, 168, 0.1);
+    }
+    
+    /* ▼▼▼ 追加：スマホ用レイアウト調整 ▼▼▼ */
+    @media (max-width: 600px) {
+        /* SONOKO画像をスマホで80%に */
+        .sonoko-banner-container img {
+            max-width: 80%;
+        }
+        /* コンテンツボックスの余白を調整してはみ出し防止 */
+        .content-box, .product-box, .diagnosis-area, .trial-banner {
+            padding: 25px 15px;
+        }
+        main {
+            padding: 0 15px;
+        }
+    }
     
     .btn-main {
         display: inline-block; width: 100%; max-width: 320px;
@@ -198,22 +232,7 @@
     .footer-room-link { display: inline-block; color: #c63535; font-weight: bold; border: 1px solid #c63535; padding: 8px 20px; border-radius: 20px; text-decoration: none; margin-bottom: 20px; background: #fff; transition: 0.3s; }
     .footer-room-link:hover { background: #c63535; color: #fff; }
 
-    /* ▼▼▼ 修正：フッターの固定バーのはみ出し対策 ▼▼▼ */
-    #affiliateNotice {
-        position: fixed;
-        bottom: 0;
-        left: 0;
-        width: 100%;
-        box-sizing: border-box; /* パディングを含めて幅100%にする */
-        padding: 8px;
-        text-align: center;
-        background: rgba(255, 255, 255, 0.95);
-        border-top: 1px solid #eee;
-        z-index: 999;
-        font-size: 10px;
-        color: #aaa;
-    }
-    /* ▲▲▲ 修正ここまで ▲▲▲ */
+    #affiliateNotice { position: fixed; right: 12px; bottom: 12px; background: rgba(255, 255, 255, 0.9); color: #aaa; font-size: 10px; border-radius: 6px; padding: 4px 8px; box-shadow: 0 2px 6px rgba(0,0,0,0.1); z-index: 999; border: 1px solid #eee;}
     
     .back-btn { display:inline-block; margin:40px auto; color:#777; text-decoration:none; border-bottom:1px solid #ccc; }
 
@@ -350,10 +369,9 @@
         <p>いきなり8週間は大変でも、<strong>「お試し1週間セット」</strong>なら取り入れやすいはず。<br>
         「前撮り前の1週間」や「挙式1ヶ月前の調整」として、プロ渾身の食事に頼ってみませんか？</p>
         
-        <div style="margin: 25px 0;">
-            <a href="//af.moshimo.com/af/c/click?a_id=5322925&p_id=3200&pc_id=7492&pl_id=41883" rel="nofollow" referrerpolicy="no-referrer-when-downgrade" attributionsrc><img src="//image.moshimo.com/af-img/2478/000000041883.jpg" width="336" height="280" style="border:none;" alt="SONOKO式ダイエット献立セット"></a><img src="//i.moshimo.com/af/i/impression?a_id=5322925&p_id=3200&pc_id=7492&pl_id=41883" width="1" height="1" style="border:none;" loading="lazy">
+        <div class="sonoko-banner-container">
+            <a href="//af.moshimo.com/af/c/click?a_id=5322925&p_id=3200&pc_id=7492&pl_id=41883" rel="nofollow" referrerpolicy="no-referrer-when-downgrade" attributionsrc><img src="//image.moshimo.com/af-img/2478/000000041883.jpg" style="border:none;" alt="SONOKO式ダイエット献立セット"></a><img src="//i.moshimo.com/af/i/impression?a_id=5322925&p_id=3200&pc_id=7492&pl_id=41883" width="1" height="1" style="border:none;" loading="lazy">
         </div>
-        
         <p style="font-size:14px; color:#d68e33; font-weight:bold; margin-bottom:5px;">
             ＼ エステ1回分よりお得！ ／
         </p>
@@ -367,7 +385,7 @@
         </p>
     </div>
 
-    <div style="background-color:#fff; border:2px solid #f7a8a8; border-radius:15px; padding:35px 25px; margin-top:60px; text-align:center; box-shadow:0 5px 15px rgba(247,168,168,0.1);">
+    <div class="trial-banner">
         <span style="background:#d6336c; color:#fff; font-size:11px; padding:4px 12px; border-radius:20px; font-weight:bold; display:inline-block; margin-bottom:10px; letter-spacing:1px;">保存版</span>
         <h2 style="border:none; margin:0 0 15px 0; font-size:22px; color:#503535;">プレ花嫁の「無料体験」ツアー</h2>
         <p style="font-size:14px; color:#666; margin-bottom:20px; line-height:1.6;">
