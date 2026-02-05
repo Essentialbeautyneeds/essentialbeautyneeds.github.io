@@ -2,7 +2,7 @@
 <html lang="ja">
 <head>
   <meta charset="utf-8">
-  <title>プレ花嫁の「無料体験」ツアー｜賢く綺麗になる厳選スポット【東京・大阪・全国】</title>
+  <title>プレ花嫁の「無料体験」ツアー｜賢く綺麗になる厳選スポット【完全版】</title>
   <meta name="description" content="結婚式費用を抑えたい花嫁様へ。パーソナルジム、エステ、脱毛など、栄養士Yuriが厳選した「無料〜格安」でプロの施術が受けられる体験スポットまとめ。">
   <meta name="viewport" content="width=device-width, initial-scale=1.0">
   <link rel="canonical" href="https://essential-beauty-needs.com/trial-collection.html">
@@ -32,7 +32,7 @@
     .subtitle { font-size: 14px; font-weight: bold; color: #888; letter-spacing: 1px; }
 
     /* コンテンツエリア */
-    main { max-width: 900px; margin: 0 auto; padding: 20px; }
+    main { max-width: 1000px; margin: 0 auto; padding: 20px; }
 
     /* 説明ボックス */
     .intro-box {
@@ -64,18 +64,24 @@
     }
     .shop-card:hover { transform: translateY(-5px); border-color: #f7a8a8; }
     
-    .card-img-area { position: relative; height: 200px; overflow: hidden; }
+    .card-img-area { position: relative; height: 180px; overflow: hidden; }
     .card-img-area img { width: 100%; height: 100%; object-fit: cover; }
     
     .badge-area {
       position: absolute; top: 10px; left: 10px;
-      background: #333; color: #fff; font-size: 11px; padding: 4px 10px;
-      border-radius: 20px; font-weight: bold; opacity: 0.9;
+      background: rgba(50, 50, 50, 0.8); color: #fff; font-size: 11px; padding: 4px 10px;
+      border-radius: 20px; font-weight: bold;
     }
     .badge-free {
       position: absolute; top: 10px; right: 10px;
       background: #e74c3c; color: #fff; font-size: 11px; padding: 4px 10px;
       border-radius: 20px; font-weight: bold; box-shadow: 0 2px 5px rgba(0,0,0,0.2);
+    }
+    .badge-osusume {
+        position: absolute; bottom: 10px; right: 10px;
+        background: linear-gradient(45deg, #FFD700, #DAA520); color: #fff;
+        font-size: 12px; padding: 4px 12px; border-radius: 20px; font-weight: bold;
+        box-shadow: 0 2px 5px rgba(0,0,0,0.2);
     }
 
     .card-body { padding: 20px; flex-grow: 1; display: flex; flex-direction: column; }
@@ -121,13 +127,28 @@
 
     <div class="shop-card">
       <div class="card-img-area">
+        <img src="" onerror="handleImageError(this, 'ACCEPT Ginza')">
+        <span class="badge-area">東京・銀座</span>
+        <span class="badge-free">無料相談</span>
+        <span class="badge-osusume">ハイクラス</span>
+      </div>
+      <div class="card-body">
+        <div class="shop-name">ACCEPT 銀座</div>
+        <p class="shop-desc">【注目】銀座の一等地にある完全個室ジム。本気で結果を出したい方向け。ラグジュアリーな空間でのカウンセリングは、モチベーションが一気に上がります。</p>
+        <a href="【ACCEPTのリンク】" class="btn-apply" target="_blank" rel="nofollow">公式サイトを見る ＞</a>
+      </div>
+    </div>
+
+    <div class="shop-card">
+      <div class="card-img-area">
         <img src="images/ari11.jpg" onerror="handleImageError(this, 'ARISANFIT')">
         <span class="badge-area">渋谷・池袋・東高円寺</span>
-        <span class="badge-free">無料体験 0円</span>
+        <span class="badge-free">体験 0円</span>
+        <span class="badge-osusume">Yuri推奨</span>
       </div>
       <div class="card-body">
         <div class="shop-name">ARISANFIT</div>
-        <p class="shop-desc">【おすすめNo.1】ミスコン日本一を輩出したメソッドなのに、初心者・女性に優しい隠れ家ジム。無理な勧誘なしで、プロの骨格診断が無料で受けられます。</p>
+        <p class="shop-desc">【人気No.1】ミスコン日本一を輩出したメソッドなのに、初心者・女性に優しい隠れ家ジム。無理な勧誘なしで、プロの骨格診断が無料で受けられます。</p>
         <a href="arisan-gym.html" class="btn-apply" target="_blank">詳細・予約はこちら ＞</a>
       </div>
     </div>
@@ -136,25 +157,64 @@
       <div class="card-img-area">
         <img src="" onerror="handleImageError(this, 'RITA STYLE')">
         <span class="badge-area">全国展開</span>
-        <span class="badge-free">無料カウンセリング</span>
+        <span class="badge-free">無料相談</span>
       </div>
       <div class="card-body">
         <div class="shop-name">リタスタイル</div>
-        <p class="shop-desc">「人生が変わるほど痩せる」がキャッチコピーの完全個室ジム。短期集中で結果を出したい花嫁様に。まずは無料相談で痩せない原因をチェック。</p>
+        <p class="shop-desc">「人生が変わるほど痩せる」がキャッチコピーの完全個室ジム。短期集中で結果を出したい花嫁様に。まずは無料カウンセリングで痩せない原因をチェック。</p>
         <a href="【リタスタイルのリンク】" class="btn-apply" target="_blank" rel="nofollow">公式サイトを見る ＞</a>
+      </div>
+    </div>
+    
+    <div class="shop-card">
+      <div class="card-img-area">
+        <img src="" onerror="handleImageError(this, 'ON SUPERVISED')">
+        <span class="badge-area">駅チカ4分以内</span>
+        <span class="badge-free">無料体験</span>
+      </div>
+      <div class="card-body">
+        <div class="shop-name">美ボディチャンピオン監修ジム</div>
+        <p class="shop-desc">TV出演の美ボディチャンピオンが監修。新店OPEN記念で無料体験実施中！リバウンドしない体作りを学びたい方に。</p>
+        <a href="【オン監修ジムのリンク】" class="btn-apply" target="_blank" rel="nofollow">公式サイトを見る ＞</a>
       </div>
     </div>
 
     <div class="shop-card">
       <div class="card-img-area">
-        <img src="" onerror="handleImageError(this, 'ACCEPT Ginza')">
-        <span class="badge-area">東京・銀座</span>
-        <span class="badge-free">ハイステータス</span>
+        <img src="" onerror="handleImageError(this, 'STUDIO KOMPAS')">
+        <span class="badge-area">都内・渋谷エリア</span>
+        <span class="badge-free">無料体験</span>
       </div>
       <div class="card-body">
-        <div class="shop-name">ACCEPT 銀座</div>
-        <p class="shop-desc">銀座の一等地にあるハイクラスジム。本気で入会を検討する方向けですが、カウンセリングの質は超一流。ラグジュアリーな空間でモチベーションを上げたい方に。</p>
-        <a href="【ACCEPTのリンク】" class="btn-apply" target="_blank" rel="nofollow">公式サイトを見る ＞</a>
+        <div class="shop-name">STUDIO KOMPAS</div>
+        <p class="shop-desc">珍しい「都度払い制」のパーソナルジム。「コース契約は怖いけど、数回だけフォームを見てほしい」という花嫁様に最適です。</p>
+        <a href="【KOMPASのリンク】" class="btn-apply" target="_blank" rel="nofollow">公式サイトを見る ＞</a>
+      </div>
+    </div>
+    
+    <div class="shop-card">
+      <div class="card-img-area">
+        <img src="" onerror="handleImageError(this, 'Deat-workout')">
+        <span class="badge-area">大阪・心斎橋</span>
+        <span class="badge-free">体験入会</span>
+      </div>
+      <div class="card-body">
+        <div class="shop-name">Deat-workout</div>
+        <p class="shop-desc">大阪エリアの方必見。完全個室のマンツーマン指導。科学的根拠に基づいたトレーニングで、効率よくドレスラインを作ります。</p>
+        <a href="【Deat-workoutのリンク】" class="btn-apply" target="_blank" rel="nofollow">公式サイトを見る ＞</a>
+      </div>
+    </div>
+
+    <div class="shop-card">
+      <div class="card-img-area">
+        <img src="" onerror="handleImageError(this, 'STARLIGHT FITNESS')">
+        <span class="badge-area">北海道・札幌</span>
+        <span class="badge-free">無料体験</span>
+      </div>
+      <div class="card-body">
+        <div class="shop-name">スターライトフィットネス</div>
+        <p class="shop-desc">札幌の大型パーソナルジム。広々とした空間でストレスなく運動できます。北海道の花嫁様は要チェック。</p>
+        <a href="【スターライトのリンク】" class="btn-apply" target="_blank" rel="nofollow">公式サイトを見る ＞</a>
       </div>
     </div>
 
@@ -166,7 +226,7 @@
       </div>
       <div class="card-body">
         <div class="shop-name">Live Fit オンライン</div>
-        <p class="shop-desc">「ジムに通う時間がない！」という忙しい花嫁様へ。自宅で受けられる本格パーソナルトレーニング。医療系国家資格を持つトレーナーが食事まで指導。</p>
+        <p class="shop-desc">「ジムに通う時間がない！」という忙しい花嫁様へ。自宅で受けられる本格パーソナル。医療系国家資格を持つトレーナーが食事まで指導。</p>
         <a href="【Live Fitのリンク】" class="btn-apply" target="_blank" rel="nofollow">公式サイトを見る ＞</a>
       </div>
     </div>
@@ -183,11 +243,37 @@
         <a href="【FURDIのリンク】" class="btn-apply" target="_blank" rel="nofollow">公式サイトを見る ＞</a>
       </div>
     </div>
+    
+    <div class="shop-card">
+      <div class="card-img-area">
+        <img src="" onerror="handleImageError(this, 'LAVA')">
+        <span class="badge-area">全国450店舗</span>
+        <span class="badge-free">体験 0円〜</span>
+      </div>
+      <div class="card-body">
+        <div class="shop-name">ホットヨガスタジオLAVA</div>
+        <p class="shop-desc">むくみ解消の鉄板。大量の汗をかいてデトックスすることで、肌の透明感もアップします。「式の前日はサウナよりホットヨガ」派の花嫁急増中。</p>
+        <a href="【LAVAのリンク】" class="btn-apply" target="_blank" rel="nofollow">体験詳細を見る ＞</a>
+      </div>
+    </div>
 
   </div>
 
   <h2 class="area-title">✨ 肌管理・脱毛・姿勢改善</h2>
   <div class="shop-grid">
+
+    <div class="shop-card">
+      <div class="card-img-area">
+        <img src="" onerror="handleImageError(this, 'Daibikai Clinic')">
+        <span class="badge-area">大阪・京都・神戸</span>
+        <span class="badge-free">医療脱毛</span>
+      </div>
+      <div class="card-body">
+        <div class="shop-name">大美会クリニック</div>
+        <p class="shop-desc">関西エリアの花嫁様へ。見えるところだけでも医療脱毛でツルツルに。平日21時まで営業しているので仕事帰りにも通いやすい。</p>
+        <a href="【大美会クリニックのリンク】" class="btn-apply" target="_blank" rel="nofollow">公式サイトを見る ＞</a>
+      </div>
+    </div>
 
     <div class="shop-card">
       <div class="card-img-area">
@@ -199,6 +285,19 @@
         <div class="shop-name">敏感肌専門脱毛 Dione</div>
         <p class="shop-desc">「式の直前に肌が荒れたらどうしよう…」という不安がある方に。3歳から通えるほど肌に優しい「ハイパースキン脱毛」。お顔脱毛体験で化粧ノリが激変します。</p>
         <a href="【Dioneのリンク】" class="btn-apply" target="_blank" rel="nofollow">体験プランを見る ＞</a>
+      </div>
+    </div>
+    
+    <div class="shop-card">
+      <div class="card-img-area">
+        <img src="" onerror="handleImageError(this, 'ORBIS')">
+        <span class="badge-area">WEB診断</span>
+        <span class="badge-free">無料診断</span>
+      </div>
+      <div class="card-body">
+        <div class="shop-name">オルビス スキンチェック</div>
+        <p class="shop-desc">デパートのカウンターに行くのは気が引ける…という方は、まずはWebで無料診断。自分の肌タイプを知ることが、美肌への最短ルートです。</p>
+        <a href="【オルビスのリンク】" class="btn-apply" target="_blank" rel="nofollow">今すぐ診断する ＞</a>
       </div>
     </div>
 
@@ -219,7 +318,7 @@
       <div class="card-img-area">
         <img src="" onerror="handleImageError(this, 'Shirono Clinic')">
         <span class="badge-area">東京・横浜・大阪</span>
-        <span class="badge-free">無料カウンセリング</span>
+        <span class="badge-free">無料相談</span>
       </div>
       <div class="card-body">
         <div class="shop-name">シロノクリニック</div>
@@ -228,24 +327,24 @@
       </div>
     </div>
 
+  </div>
+
+  <h2 class="area-title">🎁 節約・副業・ゲスト対応</h2>
+  <div class="shop-grid">
+    
     <div class="shop-card">
       <div class="card-img-area">
-        <img src="" onerror="handleImageError(this, 'Daibikai Clinic')">
-        <span class="badge-area">大阪・京都・神戸</span>
-        <span class="badge-free">医療脱毛</span>
+        <img src="" onerror="handleImageError(this, 'Toku-P')">
+        <span class="badge-area">ゲスト対応</span>
+        <span class="badge-free">便利ツール</span>
       </div>
       <div class="card-body">
-        <div class="shop-name">大美会クリニック</div>
-        <p class="shop-desc">関西エリアの花嫁様へ。見えるところだけでも医療脱毛でツルツルに。平日21時まで営業しているので仕事帰りにも通いやすい。</p>
-        <a href="【大美会クリニックのリンク】" class="btn-apply" target="_blank" rel="nofollow">公式サイトを見る ＞</a>
+        <div class="shop-name">駐車場予約「特P」</div>
+        <p class="shop-desc">【盲点】式場の駐車場が足りない時、ゲストを困らせないための神ツール。近くの安い駐車場を事前にスマホで予約確保できます。遠方ゲストへの気遣いに。</p>
+        <a href="【特Pのリンク】" class="btn-apply" target="_blank" rel="nofollow">駐車場を探す ＞</a>
       </div>
     </div>
 
-  </div>
-
-  <h2 class="area-title">🎁 その他のお役立ち（節約・副業・記録）</h2>
-  <div class="shop-grid">
-    
     <div class="shop-card">
       <div class="card-img-area">
         <img src="" onerror="handleImageError(this, 'Wannabe Academy')">
@@ -254,7 +353,7 @@
       </div>
       <div class="card-body">
         <div class="shop-name">Wannabe Academy</div>
-        <p class="shop-desc">【変わり種】結婚後の働き方を考える花嫁様へ。Webマーケティングを学んで、在宅ワークや副業で「挙式費用を回収」するのも一つの手。無料相談で適正診断ができます。</p>
+        <p class="shop-desc">結婚後の働き方を考える花嫁様へ。Webマーケティングを学んで、在宅ワークや副業で「挙式費用を回収」するのも一つの手。無料相談で適正診断ができます。</p>
         <a href="【Wannabeのリンク】" class="btn-apply" target="_blank" rel="nofollow">無料相談の詳細 ＞</a>
       </div>
     </div>
