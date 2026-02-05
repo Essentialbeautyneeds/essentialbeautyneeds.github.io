@@ -79,45 +79,47 @@
       content: "✅"; position: absolute; left: 0; top: 0; font-size: 18px;
     }
 
-    /* CVボタン修正版：スマホ対応強化 */
+    /* CVボタン修正版 */
     .cta-wrapper { text-align: center; margin: 40px 0; }
-    .cta-btn {
-      display: inline-flex; /* 修正：Flexboxで中央揃え */
+    
+    /* リンク（aタグ）自体をボタンにする */
+    a.cta-btn {
+      display: inline-flex;
       justify-content: center;
       align-items: center;
       width: 100%; 
       max-width: 400px;
       background: linear-gradient(90deg, #d4a373, #8c6a46);
       color: #fff; 
-      padding: 18px 10px; /* 修正：横の余白を少し減らす */
+      padding: 18px 10px; 
       border-radius: 50px;
       text-align: center; 
       text-decoration: none; 
       font-weight: bold; 
       font-size: 18px;
-      line-height: 1.4; /* 修正：行間を適切に */
+      line-height: 1.4; 
       box-shadow: 0 5px 15px rgba(164, 126, 83, 0.4);
       transition: transform 0.2s; 
       position: relative; 
       overflow: hidden;
-      box-sizing: border-box; /* 修正：パディングを含めた幅計算 */
+      box-sizing: border-box;
     }
-    .cta-btn::after {
+    a.cta-btn::after {
       content: ""; position: absolute; top: 0; left: -100%; width: 100%; height: 100%;
       background: linear-gradient(90deg, transparent, rgba(255,255,255,0.4), transparent);
       animation: shine 2.5s infinite;
     }
     @keyframes shine { 100% { left: 100%; } }
-    .cta-btn:hover { transform: translateY(-3px); opacity: 0.95; }
+    a.cta-btn:hover { transform: translateY(-3px); opacity: 0.95; }
     
     /* スマホ画面向けの調整 */
     @media (max-width: 480px) {
-        .cta-btn {
-            font-size: 16px; /* 文字を少し小さく */
+        a.cta-btn {
+            font-size: 16px; 
             padding: 16px 10px;
         }
         .content-box {
-            padding: 20px; /* ボックス内の余白も少し詰める */
+            padding: 20px; 
         }
         h1 {
             font-size: 20px;
@@ -131,67 +133,42 @@
       background: #fff0f0; border: 2px solid #ffcccc; color: #c0392b;
       padding: 20px; text-align: center; font-weight: bold; border-radius: 10px; margin-top: 30px;
     }
-    /* ===== indexと同じ下部ナビ・フッター ===== */
-
-.nav-links {
-  display: flex;
-  flex-wrap: wrap;
-  justify-content: center;
-  gap: 15px;
-  margin: 60px 0;
-  padding-top: 40px;
-  border-top: 1px solid #eee;
-}
-
-.nav-links a {
-  font-size: 13px;
-  color: #777;
-  border: 1px solid #eee;
-  padding: 10px 20px;
-  border-radius: 20px;
-  background: #fff;
-  font-weight: bold;
-  text-decoration: none;
-}
-
-.nav-links a:hover {
-  background: #fff0f0;
-}
-
-.footer {
-  text-align: center;
-  padding: 50px 20px;
-  background-color: #fcf8f8;
-  border-top: 3px solid #f7a8a8;
-  font-size: 13px;
-  color: #888;
-}
-
-.footer a {
-  color: #aaa;
-  text-decoration: underline;
-}
-.bloom-card {
-  background:#fff;
-  border:1px solid #f0e6e6;
-  border-radius:14px;
-  padding:25px;
-  margin-bottom:30px;
-  text-align:center;
-  box-shadow:0 4px 10px rgba(0,0,0,0.03);
-}
-.bloom-card h3 {
-  font-family:'Playfair Display',serif;
-  font-size:18px;
-  margin-bottom:15px;
-}
-.bloom-card p {
-  font-size:14px;
-  color:#8a6b6b;
-  margin-bottom:18px;
-  line-height:1.6;
-}
-</style>
+    
+    /* ナビ・フッター */
+    .nav-links {
+      display: flex;
+      flex-wrap: wrap;
+      justify-content: center;
+      gap: 15px;
+      margin: 60px 0;
+      padding-top: 40px;
+      border-top: 1px solid #eee;
+    }
+    .nav-links a {
+      font-size: 13px;
+      color: #777;
+      border: 1px solid #eee;
+      padding: 10px 20px;
+      border-radius: 20px;
+      background: #fff;
+      font-weight: bold;
+      text-decoration: none;
+    }
+    .nav-links a:hover {
+      background: #fff0f0;
+    }
+    .footer {
+      text-align: center;
+      padding: 50px 20px;
+      background-color: #fcf8f8;
+      border-top: 3px solid #f7a8a8;
+      font-size: 13px;
+      color: #888;
+    }
+    .footer a {
+      color: #aaa;
+      text-decoration: underline;
+    }
   </style>
 </head>
 
@@ -225,10 +202,10 @@
       <p style="text-align:center; font-size:14px;">これが、プロの指導を受けた変化です。<br>無理な食事制限ではなく、骨格から整えるからここまで変わります。</p>
       
       <div class="ba-image-box">
-          <img src="images/ari11.jpg" alt="ARISANFITでの劇的なビフォーアフター" class="img-responsive">
+          <img src="images/ari11.jpg" alt="ARISANFITでの劇的なビフォーアフター" class="img-responsive" onerror="handleImageError(this, 'Before After Image')">
           <p class="ba-caption">※効果には個人差がありますが、正しい方法は裏切りません</p>
       </div>
-      </section>
+  </section>
 
   <section class="content-box">
     <h2>💍 なぜ、花嫁に「ARISANFIT」なのか？</h2>
@@ -259,17 +236,24 @@
     </div>
 
     <p style="font-size:13px; text-align:center;">
-      正直、この診断を受けるだけでも<br><strong>数万円の価値があります。</strong>strong><br>
+      正直、この診断を受けるだけでも<br><strong>数万円の価値があります。</strong><br>
       「入会しなくても、自分の体の癖を知るだけで元が取れる」と考えるのが賢い使い方です。
     </p>
 
     <div class="cta-wrapper">
-      <a href="//af.moshimo.com/af/c/click?a_id=5346650&p_id=6189&pc_id=17406&pl_id=79991" rel="nofollow" referrerpolicy="no-referrer-when-downgrade" attributionsrc>（自由テキスト）</a><img src="//i.moshimo.com/af/i/impression?a_id=5346650&p_id=6189&pc_id=17406&pl_id=79991" width="1" height="1" style="border:none;" loading="lazy" class="cta-btn" target="_blank" rel="nofollow sponsored">
-        無料体験の空き状況を確認する
+      <a href="//af.moshimo.com/af/c/click?a_id=5346650&p_id=6189&pc_id=17406&pl_id=79991" 
+         rel="nofollow sponsored" 
+         referrerpolicy="no-referrer-when-downgrade" 
+         attributionsrc 
+         class="cta-btn" 
+         target="_blank">
+         無料体験の空き状況を確認する ＞
       </a>
+      <img src="//i.moshimo.com/af/i/impression?a_id=5346650&p_id=6189&pc_id=17406&pl_id=79991" width="1" height="1" style="border:none;" loading="lazy">
+      
       <p class="micro-copy">※無理な勧誘は一切ありません。Webから1分で予約完了します。</p>
     </div>
-  </section>
+    </section>
 
   <section class="content-box">
     <h2>⚠️ 注意点：枠が埋まりやすいです</h2>
