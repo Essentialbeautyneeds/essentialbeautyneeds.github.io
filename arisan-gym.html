@@ -10,13 +10,21 @@
   <link rel="stylesheet" href="style.css">
   <link href="https://fonts.googleapis.com/css2?family=Playfair+Display:wght@600&family=Quicksand:wght@500;700&family=Shippori+Mincho:wght@400;600&display=swap" rel="stylesheet">
 
+  <script>
+    // 画像読み込みエラー時にプレースホルダーを表示するスクリプト
+    function handleImageError(img, text) {
+      img.onerror = null;
+      img.src = "https://placehold.co/800x450/eee/999?text=" + encodeURIComponent(text);
+    }
+  </script>
+
   <style>
     /* このLP専用のスタイル */
     body { background: #fffbf9; color: #503535; font-family: 'Shippori Mincho', serif; margin: 0; padding: 0; }
     
-    /* ヘッダー：画像なしでも高級感を出すグラデーション */
+    /* ヘッダー */
     header.lp-header {
-      background: linear-gradient(135deg, #fdfbfb 0%, #ebedee 100%); /* ベース */
+      background: linear-gradient(135deg, #fdfbfb 0%, #ebedee 100%);
       background: linear-gradient(to bottom, rgba(255,255,255,0.8), rgba(255,255,255,0.9)), 
                   repeating-linear-gradient(45deg, #f7a8a8 0, #f7a8a8 2px, transparent 2px, transparent 10px);
       padding: 80px 20px;
@@ -71,15 +79,28 @@
       content: "✅"; position: absolute; left: 0; top: 0; font-size: 18px;
     }
 
-    /* CVボタン（キラキラ） */
+    /* CVボタン修正版：スマホ対応強化 */
     .cta-wrapper { text-align: center; margin: 40px 0; }
     .cta-btn {
-      display: inline-block; width: 100%; max-width: 400px;
+      display: inline-flex; /* 修正：Flexboxで中央揃え */
+      justify-content: center;
+      align-items: center;
+      width: 100%; 
+      max-width: 400px;
       background: linear-gradient(90deg, #d4a373, #8c6a46);
-      color: #fff; padding: 20px; border-radius: 50px;
-      text-align: center; text-decoration: none; font-weight: bold; font-size: 18px;
+      color: #fff; 
+      padding: 18px 10px; /* 修正：横の余白を少し減らす */
+      border-radius: 50px;
+      text-align: center; 
+      text-decoration: none; 
+      font-weight: bold; 
+      font-size: 18px;
+      line-height: 1.4; /* 修正：行間を適切に */
       box-shadow: 0 5px 15px rgba(164, 126, 83, 0.4);
-      transition: transform 0.2s; position: relative; overflow: hidden;
+      transition: transform 0.2s; 
+      position: relative; 
+      overflow: hidden;
+      box-sizing: border-box; /* 修正：パディングを含めた幅計算 */
     }
     .cta-btn::after {
       content: ""; position: absolute; top: 0; left: -100%; width: 100%; height: 100%;
@@ -89,15 +110,22 @@
     @keyframes shine { 100% { left: 100%; } }
     .cta-btn:hover { transform: translateY(-3px); opacity: 0.95; }
     
-    .micro-copy { font-size: 12px; color: #999; text-align: center; margin-top: 10px; }
-
-    /* 口コミ風ボックス */
-    .voice-box {
-      background: #f9f9f9; border-left: 5px solid #d4a373;
-      padding: 20px; margin: 20px 0; font-size: 15px; border-radius: 0 10px 10px 0;
-      font-style: italic; color: #555;
+    /* スマホ画面向けの調整 */
+    @media (max-width: 480px) {
+        .cta-btn {
+            font-size: 16px; /* 文字を少し小さく */
+            padding: 16px 10px;
+        }
+        .content-box {
+            padding: 20px; /* ボックス内の余白も少し詰める */
+        }
+        h1 {
+            font-size: 20px;
+        }
     }
     
+    .micro-copy { font-size: 12px; color: #999; text-align: center; margin-top: 10px; }
+
     /* 期間限定アラート */
     .alert-box {
       background: #fff0f0; border: 2px solid #ffcccc; color: #c0392b;
@@ -110,25 +138,25 @@
 
 <header class="lp-header">
   <span class="badge-gold">期間限定キャンペーン中</span>
-  <h1>「ジムは怖い」と思っている花嫁へ。<br>ミスコン日本一を輩出した<br>隠れ家ジムの無料体験が凄かった話</h1>
+  <h1>「ジムは怖い」<br>と思っている花嫁へ。<br>ミスコン日本一を輩出した<br>隠れ家ジムの無料体験が<br>凄かった話</h1>
   <p>渋谷・池袋・東高円寺｜パーソナルジム ARISANFIT</p>
 </header>
 
 <main>
 
   <section class="content-box">
-    <h2 style="text-align:left; border:none; margin-bottom:10px; font-size:18px; color:#555;">結婚式まであと少し。<br>自分の体型、見て見ぬふりしていませんか？</h2>
+    <h2 style="text-align:center; border:none; margin-bottom:10px; font-size:18px; color:#555;">結婚式まであと少し。<br>自分の体型、見て見ぬふりしていませんか？</h2>
     
-    <p>
-      「結婚式までに痩せたい。でも、マッチョなトレーナーに怒られるのは怖い…」<br>
+    <p style="text-align:left; border:none; margin-bottom:10px; font-size:18px; color:#555;">
+      「結婚式までに痩せたい。でも、マッチョなトレーナーに怒られるのは怖い…」<br><br>
       「高いお金を払って、結局続かなかったらどうしよう…」<br><br>
       そんな不安を抱えるプレ花嫁様の間で、今ひそかに話題になっているジムがあります。<br>
       それが、<strong>ARISANFIT（アリサンフィット）</strong>です。
     </p>
-
-    <div class="voice-box">
-      「ミスコン日本一を輩出したメソッド」と聞いて、最初は厳しいのかな？と身構えていたのですが、行ってみて拍子抜けしました。良い意味でガツガツしていなくて、とにかく親身なんです。（30代・プレ花嫁）
-    </div>
+    
+    <p>
+      ここは「ミスコン日本一を輩出したメソッド」を持ちながら、<strong>「初心者・女性に徹底的に優しい」</strong>ことで知られる隠れ家ジムです。
+    </p>
   </section>
 
   <section class="content-box">
@@ -157,26 +185,26 @@
     <p style="text-align:center;">
       ここが一番の驚きポイントです。<br>
       通常、パーソナルジムの体験は3,000円〜5,000円かかりますが、<br>
-      ARISANFITは現在、<strong>「完全無料」</strong>で体験を受け付けています。
+      ARISANFITは現在、<br><strong>「完全無料」</strong><br>で体験を受け付けています。
     </p>
 
     <div style="text-align:center; margin:20px 0;">
       <p style="font-weight:bold; color:#a47e53;">無料体験でわかること👇</p>
-      <div style="background:#fff; padding:20px; display:inline-block; border-radius:10px; text-align:left; border:1px solid #eee;">
-        ✅ あなたの「痩せない原因」の特定<br>
-        ✅ ドレスが似合う体への最短ルート<br>
-        ✅ プロによる姿勢・骨格チェック
+      <div style="background:#fff; padding:10px; display:inline-block; border-radius:10px; text-align:left; border:1px solid #eee;">
+        ✅ あなたの<br>「痩せない原因」の特定<br>
+        ✅ ドレスが似合う体への<br>最短ルート<br>
+        ✅ プロによる<br>姿勢・骨格チェック
       </div>
     </div>
 
     <p style="font-size:13px; text-align:center;">
-      正直、この診断を受けるだけでも数万円の価値があります。<br>
+      正直、この診断を受けるだけでも<br><strong>数万円の価値があります。</strong>strong><br>
       「入会しなくても、自分の体の癖を知るだけで元が取れる」と考えるのが賢い使い方です。
     </p>
 
     <div class="cta-wrapper">
-      <a href="【ARISANFITのアフィリエイトリンク】" class="cta-btn" target="_blank" rel="nofollow sponsored">
-        無料体験の空き状況を確認する ＞
+      <a href="//af.moshimo.com/af/c/click?a_id=5346650&p_id=6189&pc_id=17406&pl_id=79991" rel="nofollow" referrerpolicy="no-referrer-when-downgrade" attributionsrc>（自由テキスト）</a><img src="//i.moshimo.com/af/i/impression?a_id=5346650&p_id=6189&pc_id=17406&pl_id=79991" width="1" height="1" style="border:none;" loading="lazy" class="cta-btn" target="_blank" rel="nofollow sponsored">
+        無料体験の空き状況を確認する
       </a>
       <p class="micro-copy">※無理な勧誘は一切ありません。Webから1分で予約完了します。</p>
     </div>
