@@ -131,6 +131,67 @@
       background: #fff0f0; border: 2px solid #ffcccc; color: #c0392b;
       padding: 20px; text-align: center; font-weight: bold; border-radius: 10px; margin-top: 30px;
     }
+    /* ===== indexと同じ下部ナビ・フッター ===== */
+
+.nav-links {
+  display: flex;
+  flex-wrap: wrap;
+  justify-content: center;
+  gap: 15px;
+  margin: 60px 0;
+  padding-top: 40px;
+  border-top: 1px solid #eee;
+}
+
+.nav-links a {
+  font-size: 13px;
+  color: #777;
+  border: 1px solid #eee;
+  padding: 10px 20px;
+  border-radius: 20px;
+  background: #fff;
+  font-weight: bold;
+  text-decoration: none;
+}
+
+.nav-links a:hover {
+  background: #fff0f0;
+}
+
+.footer {
+  text-align: center;
+  padding: 50px 20px;
+  background-color: #fcf8f8;
+  border-top: 3px solid #f7a8a8;
+  font-size: 13px;
+  color: #888;
+}
+
+.footer a {
+  color: #aaa;
+  text-decoration: underline;
+}
+.bloom-card {
+  background:#fff;
+  border:1px solid #f0e6e6;
+  border-radius:14px;
+  padding:25px;
+  margin-bottom:30px;
+  text-align:center;
+  box-shadow:0 4px 10px rgba(0,0,0,0.03);
+}
+.bloom-card h3 {
+  font-family:'Playfair Display',serif;
+  font-size:18px;
+  margin-bottom:15px;
+}
+.bloom-card p {
+  font-size:14px;
+  color:#8a6b6b;
+  margin-bottom:18px;
+  line-height:1.6;
+}
+</style>
   </style>
 </head>
 
@@ -223,11 +284,31 @@
   </div>
 
 </main>
+<section class="nav-links">
+  <a href="beauty-column.html">💄 コラム一覧</a>
+  <a href="skin-ranking.html">✨ おすすめランキング</a>
+  <a href="about.html">👩‍💼 運営者情報</a>
+</section>
+<footer class="footer">
+  <p>
+    栄養士｜Yuri 🌱<br>
+    「体重ではなく、ラインで選ぶ花嫁へ」
+  </p>
+  
+  <div style="margin-bottom:20px;">
+      <a href="https://room.rakuten.co.jp/room_e0dd63a90a/items" target="_blank" rel="noopener" style="display:inline-block; border:1px solid #ccc; padding:5px 15px; border-radius:20px; font-size:12px; text-decoration:none; color:#666;">
+        🏠 Yuriの楽天ROOM
+      </a>
+  </div>
 
-<footer style="text-align:center; padding:30px; background:#f0f0f0; font-size:12px; color:#888;">
-  <p>© 2025 Essential Beauty Needs</p>
-  <div id="affiliateNotice" style="margin-top:10px;">※当サイトはアフィリエイト広告を利用しています</div>
+  <a href="privacy-policy.html">プライバシーポリシー</a>
+
+  <div style="margin-top: 20px; font-size: 10px; color: #aaa; line-height: 1.4;">
+    ※Amazonのアソシエイトとして、<br>Essential Beauty Needsは適格販売により収入を得ています。
+  </div>
+
+  <br><br>
+  © 2025 Essential Beauty Needs
 </footer>
-
 </body>
 </html>
