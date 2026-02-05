@@ -1,4 +1,4 @@
-<!doctype html>
+<!DOCTYPE html>
 <html lang="ja">
 <head>
   <meta charset="utf-8" />
@@ -6,12 +6,13 @@
   <title>ドレスのために絶食してない？栄養士が警告「肌がたるまない」花嫁ダイエットの正解 | Essential Beauty Needs</title>
   <meta name="description" content="挙式直前の無理なダイエットは肌荒れの原因に。栄養士が推奨する「食べて痩せる」1週間集中プログラム『SONOKO式献立』を徹底レビュー。">
   <link rel="canonical" href="https://essential-beauty-needs.com/sonoko-diet.html">
-  <link href="https://fonts.googleapis.com/css2?family=Playfair+Display:wght@600&family=Quicksand:wght@400;600&display=swap" rel="stylesheet">
+  
+  <link rel="preconnect" href="https://fonts.googleapis.com">
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+  <link href="https://fonts.googleapis.com/css2?family=Playfair+Display:wght@500;600&family=Quicksand:wght@500;700&family=Shippori+Mincho:wght@400;600&display=swap" rel="stylesheet">
   
   <script>
-    function isInternalUser() {
-      return document.cookie.split(';').some(c => c.trim().startsWith('internal_user=true'));
-    }
+    function isInternalUser() { return document.cookie.split(';').some(c => c.trim().startsWith('internal_user=true')); }
     if (!isInternalUser()) {
       var gaScript = document.createElement('script');
       gaScript.async = true;
@@ -22,267 +23,203 @@
       gtag('js', new Date());
       gtag('config', 'G-2HGEPHVZYY');
     }
+    function handleImageError(imgElement) { 
+         imgElement.onerror = null; 
+         imgElement.src = "https://placehold.co/600x400/f0f0f0/cccccc?text=Image+Not+Found";
+         imgElement.style.objectFit = "cover";
+    }
   </script>
   
   <style>
-    /* 共通設定 */
+    /* =========================================
+       【共通スタイル：Indexの世界観を継承】
+       ========================================= */
+    :root {
+      --bg: #fffaf9;
+      --text-main: #503535;
+      --accent: #f7a8a8;
+      --gold: #d4a373;
+      --alert-bg: #fff5f5;
+      --alert-border: #f8caca;
+    }
+
     body {
-      font-family: 'Quicksand', "Helvetica Neue", Arial, sans-serif;
-      background: #fffaf4;
-      color: #555;
-      margin: 0;
-      padding: 0;
-      line-height: 1.8;
-    }
-    
-    header {
-      text-align: center;
-      padding: 60px 20px 50px;
-      background: linear-gradient(135deg, #fff0f0, #ffe6e6);
-      border-bottom: 3px solid #f8caca;
-    }
-    
-    h1 {
-      font-family: 'Playfair Display', serif;
-      font-size: 26px;
-      color: #c04b4b;
-      margin-bottom: 10px;
-      line-height: 1.4;
+        background-color: var(--bg);
+        color: var(--text-main);
+        font-family: 'Shippori Mincho', serif;
+        line-height: 1.9;
+        margin: 0;
     }
 
-    main {
-      max-width: 800px;
-      margin: 40px auto;
-      padding: 0 20px;
+    /* ヘッダー */
+    header.hero {
+        text-align: center;
+        padding: 80px 20px 40px;
+        background: linear-gradient(to bottom, #ffffff, #fffaf9);
+        border-bottom: 1px solid #eee;
+    }
+    header.hero h1 {
+        font-family: 'Playfair Display', serif;
+        font-size: 28px;
+        margin-bottom: 15px;
+        line-height: 1.5;
+        color: var(--text-main);
+    }
+    header.hero p {
+        font-size: 14px;
+        color: #886666;
+        margin-bottom: 20px;
+        font-weight: 500;
     }
 
-    /* 記事ボックス */
-    .article-box {
-      background: #fff;
-      padding: 40px;
-      border-radius: 20px;
-      box-shadow: 0 5px 20px rgba(0,0,0,0.05);
-      margin-bottom: 40px;
-    }
+    /* メインコンテンツ */
+    main { max-width: 800px; margin: 0 auto; padding: 0 20px; }
 
+    /* 見出し */
     h2 {
-      color: #d88e8e;
-      border-bottom: 2px dashed #fbeaea;
-      padding-bottom: 10px;
-      margin-top: 50px;
-      font-size: 22px;
+        font-family: 'Playfair Display', serif; font-size: 26px; text-align: center;
+        margin: 60px 0 40px; color: var(--text-main); position: relative;
     }
-
+    h2::after {
+        content: ""; display: block; width: 50px; height: 3px;
+        background: var(--accent); margin: 15px auto 0; opacity: 0.6;
+    }
+    
     h3 {
-      color: #503535;
-      margin-top: 30px;
-      font-size: 19px;
-      background: #fff0f5;
-      padding: 10px 15px;
-      border-left: 5px solid #d88e8e;
-      border-radius: 5px;
+        font-size: 20px; color: var(--text-main); 
+        border-bottom: 2px solid #ffe0e0;
+        padding-bottom: 10px; margin-top: 50px; margin-bottom: 25px;
     }
 
-    p { margin-bottom: 1.5em; font-size: 16px; }
-    
-    /* 画像のスタイル */
-    img {
-        max-width: 100%;
-        height: auto;
-        border-radius: 12px;
-    }
-    .feature-img {
-        display: block;
-        margin: 30px auto;
-        width: 50%; /* 画像サイズ50% */
-        box-shadow: 0 4px 12px rgba(0,0,0,0.1);
-    }
-    
-    @media (max-width: 600px) {
-      .feature-img { width: 100%; }
-      .article-box { padding: 25px; }
-      h1 { font-size: 22px; }
+    /* コンテンツボックス */
+    .content-box {
+        background: #fff; padding: 35px; border-radius: 12px;
+        box-shadow: 0 4px 15px rgba(0,0,0,0.03); margin-bottom: 40px;
     }
 
-    /* 強調ボックス（栄養士メモ） */
+    /* 警告ボックス（栄養士メモ） */
     .nutrition-point {
-      background: #fdf5e6;
-      border: 2px solid #fcebb6;
-      border-radius: 12px;
-      padding: 20px;
-      margin: 30px 0;
-      position: relative;
+        background: var(--alert-bg);
+        border: 2px solid var(--alert-border);
+        border-radius: 12px; padding: 25px; margin: 30px 0;
+        position: relative;
     }
     .nutrition-point::before {
-      content: "👩‍⚕️ Nutritionist's Check";
-      display: block;
-      font-weight: bold;
-      color: #d68e33;
-      margin-bottom: 10px;
-      font-size: 14px;
+        content: "👩‍⚕️ Nutritionist's Check";
+        display: block; font-weight: bold; color: #c04b4b;
+        margin-bottom: 10px; font-size: 14px; font-family: 'Quicksand', sans-serif;
     }
 
-    /* 商品紹介エリア */
-    .product-area {
-      text-align: center;
-      background: #fff;
-      border: 3px solid #ffe6e6;
-      border-radius: 15px;
-      padding: 30px;
-      margin: 40px 0;
+    /* 画像 */
+    .feature-img {
+        width: 100%; height: auto; border-radius: 10px;
+        box-shadow: 0 5px 15px rgba(0,0,0,0.05); margin: 30px 0;
     }
-    .product-title {
-      font-size: 20px;
-      font-weight: bold;
-      color: #c04b4b;
-      margin-bottom: 15px;
+
+    /* 診断アコーディオン */
+    .diagnosis-area {
+        background: #fff; border: 2px solid var(--gold); border-radius: 15px;
+        padding: 30px; margin: 50px 0; position: relative;
+    }
+    .diagnosis-label {
+        position: absolute; top: -15px; left: 50%; transform: translateX(-50%);
+        background: var(--gold); color: #fff; padding: 5px 20px;
+        border-radius: 20px; font-size: 13px; font-weight: bold; letter-spacing: 1px;
     }
     
-    /* アフィリエイトリンク用ボタンスタイル */
-    .aff-btn {
-      display: inline-block;
-      background: linear-gradient(45deg, #ff7e5f, #feb47b);
-      color: white !important;
-      padding: 15px 40px;
-      border-radius: 50px;
-      font-weight: bold;
-      text-decoration: none;
-      box-shadow: 0 4px 15px rgba(255, 126, 95, 0.4);
-      transition: 0.3s;
-      margin-top: 20px;
-      font-size: 18px;
+    details {
+        margin-bottom: 15px; border-radius: 10px; border: 1px solid #eee;
+        transition: 0.3s; overflow: hidden;
     }
-    .aff-btn:hover {
-      transform: translateY(-3px);
-      box-shadow: 0 6px 20px rgba(255, 126, 95, 0.6);
-      opacity: 0.9;
+    details[open] { border-color: var(--accent); background: #fffaf9; }
+    
+    summary {
+        padding: 15px 20px; cursor: pointer; font-weight: bold; color: var(--text-main);
+        background: #fff; list-style: none; position: relative; transition: 0.2s;
     }
+    summary:hover { background: #fafafa; }
+    summary::after {
+        content: "+"; position: absolute; right: 20px; top: 50%;
+        transform: translateY(-50%); font-size: 18px; color: var(--gold);
+    }
+    details[open] summary::after { content: "-"; }
+    
+    .diagnosis-content {
+        padding: 15px 20px 20px; font-size: 15px; color: #666;
+        border-top: 1px dashed #eee;
+    }
+
+    /* 商品紹介エリア（プレミアム感） */
+    .product-box {
+        text-align: center; background: #fff;
+        border: 1px solid #eee; border-radius: 15px;
+        padding: 40px 25px; margin: 50px 0;
+        box-shadow: 0 10px 30px rgba(0,0,0,0.05);
+        position: relative; overflow: hidden;
+    }
+    .product-box::before {
+        content: ""; position: absolute; top: 0; left: 0; width: 100%; height: 5px;
+        background: linear-gradient(90deg, #f7a8a8, #d4a373);
+    }
+    
+    .btn-main {
+        display: inline-block; width: 100%; max-width: 320px;
+        background: linear-gradient(45deg, #f7a8a8, #e08e8e);
+        color: #fff; padding: 18px 0; border-radius: 50px;
+        font-weight: bold; font-size: 16px; text-decoration: none;
+        box-shadow: 0 5px 15px rgba(247, 168, 168, 0.4);
+        transition: transform 0.3s; margin-top: 20px;
+    }
+    .btn-main:hover { transform: translateY(-3px); opacity: 0.95; }
 
     /* ナビゲーション */
-    .nav-links{display:flex;gap:10px;justify-content:center;margin-top:40px;flex-wrap:wrap;}
-    .nav-links a{background:rgba(255,255,255,0.8);padding:10px 20px;border-radius:25px;text-decoration:none;color:#503535;font-weight:600; border:1px solid #eee; transition:0.3s;}
-    .nav-links a:hover{background:#f48b8b;color:#fff;}
+    .nav-links { display: flex; gap: 10px; justify-content: center; flex-wrap: wrap; margin-bottom: 20px; }
+    .nav-links a {
+        font-size: 13px; color: #777; border: 1px solid #eee; padding: 8px 18px;
+        border-radius: 20px; background: #fff; text-decoration: none; transition: 0.3s;
+    }
+    .nav-links a:hover { background: #fff0f0; color: var(--text-main); }
 
-    /* ▼▼▼ 追加：新しいフッター用CSS ▼▼▼ */
-    footer {
-        background: #fffaf4;
-        border-top: 3px solid #f7a8a8;
-        padding: 50px 20px 60px;
-        margin-top: 60px;
-        color: #555;
-        font-size: 14px;
-    }
+    /* フッター */
+    footer { background: #fffaf4; border-top: 3px solid #f7a8a8; padding: 50px 20px 60px; margin-top: 80px; color: #555; font-size: 14px; }
+    .footer-container { max-width: 960px; margin: 0 auto; display: flex; flex-wrap: wrap; justify-content: space-between; gap: 30px; text-align: left; }
+    .footer-col { flex: 1; min-width: 200px; }
+    .footer-col h3 { font-size: 16px; color: #d6336c; border-bottom: 1px dashed #f4b5b5; padding-bottom: 8px; margin-bottom: 15px; font-weight: bold; }
+    .footer-col a { display: block; color: #666; text-decoration: none; margin-bottom: 10px; transition: 0.3s; position: relative; padding-left: 10px; }
+    .footer-col a::before { content: "・"; position: absolute; left: 0; color: #f7a8a8; }
+    .footer-col a:hover { color: #d6336c; padding-left: 15px; }
+    .footer-bottom { text-align: center; margin-top: 50px; padding-top: 30px; border-top: 1px solid #eee; }
+    .footer-room-link { display: inline-block; color: #c63535; font-weight: bold; border: 1px solid #c63535; padding: 8px 20px; border-radius: 20px; text-decoration: none; margin-bottom: 20px; background: #fff; transition: 0.3s; }
+    .footer-room-link:hover { background: #c63535; color: #fff; }
 
-    .footer-container {
-        max-width: 960px;
-        margin: 0 auto;
-        display: flex;
-        flex-wrap: wrap;
-        justify-content: space-between;
-        gap: 30px;
-        text-align: left;
-    }
-
-    .footer-col {
-        flex: 1;
-        min-width: 200px;
-    }
-
-    .footer-col h3 {
-        font-size: 16px;
-        color: #d6336c;
-        border-bottom: 1px dashed #f4b5b5;
-        padding-bottom: 8px;
-        margin-bottom: 15px;
-        font-weight: bold;
-    }
-
-    .footer-col a {
-        display: block;
-        color: #666;
-        text-decoration: none;
-        margin-bottom: 10px;
-        transition: 0.3s;
-        position: relative;
-        padding-left: 10px;
-    }
-
-    .footer-col a::before {
-        content: "・";
-        position: absolute;
-        left: 0;
-        color: #f7a8a8;
-    }
-
-    .footer-col a:hover {
-        color: #d6336c;
-        padding-left: 15px;
-    }
-
-    .footer-bottom {
-        text-align: center;
-        margin-top: 50px;
-        padding-top: 30px;
-        border-top: 1px solid #eee;
-    }
-
-    .footer-room-link {
-        display: inline-block;
-        color: #c63535;
-        font-weight: bold;
-        border: 1px solid #c63535;
-        padding: 8px 20px;
-        border-radius: 20px;
-        text-decoration: none;
-        margin-bottom: 20px;
-        background: #fff;
-        transition: 0.3s;
-    }
-    .footer-room-link:hover {
-        background: #c63535;
-        color: #fff;
-    }
+    #affiliateNotice { position: fixed; right: 12px; bottom: 12px; background: rgba(255, 255, 255, 0.9); color: #aaa; font-size: 10px; border-radius: 6px; padding: 4px 8px; box-shadow: 0 2px 6px rgba(0,0,0,0.1); z-index: 999; border: 1px solid #eee;}
     
-    #affiliateNotice {
-        position: fixed; right: 12px; bottom: 12px;
-        background: rgba(255, 255, 255, 0.8);
-        color: #555; font-size: 11px;
-        border-radius: 6px; padding: 4px 8px;
-        box-shadow: 0 2px 6px rgba(0,0,0,0.1);
-        z-index: 999;
-    }
+    .back-btn { display:inline-block; margin:40px auto; color:#777; text-decoration:none; border-bottom:1px solid #ccc; }
 
-    /* ▼▼▼ 追加：New!! 点滅用スタイル ▼▼▼ */
-    @keyframes blinkEffect {
-        0% { opacity: 1; }
-        50% { opacity: 0.3; }
-        100% { opacity: 1; }
-    }
-
-    .new-mark {
-        color: #ff0000;       /* 文字色を赤にする */
-        font-weight: bold;    /* 太文字にする */
-        font-size: 0.8em;     /* リンク文字より少し小さくする */
-        margin-left: 5px;     /* 前の文字と少し間隔を空ける */
-        animation: blinkEffect 1.2s infinite; /* 1.2秒間隔で点滅を繰り返す */
-        vertical-align: super; /* 少し上付き文字にする */
-    }
-    /* ▲▲▲ 追加ここまで ▲▲▲ */
+    @keyframes blinkEffect { 0% { opacity: 1; } 50% { opacity: 0.3; } 100% { opacity: 1; } }
+    .new-mark { color: #ff0000; font-weight: bold; font-size: 0.8em; margin-left: 5px; animation: blinkEffect 1.2s infinite; vertical-align: super; }
   </style>
 </head>
 
 <body>
 
-  <header>
-    <h1>Nutrition & Diet</h1>
-    <p style="font-size:14px; color:#888;">栄養士が教える「花嫁のための正しい痩せ方」</p>
+  <header class="hero">
+    <h1>花嫁ダイエットの正解</h1>
+    <p>ドレスのために絶食していませんか？<br>栄養士が教える「肌がたるまない」痩せ方</p>
+    
+    <nav class="nav-links">
+        <a href="index.html">🏠 トップ</a>
+        <a href="bridal-care.html">👰 花嫁ケア診断</a>
+        <a href="skin-ranking.html">✨ ランキング</a>
+        <a href="diet-beauty.html">🥗 インナーケア一覧</a>
+    </nav>
   </header>
 
   <main>
     
-    <img src="images/healthy1.jpg" alt="ヘルシーな食事を楽しむ花嫁" class="feature-img" style="margin-top:0;">
+    <img src="images/healthy1.jpg" alt="ヘルシーな食事を楽しむ花嫁" class="feature-img" style="margin-top:0;" onerror="handleImageError(this, 'Healthy Bride')">
 
-    <div class="article-box">
+    <div class="content-box">
       <p>こんにちは、栄養士の<strong>Yuri</strong>です。</p>
       <p>「ドレスの試着までにあと3kg痩せたい！」<br>
       「背中のハミ肉をなんとかしたい…」</p>
@@ -297,69 +234,78 @@
 
       <p>「じゃあ、どうすればいいの？」<br>
       その答えは、意外かもしれませんが<strong>「しっかり食べること」</strong>なんです。</p>
+    </div>
 
-      <h2>花嫁ダイエットの正解は「代謝を上げる」こと</h2>
+    <h2>花嫁ダイエットの正解は<br>「代謝を上げる」こと</h2>
       
-      <img src="images/healthy2.png" alt="新鮮な野菜とフルーツ" class="feature-img">
+    <img src="images/healthy2.png" alt="新鮮な野菜とフルーツ" class="feature-img" onerror="handleImageError(this, 'Fruits & Vegetables')">
 
+    <div class="content-box">
       <p>美しいラインを作るには、代謝を上げて脂肪を燃やす必要があります。<br>
       そのためには、バランスの取れた食事で「燃やすための材料」を体に補給してあげなければなりません。</p>
 
       <p>でも、忙しい準備期間中に、カロリー計算や自炊をするのは大変ですよね。<br>
-      そこで今回、栄養士の私が自信を持っておすすめできる<strong>「花嫁のための駆け込み寺」</strong>を見つけました。</p>
+      そこで今回、栄養士の私が自信を持っておすすめできる<strong>「花嫁のための駆け込み寺」</strong>をご紹介します。</p>
+    </div>
 
-      <div style="background:#fff5f5; border-radius:15px; padding:30px; margin:40px 0; border:2px solid #ffdecb;">
-        <h2 style="color:#d68e33; text-align:center; margin-top:0; border-bottom:none;">🍽️ あなたの「好物」でバレる！？<br>肌トラブル診断</h2>
-        <p style="text-align:center; font-size:14px;">好きな食べ物は、今の体内の栄養バランスと肌状態を映す鏡。<br>当てはまるものをチェックしてみましょう。</p>
+    <div class="diagnosis-area">
+        <span class="diagnosis-label">🍽️ 好物でわかる肌診断</span>
+        <h3 style="text-align:center; border:none; margin-top:10px; font-size:22px; color:#d4a373;">
+            その「肌荒れ」<br>食べ物が原因かも？
+        </h3>
+        <p style="text-align:center; font-size:14px; margin-bottom:20px;">
+            好きな食べ物は、今の体内の栄養バランスと肌状態を映す鏡。<br>当てはまるものをタップしてチェック！
+        </p>
 
-        <details style="margin-bottom:15px; background:#fff; padding:15px; border-radius:10px; cursor:pointer;">
-            <summary style="font-weight:bold; color:#c04b4b;">🍰 甘いもの（ケーキ・チョコ）が大好き</summary>
-            <div style="margin-top:10px; font-size:15px;">
+        <details>
+            <summary>🍰 甘いもの（ケーキ・チョコ）が大好き</summary>
+            <div class="diagnosis-content">
                 <p><strong>診断：脂性肌～混合肌（ニキビ・黄ぐすみ）</strong></p>
                 <p>糖質の摂りすぎはTゾーンのベタつきや、肌が黄色くくすむ「糖化」の原因に。ハリの低下にも要注意です。<br>
-                <span style="color:#d68e33;">👉 おすすめケア：</span>低GIのナッツをおやつにするか、食事で血糖値を急上昇させない工夫を。
+                <span style="color:#d4a373; font-weight:bold;">👉 おすすめケア：</span>低GIのナッツをおやつにするか、食事で血糖値を急上昇させない工夫を。
                 </p>
             </div>
         </details>
 
-        <details style="margin-bottom:15px; background:#fff; padding:15px; border-radius:10px; cursor:pointer;">
-            <summary style="font-weight:bold; color:#c04b4b;">🌶️ 辛いもの（唐辛子など）が大好き</summary>
-            <div style="margin-top:10px; font-size:15px;">
+        <details>
+            <summary>🌶️ 辛いもの（唐辛子など）が大好き</summary>
+            <div class="diagnosis-content">
                 <p><strong>診断：脂性肌～敏感肌（炎症リスク）</strong></p>
                 <p>発汗作用で皮脂が増えるほか、刺激で肌の赤みや炎症を引き起こしやすくなっています。<br>
-                <span style="color:#d68e33;">👉 おすすめケア：</span>抗酸化作用のあるトマトなどの野菜をたっぷり摂って炎症を鎮火！
+                <span style="color:#d4a373; font-weight:bold;">👉 おすすめケア：</span>抗酸化作用のあるトマトなどの野菜をたっぷり摂って炎症を鎮火！
                 </p>
             </div>
         </details>
 
-        <details style="margin-bottom:15px; background:#fff; padding:15px; border-radius:10px; cursor:pointer;">
-            <summary style="font-weight:bold; color:#c04b4b;">🍤 油っこいもの・スナックが大好き</summary>
-            <div style="margin-top:10px; font-size:15px;">
+        <details>
+            <summary>🍤 油っこいもの・スナックが大好き</summary>
+            <div class="diagnosis-content">
                 <p><strong>診断：脂性肌（毛穴詰まり・ニキビ）</strong></p>
                 <p>悪い油の摂りすぎは、そのままドロドロの皮脂となり毛穴を詰まらせます。酸化した油は肌老化の最大要因！<br>
-                <span style="color:#d68e33;">👉 おすすめケア：</span>揚げ物を減らし、SONOKOのような「ノンオイル調理」で肌を休ませて。
+                <span style="color:#d4a373; font-weight:bold;">👉 おすすめケア：</span>揚げ物を減らし、SONOKOのような「ノンオイル調理」で肌を休ませて。
                 </p>
             </div>
         </details>
         
-        <details style="margin-bottom:15px; background:#fff; padding:15px; border-radius:10px; cursor:pointer;">
-            <summary style="font-weight:bold; color:#c04b4b;">🧂 味の濃いもの・塩辛いものが大好き</summary>
-            <div style="margin-top:10px; font-size:15px;">
+        <details>
+            <summary>🧂 味の濃いもの・塩辛いものが大好き</summary>
+            <div class="diagnosis-content">
                 <p><strong>診断：乾燥肌～むくみ肌</strong></p>
                 <p>塩分過多は体内の水分を奪い、肌の乾燥を招きます。同時に顔のむくみも引き起こすダブルパンチ。<br>
-                <span style="color:#d68e33;">👉 おすすめケア：</span>カリウムを含む野菜や海藻を摂って、余分な塩分を排出しましょう。
+                <span style="color:#d4a373; font-weight:bold;">👉 おすすめケア：</span>カリウムを含む野菜や海藻を摂って、余分な塩分を排出しましょう。
                 </p>
             </div>
         </details>
         
-        <p style="margin-top:20px; font-weight:bold; text-align:center;">
+        <p style="margin-top:25px; font-weight:bold; text-align:center; color:#503535;">
             「わかってるけど、食事を変えるのは難しい…」<br>
             そう思ったあなたにおすすめなのが、これです👇
         </p>
-      </div>
+    </div>
 
-      <h2>SONOKO式 8週間ダイエット献立（1週間お試し）</h2>
-      
+    <h2>SONOKO式 8週間ダイエット献立<br>（1週間お試し）</h2>
+    
+    <div class="content-box">
       <p>美容家・鈴木その子氏が提唱した「食べて美しく痩せる」メソッドを詰め込んだ、調理不要の献立セットです。<br>
       私がこれをおすすめする理由は、以下の3つのポイントが<strong>「花嫁美容」に完璧にマッチしているから</strong>です。</p>
 
@@ -374,129 +320,54 @@
       <h3>3. 「やつれない」健康的な美しさ</h3>
       <p>しっかり食べるので、空腹によるイライラ（マリッジブルーの原因！）も防げます。<br>
       げっそりするのではなく、内側から満たされた、ハリのある美しさを目指せます。</p>
-
-      <div class="product-area">
-          <p class="product-title">💒 挙式前の<br>1週間集中ケア！</p>
-          <p>いきなり8週間は大変でも、<strong>「お試し1週間セット」</strong>なら取り入れやすいはず。<br>
-          「前撮り前の1週間」や「挙式1ヶ月前の調整」として、プロ渾身の食事に頼ってみませんか？</p>
-          
-          <div style="margin: 25px 0;">
-             <a href="//af.moshimo.com/af/c/click?a_id=5322925&p_id=3200&pc_id=7492&pl_id=41883" rel="nofollow" referrerpolicy="no-referrer-when-downgrade" attributionsrc><img src="//image.moshimo.com/af-img/2478/000000041883.jpg" width="336" height="280" style="border:none;" alt="SONOKO式ダイエット献立セット"></a><img src="//i.moshimo.com/af/i/impression?a_id=5322925&p_id=3200&pc_id=7492&pl_id=41883" width="1" height="1" style="border:none;" loading="lazy">
-          </div>
-          
-          <p style="font-size:14px; color:#d68e33; font-weight:bold; margin-bottom:5px;">
-              ＼ エステ1回分よりお得！ ／
-          </p>
-          <a href="//af.moshimo.com/af/c/click?a_id=5322925&p_id=3200&pc_id=7492&pl_id=41851" rel="nofollow" referrerpolicy="no-referrer-when-downgrade" attributionsrc class="aff-btn">お試しセットを見てみる ▶</a><img src="//i.moshimo.com/af/i/impression?a_id=5322925&p_id=3200&pc_id=7492&pl_id=41851" width="1" height="1" style="border:none;" loading="lazy">
-
-          <p style="font-size:13px; margin-top:15px; color:#888;">
-             ※完売しやすいため、在庫状況は公式サイトでご確認ください
-          </p>
-      </div>
-
-</div>
-
-    <div style="
-    background: #1a2f4b; /* ネイビー背景 */
-    background: linear-gradient(135deg, #1a2f4b, #2c4a70);
-    border-radius: 12px;
-    padding: 30px;
-    margin: 40px auto;
-    text-align: center;
-    color: #fff;
-    box-shadow: 0 5px 20px rgba(0,0,0,0.15);
-    max-width: 700px;
-    position: relative;
-    overflow: hidden;
-    ">
-    <div style="
-        position: absolute; top: 10px; left: 10px; right: 10px; bottom: 10px;
-        border: 1px solid rgba(212, 175, 55, 0.5); border-radius: 8px; pointer-events: none;
-    "></div>
-
-    <span style="
-        background: #d4af37; color: #fff; font-size: 11px; font-weight: bold;
-        padding: 4px 12px; border-radius: 20px; text-transform: uppercase; letter-spacing: 1px;
-    ">
-        New Selection
-    </span>
-
-    <h3 style="
-        font-family: 'Playfair Display', serif; color: #fff; margin: 15px 0 10px; font-size: 22px;
-        border-bottom: none; background:#1a2f4b;
-    ">
-        失敗しない！<br>花嫁ボディメイク厳選3選
-    </h3>
-    
-    <p style="font-size: 14px; line-height: 1.6; margin-bottom: 25px; color: #e0e0e0;">
-        「バストアップ」<br>「下半身痩せ」<br>「運動なし」<br>
-        あなたのワガママを叶える<br>
-        ベストな選択肢を栄養士が比較！<br>
-        もう、ジム選びで迷わせません。
-    </p>
-
-    <a href="accept-gym.html" style="
-        display: inline-block;
-        background: #d4af37;
-        color: #fff;
-        font-weight: bold;
-        text-decoration: none;
-        padding: 12px 35px;
-        border-radius: 50px;
-        box-shadow: 0 4px 15px rgba(0,0,0,0.3);
-        transition: transform 0.2s;
-    " onmouseover="this.style.transform='translateY(-2px)'" onmouseout="this.style.transform='translateY(0)'">
-        厳選3選を見る &raquo;
-    </a>
     </div>
 
-    <div class="nav-links">
-        <a href="index.html">🏠 トップへ戻る</a>
-        <a href="bridal-care.html">👰 肌診断をする</a>
-        <a href="diet-beauty.html">🥗 インナーケア一覧</a>
+    <div class="product-box">
+        <h3 style="margin-top:0; border:none; font-size:22px; color:#c04b4b;">
+            💒 挙式前の<br>1週間集中ケア！
+        </h3>
+        <p>いきなり8週間は大変でも、<strong>「お試し1週間セット」</strong>なら取り入れやすいはず。<br>
+        「前撮り前の1週間」や「挙式1ヶ月前の調整」として、プロ渾身の食事に頼ってみませんか？</p>
+        
+        <div style="margin: 25px 0;">
+            <a href="//af.moshimo.com/af/c/click?a_id=5322925&p_id=3200&pc_id=7492&pl_id=41883" rel="nofollow" referrerpolicy="no-referrer-when-downgrade" attributionsrc><img src="//image.moshimo.com/af-img/2478/000000041883.jpg" width="336" height="280" style="border:none;" alt="SONOKO式ダイエット献立セット"></a><img src="//i.moshimo.com/af/i/impression?a_id=5322925&p_id=3200&pc_id=7492&pl_id=41883" width="1" height="1" style="border:none;" loading="lazy">
+        </div>
+        
+        <p style="font-size:14px; color:#d68e33; font-weight:bold; margin-bottom:5px;">
+            ＼ エステ1回分よりお得！ ／
+        </p>
+        <a href="//af.moshimo.com/af/c/click?a_id=5322925&p_id=3200&pc_id=7492&pl_id=41851" rel="nofollow" referrerpolicy="no-referrer-when-downgrade" attributionsrc class="btn-main">
+            お試しセットを見てみる ▶
+        </a>
+        <img src="//i.moshimo.com/af/i/impression?a_id=5322925&p_id=3200&pc_id=7492&pl_id=41851" width="1" height="1" style="border:none;" loading="lazy">
+
+        <p style="font-size:12px; margin-top:15px; color:#999;">
+            ※完売しやすいため、在庫状況は公式サイトでご確認ください
+        </p>
+    </div>
+
+    <div style="background-color:#fff; border:2px solid #f7a8a8; border-radius:15px; padding:35px 25px; margin-top:60px; text-align:center; box-shadow:0 5px 15px rgba(247,168,168,0.1);">
+        <span style="background:#d6336c; color:#fff; font-size:11px; padding:4px 12px; border-radius:20px; font-weight:bold; display:inline-block; margin-bottom:10px; letter-spacing:1px;">保存版</span>
+        <h2 style="border:none; margin:0 0 15px 0; font-size:22px; color:#503535;">プレ花嫁の「無料体験」ツアー</h2>
+        <p style="font-size:14px; color:#666; margin-bottom:20px; line-height:1.6;">
+            結婚式はお金がかかるからこそ。<br>
+            ジム・エステ・脱毛など、<br>
+            <strong>「0円〜」でプロの施術が受けられる</strong><br>
+            お得なスポットを厳選しました。
+        </p>
+        <a href="trial-collection.html" style="display:inline-block; background:#fff; color:#d6336c; border:1px solid #d6336c; padding:10px 25px; border-radius:30px; font-weight:bold; font-size:14px; text-decoration:none; width:100%; max-width:250px; transition:0.3s;" onmouseover="this.style.background='#fff0f0'" onmouseout="this.style.background='#fff'">
+            ✨ 賢く綺麗になるリストを見る
+        </a>
+    </div>
+
+    <div style="text-align:center;">
+        <a href="index.html" class="back-btn">← トップページへ戻る</a>
     </div>
 
   </main>
   
-  <div id="affiliateNotice">※当サイトはアフィリエイト広告（Amazonアソシエイト含む）を利用しています</div>
-
-  <div style="max-width: 650px; margin: 50px auto; padding: 5px; background: linear-gradient(135deg, #f7a8a8 0%, #ffdecb 100%); border-radius: 20px; box-shadow: 0 10px 25px rgba(247, 168, 168, 0.25);">
-  <div style="background: #ffffff; border-radius: 15px; padding: 30px 20px; text-align: center; position: relative; overflow: hidden;">
-    
-    <style>
-      @keyframes shine { 0% { transform: translateX(-100%) skewX(-15deg); } 100% { transform: translateX(200%) skewX(-15deg); } }
-      .shiny-btn::after {
-        content: ''; position: absolute; top: 0; left: 0; width: 50%; height: 100%;
-        background: linear-gradient(to right, rgba(255,255,255,0) 0%, rgba(255,255,255,0.3) 50%, rgba(255,255,255,0) 100%);
-        transform: skewX(-15deg); animation: shine 3s infinite;
-      }
-    </style>
-
-    <span style="display: inline-block; background: #e74c3c; color: #fff; font-size: 12px; font-weight: bold; padding: 4px 12px; border-radius: 20px; vertical-align: middle; box-shadow: 0 2px 5px rgba(231, 76, 60, 0.3); margin-bottom: 10px;">
-      保存版・アーカイブ完成
-    </span>
-
-    <h3 style="margin: 5px 0 15px; font-size: 22px; color: #503535; font-family: 'Playfair Display', serif, sans-serif; line-height: 1.4;">
-      <span style="font-size: 0.8em; color: #d4a373;">栄養士Yuriの全ノウハウ公開</span><br>
-      読むだけで変わる<br>「花嫁美容」Note
-    </h3>
-
-    <div style="background: #fffaf4; border: 1px dashed #d4a373; border-radius: 10px; padding: 15px; margin: 15px auto; max-width: 90%; text-align: left; font-size: 15px; color: #555;">
-      <p style="margin: 5px 0;">👰 <strong>プレ花嫁講座</strong>：<br>ドレス姿を変える食事術</p>
-      <p style="margin: 5px 0;">📖 <strong>自己紹介</strong>：<br>私が発信を続ける理由</p>
-      <p style="margin: 5px 0;">✨ <strong>高級美容液より効く</strong><br>「美肌定食」とは？</p>
-    </div>
-
-    <a href="note-archive.html" class="shiny-btn" style="display: block; width: 100%; max-width: 320px; margin: 20px auto 10px; background: linear-gradient(45deg, #f7a8a8, #d68e33); color: #fff; text-decoration: none; font-weight: bold; font-size: 18px; padding: 18px 0; border-radius: 50px; box-shadow: 0 5px 15px rgba(247, 168, 168, 0.4); position: relative; overflow: hidden; transition: transform 0.2s;">
-      全記事一覧を無料で見る ▶
-    </a>
-    
-    <p style="font-size: 12px; color: #999; margin-top: 10px;">※プレ花嫁様以外も役立つ情報満載です</p>
-  </div>
-</div>
- <footer>
+  <footer>
   <div class="footer-container">
-    
     <div class="footer-col">
       <h3>🌸 スキンケア・悩み別</h3>
       <a href="bridal-care.html">👰 結婚式直前！背中・二の腕ケア<span class="new-mark">New!!</span></a>
@@ -504,6 +375,7 @@
       <a href="seasons-skin.html">季節別スキンケア（春夏秋冬）</a>
       <a href="age-skincare.html">40代・50代 年齢別ケア</a>
       <a href="acne-care.html">肌荒れ・敏感肌・ニキビケア</a>
+      <a href="lifestyle-skincare.html">生活リズム別（時短・夜型など）</a>
     </div>
 
     <div class="footer-col">
@@ -513,17 +385,21 @@
       <a href="accept-gym.html">花嫁ボディメイク厳選3選<span class="new-mark">New!!</span></a>
       <a href="smoothie-recipes.html">栄養士おすすめ！スムージーのレシピ<span class="new-mark">New!!</span></a>
       <a href="amazon-oil-review.html">本当に効く！オイルレビュー</a>
+      <a href="organic-science.html">オーガニック成分の科学</a>
     </div>
 
     <div class="footer-col">
       <h3>🎁 特集・コラム・その他</h3>
       <a href="note-archive.html">栄養士Yuriの公式Note一覧<span class="new-mark">New!!</span></a>
+      <a href="gift-selection.html">心をつなぐオーガニックギフト</a>
+      <a href="trial-sets.html">失敗しない！お試しセット比較</a>
+      <a href="trial-collection.html">プレ花嫁の無料体験ツアー<span class="new-mark">New!!</span></a>
+      <a href="beauty-column.html">ビューティーコラム一覧</a>
       <a href="sonoko-diet.html">食べて痩せる肌診断 <span class="new-mark">New!!</span></a>
       <a href="about.html">当サイトについて (About)</a>
     </div>
-
   </div>
-   
+    
   <div class="footer-bottom">
       <a href="https://room.rakuten.co.jp/room_e0dd63a90a/items" target="_blank" rel="noopener" class="footer-room-link">
         🏠 管理人Yuriの楽天ROOMを見る
@@ -533,6 +409,8 @@
       <a href="privacy-policy.html" style="color:#888; text-decoration:none; font-size:12px;">プライバシーポリシー</a>
   </div>
 </footer>
+
+<div id="affiliateNotice">※当サイトはアフィリエイト広告（Amazonアソシエイト含む）を利用しています</div>
 
 </body>
 </html>
