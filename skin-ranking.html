@@ -1,4 +1,4 @@
-<!doctype html>
+<!DOCTYPE html>
 <html lang="ja">
 <head>
   <meta charset="utf-8" />
@@ -6,13 +6,15 @@
   <title>花嫁が選ぶ！挙式までに美肌を作るオーガニックランキング | Essential Beauty Needs</title>
   <meta name="description" content="結婚式までに肌を整えたい花嫁様へ。敏感肌でも安心、写真映えするツヤ肌、準備疲れを癒やす香りなど、目的別に厳選したオーガニックコスメランキング。">
   <meta name="keywords" content="花嫁美容, スキンケアランキング, 敏感肌, プレ花嫁, ブライダルエステ, オーガニック">
-  <link href="https://fonts.googleapis.com/css2?family=Quicksand:wght@400;600&family=Playfair+Display:wght@600&display=swap" rel="stylesheet">
+  
+  <link rel="preconnect" href="https://fonts.googleapis.com">
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+  <link href="https://fonts.googleapis.com/css2?family=Playfair+Display:wght@500;600&family=Quicksand:wght@500;700&family=Shippori+Mincho:wght@400;600&display=swap" rel="stylesheet">
+  
   <link rel="canonical" href="https://essential-beauty-needs.com/skin-ranking.html" />
 
   <script>
-    function isInternalUser() {
-      return document.cookie.split(';').some(c => c.trim().startsWith('internal_user=true'));
-    }
+    function isInternalUser() { return document.cookie.split(';').some(c => c.trim().startsWith('internal_user=true')); }
     if (!isInternalUser()) {
       var gaScript = document.createElement('script');
       gaScript.async = true;
@@ -22,10 +24,7 @@
       function gtag(){dataLayer.push(arguments);}
       gtag('js', new Date());
       gtag('config', 'G-2HGEPHVZYY');
-    } else {
-        console.log('✅ Internal traffic excluded.');
     }
-
     function handleImageError(imgElement, width, height, text) { 
          imgElement.onerror = null; 
          imgElement.src = `https://placehold.co/${width}x${height}/f7a8a8/ffffff?text=${encodeURIComponent(text)}`;
@@ -33,305 +32,167 @@
   </script>
 
   <style>
+    /* =========================================
+       【共通スタイル：Indexの世界観を継承】
+       ========================================= */
     :root {
-      --bg: #f7e7e4;
+      --bg: #fffaf9;
       --text-main: #503535;
-      --accent: #f48b8b;
-      --header-grad-start: #f8dcdc;
-      --header-grad-end: #fbeaea;
+      --accent: #f7a8a8;
+      --gold: #d4a373;
       --room-color: #c63535;
     }
-    *, *::before, *::after { box-sizing: border-box; }
 
     body {
-      font-family: 'Quicksand', sans-serif;
-      margin: 0;
-      background: var(--bg);
-      color: #555; 
+        background-color: var(--bg);
+        color: var(--text-main);
+        font-family: 'Shippori Mincho', serif;
+        line-height: 1.9;
+        margin: 0;
+        padding-bottom: 80px; /* 固定バーとの重なり防止 */
     }
 
-    /* --- ヘッダー --- */
-    header {
-      background: linear-gradient(90deg, var(--header-grad-start), var(--header-grad-end));
-      text-align: center;
-      padding: 60px 20px 40px;
-      color: var(--text-main);
-      border-bottom: 3px solid #e6b7b3;
+    /* ヘッダー */
+    header.hero {
+        text-align: center;
+        padding: 80px 20px 40px;
+        background: linear-gradient(to bottom, #ffffff, #fffaf9);
+        border-bottom: 1px solid #eee;
     }
-    header h1 {
-      font-family: 'Playfair Display', serif;
-      font-size: 38px;
-      margin: 0;
-      color: #d6336c;
-      text-shadow: 1px 1px 2px rgba(255,255,255,0.8);
+    header.hero h1 {
+        font-family: 'Playfair Display', serif;
+        font-size: 30px;
+        margin-bottom: 15px;
+        line-height: 1.4;
+        color: var(--text-main);
     }
-    header p {
-      font-size: 17px;
-      margin-top: 10px;
-      color: var(--text-main);
-      font-weight: 600;
-    }
-
-    /* ▼▼▼ スッキリ・ヘッダー用スタイル ▼▼▼ */
-    /* メインナビ */
-    .main-nav { display: flex; justify-content: center; gap: 15px; margin-bottom: 15px; margin-top: 25px; }
-    .main-nav a {
-        background: rgba(255,255,255,0.9); padding: 8px 16px; border-radius: 20px;
-        text-decoration: none; color: #503535; font-weight: bold; font-size: 14px;
-        box-shadow: 0 2px 5px rgba(0,0,0,0.05); transition: 0.3s;
-    }
-    .main-nav a:hover { transform: translateY(-2px); color: #c63535; }
-
-    /* 開閉式メニュー */
-    details.menu-toggle { margin: 0 auto; max-width: 400px; cursor: pointer; position: relative; z-index: 100; }
-    summary.menu-btn {
-        list-style: none; font-size: 13px; color: #888; font-weight: bold;
-        padding: 8px 15px; border: 1px solid #e6b7b3; border-radius: 20px;
-        background: rgba(255,255,255,0.6); display: inline-block;
-    }
-    summary.menu-btn::after { content: " ▼"; font-size: 10px; }
-    details[open] summary.menu-btn::after { content: " ▲"; }
-
-    .hidden-links {
-        display: flex; flex-wrap: wrap; justify-content: center; gap: 8px;
-        margin-top: 10px; padding: 15px; background: rgba(255,255,255,0.95);
-        border-radius: 12px; box-shadow: 0 4px 15px rgba(0,0,0,0.1);
-        animation: fadeIn 0.3s ease;
-    }
-    .hidden-links a {
-        font-size: 12px; text-decoration: none; color: #555;
-        padding: 6px 12px; background: #fff; border-radius: 6px; border: 1px solid #eee;
-    }
-    @keyframes fadeIn { from { opacity: 0; transform: translateY(-5px); } to { opacity: 1; transform: translateY(0); } }
-    /* ▲▲▲ ここまで ▲▲▲ */
-
-    /* Special Link Button */
-    .special-link a {
-      display:inline-block; 
-      background: linear-gradient(45deg, #f7a8a8, #807eed); 
-      color:#fff; 
-      font-weight:600; 
-      padding:12px 28px; 
-      border-radius:30px; 
-      text-decoration:none; 
-      box-shadow:0 4px 12px rgba(0,0,0,0.15); 
-      transition:all 0.3s ease; 
-      text-align:center;
-    }
-    .special-link a:hover {
-      transform: translateY(-3px);
-      box-shadow: 0 6px 15px rgba(0,0,0,0.2);
+    header.hero p {
+        font-size: 15px;
+        color: #886666;
+        margin-bottom: 30px;
+        font-weight: 500;
     }
 
-    /* 診断ボタン用アニメーション */
-    @keyframes pulse-glow {
-      0% { box-shadow: 0 0 0 0 rgba(230, 126, 34, 0.4); transform: scale(1); }
-      50% { box-shadow: 0 0 0 10px rgba(230, 126, 34, 0); transform: scale(1.02); }
-      100% { box-shadow: 0 0 0 0 rgba(230, 126, 34, 0); transform: scale(1); }
-    }
-    .diagnosis-banner {
-      background: #fff;
-      border: 3px solid #f39c12; 
-      border-radius: 15px;
-      padding: 25px;
-      text-align: center;
-      margin: 30px auto;
-      position: relative;
-      max-width: 650px;
-    }
-    .diagnosis-badge {
-        background: #d35400; color: #fff; padding: 5px 15px; border-radius: 5px;
-        font-weight: bold; font-size: 12px; position: absolute; top: -15px; left: 50%;
-        transform: translateX(-50%); box-shadow: 0 2px 5px rgba(0,0,0,0.2);
-    }
-    .diagnosis-btn {
-      display: inline-block;
-      background: linear-gradient(45deg, #e67e22, #f39c12);
-      color: #fff;
-      font-size: 18px;
-      font-weight: bold;
-      padding: 15px 35px;
-      border-radius: 50px;
-      text-decoration: none;
-      margin-top: 15px;
-      box-shadow: 0 4px 15px rgba(230, 126, 34, 0.4);
-      animation: pulse-glow 2s infinite;
-    }
-    .diagnosis-btn:hover {
-        opacity: 0.9;
-        transform: translateY(-2px);
-    }
+    /* メインコンテンツ */
+    main { max-width: 900px; margin: 0 auto; padding: 0 20px; }
 
-    /* Note誘導バナー（キラキラボタン） */
-    @keyframes shine { 0% { transform: translateX(-100%) skewX(-15deg); } 100% { transform: translateX(200%) skewX(-15deg); } }
-    .shiny-btn::after {
-      content: ''; position: absolute; top: 0; left: 0; width: 50%; height: 100%;
-      background: linear-gradient(to right, rgba(255,255,255,0) 0%, rgba(255,255,255,0.3) 50%, rgba(255,255,255,0) 100%);
-      transform: skewX(-15deg); animation: shine 3s infinite;
+    /* ナビゲーション */
+    .nav-links { display: flex; gap: 10px; justify-content: center; flex-wrap: wrap; margin-bottom: 20px; }
+    .nav-links a {
+        font-size: 13px; color: #777; border: 1px solid #eee; padding: 8px 18px;
+        border-radius: 20px; background: #fff; text-decoration: none; transition: 0.3s;
     }
+    .nav-links a:hover { background: #fff0f0; color: var(--text-main); }
 
-    main {
-      max-width: 900px;
-      margin: 40px auto;
-      padding: 0 20px;
-    }
-
+    /* 見出し */
     h2 {
-      font-family: 'Playfair Display', serif;
-      color: var(--text-main);
-      font-size: 28px;
-      text-align: center;
-      margin-top: 60px;
-      margin-bottom: 30px;
-      position: relative;
-      background: #fff;
-      padding: 15px;
-      border-radius: 10px;
-      box-shadow: 0 4px 10px rgba(0,0,0,0.05);
+        font-family: 'Playfair Display', serif; font-size: 26px; text-align: center;
+        margin: 70px 0 30px; color: var(--text-main); position: relative;
+    }
+    h2::after {
+        content: ""; display: block; width: 60px; height: 3px;
+        background: var(--accent); margin: 15px auto 0; opacity: 0.6;
     }
 
+    /* ランキング導入文 */
     .rank-intro {
-      background: #fff;
-      padding: 25px;
-      border-radius: 12px;
-      line-height: 1.8;
-      color: #555;
-      margin-bottom: 40px;
-      text-align: left;
-      font-size: 15px;
-      box-shadow: 0 2px 8px rgba(0,0,0,0.05);
+        background: #fff; padding: 30px; border-radius: 12px;
+        box-shadow: 0 4px 15px rgba(0,0,0,0.03); margin-bottom: 40px;
+        text-align: left; font-size: 15px; color: #666;
     }
 
-    .ranking-list {
-      display: flex;
-      flex-direction: column;
-      gap: 40px;
-    }
+    /* ランキングリスト */
+    .ranking-list { display: flex; flex-direction: column; gap: 50px; }
+    
     .rank-item {
-      position: relative;
-      background: #fff;
-      padding: 30px 20px 20px; 
-      border-radius: 10px; 
-      box-shadow: 0 4px 15px rgba(0,0,0,0.03);
+        position: relative; background: #fff; padding: 40px 25px 25px;
+        border-radius: 15px; border: 1px solid #f0ebeb;
+        box-shadow: 0 5px 20px rgba(0,0,0,0.03);
     }
 
+    /* ランキングバッジ（高級感のあるデザインに変更） */
     .badge {
-      position: absolute;
-      top: -15px;
-      left: 0;
-      background: #ff6b6b;
-      color: #fff;
-      padding: 8px 20px;
-      border-radius: 20px;
-      font-weight: bold;
-      font-size: 18px;
-      box-shadow: 0 4px 10px rgba(0,0,0,0.2);
-      z-index: 10;
+        position: absolute; top: -18px; left: 20px;
+        background: var(--gold); color: #fff; padding: 8px 25px;
+        border-radius: 30px; font-weight: bold; font-family: 'Playfair Display', serif;
+        box-shadow: 0 4px 10px rgba(0,0,0,0.15); letter-spacing: 1px;
     }
-    .badge.rank1 { 
-      background: linear-gradient(45deg, #FFD700, #FDB931); 
-      font-size: 20px;
-      padding: 10px 25px;
-    }
-    .badge.rank2 { background: linear-gradient(45deg, #C0C0C0, #E0E0E0); color: #555; }
-    .badge.rank3 { background: linear-gradient(45deg, #CD7F32, #E8A668); }
+    .badge.rank1 { background: linear-gradient(45deg, #d4af37, #f3e5ab, #d4af37); color: #503535; font-size: 18px; border: 1px solid #fff; }
+    .badge.rank2 { background: linear-gradient(45deg, #C0C0C0, #E8E8E8, #C0C0C0); color: #503535; }
+    .badge.rank3 { background: linear-gradient(45deg, #CD7F32, #E8C19D, #CD7F32); }
 
+    /* 商品レビューエリア */
     .item-desc {
-        background: #fff9f9;
-        border-left: 5px solid #f48b8b;
-        padding: 15px;
-        margin: 20px 0;
-        border-radius: 5px;
-        text-align: left;
+        background: #fffaf9; border-left: 4px solid var(--accent);
+        padding: 20px; margin: 20px 0; border-radius: 0 10px 10px 0;
     }
     .item-desc h4 {
-        margin: 0 0 10px 0;
-        color: #d6336c;
-        font-size: 16px;
-        display: flex;
-        align-items: center;
+        margin: 0 0 10px 0; color: var(--text-main); font-size: 16px;
+        font-family: 'Playfair Display', serif;
     }
-    .item-desc h4::before {
-        content: "👩‍⚕️";
-        margin-right: 5px;
-    }
-    .point-list {
-        margin: 0;
-        padding-left: 20px;
-        font-size: 14px;
-        color: #555;
-    }
-    .point-list li {
-        margin-bottom: 5px;
-    }
+    .point-list { margin: 0; padding-left: 20px; font-size: 14px; color: #666; }
+    .point-list li { margin-bottom: 5px; }
 
+    /* スタッフ一押しボックス */
     .staff-push-box {
-        margin: 60px 0; 
-        background: #fff4f4; 
-        padding: 30px; 
-        border-radius: 16px; 
-        text-align: center;
-        border: 2px dashed #f48b8b;
+        margin: 80px 0; padding: 40px 30px; background: #fff;
+        border: 2px solid #f7a8a8; border-radius: 20px; text-align: center;
+        box-shadow: 0 10px 30px rgba(247, 168, 168, 0.1);
     }
+    
+    /* 診断バナー（Indexと統一） */
+    .diagnosis-banner {
+        background: #fff; border: 2px solid var(--gold); border-radius: 15px;
+        padding: 30px; text-align: center; margin: 40px auto; position: relative; max-width: 650px;
+    }
+    .diagnosis-badge {
+        background: var(--gold); color: #fff; padding: 5px 15px; border-radius: 20px;
+        font-weight: bold; font-size: 12px; position: absolute; top: -15px; left: 50%;
+        transform: translateX(-50%); letter-spacing: 1px;
+    }
+    .diagnosis-btn {
+        display: inline-block; background: linear-gradient(45deg, #d4a373, #e6b88a);
+        color: #fff; font-size: 16px; font-weight: bold; padding: 15px 40px;
+        border-radius: 50px; text-decoration: none; margin-top: 15px;
+        box-shadow: 0 4px 10px rgba(212, 163, 115, 0.4); transition: 0.3s;
+    }
+    .diagnosis-btn:hover { transform: translateY(-2px); opacity: 0.9; }
+
+    /* Noteバナー */
+    .note-banner {
+        margin: 60px auto; padding: 3px;
+        background: linear-gradient(135deg, #f7a8a8 0%, #ffdecb 100%);
+        border-radius: 20px; box-shadow: 0 10px 25px rgba(247, 168, 168, 0.2);
+    }
+    .note-inner { background: #fff; border-radius: 18px; padding: 30px; text-align: center; }
+    .shiny-btn {
+        display: block; width: 100%; max-width: 300px; margin: 20px auto 0;
+        background: linear-gradient(45deg, #f7a8a8, #e08e8e); color: #fff;
+        text-decoration: none; font-weight: bold; font-size: 16px; padding: 15px 0;
+        border-radius: 50px; transition: 0.3s;
+    }
+    .shiny-btn:hover { transform: translateY(-2px); box-shadow: 0 5px 15px rgba(247, 168, 168, 0.4); }
 
     /* 楽天ROOM */
     .room-promo {
-        background: #fff;
-        border: 2px dashed var(--room-color);
-        border-radius: 15px;
-        padding: 25px;
-        text-align: center;
-        margin: 50px 0;
-        color: var(--text-main);
+        background: #fff; border: 1px dashed var(--room-color);
+        border-radius: 15px; padding: 30px; text-align: center;
+        margin: 60px 0; color: var(--text-main);
     }
     .room-btn {
-        display: inline-block;
-        background: var(--room-color);
-        color: #fff;
-        padding: 12px 30px;
-        border-radius: 30px;
-        text-decoration: none;
-        font-weight: bold;
-        margin-top: 15px;
+        display: inline-block; background: var(--room-color); color: #fff;
+        padding: 12px 35px; border-radius: 30px; text-decoration: none;
+        font-weight: bold; margin-top: 15px; transition: 0.3s;
         box-shadow: 0 4px 10px rgba(198, 53, 53, 0.3);
-        transition: 0.3s;
     }
-    .room-btn:hover {
-        background: #a82525;
-        transform: translateY(-2px);
-        box-shadow: 0 6px 14px rgba(198, 53, 53, 0.4);
-    }
+    .room-btn:hover { background: #a82525; transform: translateY(-2px); }
 
     /* フッター */
-    footer {
-        background: #fffaf4;
-        border-top: 3px solid #f7a8a8;
-        padding: 50px 20px 60px;
-        margin-top: 60px;
-        color: #555;
-        font-size: 14px;
-    }
-    .footer-container {
-        max-width: 960px;
-        margin: 0 auto;
-        display: flex;
-        flex-wrap: wrap;
-        justify-content: space-between;
-        gap: 30px;
-        text-align: left;
-    }
+    footer { background: #fffaf4; border-top: 3px solid #f7a8a8; padding: 50px 20px 60px; margin-top: 80px; color: #555; font-size: 14px; }
+    .footer-container { max-width: 960px; margin: 0 auto; display: flex; flex-wrap: wrap; justify-content: space-between; gap: 30px; text-align: left; }
     .footer-col { flex: 1; min-width: 200px; }
-    .footer-col h3 {
-        font-size: 16px;
-        color: #d6336c;
-        border-bottom: 1px dashed #f4b5b5;
-        padding-bottom: 8px;
-        margin-bottom: 15px;
-        font-weight: bold;
-    }
-    .footer-col a {
-        display: block; color: #666; text-decoration: none; margin-bottom: 10px; transition: 0.3s; position: relative; padding-left: 10px;
-    }
+    .footer-col h3 { font-size: 16px; color: #d6336c; border-bottom: 1px dashed #f4b5b5; padding-bottom: 8px; margin-bottom: 15px; font-weight: bold; }
+    .footer-col a { display: block; color: #666; text-decoration: none; margin-bottom: 10px; transition: 0.3s; position: relative; padding-left: 10px; }
     .footer-col a::before { content: "・"; position: absolute; left: 0; color: #f7a8a8; }
     .footer-col a:hover { color: #d6336c; padding-left: 15px; }
     .footer-bottom { text-align: center; margin-top: 50px; padding-top: 30px; border-top: 1px solid #eee; }
@@ -343,20 +204,18 @@
 
     #affiliateNotice {
       position: fixed; right: 12px; bottom: 12px;
-      background: rgba(255, 255, 255, 0.8);
-      color: #555; font-size: 11px;
-      border-radius: 6px; padding: 4px 8px;
-      box-shadow: 0 2px 6px rgba(0,0,0,0.1);
-      z-index: 999;
+      background: rgba(255, 255, 255, 0.9);
+      color: #aaa; font-size: 10px; border-radius: 6px; padding: 4px 8px;
+      box-shadow: 0 2px 6px rgba(0,0,0,0.1); z-index: 999; border: 1px solid #eee;
     }
     
     .back-btn { text-align:center; margin: 40px 0; }
     .back-btn a { color: #777; text-decoration: none; border-bottom: 1px solid #ccc; }
 
     @media(max-width: 700px){
-      header h1 { font-size: 28px; }
+      header h1 { font-size: 26px; }
       .badge { left: 50%; transform: translateX(-50%); top: -20px;}
-      .rank-item { margin-top: 25px; }
+      .rank-item { margin-top: 30px; padding-top: 50px; }
     }
     @keyframes blinkEffect { 0% { opacity: 1; } 50% { opacity: 0.3; } 100% { opacity: 1; } }
     .new-mark {
@@ -366,101 +225,33 @@
 </head>
 <body>
 
-<header>
-  <h1>💖 花嫁スキンケアランキング</h1>
+<header class="hero">
+  <h1>花嫁スキンケアランキング</h1>
   <p>挙式までに「結果」を出したいあなたへ。<br>目的別に厳選したオーガニック名品。</p>
 
-  <nav class="main-nav">
-      <a href="index.html">🏠 公式サイトTOP</a>
-      <a href="bridal-care.html">👰 花嫁ケア診断</a>
+  <nav class="nav-links">
+      <a href="index.html">🏠 トップ</a>
+      <a href="bridal-care.html">👰 肌診断</a>
+      <a href="skin-ranking.html">✨ ランキング</a>
+      <a href="beauty-column.html">💄 コラム</a>
   </nav>
-
-  <details class="menu-toggle">
-      <summary class="menu-btn">その他のメニューを表示</summary>
-      <div class="hidden-links">
-          <a href="skin-ranking.html">✨ ランキング</a>
-          <a href="trial-sets.html">🔰 お試しセット</a>
-          <a href="seasons-skin.html">🌸 季節別ケア</a>
-          <a href="age-skincare.html">👩 年齢別ケア</a>
-          <a href="lifestyle-skincare.html">💆‍♀️ 生活リズム別</a>
-          <a href="organic-science.html">🔬 成分の科学</a>
-          <a href="beauty-column.html">💄 コラム</a>
-          <a href="diet-beauty.html">🍃 インナービューティー</a>
-          <a href="note-archive.html">📕 公式Note</a>
-      </div>
-  </details>
   
- <div style="
-    background: linear-gradient(135deg, #fff0f0, #ffeaf2);
-    border: 2px solid #ffb6c1;
-    border-radius: 15px;
-    padding: 25px;
-    text-align: center;
-    margin: 30px auto;
-    max-width: 800px;
-    box-shadow: 0 4px 15px rgba(0,0,0,0.05);
-    position: relative;
-">
-    <span style="
-        background: #c04b4b;
-        color: #fff;
-        font-size: 12px;
-        font-weight: bold;
-        padding: 4px 12px;
-        border-radius: 20px;
-        position: absolute;
-        top: -12px;
-        left: 50%;
-        transform: translateX(-50%);
-    ">
-        New Year Special Feature
-    </span>
-
-    <h3 style="
-        color: #c04b4b;
-        margin: 10px 0;
-        font-family: 'Playfair Display', serif;
-        font-size: 22px;
-    ">
-        🎍 お正月太りを「なかったこと」に！
-    </h3>
-    
-    <p style="font-size: 15px; color: #555; margin-bottom: 20px;">
-        「食べ過ぎてドレスが入らないかも…」と焦っていませんか？<br>
-        栄養士が推奨する、<strong>1週間でリセットする「食べて痩せる」プログラム</strong>を公開しました。
-    </p>
-
-    <a href="sonoko-diet.html" style="
-        display: inline-block;
-        background: linear-gradient(45deg, #ff7e5f, #feb47b);
-        color: #fff;
-        font-weight: bold;
-        text-decoration: none;
-        padding: 12px 30px;
-        border-radius: 50px;
-        box-shadow: 0 4px 10px rgba(255, 126, 95, 0.3);
-        transition: transform 0.2s;
-    " onmouseover="this.style.transform='translateY(-2px)'" onmouseout="this.style.transform='translateY(0)'">
-        記事を読む &raquo;
-    </a>
-</div>
+  <div style="background:#fff; border:1px solid #ffe6e6; border-radius:15px; padding:20px; margin:20px auto; max-width:600px; box-shadow:0 4px 10px rgba(0,0,0,0.03);">
+    <span style="background:#c04b4b; color:#fff; font-size:11px; padding:3px 10px; border-radius:20px;">New Feature</span>
+    <h3 style="margin:10px 0; font-size:18px; color:#c04b4b; border:none;">🎍 お正月太り解消プログラム</h3>
+    <a href="sonoko-diet.html" style="color:#d6336c; text-decoration:underline; font-size:14px;">1週間でリセットする「食べて痩せる」方法 &raquo;</a>
+  </div>
 </header>
 
-<div class="diagnosis-banner">
-    <span class="diagnosis-badge">栄養士監修・無料ツール</span>
-    <h3 style="color:#d35400; margin-bottom:10px; font-size:20px;">⚡ あなたの肌は挙式に間に合う？</h3>
-    <p style="margin-bottom:5px;">今の肌状態と、必要な「緊急ケア」を<strong>30秒で診断</strong>します。</p>
-    
-    <a href="bridal-care.html" class="diagnosis-btn">
-        ✨ 今すぐ肌診断をする！ ✨
-    </a>
-</div>
 <main>
-  <p style="text-align:center; margin-top:30px;">
-    自然派スキンケアの専門家が選んだ、花嫁のためのアイテム。<br>
-    気になる商品は「楽天市場で見る」や「Amazonで見る」から詳細をチェック！
-  </p>
   
+  <div class="diagnosis-banner">
+      <span class="diagnosis-badge">栄養士監修</span>
+      <h3 style="color:#d4a373; margin-bottom:10px; font-size:20px;">⚡ 肌荒れの原因、わかりますか？</h3>
+      <p style="margin-bottom:15px; font-size:14px; color:#666;">今の肌状態に合った「緊急ケア」を<strong>30秒で診断</strong>します。</p>
+      <a href="bridal-care.html" class="diagnosis-btn">✨ 今すぐ診断する！✨</a>
+  </div>
+
   <section>
     <h2>🌿 敏感肌でも安心ランキング</h2>
     <div class="rank-intro">
@@ -470,7 +261,7 @@
     <div class="ranking-list">
       
       <div class="rank-item">
-        <span class="badge rank1">1位</span>
+        <span class="badge rank1">No.1</span>
         
         <div class="item-desc">
             <h4>Yuri's Review</h4>
@@ -494,7 +285,7 @@
       </div>
 
       <div class="rank-item">
-        <span class="badge rank2">2位</span>
+        <span class="badge rank2">No.2</span>
         
         <div class="item-desc">
             <h4>Yuri's Review</h4>
@@ -518,7 +309,7 @@
         </div>
 
       <div class="rank-item">
-        <span class="badge rank3">3位</span>
+        <span class="badge rank3">No.3</span>
         
         <div class="item-desc">
             <h4>Yuri's Review</h4>
@@ -553,7 +344,7 @@
     <div class="ranking-list">
       
       <div class="rank-item">
-        <span class="badge rank1">1位</span>
+        <span class="badge rank1">No.1</span>
         
         <div class="item-desc">
             <h4>Yuri's Review</h4>
@@ -577,7 +368,7 @@
         </div>
       
       <div class="rank-item">
-        <span class="badge rank2">2位</span>
+        <span class="badge rank2">No.2</span>
         
         <div class="item-desc">
             <h4>Yuri's Review</h4>
@@ -601,7 +392,7 @@
         </div>
 
       <div class="rank-item">
-        <span class="badge rank3">3位</span>
+        <span class="badge rank3">No.3</span>
         
         <div class="item-desc">
             <h4>Yuri's Review</h4>
@@ -636,7 +427,7 @@
     <div class="ranking-list">
       
       <div class="rank-item">
-        <span class="badge rank1">1位</span>
+        <span class="badge rank1">No.1</span>
         
         <div class="item-desc">
             <h4>Yuri's Review</h4>
@@ -660,7 +451,7 @@
         </div>
 
       <div class="rank-item">
-        <span class="badge rank2">2位</span>
+        <span class="badge rank2">No.2</span>
         
         <div class="item-desc">
             <h4>Yuri's Review</h4>
@@ -684,7 +475,7 @@
         </div>
 
       <div class="rank-item">
-        <span class="badge rank3">3位</span>
+        <span class="badge rank3">No.3</span>
         
         <div class="item-desc">
             <h4>Yuri's Review</h4>
@@ -719,55 +510,6 @@
             忙しい準備期間も、これ一本で高保湿ケアが完了。私の最強のパートナーです。
         </p>
     </div>
-    <div style="background:#fff5f5; border-radius:15px; padding:30px; margin:40px 0; border:2px solid #ffdecb;">
-        <h2 style="color:#d68e33; text-align:center; margin-top:0; border-bottom:none;">🍽️ あなたの「好物」でバレる！？<br>肌トラブル診断</h2>
-        <p style="text-align:center; font-size:14px;">好きな食べ物は、今の体内の栄養バランスと肌状態を映す鏡です。<br>当てはまるものをチェックしてみましょう。</p>
-
-        <details style="margin-bottom:15px; background:#fff; padding:15px; border-radius:10px; cursor:pointer;">
-            <summary style="font-weight:bold; color:#c04b4b;">🍰 甘いもの（ケーキ・チョコ）が大好き</summary>
-            <div style="margin-top:10px; font-size:15px;">
-                <p><strong>診断：脂性肌～混合肌（ニキビ・黄ぐすみ）</strong></p>
-                <p>糖質の摂りすぎはTゾーンのベタつきや、肌が黄色くくすむ「糖化」の原因に。ハリの低下にも要注意です。<br>
-                <span style="color:#d68e33;">👉 おすすめケア：</span>低GIのナッツをおやつにするか、食事で血糖値を急上昇させない工夫を。
-                </p>
-            </div>
-        </details>
-
-        <details style="margin-bottom:15px; background:#fff; padding:15px; border-radius:10px; cursor:pointer;">
-            <summary style="font-weight:bold; color:#c04b4b;">🌶️ 辛いもの（唐辛子など）が大好き</summary>
-            <div style="margin-top:10px; font-size:15px;">
-                <p><strong>診断：脂性肌～敏感肌（炎症リスク）</strong></p>
-                <p>発汗作用で皮脂が増えるほか、刺激で肌の赤みや炎症を引き起こしやすくなっています。<br>
-                <span style="color:#d68e33;">👉 おすすめケア：</span>抗酸化作用のあるトマトなどの野菜をたっぷり摂って炎症を鎮火！
-                </p>
-            </div>
-        </details>
-
-        <details style="margin-bottom:15px; background:#fff; padding:15px; border-radius:10px; cursor:pointer;">
-            <summary style="font-weight:bold; color:#c04b4b;">🍤 油っこいもの・スナックが大好き</summary>
-            <div style="margin-top:10px; font-size:15px;">
-                <p><strong>診断：脂性肌（毛穴詰まり・ニキビ）</strong></p>
-                <p>悪い油の摂りすぎは、そのままドロドロの皮脂となり毛穴を詰まらせます。酸化した油は肌老化の最大要因！<br>
-                <span style="color:#d68e33;">👉 おすすめケア：</span>揚げ物を減らし、SONOKOのような「ノンオイル調理」で肌を休ませて。
-                </p>
-            </div>
-        </details>
-        
-        <details style="margin-bottom:15px; background:#fff; padding:15px; border-radius:10px; cursor:pointer;">
-            <summary style="font-weight:bold; color:#c04b4b;">🧂 味の濃いもの・塩辛いものが大好き</summary>
-            <div style="margin-top:10px; font-size:15px;">
-                <p><strong>診断：乾燥肌～むくみ肌</strong></p>
-                <p>塩分過多は体内の水分を奪い、肌の乾燥を招きます。同時に顔のむくみも引き起こすダブルパンチ。<br>
-                <span style="color:#d68e33;">👉 おすすめケア：</span>カリウムを含む野菜や海藻を摂って、余分な塩分を排出しましょう。
-                </p>
-            </div>
-        </details>
-        
-        <p style="margin-top:20px; font-weight:bold; text-align:center;">
-            「わかってるけど、食事を変えるのは難しい…」<br>
-            そう思ったあなたにおすすめなのが、これです👇
-        </p>
-      </div>
 
     <div style="display:inline-block;">
       <a href="https://px.a8.net/svt/ejp?a8mat=45I9PD+4GR2VU+3PSY+1BNJ9D" rel="nofollow sponsored" target="_blank">
@@ -840,7 +582,7 @@
       <h3>🛁 ボディ・ヘア・インナー</h3>
       <a href="hair-care.html">ヘアケア・頭皮ケア特集</a>
       <a href="diet-beauty.html">インナービューティー＆ダイエット</a>
-      <a href="accept-gym.html">銀座・完全個室ジムACCEPT体験記</a>
+      <a href="accept-gym.html">花嫁ボディメイク厳選3選<span class="new-mark">New!!</span></a>
       <a href="smoothie-recipes.html">栄養士おすすめ！スムージーのレシピ<span class="new-mark">New!!</span></a>
       <a href="amazon-oil-review.html">本当に効く！オイルレビュー</a>
       <a href="organic-science.html">オーガニック成分の科学</a>
@@ -851,7 +593,7 @@
       <a href="note-archive.html">栄養士Yuriの公式Note一覧<span class="new-mark">New!!</span></a>
       <a href="gift-selection.html">心をつなぐオーガニックギフト</a>
       <a href="trial-sets.html">失敗しない！お試しセット比較</a>
-      <a href="winter-selection.html">冬のベストセレクション</a>
+      <a href="trial-collection.html">プレ花嫁の無料体験ツアー<span class="new-mark">New!!</span></a>
       <a href="beauty-column.html">ビューティーコラム一覧</a>
       <a href="sonoko-diet.html">食べて痩せる肌診断 <span class="new-mark">New!!</span></a>
       <a href="about.html">当サイトについて (About)</a>
