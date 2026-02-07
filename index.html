@@ -2,9 +2,7 @@
 <html lang="ja">
 <head>
   <meta charset="UTF-8">
-  <title>
-体重を減らさない花嫁ダイエット｜背中・二の腕・ライン重視の花嫁ケア
-</title>
+  <title>体重を減らさない花嫁ダイエット｜背中・二の腕・ライン重視の花嫁ケア</title>
   <meta name="description" content="体重を減らさず、ドレスが一番きれいに見える体へ。背中・二の腕・むくみを整える花嫁ダイエットの正解と順番を栄養士が解説。">
   <meta name="viewport" content="width=device-width, initial-scale=1.0">
   <link rel="canonical" href="https://essential-beauty-needs.com/" />
@@ -26,24 +24,25 @@
         color: #503535;
         font-family: 'Shippori Mincho', serif;
         line-height: 1.8;
+        font-size: 17px; /* フォントサイズを1pxアップ */
     }
 
     /* ヒーローヘッダー */
     header.hero {
         text-align: center;
-        padding: 100px 20px 30px; /* 余白調整済み */
+        padding: 100px 20px 30px;
         background: linear-gradient(to bottom, #ffffff, #fffaf9);
         border-bottom: 1px solid #eee;
     }
     header.hero h1 {
         font-family: 'Playfair Display', serif;
-        font-size: 32px;
+        font-size: 33px; /* 少し大きく */
         margin-bottom: 20px;
         line-height: 1.4;
         color: #503535;
     }
     header.hero p {
-        font-size: 16px;
+        font-size: 17px; /* 16px -> 17px */
         color: #886666;
         margin-bottom: 40px;
         font-weight: 500;
@@ -63,7 +62,7 @@
 
     h2 {
         font-family: 'Playfair Display', serif;
-        font-size: 24px;
+        font-size: 25px; /* 24px -> 25px */
         margin-bottom: 30px;
         color: #503535;
         display: inline-block;
@@ -75,7 +74,7 @@
     .type-box {
         background: #ffffff;
         border: 1px solid #f0e6e6;
-        padding: 25px;
+        padding: 30px 25px; /* パディング微調整 */
         margin-bottom: 20px;
         border-radius: 12px;
         text-align: left;
@@ -87,15 +86,16 @@
         border-color: #f7a8a8;
     }
     .type-box h3 {
-        font-size: 17px;
+        font-size: 19px; /* 17px -> 19px */
         color: #d4a373; /* ゴールド */
         margin: 0 0 10px 0;
         font-weight: bold;
     }
     .type-box p {
-        font-size: 14px;
-        margin: 0 0 15px 0;
+        font-size: 15px; /* 14px -> 15px */
+        margin: 0 0 20px 0;
         color: #666;
+        line-height: 1.6;
     }
 
     /* プレミアムエリア（設計図） */
@@ -114,14 +114,14 @@
     }
     .premium li {
         margin-bottom: 8px;
-        font-size: 15px;
+        font-size: 16px; /* 15px -> 16px */
         color: #5a4545;
     }
 
-    /* ▼▼▼ 追加：無料体験バナーエリア ▼▼▼ */
+    /* ▼▼▼ 無料体験バナーエリア ▼▼▼ */
     .trial-banner {
         background-color: #fff;
-        border: 2px solid #f7a8a8; /* サイトカラーに合わせたピンク枠 */
+        border: 2px solid #f7a8a8;
         border-radius: 15px;
         padding: 35px 25px;
         margin-top: 60px;
@@ -132,7 +132,7 @@
     .trial-tag {
         background: #d6336c;
         color: #fff;
-        font-size: 11px;
+        font-size: 12px; /* 11px -> 12px */
         padding: 4px 12px;
         border-radius: 20px;
         font-weight: bold;
@@ -143,10 +143,9 @@
     .trial-banner h2 {
         border: none;
         margin-bottom: 15px;
-        font-size: 22px;
+        font-size: 23px; /* 22px -> 23px */
         color: #503535;
     }
-    /* ▲▲▲ 追加ここまで ▲▲▲ */
 
     /* ボタンデザイン */
     .btn-main {
@@ -157,7 +156,7 @@
         border-radius: 50px;
         font-weight: bold;
         box-shadow: 0 4px 10px rgba(247, 168, 168, 0.4);
-        font-size: 16px;
+        font-size: 17px; /* 16px -> 17px */
         text-decoration: none;
         transition: 0.3s;
     }
@@ -167,21 +166,24 @@
         opacity: 1;
     }
 
+    /* ▼ 修正済み：サブボタン（PC/スマホ対応） */
     .btn-sub {
-        display: inline-block;
+        display: block; /* inline-blockからblockへ変更し、中央揃えしやすく */
+        width: 100%;    /* デフォルトは幅いっぱい */
+        max-width: 100%; /* PCでもカード内では幅いっぱいに広げる */
         background: #fff;
         color: #503535;
         border: 1px solid #f7a8a8;
-        padding: 10px 25px;
+        padding: 12px 25px; /* パディング少し増やす */
         border-radius: 30px;
         font-weight: bold;
-        font-size: 14px;
+        font-size: 15px; /* 14px -> 15px */
         box-shadow: 0 2px 5px rgba(0,0,0,0.05);
         text-decoration: none;
-        width: 100%; /* スマホで押しやすく */
         text-align: center;
         box-sizing: border-box;
         transition: 0.3s;
+        margin: 0 auto; /* 中央配置 */
     }
     .btn-sub:hover {
         background: #fff0f0;
@@ -189,7 +191,7 @@
 
     /* ブリッジ（強調部分） */
     .bridge .em {
-        font-size: 18px;
+        font-size: 19px; /* 18px -> 19px */
         font-weight: bold;
         background: linear-gradient(transparent 60%, #ffe0e0 60%);
         padding: 0 5px;
@@ -207,7 +209,7 @@
         border-top: 1px solid #eee;
     }
     .nav-links a {
-        font-size: 13px;
+        font-size: 14px; /* 13px -> 14px */
         color: #777;
         border: 1px solid #eee;
         padding: 10px 20px;
@@ -220,10 +222,10 @@
     /* フッター */
     .footer {
         text-align: center;
-        padding: 50px 20px;
+        padding: 50px 20px 80px; /* フローティングバー考慮 */
         background-color: #fcf8f8;
         border-top: 3px solid #f7a8a8;
-        font-size: 13px;
+        font-size: 14px; /* 13px -> 14px */
         color: #888;
     }
     .footer a { color: #aaa; text-decoration: underline; }
@@ -235,7 +237,7 @@
         bottom: 12px;
         background: rgba(255, 255, 255, 0.9);
         color: #aaa;
-        font-size: 10px;
+        font-size: 11px; /* 10px -> 11px */
         border-radius: 6px;
         padding: 6px 12px;
         box-shadow: 0 2px 10px rgba(0,0,0,0.1);
@@ -243,47 +245,6 @@
         border: 1px solid #eee;
         pointer-events: none;
     }
-    /* ボタンデザイン */
-.btn-main {
-    display: inline-block;
-    background: linear-gradient(45deg, #f7a8a8, #e08e8e);
-    color: #fff;
-    padding: 15px 35px;
-    border-radius: 50px;
-    font-weight: bold;
-    box-shadow: 0 4px 10px rgba(247, 168, 168, 0.4);
-    font-size: 16px;
-    text-decoration: none;
-    transition: 0.3s;
-}
-.btn-main:hover {
-    transform: translateY(-2px);
-    box-shadow: 0 6px 15px rgba(247, 168, 168, 0.6);
-}
-
-/* ▼ 修正ポイント */
-.btn-sub {
-    display: inline-block;
-    background: #fff;
-    color: #503535;
-    border: 1px solid #f7a8a8;
-    padding: 10px 25px;
-    border-radius: 30px;
-    font-weight: bold;
-    font-size: 14px;
-    box-shadow: 0 2px 5px rgba(0,0,0,0.05);
-    text-decoration: none;
-    text-align: center;
-    box-sizing: border-box;
-    transition: 0.3s;
-}
-
-/* スマホだけ100%にする */
-@media (max-width: 768px) {
-  .btn-sub {
-    width: 100%;
-  }
-}
   </style>
 
   <script>
@@ -311,7 +272,7 @@
     痩せるより、<br>
     ドレスラインを整える。
   </p>
-<p style="font-size:14px; color:#a67c7c; margin-top:-10px;">
+<p style="font-size:15px; color:#a67c7c; margin-top:-10px;">
   ※ 背中・二の腕・顔がやつれたくない花嫁さんへ
 </p>
   
@@ -331,7 +292,7 @@
   <p>
     でも実際は、
   </p>
-  <ul style="text-align:left; display:inline-block; margin:0 auto; color:#666; font-size:15px; list-style:none; padding:0;">
+  <ul style="text-align:left; display:inline-block; margin:0 auto; color:#666; font-size:16px; list-style:none; padding:0;">
     <li>⚠️ 背中が貧相に見える</li>
     <li>⚠️ 二の腕のたるみが強調される</li>
     <li>⚠️ 顔がやつれて老けて見える</li>
@@ -342,7 +303,7 @@
   </p>
 </section>
 
-  <p style="text-align:center; font-size:14px; color:#777; margin-bottom:30px;">
+  <p style="text-align:center; font-size:15px; color:#777; margin-bottom:30px;">
   ※ 時間がない方は、気になる項目だけで大丈夫です
   </p>
   
@@ -386,7 +347,7 @@
     設計図が必要です。
   </p>
 
-  <a href="https://note.com/yuri_organic/n/n047d215e5da6" class="btn-sub" target="_blank" rel="noopener" style="max-width:300px;">
+  <a href="https://note.com/yuri_organic/n/n047d215e5da6" class="btn-sub" target="_blank" rel="noopener" style="max-width:300px; display:inline-block;">
     📗 花嫁ダイエット診断・理論編（¥980）
   </a>
 </section>
@@ -415,18 +376,18 @@
 <section class="trial-banner">
   <span class="trial-tag">保存版</span>
   <h2>プレ花嫁の「無料体験」<br>まとめ</h2>
-  <p style="font-size:14px; color:#666; margin-bottom:20px; line-height:1.6;">
+  <p style="font-size:15px; color:#666; margin-bottom:20px; line-height:1.6;">
   結婚式はお金がかかるからこそ。<br>
   ジム・エステ・脱毛など、<br>
   <strong>「0円〜」でプロの施術が受けられる</strong><br>
   お得なスポットを厳選しました。
 </p>
 
-<p style="font-size:13px; color:#888; line-height:1.6;">
+<p style="font-size:14px; color:#888; line-height:1.6;">
   ・いきなり高額コースを組むのが不安な方<br>
   ・何が自分に合うか試してから決めたい方へ
 </p>
-  <a href="trial-collection.html" class="btn-sub" style="border-color:#d6336c; color:#d6336c;">
+  <a href="trial-collection.html" class="btn-sub" style="border-color:#d6336c; color:#d6336c; max-width:350px; margin:0 auto;">
     ✨ 賢く綺麗になるリストを見る
   </a>
 </section>
@@ -445,14 +406,14 @@
   </p>
   
   <div style="margin-bottom:20px;">
-      <a href="https://room.rakuten.co.jp/room_e0dd63a90a/items" target="_blank" rel="noopener" style="display:inline-block; border:1px solid #ccc; padding:5px 15px; border-radius:20px; font-size:12px; text-decoration:none; color:#666;">
+      <a href="https://room.rakuten.co.jp/room_e0dd63a90a/items" target="_blank" rel="noopener" style="display:inline-block; border:1px solid #ccc; padding:5px 15px; border-radius:20px; font-size:13px; text-decoration:none; color:#666;">
         🏠 Yuriの楽天ROOM
       </a>
   </div>
 
   <a href="privacy-policy.html">プライバシーポリシー</a>
 
-  <div style="margin-top: 20px; font-size: 10px; color: #aaa; line-height: 1.4;">
+  <div style="margin-top: 20px; font-size: 11px; color: #aaa; line-height: 1.4;">
     ※Amazonのアソシエイトとして、<br>Essential Beauty Needsは適格販売により収入を得ています。
   </div>
 
@@ -466,9 +427,3 @@
 
 </body>
 </html>
-
-
-
-
-
-
