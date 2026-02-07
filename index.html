@@ -15,7 +15,7 @@
 
   <style>
     /* =========================================
-       【トップページ専用スタイル：最終完成版】
+       【トップページ専用スタイル：PC/スマホ完全対応版】
        ========================================= */
 
     /* 基本設定 */
@@ -49,7 +49,7 @@
         font-weight: 500 !important;
     }
 
-    /* メインコンテンツエリア */
+    /* メインコンテンツエリア（PC中央寄せ） */
     main {
         width: 100% !important;
         max-width: 800px !important; 
@@ -75,22 +75,24 @@
         padding-bottom: 5px !important;
     }
 
-    /* 診断ボックス（上部） */
+    /* ▼▼▼ 診断ボックス（PC/スマホで幅を切り替え） ▼▼▼ */
     .diagnosis-card {
         background: #ffffff !important;
         border: 1px solid #f0e6e6 !important;
+        
+        /* PCデフォルト：幅制限して中央寄せ */
         padding: 40px !important;
         margin-bottom: 25px !important;
         border-radius: 15px !important;
-        text-align: center !important; /* 中央寄せ採用 */
+        text-align: center !important;
         box-shadow: 0 4px 15px rgba(0,0,0,0.03) !important;
         transition: transform 0.2s !important;
         
-        /* PC設定 */
         width: 100% !important;
-        max-width: 560px !important;
+        max-width: 560px !important; /* PCでの最大幅 */
         margin-left: auto !important;
         margin-right: auto !important;
+        box-sizing: border-box !important; /* はみ出し防止 */
     }
     .diagnosis-card:hover {
         transform: translateY(-2px);
@@ -109,7 +111,7 @@
         line-height: 1.8 !important;
     }
 
-    /* ボタン共通 */
+    /* ▼▼▼ ボタン（PC/スマホで幅を切り替え） ▼▼▼ */
     .btn-select {
         display: block !important;
         background: #fff !important;
@@ -123,15 +125,45 @@
         text-align: center !important;
         transition: 0.3s !important;
         box-shadow: 0 2px 5px rgba(0,0,0,0.05) !important;
+        margin: 25px auto 0 !important;
         
-        /* PCデフォルト */
+        /* PCデフォルト：幅を固定 */
         width: 320px !important;
         max-width: 100% !important;
-        margin: 25px auto 0 !important;
     }
     .btn-select:hover {
         background: #fff0f0 !important;
     }
+
+    /* ▼▼▼ スマホ専用調整（ここが修正ポイント） ▼▼▼ */
+    @media (max-width: 600px) { /* 600px以下で適用 */
+        
+        /* メインエリアの余白を少し詰める */
+        main {
+            padding: 0 15px !important;
+        }
+
+        /* ボックス：幅制限を解除し、画面いっぱいまで広げる */
+        .diagnosis-card {
+            max-width: none !important; /* 制限解除 */
+            width: 100% !important;     /* 幅いっぱい */
+            padding: 30px 20px !important; /* 中の余白調整 */
+        }
+
+        /* ボタン：幅を広げる（でも少し余白を残す） */
+        .btn-select {
+            width: 90% !important; /* 90%幅 */
+            max-width: none !important;
+        }
+        
+        /* プレミアムエリアやバナーも同様に */
+        .premium, .trial-banner {
+            max-width: none !important;
+            width: 100% !important;
+            padding: 30px 20px !important;
+        }
+    }
+    /* ▲▲▲ ここまで ▲▲▲ */
 
     /* メインボタン */
     .btn-hero {
@@ -153,7 +185,7 @@
         opacity: 1 !important;
     }
 
-    /* プレミアムエリア */
+    /* プレミアムエリア（PCデフォルト） */
     .premium {
         background-color: #fffcf5 !important;
         padding: 40px 25px !important;
@@ -179,25 +211,23 @@
         color: #5a4545 !important;
     }
 
-    /* ▼▼▼ 修正：下部ボックス（.trial-banner）のサイズ調整 ▼▼▼ */
+    /* 無料体験バナーエリア（PCデフォルト） */
     .trial-banner {
         background-color: #fff !important;
         border: 2px solid #f7a8a8 !important;
         border-radius: 15px !important;
-        padding: 40px 30px !important; /* 余白微調整 */
+        padding: 40px 25px !important;
         margin-top: 60px !important;
         box-shadow: 0 5px 15px rgba(247, 168, 168, 0.1) !important;
         text-align: center !important;
         position: relative !important;
         
-        /* PCでは幅を少し狭めてスッキリさせる */
         width: 100% !important;
-        max-width: 500px !important; /* ← ここでPCの幅を制限 */
+        max-width: 560px !important;
         margin-left: auto !important;
         margin-right: auto !important;
         box-sizing: border-box !important;
     }
-    /* ▲▲▲ ここまで ▲▲▲ */
 
     .trial-tag {
         background: #d6336c !important;
@@ -273,27 +303,6 @@
         border: 1px solid #eee !important;
         pointer-events: none !important;
     }
-
-    /* ▼▼▼ スマホ専用調整 ▼▼▼ */
-    @media (max-width: 600px) {
-        .btn-select {
-            width: 90% !important; /* スマホでは90%幅 */
-        }
-        .diagnosis-card {
-            padding: 30px 20px !important;
-        }
-        /* 下部ボックスもスマホでは制限解除 */
-        .trial-banner {
-            max-width: none !important;
-            width: 100% !important;
-            padding: 35px 20px !important;
-        }
-        .premium {
-            max-width: none !important;
-            width: 100% !important;
-            padding: 30px 20px !important;
-        }
-    }
   </style>
 
   <script>
@@ -348,16 +357,16 @@
   </ul>
   <p style="margin-top:20px;">
     原因は努力不足ではなく、<br>
-    <strong>「順番を知らないまま頑張ってしまうこと」</strong>です。
+    <strong>順番を知らずに頑張ってしまうこと</strong>
   </p>
 </section>
 
   <p style="text-align:center; font-size:15px; color:#777; margin-bottom:30px;">
-  ※ 時間がない方は、気になる項目だけで大丈夫です
+  ※ お急ぎの方は気になる項目だけどうぞ
   </p>
   
 <section class="diagnosis">
-  <h2>あなたはどこを整えるべき？</h2>
+  <h2>あなたは<br>どこを整えるべき？</h2>
   <p>
     花嫁の体型悩みは、<br>
     大きく3つに分かれます。
@@ -389,7 +398,7 @@
   <h2>ここで多くの花嫁が迷子になります</h2>
   <p>
     情報はあるのに、<br>
-    「自分は今、何をすべきか」がわからない。
+    自分はどうしたらいいかわからない。
   </p>
   <p class="em">
     それを整理するための<br>
