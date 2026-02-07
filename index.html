@@ -16,8 +16,6 @@
   <style>
     /* =========================================
        【トップページ専用スタイル】
-       外部CSSと名前を被らせないことで、
-       干渉を完全に防ぎます。
        ========================================= */
 
     /* 基本設定 */
@@ -75,88 +73,92 @@
         padding-bottom: 5px !important;
     }
 
-    /* ▼▼▼ 新規作成：診断ボックス（名前を変えて干渉回避） ▼▼▼ */
+    /* ▼▼▼ 修正：ボックスサイズをPCで制限・中央寄せ ▼▼▼ */
     .diagnosis-card {
-        background: #ffffff;
-        border: 1px solid #f0e6e6;
-        padding: 35px 30px; /* 余白をたっぷりと */
-        margin-bottom: 25px;
-        border-radius: 15px;
-        text-align: left; /* 左揃え */
-        box-shadow: 0 4px 15px rgba(0,0,0,0.03);
-        transition: transform 0.2s;
+        background: #ffffff !important;
+        border: 1px solid #f0e6e6 !important;
+        padding: 40px !important; /* PCでは少し広めに */
+        margin-bottom: 25px !important;
+        border-radius: 15px !important;
+        text-align: left !important;
+        box-shadow: 0 4px 15px rgba(0,0,0,0.03) !important;
+        transition: transform 0.2s !important;
+        
+        /* ここが修正ポイント：幅を制限して中央に */
+        width: 100% !important;
+        max-width: 560px !important; /* これ以上広がらない */
+        margin-left: auto !important;
+        margin-right: auto !important;
     }
     .diagnosis-card:hover {
         transform: translateY(-2px);
-        border-color: #f7a8a8;
+        border-color: #f7a8a8 !important;
     }
     .diagnosis-card h3 {
-        font-size: 20px;
-        color: #d4a373; /* ゴールド */
-        margin: 0 0 15px 0;
-        font-weight: bold;
+        font-size: 20px !important;
+        color: #d4a373 !important;
+        margin: 0 0 15px 0 !important;
+        font-weight: bold !important;
     }
     .diagnosis-card p {
-        font-size: 16px;
-        margin: 0 0 20px 0;
-        color: #666;
-        line-height: 1.8;
+        font-size: 16px !important;
+        margin: 0 0 20px 0 !important;
+        color: #666 !important;
+        line-height: 1.8 !important;
     }
 
-    /* ▼▼▼ 新規作成：選択ボタン（名前を変えて干渉回避） ▼▼▼ */
+    /* ボタン */
     .btn-select {
-        display: block; /* 確実にブロック要素にする */
-        background: #fff;
-        color: #503535;
-        border: 1px solid #f7a8a8;
-        padding: 12px 0; /* 上下だけ指定、左右は幅で制御 */
-        border-radius: 30px;
-        font-weight: bold;
-        font-size: 15px;
-        text-decoration: none;
-        text-align: center;
-        transition: 0.3s;
-        box-shadow: 0 2px 5px rgba(0,0,0,0.05);
+        display: block !important;
+        background: #fff !important;
+        color: #503535 !important;
+        border: 1px solid #f7a8a8 !important;
+        padding: 12px 0 !important;
+        border-radius: 30px !important;
+        font-weight: bold !important;
+        font-size: 15px !important;
+        text-decoration: none !important;
+        text-align: center !important;
+        transition: 0.3s !important;
+        box-shadow: 0 2px 5px rgba(0,0,0,0.05) !important;
         
-        /* PC向けの設定：幅を制限して中央寄せ */
-        width: 60%; 
-        max-width: 350px;
-        margin: 25px auto 0; /* 中央配置 */
+        width: 320px !important;
+        max-width: 100% !important;
+        margin: 25px auto 0 !important;
     }
     .btn-select:hover {
-        background: #fff0f0;
+        background: #fff0f0 !important;
     }
 
-    /* スマホ向けの設定（768px以下） */
-    @media (max-width: 768px) {
+    /* スマホ調整（480px以下） */
+    @media (max-width: 480px) {
         .btn-select {
-            width: 100%; /* スマホでは幅いっぱい */
-            max-width: none;
+            width: 100% !important;
         }
         .diagnosis-card {
-            padding: 25px 20px; /* スマホでは少し余白を詰める */
+            padding: 30px 25px !important; /* スマホでは余白調整 */
         }
     }
     /* ▲▲▲ ここまで ▲▲▲ */
 
-    /* メインボタン（序章を読むボタンなど） */
+    /* メインボタン */
     .btn-hero {
-        display: inline-block;
-        background: linear-gradient(45deg, #f7a8a8, #e08e8e);
-        color: #fff;
-        padding: 15px 45px;
-        border-radius: 50px;
-        font-weight: bold;
-        box-shadow: 0 4px 10px rgba(247, 168, 168, 0.4);
-        font-size: 18px;
-        text-decoration: none;
-        transition: 0.3s;
-        margin-top: 20px;
+        display: inline-block !important;
+        background: linear-gradient(45deg, #f7a8a8, #e08e8e) !important;
+        color: #fff !important;
+        padding: 15px 45px !important;
+        border-radius: 50px !important;
+        font-weight: bold !important;
+        box-shadow: 0 4px 10px rgba(247, 168, 168, 0.4) !important;
+        font-size: 18px !important;
+        text-decoration: none !important;
+        transition: 0.3s !important;
+        margin-top: 20px !important;
     }
     .btn-hero:hover {
         transform: translateY(-2px);
-        box-shadow: 0 6px 15px rgba(247, 168, 168, 0.6);
-        opacity: 1;
+        box-shadow: 0 6px 15px rgba(247, 168, 168, 0.6) !important;
+        opacity: 1 !important;
     }
 
     /* プレミアムエリア */
@@ -179,27 +181,35 @@
         color: #5a4545 !important;
     }
 
-    /* 無料体験バナーエリア */
+    /* ▼▼▼ 修正：バナーもサイズ制限して統一感アップ ▼▼▼ */
     .trial-banner {
-        background-color: #fff;
-        border: 2px solid #f7a8a8;
-        border-radius: 15px;
-        padding: 40px 25px;
-        margin-top: 60px;
-        box-shadow: 0 5px 15px rgba(247, 168, 168, 0.1);
-        text-align: center;
-        position: relative;
+        background-color: #fff !important;
+        border: 2px solid #f7a8a8 !important;
+        border-radius: 15px !important;
+        padding: 40px 25px !important;
+        margin-top: 60px !important;
+        box-shadow: 0 5px 15px rgba(247, 168, 168, 0.1) !important;
+        text-align: center !important;
+        position: relative !important;
+        
+        /* ここも幅を制限 */
+        width: 100% !important;
+        max-width: 600px !important;
+        margin-left: auto !important;
+        margin-right: auto !important;
     }
+    /* ▲▲▲ ここまで ▲▲▲ */
+
     .trial-tag {
-        background: #d6336c;
-        color: #fff;
-        font-size: 12px;
-        padding: 4px 12px;
-        border-radius: 20px;
-        font-weight: bold;
-        display: inline-block;
-        margin-bottom: 15px;
-        letter-spacing: 1px;
+        background: #d6336c !important;
+        color: #fff !important;
+        font-size: 12px !important;
+        padding: 4px 12px !important;
+        border-radius: 20px !important;
+        font-weight: bold !important;
+        display: inline-block !important;
+        margin-bottom: 15px !important;
+        letter-spacing: 1px !important;
     }
     .trial-banner h2 {
         border: none !important;
