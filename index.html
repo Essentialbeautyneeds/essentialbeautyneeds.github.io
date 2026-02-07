@@ -15,7 +15,7 @@
 
   <style>
     /* =========================================
-       【トップページ専用スタイル】
+       【トップページ専用スタイル：最終調整版】
        ========================================= */
 
     /* 基本設定 */
@@ -26,7 +26,6 @@
         line-height: 1.8 !important;
         font-size: 17px !important;
         margin: 0 !important;
-        width: 100% !important;
     }
 
     /* ヒーローヘッダー */
@@ -50,13 +49,21 @@
         font-weight: 500 !important;
     }
 
-    /* メインコンテンツエリア */
+    /* ▼▼▼ レイアウト修正の要（中央寄せ復活） ▼▼▼ */
     main {
-        max-width: 800px !important;
-        margin: 0 auto !important;
+        /* PCでは最大800px、スマホでは100% */
+        width: 100% !important;
+        max-width: 800px !important; 
+        
+        /* 左右の自動マージンで中央寄せ */
+        margin-left: auto !important;
+        margin-right: auto !important;
+        
         padding: 0 20px !important;
+        box-sizing: border-box !important;
         display: block !important;
     }
+    /* ▲▲▲ ここまで ▲▲▲ */
 
     section {
         margin-bottom: 80px !important;
@@ -73,7 +80,7 @@
         padding-bottom: 5px !important;
     }
 
-    /* 診断ボックス */
+    /* ▼▼▼ 診断ボックス（PCサイズ適正化） ▼▼▼ */
     .diagnosis-card {
         background: #ffffff !important;
         border: 1px solid #f0e6e6 !important;
@@ -84,8 +91,9 @@
         box-shadow: 0 4px 15px rgba(0,0,0,0.03) !important;
         transition: transform 0.2s !important;
         
+        /* PCでは幅を制限して中央に */
         width: 100% !important;
-        max-width: 560px !important;
+        max-width: 560px !important; /* ← これで巨大化を防ぐ */
         margin-left: auto !important;
         margin-right: auto !important;
     }
@@ -106,7 +114,7 @@
         line-height: 1.8 !important;
     }
 
-    /* ▼▼▼ ボタン修正：スマホでの余白確保 ▼▼▼ */
+    /* ▼▼▼ ボタン（PC・スマホ両対応） ▼▼▼ */
     .btn-select {
         display: block !important;
         background: #fff !important;
@@ -121,7 +129,7 @@
         transition: 0.3s !important;
         box-shadow: 0 2px 5px rgba(0,0,0,0.05) !important;
         
-        /* PCデフォルト */
+        /* PCデフォルト設定 */
         width: 320px !important;
         max-width: 100% !important;
         margin: 25px auto 0 !important;
@@ -133,10 +141,8 @@
     /* スマホ調整（480px以下） */
     @media (max-width: 480px) {
         .btn-select {
-            /* 100%ではなく90%にして余白を作る */
+            /* スマホでは90%幅で中央寄せ */
             width: 90% !important;
-            margin-left: auto !important;
-            margin-right: auto !important;
         }
         .diagnosis-card {
             padding: 30px 20px !important;
@@ -171,6 +177,12 @@
         border-radius: 15px !important;
         border: 1px dashed #d4a373 !important;
         margin-top: 40px !important;
+        
+        /* 箱のサイズ制限（PC） */
+        width: 100% !important;
+        max-width: 560px !important;
+        margin-left: auto !important;
+        margin-right: auto !important;
     }
     .premium ul {
         text-align: left !important;
@@ -195,8 +207,9 @@
         text-align: center !important;
         position: relative !important;
         
+        /* 箱のサイズ制限（PC） */
         width: 100% !important;
-        max-width: 600px !important;
+        max-width: 560px !important;
         margin-left: auto !important;
         margin-right: auto !important;
     }
