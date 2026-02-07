@@ -73,20 +73,19 @@
         padding-bottom: 5px !important;
     }
 
-    /* ▼▼▼ 修正：ボックスサイズをPCで制限・中央寄せ ▼▼▼ */
+    /* 診断ボックス */
     .diagnosis-card {
         background: #ffffff !important;
         border: 1px solid #f0e6e6 !important;
-        padding: 40px !important; /* PCでは少し広めに */
+        padding: 40px !important;
         margin-bottom: 25px !important;
         border-radius: 15px !important;
-        text-align: center !important;
+        text-align: left !important;
         box-shadow: 0 4px 15px rgba(0,0,0,0.03) !important;
         transition: transform 0.2s !important;
         
-        /* ここが修正ポイント：幅を制限して中央に */
         width: 100% !important;
-        max-width: 380px !important; /* これ以上広がらない */
+        max-width: 560px !important;
         margin-left: auto !important;
         margin-right: auto !important;
     }
@@ -107,7 +106,7 @@
         line-height: 1.8 !important;
     }
 
-    /* ボタン */
+    /* ▼▼▼ ボタン修正：スマホでの余白確保 ▼▼▼ */
     .btn-select {
         display: block !important;
         background: #fff !important;
@@ -122,6 +121,7 @@
         transition: 0.3s !important;
         box-shadow: 0 2px 5px rgba(0,0,0,0.05) !important;
         
+        /* PCデフォルト */
         width: 320px !important;
         max-width: 100% !important;
         margin: 25px auto 0 !important;
@@ -133,10 +133,13 @@
     /* スマホ調整（480px以下） */
     @media (max-width: 480px) {
         .btn-select {
-            width: 100% !important;
+            /* 100%ではなく90%にして余白を作る */
+            width: 90% !important;
+            margin-left: auto !important;
+            margin-right: auto !important;
         }
         .diagnosis-card {
-            padding: 30px 25px !important; /* スマホでは余白調整 */
+            padding: 30px 20px !important;
         }
     }
     /* ▲▲▲ ここまで ▲▲▲ */
@@ -181,7 +184,7 @@
         color: #5a4545 !important;
     }
 
-    /* ▼▼▼ 修正：バナーもサイズ制限して統一感アップ ▼▼▼ */
+    /* 無料体験バナーエリア */
     .trial-banner {
         background-color: #fff !important;
         border: 2px solid #f7a8a8 !important;
@@ -192,13 +195,11 @@
         text-align: center !important;
         position: relative !important;
         
-        /* ここも幅を制限 */
         width: 100% !important;
         max-width: 600px !important;
         margin-left: auto !important;
         margin-right: auto !important;
     }
-    /* ▲▲▲ ここまで ▲▲▲ */
 
     .trial-tag {
         background: #d6336c !important;
@@ -456,6 +457,3 @@
 
 </body>
 </html>
-
-
-
