@@ -243,6 +243,47 @@
         border: 1px solid #eee;
         pointer-events: none;
     }
+    /* ボタンデザイン */
+.btn-main {
+    display: inline-block;
+    background: linear-gradient(45deg, #f7a8a8, #e08e8e);
+    color: #fff;
+    padding: 15px 35px;
+    border-radius: 50px;
+    font-weight: bold;
+    box-shadow: 0 4px 10px rgba(247, 168, 168, 0.4);
+    font-size: 16px;
+    text-decoration: none;
+    transition: 0.3s;
+}
+.btn-main:hover {
+    transform: translateY(-2px);
+    box-shadow: 0 6px 15px rgba(247, 168, 168, 0.6);
+}
+
+/* ▼ 修正ポイント */
+.btn-sub {
+    display: inline-block;
+    background: #fff;
+    color: #503535;
+    border: 1px solid #f7a8a8;
+    padding: 10px 25px;
+    border-radius: 30px;
+    font-weight: bold;
+    font-size: 14px;
+    box-shadow: 0 2px 5px rgba(0,0,0,0.05);
+    text-decoration: none;
+    text-align: center;
+    box-sizing: border-box;
+    transition: 0.3s;
+}
+
+/* スマホだけ100%にする */
+@media (max-width: 768px) {
+  .btn-sub {
+    width: 100%;
+  }
+}
   </style>
 
   <script>
@@ -425,6 +466,7 @@
 
 </body>
 </html>
+
 
 
 
