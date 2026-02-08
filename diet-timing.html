@@ -209,6 +209,41 @@
   color: #d4a373;
   font-weight: bold;
 }
+    .faq-section {
+  max-width: 720px;
+  margin: 60px auto;
+}
+
+.faq-item {
+  background: #fff;
+  border-radius: 14px;
+  padding: 16px 20px;
+  margin-bottom: 14px;
+  box-shadow: 0 6px 16px rgba(0,0,0,0.04);
+}
+
+.faq-q {
+  font-weight: 600;
+  cursor: pointer;
+  color: #5a3e36;
+  list-style: none;
+}
+
+.faq-q::marker {
+  display: none;
+}
+
+.faq-a {
+  margin-top: 12px;
+  font-size: 14px;
+  line-height: 1.7;
+  color: #5a4545;
+}
+    .phase-box li::before {
+  content: "✔";
+  color: #8c5a3c; /* 濃いブラウン */
+  font-weight: bold;
+    }
   </style>
 </head>
 
@@ -281,38 +316,40 @@
   </div>
 </section>
 
-<section>
-  <h2>よくある質問</h2>
 
-  <div class="faq">
-    <div class="faq-item">
-      <div class="faq-q">Q. 花嫁ダイエットはいつから始めるのが理想？</div>
-      <div class="faq-a">
-        理想は「体重を落とす」ことではなく、<br>
-        <strong>整える準備を3ヶ月以上前から始めること</strong>です。
-      </div>
-    </div>
+  <section class="faq-section">
+  <h2 class="section-title">よくある質問</h2>
 
-    <div class="faq-item">
-      <div class="faq-q">Q. 1ヶ月前からだともう遅いですか？</div>
-      <div class="faq-a">
-        遅くはありません。<br>
-        ただしこの時期は「減らす」より<br>
-        <strong>ラインを崩さない判断</strong>が重要になります。
-      </div>
+  <details class="faq-item">
+    <summary class="faq-q">Q. 花嫁ダイエットはいつから始めるのが理想？</summary>
+    <div class="faq-a">
+      <p>
+        A. 理想は<strong>挙式の3ヶ月以上前</strong>からです。<br>
+        体重を落とすことよりも、むくみ・姿勢・血色を整える期間を確保することで、ドレス姿の完成度が大きく変わります。
+      </p>
     </div>
+  </details>
 
-    <div class="faq-item">
-      <div class="faq-q">Q. 直前に食事量を減らすのはNG？</div>
-      <div class="faq-a">
-        はい。<br>
-        むくみ・血色低下・やつれの原因になるため、<br>
-        写真写りを悪くするリスクが高くなります。
-      </div>
+  <details class="faq-item">
+    <summary class="faq-q">Q. 1ヶ月前から始めても意味はありますか？</summary>
+    <div class="faq-a">
+      <p>
+        A. 意味はあります。<br>
+        ただしこの時期は「減量」ではなく、<strong>むくませない・やつれない</strong>判断が最優先になります。
+      </p>
     </div>
-  </div>
+  </details>
+
+  <details class="faq-item">
+    <summary class="faq-q">Q. 直前に食事量を減らすのはNGですか？</summary>
+    <div class="faq-a">
+      <p>
+        A. おすすめしません。<br>
+        血色低下・肌荒れ・表情の硬さにつながり、写真写りが悪くなるリスクが高くなります。
+      </p>
+    </div>
+  </details>
 </section>
-
 <section>
   <a href="https://note.com/yuri_organic/n/n81b195407c3e" class="btn" target="_blank" rel="noopener">
     📘 無料の序章を読む
