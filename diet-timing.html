@@ -218,6 +218,20 @@
       }
     ]
   }
+    /* FAQ Click 点滅 */
+.click-hint {
+  font-size: 12px;
+  color: #d4a373;
+  margin-left: 8px;
+  animation: blink 1.4s infinite;
+  font-weight: normal;
+}
+
+@keyframes blink {
+  0%   { opacity: 1; }
+  50%  { opacity: 0.2; }
+  100% { opacity: 1; }
+}
   </script>
 </head>
 
@@ -287,7 +301,10 @@
   <h2>よくある質問</h2>
 
   <details class="faq-item">
-    <summary>Q. 花嫁ダイエットはいつから始めるのが理想？</summary>
+    <summary>
+  Q. 花嫁ダイエットはいつから始めるのが理想？
+  <span class="click-hint">Click!</span>
+</summary>
     <div class="faq-a">
       <p>A. 理想は<strong>挙式の3ヶ月以上前</strong>からです。体重を落とすことよりも、むくみ・姿勢・血色を整える期間を確保することで、ドレス姿の完成度が大きく変わります。</p>
     </div>
