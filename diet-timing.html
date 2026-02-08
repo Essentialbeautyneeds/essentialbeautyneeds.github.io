@@ -1,11 +1,11 @@
-!!<!DOCTYPE html>
+<!DOCTYPE html>
 <html lang="ja">
 <head>
   <meta charset="UTF-8">
   <title>花嫁ダイエットはいつから始める？3ヶ月前・1ヶ月前・直前でやることの違い</title>
   <meta name="description" content="花嫁ダイエットはいつから始めるのが正解？3ヶ月前・1ヶ月前・直前で目的は変わります。体重を落とさず写真写りを整える、花嫁専用の考え方を栄養士が解説。">
   <meta name="viewport" content="width=device-width, initial-scale=1.0">
-  <link rel="canonical" href="https://essential-beauty-needs.com/diet-timing.html" />
+  <link rel="canonical" href="https://essential-beauty-needs.com/diet-timing.html">
 
   <link rel="preconnect" href="https://fonts.googleapis.com">
   <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
@@ -92,72 +92,27 @@
     }
 
     .phase-box ul {
-      padding-left:18px;
-      margin:15px 0;
+      list-style:none;
+      padding-left:0;
+      margin:18px 0;
     }
 
     .phase-box li {
-      font-size:14px;
-      margin-bottom:8px;
-      color:#5f4b4b;
-    }
-
-    .note-box {
-      background:#fffcf5;
-      border-left:5px solid #d4a373;
-      padding:30px 25px;
-      margin:60px auto;
-      text-align:left;
-      border-radius:8px;
-    }
-
-    .note-box p {
-      font-size:14px;
-      margin:0;
-    }
-
-    /* FAQ */
-    .faq {
-      max-width:700px;
-      margin:0 auto;
-      text-align:left;
-    }
-
-    .faq-item {
-      border-bottom:1px solid #eee;
-      padding:18px 0;
-      cursor:pointer;
-    }
-
-    .faq-q {
-      font-weight:bold;
       position:relative;
-      padding-right:30px;
-    }
-
-    .faq-q::after {
-      content:"+";
-      position:absolute;
-      right:0;
-      top:0;
-      font-size:18px;
-      color:#d4a373;
-    }
-
-    .faq-item.active .faq-q::after {
-      content:"−";
-    }
-
-    .faq-a {
-      display:none;
+      padding-left:26px;
+      margin-bottom:12px;
       font-size:14px;
-      margin-top:12px;
-      color:#5f4b4b;
-      line-height:1.8;
+      line-height:1.7;
+      color:#5a4545;
     }
 
-    .faq-item.active .faq-a {
-      display:block;
+    .phase-box li::before {
+      content:"✔";
+      position:absolute;
+      left:0;
+      top:0;
+      color:#8c5a3c;
+      font-weight:bold;
     }
 
     .btn {
@@ -173,6 +128,49 @@
       box-shadow:0 4px 10px rgba(247,168,168,0.4);
     }
 
+    /* FAQ */
+    .faq-section {
+      max-width:720px;
+      margin:60px auto;
+      text-align:left;
+    }
+
+    details.faq-item {
+      background:#fff;
+      border-radius:14px;
+      padding:16px 20px;
+      margin-bottom:14px;
+      box-shadow:0 6px 16px rgba(0,0,0,0.04);
+    }
+
+    details.faq-item summary {
+      font-weight:600;
+      cursor:pointer;
+      color:#5a3e36;
+      list-style:none;
+      position:relative;
+    }
+
+    details.faq-item summary::after {
+      content:"+";
+      position:absolute;
+      right:0;
+      top:0;
+      font-size:18px;
+      color:#d4a373;
+    }
+
+    details[open] summary::after {
+      content:"−";
+    }
+
+    .faq-a {
+      margin-top:12px;
+      font-size:14px;
+      line-height:1.7;
+      color:#5a4545;
+    }
+
     footer {
       text-align:center;
       padding:50px 20px;
@@ -186,109 +184,48 @@
       color:#888;
       text-decoration:underline;
     }
-    .phase-box ul {
-  list-style: none;
-  padding-left: 0;
-  margin: 18px 0;
-}
-
-.phase-box li {
-  position: relative;
-  padding-left: 26px;
-  margin-bottom: 12px;
-  font-size: 14px;
-  line-height: 1.7;
-  color: #5a4545;
-}
-
-.phase-box li::before {
-  content: "✔";
-  position: absolute;
-  left: 0;
-  top: 0;
-  color: #d4a373;
-  font-weight: bold;
-}
-    .faq-section {
-  max-width: 720px;
-  margin: 60px auto;
-}
-
-.faq-item {
-  background: #fff;
-  border-radius: 14px;
-  padding: 16px 20px;
-  margin-bottom: 14px;
-  box-shadow: 0 6px 16px rgba(0,0,0,0.04);
-}
-
-.faq-q {
-  font-weight: 600;
-  cursor: pointer;
-  color: #5a3e36;
-  list-style: none;
-}
-
-.faq-q::marker {
-  display: none;
-}
-
-.faq-a {
-  margin-top: 12px;
-  font-size: 14px;
-  line-height: 1.7;
-  color: #5a4545;
-}
-    .phase-box li::before {
-  content: "✔";
-  color: #8c5a3c; /* 濃いブラウン */
-  font-weight: bold;
-    }
   </style>
+
+  <!-- FAQ 構造化データ -->
+  <script type="application/ld+json">
+  {
+    "@context": "https://schema.org",
+    "@type": "FAQPage",
+    "mainEntity": [
+      {
+        "@type": "Question",
+        "name": "花嫁ダイエットはいつから始めるのが理想？",
+        "acceptedAnswer": {
+          "@type": "Answer",
+          "text": "A. 理想は挙式の3ヶ月以上前からです。体重を落とすことよりも、むくみ・姿勢・血色を整える準備期間を確保することが重要です。"
+        }
+      },
+      {
+        "@type": "Question",
+        "name": "1ヶ月前から始めても意味はありますか？",
+        "acceptedAnswer": {
+          "@type": "Answer",
+          "text": "A. 意味はあります。ただしこの時期は減量よりも、むくませない・やつれない判断を優先することが大切です。"
+        }
+      },
+      {
+        "@type": "Question",
+        "name": "直前に食事量を減らすのはNGですか？",
+        "acceptedAnswer": {
+          "@type": "Answer",
+          "text": "A. おすすめしません。血色低下や肌荒れ、表情の硬さにつながり、写真写りを悪くする可能性があります。"
+        }
+      }
+    ]
+  }
+  </script>
 </head>
 
 <body>
-<script type="application/ld+json">
-{
-  "@context": "https://schema.org",
-  "@type": "FAQPage",
-  "mainEntity": [
-    {
-      "@type": "Question",
-      "name": "花嫁ダイエットはいつから始めるのが理想？",
-      "acceptedAnswer": {
-        "@type": "Answer",
-        "text": "理想は挙式の3ヶ月以上前からです。体重を落とすことよりも、むくみ・姿勢・血色を整える準備期間を確保することが重要です。"
-      }
-    },
-    {
-      "@type": "Question",
-      "name": "1ヶ月前から始めても意味はありますか？",
-      "acceptedAnswer": {
-        "@type": "Answer",
-        "text": "意味はありますが、減量よりもむくみを防ぎ、やつれない判断を優先することが大切です。"
-      }
-    },
-    {
-      "@type": "Question",
-      "name": "直前に食事量を減らすのはNGですか？",
-      "acceptedAnswer": {
-        "@type": "Answer",
-        "text": "おすすめしません。血色低下や肌荒れ、表情の硬さにつながり、写真写りを悪くする可能性があります。"
-      }
-    }
-  ]
-}
-</script>
+
 <header>
-  <h1>
-    花嫁ダイエットは<br>
-    いつから始める？
-  </h1>
-  <p>
-    実は、<br>
-    「早い＝正解」「遅い＝失敗」ではありません。
-  </p>
+  <h1>花嫁ダイエットは<br>いつから始める？</h1>
+  <p>実は、<br>「早い＝正解」「遅い＝失敗」ではありません。</p>
 </header>
 
 <main>
@@ -311,7 +248,6 @@
 
 <section>
   <h2>大切なのは「いつから」より「何を目的にするか」</h2>
-
   <p>
     花嫁ダイエットは、<br>
     時期によって<strong>やるべき役割</strong>が変わります。
@@ -322,16 +258,16 @@
   <div class="phase-box">
     <h3>【3ヶ月以上前】土台を作るフェーズ</h3>
     <ul>
-      <li>✔ 体を減らす前に、整える準備</li>
-      <li>✔ むくみ・姿勢・筋肉の使い方を見直す</li>
+      <li>体を減らす前に、整える準備</li>
+      <li>むくみ・姿勢・筋肉の使い方を見直す</li>
     </ul>
   </div>
 
   <div class="phase-box">
     <h3>【1〜2ヶ月前】ラインを整えるフェーズ</h3>
     <ul>
-      <li>✔ 背中・二の腕・デコルテの立体感を守る</li>
-      <li>✔ 体重より「見え方」を優先</li>
+      <li>背中・二の腕・デコルテの立体感を守る</li>
+      <li>体重より「見え方」を優先</li>
     </ul>
     <p>
       ▶︎ <a href="bridal-care.html">具体的な食事とケアの考え方はこちら</a>
@@ -341,46 +277,37 @@
   <div class="phase-box">
     <h3>【直前期】守るフェーズ</h3>
     <ul>
-      <li>✔ 新しいことは始めない</li>
-      <li>✔ 血色・肌・表情を最優先</li>
+      <li>新しいことは始めない</li>
+      <li>血色・肌・表情を最優先</li>
     </ul>
   </div>
 </section>
 
-
-  <section class="faq-section">
-  <h2 class="section-title">よくある質問</h2>
+<section class="faq-section">
+  <h2>よくある質問</h2>
 
   <details class="faq-item">
-    <summary class="faq-q">Q. 花嫁ダイエットはいつから始めるのが理想？</summary>
+    <summary>Q. 花嫁ダイエットはいつから始めるのが理想？</summary>
     <div class="faq-a">
-      <p>
-        A. 理想は<strong>挙式の3ヶ月以上前</strong>からです。<br>
-        体重を落とすことよりも、むくみ・姿勢・血色を整える期間を確保することで、ドレス姿の完成度が大きく変わります。
-      </p>
+      <p>A. 理想は<strong>挙式の3ヶ月以上前</strong>からです。体重を落とすことよりも、むくみ・姿勢・血色を整える期間を確保することで、ドレス姿の完成度が大きく変わります。</p>
     </div>
   </details>
 
   <details class="faq-item">
-    <summary class="faq-q">Q. 1ヶ月前から始めても意味はありますか？</summary>
+    <summary>Q. 1ヶ月前から始めても意味はありますか？</summary>
     <div class="faq-a">
-      <p>
-        A. 意味はあります。<br>
-        ただしこの時期は「減量」ではなく、<strong>むくませない・やつれない</strong>判断が最優先になります。
-      </p>
+      <p>A. 意味はあります。ただしこの時期は「減量」ではなく、<strong>むくませない・やつれない</strong>判断が最優先になります。</p>
     </div>
   </details>
 
   <details class="faq-item">
-    <summary class="faq-q">Q. 直前に食事量を減らすのはNGですか？</summary>
+    <summary>Q. 直前に食事量を減らすのはNGですか？</summary>
     <div class="faq-a">
-      <p>
-        A. おすすめしません。<br>
-        血色低下・肌荒れ・表情の硬さにつながり、写真写りが悪くなるリスクが高くなります。
-      </p>
+      <p>A. おすすめしません。血色低下・肌荒れ・表情の硬さにつながり、写真写りが悪くなるリスクが高くなります。</p>
     </div>
   </details>
 </section>
+
 <section>
   <a href="https://note.com/yuri_organic/n/n81b195407c3e" class="btn" target="_blank" rel="noopener">
     📘 無料の序章を読む
@@ -390,21 +317,11 @@
 </main>
 
 <footer>
-  <p>
-    <a href="index.html">ブライダル食事ケアTOPへ戻る</a>
-  </p>
+  <p><a href="index.html">ブライダル食事ケアTOPへ戻る</a></p>
   <br>
   栄養士｜Yuri 🌱<br>
   © 2025 Essential Beauty Needs
 </footer>
-
-<script>
-  document.querySelectorAll('.faq-item').forEach(item => {
-    item.addEventListener('click', () => {
-      item.classList.toggle('active');
-    });
-  });
-</script>
 
 </body>
 </html>
