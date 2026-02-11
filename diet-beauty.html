@@ -149,6 +149,38 @@ footer{
 @media(max-width:600px){
  h1{font-size:22px;}
 }
+ /* ナビゲーションリンク */
+    .nav-links {
+        display: flex !important;
+        flex-wrap: wrap !important;
+        justify-content: center !important;
+        gap: 15px !important;
+        margin: 60px 0 !important;
+        padding-top: 40px !important;
+        border-top: 1px solid #eee !important;
+    }
+    .nav-links a {
+        font-size: 14px !important;
+        color: #777 !important;
+        border: 1px solid #eee !important;
+        padding: 10px 20px !important;
+        border-radius: 20px !important;
+        background: #fff !important;
+        font-weight: bold !important;
+        text-decoration: none !important;
+    }
+
+    /* フッター */
+    .footer {
+        text-align: center !important;
+        padding: 50px 20px 100px !important;
+        background-color: #fcf8f8 !important;
+        border-top: 3px solid #f7a8a8 !important;
+        font-size: 14px !important;
+        color: #888 !important;
+    }
+    .footer a { color: #aaa !important; text-decoration: underline !important; }
+
 </style>
 </head>
 
@@ -232,9 +264,34 @@ footer{
 
 </main>
 
-<footer>
-© 2026 Essential Beauty Needs<br>
-<a href="privacy-policy.html">プライバシーポリシー</a>
+<section class="nav-links">
+  <a href="beauty-column.html">💄 コラム一覧</a>
+  <a href="skin-ranking.html">✨ おすすめランキング</a>
+  <a href="about.html">👩‍💼 運営者情報</a>
+</section>
+
+</main>
+
+<footer class="footer">
+  <p>
+    栄養士｜Yuri 🌱<br>
+    「体重ではなく、ラインで選ぶ花嫁へ」
+  </p>
+  
+  <div style="margin-bottom:20px;">
+      <a href="https://room.rakuten.co.jp/room_e0dd63a90a/items" target="_blank" rel="noopener" style="display:inline-block; border:1px solid #ccc; padding:5px 15px; border-radius:20px; font-size:13px; text-decoration:none; color:#666;">
+        🏠 Yuriの楽天ROOM
+      </a>
+  </div>
+
+  <a href="privacy-policy.html">プライバシーポリシー</a>
+
+  <div style="margin-top: 20px; font-size: 11px; color: #aaa; line-height: 1.4;">
+    ※Amazonのアソシエイトとして、<br>Essential Beauty Needsは適格販売により収入を得ています。
+  </div>
+
+  <br><br>
+  © 2025 Essential Beauty Needs
 </footer>
 
 <div class="disclaimer">
