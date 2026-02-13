@@ -84,7 +84,48 @@ h2{
   margin-top: 0;
   text-align: center;
 }
-/* ジムカード */
+
+/* 比較表のスタイル */
+.comparison-container {
+  overflow-x: auto;
+  margin-bottom: 40px;
+  box-shadow: 0 4px 10px rgba(0,0,0,0.05);
+  border-radius: 10px;
+}
+.comparison-table {
+  width: 100%;
+  border-collapse: collapse;
+  min-width: 600px; /* スマホでスクロールさせる */
+  background: #fff;
+}
+.comparison-table th {
+  background: #f7a8a8;
+  color: #fff;
+  padding: 12px;
+  font-size: 14px;
+  white-space: nowrap;
+}
+.comparison-table td {
+  border-bottom: 1px solid #eee;
+  padding: 12px;
+  font-size: 14px;
+  text-align: center;
+  vertical-align: middle;
+}
+.comparison-table tr:last-child td {
+  border-bottom: none;
+}
+.tag-best {
+  background: #d6336c;
+  color: #fff;
+  font-size: 11px;
+  padding: 3px 8px;
+  border-radius: 4px;
+  display: inline-block;
+  margin-bottom: 5px;
+}
+
+/* ジムカード（タイプ別） */
 .card{
   background:#fff;
   border:1px solid #f0e6e6;
@@ -94,18 +135,53 @@ h2{
   box-shadow:0 4px 15px rgba(0,0,0,0.03);
   display: flex;
   flex-direction: column;
+  position: relative;
+  overflow: hidden;
+}
+.type-ribbon {
+  position: absolute;
+  top: 0;
+  left: 0;
+  background: #d6336c;
+  color: #fff;
+  padding: 5px 15px;
+  font-size: 12px;
+  font-weight: bold;
+  border-bottom-right-radius: 10px;
 }
 .card-img {
   width: 100%;
   height: 200px;
   object-fit: cover;
   border-radius: 10px;
+  margin-top: 20px; /* リボン用余白 */
   margin-bottom: 15px;
 }
 .card h3 {
   margin: 0 0 10px 0;
   color: #503535;
   font-size: 20px;
+}
+.check-list {
+  background: #fffcf5;
+  padding: 15px 20px;
+  border-radius: 8px;
+  margin: 10px 0;
+  list-style: none;
+}
+.check-list li {
+  position: relative;
+  padding-left: 20px;
+  margin-bottom: 5px;
+  font-size: 14px;
+  font-weight: bold;
+  color: #503535;
+}
+.check-list li::before {
+  content: "✔";
+  position: absolute;
+  left: 0;
+  color: #d6336c;
 }
 .nutritionist-point {
   background: #fdf5f5;
@@ -130,6 +206,7 @@ h2{
 .btn:hover {
   opacity: 0.8;
 }
+
 /* クロスセルボックス */
 .cross-sell {
   background: #503535;
@@ -187,7 +264,7 @@ h2{
 
 <header class="hero">
   <div class="subtitle">BRIDAL GYM GUIDE</div>
-  <h1>花嫁向けパーソナルジム<br>無料体験ガイド</h1>
+  <h1>花嫁向けパーソナルジム<br>失敗しない選び方</h1>
   <p>基本は「食べるダイエット」。<br>でも、時間がないならプロの手を借りる。</p>
 </header>
 
@@ -222,12 +299,55 @@ h2{
     </p>
   </div>
 
-  <h2>プレ花嫁向け・無料体験ジム厳選3選</h2>
-  <p>過度な食事制限を強いられない、女性・初心者向けのジムだけを厳選しました。</p>
+  <h2>徹底比較｜あなたに合うのはどこ？</h2>
+  <p>「多すぎて選べない！」という方のために、花嫁に人気の3社を目的別に整理しました。</p>
+
+  <div class="comparison-container">
+    <table class="comparison-table">
+      <thead>
+        <tr>
+          <th>ジム名</th>
+          <th>こんな人におすすめ</th>
+          <th>特徴</th>
+          <th>エリア</th>
+        </tr>
+      </thead>
+      <tbody>
+        <tr>
+          <td><strong>ARISANFIT</strong></td>
+          <td><span class="tag-best">ライン重視</span><br>食事制限したくない</td>
+          <td>ミスコン流<br>骨格診断あり</td>
+          <td>東京<br>(渋谷/池袋)</td>
+        </tr>
+        <tr>
+          <td><strong>FURDI</strong></td>
+          <td><span class="tag-best">忙しい人</span><br>予約が面倒な人</td>
+          <td>AI搭載<br>予約不要・通い放題</td>
+          <td>全国</td>
+        </tr>
+        <tr>
+          <td><strong>リタスタイル</strong></td>
+          <td><span class="tag-best">短期集中</span><br>1人じゃ続かない</td>
+          <td>完全個室<br>手厚い食事指導</td>
+          <td>全国</td>
+        </tr>
+      </tbody>
+    </table>
+  </div>
+
+  <h2>タイプ別・詳細ガイド</h2>
 
   <div class="card">
+    <span class="type-ribbon">Type A：ライン重視＆食事も楽しみたい</span>
     <img src="images/ari11.jpg" alt="ARISANFIT" class="card-img" onerror="handleImageError(this, 'ARISANFIT')">
     <h3>ARISANFIT（アリサンフィット）</h3>
+    
+    <ul class="check-list">
+      <li>体重より「見た目」を変えたい</li>
+      <li>過度な食事制限は絶対にイヤだ</li>
+      <li>自分の「骨格タイプ」を知りたい</li>
+    </ul>
+
     <p style="font-size:14px; color:#666;">渋谷・池袋・東高円寺エリア。ミスコン日本一を輩出したメソッドを採用している隠れ家ジム。</p>
     <div class="nutritionist-point">
       <strong>🌱 栄養士Yuriの推しポイント</strong><br>
@@ -237,8 +357,16 @@ h2{
   </div>
 
   <div class="card">
+    <span class="type-ribbon">Type B：忙しい＆自分のペースでやりたい</span>
     <img src="images/Furdi.jpg" alt="FURDI" class="card-img" onerror="handleImageError(this, 'FURDI')">
     <h3>FURDI（ファディー）</h3>
+
+    <ul class="check-list">
+      <li>仕事が不規則で予約が取りづらい</li>
+      <li>トレーナーと喋るのが少し苦手</li>
+      <li>短時間（30分）でサクッと終わらせたい</li>
+    </ul>
+
     <p style="font-size:14px; color:#666;">全国展開。AI（人工知能）マシン×人間のトレーナーによる新感覚の女性専用ジム。</p>
     <div class="nutritionist-point">
       <strong>🌱 栄養士Yuriの推しポイント</strong><br>
@@ -249,8 +377,16 @@ h2{
   </div>
 
   <div class="card">
+    <span class="type-ribbon">Type C：短期集中＆誰かに管理してほしい</span>
     <img src="images/Rita.jpg" alt="リタスタイル" class="card-img" onerror="handleImageError(this, 'RITA STYLE')">
     <h3>リタスタイル（RITA STYLE）</h3>
+
+    <ul class="check-list">
+      <li>式まで時間がない！焦っている！</li>
+      <li>個室で誰にも会わずにやりたい</li>
+      <li>意志が弱いから管理してほしい</li>
+    </ul>
+
     <p style="font-size:14px; color:#666;">全国展開の完全個室パーソナルジム。短期集中で確実に結果を出したい方向け。</p>
     <div class="nutritionist-point">
       <strong>🌱 栄養士Yuriの推しポイント</strong><br>
@@ -274,7 +410,7 @@ h2{
   <section class="nav-links">
     <a href="index.html">🏠 トップへ戻る</a>
     <a href="diet-beauty.html">🍽 インナーケアを学ぶ</a>
-    <a href="trial-collection.html">✨ 他の体験を見る</a>
+    <a href="trial-collection.html">✨ もっと多くの体験を見る</a>
   </section>
 
 </main>
