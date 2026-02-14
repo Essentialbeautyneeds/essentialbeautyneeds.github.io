@@ -148,8 +148,10 @@ h3{
     flex-wrap: wrap !important;
     justify-content: center !important;
     gap: 15px !important;
-    margin: 40px 0 !important;
-    padding-top: 40px !important;
+    /* ▼▼▼ 修正ポイント ▼▼▼ */
+    margin: 25px 0 !important; /* 上下の余白を40pxから25pxに狭める */
+    padding-top: 25px !important; /* 線の上の余白を40pxから25pxに狭める */
+    /* ▲▲▲ 修正ポイント ▲▲▲ */
     border-top: 1px solid #eee !important;
 }
 .nav-links a {
@@ -216,10 +218,14 @@ h3{
 }
 .parts-grid {
   display: grid;
-  grid-template-columns: 1fr 1fr;
-  gap: 15px;
-  margin-bottom: 40px;
+  grid-template-columns: 1fr 1fr; /* 2列表示 */
+  gap: 15px; /* ボックス間の隙間 */
+  /* ▼▼▼ 修正ポイント ▼▼▼ */
+  justify-content: center; /* これを追加してグリッド全体を中央寄せにする */
+  margin-bottom: 25px; /* 下の余白を40pxから25pxに狭める */
+  /* ▲▲▲ 修正ポイント ▲▲▲ */
 }
+
 .parts-card {
   background: #fff;
   border: 1px solid #eee;
