@@ -176,6 +176,61 @@
       margin: 50px auto;
       text-align: center;
     }
+        /* 部位別リンクボックスのスタイル */
+    .parts-nav-section {
+      margin-top: 60px;
+      padding-top: 40px;
+      border-top: 1px dashed #f7a8a8;
+    }
+    .parts-nav-title {
+      text-align: center;
+      font-size: 18px;
+      color: #503535;
+      margin-bottom: 10px;
+      font-weight: bold;
+    }
+    .parts-grid {
+      display: grid;
+      grid-template-columns: 1fr 1fr; /* 2列表示 */
+      gap: 15px;
+      margin-bottom: 40px;
+    }
+    .parts-card {
+      background: #fff;
+      border: 1px solid #eee;
+      border-radius: 15px;
+      padding: 15px;
+      text-align: center;
+      text-decoration: none;
+      box-shadow: 0 3px 10px rgba(0,0,0,0.03);
+      transition: transform 0.2s;
+      display: flex;
+      flex-direction: column;
+      align-items: center;
+    }
+    .parts-card:hover {
+      transform: translateY(-3px);
+      border-color: #f7a8a8;
+      background: #fffaf9;
+    }
+    .parts-icon {
+      font-size: 24px;
+      margin-bottom: 5px;
+      display: block;
+    }
+    .parts-name {
+      font-size: 15px;
+      font-weight: bold;
+      color: #d6336c;
+      display: block;
+      margin-bottom: 3px;
+    }
+    .parts-desc {
+      font-size: 11px;
+      color: #888;
+      display: block;
+    }
+
   </style>
 
   <script>
@@ -385,7 +440,39 @@
       自宅ケア選択肢を見る →
     </a>
   </section>
-  
+    <section class="parts-nav-section">
+    <h3 class="parts-nav-title">部位別・集中ケア記事</h3>
+    <p style="text-align:center; font-size:13px; color:#666; margin-bottom:20px;">
+      気になるパーツをタップして<br>対策をチェック👇
+    </p>
+
+    <div class="parts-grid">
+      <a href="prehana-arm.html" class="parts-card">
+        <span class="parts-icon">💪</span>
+        <span class="parts-name">二の腕痩せ</span>
+        <span class="parts-desc">タプタプを解消</span>
+      </a>
+
+      <a href="prehana-back.html" class="parts-card">
+        <span class="parts-icon">背</span>
+        <span class="parts-name">背中痩せ</span>
+        <span class="parts-desc">天使の羽を出す</span>
+      </a>
+
+      <a href="prehana-mukumi.html" class="parts-card">
+        <span class="parts-icon">💧</span>
+        <span class="parts-name">むくみ撃退</span>
+        <span class="parts-desc">即効スッキリ</span>
+      </a>
+
+      <a href="prehana-rounded-shoulders.html" class="parts-card">
+        <span class="parts-icon">🦴</span>
+        <span class="parts-name">巻き肩・姿勢</span>
+        <span class="parts-desc">デコルテ美人へ</span>
+      </a>
+    </div>
+  </section>
+
   <section class="nav-links">
     <a href="index.html">🏠 トップへ戻る</a>
     <a href="beauty-column.html">💄 コラム一覧</a>
