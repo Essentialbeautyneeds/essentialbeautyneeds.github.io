@@ -7,19 +7,10 @@
   <meta name="viewport" content="width=device-width, initial-scale=1.0">
   <link rel="canonical" href="https://essential-beauty-needs.com/trial-collection.html">
 
-  <link rel="stylesheet" href="style.css">
   <link href="https://fonts.googleapis.com/css2?family=Playfair+Display:wght@600&family=Quicksand:wght@500;700&family=Shippori+Mincho:wght@400;600&display=swap" rel="stylesheet">
 
-  <script>
-    // 画像がない場合にプレースホルダーを表示
-    function handleImageError(img, text) {
-      img.onerror = null;
-      img.src = "https://placehold.co/600x400/ffe6e6/d6336c?text=" + encodeURIComponent(text);
-    }
-  </script>
-
   <style>
-    body { background: #fffbf9; color: #503535; font-family: 'Shippori Mincho', serif; }
+    body { background: #fffbf9; color: #503535; font-family: 'Shippori Mincho', serif; margin: 0; }
     
     /* ヘッダー */
     header.lp-header {
@@ -39,21 +30,19 @@
       background: #fff; padding: 30px; border-radius: 15px;
       border: 2px solid #f7a8a8; text-align: center; margin-bottom: 50px;
     }
-    .intro-box p {
-      margin-bottom: 15px;
-    }
-    .intro-box p:last-child {
-      margin-bottom: 0;
-    }
 
     /* エリア見出し */
     .area-title {
       font-family: 'Playfair Display', serif; font-size: 24px; color: #503535;
-      text-align: center; margin: 60px 0 30px; position: relative;
+      text-align: center; margin: 70px 0 30px; position: relative;
     }
     .area-title::after {
       content: ""; display: block; width: 50px; height: 3px; background: #f7a8a8;
       margin: 10px auto;
+    }
+    
+    .area-desc {
+        text-align: center; font-size: 14px; color: #666; margin-bottom: 30px;
     }
 
     /* カードグリッド */
@@ -70,24 +59,48 @@
     }
     .shop-card:hover { transform: translateY(-5px); border-color: #f7a8a8; }
     
-    .card-img-area { position: relative; height: 180px; overflow: hidden; }
-    .card-img-area img { width: 100%; height: 100%; object-fit: cover; }
+    /* バナー画像用エリア */
+    .card-img-area { 
+      position: relative; 
+      height: 250px; /* バナーが収まる高さ */
+      background: #fafafa;
+      display: flex;
+      align-items: center;
+      justify-content: center;
+      overflow: hidden;
+      border-bottom: 1px solid #f0f0f0;
+    }
+    /* ASPのバナー画像に対するスタイル */
+    .card-img-area img { 
+      max-width: 100%; 
+      height: auto; 
+      object-fit: contain;
+    }
+    .card-img-area a {
+      display: block;
+      line-height: 0;
+    }
     
     .badge-area {
       position: absolute; top: 10px; left: 10px;
       background: rgba(50, 50, 50, 0.8); color: #fff; font-size: 11px; padding: 4px 10px;
-      border-radius: 20px; font-weight: bold;
+      border-radius: 20px; font-weight: bold; z-index: 10;
     }
     .badge-free {
       position: absolute; top: 10px; right: 10px;
       background: #e74c3c; color: #fff; font-size: 11px; padding: 4px 10px;
-      border-radius: 20px; font-weight: bold; box-shadow: 0 2px 5px rgba(0,0,0,0.2);
+      border-radius: 20px; font-weight: bold; box-shadow: 0 2px 5px rgba(0,0,0,0.2); z-index: 10;
+    }
+    .badge-paid {
+      position: absolute; top: 10px; right: 10px;
+      background: #d4a373; color: #fff; font-size: 11px; padding: 4px 10px;
+      border-radius: 20px; font-weight: bold; box-shadow: 0 2px 5px rgba(0,0,0,0.2); z-index: 10;
     }
     .badge-osusume {
         position: absolute; bottom: 10px; right: 10px;
         background: linear-gradient(45deg, #FFD700, #DAA520); color: #fff;
         font-size: 12px; padding: 4px 12px; border-radius: 20px; font-weight: bold;
-        box-shadow: 0 2px 5px rgba(0,0,0,0.2);
+        box-shadow: 0 2px 5px rgba(0,0,0,0.2); z-index: 10;
     }
 
     .card-body { padding: 20px; flex-grow: 1; display: flex; flex-direction: column; }
@@ -146,38 +159,95 @@
     </p>
   </div>
 
-  <h2 class="area-title">💪 ボディメイク・ジム<br>（全て無料体験あり）</h2>
-<div style="background:#fff; border:2px solid #f7a8a8; border-radius:10px; padding:20px; margin-bottom:30px; box-shadow:0 2px 10px rgba(0,0,0,0.05);">
-  <p style="font-weight:bold; color:#d6336c; margin:0 0 10px 0; font-size:18px;">🤔 どこに行けばいいか迷いませんか？</p>
-  <p style="font-size:14px; margin:0 0 15px 0; color:#666; line-height:1.6;">
-    「ARISANFIT」「MMM」「ミスパリ」…<br>
-    それぞれの違いと、<strong>あなたに合う場所が一発でわかる比較記事</strong>を用意しました。
-  </p>
-  <a href="bridal-gym-free-trial-guide.html" style="display:block; text-align:center; background:#f7a8a8; color:#fff; font-size:15px; font-weight:bold; padding:12px; border-radius:30px; text-decoration:none; transition:0.3s;">
-    失敗しない5社比較ガイドを見る＞
-  </a>
-</div>
-  <br>
+  <h2 class="area-title">💴 完全無料 or 初月0円<br>（ボディメイク・ジム）</h2>
+  <div style="background:#fff; border:2px solid #f7a8a8; border-radius:10px; padding:20px; margin-bottom:30px; box-shadow:0 2px 10px rgba(0,0,0,0.05);">
+    <p style="font-weight:bold; color:#d6336c; margin:0 0 10px 0; font-size:18px;">🤔 どこに行けばいいか迷いませんか？</p>
+    <p style="font-size:14px; margin:0 0 15px 0; color:#666; line-height:1.6;">
+      「ARISANFIT」「MMM」「ミスパリ」…<br>
+      それぞれの違いと、<strong>あなたに合う場所が一発でわかる比較記事</strong>を用意しました。
+    </p>
+    <a href="bridal-gym-free-trial-guide.html" style="display:block; text-align:center; background:#f7a8a8; color:#fff; font-size:15px; font-weight:bold; padding:12px; border-radius:30px; text-decoration:none; transition:0.3s;">
+      失敗しない5社比較ガイドを見る＞
+    </a>
+  </div>
+
   <div class="shop-grid">
 
     <div class="shop-card">
       <div class="card-img-area">
-        <img src="images/Levac.jpg" onerror="handleImageError(this, 'Levacli')">
-        <span class="badge-area">オンライン診療</span>
-        <span class="badge-free">初診料無料</span>
-        <span class="badge-osusume">運動なし</span>
+        <a href="//af.moshimo.com/af/c/click?a_id=5346650&p_id=6189&pc_id=17406&pl_id=80222" rel="nofollow" referrerpolicy="no-referrer-when-downgrade" attributionsrc><img src="//image.moshimo.com/af-img/3167/000000080222.png" width="300" height="250" style="border:none;"></a><img src="//i.moshimo.com/af/i/impression?a_id=5346650&p_id=6189&pc_id=17406&pl_id=80222" width="1" height="1" style="border:none;" loading="lazy">
+        <span class="badge-area">渋谷・池袋</span>
+        <span class="badge-free">無料体験</span>
+        <span class="badge-osusume">Yuri推奨</span>
       </div>
       <div class="card-body">
-        <div class="shop-name">レバクリ（医療ダイエット）</div>
-        <p class="shop-desc">ジムに通う時間がない花嫁様の駆け込み寺。スマホ完結のオンライン診療で、医学的に食欲をコントロール。</p>
-        <a href="https://px.a8.net/svt/ejp?a8mat=4AX4SC+4619ZU+5E9C+NTJWY" rel="nofollow" class="btn-apply" target="_blank">無料診療を予約する ＞</a>
-        <img border="0" width="1" height="1" src="https://www15.a8.net/0.gif?a8mat=4AX4SC+4619ZU+5E9C+NTJWY" alt="">
+        <div class="shop-name">ARISANFIT</div>
+        <p class="shop-desc">【人気No.1】ミスコン日本一を輩出したメソッドなのに、初心者・女性に優しい隠れ家ジム。無理な勧誘なしで、プロの骨格診断が無料で受けられます。</p>
+        <a href="arisan-gym.html" class="btn-apply">体験内容を詳しく見る（別ページ）＞</a>
       </div>
     </div>
 
     <div class="shop-card">
       <div class="card-img-area">
-        <img src="images/Amaz.png" onerror="handleImageError(this, 'Amazones')">
+        <a href="//af.moshimo.com/af/c/click?a_id=5325988&p_id=6463&pc_id=18262&pl_id=82869" rel="nofollow" referrerpolicy="no-referrer-when-downgrade" attributionsrc><img src="//image.moshimo.com/af-img/6218/000000082869.png" width="320" height="100" style="border:none;"></a><img src="//i.moshimo.com/af/i/impression?a_id=5325988&p_id=6463&pc_id=18262&pl_id=82869" width="1" height="1" style="border:none;" loading="lazy">
+        <span class="badge-area">東京・銀座</span>
+        <span class="badge-free">無料体験</span>
+        <span class="badge-osusume">ハイクラス</span>
+      </div>
+      <div class="card-body">
+        <div class="shop-name">ACCEPT 銀座</div>
+        <p class="shop-desc">銀座の一等地にある完全個室ジム。本気で結果を出したい方向け。ラグジュアリーな空間でのカウンセリングは、モチベーションが一気に上がります。</p>
+        <a href="//af.moshimo.com/af/c/click?a_id=5325988&p_id=6463&pc_id=18262&pl_id=82869" rel="nofollow" class="btn-apply" target="_blank">公式サイトを見る ＞</a>
+      </div>
+    </div>
+
+    <div class="shop-card">
+      <div class="card-img-area">
+        <a href="//af.moshimo.com/af/c/click?a_id=5370003&p_id=2642&pc_id=5909&pl_id=34306" rel="nofollow" referrerpolicy="no-referrer-when-downgrade" attributionsrc><img src="//image.moshimo.com/af-img/2087/000000034306.jpg" width="300" height="250" style="border:none;"></a><img src="//i.moshimo.com/af/i/impression?a_id=5370003&p_id=2642&pc_id=5909&pl_id=34306" width="1" height="1" style="border:none;" loading="lazy">
+        <span class="badge-area">全国・オンライン</span>
+        <span class="badge-free">無料体験</span>
+      </div>
+      <div class="card-body">
+        <div class="shop-name">Live Fit オンライン</div>
+        <p class="shop-desc">「ジムに通う時間がない！」という忙しい花嫁様へ。自宅で受けられる本格パーソナル。医療系国家資格を持つトレーナーが食事まで指導。</p>
+        <a href="//af.moshimo.com/af/c/click?a_id=5370003&p_id=2642&pc_id=5909&pl_id=34306" class="btn-apply" target="_blank">公式サイトを見る ＞</a>
+      </div>
+    </div>
+
+    <div class="shop-card">
+      <div class="card-img-area">
+        <a href="//af.moshimo.com/af/c/click?a_id=5370001&p_id=3745&pc_id=9176&pl_id=52407" rel="nofollow" referrerpolicy="no-referrer-when-downgrade" attributionsrc><img src="//image.moshimo.com/af-img/3141/000000052407.png" width="501" height="501" style="border:none;"></a><img src="//i.moshimo.com/af/i/impression?a_id=5370001&p_id=3745&pc_id=9176&pl_id=52407" width="1" height="1" style="border:none;" loading="lazy">
+        <span class="badge-area">大阪・心斎橋</span>
+        <span class="badge-free">無料体験</span>
+      </div>
+      <div class="card-body">
+        <div class="shop-name">Deat-workout</div>
+        <p class="shop-desc">大阪エリアの方必見。完全個室のマンツーマン指導。科学的根拠に基づいたトレーニングで、効率よくドレスラインを作ります。</p>
+        <a href="//af.moshimo.com/af/c/click?a_id=5370001&p_id=3745&pc_id=9176&pl_id=52407" class="btn-apply" target="_blank">公式サイトを見る ＞</a>
+      </div>
+    </div>
+
+    <div class="shop-card">
+      <div class="card-img-area">
+        <a href="https://px.a8.net/svt/ejp?a8mat=4AX4SC+4619ZU+5E9C+NUES1" rel="nofollow">
+        <img border="0" width="250" height="250" alt="" src="https://www29.a8.net/svt/bgt?aid=260206716252&wid=002&eno=01&mid=s00000025176004005000&mc=1"></a>
+        <img border="0" width="1" height="1" src="https://www18.a8.net/0.gif?a8mat=4AX4SC+4619ZU+5E9C+NUES1" alt="">
+        
+        <span class="badge-area">オンライン診療</span>
+        <span class="badge-free">初診料無料</span>
+      </div>
+      <div class="card-body">
+        <div class="shop-name">レバクリ（医療ダイエット）</div>
+        <p class="shop-desc">ジムに通う時間がない花嫁様の駆け込み寺。スマホ完結のオンライン診療で、医学的に食欲をコントロール。</p>
+        <a href="https://px.a8.net/svt/ejp?a8mat=4AX4SC+4619ZU+5E9C+NTJWY" rel="nofollow" class="btn-apply" target="_blank">無料診療を予約する ＞</a>
+      </div>
+    </div>
+
+    <div class="shop-card">
+      <div class="card-img-area">
+        <a href="https://px.a8.net/svt/ejp?a8mat=4AX40K+276P0A+5DJI+60WN5" rel="nofollow">
+        <img border="0" width="200" height="120" alt="" src="https://www23.a8.net/svt/bgt?aid=260205716133&wid=002&eno=01&mid=s00000025083001012000&mc=1"></a>
+        <img border="0" width="1" height="1" src="https://www11.a8.net/0.gif?a8mat=4AX40K+276P0A+5DJI+60WN5" alt="">
         <span class="badge-area">大阪・関西中心</span>
         <span class="badge-free">無料体験</span>
       </div>
@@ -185,152 +255,109 @@
         <div class="shop-name">Amazones（アマゾネス）</div>
         <p class="shop-desc">日本初の「女性専用」24時間ジム。男性の目線が気になる方や、仕事が遅くて深夜にしか通えない方に。</p>
         <a href="https://px.a8.net/svt/ejp?a8mat=4AX40K+276P0A+5DJI+5YJRM" rel="nofollow" class="btn-apply" target="_blank">体験詳細を見る ＞</a>
-        <img border="0" width="1" height="1" src="https://www18.a8.net/0.gif?a8mat=4AX40K+276P0A+5DJI+5YJRM" alt="">
       </div>
     </div>
 
     <div class="shop-card">
       <div class="card-img-area">
-        <img src="images/000000082876.png" onerror="handleImageError(this, 'ACCEPT Ginza')">
-        <span class="badge-area">東京・銀座</span>
-        <span class="badge-free">無料体験</span>
-        <span class="badge-osusume">ハイクラス</span>
-      </div>
-      <div class="card-body">
-        <div class="shop-name">ACCEPT 銀座</div>
-        <p class="shop-desc">【注目】銀座の一等地にある完全個室ジム。本気で結果を出したい方向け。ラグジュアリーな空間でのカウンセリングは、モチベーションが一気に上がります。</p>
-        <a href="//af.moshimo.com/af/c/click?a_id=5325988&p_id=6463&pc_id=18262&pl_id=82663" rel="nofollow" referrerpolicy="no-referrer-when-downgrade" attributionsrc class="btn-apply" target="_blank">公式サイトを見る ＞</a>
-        <img src="//i.moshimo.com/af/i/impression?a_id=5325988&p_id=6463&pc_id=18262&pl_id=82663" width="1" height="1" style="border:none;" loading="lazy">
-      </div>
-    </div>
-
-    <div class="shop-card">
-      <div class="card-img-area">
-        <img src="images/ari11.jpg" onerror="handleImageError(this, 'ARISANFIT')">
-        <span class="badge-area">渋谷・池袋・東高円寺</span>
-        <span class="badge-free">無料体験</span>
-        <span class="badge-osusume">Yuri推奨</span>
-      </div>
-      <div class="card-body">
-        <div class="shop-name">ARISANFIT</div>
-        <p class="shop-desc">【人気No.1】ミスコン日本一を輩出したメソッドなのに、初心者・女性に優しい隠れ家ジム。無理な勧誘なしで、プロの骨格診断が無料で受けられます。</p>
-        <a href="arisan-gym.html" class="btn-apply">
-体験内容を詳しく見る（別ページ）＞</a>
-      </div>
-    </div>
-
-    <div class="shop-card">
-      <div class="card-img-area">
-        <img src="images/Rita.jpg" onerror="handleImageError(this, 'RITA STYLE')">
+        <a href="https://px.a8.net/svt/ejp?a8mat=4AVAC6+2TT5ZU+3P20+5ZU29" rel="nofollow">
+        <img border="0" width="240" height="120" alt="" src="https://www27.a8.net/svt/bgt?aid=260120598171&wid=002&eno=01&mid=s00000017244001007000&mc=1"></a>
+        <img border="0" width="1" height="1" src="https://www19.a8.net/0.gif?a8mat=4AVAC6+2TT5ZU+3P20+5ZU29" alt="">
         <span class="badge-area">全国展開</span>
         <span class="badge-free">無料体験</span>
       </div>
       <div class="card-body">
         <div class="shop-name">リタスタイル</div>
-        <p class="shop-desc">「人生が変わるほど痩せる」がキャッチコピーの完全個室ジム。短期集中で結果を出したい花嫁様に。まずは無料カウンセリングで痩せない原因をチェック。</p>
+        <p class="shop-desc">短期集中で結果を出したい花嫁様に。まずは無料カウンセリングで痩せない原因をチェック。</p>
         <a href="https://px.a8.net/svt/ejp?a8mat=4AVAC6+2TT5ZU+3P20+5ZMCI" class="btn-apply" target="_blank" rel="nofollow">公式サイトを見る ＞</a>
-        <img border="0" width="1" height="1" src="https://www19.a8.net/0.gif?a8mat=4AVAC6+2TT5ZU+3P20+5ZMCI" alt="">
-      </div>
-    </div>
-    
-    <div class="shop-card">
-      <div class="card-img-area">
-        <img src="images/Kompas.jpg" onerror="handleImageError(this, 'STUDIO KOMPAS')">
-        <span class="badge-area">都内・渋谷エリア</span>
-        <span class="badge-free">無料体験</span>
-      </div>
-      <div class="card-body">
-        <div class="shop-name">STUDIO KOMPAS</div>
-        <p class="shop-desc">珍しい「都度払い制」のパーソナルジム。「コース契約は怖いけど、数回だけフォームを見てほしい」という花嫁様に最適です。</p>
-        <a href="//af.moshimo.com/af/c/click?a_id=5369995&p_id=5582&pc_id=15309&pl_id=71879" class="btn-apply" target="_blank" rel="nofollow" referrerpolicy="no-referrer-when-downgrade" attributionsrc>公式サイトを見る ＞</a>
-        <img src="//i.moshimo.com/af/i/impression?a_id=5369995&p_id=5582&pc_id=15309&pl_id=71879" width="1" height="1" style="border:none;" loading="lazy">
-      </div>
-    </div>
-    
-    <div class="shop-card">
-      <div class="card-img-area">
-        <img src="images/Deat.png" onerror="handleImageError(this, 'Deat-workout')">
-        <span class="badge-area">大阪・心斎橋</span>
-        <span class="badge-free">無料体験</span>
-      </div>
-      <div class="card-body">
-        <div class="shop-name">Deat-workout</div>
-        <p class="shop-desc">大阪エリアの方必見。完全個室のマンツーマン指導。科学的根拠に基づいたトレーニングで、効率よくドレスラインを作ります。</p>
-        <a href="//af.moshimo.com/af/c/click?a_id=5370001&p_id=3745&pc_id=9176&pl_id=52262" class="btn-apply" target="_blank" rel="nofollow" referrerpolicy="no-referrer-when-downgrade" attributionsrc>公式サイトを見る ＞</a>
-        <img src="//i.moshimo.com/af/i/impression?a_id=5370001&p_id=3745&pc_id=9176&pl_id=52262" width="1" height="1" style="border:none;" loading="lazy">
       </div>
     </div>
 
     <div class="shop-card">
       <div class="card-img-area">
-        <img src="images/Star.jpg" onerror="handleImageError(this, 'STARLIGHT FITNESS')">
-        <span class="badge-area">北海道・札幌</span>
-        <span class="badge-free">無料体験</span>
-      </div>
-      <div class="card-body">
-        <div class="shop-name">スターライトフィットネス</div>
-        <p class="shop-desc">札幌の大型パーソナルジム。広々とした空間でストレスなく運動できます。北海道の花嫁様は要チェック。</p>
-        <a href="//af.moshimo.com/af/c/click?a_id=5370000&p_id=3787&pc_id=9315&pl_id=52767" class="btn-apply" target="_blank" rel="nofollow" referrerpolicy="no-referrer-when-downgrade" attributionsrc>公式サイトを見る ＞</a>
-        <img src="//i.moshimo.com/af/i/impression?a_id=5370000&p_id=3787&pc_id=9315&pl_id=52767" width="1" height="1" style="border:none;" loading="lazy">
-      </div>
-    </div>
-
-    <div class="shop-card">
-      <div class="card-img-area">
-        <img src="images/Livefit.jpg" onerror="handleImageError(this, 'Live Fit Online')">
-        <span class="badge-area">全国・オンライン</span>
-        <span class="badge-free">無料体験</span>
-      </div>
-      <div class="card-body">
-        <div class="shop-name">Live Fit オンライン</div>
-        <p class="shop-desc">「ジムに通う時間がない！」という忙しい花嫁様へ。自宅で受けられる本格パーソナル。医療系国家資格を持つトレーナーが食事まで指導。</p>
-        <a href="//af.moshimo.com/af/c/click?a_id=5370003&p_id=2642&pc_id=5909&pl_id=53570" class="btn-apply" target="_blank" rel="nofollow" referrerpolicy="no-referrer-when-downgrade" attributionsrc>公式サイトを見る ＞</a>
-        <img src="//i.moshimo.com/af/i/impression?a_id=5370003&p_id=2642&pc_id=5909&pl_id=53570" width="1" height="1" style="border:none;" loading="lazy">
-      </div>
-    </div>
-
-    <div class="shop-card">
-      <div class="card-img-area">
-        <img src="images/Furdi.jpg" onerror="handleImageError(this, 'FURDI')">
+        <a href="https://px.a8.net/svt/ejp?a8mat=4AX40K+1JYSEY+5FC8+5Z6WX" rel="nofollow">
+        <img border="0" width="100" height="60" alt="" src="https://www21.a8.net/svt/bgt?aid=260205716094&wid=002&eno=01&mid=s00000025316001004000&mc=1"></a>
+        <img border="0" width="1" height="1" src="https://www14.a8.net/0.gif?a8mat=4AX40K+1JYSEY+5FC8+5Z6WX" alt="">
         <span class="badge-area">全国・つくば他</span>
         <span class="badge-free">無料体験</span>
       </div>
       <div class="card-body">
         <div class="shop-name">FURDI（ファディー）</div>
-        <p class="shop-desc">AIマシン×トレーナーの新感覚ジム。女性専用だから安心。予約不要で通い放題なのも魅力。AI診断の無料体験が面白いと評判です。</p>
-        <a href="//af.moshimo.com/af/c/click?a_id=5369997&p_id=5259&pc_id=14264&pl_id=68871" class="btn-apply" target="_blank" rel="nofollow" referrerpolicy="no-referrer-when-downgrade" attributionsrc>公式サイトを見る ＞</a>
-        <img src="//i.moshimo.com/af/i/impression?a_id=5369997&p_id=5259&pc_id=14264&pl_id=68871" width="1" height="1" style="border:none;" loading="lazy">
+        <p class="shop-desc">AIマシン×トレーナーの新感覚ジム。女性専用。AI診断の無料体験が面白いと評判です。</p>
+        <a href="//af.moshimo.com/af/c/click?a_id=5369997&p_id=5259&pc_id=14264&pl_id=68871" class="btn-apply" target="_blank">公式サイトを見る ＞</a>
       </div>
     </div>
     
     <div class="shop-card">
       <div class="card-img-area">
-        <img src="images/Lava.jpg" onerror="handleImageError(this, 'LAVA')">
+        <a href="https://px.a8.net/svt/ejp?a8mat=4AVEZZ+247IZE+1O96+6F1WH" rel="nofollow">
+        <img border="0" width="350" height="160" alt="" src="https://www20.a8.net/svt/bgt?aid=260126639128&wid=002&eno=01&mid=s00000007809001078000&mc=1"></a>
+        <img border="0" width="1" height="1" src="https://www16.a8.net/0.gif?a8mat=4AVEZZ+247IZE+1O96+6F1WH" alt="">
         <span class="badge-area">全国450店舗</span>
         <span class="badge-free">無料体験</span>
       </div>
       <div class="card-body">
-        <div class="shop-name">ホットヨガスタジオLAVA</div>
-        <p class="shop-desc">むくみ解消の鉄板。大量の汗をかいてデトックスすることで、肌の透明感もアップします。「式の前日はサウナよりホットヨガ」派の花嫁急増中。</p>
+        <div class="shop-name">ホットヨガ LAVA</div>
+        <p class="shop-desc">むくみ解消の鉄板。大量の汗をかいてデトックスし、肌の透明感もアップさせます。</p>
         <a href="https://px.a8.net/svt/ejp?a8mat=4AVEZZ+247IZE+1O96+699KI" class="btn-apply" target="_blank" rel="nofollow">体験詳細を見る ＞</a>
-        <img border="0" width="1" height="1" src="https://www19.a8.net/0.gif?a8mat=4AVEZZ+247IZE+1O96+699KI" alt="">
+      </div>
+    </div>
+
+    <div class="shop-card">
+      <div class="card-img-area">
+        <a href="https://px.a8.net/svt/ejp?a8mat=4AVIVW+B43C2I+56HC+5Z6WX" rel="nofollow">
+        <img border="0" width="300" height="250" alt="" src="https://www24.a8.net/svt/bgt?aid=260131676672&wid=002&eno=01&mid=s00000024168001004000&mc=1"></a>
+        <img border="0" width="1" height="1" src="https://www19.a8.net/0.gif?a8mat=4AVIVW+B43C2I+56HC+5Z6WX" alt="">
+        <span class="badge-area">恵比寿・池袋</span>
+        <span class="badge-free">体験あり</span>
+      </div>
+      <div class="card-body">
+        <div class="shop-name">Habit（ハビット）</div>
+        <p class="shop-desc">有名医師監修のメディカルジム。リバウンドしにくい体づくりを医学的見地からサポート。</p>
+        <a href="https://px.a8.net/svt/ejp?a8mat=4AVIVW+B43C2I+56HC+5Z6WX" rel="nofollow" class="btn-apply" target="_blank">公式サイトを見る ＞</a>
+      </div>
+    </div>
+
+    <div class="shop-card">
+      <div class="card-img-area">
+        <a href="//af.moshimo.com/af/c/click?a_id=5385648&p_id=5288&pc_id=14384&pl_id=69199" rel="nofollow" referrerpolicy="no-referrer-when-downgrade" attributionsrc><img src="//image.moshimo.com/af-img/4934/000000069199.jpg" width="300" height="250" style="border:none; object-fit:cover;"></a><img src="//i.moshimo.com/af/i/impression?a_id=5385648&p_id=5288&pc_id=14384&pl_id=69199" width="1" height="1" style="border:none;" loading="lazy">
+        <span class="badge-area">関東・女性専用</span>
+        <span class="badge-free">無料カウンセリング</span>
+      </div>
+      <div class="card-body">
+        <div class="shop-name">TOKIEL</div>
+        <p class="shop-desc">女性専用パーソナル。個室で集中してトレーニングできます。食事管理もしっかりサポート。</p>
+        <a href="//af.moshimo.com/af/c/click?a_id=5385648&p_id=5288&pc_id=14384&pl_id=69199" rel="nofollow" class="btn-apply" target="_blank">公式サイトを見る ＞</a>
+      </div>
+    </div>
+
+    <div class="shop-card">
+      <div class="card-img-area">
+        <a href="//af.moshimo.com/af/c/click?a_id=5385652&p_id=3511&pc_id=8465&pl_id=50228" rel="nofollow" referrerpolicy="no-referrer-when-downgrade" attributionsrc><img src="//image.moshimo.com/af-img/2938/000000050228.png" width="200" height="120" style="border:none;"></a><img src="//i.moshimo.com/af/i/impression?a_id=5385652&p_id=3511&pc_id=8465&pl_id=50228" width="1" height="1" style="border:none;" loading="lazy">
+        <span class="badge-area">東京・横浜</span>
+        <span class="badge-free">無料カウンセリング</span>
+      </div>
+      <div class="card-body">
+        <div class="shop-name">PLUME（プリューム）</div>
+        <p class="shop-desc">ボディメイク大会優勝者が監修。圧倒的な知識量で「なりたい体」へ導きます。</p>
+        <a href="//af.moshimo.com/af/c/click?a_id=5385652&p_id=3511&pc_id=8465&pl_id=50228" rel="nofollow" class="btn-apply" target="_blank">公式サイトを見る ＞</a>
       </div>
     </div>
 
   </div>
 
-  <h2 class="area-title">✨ 肌管理・脱毛・姿勢改善</h2>
+  <h2 class="area-title">✨ 肌管理・脱毛・姿勢改善<br>（無料カウンセリング等）</h2>
   <div class="shop-grid">
 
     <div class="shop-card">
       <div class="card-img-area">
-        <img src="images/Shirono.jpg" onerror="handleImageError(this, 'Shirono Clinic')">
+        <a href="https://px.a8.net/svt/ejp?a8mat=4AX40K+3ZHICA+24LS+609HU" class="btn-apply" target="_blank" rel="nofollow"><img src="images/Shirono.jpg" onerror="handleImageError(this, 'Shirono')" style="width:100%;"></a>
         <span class="badge-area">東京・横浜・大阪</span>
         <span class="badge-free">無料カウンセリング</span>
       </div>
       <div class="card-body">
         <div class="shop-name">シロノクリニック</div>
-        <p class="shop-desc">「切らないフェイスリフト」サーマクールなどのエイジングケア専門。まずは無料カウンセリングで、自分の肌レベルを知るだけでも価値があります。</p>
+        <p class="shop-desc">「切らないフェイスリフト」などエイジングケア専門。まずは無料カウンセリングで肌レベルを知りましょう。</p>
         <a href="https://px.a8.net/svt/ejp?a8mat=4AX40K+3ZHICA+24LS+609HU" class="btn-apply" target="_blank" rel="nofollow">公式サイトを見る ＞</a>
         <img border="0" width="1" height="1" src="https://www17.a8.net/0.gif?a8mat=4AX40K+3ZHICA+24LS+609HU" alt="">
       </div>
@@ -338,34 +365,33 @@
 
     <div class="shop-card">
       <div class="card-img-area">
-        <img src="images/Daibi.jpg" onerror="handleImageError(this, 'Daibikai Clinic')">
+        <a href="https://px.a8.net/svt/ejp?a8mat=4AX4SC+4323YY+4DQM+614CX" rel="nofollow">
+        <img border="0" width="120" height="60" alt="" src="https://www25.a8.net/svt/bgt?aid=260206716247&wid=002&eno=01&mid=s00000020443001013000&mc=1"></a>
+        <img border="0" width="1" height="1" src="https://www19.a8.net/0.gif?a8mat=4AX4SC+4323YY+4DQM+614CX" alt="">
         <span class="badge-area">大阪・京都・神戸</span>
         <span class="badge-free">無料カウンセリング</span>
       </div>
       <div class="card-body">
         <div class="shop-name">大美会クリニック</div>
-        <p class="shop-desc">関西エリアの花嫁様へ。見えるところだけでも医療脱毛でツルツルに。平日21時まで営業しているので仕事帰りにも通いやすい。</p>
+        <p class="shop-desc">関西エリアの花嫁様へ。見えるところだけでも医療脱毛でツルツルに。</p>
         <a href="https://px.a8.net/svt/ejp?a8mat=4AX4SC+4323YY+4DQM+5YJRM" class="btn-apply" target="_blank" rel="nofollow">公式サイトを見る ＞</a>
-        <img border="0" width="1" height="1" src="https://www17.a8.net/0.gif?a8mat=4AX4SC+4323YY+4DQM+5YJRM" alt="">
       </div>
     </div>
 
     <div class="shop-card">
       <div class="card-img-area">
-        <img src="images/Repilates.png" onerror="handleImageError(this, 'Repilates')">
+        <a href="https://px.a8.net/svt/ejp?a8mat=4AVEZZ+25EE6Y+5FZU+601S1" rel="nofollow">
+        <img border="0" width="300" height="250" alt="" src="https://www22.a8.net/svt/bgt?aid=260126639130&wid=002&eno=01&mid=s00000025401001008000&mc=1"></a>
+        <img border="0" width="1" height="1" src="https://www14.a8.net/0.gif?a8mat=4AVEZZ+25EE6Y+5FZU+601S1" alt="">
         <span class="badge-area">東京・神奈川</span>
         <span class="badge-free">無料体験</span>
       </div>
       <div class="card-body">
         <div class="shop-name">Repilates（リピラティス）</div>
-        <p class="shop-desc">ドレス姿で一番大事なのは「姿勢」です。猫背や巻き肩を矯正するマシンピラティス。体重が減らなくても、姿勢が変われば-3kg見えします。</p>
-        
+        <p class="shop-desc">ドレス姿で一番大事なのは「姿勢」です。猫背や巻き肩を矯正するマシンピラティス。</p>
         <div class="btn-group">
           <a href="https://px.a8.net/svt/ejp?a8mat=4AVEZZ+25EE6Y+5FZU+5YRHE" class="btn-small" target="_blank" rel="nofollow">池袋店 (無料体験) ＞</a>
-          <img border="0" width="1" height="1" src="https://www10.a8.net/0.gif?a8mat=4AVEZZ+25EE6Y+5FZU+5YRHE" alt="">
-          
           <a href="https://px.a8.net/svt/ejp?a8mat=4AVEZZ+25EE6Y+5FZU+5ZMCI" class="btn-small" target="_blank" rel="nofollow">飯田橋店 (無料体験) ＞</a>
-          <img border="0" width="1" height="1" src="https://www19.a8.net/0.gif?a8mat=4AVEZZ+25EE6Y+5FZU+5ZMCI" alt="">
         </div>
       </div>
     </div>
@@ -378,12 +404,150 @@
       </div>
       <div class="card-body">
         <div class="shop-name">オルビス スキンチェック</div>
-        <p class="shop-desc">デパートのカウンターに行くのは気が引ける…という方は、まずはWebで無料診断。自分の肌タイプを知ることが、美肌への最短ルートです。</p>
+        <p class="shop-desc">デパートのカウンターに行くのは気が引ける…という方は、まずはWebで無料診断。</p>
         <a href="https://px.a8.net/svt/ejp?a8mat=4AX40K+3AHAXM+1USQ+1NLX36" class="btn-apply" target="_blank" rel="nofollow">今すぐ診断する ＞</a>
-        <img border="0" width="1" height="1" src="https://www10.a8.net/0.gif?a8mat=4AX40K+3AHAXM+1USQ+1NLX36" alt="">
       </div>
     </div>
     
+  </div>
+
+  <h2 class="area-title">💎 体験あり！本格派・実力派<br><span style="font-size:16px;">（数千円〜かかりますが価値アリ）</span></h2>
+  <div class="shop-grid">
+
+    <div class="shop-card">
+      <div class="card-img-area">
+        <a href="https://px.a8.net/svt/ejp?a8mat=4AVAC8+7AK7BU+3PFW+BXYE9" rel="nofollow">
+        <img border="0" width="320" height="100" alt="" src="https://www20.a8.net/svt/bgt?aid=260120600441&wid=002&eno=01&mid=s00000017294002006000&mc=1"></a>
+        <img border="0" width="1" height="1" src="https://www16.a8.net/0.gif?a8mat=4AVAC8+7AK7BU+3PFW+BXYE9" alt="">
+        <span class="badge-area">六本木・表参道</span>
+        <span class="badge-paid">体験あり</span>
+      </div>
+      <div class="card-body">
+        <div class="shop-name">トリプルM（MMM）</div>
+        <p class="shop-desc">女性トレーナーのみ。「バストアップ」と「ダイエット」を両立できる稀有なジム。</p>
+        <a href="https://px.a8.net/svt/ejp?a8mat=4AVAC8+7AK7BU+3PFW+BWVTE" rel="nofollow" class="btn-apply" target="_blank">公式サイトを見る ＞</a>
+      </div>
+    </div>
+
+    <div class="shop-card">
+      <div class="card-img-area">
+        <a href="https://px.a8.net/svt/ejp?a8mat=4AVAC8+4OHPQY+1OGO+BYT9D" rel="nofollow">
+        <img border="0" width="120" height="60" alt="" src="https://www21.a8.net/svt/bgt?aid=260120600283&wid=002&eno=01&mid=s00000007836002010000&mc=1"></a>
+        <img border="0" width="1" height="1" src="https://www17.a8.net/0.gif?a8mat=4AVAC8+4OHPQY+1OGO+BYT9D" alt="">
+        <span class="badge-area">全国展開</span>
+        <span class="badge-paid">体験5,500円</span>
+      </div>
+      <div class="card-body">
+        <div class="shop-name">ミスパリ（ブライダル）</div>
+        <p class="shop-desc">エステといえばミスパリ。二の腕・背中・デコルテを集中的にケアするブライダル専用コース。</p>
+        <a href="https://px.a8.net/svt/ejp?a8mat=4AVAC8+4OHPQY+1OGO+BYT9D" rel="nofollow" class="btn-apply" target="_blank">体験詳細を見る ＞</a>
+      </div>
+    </div>
+
+    <div class="shop-card">
+      <div class="card-img-area">
+        <a href="//af.moshimo.com/af/c/click?a_id=5385643&p_id=6411&pc_id=18116&pl_id=83032" rel="nofollow" referrerpolicy="no-referrer-when-downgrade" attributionsrc><img src="//image.moshimo.com/af-img/6238/000000083032.jpg" width="300" height="250" style="border:none;"></a><img src="//i.moshimo.com/af/i/impression?a_id=5385643&p_id=6411&pc_id=18116&pl_id=83032" width="1" height="1" style="border:none;" loading="lazy">
+        <span class="badge-area">暗闇ピラティス</span>
+        <span class="badge-paid">体験あり</span>
+      </div>
+      <div class="card-body">
+        <div class="shop-name">BeatPilates</div>
+        <p class="shop-desc">暗闇×音楽×ピラティス。楽しみながらインナーマッスルを鍛えられます。</p>
+        <a href="//af.moshimo.com/af/c/click?a_id=5385643&p_id=6411&pc_id=18116&pl_id=83032" rel="nofollow" class="btn-apply" target="_blank">公式サイトを見る ＞</a>
+      </div>
+    </div>
+
+    <div class="shop-card">
+      <div class="card-img-area">
+        <a href="//af.moshimo.com/af/c/click?a_id=5385633&p_id=7246&pc_id=20781&pl_id=91270" rel="nofollow" referrerpolicy="no-referrer-when-downgrade" attributionsrc><img src="//image.moshimo.com/af-img/6112/000000091270.jpg" width="120" height="60" style="border:none;"></a><img src="//i.moshimo.com/af/i/impression?a_id=5385633&p_id=7246&pc_id=20781&pl_id=91270" width="1" height="1" style="border:none;" loading="lazy">
+        <span class="badge-area">24時間ジム</span>
+        <span class="badge-paid">体験あり</span>
+      </div>
+      <div class="card-body">
+        <div class="shop-name">Fit 24</div>
+        <p class="shop-desc">快活CLUBが運営する24時間ジム。コスパ良く通いたい方に。</p>
+        <a href="//af.moshimo.com/af/c/click?a_id=5385633&p_id=7246&pc_id=20781&pl_id=91270" rel="nofollow" class="btn-apply" target="_blank">公式サイトを見る ＞</a>
+      </div>
+    </div>
+
+    <div class="shop-card">
+      <div class="card-img-area">
+        <a href="//af.moshimo.com/af/c/click?a_id=5385649&p_id=5213&pc_id=14134&pl_id=70216" rel="nofollow" referrerpolicy="no-referrer-when-downgrade" attributionsrc><img src="//image.moshimo.com/af-img/4817/000000070216.png" width="300" height="300" style="border:none;"></a><img src="//i.moshimo.com/af/i/impression?a_id=5385649&p_id=5213&pc_id=14134&pl_id=70216" width="1" height="1" style="border:none;" loading="lazy">
+        <span class="badge-area">パーソナル</span>
+        <span class="badge-paid">体験あり</span>
+      </div>
+      <div class="card-body">
+        <div class="shop-name">WT（ダブルティー）</div>
+        <p class="shop-desc">女性専用パーソナル。完全個室で人目を気にせずトレーニング。</p>
+        <a href="//af.moshimo.com/af/c/click?a_id=5385649&p_id=5213&pc_id=14134&pl_id=70216" rel="nofollow" class="btn-apply" target="_blank">公式サイトを見る ＞</a>
+      </div>
+    </div>
+
+    <div class="shop-card">
+      <div class="card-img-area">
+        <a href="//af.moshimo.com/af/c/click?a_id=5369995&p_id=5582&pc_id=15309&pl_id=71905" rel="nofollow" referrerpolicy="no-referrer-when-downgrade" attributionsrc><img src="//image.moshimo.com/af-img/5252/000000071905.jpg" width="300" height="250" style="border:none; object-fit:cover;"></a><img src="//i.moshimo.com/af/i/impression?a_id=5369995&p_id=5582&pc_id=15309&pl_id=71905" width="1" height="1" style="border:none;" loading="lazy">
+        <span class="badge-area">都内・渋谷</span>
+        <span class="badge-paid">体験あり</span>
+      </div>
+      <div class="card-body">
+        <div class="shop-name">STUDIO KOMPAS</div>
+        <p class="shop-desc">都度払いOK。コース契約が不安な方でも安心して通えます。</p>
+        <a href="//af.moshimo.com/af/c/click?a_id=5369995&p_id=5582&pc_id=15309&pl_id=71905" rel="nofollow" class="btn-apply" target="_blank">公式サイトを見る ＞</a>
+      </div>
+    </div>
+
+    <div class="shop-card">
+      <div class="card-img-area">
+        <a href="//af.moshimo.com/af/c/click?a_id=5385653&p_id=3252&pc_id=7681&pl_id=47011" rel="nofollow" referrerpolicy="no-referrer-when-downgrade" attributionsrc><img src="//image.moshimo.com/af-img/2607/000000047011.jpg" width="336" height="280" style="border:none;"></a><img src="//i.moshimo.com/af/i/impression?a_id=5385653&p_id=3252&pc_id=7681&pl_id=47011" width="1" height="1" style="border:none;" loading="lazy">
+        <span class="badge-area">個室・貸切</span>
+        <span class="badge-paid">体験500円〜</span>
+      </div>
+      <div class="card-body">
+        <div class="shop-name">ハコジム</div>
+        <p class="shop-desc">24時間使える個室ジム。フリーウェイトも充実。誰にも会わずに運動したい方に。</p>
+        <a href="//af.moshimo.com/af/c/click?a_id=5385653&p_id=3252&pc_id=7681&pl_id=47011" rel="nofollow" class="btn-apply" target="_blank">公式サイトを見る ＞</a>
+      </div>
+    </div>
+
+    <div class="shop-card">
+      <div class="card-img-area">
+        <a href="//af.moshimo.com/af/c/click?a_id=5385656&p_id=2641&pc_id=5907&pl_id=34302" rel="nofollow" referrerpolicy="no-referrer-when-downgrade" attributionsrc><img src="//image.moshimo.com/af-img/1680/000000034302.jpg" width="500" height="250" style="border:none;"></a><img src="//i.moshimo.com/af/i/impression?a_id=5385656&p_id=2641&pc_id=5907&pl_id=34302" width="1" height="1" style="border:none;" loading="lazy">
+        <span class="badge-area">セミパーソナル</span>
+        <span class="badge-paid">体験あり</span>
+      </div>
+      <div class="card-body">
+        <div class="shop-name">トレーニングボックス</div>
+        <p class="shop-desc">セミパーソナルで費用を抑えつつ、プロの指導が受けられます。</p>
+        <a href="//af.moshimo.com/af/c/click?a_id=5385656&p_id=2641&pc_id=5907&pl_id=34302" rel="nofollow" class="btn-apply" target="_blank">公式サイトを見る ＞</a>
+      </div>
+    </div>
+
+    <div class="shop-card">
+      <div class="card-img-area">
+        <a href="//af.moshimo.com/af/c/click?a_id=5385650&p_id=4637&pc_id=12157&pl_id=63358" rel="nofollow" referrerpolicy="no-referrer-when-downgrade" attributionsrc><img src="//image.moshimo.com/af-img/2830/000000063358.png" width="120" height="60" style="border:none;"></a><img src="//i.moshimo.com/af/i/impression?a_id=5385650&p_id=4637&pc_id=12157&pl_id=63358" width="1" height="1" style="border:none;" loading="lazy">
+        <span class="badge-area">ボディメンテ</span>
+        <span class="badge-paid">体験あり</span>
+      </div>
+      <div class="card-body">
+        <div class="shop-name">co-nect（コネクト）</div>
+        <p class="shop-desc">「もみほぐし」と「ストレッチ」の専門店。運動前のメンテナンスに最適。</p>
+        <a href="//af.moshimo.com/af/c/click?a_id=5385650&p_id=4637&pc_id=12157&pl_id=63358" rel="nofollow" class="btn-apply" target="_blank">公式サイトを見る ＞</a>
+      </div>
+    </div>
+
+    <div class="shop-card">
+      <div class="card-img-area">
+        <a href="//af.moshimo.com/af/c/click?a_id=5369450&p_id=4285&pc_id=10944&pl_id=58564" rel="nofollow" referrerpolicy="no-referrer-when-downgrade" attributionsrc><img src="//image.moshimo.com/af-img/1874/000000058564.jpg" width="482" height="242" style="border:none;"></a><img src="//i.moshimo.com/af/i/impression?a_id=5369450&p_id=4285&pc_id=10944&pl_id=58564" width="1" height="1" style="border:none;" loading="lazy">
+        <span class="badge-area">マシンピラティス</span>
+        <span class="badge-paid">体験3,300円〜</span>
+      </div>
+      <div class="card-body">
+        <div class="shop-name">ELEMENT</div>
+        <p class="shop-desc">通い放題のマシンピラティス。姿勢改善・しなやかな体づくりに。</p>
+        <a href="//af.moshimo.com/af/c/click?a_id=5369450&p_id=4285&pc_id=10944&pl_id=58564" rel="nofollow" class="btn-apply" target="_blank">公式サイトを見る ＞</a>
+      </div>
+    </div>
+
   </div>
 
   <div style="text-align:center; margin-top:50px;">
