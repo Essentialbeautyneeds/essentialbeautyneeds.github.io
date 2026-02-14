@@ -180,6 +180,72 @@ footer{
         color: #888 !important;
     }
     .footer a { color: #aaa !important; text-decoration: underline !important; }
+    /* 緊急ボタン（赤く光るボタン） */
+    .btn-shiny-red {
+      display: block;
+      width: 100%;
+      max-width: 320px;
+      margin: 0 auto;
+      background: linear-gradient(45deg, #ff7f7f, #ff4c4c);
+      color: #fff;
+      font-weight: bold;
+      text-decoration: none;
+      padding: 16px;
+      border-radius: 50px;
+      box-shadow: 0 4px 15px rgba(255, 76, 76, 0.4);
+      font-size: 16px;
+      transition: 0.3s;
+      animation: pulse 2s infinite;
+    }
+    .btn-shiny-red:hover {
+      transform: translateY(-2px);
+      opacity: 0.9;
+    }
+    @keyframes pulse {
+      0% { box-shadow: 0 0 0 0 rgba(255, 76, 76, 0.4); }
+      70% { box-shadow: 0 0 0 10px rgba(255, 76, 76, 0); }
+      100% { box-shadow: 0 0 0 0 rgba(255, 76, 76, 0); }
+    }
+
+    /* 部位別リンクボックス（再掲） */
+    .parts-nav-section {
+      margin-top: 30px;
+      padding-top: 20px;
+    }
+    .parts-nav-title {
+      text-align: center;
+      font-size: 18px;
+      color: #503535;
+      margin-bottom: 15px;
+      font-weight: bold;
+    }
+    .parts-grid {
+      display: grid;
+      grid-template-columns: 1fr 1fr;
+      gap: 15px;
+      margin-bottom: 40px;
+    }
+    .parts-card {
+      background: #fff;
+      border: 1px solid #eee;
+      border-radius: 15px;
+      padding: 15px;
+      text-align: center;
+      text-decoration: none;
+      box-shadow: 0 3px 10px rgba(0,0,0,0.03);
+      transition: transform 0.2s;
+      display: flex;
+      flex-direction: column;
+      align-items: center;
+    }
+    .parts-card:hover {
+      transform: translateY(-3px);
+      border-color: #f7a8a8;
+      background: #fffaf9;
+    }
+    .parts-icon { font-size: 24px; margin-bottom: 5px; display: block; }
+    .parts-name { font-size: 15px; font-weight: bold; color: #d6336c; display: block; margin-bottom: 3px; }
+    .parts-desc { font-size: 11px; color: #888; display: block; }
 
 </style>
 </head>
@@ -262,7 +328,7 @@ footer{
 <a href="trial-collection.html" class="btn-main">無料特典リストを見る ▶</a>
 </div>
 
-</main>
+
  <div style="margin-top:50px; padding:30px 20px; background:#f9f9f9; text-align:center; border-top:3px solid #eee;">
   <p style="font-size:14px; font-weight:bold; color:#777; margin-bottom:10px;">＼ 食事だけでは間に合わない方へ ／</p>
   <h3 style="font-size:20px; color:#503535; margin-bottom:15px;">式まで3ヶ月を切っていませんか？</h3>
@@ -274,6 +340,50 @@ footer{
   </a>
  </div>
 
+   <section style="background:#fff5f5; border:2px solid #ffcccc; border-radius:15px; padding:30px 20px; margin-top:60px; text-align:center; box-shadow:0 5px 15px rgba(255,0,0,0.05);">
+    <p style="font-size:12px; font-weight:bold; color:#d6336c; background:#fff; display:inline-block; padding:3px 10px; border-radius:20px; margin-bottom:10px;">⚠️ 栄養士からの緊急アドバイス</p>
+    <h3 style="font-size:20px; color:#c0392b; margin-top:0; margin-bottom:15px;">挙式まで「3ヶ月」を切っていませんか？</h3>
+    <p style="text-align:left; font-size:14px; line-height:1.8; margin-bottom:20px;">
+      食事改善は「内側（肌）」を変えますが、「外側のライン（二の腕・背中）」を変えるには時間がかかります。<br>
+      <br>
+      もし時間がないなら、<strong>プロの物理的なアプローチ（マシンや矯正）</strong>を併用するのが、当日後悔しないための唯一の近道です。
+    </p>
+    <a href="bridal-gym-free-trial-guide.html" class="btn-shiny-red">
+      失敗しない！駆け込みジム診断を見る ＞
+    </a>
+  </section>
+
+  <section class="parts-nav-section">
+    <h3 class="parts-nav-title" style="font-size:16px; margin-top:40px; color:#888;">または、気になるパーツを深掘り👇</h3>
+
+    <div class="parts-grid">
+      <a href="prehana-arm.html" class="parts-card">
+        <span class="parts-icon">💪</span>
+        <span class="parts-name">二の腕痩せ</span>
+        <span class="parts-desc">タプタプを解消</span>
+      </a>
+
+      <a href="prehana-back.html" class="parts-card">
+        <span class="parts-icon">背</span>
+        <span class="parts-name">背中痩せ</span>
+        <span class="parts-desc">天使の羽を出す</span>
+      </a>
+
+      <a href="prehana-mukumi.html" class="parts-card">
+        <span class="parts-icon">💧</span>
+        <span class="parts-name">むくみ撃退</span>
+        <span class="parts-desc">即効スッキリ</span>
+      </a>
+
+      <a href="prehana-rounded-shoulders.html" class="parts-card">
+        <span class="parts-icon">🦴</span>
+        <span class="parts-name">巻き肩・姿勢</span>
+        <span class="parts-desc">デコルテ美人へ</span>
+      </a>
+    </div>
+  </section>
+
+</main>
 <section class="nav-links">
   <a href="index.html">🏠 トップへ戻る</a>
   <a href="beauty-column.html">💄 コラム一覧</a>
