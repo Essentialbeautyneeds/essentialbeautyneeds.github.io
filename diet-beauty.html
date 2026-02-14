@@ -14,7 +14,6 @@
 <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
 <link href="https://fonts.googleapis.com/css2?family=Playfair+Display:wght@600&family=Shippori+Mincho:wght@400;600&display=swap" rel="stylesheet">
 
-<!-- ===== 構造化データ ===== -->
 <script type="application/ld+json">
 {
  "@context":"https://schema.org",
@@ -78,9 +77,14 @@ h2{
  text-align:center;
  margin:60px 0 30px;
  font-size:22px;
+ border-bottom: 2px solid #ffe0e0;
+ display: inline-block;
+ padding-bottom: 5px;
 }
 h3{
- margin-top:30px;
+ margin-top:0;
+ color: #d6336c;
+ font-size: 18px;
 }
 .content-box{
  background:#fff;
@@ -94,7 +98,8 @@ h3{
  height:auto;
  border-radius:12px;
  display:block;
- margin:30px 0;
+ margin:0 auto 30px;
+ object-fit: cover;
 }
 .product-box{
  background:#fff;
@@ -103,6 +108,7 @@ h3{
  text-align:center;
  box-shadow:0 10px 30px rgba(0,0,0,0.05);
  margin:60px 0;
+ border: 1px solid #eee;
 }
 .product-box img{
  max-width:100%;
@@ -114,13 +120,15 @@ h3{
 .btn-main{
  display:inline-block;
  margin-top:20px;
- padding:16px 30px;
+ padding:16px 40px;
  background:linear-gradient(45deg,#f4a6a6,#e58b8b);
  color:#fff;
  border-radius:50px;
  text-decoration:none;
  font-weight:bold;
  transition:0.3s;
+ font-size: 16px;
+ box-shadow: 0 4px 10px rgba(244, 166, 166, 0.4);
 }
 .btn-main:hover{
  opacity:0.9;
@@ -133,120 +141,123 @@ h3{
  color:#a06b6b;
  text-decoration:underline;
 }
-footer{
- background:#fffaf4;
- text-align:center;
- padding:50px 20px;
- font-size:14px;
+
+/* ナビゲーションリンク */
+.nav-links {
+    display: flex !important;
+    flex-wrap: wrap !important;
+    justify-content: center !important;
+    gap: 15px !important;
+    margin: 40px 0 !important;
+    padding-top: 40px !important;
+    border-top: 1px solid #eee !important;
 }
+.nav-links a {
+    font-size: 14px !important;
+    color: #777 !important;
+    border: 1px solid #eee !important;
+    padding: 10px 20px !important;
+    border-radius: 20px !important;
+    background: #fff !important;
+    font-weight: bold !important;
+    text-decoration: none !important;
+}
+
+/* フッター */
+.footer {
+    text-align: center !important;
+    padding: 50px 20px 100px !important;
+    background-color: #fcf8f8 !important;
+    border-top: 3px solid #f7a8a8 !important;
+    font-size: 14px !important;
+    color: #888 !important;
+}
+.footer a { color: #aaa !important; text-decoration: underline !important; }
+
+/* 緊急ボタン（赤く光るボタン） */
+.btn-shiny-red {
+  display: block;
+  width: 100%;
+  max-width: 320px;
+  margin: 20px auto 0;
+  background: linear-gradient(45deg, #ff7f7f, #ff4c4c);
+  color: #fff;
+  font-weight: bold;
+  text-decoration: none;
+  padding: 16px;
+  border-radius: 50px;
+  box-shadow: 0 4px 15px rgba(255, 76, 76, 0.4);
+  font-size: 16px;
+  transition: 0.3s;
+  animation: pulse 2s infinite;
+}
+.btn-shiny-red:hover {
+  transform: translateY(-2px);
+  opacity: 0.9;
+}
+@keyframes pulse {
+  0% { box-shadow: 0 0 0 0 rgba(255, 76, 76, 0.4); }
+  70% { box-shadow: 0 0 0 10px rgba(255, 76, 76, 0); }
+  100% { box-shadow: 0 0 0 0 rgba(255, 76, 76, 0); }
+}
+
+/* 部位別リンクボックス */
+.parts-nav-section {
+  margin-top: 50px;
+  padding-top: 20px;
+  border-top: 1px dashed #f7a8a8;
+}
+.parts-nav-title {
+  text-align: center;
+  font-size: 18px;
+  color: #503535;
+  margin-bottom: 20px;
+  font-weight: bold;
+}
+.parts-grid {
+  display: grid;
+  grid-template-columns: 1fr 1fr;
+  gap: 15px;
+  margin-bottom: 40px;
+}
+.parts-card {
+  background: #fff;
+  border: 1px solid #eee;
+  border-radius: 15px;
+  padding: 15px;
+  text-align: center;
+  text-decoration: none;
+  box-shadow: 0 3px 10px rgba(0,0,0,0.03);
+  transition: transform 0.2s;
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+}
+.parts-card:hover {
+  transform: translateY(-3px);
+  border-color: #f7a8a8;
+  background: #fffaf9;
+}
+.parts-icon { font-size: 24px; margin-bottom: 5px; display: block; }
+.parts-name { font-size: 15px; font-weight: bold; color: #d6336c; display: block; margin-bottom: 3px; }
+.parts-desc { font-size: 11px; color: #888; display: block; }
+
 .disclaimer{
  position:fixed;
  bottom:10px;
  right:10px;
+ background: rgba(255,255,255,0.9);
+ padding: 5px 10px;
+ border-radius: 5px;
  font-size:10px;
  color:#999;
+ border: 1px solid #eee;
+ z-index: 999;
 }
+
 @media(max-width:600px){
  h1{font-size:22px;}
 }
- /* ナビゲーションリンク */
-    .nav-links {
-        display: flex !important;
-        flex-wrap: wrap !important;
-        justify-content: center !important;
-        gap: 15px !important;
-        margin: 60px 0 !important;
-        padding-top: 40px !important;
-        border-top: 1px solid #eee !important;
-    }
-    .nav-links a {
-        font-size: 14px !important;
-        color: #777 !important;
-        border: 1px solid #eee !important;
-        padding: 10px 20px !important;
-        border-radius: 20px !important;
-        background: #fff !important;
-        font-weight: bold !important;
-        text-decoration: none !important;
-    }
-
-    /* フッター */
-    .footer {
-        text-align: center !important;
-        padding: 50px 20px 100px !important;
-        background-color: #fcf8f8 !important;
-        border-top: 3px solid #f7a8a8 !important;
-        font-size: 14px !important;
-        color: #888 !important;
-    }
-    .footer a { color: #aaa !important; text-decoration: underline !important; }
-    /* 緊急ボタン（赤く光るボタン） */
-    .btn-shiny-red {
-      display: block;
-      width: 100%;
-      max-width: 320px;
-      margin: 0 auto;
-      background: linear-gradient(45deg, #ff7f7f, #ff4c4c);
-      color: #fff;
-      font-weight: bold;
-      text-decoration: none;
-      padding: 16px;
-      border-radius: 50px;
-      box-shadow: 0 4px 15px rgba(255, 76, 76, 0.4);
-      font-size: 16px;
-      transition: 0.3s;
-      animation: pulse 2s infinite;
-    }
-    .btn-shiny-red:hover {
-      transform: translateY(-2px);
-      opacity: 0.9;
-    }
-    @keyframes pulse {
-      0% { box-shadow: 0 0 0 0 rgba(255, 76, 76, 0.4); }
-      70% { box-shadow: 0 0 0 10px rgba(255, 76, 76, 0); }
-      100% { box-shadow: 0 0 0 0 rgba(255, 76, 76, 0); }
-    }
-
-    /* 部位別リンクボックス（再掲） */
-    .parts-nav-section {
-      margin-top: 30px;
-      padding-top: 20px;
-    }
-    .parts-nav-title {
-      text-align: center;
-      font-size: 18px;
-      color: #503535;
-      margin-bottom: 15px;
-      font-weight: bold;
-    }
-    .parts-grid {
-      display: grid;
-      grid-template-columns: 1fr 1fr;
-      gap: 15px;
-      margin-bottom: 40px;
-    }
-    .parts-card {
-      background: #fff;
-      border: 1px solid #eee;
-      border-radius: 15px;
-      padding: 15px;
-      text-align: center;
-      text-decoration: none;
-      box-shadow: 0 3px 10px rgba(0,0,0,0.03);
-      transition: transform 0.2s;
-      display: flex;
-      flex-direction: column;
-      align-items: center;
-    }
-    .parts-card:hover {
-      transform: translateY(-3px);
-      border-color: #f7a8a8;
-      background: #fffaf9;
-    }
-    .parts-icon { font-size: 24px; margin-bottom: 5px; display: block; }
-    .parts-name { font-size: 15px; font-weight: bold; color: #d6336c; display: block; margin-bottom: 3px; }
-    .parts-desc { font-size: 11px; color: #888; display: block; }
-
 </style>
 </head>
 
@@ -254,7 +265,7 @@ footer{
 
 <header>
 <h1>花嫁ダイエットで絶食はNG？<br>肌がたるまない<br>正しい痩せ方</h1>
-<p>管理栄養士Yuri🌱が解説</p>
+<p style="color:#888; font-size:14px;">管理栄養士Yuri🌱が解説</p>
 </header>
 
 <main>
@@ -262,134 +273,115 @@ footer{
 <img src="images/healthy1.jpg" alt="ヘルシーな食事を楽しむ花嫁のイメージ" width="820" height="500" class="feature-img">
 
 <div class="content-box">
-<p><strong>こんな不安ありませんか？</strong></p>
-<ul>
+<p style="text-align:center; font-weight:bold; font-size:18px; color:#d6336c; margin-bottom:15px;">こんな不安ありませんか？</p>
+<ul style="line-height:2;">
 <li>ドレスの背中が気になる</li>
-<li>前撮りまであと1ヶ月</li>
-<li>写真で二の腕が太く見えそう</li>
+<li>前撮りまであと1ヶ月しかない</li>
+<li>写真で二の腕が太く見えそう…</li>
 </ul>
-<p>でも「絶食」は逆効果です。</p>
+<p style="margin-top:15px;">焦る気持ちは分かりますが、<strong>「絶食」は逆効果</strong>です。</p>
 </div>
 
-<h2>やってはいけない3つのNG</h2>
+<div style="text-align:center;">
+  <h2>やってはいけない3つのNG</h2>
+</div>
 
 <div class="content-box">
 <h3>① 夕食抜き</h3>
-<p>筋肉が落ち、デコルテがやつれます。</p>
-
+<p>筋肉が落ち、デコルテがやつれて貧相に見えてしまいます。</p>
+<hr style="border:0; border-top:1px dashed #eee; margin:15px 0;">
 <h3>② サラダだけ生活</h3>
-<p>タンパク質不足でハリが消えます。</p>
-
+<p>タンパク質不足で肌のハリが消え、ドレス負けする肌になります。</p>
+<hr style="border:0; border-top:1px dashed #eee; margin:15px 0;">
 <h3>③ 糖質ゼロ</h3>
-<p>ストレスと肌荒れの原因になります。</p>
+<p>ストレスでホルモンバランスが崩れ、挙式直前に肌荒れする原因になります。</p>
 </div>
 
-<h2>正解は「整える食事」</h2>
+<div style="text-align:center;">
+  <h2>正解は「整える食事」</h2>
+</div>
 
 <div class="content-box">
-<ul>
-<li>むくみ改善</li>
-<li>腸内環境を整える</li>
-<li>炎症を抑える</li>
+<ul style="line-height:2;">
+<li>むくみ改善（カリウム）</li>
+<li>腸内環境を整える（発酵食品）</li>
+<li>炎症を抑える（良質な油）</li>
 </ul>
-<p>体重よりも「ライン」を整えることが重要です。</p>
+<p style="margin-top:15px; font-weight:bold;">体重を落とすよりも、「ライン」を整えることが花嫁美容の正解です。</p>
 </div>
 
-<!-- 中間CV -->
 <div class="product-box">
-<h3>忙しい花嫁さんへ</h3>
-<p>1週間だけ、プロ監修の食事に頼るという選択。</p>
-
-<a href="//af.moshimo.com/af/c/click?a_id=5322925&p_id=3200&pc_id=7492&pl_id=41851" rel="nofollow sponsored" class="btn-main">
-▶ 挙式前1週間でラインを整える
-</a>
-
-</div>
-
-<h2>SONOKO式ダイエット献立</h2>
-
-<div class="product-box">
+<h3 style="color:#503535;">忙しい花嫁さんへ</h3>
+<p>1週間だけ、プロ監修の食事に頼るという選択。<br>
+<strong>「SONOKO式」</strong>なら、食べて美しくなる献立が全て揃います。</p>
 
 <a href="//af.moshimo.com/af/c/click?a_id=5322925&p_id=3200&pc_id=7492&pl_id=41883" rel="nofollow sponsored">
 <img src="//image.moshimo.com/af-img/2478/000000041883.jpg" width="600" height="400" alt="SONOKO式ダイエット献立">
 </a>
 
 <a href="//af.moshimo.com/af/c/click?a_id=5322925&p_id=3200&pc_id=7492&pl_id=41851" rel="nofollow sponsored" class="btn-main">
-お試しセットを見る ▶
+▶ 挙式前1週間お試しセットを見る
 </a>
-
-<p style="font-size:12px;color:#999;">※在庫は公式サイトでご確認ください</p>
+<p style="font-size:12px;color:#999; margin-top:10px;">※在庫は公式サイトでご確認ください</p>
 </div>
 
-<!-- 回遊導線 -->
 <div class="content-box" style="text-align:center;">
 <h3>無料でできる花嫁美容もまとめました</h3>
 <p>0円で試せる花嫁向け特典も紹介しています。</p>
-<a href="trial-collection.html" class="btn-main">無料特典リストを見る ▶</a>
+<a href="trial-collection.html" class="btn-main" style="background:#ddd; color:#555; box-shadow:none;">無料特典リストを見る ▶</a>
 </div>
 
-
- <div style="margin-top:50px; padding:30px 20px; background:#f9f9f9; text-align:center; border-top:3px solid #eee;">
-  <p style="font-size:14px; font-weight:bold; color:#777; margin-bottom:10px;">＼ 食事だけでは間に合わない方へ ／</p>
-  <h3 style="font-size:20px; color:#503535; margin-bottom:15px;">式まで3ヶ月を切っていませんか？</h3>
-  <p style="font-size:14px; text-align:left; max-width:500px; margin:0 auto 20px;">
-    基本は食事改善ですが、短期間でドレスのライン（二の腕・背中）を仕上げるなら、<strong>プロの物理的なアプローチ（マシンや矯正）</strong>を併用するのが一番確実です。
+<section style="background:#fff5f5; border:2px solid #ffcccc; border-radius:15px; padding:30px 20px; margin-top:60px; text-align:center; box-shadow:0 5px 15px rgba(255,0,0,0.05);">
+  <p style="font-size:12px; font-weight:bold; color:#d6336c; background:#fff; display:inline-block; padding:3px 10px; border-radius:20px; margin-bottom:10px;">⚠️ 栄養士からの緊急アドバイス</p>
+  <h3 style="font-size:20px; color:#c0392b; margin-top:0; margin-bottom:15px;">挙式まで「3ヶ月」を切っていませんか？</h3>
+  <p style="text-align:left; font-size:14px; line-height:1.8; margin-bottom:20px;">
+    食事改善は「内側（肌）」を変えますが、「外側のライン（二の腕・背中）」を変えるには時間がかかります。<br>
+    <br>
+    もし時間がないなら、<strong>プロの物理的なアプローチ（マシンや矯正）</strong>を併用するのが、当日後悔しないための唯一の近道です。
   </p>
-  <a href="bridal-gym-free-trial-guide.html" style="display:inline-block; background:linear-gradient(45deg,#f7a8a8,#e08e8e); color:#fff; padding:12px 30px; border-radius:30px; text-decoration:none; font-weight:bold; box-shadow:0 4px 10px rgba(247,168,168,0.4);">
-    駆け込みOK！失敗しないジム5選 ＞
+  <a href="bridal-gym-free-trial-guide.html" class="btn-shiny-red">
+    失敗しない！駆け込みジム診断を見る ＞
   </a>
- </div>
+</section>
 
-   <section style="background:#fff5f5; border:2px solid #ffcccc; border-radius:15px; padding:30px 20px; margin-top:60px; text-align:center; box-shadow:0 5px 15px rgba(255,0,0,0.05);">
-    <p style="font-size:12px; font-weight:bold; color:#d6336c; background:#fff; display:inline-block; padding:3px 10px; border-radius:20px; margin-bottom:10px;">⚠️ 栄養士からの緊急アドバイス</p>
-    <h3 style="font-size:20px; color:#c0392b; margin-top:0; margin-bottom:15px;">挙式まで「3ヶ月」を切っていませんか？</h3>
-    <p style="text-align:left; font-size:14px; line-height:1.8; margin-bottom:20px;">
-      食事改善は「内側（肌）」を変えますが、「外側のライン（二の腕・背中）」を変えるには時間がかかります。<br>
-      <br>
-      もし時間がないなら、<strong>プロの物理的なアプローチ（マシンや矯正）</strong>を併用するのが、当日後悔しないための唯一の近道です。
-    </p>
-    <a href="bridal-gym-free-trial-guide.html" class="btn-shiny-red">
-      失敗しない！駆け込みジム診断を見る ＞
+<section class="parts-nav-section">
+  <h3 class="parts-nav-title" style="font-size:16px; margin-top:40px; color:#888;">または、気になるパーツを深掘り👇</h3>
+
+  <div class="parts-grid">
+    <a href="prehana-arm.html" class="parts-card">
+      <span class="parts-icon">💪</span>
+      <span class="parts-name">二の腕痩せ</span>
+      <span class="parts-desc">タプタプを解消</span>
     </a>
-  </section>
 
-  <section class="parts-nav-section">
-    <h3 class="parts-nav-title" style="font-size:16px; margin-top:40px; color:#888;">または、気になるパーツを深掘り👇</h3>
+    <a href="prehana-back.html" class="parts-card">
+      <span class="parts-icon">背</span>
+      <span class="parts-name">背中痩せ</span>
+      <span class="parts-desc">天使の羽を出す</span>
+    </a>
 
-    <div class="parts-grid">
-      <a href="prehana-arm.html" class="parts-card">
-        <span class="parts-icon">💪</span>
-        <span class="parts-name">二の腕痩せ</span>
-        <span class="parts-desc">タプタプを解消</span>
-      </a>
+    <a href="prehana-mukumi.html" class="parts-card">
+      <span class="parts-icon">💧</span>
+      <span class="parts-name">むくみ撃退</span>
+      <span class="parts-desc">即効スッキリ</span>
+    </a>
 
-      <a href="prehana-back.html" class="parts-card">
-        <span class="parts-icon">背</span>
-        <span class="parts-name">背中痩せ</span>
-        <span class="parts-desc">天使の羽を出す</span>
-      </a>
+    <a href="prehana-rounded-shoulders.html" class="parts-card">
+      <span class="parts-icon">🦴</span>
+      <span class="parts-name">巻き肩・姿勢</span>
+      <span class="parts-desc">デコルテ美人へ</span>
+    </a>
+  </div>
+</section>
 
-      <a href="prehana-mukumi.html" class="parts-card">
-        <span class="parts-icon">💧</span>
-        <span class="parts-name">むくみ撃退</span>
-        <span class="parts-desc">即効スッキリ</span>
-      </a>
-
-      <a href="prehana-rounded-shoulders.html" class="parts-card">
-        <span class="parts-icon">🦴</span>
-        <span class="parts-name">巻き肩・姿勢</span>
-        <span class="parts-desc">デコルテ美人へ</span>
-      </a>
-    </div>
-  </section>
-
-</main>
 <section class="nav-links">
   <a href="index.html">🏠 トップへ戻る</a>
   <a href="beauty-column.html">💄 コラム一覧</a>
   <a href="skin-ranking.html">✨ おすすめランキング</a>
   <a href="about.html">👩‍💼 運営者情報</a>
 </section>
+
+</main>
 
 <footer class="footer">
   <p>
