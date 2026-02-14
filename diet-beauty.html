@@ -5,7 +5,8 @@
   <meta name="viewport" content="width=device-width,initial-scale=1" />
   <title>ドレスのために絶食してない？栄養士が警告「肌がたるまない」花嫁ダイエットの正解 | Essential Beauty Needs</title>
   <meta name="description" content="挙式直前の無理なダイエットは肌荒れの原因に。栄養士が推奨する「食べて痩せる」1週間集中プログラム『SONOKO式献立』を徹底レビュー。">
-  <link rel="canonical" href="https://essential-beauty-needs.com/sonoko-diet.html">
+  <link rel="canonical" href="https://essential-beauty-needs.com/diet-beauty.html">
+  
   <link rel="preconnect" href="https://fonts.googleapis.com">
   <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
   <link href="https://fonts.googleapis.com/css2?family=Playfair+Display:wght@500;600&family=Quicksand:wght@500;700&family=Shippori+Mincho:wght@400;600&display=swap" rel="stylesheet">
@@ -31,7 +32,7 @@
   
   <style>
     /* =========================================
-       【共通スタイル：Indexの世界観を継承】
+       【共通スタイル】
        ========================================= */
     :root {
       --bg: #fffaf9;
@@ -48,13 +49,13 @@
         font-family: 'Shippori Mincho', serif;
         line-height: 1.9;
         margin: 0;
-        padding-bottom: 0; /* フッター調整のため0に戻し、個別に調整 */
+        padding-bottom: 0;
     }
 
     /* ヘッダー */
     header.hero {
         text-align: center;
-        padding: 80px 20px 40px;
+        padding: 80px 20px 60px; /* 下の余白を少し増やしてバランス調整 */
         background: linear-gradient(to bottom, #ffffff, #fffaf9);
         border-bottom: 1px solid #eee;
     }
@@ -68,7 +69,7 @@
     header.hero p {
         font-size: 14px;
         color: #886666;
-        margin-bottom: 20px;
+        margin-bottom: 0; /* 下のリンクが無くなったので余白削除 */
         font-weight: 500;
     }
 
@@ -205,14 +206,6 @@
     }
     .btn-main:hover { transform: translateY(-3px); opacity: 0.95; }
 
-    /* ナビゲーション */
-    .nav-links { display: flex; gap: 10px; justify-content: center; flex-wrap: wrap; margin-bottom: 20px; }
-    .nav-links a {
-        font-size: 13px; color: #777; border: 1px solid #eee; padding: 8px 18px;
-        border-radius: 20px; background: #fff; text-decoration: none; transition: 0.3s;
-    }
-    .nav-links a:hover { background: #fff0f0; color: var(--text-main); }
-
     /* フッター */
     footer { background: #fffaf4; border-top: 3px solid #f7a8a8; padding: 50px 20px 60px; margin-top: 40px; color: #555; font-size: 14px; }
     .footer-container { max-width: 960px; margin: 0 auto; display: flex; flex-wrap: wrap; justify-content: space-between; gap: 30px; text-align: left; }
@@ -230,9 +223,7 @@
       text-align: center; padding: 20px; background: #fcf8f8; font-size:10px; color:#999;
     }
     
-    .back-btn { display:inline-block; margin:40px auto; color:#777; text-decoration:none; border-bottom:1px solid #ccc; }
-
-    /* ▼▼▼ 追加：緊急アドバイスエリア用CSS ▼▼▼ */
+    /* ▼▼▼ 緊急アドバイスエリア ▼▼▼ */
     .emergency-alert-box {
       background:#fff5f5; 
       border:2px solid #ffcccc; 
@@ -271,7 +262,7 @@
       100% { box-shadow: 0 0 0 0 rgba(255, 76, 76, 0); }
     }
 
-    /* ▼▼▼ 追加：部位別リンクボックス用CSS ▼▼▼ */
+    /* ▼▼▼ 部位別リンクボックス ▼▼▼ */
     .parts-nav-section {
       margin-top: 50px;
       padding-top: 20px;
@@ -288,7 +279,7 @@
       display: grid;
       grid-template-columns: 1fr 1fr;
       gap: 15px;
-      justify-content: center; /* ズレ解消 */
+      justify-content: center;
       margin-bottom: 25px;
     }
     .parts-card {
@@ -313,6 +304,33 @@
     .parts-name { font-size: 15px; font-weight: bold; color: #d6336c; display: block; margin-bottom: 3px; }
     .parts-desc { font-size: 11px; color: #888; display: block; }
 
+    /* ▼▼▼ ページ下部ナビゲーション ▼▼▼ */
+    .nav-links-bottom {
+        display: flex;
+        flex-wrap: wrap;
+        justify-content: center;
+        gap: 15px;
+        margin: 40px 0;
+        padding-top: 40px;
+        border-top: 1px solid #eee;
+    }
+    .nav-links-bottom a {
+        font-size: 14px;
+        color: #777;
+        border: 1px solid #eee;
+        padding: 10px 20px;
+        border-radius: 20px;
+        background: #fff;
+        font-weight: bold;
+        text-decoration: none;
+        transition: 0.3s;
+    }
+    .nav-links-bottom a:hover {
+        background: #f7a8a8;
+        color: #fff;
+        border-color: #f7a8a8;
+    }
+
     @keyframes blinkEffect { 0% { opacity: 1; } 50% { opacity: 0.3; } 100% { opacity: 1; } }
     .new-mark { color: #ff0000; font-weight: bold; font-size: 0.8em; margin-left: 5px; animation: blinkEffect 1.2s infinite; vertical-align: super; }
   </style>
@@ -323,18 +341,11 @@
   <header class="hero">
     <h1>花嫁ダイエットの正解</h1>
     <p>ドレスのために絶食していませんか？<br>栄養士が教える「肌がたるまない」痩せ方</p>
-    
-    <nav class="nav-links">
-        <a href="index.html">🏠 トップ</a>
-        <a href="bridal-care.html">👰 花嫁ケア診断</a>
-        <a href="skin-ranking.html">✨ ランキング</a>
-        <a href="diet-beauty.html">🥗 インナーケア一覧</a>
-    </nav>
   </header>
 
   <main>
     
-    <img src="images/healthy1.jpg" alt="ヘルシーな食事を楽しむ花嫁" class="feature-img" style="margin-top:0;" onerror="handleImageError(this, 'Healthy Bride')">
+    <img src="images/healthy1.jpg" alt="ヘルシーな食事を楽しむ花嫁" class="feature-img" style="margin-top:0;" onerror="handleImageError(this)">
 
     <div class="content-box">
       <p>こんにちは、栄養士の<strong>Yuri</strong>です。</p>
@@ -355,7 +366,7 @@
 
     <h2>花嫁ダイエットの正解は<br>「代謝を上げる」こと</h2>
       
-    <img src="images/healthy2.png" alt="新鮮な野菜とフルーツ" class="feature-img" onerror="handleImageError(this, 'Fruits & Vegetables')">
+    <img src="images/healthy2.png" alt="新鮮な野菜とフルーツ" class="feature-img" onerror="handleImageError(this)">
 
     <div class="content-box">
       <p>美しいラインを作るには、代謝を上げて脂肪を燃やす必要があります。<br>
@@ -519,9 +530,12 @@
       </div>
     </section>
 
-    <div style="text-align:center; margin-top:40px;">
-        <a href="index.html" class="back-btn">← トップページへ戻る</a>
-    </div>
+    <section class="nav-links-bottom">
+        <a href="index.html">🏠 トップへ戻る</a>
+        <a href="bridal-care.html">👰 花嫁ケア診断</a>
+        <a href="skin-ranking.html">✨ ランキング</a>
+        <a href="about.html">👩‍💼 運営者情報</a>
+    </section>
 
   </main>
   
