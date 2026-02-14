@@ -2,8 +2,8 @@
 <html lang="ja">
 <head>
 <meta charset="UTF-8">
-<title>【栄養士監修】花嫁向けパーソナルジム無料体験まとめ｜失敗しない選び方</title>
-<meta name="description" content="花嫁ダイエットは体重よりライン。基本は食事改善。でも時間がない人は無料体験を賢く活用して、プロに体の状態を診断してもらいましょう。">
+<title>【栄養士監修】花嫁向けパーソナルジム＆エステ厳選5選｜失敗しない選び方</title>
+<meta name="description" content="「胸を残して痩せる」「運動なしで痩せる」「全額返金保証」。花嫁のワガママを叶える厳選5社を栄養士が徹底比較。失敗しないボディメイクの決定版。">
 <meta name="viewport" content="width=device-width, initial-scale=1.0">
 <link rel="canonical" href="https://essential-beauty-needs.com/bridal-gym-free-trial-guide.html">
 
@@ -11,10 +11,23 @@
 <link href="https://fonts.googleapis.com/css2?family=Playfair+Display:wght@500;600&family=Shippori+Mincho:wght@400;600&display=swap" rel="stylesheet">
 
 <script>
+  function isInternalUser() { return document.cookie.split(';').some(c => c.trim().startsWith('internal_user=true')); }
+  if (!isInternalUser()) {
+    var gaScript = document.createElement('script');
+    gaScript.async = true;
+    gaScript.src = "https://www.googletagmanager.com/gtag/js?id=G-2HGEPHVZYY";
+    document.head.appendChild(gaScript);
+    window.dataLayer = window.dataLayer || [];
+    function gtag(){dataLayer.push(arguments);}
+    gtag('js', new Date());
+    gtag('config', 'G-2HGEPHVZYY');
+  }
+  
   // 画像がない場合にプレースホルダーを表示
   function handleImageError(img, text) {
     img.onerror = null;
-    img.src = "https://placehold.co/600x400/ffe6e6/d6336c?text=" + encodeURIComponent(text);
+    img.src = "https://placehold.co/800x400/ffe6e6/d6336c?text=" + encodeURIComponent(text);
+    img.style.objectFit = "cover";
   }
 </script>
 
@@ -70,20 +83,6 @@ h2{
   margin-top: 0;
   font-size: 18px;
 }
-/* 魔法の口実ボックス */
-.magic-box {
-  background: #fff;
-  padding: 25px;
-  border-radius: 15px;
-  border: 2px solid #f7a8a8;
-  margin-bottom: 40px;
-  box-shadow: 0 4px 15px rgba(247,168,168,0.15);
-}
-.magic-box h3 {
-  color: #d6336c;
-  margin-top: 0;
-  text-align: center;
-}
 
 /* 比較表のスタイル */
 .comparison-container {
@@ -95,7 +94,7 @@ h2{
 .comparison-table {
   width: 100%;
   border-collapse: collapse;
-  min-width: 600px; /* スマホでスクロールさせる */
+  min-width: 700px; /* スマホでスクロール */
   background: #fff;
 }
 .comparison-table th {
@@ -112,9 +111,6 @@ h2{
   text-align: center;
   vertical-align: middle;
 }
-.comparison-table tr:last-child td {
-  border-bottom: none;
-}
 .tag-best {
   background: #d6336c;
   color: #fff;
@@ -123,6 +119,7 @@ h2{
   border-radius: 4px;
   display: inline-block;
   margin-bottom: 5px;
+  font-weight: bold;
 }
 
 /* ジムカード（タイプ別） */
@@ -131,7 +128,7 @@ h2{
   border:1px solid #f0e6e6;
   border-radius:15px;
   padding:25px;
-  margin-bottom:30px;
+  margin-bottom:40px;
   box-shadow:0 4px 15px rgba(0,0,0,0.03);
   display: flex;
   flex-direction: column;
@@ -144,23 +141,42 @@ h2{
   left: 0;
   background: #d6336c;
   color: #fff;
-  padding: 5px 15px;
-  font-size: 12px;
+  padding: 6px 20px;
+  font-size: 13px;
   font-weight: bold;
-  border-bottom-right-radius: 10px;
+  border-bottom-right-radius: 15px;
+  z-index: 10;
+  box-shadow: 2px 2px 5px rgba(0,0,0,0.1);
 }
+/* 各リボンの色分け */
+.ribbon-mmm { background: linear-gradient(45deg, #ba55d3, #dda0dd); } /* 紫 */
+.ribbon-mp { background: linear-gradient(45deg, #b8860b, #daa520); } /* 金 */
+.ribbon-ari { background: linear-gradient(45deg, #f7a8a8, #d6336c); } /* ピンク */
+.ribbon-hb { background: linear-gradient(45deg, #e74c3c, #ff7f50); } /* 赤 */
+.ribbon-fr { background: linear-gradient(45deg, #87ceeb, #00bfff); } /* 青 */
+
 .card-img {
   width: 100%;
-  height: 200px;
+  height: 220px;
   object-fit: cover;
   border-radius: 10px;
-  margin-top: 20px; /* リボン用余白 */
+  margin-top: 25px;
   margin-bottom: 15px;
+  border: 1px solid #eee;
 }
 .card h3 {
   margin: 0 0 10px 0;
   color: #503535;
-  font-size: 20px;
+  font-size: 22px;
+}
+.catch-copy {
+  font-weight: bold;
+  color: #d6336c;
+  font-size: 16px;
+  margin-bottom: 10px;
+  border-bottom: 2px solid #ffe0e0;
+  display: inline-block;
+  padding-bottom: 3px;
 }
 .check-list {
   background: #fffcf5;
@@ -196,15 +212,39 @@ h2{
   text-align: center;
   background:linear-gradient(45deg,#f7a8a8,#e08e8e);
   color:#fff;
-  padding:14px 40px;
+  padding:16px 40px;
   border-radius:40px;
   text-decoration:none;
   font-weight:bold;
+  font-size: 16px;
   margin-top:auto;
   transition: 0.3s;
+  box-shadow: 0 4px 10px rgba(247, 168, 168, 0.3);
 }
 .btn:hover {
-  opacity: 0.8;
+  opacity: 0.9;
+  transform: translateY(-2px);
+}
+
+/* その他の選択肢（ミニカード） */
+.mini-grid {
+  display: grid;
+  grid-template-columns: repeat(auto-fit, minmax(280px, 1fr));
+  gap: 20px;
+  margin-top: 20px;
+}
+.mini-card {
+  background: #fff;
+  padding: 20px;
+  border-radius: 12px;
+  border: 1px solid #eee;
+  text-align: center;
+  box-shadow: 0 3px 10px rgba(0,0,0,0.03);
+}
+.mini-card h4 {
+  font-size: 16px;
+  color: #503535;
+  margin-bottom: 10px;
 }
 
 /* クロスセルボックス */
@@ -257,15 +297,22 @@ h2{
   color:#aaa;
   margin-top:15px;
 }
+#affiliateNotice {
+  position: fixed; right: 12px; bottom: 12px; 
+  background: rgba(255, 255, 255, 0.9); color: #888; 
+  font-size: 10px; border-radius: 4px; padding: 4px 8px; 
+  box-shadow: 0 2px 6px rgba(0,0,0,0.1); z-index: 999;
+  border: 1px solid #eee;
+}
 </style>
 </head>
 
 <body>
 
 <header class="hero">
-  <div class="subtitle">BRIDAL GYM GUIDE</div>
-  <h1>花嫁向けパーソナルジム<br>失敗しない選び方</h1>
-  <p>基本は「食べるダイエット」。<br>でも、時間がないならプロの手を借りる。</p>
+  <div class="subtitle">BRIDAL BEAUTY SELECTION</div>
+  <h1>花嫁ボディメイク<br>厳選5社・徹底比較</h1>
+  <p>「胸は残したい」「運動はイヤ」<br>あなたのワガママを叶える場所は必ずあります。</p>
 </header>
 
 <main>
@@ -273,73 +320,120 @@ h2{
   <h2>はじめに🌱栄養士としての立場</h2>
   <p>
     私は栄養士として、基本は<strong>インナービューティー（食事改善）</strong>を推奨しています。<br>
-    体重という数字を落とすより、細胞から潤わせてラインを整える。それが花嫁の正解だからです。
+    しかし、「式まで時間がない」「自力ではどうにもならないパーツがある」場合は、プロの手を借りるのが最も賢い選択です。
   </p>
   <p>
-    ですが、「式まであと3ヶ月を切っている」「仕事が激務で自炊できない」「巻き肩が酷すぎて自力で直せない」という場合は、<strong>ジムを活用して物理的にアプローチするのも非常に合理的な選択</strong>です。
+    ここでは、単なるダイエットジムではなく、<strong>「ドレスを美しく着こなす」</strong>ことに特化した5つの選択肢を厳選しました。
   </p>
 
   <div class="warning">
-    <h3>花嫁がジムで失敗する5パターン</h3>
+    <h3>ジム選びで失敗するパターン</h3>
     <ul style="margin-bottom:0;">
-      <li><strong>1.焦って即日契約をする</strong><br>（まずは体験で比較が鉄則）</li>
-      <li><strong>2.過度な糖質制限を強制される</strong><br>（筋肉が落ちてラインが貧相に）</li>
-      <li><strong>3.有酸素ばかりさせられる</strong><br>（花嫁が必要なのは二の腕と背中の造形）</li>
-      <li><strong>4.式1ヶ月前に駆け込む</strong><br>（筋肉痛とむくみで当日パンパンに）</li>
-      <li><strong>5.自分の体の癖を知らず進める</strong><br>（自分の体質や生活環境に適しているか）</li>
+      <li><strong>痩せたけど胸まで落ちてしまった</strong></li>
+      <li><strong>筋トレしすぎて肩幅が広くなった</strong></li>
+      <li><strong>厳しい食事制限で肌がボロボロに…</strong></li>
     </ul>
-  </div>
-
-  <div class="magic-box">
-    <h3>💡 賢い花嫁の「無料体験」の使い倒し方</h3>
-    <p style="font-size:15px; margin-bottom:0;">
-      「無料体験に行ったら勧誘されそう…」と不安なプレ花嫁様へ。<br>栄養士からの裏技です。<br><br>
-      入会するかどうかは一旦置いておいて、<strong>『高精度な体組成計（インボディ）で、自分の本当の筋肉量と体脂肪率をタダで測ってもらいに行く』</strong>という目的で行ってみてください！<br><br>
-      プロの目線で「なぜあなたの二の腕が痩せないのか」「骨格の歪み」をタダで診断してもらうだけでも、今後の花嫁美容の効率が劇的に変わります🤫✨
+    <p style="margin-top:10px; font-size:14px; color:#d6336c; font-weight:bold;">
+      こうならないために、自分の「目的」に合った場所を選んでください👇
     </p>
   </div>
 
   <h2>徹底比較｜あなたに合うのはどこ？</h2>
-  <p>「多すぎて選べない！」という方のために、花嫁に人気の3社を目的別に整理しました。</p>
+  <p>特徴が全く違う5社を比較しました。直感で「これだ！」と思うものを見つけてください。</p>
 
   <div class="comparison-container">
     <table class="comparison-table">
       <thead>
         <tr>
-          <th>ジム名</th>
-          <th>こんな人におすすめ</th>
-          <th>特徴</th>
+          <th>施設名</th>
+          <th>向いている人</th>
+          <th>最大の特徴</th>
           <th>エリア</th>
         </tr>
       </thead>
       <tbody>
         <tr>
-          <td><strong>ARISANFIT</strong></td>
-          <td><span class="tag-best">ライン重視</span><br>食事制限したくない</td>
-          <td>ミスコン流<br>骨格診断あり</td>
-          <td>東京<br>(渋谷/池袋)</td>
+          <td><strong>MMM</strong></td>
+          <td><span class="tag-best">胸を残したい</span><br>上半身重視</td>
+          <td>バストアップ<br>×痩身</td>
+          <td>東京<br>(六本木等)</td>
         </tr>
         <tr>
-          <td><strong>FURDI</strong></td>
-          <td><span class="tag-best">忙しい人</span><br>予約が面倒な人</td>
-          <td>AI搭載<br>予約不要・通い放題</td>
+          <td><strong>ミス・パリ</strong></td>
+          <td><span class="tag-best">運動嫌い</span><br>癒やされたい</td>
+          <td>寝たまま痩せる<br>エステ技術</td>
           <td>全国</td>
         </tr>
         <tr>
-          <td><strong>リタスタイル</strong></td>
-          <td><span class="tag-best">短期集中</span><br>1人じゃ続かない</td>
-          <td>完全個室<br>手厚い食事指導</td>
+          <td><strong>ARISANFIT</strong></td>
+          <td><span class="tag-best">ライン重視</span><br>姿勢改善</td>
+          <td>ミスコン流<br>骨格診断</td>
+          <td>東京<br>(渋谷/池袋)</td>
+        </tr>
+        <tr>
+          <td><strong>ハビット</strong></td>
+          <td><span class="tag-best">結果重視</span><br>損したくない</td>
+          <td>痩せなければ<br>全額返金</td>
+          <td>東京<br>(恵比寿等)</td>
+        </tr>
+        <tr>
+          <td><strong>FURDI</strong></td>
+          <td><span class="tag-best">忙しい人</span><br>安く済ませたい</td>
+          <td>AI搭載<br>通い放題</td>
           <td>全国</td>
         </tr>
       </tbody>
     </table>
   </div>
 
-  <h2>タイプ別・詳細ガイド</h2>
+  <h2>目的別・詳細ガイド</h2>
 
   <div class="card">
-    <span class="type-ribbon">Type A：ライン重視＆食事も楽しみたい</span>
+    <span class="type-ribbon ribbon-mmm">Type 1：バストアップ＆二の腕</span>
+    <img src="images/mmm.jpg" alt="MMM 女性トレーナー" class="card-img" onerror="handleImageError(this, 'MMM Private Gym')">
+    <div class="catch-copy">「痩せたいけど、胸は残したい」花嫁の理想形</div>
+    <h3>MMM（トリプルエム）</h3>
+    
+    <ul class="check-list">
+      <li>ダイエットで胸が小さくなるのが怖い</li>
+      <li>二の腕や背中のはみ肉を消したい</li>
+      <li>女性トレーナーに担当してほしい</li>
+    </ul>
+
+    <p style="font-size:14px; color:#666;">六本木・表参道などの一等地に構える完全プライベートジム。「バストアップ」と「痩身」を同時に叶える独自メソッドは花嫁に最適です。</p>
+    <div class="nutritionist-point">
+      <strong>🌱 栄養士Yuriの推しポイント</strong><br>
+      ここはジムというより「ボディメイクサロン」です。ただ体重を落とすだけでなく、デコルテをふっくらさせながらウエストを絞る技術は感動もの。ドレス姿のクオリティが段違いになります。
+    </div>
+    <a href="https://px.a8.net/svt/ejp?a8mat=4AVAC8+7AK7BU+3PFW+BX3J6" rel="nofollow" target="_blank" class="btn">MMMの体験プランを見る ＞</a>
+    <img border="0" width="1" height="1" src="https://www16.a8.net/0.gif?a8mat=4AVAC8+7AK7BU+3PFW+BX3J6" alt="">
+  </div>
+
+  <div class="card">
+    <span class="type-ribbon ribbon-mp">Type 2：運動なしのエステ</span>
+    <img src="images/esthe.png" alt="ミスパリ エステ" class="card-img" onerror="handleImageError(this, 'Miss Paris')">
+    <div class="catch-copy">「運動は絶対ムリ」な方の最終手段</div>
+    <h3>ミス・パリ ダイエットセンター</h3>
+
+    <ul class="check-list">
+      <li>運動は続かない・汗をかきたくない</li>
+      <li>結婚式準備の疲れも癒やしたい</li>
+      <li>科学的なアプローチで脂肪を燃やしたい</li>
+    </ul>
+
+    <p style="font-size:14px; color:#666;">「寝ているだけ」で有酸素運動効果を得られるマシンや、プロのハンド技術でセルライトをケア。優雅な気分で痩せられます。</p>
+    <div class="nutritionist-point">
+      <strong>🌱 栄養士Yuriの推しポイント</strong><br>
+      ジムが「努力」なら、ここは「魔法」に近いです。医学・科学に基づいた痩身理論なので、エステといえどしっかり数値が変わります。体験に行くだけでも全身のむくみが取れてスッキリしますよ💆‍♀️
+    </div>
+    <a href="https://px.a8.net/svt/ejp?a8mat=4AVAC8+4OHPQY+1OGO+C2102" rel="nofollow" target="_blank" class="btn">ミス・パリの体験を見る ＞</a>
+    <img border="0" width="1" height="1" src="https://www12.a8.net/0.gif?a8mat=4AVAC8+4OHPQY+1OGO+C2102" alt="">
+  </div>
+
+  <div class="card">
+    <span class="type-ribbon ribbon-ari">Type 3：姿勢＆ライン重視</span>
     <img src="images/ari11.jpg" alt="ARISANFIT" class="card-img" onerror="handleImageError(this, 'ARISANFIT')">
+    <div class="catch-copy">ミスコン日本一のメソッドで「骨格」から整える</div>
     <h3>ARISANFIT（アリサンフィット）</h3>
     
     <ul class="check-list">
@@ -348,17 +442,39 @@ h2{
       <li>自分の「骨格タイプ」を知りたい</li>
     </ul>
 
-    <p style="font-size:14px; color:#666;">渋谷・池袋・東高円寺エリア。ミスコン日本一を輩出したメソッドを採用している隠れ家ジム。</p>
+    <p style="font-size:14px; color:#666;">渋谷・池袋エリア。初心者に優しい隠れ家ジム。無理な重量を持たず、ドレスが映えるラインを作ります。</p>
     <div class="nutritionist-point">
       <strong>🌱 栄養士Yuriの推しポイント</strong><br>
-      栄養士として一番怖い「過度な食事制限」を強制されず、初心者でも無理なく続けられるのが最大の魅力！ドレスから露出する『二の腕・背中』だけを狙い撃ちできるので、まずはここでプロの骨格診断を無料で受けてみるのが一番コスパが良いです🙆‍♀️
+      栄養士として一番怖い「過度な食事制限」を強制されず、健康的に綺麗になれます。まずはここでプロの骨格診断を無料で受けて、自分の体の癖を知るのが一番コスパが良いです🙆‍♀️
     </div>
     <a href="arisan-gym.html" class="btn">無料体験の詳細を見る ＞</a>
   </div>
 
   <div class="card">
-    <span class="type-ribbon">Type B：忙しい＆自分のペースでやりたい</span>
+    <span class="type-ribbon ribbon-hb">Type 4：全額返金保証・コスパ</span>
+    <img src="images/habit.jpg" alt="HABIT" class="card-img" onerror="handleImageError(this, 'HABIT Gym')">
+    <div class="catch-copy">痩せなければ「全額返金」。圧倒的自信。</div>
+    <h3>ハビットパーソナルジム</h3>
+
+    <ul class="check-list">
+      <li>お金を払って結果が出ないのが一番怖い</li>
+      <li>医師監修のメソッドで安全に痩せたい</li>
+      <li>月額5万円台〜と費用を抑えたい</li>
+    </ul>
+
+    <p style="font-size:14px; color:#666;">「2ヶ月で目標体重に届かなければ全額返金」という驚きの保証制度。コスパと結果を両立したい堅実派に。</p>
+    <div class="nutritionist-point">
+      <strong>🌱 栄養士Yuriの推しポイント</strong><br>
+      返金保証があるのは、それだけ結果を出す自信がある証拠。「結婚式でお金がかかるから、絶対に損をしたくない！」という花嫁様に一番おすすめの、リスクゼロな選択肢です。
+    </div>
+    <a href="https://px.a8.net/svt/ejp?a8mat=4AVIVW+B43C2I+56HC+5YJRM" rel="nofollow" target="_blank" class="btn">返金保証の詳細を見る ＞</a>
+    <img border="0" width="1" height="1" src="https://www15.a8.net/0.gif?a8mat=4AVIVW+B43C2I+56HC+5YJRM" alt="">
+  </div>
+
+  <div class="card">
+    <span class="type-ribbon ribbon-fr">Type 5：忙しい＆マイペース</span>
     <img src="images/Furdi.jpg" alt="FURDI" class="card-img" onerror="handleImageError(this, 'FURDI')">
+    <div class="catch-copy">AIトレーナー×通い放題。現代的なスマートジム</div>
     <h3>FURDI（ファディー）</h3>
 
     <ul class="check-list">
@@ -367,33 +483,29 @@ h2{
       <li>短時間（30分）でサクッと終わらせたい</li>
     </ul>
 
-    <p style="font-size:14px; color:#666;">全国展開。AI（人工知能）マシン×人間のトレーナーによる新感覚の女性専用ジム。</p>
+    <p style="font-size:14px; color:#666;">全国展開。AI（人工知能）マシン×人間のトレーナーによる新感覚の女性専用ジム。予約不要で好きな時に通えます。</p>
     <div class="nutritionist-point">
       <strong>🌱 栄養士Yuriの推しポイント</strong><br>
-      AI主導なので「担当トレーナーとの相性に結果が左右されない」のが素晴らしいです。予約不要で通い放題なので、仕事のシフトが不規則な花嫁様や、自分のペースで黙々と集中したいプレ花嫁様にぴったりです！
+      AI主導なので「担当トレーナーとの相性」に悩みません。予約なしで隙間時間に行けるので、準備で忙しい花嫁さんのリフレッシュにも最適です！
     </div>
     <a href="//af.moshimo.com/af/c/click?a_id=5369997&p_id=5259&pc_id=14264&pl_id=68871" rel="nofollow" target="_blank" class="btn">AI無料体験を予約する ＞</a>
     <img src="//i.moshimo.com/af/i/impression?a_id=5369997&p_id=5259&pc_id=14264&pl_id=68871" width="1" height="1" style="border:none;" loading="lazy">
   </div>
 
-  <div class="card">
-    <span class="type-ribbon">Type C：短期集中＆誰かに管理してほしい</span>
-    <img src="images/Rita.jpg" alt="リタスタイル" class="card-img" onerror="handleImageError(this, 'RITA STYLE')">
-    <h3>リタスタイル（RITA STYLE）</h3>
-
-    <ul class="check-list">
-      <li>式まで時間がない！焦っている！</li>
-      <li>個室で誰にも会わずにやりたい</li>
-      <li>意志が弱いから管理してほしい</li>
-    </ul>
-
-    <p style="font-size:14px; color:#666;">全国展開の完全個室パーソナルジム。短期集中で確実に結果を出したい方向け。</p>
-    <div class="nutritionist-point">
-      <strong>🌱 栄養士Yuriの推しポイント</strong><br>
-      「どうしても自力では痩せられない…」と焦っている方の駆け込み寺です。完全個室なので、他の人の目を気にせずトレーニングに没頭できます。まずは無料カウンセリングで「自分が今まで痩せなかった原因」をプロに分析してもらいましょう！
-    </div>
-    <a href="https://px.a8.net/svt/ejp?a8mat=4AVAC6+2TT5ZU+3P20+5ZMCI" rel="nofollow" target="_blank" class="btn">無料カウンセリング ＞</a>
-    <img border="0" width="1" height="1" src="https://www19.a8.net/0.gif?a8mat=4AVAC6+2TT5ZU+3P20+5ZMCI" alt="">
+  <h3 style="text-align:center; margin-top:60px; color:#503535;">その他の選択肢</h3>
+  <div class="mini-grid">
+      <div class="mini-card">
+          <h4>🦵 下半身・脚やせ特化</h4>
+          <p style="font-size:13px; color:#666;">マーメイドドレスを着るならここ。<br>医師×トレーナー共同開発の「脚やせ」専門メソッド。</p>
+          <a href="https://px.a8.net/svt/ejp?a8mat=4AVAC6+2V017E+3UK2+5ZMCI" rel="nofollow" target="_blank" style="color:#d6336c; font-weight:bold; font-size:14px;">B-CONCEPTを見る ＞</a>
+          <img border="0" width="1" height="1" src="https://www10.a8.net/0.gif?a8mat=4AVAC6+2V017E+3UK2+5ZMCI" alt="">
+      </div>
+      <div class="mini-card">
+          <h4>🏠 お家でオンライン</h4>
+          <p style="font-size:13px; color:#666;">通う時間ゼロ。遺伝子検査に基づいた効率的な宅トレ指導が受けられます。</p>
+          <a href="https://px.a8.net/svt/ejp?a8mat=4AVIVW+BFEKKA+2UOE+5YEENM" rel="nofollow" target="_blank" style="color:#4682b4; font-weight:bold; font-size:14px;">CLOUD GYMを見る ＞</a>
+          <img border="0" width="1" height="1" src="https://www14.a8.net/0.gif?a8mat=4AVIVW+BFEKKA+2UOE+5YEENM" alt="">
+      </div>
   </div>
 
   <div class="cross-sell">
@@ -424,6 +536,8 @@ h2{
   <br>
   © 2026 Essential Beauty Needs
 </footer>
+
+<div id="affiliateNotice">※当サイトはアフィリエイト広告を利用しています</div>
 
 </body>
 </html>
