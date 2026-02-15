@@ -1,7 +1,7 @@
 <!DOCTYPE html>
 <html lang="ja">
 <head>
-  <meta charset="UTF-8">
+  <meta charset="utf-8">
   <title>体重を減らさない花嫁ダイエット｜背中・二の腕・ライン重視の花嫁ケア</title>
   <meta name="description" content="体重を減らさず、ドレスが一番きれいに見える体へ。背中・二の腕・むくみを整える花嫁ダイエットの正解と順番を栄養士が解説。">
   <meta name="viewport" content="width=device-width, initial-scale=1.0">
@@ -15,71 +15,63 @@
 
   <style>
     /* =========================================
-       【トップページ専用スタイル：画像背景対応版】
+       【トップページ専用スタイル】
        ========================================= */
 
-    /* 基本設定 */
     body {
         background-color: #fffaf9 !important;
         color: #503535 !important;
         font-family: 'Shippori Mincho', serif !important;
-        line-height: 1.8 !important;
-        font-size: 17px !important;
+        line-height: 1.9 !important;
+        font-size: 16px !important;
         margin: 0 !important;
     }
 
-    /* ヒーローヘッダー（画像を背景に設定） */
+    /* ヒーローヘッダー */
     header.hero {
         text-align: center !important;
-        /* ここで画像を設定します */
-        background: linear-gradient(rgba(255, 255, 255, 0.7), rgba(255, 250, 249, 0.9)), url('images/4646.png') center/cover no-repeat !important;
-        padding: 120px 20px 60px !important; /* 画像が見えるようにパディングを調整 */
+        background: linear-gradient(rgba(255, 255, 255, 0.6), rgba(255, 250, 249, 0.9)), url('images/4646.png') center/cover no-repeat !important;
+        padding: 130px 20px 80px !important;
         border-bottom: 1px solid #eee !important;
     }
 
-    /* スマホで画像が切れすぎないように調整 */
     @media (max-width: 600px) {
         header.hero {
-            background-position: center top !important; /* スマホでは上寄りに表示 */
-            padding: 100px 20px 50px !important;
+            background-position: center top !important;
+            padding: 100px 20px 60px !important;
         }
     }
 
     header.hero h1 {
         font-family: 'Playfair Display', serif !important;
-        font-size: 34px !important;
+        font-size: 32px !important;
         margin-bottom: 15px !important;
         line-height: 1.4 !important;
-        color: #d6336c !important; /* 画像の上でも目立つ濃いピンクに変更 */
-        text-shadow: 2px 2px 4px rgba(255, 255, 255, 0.8) !important; /* 文字が読みやすいように影をつける */
+        color: #d6336c !important;
+        text-shadow: 2px 2px 4px rgba(255, 255, 255, 0.9) !important;
     }
     header.hero p {
-        font-size: 17px !important;
+        font-size: 16px !important;
         color: #503535 !important;
-        margin-bottom: 40px !important;
+        margin-bottom: 30px !important;
         font-weight: 600 !important;
-        text-shadow: 1px 1px 2px rgba(255, 255, 255, 0.8) !important;
+        text-shadow: 1px 1px 2px rgba(255, 255, 255, 0.9) !important;
     }
 
-    /* メインコンテンツエリア */
+    /* メインコンテンツ */
     main {
         width: 100% !important;
         max-width: 800px !important; 
-        margin-left: auto !important;
-        margin-right: auto !important;
+        margin: 0 auto !important;
         padding: 0 20px !important;
         box-sizing: border-box !important;
-        display: block !important;
     }
 
-    section {
-        margin-bottom: 80px !important;
-        text-align: center !important;
-    }
+    section { margin-bottom: 80px !important; text-align: center !important; }
 
     h2 {
         font-family: 'Playfair Display', serif !important;
-        font-size: 26px !important;
+        font-size: 24px !important;
         margin-bottom: 30px !important;
         color: #503535 !important;
         display: inline-block !important;
@@ -87,171 +79,83 @@
         padding-bottom: 5px !important;
     }
 
+    /* ▼▼▼ 新設：栄養士の哲学エリア ▼▼▼ */
+    .philosophy-box {
+        background: #fff !important;
+        padding: 40px 30px !important;
+        border-radius: 15px !important;
+        box-shadow: 0 5px 20px rgba(0,0,0,0.03) !important;
+        text-align: left !important;
+        margin-bottom: 50px !important;
+        border: 1px solid #f0e6e6 !important;
+    }
+    .philosophy-title {
+        font-size: 18px !important;
+        color: #d4a373 !important;
+        font-weight: bold !important;
+        text-align: center !important;
+        margin-bottom: 20px !important;
+    }
+    .point-list {
+        list-style: none !important;
+        padding: 0 !important;
+        margin: 20px 0 !important;
+    }
+    .point-list li {
+        margin-bottom: 15px !important;
+        font-weight: bold !important;
+        color: #503535 !important;
+        background: #fffcf0 !important;
+        padding: 10px 15px !important;
+        border-radius: 10px !important;
+    }
+    .point-list li span { color: #d6336c !important; margin-right: 10px !important; }
+
     /* 診断ボックス */
     .diagnosis-card {
         background: #ffffff !important;
         border: 1px solid #f0e6e6 !important;
-        padding: 40px !important;
-        margin-bottom: 25px !important;
+        padding: 30px !important;
+        margin-bottom: 20px !important;
         border-radius: 15px !important;
         text-align: center !important;
-        box-shadow: 0 4px 15px rgba(0,0,0,0.03) !important;
+        box-shadow: 0 4px 10px rgba(0,0,0,0.03) !important;
         transition: transform 0.2s !important;
-        width: 100% !important;
-        max-width: 560px !important;
-        margin-left: auto !important;
-        margin-right: auto !important;
-        box-sizing: border-box !important;
     }
-    .diagnosis-card:hover {
-        transform: translateY(-2px);
-        border-color: #f7a8a8 !important;
-    }
-    .diagnosis-card h3 {
-        font-size: 20px !important;
-        color: #d4a373 !important;
-        margin: 0 0 15px 0 !important;
-        font-weight: bold !important;
-    }
-    .diagnosis-card p {
-        font-size: 16px !important;
-        margin: 0 0 20px 0 !important;
-        color: #666 !important;
-        line-height: 1.8 !important;
-    }
+    .diagnosis-card:hover { transform: translateY(-2px); border-color: #f7a8a8 !important; }
+    .diagnosis-card h3 { font-size: 18px !important; color: #d4a373 !important; margin: 0 0 10px 0 !important; }
+    .diagnosis-card p { font-size: 14px !important; margin: 0 0 15px 0 !important; color: #666 !important; }
 
     /* ボタン */
     .btn-select {
         display: block !important;
         background: #fff !important;
-        color: #503535 !important;
-        border: 1px solid #f7a8a8 !important;
-        padding: 12px 0 !important;
+        color: #d6336c !important;
+        border: 1px solid #d6336c !important;
+        padding: 10px 0 !important;
         border-radius: 30px !important;
         font-weight: bold !important;
-        font-size: 15px !important;
+        font-size: 14px !important;
         text-decoration: none !important;
-        text-align: center !important;
         transition: 0.3s !important;
-        box-shadow: 0 2px 5px rgba(0,0,0,0.05) !important;
-        margin: 25px auto 0 !important;
-        width: 320px !important;
-        max-width: 100% !important;
+        width: 100% !important;
+        max-width: 280px !important;
+        margin: 0 auto !important;
     }
-    .btn-select:hover {
-        background: #fff0f0 !important;
-    }
+    .btn-select:hover { background: #fff0f0 !important; }
 
-    /* スマホ調整 */
-    @media (max-width: 600px) {
-        main { padding: 0 15px !important; }
-        .diagnosis-card { max-width: none !important; width: 100% !important; padding: 30px 20px !important; }
-        .btn-select { width: 90% !important; max-width: none !important; }
-        .premium, .trial-banner { max-width: none !important; width: 100% !important; padding: 30px 20px !important; }
-    }
-
-    /* メインボタン */
     .btn-hero {
         display: inline-block !important;
         background: linear-gradient(45deg, #f7a8a8, #e08e8e) !important;
         color: #fff !important;
-        padding: 15px 45px !important;
+        padding: 15px 40px !important;
         border-radius: 50px !important;
         font-weight: bold !important;
         box-shadow: 0 4px 10px rgba(247, 168, 168, 0.4) !important;
-        font-size: 18px !important;
+        font-size: 16px !important;
         text-decoration: none !important;
         transition: 0.3s !important;
         margin-top: 20px !important;
-    }
-    .btn-hero:hover {
-        transform: translateY(-2px);
-        box-shadow: 0 6px 15px rgba(247, 168, 168, 0.6) !important;
-        opacity: 1 !important;
-    }
-
-    /* プレミアムエリア */
-    .premium {
-        background-color: #fffcf5 !important;
-        padding: 40px 25px !important;
-        border-radius: 15px !important;
-        border: 1px dashed #d4a373 !important;
-        margin-top: 40px !important;
-        width: 100% !important;
-        max-width: 560px !important;
-        margin-left: auto !important;
-        margin-right: auto !important;
-        box-sizing: border-box !important;
-    }
-    .premium ul {
-        text-align: left !important;
-        display: inline-block !important;
-        margin: 10px 0 30px !important;
-        padding-left: 20px !important;
-    }
-    .premium li {
-        margin-bottom: 8px !important;
-        font-size: 17px !important;
-        color: #5a4545 !important;
-    }
-
-    /* バナー */
-    .trial-banner {
-        background-color: #fff !important;
-        border: 2px solid #f7a8a8 !important;
-        border-radius: 15px !important;
-        padding: 40px 25px !important;
-        margin-top: 60px !important;
-        box-shadow: 0 5px 15px rgba(247, 168, 168, 0.1) !important;
-        text-align: center !important;
-        position: relative !important;
-        width: 100% !important;
-        max-width: 560px !important;
-        margin-left: auto !important;
-        margin-right: auto !important;
-        box-sizing: border-box !important;
-    }
-    .trial-tag {
-        background: #d6336c !important;
-        color: #fff !important;
-        font-size: 12px !important;
-        padding: 4px 12px !important;
-        border-radius: 20px !important;
-        font-weight: bold !important;
-        display: inline-block !important;
-        margin-bottom: 15px !important;
-        letter-spacing: 1px !important;
-    }
-    .trial-banner h2 { border: none !important; margin-bottom: 15px !important; font-size: 24px !important; color: #503535 !important; }
-
-    /* ブリッジ */
-    .bridge .em {
-        font-size: 20px !important;
-        font-weight: bold !important;
-        background: linear-gradient(transparent 60%, #ffe0e0 60%) !important;
-        padding: 0 5px !important;
-        display: inline-block !important;
-    }
-
-    /* ナビ */
-    .nav-links {
-        display: flex !important;
-        flex-wrap: wrap !important;
-        justify-content: center !important;
-        gap: 15px !important;
-        margin: 60px 0 !important;
-        padding-top: 40px !important;
-        border-top: 1px solid #eee !important;
-    }
-    .nav-links a {
-        font-size: 14px !important;
-        color: #777 !important;
-        border: 1px solid #eee !important;
-        padding: 10px 20px !important;
-        border-radius: 20px !important;
-        background: #fff !important;
-        font-weight: bold !important;
-        text-decoration: none !important;
     }
 
     /* フッター */
@@ -260,32 +164,22 @@
         padding: 50px 20px 100px !important;
         background-color: #fcf8f8 !important;
         border-top: 3px solid #f7a8a8 !important;
-        font-size: 14px !important;
+        font-size: 13px !important;
         color: #888 !important;
     }
-    .footer a { color: #aaa !important; text-decoration: underline !important; }
-
+    
     /* 通知 */
     #affiliate-floating-notice {
-        position: fixed !important;
-        right: 12px !important;
-        bottom: 12px !important;
-        background: rgba(255, 255, 255, 0.9) !important;
-        color: #aaa !important;
-        font-size: 11px !important;
-        border-radius: 6px !important;
-        padding: 6px 12px !important;
-        box-shadow: 0 2px 10px rgba(0,0,0,0.1) !important;
-        z-index: 9999 !important;
-        border: 1px solid #eee !important;
-        pointer-events: none !important;
+        position: fixed !important; right: 12px !important; bottom: 12px !important;
+        background: rgba(255, 255, 255, 0.9) !important; color: #aaa !important;
+        font-size: 10px !important; border-radius: 6px !important; padding: 5px 10px !important;
+        box-shadow: 0 2px 10px rgba(0,0,0,0.1) !important; z-index: 9999 !important;
+        border: 1px solid #eee !important; pointer-events: none !important;
     }
   </style>
 
   <script>
-    function isInternalUser() {
-      return document.cookie.split(';').some(c => c.trim().startsWith('internal_user=true'));
-    }
+    function isInternalUser() { return document.cookie.split(';').some(c => c.trim().startsWith('internal_user=true')); }
     if (!isInternalUser()) {
       var gaScript = document.createElement('script');
       gaScript.async = true;
@@ -305,153 +199,118 @@
   <h1>体重を減らさない<br>花嫁ダイエット</h1>
   <p>
     痩せるより、<br>
-    ドレスラインを整える。
+    ドレスラインを「整える」。
   </p>
-<p style="font-size:15px; color:#503535; margin-top:-10px; font-weight:bold; text-shadow: 1px 1px 2px rgba(255,255,255,0.8);">
-  ※ 背中・二の腕・顔がやつれたくない花嫁さんへ
-</p>
-  
-  <a href="https://note.com/yuri_organic/n/n81b195407c3e" class="btn-hero" target="_blank" rel="noopener">
-    📘 無料の序章を読む
-  </a>
+  <p style="font-size:14px; color:#503535; margin-top:-10px; font-weight:bold;">
+    管理栄養士 Yuri 🌱
+  </p>
 </header>
 
 <main>
 
-<section class="intro">
-  <h2>なぜ体重を減らさないのか</h2>
-  <p>
-    花嫁さんの多くが、<br>
-    「体重を落とせばきれいになる」<br>と信じています。
-  </p>
-  <p>
-    でも実際は、
-  </p>
-  <ul style="text-align:left; display:inline-block; margin:0 auto; color:#666; font-size:16px; list-style:none; padding:0;">
-    <li>⚠️ 背中が貧相に見える</li>
-    <li>⚠️ 二の腕のたるみが強調される</li>
-    <li>⚠️ 顔がやつれて老けて見える</li>
-  </ul>
-  <p style="margin-top:20px;">
-    原因は努力不足ではなく、<br>
-    <strong>順番を知らずに頑張ってしまうこと</strong>
-  </p>
-  <p style="margin-top:25px; font-size:16px; color:#666; text-align:center;">
-  では、<br>
-  <strong>花嫁ダイエットは「いつから」「何から」始めるべきなのか？</strong>
-</p>
-
-<p style="text-align:center; margin-top:10px;">
-  <a href="diet-timing.html" style="font-weight:bold; color:#d6336c; text-decoration:none;">
-    ▶ 花嫁ダイエットの正しい始めどきと順番を見る
-  </a>
-</p>
-</section>
-
-  <p style="text-align:center; font-size:15px; color:#777; margin-bottom:30px;">
-  ※ お急ぎの方は気になる項目だけどうぞ
-  </p>
-  
-<section class="diagnosis">
-  <h2>あなたは<br>どこを整えるべき？</h2>
-  <p>
-    花嫁の体型悩みは、<br>
-    大きく3つに分かれます。
-  </p>
-
-  <div class="diagnosis-card">
-    <h3>🚨 背中・二の腕が気になる</h3>
+<section style="margin-top: -40px; position: relative; z-index: 10;">
+  <div class="philosophy-box">
+    <div class="philosophy-title">⚠️ 絶食は絶対にNGです</div>
     <p>
-      ドレス試着で一番ショックを受ける部分<br>
-      <strong>※ 一番相談が多い悩みです</strong>
+      はじめまして、管理栄養士のYuriです。<br>
+      多くの花嫁様が「ドレスのために」と食事を抜き、体重を落とそうとします。<br>
+      <br>
+      しかし、栄養不足の状態では<strong>「やつれ・肌荒れ・姿勢崩れ」</strong>を引き起こし、最も美しいはずのドレス姿を台無しにしてしまいます。
     </p>
-    <a href="bridal-care.html" class="btn-select">→ 即効ケアを見る</a>
+    
+    <p style="text-align:center; margin-top:30px; font-weight:bold; color:#d6336c;">花嫁美容に必要な「3つの内側ケア」</p>
+    <ul class="point-list">
+      <li><span>① タンパク質</span> ... 肌のハリと背中の筋肉を作る</li>
+      <li><span>② 水分循環</span> ... むくみを流し、鎖骨を出す</li>
+      <li><span>③ 質の良い油</span> ... 乾燥を防ぎ、艶を出す</li>
+    </ul>
+    
+    <p>
+      まずはこの基礎を知ることが、一生モノの美しさへの第一歩です。<br>
+      私が書いた<strong>「無料の教科書（Note）」</strong>で、まずは正しい知識をインプットしてください。
+    </p>
+    
+    <div style="text-align:center; margin-top:30px;">
+      <a href="https://note.com/yuri_organic/n/n81b195407c3e" class="btn-hero" target="_blank" rel="noopener">
+        📘 無料の「序章」を読む
+      </a>
+    </div>
+  </div>
+</section>
+<section class="intro">
+  <h2>基本を知った上で、<br>次は何をすべき？</h2>
+  <p>
+    「内側のケア」の重要性を理解したら、<br>
+    次はあなたの<strong>悩みや時期に合わせた実践</strong>です。<br>
+    <br>
+    挙式までの残り時間や悩みに合わせて、<br>
+    最適なページへ進んでください。
+  </p>
+  
+  <p style="text-align:center; margin-top:20px;">
+    <a href="diet-timing.html" style="color:#d6336c; text-decoration:underline; font-weight:bold;">
+      ▶ いつ何をする？「時期別ロードマップ」を見る
+    </a>
+  </p>
+</section>
+
+<section class="diagnosis">
+  <h2>お悩み別<br>インナー＆ボディケア</h2>
+
+  <div class="diagnosis-card">
+    <h3>🍽 食事で内側から整える</h3>
+    <p>「減らす」のではなく「満たす」食事法。<br>肌荒れを防ぎながらラインを整えます。</p>
+    <a href="diet-beauty.html" class="btn-select">栄養士の食事メソッドを見る</a>
   </div>
 
   <div class="diagnosis-card">
-    <h3>🍽 食事はどうしたらいいの？</h3>
-    <p>痩せたいけど、減らすのが怖い</p>
-    <a href="diet-beauty.html" class="btn-select">→ 花嫁向け食事設計</a>
+    <h3>💃 二の腕・背中のライン管理</h3>
+    <p>体重よりも「見た目」を変えたい方へ。<br>姿勢と巡りを改善するケア方法。</p>
+    <a href="bridal-care.html" class="btn-select">部位別・整え方を見る</a>
   </div>
 
   <div class="diagnosis-card">
-    <h3>🏋️‍♀️ ジム・整体・エステで迷う</h3>
-    <p>何を選べば失敗しないのか知りたい</p>
-    <a href="accept-gym.html" class="btn-select">→ 選び方の基準</a>
+    <h3>🏋️‍♀️ プロの手を借りる判断</h3>
+    <p>自力でのケアに限界を感じた時だけ、<br>物理的なアプローチ（マシン等）を検討してください。</p>
+    <a href="bridal-gym-free-trial-guide.html" class="btn-select">失敗しないプロの選び方</a>
   </div>
 </section>
 
-<section class="bridge">
-  <h2>ここで多くの花嫁が迷子になります</h2>
+<section class="premium" style="background-color: #fffcf5; padding: 40px 25px; border-radius: 15px; border: 1px dashed #d4a373; margin-top: 40px;">
+  <h2>一生太らない花嫁の<br>設計図（有料版）</h2>
   <p>
-    情報はあるのに、<br>
-    自分はどうしたらいいかわからない。
+    無料の序章を読み終え、<br>
+    さらに詳細な実践スケジュールが必要な方へ。
   </p>
-  <p class="em">
-    それを整理するための<br>
-    設計図が必要です。
-  </p>
-
-  <a href="https://note.com/yuri_organic/n/n047d215e5da6" class="btn-select" target="_blank" rel="noopener" style="max-width:350px;">
-    📗 花嫁ダイエット診断・理論編（¥980）
-  </a>
-</section>
-
-<section class="premium">
-  <img src="images/image55.png" alt="一生太らない花嫁のバイブル画像" style="max-width: 100%; height: auto;">
-
-  <h2>一生太らない花嫁の<br>設計図</h2>
-  <p>
-    完全版では、
-  </p>
-  <ul>
-    <li>✅ タイプ別の正しい順番</li>
-    <li>✅ 3ヶ月前〜当日までの現実的スケジュール</li>
-    <li>✅ 式後も崩れない体の作り方</li>
+  <ul style="text-align: left; display: inline-block; margin: 10px 0 30px; padding-left: 20px; font-size:15px;">
+    <li>✅ タイプ別の正しいダイエット順序</li>
+    <li>✅ 3ヶ月前〜当日までの具体的TODO</li>
+    <li>✅ 式後もリバウンドしない体作り</li>
   </ul>
-  <p>
-    を、一冊にまとめています。
-  </p>
 
-  <a href="https://note.com/yuri_organic/n/naf93d0548ba1" class="btn-hero" target="_blank" rel="noopener">
-    📘 一生太らない<br>花嫁バイブル
+  <a href="https://note.com/yuri_organic/n/naf93d0548ba1" class="btn-select" target="_blank" rel="noopener" style="background:#d4a373; color:#fff; border:none; max-width:320px;">
+    📘 花嫁バイブル（完全版）を見る
   </a>
 </section>
   
-<section class="trial-banner">
-  <span class="trial-tag">保存版</span>
-  <h2>プレ花嫁の<br>「無料体験」まとめ</h2>
-  <p style="font-size:15px; color:#666; margin-bottom:20px; line-height:1.6;">
+<section style="margin-top:60px;">
+  <span style="background:#eee; color:#555; font-size:11px; padding:3px 10px; border-radius:20px;">お役立ち情報</span>
+  <h2 style="margin-top:10px; font-size:20px;">プレ花嫁の<br>「無料体験」リスト</h2>
+  <p style="font-size:14px; color:#666; line-height:1.6;">
   結婚式はお金がかかるからこそ。<br>
-  ジム・エステ・脱毛など、<br>
-  <strong>「0円〜」でプロの施術が受けられる</strong><br>
-  お得なスポットを厳選しました。
-</p>
-
-<p style="font-size:14px; color:#888; line-height:1.6;">
-  ・いきなり高額コースを組むのが不安な方<br>
-  ・何が自分に合うか試してから決めたい方へ
-</p>
-  <a href="trial-collection.html" class="btn-select" style="color:#d6336c; border-color:#d6336c;">
-    ✨ 賢く綺麗になるリストを見る
+  賢くプロの施術を試せるスポットを厳選しました。<br>
+  あくまで「自分の体質を知るため」に活用してください。
+  </p>
+  <a href="trial-collection.html" class="btn-select" style="color:#777; border-color:#ccc; max-width:250px;">
+    無料体験リストを見る ＞
   </a>
 </section>
 
-  <div class="box" style="border-color: #f7a8a8; background: #fffcf5; text-align: center; margin-top: 40px; padding: 25px; border-radius: 15px;">
-  <h3 style="color: #d6336c; font-size: 20px; margin-bottom: 10px; margin-top: 0;">💒 まずはここから！式場探し</h3>
-  <p style="font-size: 14px; color: #666; margin-bottom: 15px;">
-    同じ式場でも「予約するサイト」が違うだけで、見積もりが数十万円変わるって知っていましたか？後悔しないブライダルフェアの回り方をまとめました。
-  </p>
-  <a href="bridal-fair.html" class="btn-select" style="max-width:300px; margin:0 auto;">一番🉐する予約方法を見る ＞</a>
+<div class="nav-links" style="display: flex; flex-wrap: wrap; justify-content: center; gap: 15px; margin: 60px 0; border-top: 1px solid #eee; padding-top: 40px;">
+  <a href="bridal-fair.html" style="font-size: 13px; color: #777; border: 1px solid #eee; padding: 8px 15px; border-radius: 20px; background: #fff; text-decoration: none;">💒 損しない式場探しの裏技</a>
+  <a href="beauty-column.html" style="font-size: 13px; color: #777; border: 1px solid #eee; padding: 8px 15px; border-radius: 20px; background: #fff; text-decoration: none;">💄 コラム一覧</a>
+  <a href="about.html" style="font-size: 13px; color: #777; border: 1px solid #eee; padding: 8px 15px; border-radius: 20px; background: #fff; text-decoration: none;">👩‍💼 運営者情報</a>
 </div>
-
-  
-<section class="nav-links">
-  <a href="index.html">🏠 トップへ戻る</a>
-  <a href="bridal-fair.html">💒 損しない式場探しの裏技</a> <a href="beauty-column.html">💄 コラム一覧</a>
-  <a href="about.html">👩‍💼 運営者情報</a>
-</section>
-
 
 </main>
 
