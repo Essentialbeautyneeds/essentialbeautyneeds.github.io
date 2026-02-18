@@ -5,7 +5,7 @@
   <meta name="viewport" content="width=device-width,initial-scale=1" />
   <title>美容コラム・記事一覧 | Essential Beauty Needs</title>
   <meta name="description" content="栄養士・スキンケアアドバイザーYuriによる美容コラム一覧。肌悩み別ケア、成分解説、インナービューティーなど、全記事をまとめています。">
-  <link href="https://fonts.googleapis.com/css2?family=Playfair+Display:wght@600&family=Quicksand:wght@400;600&display=swap" rel="stylesheet">
+  <link href="https://fonts.googleapis.com/css2?family=Playfair+Display:wght@600&family=Quicksand:wght@400;600&family=Shippori+Mincho:wght@400;600&display=swap" rel="stylesheet">
   <link rel="canonical" href="https://essential-beauty-needs.com/beauty-column.html" />
 
   <script>
@@ -22,15 +22,11 @@
       gtag('js', new Date());
       gtag('config', 'G-2HGEPHVZYY');
     }
-    function handleImageError(imgElement) { 
-         imgElement.onerror = null; 
-         imgElement.src = "https://placehold.co/600x400/f7a8a8/ffffff?text=Beauty+Column";
-    }
   </script>
 
   <style>
     :root { --bg: #fffbfb; --accent: #f7a8a8; --text-main: #503535; --card-bg: #fff; }
-    body { font-family: 'Quicksand', sans-serif; background: var(--bg); color: #555; line-height: 1.8; margin: 0; }
+    body { font-family: 'Shippori Mincho', serif; background: var(--bg); color: #555; line-height: 1.8; margin: 0; }
     
     header { background: linear-gradient(135deg, #fff0f5, #ffe6e6); text-align: center; padding: 60px 20px 40px; border-bottom: 3px solid #e6b7b3; }
     h1 { font-family: 'Playfair Display', serif; font-size: 32px; color: #d6336c; margin: 0; }
@@ -50,10 +46,23 @@
     .card-title { font-size: 18px; font-weight: bold; color: #d6336c; margin: 0 0 10px; line-height: 1.4; }
     .card-desc { font-size: 13px; color: #777; margin: 0; }
     
-    .back-link { text-align: center; margin: 60px 0; }
-    .back-link a { text-decoration: none; color: #888; border-bottom: 1px solid #ccc; }
+    /* 共通フッター・ナビゲーション用CSS */
+    .nav-links {
+      display: flex; flex-wrap: wrap; justify-content: center; gap: 15px; margin: 60px 0 40px; padding-top: 40px; border-top: 1px solid #eee;
+    }
+    .nav-links a {
+      font-size: 14px; color: #777; border: 1px solid #eee; padding: 10px 20px; border-radius: 20px; background: #fff; font-weight: bold; text-decoration: none; transition: 0.3s; box-shadow: 0 2px 5px rgba(0,0,0,0.05);
+    }
+    .nav-links a:hover {
+      background: #f7a8a8; color: #fff; border-color: #f7a8a8; transform: translateY(-2px);
+    }
+    .footer {
+      text-align: center; padding: 40px 20px; color: #666; font-size: 13px; background: #fcf8f8; border-top: 3px solid #f7a8a8;
+    }
+    #affiliate-floating-notice {
+      position: fixed; bottom: 25px; left: 50%; transform: translateX(-50%); background-color: rgba(255, 255, 255, 0.95); color: #aaa; font-size: 10px; padding: 8px 20px; border-radius: 30px; box-shadow: 0 2px 10px rgba(0, 0, 0, 0.1); z-index: 9999; white-space: nowrap; pointer-events: none; border: 1px solid #ddd;
+    }
 
-    /* スマホ調整 */
     @media(max-width:600px){ h1{font-size: 26px;} .grid{grid-template-columns: 1fr;} }
   </style>
 </head>
@@ -62,7 +71,6 @@
 <header>
   <h1>Beauty Library</h1>
   <p style="margin-top:10px;">栄養士Yuriの美容コラム・全記事一覧</p>
-  <a href="index.html" style="display:inline-block; margin-top:15px; background:#fff; padding:8px 20px; border-radius:20px; text-decoration:none; color:#d6336c; font-size:14px; box-shadow:0 2px 5px rgba(0,0,0,0.1);">🏠 トップへ戻る</a>
 </header>
 
 <div class="container">
@@ -100,44 +108,41 @@
       </a>
     </div>
   </section>
-<section class="category-sec">
-  <h2 class="cat-title">👰 プレ花嫁の体ライン悩み</h2>
-  <div class="grid">
 
-    <a href="prehana-arm.html" class="article-card">
-      <div class="card-body">
-        <span class="card-tag">二の腕</span>
-        <h3 class="card-title">プレ花嫁の二の腕、なぜ痩せない？</h3>
-        <p class="card-desc">ドレスで細く見せるための、食事と体の整え方。</p>
-      </div>
-    </a>
+  <section class="category-sec">
+    <h2 class="cat-title">👰 プレ花嫁の体ライン悩み</h2>
+    <div class="grid">
+      <a href="prehana-arm.html" class="article-card">
+        <div class="card-body">
+          <span class="card-tag">二の腕</span>
+          <h3 class="card-title">プレ花嫁の二の腕、なぜ痩せない？</h3>
+          <p class="card-desc">ドレスで細く見せるための、食事と体の整え方。</p>
+        </div>
+      </a>
+      <a href="prehana-back.html" class="article-card">
+        <div class="card-body">
+          <span class="card-tag">背中</span>
+          <h3 class="card-title">背中が変わるとドレスが変わる理由</h3>
+          <p class="card-desc">筋トレ前に知ってほしい、花嫁の背中設計。</p>
+        </div>
+      </a>
+      <a href="prehana-mukumi.html" class="article-card">
+        <div class="card-body">
+          <span class="card-tag">むくみ</span>
+          <h3 class="card-title">プレ花嫁のむくみはなぜ取れない？</h3>
+          <p class="card-desc">水分・塩分・姿勢から整える即効ケア。</p>
+        </div>
+      </a>
+      <a href="prehana-rounded-shoulders.html" class="article-card">
+        <div class="card-body">
+          <span class="card-tag">姿勢</span>
+          <h3 class="card-title">巻き肩を直すと、デコルテが変わる</h3>
+          <p class="card-desc">肩を開くだけでは足りない理由。</p>
+        </div>
+      </a>
+    </div>
+  </section>
 
-    <a href="prehana-back.html" class="article-card">
-      <div class="card-body">
-        <span class="card-tag">背中</span>
-        <h3 class="card-title">背中が変わるとドレスが変わる理由</h3>
-        <p class="card-desc">筋トレ前に知ってほしい、花嫁の背中設計。</p>
-      </div>
-    </a>
-
-    <a href="prehana-mukumi.html" class="article-card">
-      <div class="card-body">
-        <span class="card-tag">むくみ</span>
-        <h3 class="card-title">プレ花嫁のむくみはなぜ取れない？</h3>
-        <p class="card-desc">水分・塩分・姿勢から整える即効ケア。</p>
-      </div>
-    </a>
-
-    <a href="prehana-rounded-shoulders.html" class="article-card">
-      <div class="card-body">
-        <span class="card-tag">姿勢</span>
-        <h3 class="card-title">巻き肩を直すと、デコルテが変わる</h3>
-        <p class="card-desc">肩を開くだけでは足りない理由。</p>
-      </div>
-    </a>
-
-  </div>
-</section>
   <section class="category-sec">
     <h2 class="cat-title">🎁 レビュー・体験・ギフト</h2>
     <div class="grid">
@@ -155,7 +160,7 @@
           <p class="card-desc">ミスコン日本一を輩出した、初心者・女性に優しい隠れ家ジム。</p>
         </div>
       </a>
-      <a href="accept-gym.html" class="article-card">
+      <a href="bridal-gym-free-trial-guide.html" class="article-card">
         <div class="card-body">
           <span class="card-tag" style="background:#d4af37; color:#fff;">徹底比較</span>
           <h3 class="card-title">花嫁ボディメイク厳選5選</h3>
@@ -220,50 +225,10 @@
     </div>
   </section>
   
-
   <section class="category-sec">
     <h2 class="cat-title">🍹 インナーケア・読み物</h2>
     <div class="grid">
       <a href="diet-beauty.html" class="article-card">
         <div class="card-body">
           <span class="card-tag">食事術</span>
-          <h3 class="card-title">インナービューティー＆ダイエット</h3>
-          <p class="card-desc">化粧品より大事な「食事」の話。内側から発光する肌を作る。</p>
-        </div>
-      </a>
-      <a href="smoothie-recipes.html" class="article-card">
-        <div class="card-body">
-          <span class="card-tag">レシピ</span>
-          <h3 class="card-title">栄養士おすすめスムージー</h3>
-          <p class="card-desc">忙しい朝でも美肌チャージ。ミキサー1つでできる簡単レシピ。</p>
-        </div>
-      </a>
-      <a href="note-archive.html" class="article-card">
-        <div class="card-body">
-          <span class="card-tag">Note</span>
-          <h3 class="card-title">栄養士Yuriの公式Note一覧</h3>
-          <p class="card-desc">マリッジブルーや日々のつぶやきなど、より深い読み物はこちら。</p>
-        </div>
-      </a>
-      <a href="hair-care.html" class="article-card">
-        <div class="card-body">
-          <span class="card-tag">髪・頭皮</span>
-          <h3 class="card-title">ヘアケア・頭皮ケア特集</h3>
-          <p class="card-desc">天使の輪を作るには頭皮から。オーガニックヘアケアの極意。</p>
-        </div>
-      </a>
-    </div>
-  </section>
-
-</div>
-
-<div class="back-link">
-  <a href="index.html">← サイトトップへ戻る</a>
-</div>
-
-<footer style="text-align:center; padding:30px; background:#fffaf4; border-top:1px solid #f7a8a8; font-size:12px; color:#888;">
-  <p>© 2026 Essential Beauty Needs</p>
-</footer>
-
-</body>
-</html>
+          
