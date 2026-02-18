@@ -304,6 +304,100 @@ h2{
   box-shadow: 0 2px 6px rgba(0,0,0,0.1); z-index: 999;
   border: 1px solid #eee;
 }
+  /* =========================================
+   共通フッター・ナビゲーション用スタイル
+   ========================================= */
+
+/* ナビゲーションリンク（ボタンエリア） */
+.nav-links {
+  display: flex;
+  flex-wrap: wrap;
+  justify-content: center;
+  gap: 15px;
+  margin: 60px 0 40px;
+  padding-top: 40px;
+  border-top: 1px solid #eee;
+}
+
+.nav-links a {
+  font-size: 14px;
+  color: #777;
+  border: 1px solid #eee;
+  padding: 10px 20px;
+  border-radius: 20px;
+  background: #fff;
+  font-weight: bold;
+  text-decoration: none;
+  transition: 0.3s;
+  box-shadow: 0 2px 5px rgba(0,0,0,0.05); /* ボタンっぽさを出す影を追加 */
+}
+
+.nav-links a:hover {
+  background: #f7a8a8;
+  color: #fff;
+  border-color: #f7a8a8;
+  transform: translateY(-2px);
+}
+
+/* フッター全体 */
+.footer {
+  text-align: center;
+  padding: 40px 20px;
+  color: #666;
+  font-size: 13px;
+  background: #fcf8f8;
+  border-top: 3px solid #f7a8a8;
+  margin-top: 0;
+}
+
+/* 楽天ROOMボタン */
+.rakuten-btn {
+  display: inline-block;
+  border: 1px solid #ccc;
+  padding: 5px 15px;
+  border-radius: 20px;
+  font-size: 12px;
+  text-decoration: none;
+  color: #666;
+  background: #fff;
+}
+
+.footer-link-box {
+  margin-bottom: 20px;
+}
+
+/* プライバシーポリシーリンク */
+.privacy-link {
+  color: #999;
+  text-decoration: underline;
+}
+
+/* Amazon注釈など */
+.footer-note {
+  margin-top: 20px;
+  font-size: 10px;
+  color: #aaa;
+  line-height: 1.4;
+}
+
+/* フロート通知（画面下部の固定表示） */
+#affiliate-floating-notice {
+  position: fixed;
+  bottom: 25px;
+  left: 50%;
+  transform: translateX(-50%);
+  background-color: rgba(255, 255, 255, 0.95);
+  color: #aaa;
+  font-size: 10px;
+  padding: 8px 20px;
+  border-radius: 30px;
+  box-shadow: 0 2px 10px rgba(0, 0, 0, 0.1);
+  z-index: 9999;
+  white-space: nowrap;
+  pointer-events: none; /* クリックの邪魔にならないように */
+  border: 1px solid #ddd;
+}
+
 </style>
 </head>
 
@@ -519,25 +613,44 @@ h2{
     </p>
   </div>
 
-  <section class="nav-links">
-    <a href="index.html">🏠 トップへ戻る</a>
-    <a href="diet-beauty.html">🍽 インナーケアを学ぶ</a>
-    <a href="trial-collection.html">✨ もっと多くの体験を見る</a>
-  </section>
-
 </main>
 
+<section class="nav-links">
+  <a href="index.html">🏠 トップへ戻る</a>
+  <a href="diet-beauty.html">🍽 インナーケアを学ぶ</a>
+    <a href="trial-collection.html">✨ もっと多くの体験を見る</a>
+  <a href="beauty-column.html">💄 コラム一覧</a>
+  <a href="skin-ranking.html">✨ おすすめランキング</a>
+  <a href="bridal-fair.html">💒 式場探し</a>
+  <a href="about.html">👩‍💼 運営者情報</a>
+</section>
+
 <footer class="footer">
-  栄養士｜Yuri 🌱<br>
-  「美は内から。でも必要ならプロの力も賢く使う」<br>
-  <div class="notice">
-    ※当サイトはアフィリエイト広告を利用しています。
+  <p>
+    栄養士｜Yuri 🌱<br>
+    「体重ではなく、ラインで選ぶ花嫁へ」
+  </p>
+  
+  <div class="footer-link-box">
+      <a href="https://room.rakuten.co.jp/room_e0dd63a90a/items" target="_blank" rel="noopener" class="rakuten-btn">
+        🏠 Yuriの楽天ROOM
+      </a>
   </div>
-  <br>
-  © 2026 Essential Beauty Needs
+
+  <a href="privacy-policy.html" class="privacy-link">プライバシーポリシー</a>
+
+  <div class="footer-note">
+    ※Amazonのアソシエイトとして、<br>Essential Beauty Needsは適格販売により収入を得ています。
+  </div>
+
+  <br><br>
+  © 2025 Essential Beauty Needs
 </footer>
 
-<div id="affiliateNotice">※当サイトはアフィリエイト広告を利用しています</div>
+<div id="affiliate-floating-notice">
+  ※当サイトはアフィリエイト広告を利用しています
+</div>
+
 
 </body>
 </html>
