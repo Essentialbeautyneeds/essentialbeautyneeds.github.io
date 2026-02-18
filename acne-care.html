@@ -1,16 +1,25 @@
 <!doctype html>
-<html lang="ja">
+<html lang="ja" prefix="og: http://ogp.me/ns#">
 <head>
 <meta charset="utf-8" />
 <meta name="viewport" content="width=device-width,initial-scale=1" />
+<meta name="format-detection" content="telephone=no" />
 
-<title>挙式前の花嫁ケア完全ガイド｜背中・二の腕・肌荒れ対策</title>
-<meta name="description" content="結婚式前に気になる背中ニキビ・二の腕・肌荒れ対策を栄養士が解説。ミスパリのブライダル痩身と、自宅ケアの現実解を花嫁目線で紹介。">
+<title>【栄養士監修】挙式直前の背中ニキビ・肌荒れ対策完全ガイド｜Essential Beauty Needs</title>
+<meta name="description" content="【栄養士Yuri監修】結婚式前に急増する背中ニキビ、二の腕のザラつき、口元の肌荒れ。その原因と「食事＋セルフケア」での最短解決法を解説。どうしても治らない時の対処法も。">
 <link rel="canonical" href="https://essential-beauty-needs.com/acne-care.html" />
+
+<meta property="og:title" content="挙式直前の背中ニキビ・肌荒れ対策完全ガイド" />
+<meta property="og:type" content="article" />
+<meta property="og:url" content="https://essential-beauty-needs.com/acne-care.html" />
+<meta property="og:image" content="https://essential-beauty-needs.com/images/acne1.png" />
+<meta property="og:site_name" content="Essential Beauty Needs" />
+<meta property="og:description" content="栄養士が教える、ドレスを着るための緊急肌管理マニュアル。" />
 
 <link href="https://fonts.googleapis.com/css2?family=Playfair+Display:wght@500;600&family=Shippori+Mincho:wght@400;600&display=swap" rel="stylesheet">
 
 <style>
+/* Base Style (indexと統一) */
 body {
   background-color:#fffaf9;
   color:#503535;
@@ -19,24 +28,35 @@ body {
   margin:0;
 }
 
-/* header */
+/* Header */
 header {
   text-align:center;
-  padding:80px 20px 40px;
+  padding:20px 20px 40px; /* 画像が入るので上部パディング調整 */
   background:linear-gradient(to bottom,#ffffff,#fffaf9);
   border-bottom:1px solid #eee;
 }
+.hero-image {
+  width: 100%;
+  max-width: 800px;
+  height: auto;
+  border-radius: 8px;
+  margin-bottom: 30px;
+  box-shadow: 0 4px 15px rgba(0,0,0,0.05);
+}
 header h1 {
   font-family:'Playfair Display',serif;
-  font-size:28px;
+  font-size:26px;
   margin-bottom:15px;
+  line-height: 1.4;
 }
-header p {
+header .subtitle {
   color:#886666;
-  font-size:15px;
+  font-size:14px;
+  display: block;
+  margin-top: 10px;
 }
 
-/* main */
+/* Main Layout */
 main {
   max-width:800px;
   margin:0 auto;
@@ -45,7 +65,6 @@ main {
 
 section {
   margin-bottom:80px;
-  text-align:center;
 }
 
 h2 {
@@ -55,68 +74,185 @@ h2 {
   border-bottom:2px solid #ffe0e0;
   display:inline-block;
   padding-bottom:6px;
+  color: #503535;
 }
 
-/* text */
+h3 {
+  font-size: 18px;
+  margin-bottom: 20px;
+  background: linear-gradient(transparent 70%, #ffe0e0 70%);
+  display: inline-block;
+}
+
+/* Text & Lists */
 p {
   font-size:15px;
   color:#5a4545;
+  margin-bottom: 1.5em;
 }
 
-/* checklist */
 .check-list {
-  list-style:none;
-  padding:0;
-  display:inline-block;
-  text-align:left;
+  background: #fff;
+  border: 1px solid #f0e6e6;
+  padding: 25px;
+  border-radius: 10px;
+  list-style: none;
 }
 .check-list li {
-  margin-bottom:8px;
+  margin-bottom:12px;
+  padding-left: 1.5em;
+  position: relative;
 }
 .check-list li::before {
-  content:"✔ ";
+  content:"✔";
   color:#f7a8a8;
   font-weight:bold;
+  position: absolute;
+  left: 0;
 }
 
-/* box */
-.soft-box {
-  background:#ffffff;
-  border:1px solid #f0e6e6;
-  border-radius:14px;
-  padding:35px 30px;
-  margin-top:40px;
+/* Nutritionist Box (権威性エリア) */
+.nutritionist-memo {
+  background-color: #fdfdfd;
+  border: 1px solid #eadddd;
+  border-left: 4px solid #f7a8a8;
+  padding: 20px;
+  margin: 30px 0;
+  border-radius: 4px;
+}
+.nutritionist-memo strong {
+  color: #d67d7d;
 }
 
-/* buttons */
-.btn-main {
-  display:inline-block;
-  background:linear-gradient(45deg,#f7a8a8,#e08e8e);
-  color:#fff;
-  padding:15px 36px;
-  border-radius:50px;
-  font-weight:bold;
-  text-decoration:none;
-  box-shadow:0 4px 10px rgba(247,168,168,0.4);
-  transition:.3s;
-}
-.btn-main:hover {
-  transform:translateY(-2px);
+/* Product Box (Affiliate) */
+.product-category-title {
+  background: #503535;
+  color: #fff;
+  padding: 8px 15px;
+  border-radius: 4px;
+  font-size: 14px;
+  margin-top: 40px;
+  margin-bottom: 20px;
+  display: inline-block;
 }
 
-.btn-sub {
-  display:inline-block;
-  background:#fff;
-  color:#503535;
-  border:1px solid #f7a8a8;
-  padding:12px 30px;
-  border-radius:30px;
-  font-weight:bold;
-  text-decoration:none;
-  font-size:14px;
+.bridal-care-item {
+  display: flex;
+  gap: 1.2em;
+  margin-bottom: 2em;
+  padding-bottom: 2em;
+  border-bottom: 1px dashed #eee;
+}
+.bridal-care-item:last-child {
+  border-bottom: none;
+}
+.bridal-care-item img.product {
+  width: 110px;
+  height: 110px;
+  object-fit: contain;
+  background: #fff;
+  border-radius: 6px;
+  border: 1px solid #eee;
+  flex-shrink: 0;
+}
+.bridal-care-text {
+  font-size: 0.95em;
+  line-height: 1.7;
+}
+.bridal-care-text strong {
+  color: #d67d7d;
+  font-size: 1.05em;
+  display: block;
+  margin-bottom: 5px;
+}
+.bridal-care-text a {
+  display: inline-block;
+  margin-top: 8px;
+  color: #fff;
+  background: #f7a8a8;
+  padding: 8px 20px;
+  border-radius: 20px;
+  text-decoration: none;
+  font-size: 13px;
+  font-weight: bold;
+  transition: .3s;
+}
+.bridal-care-text a:hover {
+  background: #e08e8e;
+  transform: translateY(-2px);
 }
 
-/* affiliate notice */
+/* Next Step Button (High Ticket) */
+.next-step-box {
+  background: linear-gradient(135deg, #fffaf9, #fff0f0);
+  border: 2px solid #fff;
+  box-shadow: 0 5px 15px rgba(247,168,168,0.15);
+  border-radius: 15px;
+  padding: 40px 20px;
+  text-align: center;
+  margin-top: 60px;
+}
+.next-step-title {
+  font-family: 'Playfair Display', serif;
+  font-size: 20px;
+  margin-bottom: 15px;
+  color: #503535;
+}
+.btn-gold {
+  display: block;
+  max-width: 320px;
+  margin: 20px auto 0;
+  background: linear-gradient(45deg, #d4a768, #c79653);
+  color: #fff;
+  padding: 16px;
+  border-radius: 50px;
+  font-weight: bold;
+  text-decoration: none;
+  box-shadow: 0 4px 10px rgba(199,150,83,0.3);
+  transition: .3s;
+}
+.btn-gold:hover {
+  transform: translateY(-2px);
+  box-shadow: 0 6px 15px rgba(199,150,83,0.4);
+}
+
+/* Nav & Footer (共通) */
+.nav-links {
+  display: flex;
+  flex-wrap: wrap;
+  justify-content: center;
+  gap: 15px;
+  margin: 60px 0;
+  padding-top: 40px;
+  border-top: 1px solid #eee;
+}
+.nav-links a {
+  font-size: 13px;
+  color: #777;
+  border: 1px solid #eee;
+  padding: 10px 20px;
+  border-radius: 20px;
+  background: #fff;
+  font-weight: bold;
+  text-decoration: none;
+}
+.nav-links a:hover {
+  background: #fff0f0;
+}
+.footer {
+  text-align: center;
+  padding: 50px 20px;
+  background-color: #fcf8f8;
+  border-top: 3px solid #f7a8a8;
+  font-size: 13px;
+  color: #888;
+}
+.footer a {
+  color: #aaa;
+  text-decoration: underline;
+}
+
+/* Affiliate Notice */
 #affiliate-floating-notice {
   position:fixed;
   right:12px;
@@ -129,92 +265,16 @@ p {
   box-shadow:0 2px 10px rgba(0,0,0,0.1);
   z-index:9999;
 }
-   /* ===== indexと同じ下部ナビ・フッター ===== */
 
-.nav-links {
-  display: flex;
-  flex-wrap: wrap;
-  justify-content: center;
-  gap: 15px;
-  margin: 60px 0;
-  padding-top: 40px;
-  border-top: 1px solid #eee;
-}
-
-.nav-links a {
-  font-size: 13px;
-  color: #777;
-  border: 1px solid #eee;
-  padding: 10px 20px;
-  border-radius: 20px;
-  background: #fff;
-  font-weight: bold;
-  text-decoration: none;
-}
-
-.nav-links a:hover {
-  background: #fff0f0;
-}
-
-.footer {
-  text-align: center;
-  padding: 50px 20px;
-  background-color: #fcf8f8;
-  border-top: 3px solid #f7a8a8;
-  font-size: 13px;
-  color: #888;
-}
-
-.footer a {
-  color: #aaa;
-  text-decoration: underline;
-}
-  
-.bridal-care-box {
-  margin: 2.5em 0;
-  padding: 1.5em;
-  background: #fafafa;
-  border-radius: 10px;
-}
-
-.bridal-care-box h3 {
-  font-size: 1.1em;
-  margin-bottom: 0.8em;
-  line-height: 1.5;
-}
-
-.bridal-care-item {
-  display: flex;
-  gap: 1em;
-  margin-bottom: 1.5em;
-}
-
-.bridal-care-item:last-child {
-  margin-bottom: 0;
-}
-
-.bridal-care-item img.product {
-  width: 120px;
-  height: 120px;
-  object-fit: contain;
-  background: #fff;
-  border-radius: 6px;
-}
-
-.bridal-care-text {
-  font-size: 0.95em;
-  line-height: 1.7;
-}
-
-.bridal-care-text a {
-  color: inherit;
-  text-decoration: underline;
-}
-
-.bridal-care-note {
-  font-size: 0.85em;
-  color: #666;
-  margin-top: 1em;
+/* Responsive */
+@media screen and (max-width: 600px) {
+  .bridal-care-item {
+    flex-direction: column;
+    text-align: center;
+  }
+  .bridal-care-item img.product {
+    margin: 0 auto;
+  }
 }
 </style>
 </head>
@@ -222,115 +282,94 @@ p {
 <body>
 
 <header>
-  <h1>挙式前の花嫁ケア<br>完全ガイド</h1>
-  <p>背中・二の腕・肌荒れを整えて、安心して当日を迎えるために</p>
+  <img src="images/acne1.png" alt="花嫁のニキビケア" class="hero-image">
+  
+  <h1>栄養士が教える<br>挙式前のニキビ・肌管理</h1>
+  <span class="subtitle">Back acne, Rough skin, & Inner care</span>
 </header>
 
 <main>
 
 <section>
-<h2>なぜ挙式前に<br>肌トラブル・ニキビが増えるの？</h2>
-<p>
-準備のストレス、生活リズムの乱れ、<br>
-「失敗できない」というプレッシャー。
-</p>
-<ul class="check-list">
-  <li>背中・デコルテのニキビ</li>
-  <li>二の腕のざらつき</li>
-  <li>急に出てくる大人ニキビ</li>
-</ul>
+  <p>
+    「ドレスの試着で背中の汚さに絶望した」<br>
+    「忙しくて口周りの吹き出物が止まらない」
+  </p>
+  <p>
+    栄養士として多くの女性を見てきましたが、挙式1〜2ヶ月前はストレスと準備疲れで<strong>人生で一番肌が荒れやすい時期</strong>でもあります。
+  </p>
+  <p>
+    このページでは、<strong>「栄養士視点のインナーケア」</strong>と、<strong>「即効性を重視したアウターケア（化粧品）」</strong>の両面から、当日までに間に合わせる最短ルートを解説します。
+  </p>
 </section>
 
 <section>
-<h2>花嫁ケアで大切なのは<br>「正しい順番」</h2>
-<p>
-全部を完璧にやる必要はありません。<br>
-<strong>写真に残る部分・変化が出やすい部分</strong>を整える。
-</p>
+  <h2>1. 発生場所でわかる「原因」</h2>
+  
+  <div class="nutritionist-memo">
+    <h3>🔍 背中・デコルテのニキビ</h3>
+    <p>
+      ドレスで最も露出する部分。原因は<strong>「シャンプーの洗い残し」</strong>と<strong>「交感神経の緊張による発汗」</strong>が多数。<br>
+      顔より皮膚が厚く治りにくいため、普通の化粧水では浸透しません。<strong>「浸透力の高いジェル」</strong>が必須です。
+    </p>
+  </div>
+
+  <div class="nutritionist-memo">
+    <h3>🔍 口元・顎（あご）のニキビ</h3>
+    <p>
+      ここは<strong>「胃腸の鏡」</strong>です。準備のストレスや暴飲暴食がダイレクトに出ます。<br>
+      外からのケアだけでなく、消化に良い食事とビタミンB群の摂取が一番の近道です。
+    </p>
+  </div>
+  
+  <div class="nutritionist-memo">
+    <h3>🔍 二の腕のザラザラ</h3>
+    <p>
+      ニキビではなく「毛孔性苔癬（もうこうせいたいせん）」の可能性も。乾燥で悪化するため、スクラブは控えめにし、<strong>徹底的な保湿</strong>が必要です。
+    </p>
+  </div>
 </section>
 
-<section class="soft-box">
-<h2>まず整えるなら、ここ</h2>
-<p>
-背中・二の腕のラインは、<br>
-<strong>自己流では変わりにくい代表格</strong>です。
-</p>
+<section>
+  <h2>2. 悩み別：花嫁のための厳選ケア</h2>
+  <p>
+    「どれを使えばいいかわからない」という方へ。<br>
+    あなたの今の悩みに合わせて、最適なアイテムを分類しました。
+  </p>
 
-<h3 style="font-family:'Playfair Display';margin-top:40px;">
-ミス・パリ<br>ダイエットセンター
-</h3>
-<p>
-短期間でラインを変えたい花嫁向け。<br>
-「痩せる」より<strong>ドレス映え</strong>を重視した設計です。
-</p>
-
-<a href="https://px.a8.net/svt/ejp?a8mat=4AVAC8+4OHPQY+1OGO+C2102" 
-   class="btn-main" target="_blank" rel="nofollow sponsored noopener">
-ミス・パリの体験を見る
-</a>
-<img border="0" width="1" height="1" src="https://www12.a8.net/0.gif?a8mat=4AVAC8+4OHPQY+1OGO+C2102" alt="">
-</section>
-
-
-<section class="bridal-care-box">
-  <h3>花嫁ニキビ・敏感肌で迷っている方へ</h3>
-
+  <span class="product-category-title">背中・デコルテの赤み・ポツポツに</span>
+  
   <div class="bridal-care-item">
     <img src="images/Jewel.png" alt="ジュエルレイン" class="product">
     <div class="bridal-care-text">
-      <strong>背中ニキビ・挙式直前の集中ケアに</strong><br>
-      ドレスから見える背中や肩のニキビ対策として、プレ花嫁さんに選ばれている薬用ケア。<br>
-      <a href="https://px.a8.net/svt/ejp?a8mat=45KRG0+5SDRA2+2BHA+3H1VWH" rel="nofollow">
-        Jewel Rainの詳細を見る
-      </a>
+      <strong>【背中ニキビ専用】ジュエルレイン</strong>
+      「背中が開いたドレスを着たい」ならまずはこれ。皮膚の厚い背中に浸透するように作られた専用ジェル。挙式まで時間がない方の集中ケアに。
+      <br>
+      <a href="https://px.a8.net/svt/ejp?a8mat=45KRG0+5SDRA2+2BHA+3H1VWH" rel="nofollow" target="_blank">詳細を見る ＞</a>
       <img border="0" width="1" height="1" src="https://www10.a8.net/0.gif?a8mat=45KRG0+5SDRA2+2BHA+3H1VWH" alt="">
-    </div>
-  </div>
-
-  <div class="bridal-care-item">
-    <img src="images/Repro.png" alt="リプロスキン" class="product">
-    <div class="bridal-care-text">
-      <strong>刺激が怖い・ニキビ後のケアを重視したい方に</strong><br>
-      ニキビを「治す」より、荒れにくい肌環境を整えたい敏感肌さん向け。<br>
-      <a href="https://px.a8.net/svt/ejp?a8mat=4AX5KC+93GG9M+2BHA+HVFKY" rel="nofollow">
-        リプロスキンについて詳しく見る
-      </a>
-      <img border="0" width="1" height="1" src="https://www14.a8.net/0.gif?a8mat=4AX5KC+93GG9M+2BHA+HVFKY" alt="">
     </div>
   </div>
 
   <div class="bridal-care-item">
     <img src="images/Papure.jpg" alt="パピュレ" class="product">
     <div class="bridal-care-text">
-      <strong>デコルテ・胸元のブツブツが気になる方に</strong><br>
-      顔よりも写真に残りやすいデコルテ専用ケア。ドレス映えを意識したい方に。<br>
-      <a href="https://px.a8.net/svt/ejp?a8mat=4AX5KC+9CZDY2+39SK+ZQ80I" rel="nofollow">
-        パピュレをチェックする
-      </a>
+      <strong>【胸元・デコルテ専用】パピュレ</strong>
+      高砂席でゲストの目線が集まるデコルテ。レフ板効果で飛ばしきれない凹凸をケアするためのスプレータイプ。
+      <br>
+      <a href="https://px.a8.net/svt/ejp?a8mat=4AX5KC+9CZDY2+39SK+ZQ80I" rel="nofollow" target="_blank">詳細を見る ＞</a>
       <img border="0" width="1" height="1" src="https://www13.a8.net/0.gif?a8mat=4AX5KC+9CZDY2+39SK+ZQ80I" alt="">
     </div>
   </div>
 
-  <div class="bridal-care-item">
-    <img src="images/Purecera.jpg" alt="ピュアセラ" class="product">
-    <div class="bridal-care-text">
-      <strong>何を使っても不安・一度リセットしたい方に</strong><br>
-      ニキビ対策より「悪化させない保湿」を重視した超低刺激ケア。<br>
-      <a href="https://px.a8.net/svt/ejp?a8mat=45I9PD+4BE5O2+3FHU+61Z81" rel="nofollow">
-        ピュアセラの詳細はこちら
-      </a>
-      <img border="0" width="1" height="1" src="https://www13.a8.net/0.gif?a8mat=45I9PD+4BE5O2+3FHU+61Z81" alt="">
-    </div>
-  </div>
+  <span class="product-category-title">顔・敏感肌・繰り返すニキビに</span>
 
   <div class="bridal-care-item">
     <img src="images/Orbis1.jpg" alt="オルビス" class="product">
     <div class="bridal-care-text">
-      <strong>繰り返す大人ニキビ・バリア機能の低下に</strong><br>
-      準備のストレスで揺らぎやすい花嫁の肌を、根本から整える定番の薬用スキンケア。<br>
-      <a href="https://px.a8.net/svt/ejp?a8mat=4AX5KC+9B734Q+1USQ+BXYEA" rel="nofollow">
-        オルビスの大人のニキビ肌用スキンケアを見る
-      </a>
+      <strong>【顔・大人ニキビ】オルビス クリアフル</strong>
+      生理前やストレスで揺らぎやすい花嫁肌のバリア機能を整える、王道の薬用スキンケア。まずはトライアルセットで相性確認を。
+      <br>
+      <a href="https://px.a8.net/svt/ejp?a8mat=4AX5KC+9B734Q+1USQ+BXYEA" rel="nofollow" target="_blank">トライアル詳細 ＞</a>
       <img border="0" width="1" height="1" src="https://www17.a8.net/0.gif?a8mat=4AX5KC+9B734Q+1USQ+BXYEA" alt="">
     </div>
   </div>
@@ -338,39 +377,58 @@ p {
   <div class="bridal-care-item">
     <img src="images/Nona.jpg" alt="NonA（ノンエー）" class="product">
     <div class="bridal-care-text">
-      <strong>毎日の「洗うケア」で摩擦レスに予防したい方に</strong><br>
-      モコモコの弾力泡が特徴。肌に負担をかけずに皮脂汚れを落とす薬用ニキビ専用石けん。<br>
-      <a href="https://px.a8.net/svt/ejp?a8mat=4AX5KC+912PUI+3O6W+5YJRM" rel="nofollow">
-        薬用ニキビ専用洗顔石けん「NonA（ノンエー）」
-      </a>
+      <strong>【予防・洗顔】薬用石けん NonA</strong>
+      「肌を擦る」のが一番のNG行為。モコモコの弾力泡で、肌に触れずに汚れを落とすニキビ専用石けん。
+      <br>
+      <a href="https://px.a8.net/svt/ejp?a8mat=4AX5KC+912PUI+3O6W+5YJRM" rel="nofollow" target="_blank">詳細を見る ＞</a>
       <img border="0" width="1" height="1" src="https://www19.a8.net/0.gif?a8mat=4AX5KC+912PUI+3O6W+5YJRM" alt="">
     </div>
   </div>
 
   <div class="bridal-care-item">
-    <img src="images/Metina.jpg" alt="メティーナ" class="product">
+    <img src="images/Repro.png" alt="リプロスキン" class="product">
     <div class="bridal-care-text">
-      <strong>赤みや乾燥を伴う、しつこいトラブルの保湿に</strong><br>
-      肌の水分バランスを整え、バリア機能をサポートする女性用ニキビケアジェル。<br>
-      <a href="https://px.a8.net/svt/ejp?a8mat=4AX5KC+8TXIL6+39SK+1BOTK2" rel="nofollow">
-        女性用ニキビケアジェル メティーナをチェック
-      </a>
-      <img border="0" width="1" height="1" src="https://www18.a8.net/0.gif?a8mat=4AX5KC+8TXIL6+39SK+1BOTK2" alt="">
+      <strong>【ニキビ後・敏感肌】リプロスキン</strong>
+      ニキビが治った後の「跡」や、化粧水がしみやすい敏感肌に。導入化粧水として肌環境を柔軟に整えます。
+      <br>
+      <a href="https://px.a8.net/svt/ejp?a8mat=4AX5KC+93GG9M+2BHA+HVFKY" rel="nofollow" target="_blank">詳細を見る ＞</a>
+      <img border="0" width="1" height="1" src="https://www14.a8.net/0.gif?a8mat=4AX5KC+93GG9M+2BHA+HVFKY" alt="">
     </div>
   </div>
 
-  <p class="bridal-care-note">
-    ※肌状態には個人差があります。挙式前はパッチテストを行い、無理のないケアを心がけてください。
-  </p>
 </section>
+
+<section class="next-step-box">
+  <div class="next-step-title">栄養士Yuriからのアドバイス</div>
+  <p>
+    食事とセルフケアで、お肌は確実に変わります。<br>
+    でも、もしあなたが…
+  </p>
+  <ul class="check-list" style="text-align:left; display:inline-block;">
+    <li>挙式まで<strong>1ヶ月を切っている</strong></li>
+    <li>背中のニキビ・跡が<strong>広範囲で深刻</strong></li>
+    <li>二の腕やボディラインも<strong>同時に引き締めたい</strong></li>
+  </ul>
+  <p style="margin-top:20px;">
+    という状況なら、<strong>「プロの手（エステ・医療）」を借りるのも賢い戦略</strong>です。<br>
+    自分ではどうにもならない部分は、専門のマシンや技術に頼って、最短で自信を取り戻しましょう。
+  </p>
+  
+  <a href="trial-collection.html" class="btn-gold">
+    💰 0円〜体験できる！<br>
+    花嫁のための「駆け込み寺」一覧を見る
+  </a>
+</section>
+
 </main>
+
 <section class="nav-links">
   <a href="index.html">🏠 トップへ戻る</a>
   <a href="beauty-column.html">💄 コラム一覧</a>
   <a href="skin-ranking.html">✨ おすすめランキング</a>
   <a href="about.html">👩‍💼 運営者情報</a>
 </section>
-  
+
 <footer class="footer">
   <p>
     栄養士｜Yuri 🌱<br>
