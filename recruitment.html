@@ -1,0 +1,733 @@
+
+
+Recruitment · HTML
+<!DOCTYPE html>
+<html lang="ja">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Recruitment | クレモオリエンス ウェディングプロデュース</title>
+    <meta name="description" content="株式会社クレモ・オリエンスのスタッフ募集ページです。挙式を音楽で感動を演出いただける演奏家を随時募集しております。またブライダルプランナーやチャペルディレクター・介添さんも募集しております。">
+ 
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link href="https://fonts.googleapis.com/css2?family=Tangerine:wght@400;700&display=swap" rel="stylesheet">
+ 
+    <style>
+/* === Color Palette & Typography === */
+        :root {
+            --bg-white: #FFFFFF;
+            --text-main: #4A433D;
+            --accent-gold: #C0A062;
+            --border-gold: #E6D7B9;
+        }
+ 
+        html { scroll-behavior: smooth; }
+ 
+        body {
+            margin: 0;
+            padding: 0;
+            font-family: "Yu Mincho", "MS PMincho", "Hiragino Mincho ProN", serif;
+            color: var(--text-main);
+            background-color: var(--bg-white);
+            line-height: 2.0;
+            letter-spacing: 0.08em;
+        }
+ 
+        /* === 画面右側の固定ぼかし背景 === */
+        .fixed-right-bg {
+            position: fixed;
+            top: 0; right: 0; bottom: 0;
+            width: 25vw;
+            background-image: url('Images/Bride.1.png');
+            background-size: cover;
+            background-position: center;
+            background-repeat: no-repeat;
+            filter: blur(10px);
+            opacity: 0.8;
+            z-index: -1;
+            pointer-events: none;
+        }
+ 
+        a { text-decoration: none; color: inherit; transition: all 0.3s ease; }
+        a:hover { color: var(--accent-gold); opacity: 0.8; }
+        img { max-width: 100%; height: auto; vertical-align: bottom; }
+ 
+        .container { max-width: 1000px; margin: 0 auto; padding: 0 20px; }
+ 
+        /* === Floating Header(サイト共通) === */
+        header {
+            background-color: rgba(255, 255, 255, 0.85);
+            padding: 25px 0 20px;
+            box-shadow: 0 2px 20px rgba(0,0,0,0.03);
+            position: sticky;
+            top: 0;
+            z-index: 100;
+            text-align: center;
+            border-bottom: 1px solid var(--border-gold);
+            backdrop-filter: blur(10px);
+        }
+        .header-inner { display: flex; flex-direction: column; align-items: center; gap: 15px; }
+        .logo-text {
+            font-family: 'Tangerine', cursive;
+            font-size: 4.5rem;
+            font-weight: 700;
+            color: var(--text-main);
+            margin: 0;
+            line-height: 0.8;
+        }
+        .global-nav {
+            display: flex;
+            gap: 30px;
+            font-size: 0.95rem;
+            letter-spacing: 0.1em;
+            text-transform: uppercase;
+        }
+        .global-nav a { position: relative; }
+        .global-nav a::after {
+            content: ''; position: absolute; bottom: -5px; left: 0;
+            width: 0; height: 1px; background-color: var(--accent-gold); transition: width 0.3s ease;
+        }
+        .global-nav a:hover::after { width: 100%; }
+ 
+        /* === Page Header === */
+        .page-header {
+            text-align: center;
+            padding: 80px 0 50px;
+        }
+        .page-header::after {
+            content: ''; display: block; width: 60px; height: 1px;
+            background-color: var(--accent-gold); margin: 30px auto 0;
+        }
+        .page-header h1 {
+            font-size: 6.5rem;
+            color: var(--text-main);
+            margin: 0;
+            font-family: 'Tangerine', cursive;
+            line-height: 0.8;
+        }
+        .page-header .subtitle {
+            font-size: 1.1rem;
+            color: var(--accent-gold);
+            letter-spacing: 0.2em;
+            margin-top: 25px;
+        }
+ 
+        /* === Glass panel(サイト共通) === */
+        .panel {
+            background: rgba(255, 255, 255, 0.85);
+            backdrop-filter: blur(5px);
+            padding: 55px 60px;
+            border-radius: 8px;
+            box-shadow: 0 10px 30px rgba(0,0,0,0.02);
+            border: 1px solid var(--border-gold);
+            margin-bottom: 70px;
+        }
+        .panel p { font-size: 0.95rem; color: #555; margin: 0 0 18px; }
+        .panel p:last-child { margin-bottom: 0; }
+        .panel .lead { font-size: 1.15rem; color: var(--text-main); text-align: center; margin-bottom: 30px; }
+        .panel .tel-highlight {
+            text-align: center;
+            font-family: 'Tangerine', cursive;
+            font-size: 2.6rem;
+            color: var(--accent-gold);
+            margin-top: 25px;
+            display: block;
+        }
+ 
+        /* === Section Title === */
+        .section-title { text-align: center; margin-bottom: 50px; }
+        .section-title .en-title {
+            font-family: 'Tangerine', cursive;
+            font-size: 3rem;
+            color: var(--accent-gold);
+            display: block;
+            line-height: 1;
+            margin-bottom: 10px;
+        }
+        .section-title h2 {
+            font-size: 1.5rem;
+            font-weight: normal;
+            color: var(--text-main);
+            margin: 0;
+            letter-spacing: 0.1em;
+            position: relative;
+            padding-bottom: 20px;
+        }
+        .section-title h2::after {
+            content: '';
+            position: absolute;
+            bottom: 0; left: 50%;
+            transform: translateX(-50%);
+            width: 40px; height: 1px;
+            background-color: var(--accent-gold);
+        }
+ 
+        /* === Job Listing Cards === */
+        .job-cards { display: grid; grid-template-columns: 1fr; gap: 30px; margin-bottom: 90px; }
+        .job-card {
+            display: flex;
+            align-items: center;
+            justify-content: space-between;
+            gap: 20px;
+            background: rgba(255, 255, 255, 0.85);
+            backdrop-filter: blur(5px);
+            padding: 35px 45px;
+            border-radius: 8px;
+            border: 1px solid var(--border-gold);
+            box-shadow: 0 10px 30px rgba(0,0,0,0.02);
+            transition: all 0.4s ease;
+        }
+        .job-card:hover {
+            border-color: var(--accent-gold);
+            transform: translateY(-4px);
+            box-shadow: 0 15px 40px rgba(192, 160, 98, 0.1);
+        }
+        .job-card .job-info h3 {
+            font-size: 1.25rem;
+            font-weight: normal;
+            margin: 0 0 8px;
+            color: var(--text-main);
+            letter-spacing: 0.08em;
+        }
+        .job-card .job-info p {
+            font-size: 0.85rem;
+            color: #888;
+            margin: 0;
+        }
+        .job-card .job-arrow {
+            font-family: 'Tangerine', cursive;
+            font-size: 2rem;
+            color: var(--accent-gold);
+            flex-shrink: 0;
+        }
+ 
+        /* === Application Flow === */
+        .flow-list {
+            list-style: none;
+            padding: 0;
+            margin: 0 0 90px;
+            counter-reset: flow;
+        }
+        .flow-item {
+            display: flex;
+            gap: 30px;
+            align-items: flex-start;
+            padding: 30px 0;
+            border-bottom: 1px solid var(--border-gold);
+        }
+        .flow-item:last-child { border-bottom: none; }
+        .flow-number {
+            counter-increment: flow;
+            font-family: 'Tangerine', cursive;
+            font-size: 3rem;
+            color: var(--accent-gold);
+            width: 70px;
+            flex-shrink: 0;
+            line-height: 1;
+            text-align: center;
+        }
+        .flow-number::before { content: counter(flow, decimal-leading-zero); }
+        .flow-text p {
+            font-size: 0.92rem;
+            color: #555;
+            margin: 0 0 8px;
+        }
+        .flow-text p:last-child { margin-bottom: 0; }
+ 
+        /* === Entry Form === */
+        .form-section { margin-bottom: 100px; }
+        .form-panel {
+            background: rgba(255, 255, 255, 0.85);
+            backdrop-filter: blur(5px);
+            padding: 60px 60px 70px;
+            border-radius: 8px;
+            box-shadow: 0 10px 30px rgba(0,0,0,0.02);
+            border: 1px solid var(--border-gold);
+        }
+        .form-note {
+            font-size: 0.85rem;
+            color: #888;
+            text-align: center;
+            margin-bottom: 45px;
+            line-height: 1.9;
+        }
+        .fld-grp { margin-bottom: 32px; }
+        .fld-label {
+            display: block;
+            font-size: 0.92rem;
+            color: var(--text-main);
+            margin-bottom: 10px;
+            letter-spacing: 0.05em;
+        }
+        .fld-label .required-mark {
+            color: var(--accent-gold);
+            font-size: 0.75rem;
+            margin-left: 8px;
+            border: 1px solid var(--accent-gold);
+            border-radius: 3px;
+            padding: 1px 6px;
+        }
+        .fld-input {
+            width: 100%;
+            box-sizing: border-box;
+            padding: 14px 16px;
+            font-family: inherit;
+            font-size: 0.95rem;
+            color: var(--text-main);
+            background-color: #FDFBF7;
+            border: 1px solid var(--border-gold);
+            border-radius: 4px;
+            outline: none;
+            transition: border-color 0.3s ease;
+        }
+        .fld-input:focus { border-color: var(--accent-gold); }
+        textarea.fld-input { min-height: 130px; resize: vertical; line-height: 1.7; }
+ 
+        .checkbox-grid, .radio-grid {
+            display: flex;
+            flex-wrap: wrap;
+            gap: 14px 24px;
+        }
+        .checkbox-item, .radio-item {
+            display: flex;
+            align-items: center;
+            gap: 8px;
+            font-size: 0.9rem;
+            color: var(--text-main);
+        }
+        .checkbox-item input, .radio-item input {
+            accent-color: var(--accent-gold);
+            width: 16px;
+            height: 16px;
+        }
+ 
+        .submit-row { text-align: center; margin-top: 50px; }
+        .submit-btn {
+            display: inline-block;
+            background-color: var(--accent-gold);
+            color: var(--bg-white);
+            border: none;
+            padding: 18px 60px;
+            font-size: 1.05rem;
+            font-family: inherit;
+            letter-spacing: 0.2em;
+            border-radius: 3px;
+            cursor: pointer;
+            transition: all 0.3s ease;
+            box-shadow: 0 5px 15px rgba(192, 160, 98, 0.2);
+        }
+        .submit-btn:hover {
+            background-color: #A88A50;
+            transform: translateY(-2px);
+            box-shadow: 0 8px 20px rgba(192, 160, 98, 0.3);
+        }
+ 
+        /* === Footer(サイト共通) === */
+        footer {
+            background-color: rgba(255, 255, 255, 0.95);
+            padding: 60px 0 30px;
+            text-align: center;
+            background-image: linear-gradient(to right, var(--border-gold) 0%, var(--border-gold) 100%);
+            background-size: 100% 1px;
+            background-repeat: no-repeat;
+            background-position: top center;
+        }
+        .footer-logo { font-family: 'Tangerine', cursive; font-size: 4rem; line-height: 0.8; margin-bottom: 30px; color: var(--text-main); }
+        .footer-nav { display: flex; justify-content: center; flex-wrap: wrap; gap: 25px; margin-bottom: 40px; font-size: 0.9rem; letter-spacing: 0.05em; }
+        .copyright { font-size: 0.8rem; color: #888; letter-spacing: 0.1em; }
+ 
+        /* === Responsive === */
+        @media (max-width: 768px) {
+            .header-inner { gap: 15px; padding: 0 10px; }
+            .logo-text { font-size: 3.5rem; }
+            .global-nav { flex-wrap: wrap; justify-content: center; gap: 15px 20px; font-size: 0.85rem; }
+            .fixed-right-bg { width: 100vw; opacity: 0.3; filter: blur(15px); }
+ 
+            .page-header h1 { font-size: 4rem; }
+            .panel { padding: 40px 25px; }
+            .job-card { flex-direction: column; align-items: flex-start; text-align: left; padding: 30px 25px; }
+            .flow-item { gap: 18px; }
+            .flow-number { font-size: 2.2rem; width: 50px; }
+            .form-panel { padding: 40px 22px; }
+        }
+    </style>
+</head>
+<body>
+ 
+    <div class="fixed-right-bg"></div>
+ 
+    <header>
+        <div class="container header-inner">
+            <h1 class="logo-text">
+                <a href="index.html">Cremo Oriens</a>
+            </h1>
+            <nav class="global-nav">
+                <a href="index.html">Top</a>
+                <a href="cremo.html">Our Philosophy</a>
+                <a href="services.html">Services</a>
+                <a href="aboutus.html">Company Info</a>
+                <a href="access.html">Access</a>
+            </nav>
+        </div>
+    </header>
+ 
+    <main>
+        <section class="page-header container">
+            <h1>Recruitment</h1>
+            <div class="subtitle">採用情報</div>
+        </section>
+ 
+        <div class="container">
+ 
+            <section class="panel">
+                <p class="lead">結婚式にたずさわるということ</p>
+                <p>結婚式。それはどんなに時代が変わっても、違う場所で育った二人が一つに結ばれる、変わることのない大切な儀式です。</p>
+                <p>一生に一度の大切な日に関わるということ。それは人を喜ばせたい、もてなしたいと想う気持ちを持つ貴方だけが参加できる感動体験の空間になります。普段の生活で味わうことのない感覚を得ることができます。</p>
+                <p>「私にできるのかな？」「どんな内容のお仕事なんだろう？」いろんな心配や不安があると思います。クレモ・オリエンスでは、経験の有無は問いません。音楽大学卒業も絶対条件ではありません。</p>
+                <p>正式に私たちの一員として活躍いただくことになった場合は、必要なスキルを身に着けていただく研修制度や実地講習をご用意しています。一緒に感動の空間を創って頂けるチームメイトとの出逢いを心待ちにしています。</p>
+                <p>現在募集中の情報は、以下をご覧ください。ご応募をお待ちしております。応募・お問い合わせは、ホームページから、またはお電話でも承ります。</p>
+                <span class="tel-highlight">TEL 03-3552-7060</span>
+            </section>
+ 
+            <div class="section-title">
+                <span class="en-title">Now Hiring</span>
+                <h2>正社員・契約社員・パート社員募集 / 演奏者募集</h2>
+            </div>
+ 
+            <div class="job-cards">
+                <a class="job-card" href="seisyasinbosyu.html">
+                    <div class="job-info">
+                        <h3>正社員・契約社員・パート社員募集</h3>
+                        <p>ブライダルプランナー・チャペルディレクター・介添など</p>
+                    </div>
+                    <div class="job-arrow">&rarr;</div>
+                </a>
+                <a class="job-card" href="recruitment1.html">
+                    <div class="job-info">
+                        <h3>演奏者募集</h3>
+                        <p>ヴァイオリン・チェロ・フルートなど、各種楽器奏者</p>
+                    </div>
+                    <div class="job-arrow">&rarr;</div>
+                </a>
+                <a class="job-card" href="recruitment2.html">
+                    <div class="job-info">
+                        <h3>チャペルディレクター・アテンダー募集</h3>
+                        <p>挙式アテンダー・ブライダルアテンド・プランナー・司会者・司式者など</p>
+                    </div>
+                    <div class="job-arrow">&rarr;</div>
+                </a>
+            </div>
+ 
+            <div class="section-title">
+                <span class="en-title">The Process</span>
+                <h2>応募(エントリー)からのながれ</h2>
+            </div>
+ 
+            <ol class="flow-list">
+                <li class="flow-item">
+                    <div class="flow-number"></div>
+                    <div class="flow-text">
+                        <p>下のエントリーフォームから必要事項を送信ください。</p>
+                    </div>
+                </li>
+                <li class="flow-item">
+                    <div class="flow-number"></div>
+                    <div class="flow-text">
+                        <p>応募フォームの内容を確認し、オーディションの実施希望日を承ります。</p>
+                        <p>後日弊社より、登録オーディションの日時をご連絡させて頂きます。</p>
+                    </div>
+                </li>
+                <li class="flow-item">
+                    <div class="flow-number"></div>
+                    <div class="flow-text">
+                        <p>弊社事務所にお越しいただき、登録オーディションを受けて頂きます。</p>
+                        <p>後日、合否の結果をご連絡させて頂きます。</p>
+                    </div>
+                </li>
+                <li class="flow-item">
+                    <div class="flow-number"></div>
+                    <div class="flow-text">
+                        <p>オーディションに合格されましたら、お仕事の説明を行うオリエンテーションを実施致します。</p>
+                    </div>
+                </li>
+                <li class="flow-item">
+                    <div class="flow-number"></div>
+                    <div class="flow-text">
+                        <p>お仕事の準備として研修を行い、お仕事が始まります。</p>
+                    </div>
+                </li>
+            </ol>
+ 
+            <section class="form-section" id="entry">
+                <div class="section-title">
+                    <span class="en-title">Entry</span>
+                    <h2>採用エントリー</h2>
+                </div>
+ 
+                <div class="form-panel">
+                    <p class="form-note">
+                        結婚式・ウエディングイベント等への各種楽器奏者の手配を行う株式会社クレモ・オリエンスの採用に応募いただきましてありがとうございます。<br>
+                        必要事項を入力の上、送信してください。<br><br>
+                        ホームページから採用エントリーいただきましたあと、3営業日たってもクレモ・オリエンスからご連絡がない場合は、お問い合わせ内容がクレモ・オリエンスへ届いていない可能性がございます。お手数ですが改めてお申し込みください。<br>
+                        なお、メール受信制限などの各種設定により、クレモ・オリエンスからの返信メールが届かないことがあります。クレモ・オリエンスからのメールを受信していただけるよう、設定をご確認ください。<br>
+                        ※「@lc9.net」のメールを受信できるよう「迷惑メール」対策の設定などをご確認ください。
+                    </p>
+ 
+                    <form id="widgetu277585">
+                        <!-- ▼ Web3Forms設定: web3forms.comで発行したアクセスキーに差し替えてください -->
+                        <input type="hidden" name="access_key" value="4914fa6f-07ba-4697-b642-9a73ab6640f2">
+                        <input type="hidden" name="subject" value="クレモオリエンス　ホームページよりのお問合せ の送信">
+                        <input type="checkbox" name="botcheck" style="display:none" tabindex="-1" autocomplete="off">
+                        <!-- ▲ ここまで -->
+ 
+                        <div class="fld-grp">
+                            <label class="fld-label" for="custom_U277596">名前 <span class="required-mark">必須</span></label>
+                            <input class="fld-input" type="text" id="custom_U277596" name="custom_U277596" placeholder="名前を入力" required>
+                        </div>
+ 
+                        <div class="fld-grp">
+                            <label class="fld-label" for="custom_U277695">フリガナ <span class="required-mark">必須</span></label>
+                            <input class="fld-input" type="text" id="custom_U277695" name="custom_U277695" placeholder="フリガナを入力" required>
+                        </div>
+ 
+                        <div class="fld-grp">
+                            <label class="fld-label" for="custom_U277699">〒番号 <span class="required-mark">必須</span></label>
+                            <input class="fld-input" type="text" id="custom_U277699" name="custom_U277699" placeholder="〒番号を入力" required>
+                        </div>
+ 
+                        <div class="fld-grp">
+                            <label class="fld-label" for="Email">Eメール <span class="required-mark">必須</span></label>
+                            <input class="fld-input" type="email" id="Email" name="Email" placeholder="電子メールアドレスを入力" required>
+                        </div>
+ 
+                        <div class="fld-grp">
+                            <label class="fld-label" for="custom_U277617">電話番号 <span class="required-mark">必須</span></label>
+                            <input class="fld-input" type="text" id="custom_U277617" name="custom_U277617" placeholder="日中連絡がつく電話番号を入力" required>
+                        </div>
+ 
+                        <div class="fld-grp">
+                            <label class="fld-label" for="custom_U277586">経験年数 <span class="required-mark">必須</span></label>
+                            <input class="fld-input" type="text" id="custom_U277586" name="custom_U277586" placeholder="経験年数を入力" required>
+                        </div>
+ 
+                        <div class="fld-grp">
+                            <label class="fld-label">エントリーのジャンル <span class="required-mark">必須(いずれか1つ以上)</span></label>
+                            <div class="checkbox-grid">
+                                <label class="checkbox-item"><input type="checkbox" value="聖歌隊" name="custom_U277621[]">聖歌隊</label>
+                                <label class="checkbox-item"><input type="checkbox" value="オルガニスト" name="custom_U277621[]">オルガニスト</label>
+                                <label class="checkbox-item"><input type="checkbox" value="ヴァイオリン奏者" name="custom_U277621[]">ヴァイオリン奏者</label>
+                                <label class="checkbox-item"><input type="checkbox" value="トランペット奏者" name="custom_U277621[]">トランペット奏者</label>
+                                <label class="checkbox-item"><input type="checkbox" value="フルート奏者" name="custom_U277621[]">フルート奏者</label>
+                                <label class="checkbox-item"><input type="checkbox" value="サックス奏者" name="custom_U277621[]">サックス奏者</label>
+                                <label class="checkbox-item"><input type="checkbox" value="司会者" name="custom_U277621[]">司会者</label>
+                                <label class="checkbox-item"><input type="checkbox" value="アテンダー" name="custom_U277621[]">アテンダー</label>
+                                <label class="checkbox-item"><input type="checkbox" value="プランナー" name="custom_U277621[]">プランナー</label>
+                                <label class="checkbox-item"><input type="checkbox" value="その他" name="custom_U277621[]">その他</label>
+                            </div>
+                        </div>
+ 
+                        <div class="fld-grp">
+                            <label class="fld-label" for="custom_U277613">※その他内容</label>
+                            <input class="fld-input" type="text" id="custom_U277613" name="custom_U277613" placeholder="その他の内容を入力">
+                        </div>
+ 
+                        <div class="fld-grp">
+                            <label class="fld-label">結婚式関連のお仕事したことありますか？ <span class="required-mark">必須</span></label>
+                            <div class="radio-grid">
+                                <label class="radio-item"><input type="radio" value="YES" name="custom_U277600" required>YES</label>
+                                <label class="radio-item"><input type="radio" value="NO" name="custom_U277600">NO</label>
+                            </div>
+                        </div>
+ 
+                        <div class="fld-grp">
+                            <label class="fld-label" for="custom_U277703">上記質問への回答(「YES」の場合は具体的な内容をお知らせください)</label>
+                            <textarea class="fld-input" id="custom_U277703" name="custom_U277703" placeholder="メッセージを入力"></textarea>
+                        </div>
+ 
+                        <div class="fld-grp">
+                            <label class="fld-label">応募地域 <span class="required-mark">必須(いずれか1つ以上)</span></label>
+                            <div class="checkbox-grid">
+                                <label class="checkbox-item"><input type="checkbox" value="東京" name="custom_U277656[]">東京</label>
+                                <label class="checkbox-item"><input type="checkbox" value="千葉" name="custom_U277656[]">千葉</label>
+                                <label class="checkbox-item"><input type="checkbox" value="埼玉" name="custom_U277656[]">埼玉</label>
+                                <label class="checkbox-item"><input type="checkbox" value="栃木" name="custom_U277656[]">栃木</label>
+                                <label class="checkbox-item"><input type="checkbox" value="茨城" name="custom_U277656[]">茨城</label>
+                                <label class="checkbox-item"><input type="checkbox" value="静岡" name="custom_U277656[]">静岡</label>
+                                <label class="checkbox-item"><input type="checkbox" value="愛知" name="custom_U277656[]">愛知</label>
+                                <label class="checkbox-item"><input type="checkbox" value="三重" name="custom_U277656[]">三重</label>
+                                <label class="checkbox-item"><input type="checkbox" value="岐阜" name="custom_U277656[]">岐阜</label>
+                                <label class="checkbox-item"><input type="checkbox" value="富山" name="custom_U277656[]">富山</label>
+                                <label class="checkbox-item"><input type="checkbox" value="石川" name="custom_U277656[]">石川</label>
+                                <label class="checkbox-item"><input type="checkbox" value="新潟" name="custom_U277656[]">新潟</label>
+                                <label class="checkbox-item"><input type="checkbox" value="西日本の方" name="custom_U277656[]">西日本の方</label>
+                            </div>
+                        </div>
+ 
+                        <div class="fld-grp">
+                            <label class="fld-label" for="custom_U277609">メッセージ</label>
+                            <textarea class="fld-input" id="custom_U277609" name="custom_U277609" placeholder="メッセージを入力"></textarea>
+                        </div>
+ 
+                        <div class="submit-row">
+                            <button class="submit-btn" type="submit" id="submit-btn">送信</button>
+                            <p id="form-status" style="font-size:0.9rem; margin-top:20px; display:none;"></p>
+                            <p style="font-size:0.8rem; color:#999; margin-top:20px; line-height:1.8;">
+                                うまく送信できない場合は、お手数ですが
+                                <a href="mailto:recruit@cremo-oriens.com" style="color: var(--accent-gold);">recruit@cremo-oriens.com</a>
+                                まで直接メールをお送りください。
+                            </p>
+                        </div>
+                    </form>
+                </div>
+            </section>
+ 
+        </div>
+    </main>
+ 
+    <footer>
+        <div class="container">
+            <div class="footer-logo">Cremo Oriens</div>
+            <nav class="footer-nav">
+                <a href="index.html">Top</a>
+                <a href="cremo.html">Our Philosophy</a>
+                <a href="services.html">Services</a>
+                <a href="aboutus.html">Company Info</a>
+                <a href="access.html">Access</a>
+                <a href="privacy.html">個人情報保護方針</a>
+            </nav>
+            <div class="copyright">
+                Copyright(C) Cremo Oriens. All Rights Reserved.
+            </div>
+        </div>
+    </footer>
+ 
+    <script>
+    (function () {
+        var form = document.getElementById('widgetu277585');
+        if (!form) return;
+ 
+        var statusEl = document.getElementById('form-status');
+        var submitBtn = document.getElementById('submit-btn');
+ 
+        var showStatus = function (message, isError) {
+            statusEl.textContent = message;
+            statusEl.style.color = isError ? '#c0392b' : 'var(--accent-gold)';
+            statusEl.style.display = 'block';
+        };
+ 
+        var val = function (name) {
+            var el = form.querySelector('[name="' + name + '"]');
+            return el ? el.value.trim() : '';
+        };
+        var checkedList = function (name) {
+            var els = form.querySelectorAll('[name="' + name + '"]:checked');
+            var vals = [];
+            els.forEach(function (el) { vals.push(el.value); });
+            return vals.join('、');
+        };
+        var radioVal = function (name) {
+            var el = form.querySelector('[name="' + name + '"]:checked');
+            return el ? el.value : '';
+        };
+ 
+        form.addEventListener('submit', function (e) {
+            e.preventDefault();
+ 
+            if (form.querySelector('[name="access_key"]').value === 'YOUR_ACCESS_KEY_HERE') {
+                showStatus('フォームの送信設定が未完了です(access_keyが未設定)。サイト管理者にご連絡ください。', true);
+                return;
+            }
+ 
+            // 読みやすい本文を組み立てて隠しフィールド message にセット
+            var lines = [
+                '新規フォームの送信(採用エントリー)',
+                '',
+                '▶ 名前:\t' + val('custom_U277596'),
+                '▶ フリガナ:\t' + val('custom_U277695'),
+                '▶ 〒番号:\t' + val('custom_U277699'),
+                '▶ Eメール:\t' + val('Email'),
+                '▶ 電話番号:\t' + val('custom_U277617'),
+                '▶ 経験年数:\t' + val('custom_U277586'),
+                '▶ エントリーのジャンル:\t' + checkedList('custom_U277621[]'),
+                '▶ その他内容:\t' + val('custom_U277613'),
+                '▶ 結婚式関連のお仕事経験:\t' + radioVal('custom_U277600'),
+                '▶ 上記質問への回答:\t' + val('custom_U277703'),
+                '▶ 応募地域:\t' + checkedList('custom_U277656[]'),
+                '▶ メッセージ:\t' + val('custom_U277609')
+            ];
+ 
+            var messageField = form.querySelector('[name="message"]');
+            if (!messageField) {
+                messageField = document.createElement('input');
+                messageField.type = 'hidden';
+                messageField.name = 'message';
+                form.appendChild(messageField);
+            }
+            messageField.value = lines.join('\n');
+ 
+            submitBtn.disabled = true;
+            submitBtn.textContent = '送信中...';
+            statusEl.style.display = 'none';
+ 
+            var formData = new FormData(form);
+ 
+            fetch('https://api.web3forms.com/submit', {
+                method: 'POST',
+                headers: { 'Accept': 'application/json' },
+                body: formData
+            })
+                .then(function (response) { return response.json(); })
+                .then(function (result) {
+                    submitBtn.disabled = false;
+                    submitBtn.textContent = '送信';
+                    if (result.success) {
+                        showStatus('送信が完了しました。ご応募いただきありがとうございます。追ってご連絡いたします。', false);
+                        form.reset();
+                    } else {
+                        showStatus('送信に失敗しました。お手数ですが recruit@cremo-oriens.com まで直接メールをお送りください。', true);
+                    }
+                })
+                .catch(function () {
+                    submitBtn.disabled = false;
+                    submitBtn.textContent = '送信';
+                    showStatus('通信エラーが発生しました。お手数ですが recruit@cremo-oriens.com まで直接メールをお送りください。', true);
+                });
+        });
+    })();
+    </script>
+ 
+</body>
+</html>
+ 
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
