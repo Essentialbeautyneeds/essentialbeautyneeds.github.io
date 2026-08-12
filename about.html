@@ -1,260 +1,113 @@
-<!doctype html>
+<!DOCTYPE html>
 <html lang="ja">
 <head>
-  <meta charset="utf-8" />
-  <meta name="viewport" content="width=device-width,initial-scale=1" />
-  <title>プロフィール・運営者情報 | Essential Beauty Needs</title>
-  <meta name="description" content="管理栄養士・スキンケアアドバイザーYuriのプロフィール。オーストラリアで学んだ自然療法と栄養学をベースに、花嫁のための美容メソッドを発信しています。">
-  <link rel="canonical" href="https://essential-beauty-needs.com/about.html">
-  
-  <link rel="preconnect" href="https://fonts.googleapis.com">
-  <link href="https://fonts.googleapis.com/css2?family=Playfair+Display:wght@600&family=Quicksand:wght@400;600&family=Shippori+Mincho:wght@400;600&display=swap" rel="stylesheet">
-  
-  <script>
-    // 内部トラフィック除外設定
-    function isInternalUser() {
-      return document.cookie.split(';').some(c => c.trim().startsWith('internal_user=true'));
-    }
-    if (!isInternalUser()) {
-      var gaScript = document.createElement('script');
-      gaScript.async = true;
-      gaScript.src = "https://www.googletagmanager.com/gtag/js?id=G-2HGEPHVZYY";
-      document.head.appendChild(gaScript);
-      window.dataLayer = window.dataLayer || [];
-      function gtag(){dataLayer.push(arguments);}
-      gtag('js', new Date());
-      gtag('config', 'G-2HGEPHVZYY');
-    }
-
-    // 画像エラー時のフォールバック
-    function handleImageError(imgElement, width, height, text) { 
-         imgElement.onerror = null; 
-         imgElement.src = `https://placehold.co/${width}x${height}/f7a8a8/ffffff?text=${encodeURIComponent(text)}`;
-    }
-  </script>
-  
-  <style>
-    body.about-page {
-      font-family: 'Quicksand', 'Shippori Mincho', sans-serif;
-      background: #fff0f5;
-      color: #555;
-      margin: 0;
-      padding: 0;
-      line-height: 1.8;
-      letter-spacing: 0.03em;
-    }
-
-    /* ヘッダー */
-    body.about-page header {
-      text-align: center;
-      padding: 100px 20px 140px;
-      background: linear-gradient(135deg, #fff5f5, #f7a8a8);
-      color: #503535;
-    }
-    body.about-page h1 {
-      font-family: 'Playfair Display', serif;
-      font-size: 32px;
-      color: #503535;
-      margin: 0;
-      text-shadow: 1px 1px 2px rgba(255,255,255,0.5);
-    }
-    body.about-page header p {
-      font-size:14px;
-      margin-top:5px;
-      opacity:0.8;
-    }
-
-    /* メインカード */
-    body.about-page main {
-      max-width: 700px;
-      margin: -80px auto 40px;
-      padding: 0 20px;
-      position: relative;
-      z-index: 10;
-    }
-    .profile-card {
-      background: #ffffff;
-      padding: 40px;
-      border-radius: 20px;
-      box-shadow: 0 10px 25px rgba(180, 150, 150, 0.15);
-      position: relative;
-    }
-
-    .profile-image-container {
-      text-align: center;
-      margin-top: -90px;
-      margin-bottom: 25px;
-    }
-    .profile-image {
-      width: 150px;
-      height: 150px;
-      border-radius: 50%;
-      object-fit: cover;
-      border: 5px solid #ffffff;
-      box-shadow: 0 5px 15px rgba(0,0,0,0.1);
-      background: #fff;
-    }
-
-    /* テキストスタイル */
-    p { margin-bottom: 1.5em; }
-    strong { color: #d6336c; font-weight: 600; }
-
-    /* CTAボタン */
-    .diagnosis-link {
-        display: block;
-        background: #fffcf0;
-        border: 2px dashed #e67e22;
-        color: #d35400;
-        text-align: center;
-        padding: 18px;
-        border-radius: 12px;
-        text-decoration: none;
-        font-weight: bold;
-        margin: 35px 0;
-        transition: 0.3s;
-        box-shadow: 0 4px 10px rgba(230, 126, 34, 0.1);
-    }
-    .diagnosis-link:hover {
-        background: #ffe0b2;
-        transform: translateY(-2px);
-    }
-
-    /* ポリシーボックス */
-    .policy-box {
-      background-color: #f9f9f9;
-      padding: 20px;
-      border-radius: 8px;
-      font-size: 0.85em;
-      margin-top: 40px;
-      border-left: 4px solid #ccc;
-      color: #666;
-    }
-
-    /* SNSリンク */
-    .sns-links {
-      display: flex;
-      justify-content: flex-end;
-      gap: 15px;
-      margin-top: 20px;
-      flex-wrap: wrap;
-    }
-    .sns-btn {
-      text-decoration: none;
-      font-weight: 600;
-      font-size: 13px;
-      padding: 5px 10px;
-      border-radius: 15px;
-      transition: 0.2s;
-      display: inline-flex;
-      align-items: center;
-      gap: 5px;
-    }
-    .sns-insta { color: #d62976; background: #fff0f5; }
-    .sns-threads { color: #333; background: #eee; }
-    .sns-note { color: #2caf7e; background: #e6f7f0; }
-    .sns-btn:hover { transform: translateY(-2px); filter: brightness(0.95); }
-
-    /* ナビゲーション */
-    .nav-links {
-      display: flex;
-      gap: 10px;
-      justify-content: center;
-      margin-top: 40px;
-      flex-wrap: wrap;
-    }
-    .nav-links a {
-      background: rgba(255,255,255,0.7);
-      padding: 8px 16px;
-      border-radius: 20px;
-      text-decoration: none;
-      color: #503535;
-      font-weight: 600; 
-      font-size: 13px; 
-      border: 1px solid #eec; 
-      transition: 0.3s;
-    }
-    .nav-links a:hover {
-      background: #f7a8a8;
-      color: #fff; 
-      border-color: #f7a8a8;
-    }
-
-    .footer-links { text-align: center; margin-top: 30px; font-size: 14px; }
-    footer { text-align: center; color: #999; margin: 40px 0 20px; font-size: 12px; }
-
-    @media (max-width: 600px) {
-      .profile-card { padding: 30px 20px; }
-      body.about-page header { padding-bottom: 120px; }
-      .sns-links { justify-content: center; }
-    }
-  </style>
+<meta charset="utf-8">
+<meta name="viewport" content="width=device-width,initial-scale=1">
+<title>運営者情報｜Essential Beauty Needs</title>
+<meta name="description" content="Essential Beauty Needs は、挙式までの3〜6ヶ月で体と肌を仕上げるためのプレ花嫁向け情報サイトです。編集方針と体制について。">
+<link rel="canonical" href="https://essential-beauty-needs.com/about.html">
+<meta property="og:title" content="運営者情報｜Essential Beauty Needs">
+<meta property="og:description" content="Essential Beauty Needs は、挙式までの3〜6ヶ月で体と肌を仕上げるためのプレ花嫁向け情報サイトです。編集方針と体制について。">
+<meta property="og:url" content="https://essential-beauty-needs.com/about.html">
+<meta property="og:image" content="https://essential-beauty-needs.com/images/4646.png">
+<meta property="og:type" content="article">
+<meta name="twitter:card" content="summary_large_image">
+<link rel="icon" href="favicon.ico">
+<link rel="preconnect" href="https://fonts.googleapis.com">
+<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+<link href="https://fonts.googleapis.com/css2?family=Playfair+Display:wght@500&family=Shippori+Mincho:wght@500;600&family=Zen+Kaku+Gothic+New:wght@400;500;700&display=swap" rel="stylesheet">
+<link rel="stylesheet" href="assets/site.css">
+<script>
+function isInternalUser(){return document.cookie.split(';').some(function(c){return c.trim().indexOf('internal_user=true')===0})}
+if(!isInternalUser()){var g=document.createElement('script');g.async=true;g.src="https://www.googletagmanager.com/gtag/js?id=G-2HGEPHVZYY";document.head.appendChild(g);window.dataLayer=window.dataLayer||[];function gtag(){dataLayer.push(arguments)}gtag('js',new Date());gtag('config','G-2HGEPHVZYY');}
+</script>
+<link rel="stylesheet" href="assets/mobile.css">
 </head>
+<body>
+<header class="site-head">
+  <div class="site-head-in">
+    <a class="brand" href="index.html">Essential Beauty Needs<span>花嫁の仕上げ期ノート</span></a>
+    <nav class="site-nav">
+        <a href="bridal-care.html">体づくり</a>
+        <a href="acne-care.html">肌づくり</a>
+        <a href="diet-beauty.html">食事</a>
+        <a href="diet-timing.html">時期別</a>
+        <a href="trial-collection.html">体験・比較</a>
+    </nav>
+  </div>
+</header>
+<main>
+<div class="wrap">
 
-<body class="about-page">
+<section class="phero">
+  <p class="eyebrow">ABOUT</p>
+  <h1>このサイトについて</h1>
+  <p class="lead">Essential Beauty Needs は、<strong>挙式までの3〜6ヶ月で、体と肌を仕上げる</strong>ことだけを扱うプレ花嫁向けの情報サイトです。</p>
+</section>
 
-  <header>
-    <h1>Profile</h1>
-    <p>運営者情報</p>
-  </header>
+<section>
+  <h2>扱う範囲</h2>
+  <p>結婚式の準備には、会場探し、招待状、引き出物、演出と、やることが山ほどあります。このサイトはそのうちの一つ、<strong>「自分自身をどう仕上げるか」</strong>だけに絞っています。</p>
+  <ul class="checks">
+    <li>ドレスで出る部位を整える（背中・二の腕・デコルテ・むくみ）</li>
+    <li>写真に残る肌をつくる（ニキビ跡、乾燥、当日の照明対策）</li>
+    <li>やつれずに痩せるための食べ方</li>
+    <li>プロの施術を、契約前に試して選ぶ方法</li>
+  </ul>
+  <p>会場探しそのものは扱いません。それはこのサイトが始まる一段前の工程だからです。</p>
+</section>
 
-  <main>
-    <div class="profile-card">
-      <div class="profile-image-container">
-          <img src="images/Yuri.jpg" alt="管理栄養士Yuri" class="profile-image" onerror="handleImageError(this, 150, 150, 'Yuri')">
-      </div>
+<section>
+  <h2>編集方針</h2>
+  <p>準備期に困るのは、情報が足りないことではなく、情報が多すぎて順番が分からないことです。「これを買えば解決する」という形ではなく、<strong>自分の状況で何を選ぶべきかを判断できる状態にすること</strong>を役割としています。</p>
+  <p>体重の数字は追いません。ドレス姿を決めるのは体重ではなく、出る部位の見え方だからです。食事を扱うのも、肌と体の材料がそこにしかないからで、痩せること自体が目的ではありません。</p>
+</section>
 
-      <p>はじめまして。管理人の<strong>Yuri</strong>です。栄養士・スキンケアアドバイザーとして、結婚式を控えた花嫁様を中心に、肌と食のカウンセリングを行っています。</p>
-      
-      <p>私はオーストラリア・メルボルンの大学で栄養学を学び、約15年間を現地で過ごしました。オーガニック先進国で学んだことは、「肌の美しさは、塗るものだけでなく、食べるものと心の状態で決まる」という事実です。</p>
-        
-      <p>結婚式という人生の晴れ舞台。しかし、準備のストレスや無理なダイエットで肌荒れを起こし、自信をなくしてしまう花嫁様を数多く見てきました。</p>
+<section>
+  <h2>編集・監修</h2>
+  <div class="tbl-scroll">
+  <table class="tbl">
+    <tbody>
+      <tr><th style="width:8em">サイト名</th><td>Essential Beauty Needs</td></tr>
+      <tr><th>編集・監修</th><td>Yuri（栄養士）</td></tr>
+      <tr><th>領域</th><td>食事と体づくり、挙式前のボディ・スキンケア</td></tr>
+      <tr><th>関連</th><td><a href="https://note.com/yuri_organic" target="_blank" rel="noopener">note</a>／<a href="note-archive.html">記事一覧</a></td></tr>
+    </tbody>
+  </table>
+  </div>
+</section>
 
-      <p><strong>『Essential Beauty Needs』</strong>は、そんな花嫁様のために立ち上げた美容情報サイトです。</p>
-      
-      <p>「エステに行く時間がない」「背中の荒れが治らない」そんな切実な悩みに、栄養学に基づいたインナーケアと、肌本来の力を引き出すオーガニックコスメの両面からアプローチします。</p>
-      
-      <a href="bridal-care.html" class="diagnosis-link">
-          👰 挙式直前でも間に合う！「背中・二の腕」緊急ケア診断はこちら ＞
-      </a>
+<section>
+  <h2>免責事項</h2>
+  <ul class="checks">
+    <li>掲載している情報は一般的な情報提供を目的としたものであり、診断・治療・医療行為に代わるものではありません。体調に不安がある場合は医師にご相談ください</li>
+    <li>価格・キャンペーン内容・サービス内容は変動します。最終的な判断は各公式サイトの情報をご確認のうえ行ってください</li>
+    <li>当サイトはアフィリエイト広告を利用しています。掲載順や紹介内容は、当サイトの編集判断によるものです</li>
+  </ul>
+  <p class="small">個人情報の取り扱いについては<a href="privacy-policy.html">プライバシーポリシー</a>をご覧ください。</p>
+</section>
 
-      <p style="text-align: center; margin-top: 30px; font-weight: bold; color: #503535; font-family:'Playfair Display', serif;">
-        Let your inner beauty shine through.<br>
-        <span style="font-size:14px; font-family:'Shippori Mincho', serif; font-weight:normal;">一生に一度の写真を最高に輝く笑顔と素肌で。</span>
-      </p>
-
-      <div style="margin-top: 30px; text-align: right;">
-        <p style="margin-bottom: 5px;"><strong>Yuri</strong></p>
-        <span style="font-size:12px; color:#888;">Nutritionist / Skincare Advisor</span>
-        
-        <div class="sns-links">
-            <a href="https://www.instagram.com/yuri.ebn?igsh=d2JqOGJqd2J4Z2Rw" target="_blank" class="sns-btn sns-insta">📷 Instagram</a>
-            <a href="https://www.threads.net/@yuri.ebn" target="_blank" class="sns-btn sns-threads">💬 Threads</a>
-            <a href="https://note.com/yuri_organic" target="_blank" class="sns-btn sns-note">📝 Note</a>
-        </div>
-      </div>
-
-      <div class="policy-box">
-        <strong>【運営ポリシー・広告掲載について】</strong>
-        <p>当サイトの記事は、栄養士としての知見や成分リサーチに基づき作成しています。</p>
-        <p>Amazonのアソシエイトとして、Essential Beauty Needsは適格販売により収入を得ています。<br>
-        また、本サイトは「もしもアフィリエイト」等のASPを通じて商品を紹介しています。紹介料の有無に関わらず、花嫁様が安心して使える「本物」のみを厳選して掲載することをお約束します。</p>
-      </div>
-    </div>
-    
-    <div class="nav-links">
-        <a href="index.html">🏠 トップ</a>
-        <a href="about.html">👩‍💼 運営者情報</a>
-        <a href="bridal-care.html">👰 花嫁ケア診断</a>
-        <a href="note-archive.html">📕 公式Note</a>
-    </div>
-
-    <div class="footer-links">
-      <p style="font-size:11px; color: #888; margin-top:20px;">Contact: essential.beauty.needs.ebn@gmail.com</p>
-    </div>
-
-  </main>
-
-  <footer>© 2025 Essential Beauty Needs</footer>
-
+</div>
+</main>
+<footer class="site-foot">
+  <div class="wrap">
+    <div class="foot-by">Essential Beauty Needs ／ 編集・監修：Yuri（栄養士）</div>
+    <nav class="foot-nav">
+      <a href="index.html">トップ</a>
+      <a href="diet-timing.html">時期別ロードマップ</a>
+      <a href="trial-collection.html">体験・比較</a>
+      <a href="meal-delivery.html">宅配食</a>
+      <a href="hair-removal.html">脱毛</a>
+      <a href="whitening.html">ホワイトニング</a>
+      <a href="bridal-fair.html">式場フェア</a>
+      <a href="beauty-column.html">記事一覧</a>
+      <a href="note-archive.html">note</a>
+      <a href="about.html">運営者情報</a>
+      <a href="privacy-policy.html">プライバシーポリシー</a>
+    </nav>
+    <p class="pr">当サイトはアフィリエイト広告を利用しています。掲載している価格・キャンペーン内容は変動する場合があるため、必ず各公式サイトで最新の情報をご確認ください。<br>本サイトの内容は一般的な情報提供を目的としたもので、診断・治療を目的とした医療行為ではありません。</p>
+    <p class="pr">© 2026 Essential Beauty Needs</p>
+  </div>
+</footer>
 </body>
 </html>

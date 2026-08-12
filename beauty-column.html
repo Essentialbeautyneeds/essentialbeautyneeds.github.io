@@ -65,12 +65,27 @@
 
     @media(max-width:600px){ h1{font-size: 26px;} .grid{grid-template-columns: 1fr;} }
   </style>
+<link rel="stylesheet" href="assets/chrome.css">
+<link rel="stylesheet" href="assets/mobile.css">
 </head>
 <body>
+<header class="site-head">
+  <div class="site-head-in">
+    <a class="brand" href="index.html">Essential Beauty Needs<span>花嫁の仕上げ期ノート</span></a>
+    <nav class="site-nav">
+        <a href="bridal-care.html">体づくり</a>
+        <a href="acne-care.html">肌づくり</a>
+        <a href="diet-beauty.html">食事</a>
+        <a href="diet-timing.html">時期別</a>
+        <a href="trial-collection.html">体験・比較</a>
+    </nav>
+  </div>
+</header>
+
 
 <header>
   <h1>Beauty Library</h1>
-  <p style="margin-top:10px;">栄養士Yuriの美容コラム・全記事一覧</p>
+  <p style="margin-top:10px;">美容コラム・全記事一覧</p>
 </header>
 
 <div class="container">
@@ -90,13 +105,6 @@
           <span class="card-tag">肌荒れ</span>
           <h3 class="card-title">ニキビ・敏感肌ケア</h3>
           <p class="card-desc">急な肌荒れを鎮静させる、栄養士推奨のレスキューケア。</p>
-        </div>
-      </a>
-      <a href="winter-selection.html" class="article-card">
-        <div class="card-body">
-          <span class="card-tag">乾燥対策</span>
-          <h3 class="card-title">冬の集中保湿セレクション</h3>
-          <p class="card-desc">挙式直前の乾燥・粉吹きを防ぐ高保湿アイテム特集。</p>
         </div>
       </a>
       <a href="sonoko-diet.html" class="article-card">
@@ -167,25 +175,11 @@
           <p class="card-desc">「胸を残す」「下半身特化」「運動なし」。ワガママを叶える3社を比較。</p>
         </div>
       </a>
-      <a href="gift-selection.html" class="article-card">
-        <div class="card-body">
-          <span class="card-tag">プレゼント</span>
-          <h3 class="card-title">心をつなぐオーガニックギフト</h3>
-          <p class="card-desc">受付お礼や自分へのご褒美に。価格帯別のセンスの良いギフト。</p>
-        </div>
-      </a>
       <a href="amazon-oil-review.html" class="article-card">
         <div class="card-body">
           <span class="card-tag">本音レビュー</span>
           <h3 class="card-title">本当に効く！オイルレビュー</h3>
           <p class="card-desc">Amazonで買える美容オイルを、栄養士がガチ検証しました。</p>
-        </div>
-      </a>
-      <a href="trial-sets.html" class="article-card">
-        <div class="card-body">
-          <span class="card-tag">お得情報</span>
-          <h3 class="card-title">失敗しない！お試しセット比較</h3>
-          <p class="card-desc">現品を買う前に。まずは低価格で試せるトライアルセット集。</p>
         </div>
       </a>
     </div>
@@ -194,13 +188,6 @@
   <section class="category-sec">
     <h2 class="cat-title">🔬 成分・知識・ランキング</h2>
     <div class="grid">
-      <a href="skin-ranking.html" class="article-card">
-        <div class="card-body">
-          <span class="card-tag" style="background:#fff3cd; color:#856404;">殿堂入り</span>
-          <h3 class="card-title">最新スキンケアランキング</h3>
-          <p class="card-desc">成分・コスパ・即効性で選んだ、花嫁のためのベストコスメ。</p>
-        </div>
-      </a>
       <a href="organic-science.html" class="article-card">
         <div class="card-body">
           <span class="card-tag">成分解析</span>
@@ -245,7 +232,7 @@
       <a href="note-archive.html" class="article-card">
         <div class="card-body">
           <span class="card-tag">Note</span>
-          <h3 class="card-title">栄養士Yuriの公式Note一覧</h3>
+          <h3 class="card-title">note記事一覧</h3>
           <p class="card-desc">マリッジブルーや日々のつぶやきなど、より深い読み物はこちら。</p>
         </div>
       </a>
@@ -264,31 +251,47 @@
 <section class="nav-links">
   <a href="index.html">🏠 トップへ戻る</a>
   <a href="beauty-column.html">💄 コラム一覧</a>
-  <a href="skin-ranking.html">✨ おすすめランキング</a>
   <a href="bridal-fair.html">💒 式場探し</a>
   <a href="about.html">👩‍💼 運営者情報</a>
 </section>
 
+
+<div style="max-width:760px;margin:44px auto 0;padding:22px 20px 0;border-top:1px solid #efe3e2;font-family:'Zen Kaku Gothic New',sans-serif">
+  <p style="font-size:11px;letter-spacing:.16em;color:#c19a6b;font-weight:700;margin:0 0 12px">NEXT</p>
+  <div style="display:grid;gap:10px">
+    <a href="bridal-care.html" style="display:block;background:#fff;border:1px solid #efe3e2;border-radius:3px;padding:14px 16px;text-decoration:none;color:#4a3434;font-size:14px;font-weight:700;line-height:1.6">体づくりを見る ＞</a>
+    <a href="trial-collection.html" style="display:block;background:#fff;border:1px solid #efe3e2;border-radius:3px;padding:14px 16px;text-decoration:none;color:#4a3434;font-size:14px;font-weight:700;line-height:1.6">無料で試せるもの ＞</a>
+  </div>
+</div>
 <footer class="footer">
   <p>
-    栄養士｜Yuri 🌱<br>
+    Essential Beauty Needs ／ 編集・監修：Yuri（栄養士）<br>
     「体重ではなく、ラインで選ぶ花嫁へ」
   </p>
   
-  <div style="margin-bottom:20px;">
-      <a href="https://room.rakuten.co.jp/room_e0dd63a90a/items" target="_blank" rel="noopener" style="display:inline-block; border:1px solid #ccc; padding:5px 15px; border-radius:20px; font-size:12px; text-decoration:none; color:#666;">
-        🏠 Yuriの楽天ROOM
-      </a>
-  </div>
+  
 
   <a href="privacy-policy.html" style="color:#999; text-decoration:underline;">プライバシーポリシー</a>
 
-  <div style="margin-top: 20px; font-size: 10px; color: #aaa; line-height: 1.4;">
-    ※Amazonのアソシエイトとして、<br>Essential Beauty Needsは適格販売により収入を得ています。
-  </div>
+  
 
   <br><br>
   © 2026 Essential Beauty Needs
+
+  <nav style="max-width:760px;margin:22px auto 0;padding:20px;display:flex;flex-wrap:wrap;gap:14px;justify-content:center;border-top:1px solid #efe3e2">
+    <a href="index.html" style="color:#7d6a6a;text-decoration:none;font-size:12.5px;font-family:'Zen Kaku Gothic New',sans-serif">トップ</a>
+    <a href="diet-timing.html" style="color:#7d6a6a;text-decoration:none;font-size:12.5px;font-family:'Zen Kaku Gothic New',sans-serif">時期別ロードマップ</a>
+    <a href="trial-collection.html" style="color:#7d6a6a;text-decoration:none;font-size:12.5px;font-family:'Zen Kaku Gothic New',sans-serif">体験・比較</a>
+    <a href="meal-delivery.html" style="color:#7d6a6a;text-decoration:none;font-size:12.5px;font-family:'Zen Kaku Gothic New',sans-serif">宅配食</a>
+    <a href="hair-removal.html" style="color:#7d6a6a;text-decoration:none;font-size:12.5px;font-family:'Zen Kaku Gothic New',sans-serif">脱毛</a>
+    <a href="whitening.html" style="color:#7d6a6a;text-decoration:none;font-size:12.5px;font-family:'Zen Kaku Gothic New',sans-serif">ホワイトニング</a>
+    <a href="bridal-fair.html" style="color:#7d6a6a;text-decoration:none;font-size:12.5px;font-family:'Zen Kaku Gothic New',sans-serif">式場フェア</a>
+    <a href="beauty-column.html" style="color:#7d6a6a;text-decoration:none;font-size:12.5px;font-family:'Zen Kaku Gothic New',sans-serif">記事一覧</a>
+    <a href="note-archive.html" style="color:#7d6a6a;text-decoration:none;font-size:12.5px;font-family:'Zen Kaku Gothic New',sans-serif">note</a>
+    <a href="about.html" style="color:#7d6a6a;text-decoration:none;font-size:12.5px;font-family:'Zen Kaku Gothic New',sans-serif">運営者情報</a>
+    <a href="privacy-policy.html" style="color:#7d6a6a;text-decoration:none;font-size:12.5px;font-family:'Zen Kaku Gothic New',sans-serif">プライバシーポリシー</a>
+  </nav>
+  <p style="max-width:760px;margin:0 auto;padding:0 20px 8px;font-size:11.5px;color:#a89898;line-height:1.7;text-align:left;font-family:'Zen Kaku Gothic New',sans-serif">当サイトはアフィリエイト広告を利用しています。掲載している価格・キャンペーン内容は変動する場合があるため、必ず各公式サイトで最新の情報をご確認ください。<br>本サイトの内容は一般的な情報提供を目的としたもので、診断・治療を目的とした医療行為ではありません。</p>
 </footer>
 
 <div id="affiliate-floating-notice">
