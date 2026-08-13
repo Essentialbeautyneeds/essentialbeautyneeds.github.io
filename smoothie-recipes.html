@@ -29,35 +29,35 @@
   <style>
     /* 共通設定 */
     :root {
-      --bg: #fff0f5;
-      --accent: #f7a8a8;
-      --accent-hover: #f48b8b;
-      --room-color: #c63535;
-      --text-main: #503535;
+      --bg: #f8f6f2;
+      --accent: #c3d0c0;
+      --accent-hover: #a8bfa9;
+      --room-color: #8c7f74;
+      --text-main: #3d3836;
     }
 
     body { font-family: 'Quicksand', sans-serif; background: var(--bg); color: #555; margin: 0; padding: 0; line-height: 1.8; }
     
     /* ヘッダー */
-    header { text-align:center; color:var(--text-main); padding: 40px 20px 20px; background: linear-gradient(135deg, #ffe6e6, #ffdcdc); border-bottom:3px solid #e6b7b3; }
+    header { text-align:center; color:var(--text-main); padding: 40px 20px 20px; background: linear-gradient(135deg, #f6f8f4, #eef1ec); border-bottom:3px solid #dfe5dc; }
     header h1 { font-family:'Playfair Display',serif; font-size:28px; letter-spacing:1px; margin-bottom:8px; }
-    header .lead { font-size:14px; color:#5a4545; margin-bottom: 20px; }
+    header .lead { font-size:14px; color:#3d3836; margin-bottom: 20px; }
 
     /* ナビゲーション */
     .main-nav { display: flex; justify-content: center; gap: 15px; margin-bottom: 15px; }
-    .main-nav a { background: rgba(255,255,255,0.9); padding: 8px 16px; border-radius: 20px; text-decoration: none; color: #503535; font-weight: bold; font-size: 14px; box-shadow: 0 2px 5px rgba(0,0,0,0.05); transition: 0.3s; }
-    .main-nav a:hover { transform: translateY(-2px); color: #c63535; }
+    .main-nav a { background: rgba(255,255,255,0.9); padding: 8px 16px; border-radius: 20px; text-decoration: none; color: #3d3836; font-weight: bold; font-size: 14px; box-shadow: 0 2px 5px rgba(0,0,0,0.05); transition: 0.3s; }
+    .main-nav a:hover { transform: translateY(-2px); color: #8c7f74; }
 
     /* 開閉メニュー */
     details.menu-toggle { margin: 0 auto; max-width: 400px; cursor: pointer; position: relative; z-index: 100; }
-    summary.menu-btn { list-style: none; font-size: 13px; color: #888; font-weight: bold; padding: 8px 15px; border: 1px solid #e6b7b3; border-radius: 20px; background: rgba(255,255,255,0.6); display: inline-block; }
+    summary.menu-btn { list-style: none; font-size: 13px; color: #888; font-weight: bold; padding: 8px 15px; border: 1px solid #dfe5dc; border-radius: 20px; background: rgba(255,255,255,0.6); display: inline-block; }
     .hidden-links { display: flex; flex-wrap: wrap; justify-content: center; gap: 8px; margin-top: 10px; padding: 15px; background: rgba(255,255,255,0.95); border-radius: 12px; box-shadow: 0 4px 15px rgba(0,0,0,0.1); }
     .hidden-links a { font-size: 12px; text-decoration: none; color: #555; padding: 6px 12px; background: #fff; border-radius: 6px; border: 1px solid #eee; }
 
     /* 診断バナー */
-    .diagnosis-banner { background: #fff; border: 3px solid #f39c12; border-radius: 15px; padding: 25px; text-align: center; margin: 30px auto; position: relative; max-width: 650px; }
-    .diagnosis-badge { background: #d35400; color: #fff; padding: 5px 15px; border-radius: 5px; font-weight: bold; font-size: 12px; position: absolute; top: -15px; left: 50%; transform: translateX(-50%); box-shadow: 0 2px 5px rgba(0,0,0,0.2); }
-    .diagnosis-btn { display: inline-block; background: linear-gradient(45deg, #e67e22, #f39c12); color: #fff; font-size: 18px; font-weight: bold; padding: 15px 35px; border-radius: 50px; text-decoration: none; margin-top: 15px; box-shadow: 0 4px 15px rgba(230, 126, 34, 0.4); animation: pulse-glow 2s infinite; }
+    .diagnosis-banner { background: #fff; border: 3px solid #c3d0c0; border-radius: 15px; padding: 25px; text-align: center; margin: 30px auto; position: relative; max-width: 650px; }
+    .diagnosis-badge { background: #5f7a63; color: #fff; padding: 5px 15px; border-radius: 5px; font-weight: bold; font-size: 12px; position: absolute; top: -15px; left: 50%; transform: translateX(-50%); box-shadow: 0 2px 5px rgba(0,0,0,0.2); }
+    .diagnosis-btn { display: inline-block; background: linear-gradient(45deg, #a8bfa9, #c3d0c0); color: #fff; font-size: 18px; font-weight: bold; padding: 15px 35px; border-radius: 50px; text-decoration: none; margin-top: 15px; box-shadow: 0 4px 15px rgba(230, 126, 34, 0.4); animation:none; }
     @keyframes pulse-glow { 0% { box-shadow: 0 0 0 0 rgba(230, 126, 34, 0.4); transform: scale(1); } 50% { box-shadow: 0 0 0 10px rgba(230, 126, 34, 0); transform: scale(1.02); } 100% { box-shadow: 0 0 0 0 rgba(230, 126, 34, 0); transform: scale(1); } }
 
     /* メインエリア */
@@ -66,55 +66,55 @@
     /* 記事カード */
     .article-card { background: #ffffff; padding: 40px; border-radius: 20px; box-shadow: 0 10px 25px rgba(0,0,0,0.05); margin-bottom: 30px; }
     .page-title { text-align: center; margin-bottom: 40px; }
-    .page-title h2 { font-family: 'Playfair Display', serif; font-size: 32px; color: #d88e8e; margin: 0; border: none; }
+    .page-title h2 { font-family: 'Playfair Display', serif; font-size: 32px; color: #5f7a63; margin: 0; border: none; }
     .page-title p { font-size: 14px; color: #888; margin-top: 5px; }
 
     /* 見出し */
-    h2 { color: #d88e8e; border-bottom: 2px solid #fbeaea; padding-bottom: 10px; margin-top: 50px; font-size: 24px; text-align: center; }
-    h3 { color: #503535; margin-top: 30px; font-size: 20px; border-left: 4px solid #f7a8a8; padding-left: 10px; }
+    h2 { color: #5f7a63; border-bottom: 2px solid #e3e8e0; padding-bottom: 10px; margin-top: 50px; font-size: 24px; text-align: center; }
+    h3 { color: #3d3836; margin-top: 30px; font-size: 20px; border-left: 4px solid #c3d0c0; padding-left: 10px; }
 
     /* 栄養士コメントボックス */
-    .nutrition-column { background: #fffaf4; border: 1px dashed #d68e33; border-radius: 10px; padding: 25px; margin: 20px 0; font-size: 15px; }
-    .nutrition-column h4 { margin-top: 0; color: #d68e33; font-size: 16px; display: flex; align-items: center; gap: 8px; }
+    .nutrition-column { background: #fbfbf9; border: 1px dashed #b09a7c; border-radius: 10px; padding: 25px; margin: 20px 0; font-size: 15px; }
+    .nutrition-column h4 { margin-top: 0; color: #b09a7c; font-size: 16px; display: flex; align-items: center; gap: 8px; }
     
     /* レシピボックス */
     .recipe-box { background: #fafafa; border: 1px solid #eee; border-radius: 15px; padding: 20px; margin: 30px 0; display: flex; flex-wrap: wrap; gap: 20px; }
     .recipe-image { flex: 1; min-width: 200px; }
     .recipe-image img { width: 100%; height: auto; border-radius: 10px; object-fit: cover; aspect-ratio: 4/3; }
     .recipe-details { flex: 1.5; min-width: 250px; }
-    .ingredients-list { background: #fff; padding: 15px; border-radius: 10px; border-left: 4px solid #f48b8b; }
+    .ingredients-list { background: #fff; padding: 15px; border-radius: 10px; border-left: 4px solid #a8bfa9; }
     .ingredients-list ul { margin: 0; padding-left: 20px; list-style-type: square; }
 
     /* まとめコラム（新規追加） */
-    .summary-column { background: #fff; border: 2px solid #f4b5b5; border-radius: 15px; padding: 30px; margin: 50px 0; }
-    .summary-column h2 { text-align: center; color: #d6336c; font-size: 22px; margin-top: 0; border: none; }
+    .summary-column { background: #fff; border: 2px solid #dfe5dc; border-radius: 15px; padding: 30px; margin: 50px 0; }
+    .summary-column h2 { text-align: center; color: #b83d63; font-size: 22px; margin-top: 0; border: none; }
     .summary-column p { text-align: justify; margin-bottom: 15px; }
 
     /* Noteバナー */
-    .note-banner { max-width: 650px; margin: 50px auto; padding: 5px; background: linear-gradient(135deg, #f7a8a8 0%, #ffdecb 100%); border-radius: 20px; box-shadow: 0 10px 25px rgba(247, 168, 168, 0.25); }
+    .note-banner { max-width: 650px; margin: 50px auto; padding: 5px; background: linear-gradient(135deg, #c3d0c0 0%, #eef1ec 100%); border-radius: 20px; box-shadow: 0 10px 25px rgba(247, 168, 168, 0.25); }
     .note-inner { background: #ffffff; border-radius: 15px; padding: 30px 20px; text-align: center; }
-    .shiny-btn { display: block; width: 100%; max-width: 320px; margin: 20px auto 10px; background: linear-gradient(45deg, #f7a8a8, #d68e33); color: #fff; text-decoration: none; font-weight: bold; font-size: 18px; padding: 18px 0; border-radius: 50px; position: relative; overflow: hidden; }
+    .shiny-btn { display: block; width: 100%; max-width: 320px; margin: 20px auto 10px; background: linear-gradient(45deg, #c3d0c0, #b09a7c); color: #fff; text-decoration: none; font-weight: bold; font-size: 18px; padding: 18px 0; border-radius: 50px; position: relative; overflow: hidden; }
     @keyframes shine { 0% { transform: translateX(-100%) skewX(-15deg); } 100% { transform: translateX(200%) skewX(-15deg); } }
     .shiny-btn::after { content: ''; position: absolute; top: 0; left: 0; width: 50%; height: 100%; background: linear-gradient(to right, rgba(255,255,255,0) 0%, rgba(255,255,255,0.3) 50%, rgba(255,255,255,0) 100%); transform: skewX(-15deg); animation: shine 3s infinite; }
 
     /* フッター */
-    footer { background: #fffaf4; border-top: 3px solid #f7a8a8; padding: 50px 20px 60px; margin-top: 60px; color: #555; font-size: 14px; }
+    footer { background: #fbfbf9; border-top: 3px solid #c3d0c0; padding: 50px 20px 60px; margin-top: 60px; color: #555; font-size: 14px; }
     .footer-container { max-width: 960px; margin: 0 auto; display: flex; flex-wrap: wrap; gap: 30px; }
     .footer-col { flex: 1; min-width: 200px; }
-    .footer-col h3 { font-size: 16px; color: #d6336c; border-bottom: 1px dashed #f4b5b5; padding-bottom: 8px; margin-bottom: 15px; font-weight: bold; }
+    .footer-col h3 { font-size: 16px; color: #b83d63; border-bottom: 1px dashed #dfe5dc; padding-bottom: 8px; margin-bottom: 15px; font-weight: bold; }
     .footer-col a { display: block; color: #666; text-decoration: none; margin-bottom: 10px; transition: 0.3s; position: relative; padding-left: 10px; }
-    .footer-col a::before { content: "・"; position: absolute; left: 0; color: #f7a8a8; }
-    .footer-col a:hover { color: #d6336c; padding-left: 15px; }
+    .footer-col a::before { content: "・"; position: absolute; left: 0; color: #c3d0c0; }
+    .footer-col a:hover { color: #b83d63; padding-left: 15px; }
     .footer-bottom { text-align: center; margin-top: 50px; padding-top: 30px; border-top: 1px solid #eee; }
-    .footer-room-link { display: inline-block; color: #c63535; font-weight: bold; border: 1px solid #c63535; padding: 8px 20px; border-radius: 20px; text-decoration: none; margin-bottom: 20px; background: #fff; transition: 0.3s; }
-    .footer-room-link:hover { background: #c63535; color: #fff; }
+    .footer-room-link { display: inline-block; color: #8c7f74; font-weight: bold; border: 1px solid #8c7f74; padding: 8px 20px; border-radius: 20px; text-decoration: none; margin-bottom: 20px; background: #fff; transition: 0.3s; }
+    .footer-room-link:hover { background: #8c7f74; color: #fff; }
 
     #affiliateNotice { position: fixed; right: 12px; bottom: 12px; background: rgba(255, 255, 255, 0.8); color: #555; font-size: 11px; border-radius: 6px; padding: 4px 8px; box-shadow: 0 2px 6px rgba(0,0,0,0.1); z-index: 999; }
     .back-btn { text-align: center; margin: 50px 0; }
     .back-btn a { color: #777; text-decoration: none; border-bottom: 1px solid #ccc; }
 
     @keyframes blinkEffect { 0% { opacity: 1; } 50% { opacity: 0.3; } 100% { opacity: 1; } }
-    .new-mark { color: #ff0000; font-weight: bold; font-size: 0.8em; margin-left: 5px; animation: blinkEffect 1.2s infinite; vertical-align: super; }
+    .new-mark { color: #b83d63; font-weight: bold; font-size: 0.8em; margin-left: 5px; animation:none; vertical-align: super; }
 
     @media (max-width: 600px) { .article-card { padding: 25px; } .recipe-box { flex-direction: column; } }
   </style>
@@ -168,7 +168,7 @@
 
   <div class="diagnosis-banner">
       <span class="diagnosis-badge">栄養士監修・無料ツール</span>
-      <h3 style="color:#d35400; margin-bottom:10px; font-size:20px;">⚡ 外側からのケアだけで大丈夫？</h3>
+      <h3 style="color:#5f7a63; margin-bottom:10px; font-size:20px;">⚡ 外側からのケアだけで大丈夫？</h3>
       <p style="margin-bottom:5px;">肌荒れの原因は「食事」かも？<br>
       今の肌状態と、必要なケアを<strong>30秒で診断</strong>します。</p>
       <a href="bridal-care.html" class="diagnosis-btn">✨ 今すぐ肌診断をする！ ✨</a>
@@ -181,8 +181,8 @@
     </div>
 
     <div class="article-card">
-      <div style="background:#fffaf4; border-left:5px solid #d6336c; padding:20px; border-radius:5px; margin-bottom:30px;">
-        <p style="margin:0; font-weight:bold; color:#503535;">「高い美容液を使っているのに、肌の調子が上がらない…」<br>
+      <div style="background:#fbfbf9; border-left:5px solid #b83d63; padding:20px; border-radius:5px; margin-bottom:30px;">
+        <p style="margin:0; font-weight:bold; color:#3d3836;">「高い美容液を使っているのに、肌の調子が上がらない…」<br>
         「エステに通っているけど、背中ニキビが繰り返す…」</p>
         <p style="margin-top:10px;">そんな花嫁様へ。その原因は、もしかすると<strong>「内臓の疲れ」</strong>かもしれません。<br>
         肌は内臓の鏡です。どんなに高級な化粧品を塗っても、腸内環境が荒れていては、肌に透明感は生まれません。<br>
@@ -287,9 +287,9 @@
 
     <div class="note-banner">
       <div class="note-inner">
-        <span style="display: inline-block; background: #e74c3c; color: #fff; font-size: 12px; font-weight: bold; padding: 4px 12px; border-radius: 20px; vertical-align: middle; margin-bottom: 10px;">保存版・アーカイブ完成</span>
-        <h3 style="margin: 5px 0 15px; font-size: 22px; color: #503535; font-family: 'Playfair Display', serif;">編集・監修：Yuri（栄養士）<br>読むだけで変わる「花嫁美容」Note</h3>
-        <div style="background: #fffaf4; border: 1px dashed #d4a373; border-radius: 10px; padding: 15px; margin: 15px auto; max-width: 90%; text-align: left; font-size: 15px; color: #555;">
+        <span style="display: inline-block; background: #b83d63; color: #fff; font-size: 12px; font-weight: bold; padding: 4px 12px; border-radius: 20px; vertical-align: middle; margin-bottom: 10px;">保存版・アーカイブ完成</span>
+        <h3 style="margin: 5px 0 15px; font-size: 22px; color: #3d3836; font-family: 'Playfair Display', serif;">編集・監修：Yuri（栄養士）<br>読むだけで変わる「花嫁美容」Note</h3>
+        <div style="background: #fbfbf9; border: 1px dashed #b09a7c; border-radius: 10px; padding: 15px; margin: 15px auto; max-width: 90%; text-align: left; font-size: 15px; color: #555;">
           <p style="margin: 5px 0;">👰 <strong>プレ花嫁講座</strong>：ドレス姿を変える食事術</p>
           <p style="margin: 5px 0;">✨ <strong>高級美容液より効く</strong>「美肌定食」とは？</p>
         </div>
@@ -302,11 +302,11 @@
     </div>
 
   
-<div style="max-width:760px;margin:44px auto 0;padding:22px 20px 0;border-top:1px solid #efe3e2;font-family:'Zen Kaku Gothic New',sans-serif">
-  <p style="font-size:11px;letter-spacing:.16em;color:#c19a6b;font-weight:700;margin:0 0 12px">NEXT</p>
+<div style="max-width:760px;margin:44px auto 0;padding:22px 20px 0;border-top:1px solid #e8e6e1;font-family:'Zen Kaku Gothic New',sans-serif">
+  <p style="font-size:11px;letter-spacing:.16em;color:#b09a7c;font-weight:700;margin:0 0 12px">NEXT</p>
   <div style="display:grid;gap:10px">
-    <a href="diet-beauty.html" style="display:block;background:#fff;border:1px solid #efe3e2;border-radius:3px;padding:14px 16px;text-decoration:none;color:#4a3434;font-size:14px;font-weight:700;line-height:1.6">食事メソッドの全体像 ＞</a>
-    <a href="trial-collection.html" style="display:block;background:#fff;border:1px solid #efe3e2;border-radius:3px;padding:14px 16px;text-decoration:none;color:#4a3434;font-size:14px;font-weight:700;line-height:1.6">無料で試せるもの ＞</a>
+    <a href="diet-beauty.html" style="display:block;background:#fff;border:1px solid #e8e6e1;border-radius:3px;padding:14px 16px;text-decoration:none;color:#3d3836;font-size:14px;font-weight:700;line-height:1.6">食事メソッドの全体像 ＞</a>
+    <a href="trial-collection.html" style="display:block;background:#fff;border:1px solid #e8e6e1;border-radius:3px;padding:14px 16px;text-decoration:none;color:#3d3836;font-size:14px;font-weight:700;line-height:1.6">無料で試せるもの ＞</a>
   </div>
 </div>
 </main>
@@ -342,7 +342,7 @@
     
   
 
-  <nav style="max-width:760px;margin:22px auto 0;padding:20px;display:flex;flex-wrap:wrap;gap:14px;justify-content:center;border-top:1px solid #efe3e2">
+  <nav style="max-width:760px;margin:22px auto 0;padding:20px;display:flex;flex-wrap:wrap;gap:14px;justify-content:center;border-top:1px solid #e8e6e1">
     <a href="index.html" style="color:#8c4a5c;text-decoration:underline;text-decoration-color:rgba(140,74,92,.45);text-underline-offset:4px;font-size:13px;font-weight:500;font-family:'Zen Kaku Gothic New',sans-serif">トップ</a>
     <a href="diet-timing.html" style="color:#8c4a5c;text-decoration:underline;text-decoration-color:rgba(140,74,92,.45);text-underline-offset:4px;font-size:13px;font-weight:500;font-family:'Zen Kaku Gothic New',sans-serif">時期別ロードマップ</a>
     <a href="trial-collection.html" style="color:#8c4a5c;text-decoration:underline;text-decoration-color:rgba(140,74,92,.45);text-underline-offset:4px;font-size:13px;font-weight:500;font-family:'Zen Kaku Gothic New',sans-serif">体験・比較</a>

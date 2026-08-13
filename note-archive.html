@@ -26,32 +26,32 @@
     </script>
 
     <style>
-        :root{ --bg:#fff8f8; --card:#ffffff; --accent:#f7a8a8; --accent-hover:#f48b8b; --text-main: #503535; }
+        :root{ --bg:#faf9f6; --card:#ffffff; --accent:#c3d0c0; --accent-hover:#a8bfa9; --text-main: #3d3836; }
         *{box-sizing:border-box;margin:0;padding:0;}
         body{font-family:'Quicksand',sans-serif;background:var(--bg);color:#333; line-height: 1.8;}
 
         /* --- ヘッダー --- */
         header{
             text-align:center; color:var(--text-main); padding: 40px 20px 20px;
-            background: linear-gradient(135deg, #ffe6e6, #ffdcdc); border-bottom:3px solid #e6b7b3;
+            background: linear-gradient(135deg, #f6f8f4, #eef1ec); border-bottom:3px solid #dfe5dc;
         }
         h1{font-family:'Playfair Display',serif;font-size:28px;letter-spacing:1px;margin-bottom:8px;}
-        .lead{font-size:14px;color:#5a4545; margin-bottom: 20px;}
+        .lead{font-size:14px;color:#3d3836; margin-bottom: 20px;}
 
         /* メインナビ */
         .main-nav { display: flex; justify-content: center; gap: 15px; margin-bottom: 15px; }
         .main-nav a {
             background: rgba(255,255,255,0.9); padding: 8px 16px; border-radius: 20px;
-            text-decoration: none; color: #503535; font-weight: bold; font-size: 14px;
+            text-decoration: none; color: #3d3836; font-weight: bold; font-size: 14px;
             box-shadow: 0 2px 5px rgba(0,0,0,0.05); transition: 0.3s;
         }
-        .main-nav a:hover { transform: translateY(-2px); color: #c63535; }
+        .main-nav a:hover { transform: translateY(-2px); color: #8c7f74; }
 
         /* 開閉式メニュー */
         details.menu-toggle { margin: 0 auto; max-width: 400px; cursor: pointer; }
         summary.menu-btn {
             list-style: none; font-size: 13px; color: #888; font-weight: bold;
-            padding: 8px; border: 1px solid #e6b7b3; border-radius: 8px;
+            padding: 8px; border: 1px solid #dfe5dc; border-radius: 8px;
             background: rgba(255,255,255,0.5); display: inline-block;
         }
         summary.menu-btn::after { content: " ▼"; font-size: 10px; }
@@ -72,8 +72,8 @@
         .container{max-width:900px;margin:0 auto;padding:0 16px;}
 
         .category-nav { display: flex; justify-content: center; gap: 10px; margin: 30px 0; flex-wrap: wrap; }
-        .cat-btn { background: #fff; border: 1px solid #f4b5b5; padding: 8px 20px; border-radius: 25px; text-decoration: none; color: var(--text-main); font-weight: bold; font-size: 14px; transition: all 0.3s ease; }
-        .cat-btn:hover { background: #fcece3; transform: translateY(-2px); color: #d6336c; }
+        .cat-btn { background: #fff; border: 1px solid #dfe5dc; padding: 8px 20px; border-radius: 25px; text-decoration: none; color: var(--text-main); font-weight: bold; font-size: 14px; transition: all 0.3s ease; }
+        .cat-btn:hover { background: #fcece3; transform: translateY(-2px); color: #b83d63; }
 
         h2.section-title { text-align: center; font-family: 'Playfair Display', serif; font-size: 24px; color: var(--text-main); margin-top: 40px; margin-bottom: 20px; border-bottom: 2px solid #fcece3; display: inline-block; padding-bottom: 5px; }
         
@@ -101,18 +101,18 @@
         }
         .note-content { padding: 12px 15px; flex: 1; }
         .note-title { font-size: 15px; font-weight: bold; margin: 0; display: block; color: var(--text-main); line-height: 1.5; }
-        .arrow-icon { color: #f4b5b5; font-size: 18px; margin-left: 10px; margin-right: 15px; }
+        .arrow-icon { color: #dfe5dc; font-size: 18px; margin-left: 10px; margin-right: 15px; }
         
         /* 価格タグ（有料記事用） */
         .price-tag { display: inline-block; background: #eee; color: #555; font-size: 11px; padding: 1px 6px; border-radius: 4px; margin-left: 8px; vertical-align: middle; }
 
         /* プレミアムバナー */
-        .premium-banner { background-color: #fffaf4; padding: 30px 15px; margin: 40px 0; border-radius: 8px; border: 2px solid #f4b5b5; }
+        .premium-banner { background-color: #fbfbf9; padding: 30px 15px; margin: 40px 0; border-radius: 8px; border: 2px solid #dfe5dc; }
         .banner-container { max-width: 800px; margin: 0 auto; display: flex; align-items: center; justify-content: center; gap: 20px; background: #fff; padding: 25px; border-radius: 12px; box-shadow: 0 8px 25px rgba(0,0,0,0.05); }
         .banner-image { flex: 1; max-width: 250px; }
         .banner-image img { width: 100%; height: auto; border-radius: 6px; box-shadow: 0 4px 10px rgba(0,0,0,0.1); object-fit: cover; }
         .banner-content { flex: 1.5; text-align: left; }
-        .banner-tag { display: inline-block; background-color: #d6336c; color: #fff; font-size: 11px; font-weight: bold; padding: 3px 10px; border-radius: 15px; margin-bottom: 10px; }
+        .banner-tag { display: inline-block; background-color: #b83d63; color: #fff; font-size: 11px; font-weight: bold; padding: 3px 10px; border-radius: 15px; margin-bottom: 10px; }
         .banner-title { font-family: "Times New Roman", serif; font-size: 22px; color: #333; margin-bottom: 10px; line-height: 1.3; font-weight: bold; }
         .banner-text { font-size: 13px; line-height: 1.6; color: #666; margin-bottom: 20px; }
         .banner-button { display: inline-block; background: linear-gradient(135deg, #d4af37 0%, #c5a028 100%); color: #fff; font-weight: bold; text-decoration: none; padding: 10px 25px; border-radius: 25px; font-size: 14px; box-shadow: 0 4px 10px rgba(212, 175, 55, 0.3); transition: all 0.3s ease; }
@@ -133,24 +133,24 @@
         }
 
         /* Footer */
-        footer { background: #fffaf4; border-top: 3px solid #f7a8a8; padding: 40px 20px; margin-top: 50px; color: #555; font-size: 13px; }
+        footer { background: #fbfbf9; border-top: 3px solid #c3d0c0; padding: 40px 20px; margin-top: 50px; color: #555; font-size: 13px; }
         .footer-container { max-width: 960px; margin: 0 auto; display: flex; flex-wrap: wrap; gap: 30px; }
         .footer-col { flex: 1; min-width: 180px; }
-        .footer-col h3 { font-size: 15px; color: #d6336c; border-bottom: 1px dashed #f4b5b5; padding-bottom: 5px; margin-bottom: 10px; font-weight: bold; }
+        .footer-col h3 { font-size: 15px; color: #b83d63; border-bottom: 1px dashed #dfe5dc; padding-bottom: 5px; margin-bottom: 10px; font-weight: bold; }
         .footer-col a { display: block; color: #666; text-decoration: none; margin-bottom: 8px; }
-        .footer-col a:hover { color: #d6336c; }
+        .footer-col a:hover { color: #b83d63; }
         
         /* New!! マーク */
         @keyframes blinkEffect { 0% { opacity: 1; } 50% { opacity: 0.3; } 100% { opacity: 1; } }
-        .new-mark { color: #ff0000; font-weight: bold; font-size: 0.8em; margin-left: 5px; animation: blinkEffect 1.2s infinite; vertical-align: super; }
+        .new-mark { color: #b83d63; font-weight: bold; font-size: 0.8em; margin-left: 5px; animation:none; vertical-align: super; }
 
         /* 楽天ROOMボタン */
         .footer-bottom { text-align: center; margin-top: 30px; border-top: 1px solid #eee; padding-top: 20px; }
         .footer-room-link {
             display: inline-block;
-            color: #c63535;
+            color: #8c7f74;
             font-weight: bold;
-            border: 1px solid #c63535;
+            border: 1px solid #8c7f74;
             padding: 10px 25px;
             border-radius: 30px;
             text-decoration: none;
@@ -158,7 +158,7 @@
             transition: 0.3s;
             margin-bottom: 20px;
         }
-        .footer-room-link:hover { background: #c63535; color: #fff; }
+        .footer-room-link:hover { background: #8c7f74; color: #fff; }
         
         #affiliateNotice { position: fixed; right: 10px; bottom: 10px; background: rgba(255,255,255,0.9); font-size: 10px; padding: 3px 6px; border: 1px solid #eee; border-radius: 4px; z-index: 999; }
     </style>
@@ -646,11 +646,11 @@
     </div>
 
 
-<div style="max-width:760px;margin:44px auto 0;padding:22px 20px 0;border-top:1px solid #efe3e2;font-family:'Zen Kaku Gothic New',sans-serif">
-  <p style="font-size:11px;letter-spacing:.16em;color:#c19a6b;font-weight:700;margin:0 0 12px">NEXT</p>
+<div style="max-width:760px;margin:44px auto 0;padding:22px 20px 0;border-top:1px solid #e8e6e1;font-family:'Zen Kaku Gothic New',sans-serif">
+  <p style="font-size:11px;letter-spacing:.16em;color:#b09a7c;font-weight:700;margin:0 0 12px">NEXT</p>
   <div style="display:grid;gap:10px">
-    <a href="diet-beauty.html" style="display:block;background:#fff;border:1px solid #efe3e2;border-radius:3px;padding:14px 16px;text-decoration:none;color:#4a3434;font-size:14px;font-weight:700;line-height:1.6">食事メソッドの全体像 ＞</a>
-    <a href="trial-collection.html" style="display:block;background:#fff;border:1px solid #efe3e2;border-radius:3px;padding:14px 16px;text-decoration:none;color:#4a3434;font-size:14px;font-weight:700;line-height:1.6">無料で試せるもの ＞</a>
+    <a href="diet-beauty.html" style="display:block;background:#fff;border:1px solid #e8e6e1;border-radius:3px;padding:14px 16px;text-decoration:none;color:#3d3836;font-size:14px;font-weight:700;line-height:1.6">食事メソッドの全体像 ＞</a>
+    <a href="trial-collection.html" style="display:block;background:#fff;border:1px solid #e8e6e1;border-radius:3px;padding:14px 16px;text-decoration:none;color:#3d3836;font-size:14px;font-weight:700;line-height:1.6">無料で試せるもの ＞</a>
   </div>
 </div>
 </main>
@@ -686,7 +686,7 @@
     
   
 
-  <nav style="max-width:760px;margin:22px auto 0;padding:20px;display:flex;flex-wrap:wrap;gap:14px;justify-content:center;border-top:1px solid #efe3e2">
+  <nav style="max-width:760px;margin:22px auto 0;padding:20px;display:flex;flex-wrap:wrap;gap:14px;justify-content:center;border-top:1px solid #e8e6e1">
     <a href="index.html" style="color:#8c4a5c;text-decoration:underline;text-decoration-color:rgba(140,74,92,.45);text-underline-offset:4px;font-size:13px;font-weight:500;font-family:'Zen Kaku Gothic New',sans-serif">トップ</a>
     <a href="diet-timing.html" style="color:#8c4a5c;text-decoration:underline;text-decoration-color:rgba(140,74,92,.45);text-underline-offset:4px;font-size:13px;font-weight:500;font-family:'Zen Kaku Gothic New',sans-serif">時期別ロードマップ</a>
     <a href="trial-collection.html" style="color:#8c4a5c;text-decoration:underline;text-decoration-color:rgba(140,74,92,.45);text-underline-offset:4px;font-size:13px;font-weight:500;font-family:'Zen Kaku Gothic New',sans-serif">体験・比較</a>

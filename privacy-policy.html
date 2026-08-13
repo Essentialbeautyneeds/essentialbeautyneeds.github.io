@@ -30,12 +30,12 @@
   <style>
     /* 共通設定 */
     :root {
-      --bg: #fff8f8;
-      --accent: #f7a8a8;
-      --accent-hover: #f48b8b;
-      --text-main: #503535;
+      --bg: #faf9f6;
+      --accent: #c3d0c0;
+      --accent-hover: #a8bfa9;
+      --text-main: #3d3836;
       --card-bg: #ffffff;
-      --room-color: #c63535;
+      --room-color: #8c7f74;
     }
     *, *::before, *::after { box-sizing: border-box; }
 
@@ -49,17 +49,17 @@
 
     /* ヘッダー */
     header {
-      background: linear-gradient(135deg, #fff0f5, #ffe6e6);
+      background: linear-gradient(135deg, #f8f6f2, #f6f8f4);
       text-align: center;
       padding: 80px 20px 50px;
       color: var(--text-main);
-      border-bottom: 3px solid #e6b7b3;
+      border-bottom: 3px solid #dfe5dc;
     }
     header h1 {
       font-family: 'Playfair Display', serif;
       font-size: 34px;
       margin: 0;
-      color: #d6336c;
+      color: #b83d63;
       letter-spacing: 1px;
     }
     header p {
@@ -71,7 +71,7 @@
 
     /* ナビゲーション */
     .nav-links{display:flex;gap:12px;justify-content:center;margin-top:25px;flex-wrap:wrap;}
-    .nav-links a{background:rgba(255,255,255,0.6);padding:8px 12px;border-radius:20px;text-decoration:none;color:#503535;font-weight:600; font-size:14px; box-shadow: 0 2px 5px rgba(0,0,0,0.05); transition:0.3s;}
+    .nav-links a{background:rgba(255,255,255,0.6);padding:8px 12px;border-radius:20px;text-decoration:none;color:#3d3836;font-weight:600; font-size:14px; box-shadow: 0 2px 5px rgba(0,0,0,0.05); transition:0.3s;}
     .nav-links a:hover{background:var(--accent);color:#fff; transform:translateY(-2px);}
     .nav-break { flex-basis: 100%; height: 0; margin: 5px 0; }
 
@@ -93,7 +93,7 @@
 
     h2 {
       font-size: 20px;
-      color: #d6336c;
+      color: #b83d63;
       border-bottom: 1px solid #fceeee;
       padding-bottom: 10px;
       margin-top: 30px;
@@ -111,7 +111,7 @@
     }
     .diagnosis-banner {
       background: #fff;
-      border: 3px solid #f39c12; /* 目立つオレンジ/ゴールド系 */
+      border: 3px solid #c3d0c0; /* 目立つオレンジ/ゴールド系 */
       border-radius: 15px;
       padding: 25px;
       text-align: center;
@@ -121,13 +121,13 @@
     }
     /* 「NEW!」などのバッジ */
     .diagnosis-badge {
-        background: #d35400; color: #fff; padding: 5px 15px; border-radius: 5px;
+        background: #5f7a63; color: #fff; padding: 5px 15px; border-radius: 5px;
         font-weight: bold; font-size: 12px; position: absolute; top: -15px; left: 50%;
         transform: translateX(-50%); box-shadow: 0 2px 5px rgba(0,0,0,0.2);
     }
     .diagnosis-btn {
       display: inline-block;
-      background: linear-gradient(45deg, #e67e22, #f39c12);
+      background: linear-gradient(45deg, #a8bfa9, #c3d0c0);
       color: #fff;
       font-size: 18px;
       font-weight: bold;
@@ -137,7 +137,7 @@
       margin-top: 15px;
       box-shadow: 0 4px 15px rgba(230, 126, 34, 0.4);
       /* ここでキラキラさせます */
-      animation: pulse-glow 2s infinite;
+      animation:none;
     }
     .diagnosis-btn:hover {
         opacity: 0.9;
@@ -147,8 +147,8 @@
 
     /* フッター（リンク網羅型） */
     footer {
-        background: #fffaf4;
-        border-top: 3px solid #f7a8a8;
+        background: #fbfbf9;
+        border-top: 3px solid #c3d0c0;
         padding: 50px 20px 60px;
         margin-top: 60px;
         color: #555;
@@ -166,8 +166,8 @@
     .footer-col { flex: 1; min-width: 200px; }
     .footer-col h3 {
         font-size: 16px;
-        color: #d6336c;
-        border-bottom: 1px dashed #f4b5b5;
+        color: #b83d63;
+        border-bottom: 1px dashed #dfe5dc;
         padding-bottom: 8px;
         margin-bottom: 15px;
         font-weight: bold;
@@ -175,14 +175,14 @@
     .footer-col a {
         display: block; color: #666; text-decoration: none; margin-bottom: 10px; transition: 0.3s; position: relative; padding-left: 10px;
     }
-    .footer-col a::before { content: "・"; position: absolute; left: 0; color: #f7a8a8; }
-    .footer-col a:hover { color: #d6336c; padding-left: 15px; }
+    .footer-col a::before { content: "・"; position: absolute; left: 0; color: #c3d0c0; }
+    .footer-col a:hover { color: #b83d63; padding-left: 15px; }
     .footer-bottom { text-align: center; margin-top: 50px; padding-top: 30px; border-top: 1px solid #eee; }
     
     .footer-room-link {
-        display: inline-block; color: #c63535; font-weight: bold; border: 1px solid #c63535; padding: 8px 20px; border-radius: 20px; text-decoration: none; margin-bottom: 20px; background: #fff; transition: 0.3s;
+        display: inline-block; color: #8c7f74; font-weight: bold; border: 1px solid #8c7f74; padding: 8px 20px; border-radius: 20px; text-decoration: none; margin-bottom: 20px; background: #fff; transition: 0.3s;
     }
-    .footer-room-link:hover { background: #c63535; color: #fff; }
+    .footer-room-link:hover { background: #8c7f74; color: #fff; }
 
     .back-btn { text-align: center; margin-top: 50px; }
     .back-btn a { 
@@ -196,9 +196,9 @@
         transition: 0.3s;
     }
     .back-btn a:hover {
-        background: #f7a8a8;
+        background: #c3d0c0;
         color: #fff;
-        border-color: #f7a8a8;
+        border-color: #c3d0c0;
     }
 
     @media(max-width: 600px) {
@@ -239,7 +239,7 @@
 
 <div class="diagnosis-banner">
     <span class="diagnosis-badge">栄養士監修・無料ツール</span>
-    <h3 style="color:#d35400; margin-bottom:10px; font-size:20px;">⚡ 挙式前の「肌トラブル」放置していませんか？</h3>
+    <h3 style="color:#5f7a63; margin-bottom:10px; font-size:20px;">⚡ 挙式前の「肌トラブル」放置していませんか？</h3>
     <p style="margin-bottom:5px;">今の肌状態と、必要なケア方法を<strong>30秒で診断</strong>します。</p>
     
     <a href="bridal-care.html" class="diagnosis-btn">
@@ -256,7 +256,7 @@
 
     <h2>3. アクセス解析ツールについて</h2>
     <p>当サイトでは、Googleによるアクセス解析ツール「<strong>Google Analytics</strong>」を利用しています。このGoogle Analyticsはトラフィックデータの収集のためにCookieを使用しています。このトラフィックデータは匿名で収集されており、個人を特定するものではありません。この機能はCookieを無効にすることで収集を拒否することができます。</p>
-    <p>Google Analyticsの規約について、詳しくは<a href="https://marketingplatform.google.com/about/analytics/terms/jp/" target="_blank" style="color:#d6336c; text-decoration:underline;">Google Analytics利用規約</a>をご覧ください。</p>
+    <p>Google Analyticsの規約について、詳しくは<a href="https://marketingplatform.google.com/about/analytics/terms/jp/" target="_blank" style="color:#b83d63; text-decoration:underline;">Google Analytics利用規約</a>をご覧ください。</p>
 
     <h2>4. アフィリエイトプログラムについて</h2>
     <p>当サイトは、<strong>A8.net</strong>、<strong>もしもアフィリエイト</strong>などのアフィリエイトプログラムに参加しています。これらのアフィリエイトリンクを経由して商品を購入いただいた場合、当サイトが紹介料を受け取ることがあります。</p>
@@ -280,7 +280,7 @@
     
    <div class="footer-col">
       <h3>🌸 スキンケア・悩み別</h3>
-      <a href="bridal-care.html" style="color:#d35400; font-weight:bold;">👰 結婚式直前！背中・二の腕ケア</a>
+      <a href="bridal-care.html" style="color:#5f7a63; font-weight:bold;">👰 結婚式直前！背中・二の腕ケア</a>
       <a href="seasons-skin.html">季節別スキンケア（春夏秋冬）</a>
       <a href="age-skincare.html">40代・50代 年齢別ケア</a>
       <a href="acne-care.html">肌荒れ・敏感肌・ニキビケア</a>
@@ -304,7 +304,7 @@
   
   
 
-  <nav style="max-width:760px;margin:22px auto 0;padding:20px;display:flex;flex-wrap:wrap;gap:14px;justify-content:center;border-top:1px solid #efe3e2">
+  <nav style="max-width:760px;margin:22px auto 0;padding:20px;display:flex;flex-wrap:wrap;gap:14px;justify-content:center;border-top:1px solid #e8e6e1">
     <a href="index.html" style="color:#8c4a5c;text-decoration:underline;text-decoration-color:rgba(140,74,92,.45);text-underline-offset:4px;font-size:13px;font-weight:500;font-family:'Zen Kaku Gothic New',sans-serif">トップ</a>
     <a href="diet-timing.html" style="color:#8c4a5c;text-decoration:underline;text-decoration-color:rgba(140,74,92,.45);text-underline-offset:4px;font-size:13px;font-weight:500;font-family:'Zen Kaku Gothic New',sans-serif">時期別ロードマップ</a>
     <a href="trial-collection.html" style="color:#8c4a5c;text-decoration:underline;text-decoration-color:rgba(140,74,92,.45);text-underline-offset:4px;font-size:13px;font-weight:500;font-family:'Zen Kaku Gothic New',sans-serif">体験・比較</a>
