@@ -127,3 +127,9 @@ p{margin:0 0 16px}
 /* 次に読む */
 .next{border-top:1px solid var(--line);margin-top:44px;padding-top:22px}
 .next .eyebrow{margin-bottom:12px}
+
+/* フッターのジャンル分け */
+.foot-groups{display:grid;grid-template-columns:repeat(auto-fit,minmax(150px,1fr));gap:22px 24px}
+.foot-group h4{margin:0 0 8px;font-size:10.5px;letter-spacing:.12em;color:var(--leaf);font-weight:700}
+.foot-group a{display:block;padding:3px 0;font-size:12.5px;color:var(--ink);text-decoration:underline;text-decoration-color:rgba(180,140,148,.45);text-underline-offset:3px;text-decoration-thickness:1px}
+.foot-group a:hover{color:var(--rose);text-decoration-color:var(--rose)}
