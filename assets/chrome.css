@@ -1,0 +1,15 @@
+@charset "utf-8";
+/* Essential Beauty Needs — 共通ヘッダー／フッターのみ（既存ページ用・グローバル指定なし） */
+header.site-head{position:sticky;top:0;z-index:9998;background:rgba(253,253,252,.95);backdrop-filter:blur(8px);border-bottom:1px solid #e8e6e1;padding:0;margin:0;text-align:left;min-height:0;box-shadow:none}
+header.site-head .site-head-in{max-width:820px;margin:0 auto;padding:11px 18px;display:flex;align-items:center;justify-content:space-between;gap:14px;box-sizing:border-box}
+header.site-head .brand{font-family:'Playfair Display',serif;font-size:14px;line-height:1.25;letter-spacing:.08em;color:#3d3836;text-decoration:none;white-space:nowrap;text-shadow:none}
+header.site-head .brand span{display:block;font-family:'Zen Kaku Gothic New',sans-serif;font-size:9px;letter-spacing:.16em;color:#6f6a67;margin:2px 0 0;font-weight:400}
+header.site-head .site-nav{display:flex;gap:2px;flex-wrap:wrap;justify-content:flex-end;margin:0;padding:0;border:0}
+header.site-head .site-nav a{font-family:'Zen Kaku Gothic New',sans-serif;font-size:12px;line-height:1.4;color:#6f6a67;text-decoration:none;padding:5px 8px;border-radius:20px;white-space:nowrap;background:none;border:0;font-weight:400;box-shadow:none;display:inline-block;width:auto;margin:0}
+header.site-head .site-nav a:hover{background:#eef1ec;color:#5f7a63}
+header.site-head .site-nav a[aria-current]{background:#eef1ec;color:#5f7a63;font-weight:700}
+@media(max-width:520px){
+  header.site-head .site-head-in{padding:9px 14px;gap:8px}
+  header.site-head .brand{font-size:12.5px}
+  header.site-head .site-nav a{font-size:11px;padding:4px 6px}
+}
