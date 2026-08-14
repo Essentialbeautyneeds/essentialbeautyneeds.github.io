@@ -11,8 +11,7 @@
   <link href="https://fonts.googleapis.com/css2?family=Playfair+Display:wght@600&family=Quicksand:wght@400;600&display=swap" rel="stylesheet">
   <link rel="canonical" href="https://essential-beauty-needs.com/organic-science.html" />
   
-  <script>
-    function isInternalUser() { return document.cookie.split(';').some(c => c.trim().startsWith('internal_user=true')); }
+  <script>function isInternalUser() { return document.cookie.split(';').some(c =>c.trim().startsWith('internal_user=true')); }
     if (!isInternalUser()) {
       var gaScript = document.createElement('script');
       gaScript.async = true;
@@ -30,8 +29,7 @@
     }
   </script>
   
-  <style>
-    /* 共通設定 */
+  <style>/* 共通設定 */
     :root {
       --bg: #fffbfb;
       --accent: #a8c2b6; /* 知的な印象のセージグリーン */
@@ -68,7 +66,7 @@
     /* ポイントリスト */
     .point-list { list-style: none; padding: 0; }
     .point-list li { margin-bottom: 10px; padding-left: 25px; position: relative; font-weight: 500; }
-    .point-list li::before { content: "🔬"; position: absolute; left: 0; }
+    .point-list li::before { content: ""; position: absolute; left: 0; }
 
     /* Noteバナー */
     .note-banner { max-width: 650px; margin: 50px auto; padding: 5px; background: linear-gradient(135deg, #c3d0c0 0%, #eef1ec 100%); border-radius: 20px; box-shadow: 0 10px 25px rgba(247, 168, 168, 0.25); }
@@ -85,12 +83,6 @@
 
     /* フッター */
     footer { background: #fbfbf9; border-top: 3px solid #c3d0c0; padding: 50px 20px 60px; margin-top: 60px; color: #555; font-size: 14px; }
-    .footer-container { max-width: 960px; margin: 0 auto; display: flex; flex-wrap: wrap; gap: 30px; }
-    .footer-col { flex: 1; min-width: 200px; }
-    .footer-col h3 { font-size: 16px; color: #b83d63; border-bottom: 1px dashed #dfe5dc; padding-bottom: 8px; margin-bottom: 15px; font-weight: bold; }
-    .footer-col a { display: block; color: #666; text-decoration: none; margin-bottom: 10px; transition: 0.3s; padding-left: 10px; position: relative; }
-    .footer-col a::before { content: "・"; position: absolute; left: 0; color: #c3d0c0; }
-    .footer-col a:hover { color: #b83d63; padding-left: 15px; }
     .footer-bottom { text-align: center; margin-top: 50px; padding-top: 30px; border-top: 1px solid #eee; }
     .footer-room-link { display: inline-block; color: #8c7f74; font-weight: bold; border: 1px solid #8c7f74; padding: 8px 20px; border-radius: 20px; text-decoration: none; margin-bottom: 20px; background: #fff; transition: 0.3s; }
     .footer-room-link:hover { background: #8c7f74; color: #fff; }
@@ -101,7 +93,7 @@
     @media(max-width: 600px) { header h1 { font-size: 28px; } .science-section { padding: 25px; } }
     
     @keyframes blinkEffect { 0% { opacity: 1; } 50% { opacity: 0.3; } 100% { opacity: 1; } }
-    .new-mark { color: #b83d63; font-weight: bold; font-size: 0.8em; margin-left: 5px; animation:none; vertical-align: super; }
+    
   </style>
 <link rel="stylesheet" href="assets/chrome.css">
 <link rel="stylesheet" href="assets/mobile.css">
@@ -126,77 +118,59 @@
   <p>なぜオーガニックが「挙式前の肌」に効くのか？</p>
 
   <div class="nav-links">
-      <a href="index.html">🏠 トップ</a>
-      <a href="bridal-care.html">👰 花嫁ケア診断</a>
+      <a href="index.html">トップ</a>
+      <a href="bridal-care.html">花嫁ケア診断</a>
       <div class="nav-break"></div>
-      <a href="seasons-skin.html">🌸 季節別ケア</a>
-      <a href="age-skincare.html">👩 年齢別ケア</a>
-      <a href="diet-beauty.html">🍃 インナービューティー</a>
-      <a href="beauty-column.html">💄 コラム</a>
+      <a href="seasons-skin.html">季節別ケア</a>
+      <a href="age-skincare.html">年齢別ケア</a>
+      <a href="diet-beauty.html">インナービューティー</a>
+      <a href="beauty-column.html">コラム</a>
   </div>
 </header>
 
 <div class="diagnosis-banner">
     <span class="diagnosis-badge">栄養士監修・無料ツール</span>
-    <h3 style="color:#5f7a63; margin-bottom:10px; font-size:20px;">⚡ 自分の肌タイプ、正しく把握できていますか？</h3>
-    <p style="margin-bottom:5px;">間違ったケアは肌荒れの原因に。<br>
-    あなたの肌の「今」を知り、最短ルートで美肌へ。</p>
-    <a href="bridal-care.html" class="diagnosis-btn">✨ 今すぐ肌診断をする！ ✨</a>
+    <h3 style="color:#5f7a63; margin-bottom:10px; font-size:20px;">自分の肌タイプ、正しく把握できていますか？</h3>
+    <p style="margin-bottom:5px;">間違ったケアは肌荒れの原因に。<br>あなたの肌の「今」を知り、最短ルートで美肌へ。</p>
+    <a href="bridal-care.html" class="diagnosis-btn">今すぐ肌診断をする！ </a>
 </div>
 
 <main>
   
   <div class="science-section">
     <h2>ただの「流行り」ではありません。<br>オーガニックを選ぶ「3つの理由」</h2>
-    <p>
-        「オーガニック＝なんとなく肌に優しそう」<br>
-        そんなイメージをお持ちの花嫁様も多いかもしれません。<br>
-        しかし、栄養士の視点から見ると、オーガニックコスメは<strong>「挙式直前のデリケートな肌」にとって、最も理にかなった選択肢</strong>なのです。
+    <p>「オーガニック＝なんとなく肌に優しそう」<br>そんなイメージをお持ちの花嫁様も多いかもしれません。<br>しかし、栄養士の視点から見ると、オーガニックコスメは<strong>「挙式直前のデリケートな肌」にとって、最も理にかなった選択肢</strong>なのです。
     </p>
-    <p>
-        化学成分で一時的に肌を「覆う」のではなく、植物の力で肌の土台を「育てる」。<br>
-        その科学的なメカニズムを、3つのポイントで解説します。
+    <p>化学成分で一時的に肌を「覆う」のではなく、植物の力で肌の土台を「育てる」。<br>その科学的なメカニズムを、3つのポイントで解説します。
     </p>
 
     <h3>1. 「皮脂」との驚くべき親和性</h3>
-    <p>
-        石油由来のミネラルオイルは、肌の表面に膜を張りますが、浸透はしません。<br>
-        一方、植物オイル（ホホバやアルガンなど）の構造は、<strong>人間の皮脂に非常に近い</strong>ことが分かっています。
+    <p>石油由来のミネラルオイルは、肌の表面に膜を張りますが、浸透はしません。<br>一方、植物オイル（ホホバやアルガンなど）の構造は、<strong>人間の皮脂に非常に近い</strong>ことが分かっています。
     </p>
     
-    <p>
-        そのため、肌が異物として拒絶することなく、角質層の奥深くまで水分と栄養を届けることができます。<br>
-        結果、内側からふっくらとしたハリが生まれ、ファンデーションが吸い付くような「化粧ノリの良い肌」が完成します。
+    <p>そのため、肌が異物として拒絶することなく、角質層の奥深くまで水分と栄養を届けることができます。<br>結果、内側からふっくらとしたハリが生まれ、ファンデーションが吸い付くような「化粧ノリの良い肌」が完成します。
     </p>
 
     <h3>2. 「フィトケミカル」という天然の鎧</h3>
-    <p>
-        植物は、過酷な紫外線や乾燥から身を守るために<strong>「フィトケミカル（抗酸化物質）」</strong>を持っています。<br>
-        オーガニックコスメを使うということは、この植物の生命力をそのまま肌に纏う（まとう）ということです。
+    <p>植物は、過酷な紫外線や乾燥から身を守るために<strong>「フィトケミカル（抗酸化物質）」</strong>を持っています。<br>オーガニックコスメを使うということは、この植物の生命力をそのまま肌に纏う（まとう）ということです。
     </p>
     
     <ul class="point-list">
-        <li><strong>抗酸化作用：</strong> 挙式準備のストレスで発生する「肌のサビ」を防ぎ、くすみを払います。</li>
-        <li><strong>抗炎症作用：</strong> カモミールやトウキンセンカなどのエキスが、ニキビや赤みを穏やかに鎮めます。</li>
+        <li><strong>抗酸化作用：</strong>挙式準備のストレスで発生する「肌のサビ」を防ぎ、くすみを払います。</li>
+        <li><strong>抗炎症作用：</strong>カモミールやトウキンセンカなどのエキスが、ニキビや赤みを穏やかに鎮めます。</li>
     </ul>
 
     <h3>3. 「脳」に届く香りのリラックス効果</h3>
-    <p>
-        「マリッジブルー」や「準備疲れ」は、自律神経を乱し、肌荒れを加速させます。<br>
-        合成香料とは違い、天然の精油（エッセンシャルオイル）の香りは、嗅覚を通じてダイレクトに脳の大脳辺縁系に届きます。
+    <p>「マリッジブルー」や「準備疲れ」は、自律神経を乱し、肌荒れを加速させます。<br>合成香料とは違い、天然の精油（エッセンシャルオイル）の香りは、嗅覚を通じてダイレクトに脳の大脳辺縁系に届きます。
     </p>
     
-    <p>
-        スキンケアのたびに深呼吸することで、副交感神経が優位になり、<strong>「睡眠の質」が向上</strong>します。<br>
-        質の良い睡眠こそが、最強の美容液。オーガニックケアは、メンタルケアも兼ね備えているのです。
+    <p>スキンケアのたびに深呼吸することで、副交感神経が優位になり、<strong>「睡眠の質」が向上</strong>します。<br>質の良い睡眠こそが、最強の美容液。オーガニックケアは、メンタルケアも兼ね備えているのです。
     </p>
   </div>
 
   <div class="science-section">
     <h2>結論：花嫁肌には「土台力」が必要</h2>
-    <p>
-        即効性のあるケミカルな施術も魅力的ですが、挙式当日に「一番美しい私」でいるためには、どんな環境でも揺らがない強い土台が必要です。<br>
-        植物の力を借りて、肌本来の再生力を呼び覚ましましょう。
+    <p>即効性のあるケミカルな施術も魅力的ですが、挙式当日に「一番美しい私」でいるためには、どんな環境でも揺らがない強い土台が必要です。<br>植物の力を借りて、肌本来の再生力を呼び覚ましましょう。
     </p>
   </div>
 
@@ -205,8 +179,8 @@
       <span style="display: inline-block; background: #b83d63; color: #fff; font-size: 12px; font-weight: bold; padding: 4px 12px; border-radius: 20px; vertical-align: middle; margin-bottom: 10px;">保存版・アーカイブ完成</span>
       <h3 style="margin: 5px 0 15px; font-size: 22px; color: #3d3836; font-family: 'Playfair Display', serif;">編集・監修：Yuri（栄養士）<br>読むだけで変わる「花嫁美容」Note</h3>
       <div style="background: #fbfbf9; border: 1px dashed #b09a7c; border-radius: 10px; padding: 15px; margin: 15px auto; max-width: 90%; text-align: left; font-size: 15px; color: #555;">
-        <p style="margin: 5px 0;">👰 <strong>プレ花嫁講座</strong>：ドレス姿を変える食事術</p>
-        <p style="margin: 5px 0;">✨ <strong>高級美容液より効く</strong>「美肌定食」とは？</p>
+        <p style="margin: 5px 0;"> <strong>プレ花嫁講座</strong>：ドレス姿を変える食事術</p>
+        <p style="margin: 5px 0;"> <strong>高級美容液より効く</strong>「美肌定食」とは？</p>
       </div>
       <a href="note-archive.html" class="shiny-btn">全記事一覧を無料で見る ▶</a>
     </div>
@@ -227,63 +201,55 @@
 </main>
 
 <footer>
-  <div class="footer-container">
-    <div class="footer-col">
-      <h3>🌸 スキンケア・悩み別</h3>
-      <a href="bridal-care.html">👰 結婚式直前！背中・二の腕ケア<span class="new-mark">New!!</span></a>
-      <a href="seasons-skin.html">季節別スキンケア（春夏秋冬）</a>
-      <a href="age-skincare.html">40代・50代 年齢別ケア</a>
-      <a href="acne-care.html">肌荒れ・敏感肌・ニキビケア</a>
-      <a href="lifestyle-skincare.html">生活リズム別（時短・夜型など）</a>
+  <nav style="max-width:900px;margin:22px auto 0;padding:22px 20px 28px;display:grid;grid-template-columns:repeat(auto-fit,minmax(150px,1fr));gap:20px 24px;border-top:1px solid #e8e6e1;text-align:left">
+    <div>
+      <p style="margin:0 0 7px;font-size:10.5px;letter-spacing:.12em;color:#5f7a63;font-weight:700;font-family:'Zen Kaku Gothic New',sans-serif;text-align:left">はじめに</p>
+      <a href="index.html" style="display:block;color:#8c4a5c;text-decoration:underline;text-decoration-color:rgba(140,74,92,.4);text-underline-offset:3px;font-size:12.5px;font-weight:500;font-family:'Zen Kaku Gothic New',sans-serif;padding:3px 0;text-align:left">トップ</a>
+      <a href="diet-timing.html" style="display:block;color:#8c4a5c;text-decoration:underline;text-decoration-color:rgba(140,74,92,.4);text-underline-offset:3px;font-size:12.5px;font-weight:500;font-family:'Zen Kaku Gothic New',sans-serif;padding:3px 0;text-align:left">時期別ロードマップ</a>
+      <a href="three-months-plan.html" style="display:block;color:#8c4a5c;text-decoration:underline;text-decoration-color:rgba(140,74,92,.4);text-underline-offset:3px;font-size:12.5px;font-weight:500;font-family:'Zen Kaku Gothic New',sans-serif;padding:3px 0;text-align:left">3ヶ月プラン</a>
+      <a href="budget-plan.html" style="display:block;color:#8c4a5c;text-decoration:underline;text-decoration-color:rgba(140,74,92,.4);text-underline-offset:3px;font-size:12.5px;font-weight:500;font-family:'Zen Kaku Gothic New',sans-serif;padding:3px 0;text-align:left">予算の配分</a>
     </div>
-
-    <div class="footer-col">
-      <h3>🛁 ボディ・ヘア・インナー</h3>
-      <a href="hair-care.html">ヘアケア・頭皮ケア特集</a>
-      <a href="diet-beauty.html">インナービューティー＆ダイエット</a>
-      <a href="trial-collection.html">無料で試せるジム・エステ一覧</a>
-      <a href="smoothie-recipes.html">栄養士おすすめ！スムージーのレシピ<span class="new-mark">New!!</span></a>
-      <a href="organic-science.html">オーガニック成分の科学</a>
+    <div>
+      <p style="margin:0 0 7px;font-size:10.5px;letter-spacing:.12em;color:#5f7a63;font-weight:700;font-family:'Zen Kaku Gothic New',sans-serif;text-align:left">体づくり</p>
+      <a href="bridal-care.html" style="display:block;color:#8c4a5c;text-decoration:underline;text-decoration-color:rgba(140,74,92,.4);text-underline-offset:3px;font-size:12.5px;font-weight:500;font-family:'Zen Kaku Gothic New',sans-serif;padding:3px 0;text-align:left">部位別のケア</a>
+      <a href="dress-line.html" style="display:block;color:#8c4a5c;text-decoration:underline;text-decoration-color:rgba(140,74,92,.4);text-underline-offset:3px;font-size:12.5px;font-weight:500;font-family:'Zen Kaku Gothic New',sans-serif;padding:3px 0;text-align:left">ドレスの形別</a>
+      <a href="online-fitness.html" style="display:block;color:#8c4a5c;text-decoration:underline;text-decoration-color:rgba(140,74,92,.4);text-underline-offset:3px;font-size:12.5px;font-weight:500;font-family:'Zen Kaku Gothic New',sans-serif;padding:3px 0;text-align:left">オンライン運動</a>
+      <a href="womens-gym.html" style="display:block;color:#8c4a5c;text-decoration:underline;text-decoration-color:rgba(140,74,92,.4);text-underline-offset:3px;font-size:12.5px;font-weight:500;font-family:'Zen Kaku Gothic New',sans-serif;padding:3px 0;text-align:left">女性専用ジム</a>
+      <a href="personal-gym.html" style="display:block;color:#8c4a5c;text-decoration:underline;text-decoration-color:rgba(140,74,92,.4);text-underline-offset:3px;font-size:12.5px;font-weight:500;font-family:'Zen Kaku Gothic New',sans-serif;padding:3px 0;text-align:left">パーソナルジム</a>
+      <a href="workout-wear.html" style="display:block;color:#8c4a5c;text-decoration:underline;text-decoration-color:rgba(140,74,92,.4);text-underline-offset:3px;font-size:12.5px;font-weight:500;font-family:'Zen Kaku Gothic New',sans-serif;padding:3px 0;text-align:left">ウェアの選び方</a>
+      <a href="diet-restart.html" style="display:block;color:#8c4a5c;text-decoration:underline;text-decoration-color:rgba(140,74,92,.4);text-underline-offset:3px;font-size:12.5px;font-weight:500;font-family:'Zen Kaku Gothic New',sans-serif;padding:3px 0;text-align:left">続かなかった人へ</a>
     </div>
-
-    <div class="footer-col">
-      <h3>🎁 特集・コラム・その他</h3>
-      <a href="note-archive.html">note記事一覧<span class="new-mark">New!!</span></a>
-      <a href="beauty-column.html">ビューティーコラム一覧</a>
-      <a href="sonoko-diet.html">食べて痩せる肌診断 <span class="new-mark">New!!</span></a>
-      <a href="about.html">当サイトについて (About)</a>
+    <div>
+      <p style="margin:0 0 7px;font-size:10.5px;letter-spacing:.12em;color:#5f7a63;font-weight:700;font-family:'Zen Kaku Gothic New',sans-serif;text-align:left">肌と施術</p>
+      <a href="acne-care.html" style="display:block;color:#8c4a5c;text-decoration:underline;text-decoration-color:rgba(140,74,92,.4);text-underline-offset:3px;font-size:12.5px;font-weight:500;font-family:'Zen Kaku Gothic New',sans-serif;padding:3px 0;text-align:left">肌づくり</a>
+      <a href="sensitive-skin.html" style="display:block;color:#8c4a5c;text-decoration:underline;text-decoration-color:rgba(140,74,92,.4);text-underline-offset:3px;font-size:12.5px;font-weight:500;font-family:'Zen Kaku Gothic New',sans-serif;padding:3px 0;text-align:left">肌が不安定なとき</a>
+      <a href="bridal-esthe.html" style="display:block;color:#8c4a5c;text-decoration:underline;text-decoration-color:rgba(140,74,92,.4);text-underline-offset:3px;font-size:12.5px;font-weight:500;font-family:'Zen Kaku Gothic New',sans-serif;padding:3px 0;text-align:left">ブライダルエステ</a>
+      <a href="hair-removal.html" style="display:block;color:#8c4a5c;text-decoration:underline;text-decoration-color:rgba(140,74,92,.4);text-underline-offset:3px;font-size:12.5px;font-weight:500;font-family:'Zen Kaku Gothic New',sans-serif;padding:3px 0;text-align:left">脱毛</a>
+      <a href="whitening.html" style="display:block;color:#8c4a5c;text-decoration:underline;text-decoration-color:rgba(140,74,92,.4);text-underline-offset:3px;font-size:12.5px;font-weight:500;font-family:'Zen Kaku Gothic New',sans-serif;padding:3px 0;text-align:left">ホワイトニング</a>
+      <a href="online-clinic.html" style="display:block;color:#8c4a5c;text-decoration:underline;text-decoration-color:rgba(140,74,92,.4);text-underline-offset:3px;font-size:12.5px;font-weight:500;font-family:'Zen Kaku Gothic New',sans-serif;padding:3px 0;text-align:left">オンライン診療</a>
     </div>
-  </div>
-    
-  
-
-  <nav style="max-width:760px;margin:22px auto 0;padding:20px;display:flex;flex-wrap:wrap;gap:14px;justify-content:center;border-top:1px solid #e8e6e1">
-    <a href="index.html" style="color:#8c4a5c;text-decoration:underline;text-decoration-color:rgba(140,74,92,.45);text-underline-offset:4px;font-size:13px;font-weight:500;font-family:'Zen Kaku Gothic New',sans-serif">トップ</a>
-    <a href="diet-timing.html" style="color:#8c4a5c;text-decoration:underline;text-decoration-color:rgba(140,74,92,.45);text-underline-offset:4px;font-size:13px;font-weight:500;font-family:'Zen Kaku Gothic New',sans-serif">時期別ロードマップ</a>
-    <a href="trial-collection.html" style="color:#8c4a5c;text-decoration:underline;text-decoration-color:rgba(140,74,92,.45);text-underline-offset:4px;font-size:13px;font-weight:500;font-family:'Zen Kaku Gothic New',sans-serif">体験・比較</a>
-    <a href="three-months-plan.html" style="color:#8c4a5c;text-decoration:underline;text-decoration-color:rgba(140,74,92,.45);text-underline-offset:4px;font-size:13px;font-weight:500;font-family:'Zen Kaku Gothic New',sans-serif">3ヶ月プラン</a>
-    <a href="dress-line.html" style="color:#8c4a5c;text-decoration:underline;text-decoration-color:rgba(140,74,92,.45);text-underline-offset:4px;font-size:13px;font-weight:500;font-family:'Zen Kaku Gothic New',sans-serif">ドレス別</a>
-    <a href="budget-plan.html" style="color:#8c4a5c;text-decoration:underline;text-decoration-color:rgba(140,74,92,.45);text-underline-offset:4px;font-size:13px;font-weight:500;font-family:'Zen Kaku Gothic New',sans-serif">予算配分</a>
-    <a href="protein-guide.html" style="color:#8c4a5c;text-decoration:underline;text-decoration-color:rgba(140,74,92,.45);text-underline-offset:4px;font-size:13px;font-weight:500;font-family:'Zen Kaku Gothic New',sans-serif">たんぱく質</a>
-    <a href="photo-day-prep.html" style="color:#8c4a5c;text-decoration:underline;text-decoration-color:rgba(140,74,92,.45);text-underline-offset:4px;font-size:13px;font-weight:500;font-family:'Zen Kaku Gothic New',sans-serif">前撮り前</a>
-    <a href="groom-prep.html" style="color:#8c4a5c;text-decoration:underline;text-decoration-color:rgba(140,74,92,.45);text-underline-offset:4px;font-size:13px;font-weight:500;font-family:'Zen Kaku Gothic New',sans-serif">新郎の準備</a>
-    <a href="diet-restart.html" style="color:#8c4a5c;text-decoration:underline;text-decoration-color:rgba(140,74,92,.45);text-underline-offset:4px;font-size:13px;font-weight:500;font-family:'Zen Kaku Gothic New',sans-serif">続かなかった人へ</a>
-    <a href="sensitive-skin.html" style="color:#8c4a5c;text-decoration:underline;text-decoration-color:rgba(140,74,92,.45);text-underline-offset:4px;font-size:13px;font-weight:500;font-family:'Zen Kaku Gothic New',sans-serif">敏感肌</a>
-    <a href="workout-wear.html" style="color:#8c4a5c;text-decoration:underline;text-decoration-color:rgba(140,74,92,.45);text-underline-offset:4px;font-size:13px;font-weight:500;font-family:'Zen Kaku Gothic New',sans-serif">ウェア選び</a>
-    <a href="wedding-gift.html" style="color:#8c4a5c;text-decoration:underline;text-decoration-color:rgba(140,74,92,.45);text-underline-offset:4px;font-size:13px;font-weight:500;font-family:'Zen Kaku Gothic New',sans-serif">贈呈品</a>
-    <a href="online-fitness.html" style="color:#8c4a5c;text-decoration:underline;text-decoration-color:rgba(140,74,92,.45);text-underline-offset:4px;font-size:13px;font-weight:500;font-family:'Zen Kaku Gothic New',sans-serif">オンライン運動</a>
-    <a href="womens-gym.html" style="color:#8c4a5c;text-decoration:underline;text-decoration-color:rgba(140,74,92,.45);text-underline-offset:4px;font-size:13px;font-weight:500;font-family:'Zen Kaku Gothic New',sans-serif">女性専用ジム</a>
-    <a href="personal-gym.html" style="color:#8c4a5c;text-decoration:underline;text-decoration-color:rgba(140,74,92,.45);text-underline-offset:4px;font-size:13px;font-weight:500;font-family:'Zen Kaku Gothic New',sans-serif">パーソナルジム</a>
-    <a href="bridal-esthe.html" style="color:#8c4a5c;text-decoration:underline;text-decoration-color:rgba(140,74,92,.45);text-underline-offset:4px;font-size:13px;font-weight:500;font-family:'Zen Kaku Gothic New',sans-serif">ブライダルエステ</a>
-    <a href="online-clinic.html" style="color:#8c4a5c;text-decoration:underline;text-decoration-color:rgba(140,74,92,.45);text-underline-offset:4px;font-size:13px;font-weight:500;font-family:'Zen Kaku Gothic New',sans-serif">オンライン診療</a>
-    <a href="meal-delivery.html" style="color:#8c4a5c;text-decoration:underline;text-decoration-color:rgba(140,74,92,.45);text-underline-offset:4px;font-size:13px;font-weight:500;font-family:'Zen Kaku Gothic New',sans-serif">宅配食</a>
-    <a href="hair-removal.html" style="color:#8c4a5c;text-decoration:underline;text-decoration-color:rgba(140,74,92,.45);text-underline-offset:4px;font-size:13px;font-weight:500;font-family:'Zen Kaku Gothic New',sans-serif">脱毛</a>
-    <a href="whitening.html" style="color:#8c4a5c;text-decoration:underline;text-decoration-color:rgba(140,74,92,.45);text-underline-offset:4px;font-size:13px;font-weight:500;font-family:'Zen Kaku Gothic New',sans-serif">ホワイトニング</a>
-    <a href="bridal-fair.html" style="color:#8c4a5c;text-decoration:underline;text-decoration-color:rgba(140,74,92,.45);text-underline-offset:4px;font-size:13px;font-weight:500;font-family:'Zen Kaku Gothic New',sans-serif">式場フェア</a>
-    <a href="beauty-column.html" style="color:#8c4a5c;text-decoration:underline;text-decoration-color:rgba(140,74,92,.45);text-underline-offset:4px;font-size:13px;font-weight:500;font-family:'Zen Kaku Gothic New',sans-serif">記事一覧</a>
-    <a href="note-archive.html" style="color:#8c4a5c;text-decoration:underline;text-decoration-color:rgba(140,74,92,.45);text-underline-offset:4px;font-size:13px;font-weight:500;font-family:'Zen Kaku Gothic New',sans-serif">note</a>
-    <a href="about.html" style="color:#8c4a5c;text-decoration:underline;text-decoration-color:rgba(140,74,92,.45);text-underline-offset:4px;font-size:13px;font-weight:500;font-family:'Zen Kaku Gothic New',sans-serif">運営者情報</a>
-    <a href="privacy-policy.html" style="color:#8c4a5c;text-decoration:underline;text-decoration-color:rgba(140,74,92,.45);text-underline-offset:4px;font-size:13px;font-weight:500;font-family:'Zen Kaku Gothic New',sans-serif">プライバシーポリシー</a>
+    <div>
+      <p style="margin:0 0 7px;font-size:10.5px;letter-spacing:.12em;color:#5f7a63;font-weight:700;font-family:'Zen Kaku Gothic New',sans-serif;text-align:left">食事</p>
+      <a href="diet-beauty.html" style="display:block;color:#8c4a5c;text-decoration:underline;text-decoration-color:rgba(140,74,92,.4);text-underline-offset:3px;font-size:12.5px;font-weight:500;font-family:'Zen Kaku Gothic New',sans-serif;padding:3px 0;text-align:left">食事で整える</a>
+      <a href="protein-guide.html" style="display:block;color:#8c4a5c;text-decoration:underline;text-decoration-color:rgba(140,74,92,.4);text-underline-offset:3px;font-size:12.5px;font-weight:500;font-family:'Zen Kaku Gothic New',sans-serif;padding:3px 0;text-align:left">たんぱく質の摂り方</a>
+      <a href="meal-delivery.html" style="display:block;color:#8c4a5c;text-decoration:underline;text-decoration-color:rgba(140,74,92,.4);text-underline-offset:3px;font-size:12.5px;font-weight:500;font-family:'Zen Kaku Gothic New',sans-serif;padding:3px 0;text-align:left">宅配食</a>
+      <a href="sonoko-diet.html" style="display:block;color:#8c4a5c;text-decoration:underline;text-decoration-color:rgba(140,74,92,.4);text-underline-offset:3px;font-size:12.5px;font-weight:500;font-family:'Zen Kaku Gothic New',sans-serif;padding:3px 0;text-align:left">献立セット</a>
+    </div>
+    <div>
+      <p style="margin:0 0 7px;font-size:10.5px;letter-spacing:.12em;color:#5f7a63;font-weight:700;font-family:'Zen Kaku Gothic New',sans-serif;text-align:left">当日まで</p>
+      <a href="photo-day-prep.html" style="display:block;color:#8c4a5c;text-decoration:underline;text-decoration-color:rgba(140,74,92,.4);text-underline-offset:3px;font-size:12.5px;font-weight:500;font-family:'Zen Kaku Gothic New',sans-serif;padding:3px 0;text-align:left">前撮り前の1週間</a>
+      <a href="trial-collection.html" style="display:block;color:#8c4a5c;text-decoration:underline;text-decoration-color:rgba(140,74,92,.4);text-underline-offset:3px;font-size:12.5px;font-weight:500;font-family:'Zen Kaku Gothic New',sans-serif;padding:3px 0;text-align:left">体験・比較リスト</a>
+      <a href="bridal-fair.html" style="display:block;color:#8c4a5c;text-decoration:underline;text-decoration-color:rgba(140,74,92,.4);text-underline-offset:3px;font-size:12.5px;font-weight:500;font-family:'Zen Kaku Gothic New',sans-serif;padding:3px 0;text-align:left">式場フェア</a>
+      <a href="wedding-gift.html" style="display:block;color:#8c4a5c;text-decoration:underline;text-decoration-color:rgba(140,74,92,.4);text-underline-offset:3px;font-size:12.5px;font-weight:500;font-family:'Zen Kaku Gothic New',sans-serif;padding:3px 0;text-align:left">贈呈品</a>
+      <a href="groom-prep.html" style="display:block;color:#8c4a5c;text-decoration:underline;text-decoration-color:rgba(140,74,92,.4);text-underline-offset:3px;font-size:12.5px;font-weight:500;font-family:'Zen Kaku Gothic New',sans-serif;padding:3px 0;text-align:left">新郎の準備</a>
+    </div>
+    <div>
+      <p style="margin:0 0 7px;font-size:10.5px;letter-spacing:.12em;color:#5f7a63;font-weight:700;font-family:'Zen Kaku Gothic New',sans-serif;text-align:left">サイト情報</p>
+      <a href="beauty-column.html" style="display:block;color:#8c4a5c;text-decoration:underline;text-decoration-color:rgba(140,74,92,.4);text-underline-offset:3px;font-size:12.5px;font-weight:500;font-family:'Zen Kaku Gothic New',sans-serif;padding:3px 0;text-align:left">記事一覧</a>
+      <a href="note-archive.html" style="display:block;color:#8c4a5c;text-decoration:underline;text-decoration-color:rgba(140,74,92,.4);text-underline-offset:3px;font-size:12.5px;font-weight:500;font-family:'Zen Kaku Gothic New',sans-serif;padding:3px 0;text-align:left">note記事</a>
+      <a href="about.html" style="display:block;color:#8c4a5c;text-decoration:underline;text-decoration-color:rgba(140,74,92,.4);text-underline-offset:3px;font-size:12.5px;font-weight:500;font-family:'Zen Kaku Gothic New',sans-serif;padding:3px 0;text-align:left">運営者情報</a>
+      <a href="privacy-policy.html" style="display:block;color:#8c4a5c;text-decoration:underline;text-decoration-color:rgba(140,74,92,.4);text-underline-offset:3px;font-size:12.5px;font-weight:500;font-family:'Zen Kaku Gothic New',sans-serif;padding:3px 0;text-align:left">プライバシーポリシー</a>
+    </div>
   </nav>
   <p style="max-width:760px;margin:0 auto;padding:0 20px 8px;font-size:11.5px;color:#a89898;line-height:1.7;text-align:left;font-family:'Zen Kaku Gothic New',sans-serif">当サイトはアフィリエイト広告を利用しています。掲載している価格・キャンペーン内容は変動する場合があるため、必ず各公式サイトで最新の情報をご確認ください。<br>本サイトの内容は一般的な情報提供を目的としたもので、診断・治療を目的とした医療行為ではありません。</p>
 </footer>

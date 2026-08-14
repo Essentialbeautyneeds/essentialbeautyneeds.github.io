@@ -17,8 +17,7 @@
 <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
 <link href="https://fonts.googleapis.com/css2?family=Playfair+Display:wght@500&family=Shippori+Mincho:wght@500;600&family=Zen+Kaku+Gothic+New:wght@400;500;700&display=swap" rel="stylesheet">
 <link rel="stylesheet" href="assets/site.css">
-<script>
-function isInternalUser(){return document.cookie.split(';').some(function(c){return c.trim().indexOf('internal_user=true')===0})}
+<script>function isInternalUser(){return document.cookie.split(';').some(function(c){return c.trim().indexOf('internal_user=true')===0})}
 if(!isInternalUser()){var g=document.createElement('script');g.async=true;g.src="https://www.googletagmanager.com/gtag/js?id=G-2HGEPHVZYY";document.head.appendChild(g);window.dataLayer=window.dataLayer||[];function gtag(){dataLayer.push(arguments)}gtag('js',new Date());gtag('config','G-2HGEPHVZYY');}
 </script>
 <link rel="stylesheet" href="assets/mobile.css">
@@ -172,34 +171,56 @@ if(!isInternalUser()){var g=document.createElement('script');g.async=true;g.src=
 <footer class="site-foot">
   <div class="wrap">
     <div class="foot-by">Essential Beauty Needs ／ 編集・監修：Yuri（栄養士）</div>
-    <nav class="foot-nav">
-      <a href="index.html">トップ</a>
-      <a href="diet-timing.html">時期別ロードマップ</a>
-      <a href="trial-collection.html">体験・比較</a>
-      <a href="three-months-plan.html">3ヶ月プラン</a>
-      <a href="dress-line.html">ドレス別</a>
-      <a href="budget-plan.html">予算配分</a>
-      <a href="protein-guide.html">たんぱく質</a>
-      <a href="photo-day-prep.html">前撮り前</a>
-      <a href="groom-prep.html">新郎の準備</a>
-      <a href="diet-restart.html">続かなかった人へ</a>
-      <a href="sensitive-skin.html">敏感肌</a>
-      <a href="workout-wear.html">ウェア選び</a>
-      <a href="wedding-gift.html">贈呈品</a>
-      <a href="online-fitness.html">オンライン運動</a>
-      <a href="womens-gym.html">女性専用ジム</a>
-      <a href="personal-gym.html">パーソナルジム</a>
-      <a href="bridal-esthe.html">ブライダルエステ</a>
-      <a href="online-clinic.html">オンライン診療</a>
-      <a href="meal-delivery.html">宅配食</a>
-      <a href="hair-removal.html">脱毛</a>
-      <a href="whitening.html">ホワイトニング</a>
-      <a href="bridal-fair.html">式場フェア</a>
-      <a href="beauty-column.html">記事一覧</a>
-      <a href="note-archive.html">note</a>
-      <a href="about.html">運営者情報</a>
-      <a href="privacy-policy.html">プライバシーポリシー</a>
-    </nav>
+    <div class="foot-groups">
+      <div class="foot-group">
+        <h4>はじめに</h4>
+        <a href="index.html">トップ</a>
+        <a href="diet-timing.html">時期別ロードマップ</a>
+        <a href="three-months-plan.html">3ヶ月プラン</a>
+        <a href="budget-plan.html">予算の配分</a>
+      </div>
+      <div class="foot-group">
+        <h4>体づくり</h4>
+        <a href="bridal-care.html">部位別のケア</a>
+        <a href="dress-line.html">ドレスの形別</a>
+        <a href="online-fitness.html">オンライン運動</a>
+        <a href="womens-gym.html">女性専用ジム</a>
+        <a href="personal-gym.html">パーソナルジム</a>
+        <a href="workout-wear.html">ウェアの選び方</a>
+        <a href="diet-restart.html">続かなかった人へ</a>
+      </div>
+      <div class="foot-group">
+        <h4>肌と施術</h4>
+        <a href="acne-care.html">肌づくり</a>
+        <a href="sensitive-skin.html">肌が不安定なとき</a>
+        <a href="bridal-esthe.html">ブライダルエステ</a>
+        <a href="hair-removal.html">脱毛</a>
+        <a href="whitening.html">ホワイトニング</a>
+        <a href="online-clinic.html">オンライン診療</a>
+      </div>
+      <div class="foot-group">
+        <h4>食事</h4>
+        <a href="diet-beauty.html">食事で整える</a>
+        <a href="protein-guide.html">たんぱく質の摂り方</a>
+        <a href="meal-delivery.html">宅配食</a>
+        <a href="sonoko-diet.html">献立セット</a>
+      </div>
+      <div class="foot-group">
+        <h4>当日まで</h4>
+        <a href="photo-day-prep.html">前撮り前の1週間</a>
+        <a href="trial-collection.html">体験・比較リスト</a>
+        <a href="bridal-fair.html">式場フェア</a>
+        <a href="wedding-gift.html">贈呈品</a>
+        <a href="groom-prep.html">新郎の準備</a>
+      </div>
+      <div class="foot-group">
+        <h4>サイト情報</h4>
+        <a href="beauty-column.html">記事一覧</a>
+        <a href="note-archive.html">note記事</a>
+        <a href="about.html">運営者情報</a>
+        <a href="privacy-policy.html">プライバシーポリシー</a>
+      </div>
+    </div>
     <p class="pr">当サイトはアフィリエイト広告を利用しています。掲載している価格・キャンペーン内容は変動する場合があるため、必ず各公式サイトで最新の情報をご確認ください。<br>本サイトの内容は一般的な情報提供を目的としたもので、診断・治療を目的とした医療行為ではありません。</p>
     <p class="pr">© 2026 Essential Beauty Needs</p>
   </div>
