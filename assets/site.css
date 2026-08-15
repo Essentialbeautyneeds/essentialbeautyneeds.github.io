@@ -133,3 +133,23 @@ p{margin:0 0 16px}
 .foot-group h4{margin:0 0 8px;font-size:10.5px;letter-spacing:.12em;color:var(--leaf);font-weight:700}
 .foot-group a{display:block;padding:3px 0;font-size:12.5px;color:var(--ink);text-decoration:underline;text-decoration-color:rgba(180,140,148,.45);text-underline-offset:3px;text-decoration-thickness:1px}
 .foot-group a:hover{color:var(--rose);text-decoration-color:var(--rose)}
+
+/* 案件カード：説明文の右に画像を置く横並び */
+.trial{grid-template-columns:1fr!important;gap:14px}
+.card{display:grid;grid-template-columns:1fr auto;grid-template-areas:"tags thumb" "row thumb" "body thumb" "cta thumb";column-gap:20px;align-items:start}
+.card .tags{grid-area:tags}
+.card .row{grid-area:row}
+.card>p{grid-area:body}
+.card .apply{grid-area:cta;align-self:end;justify-self:start}
+.card .thumb{grid-area:thumb;margin:0;align-self:center;display:block;width:190px}
+.card .thumb img{width:100%;height:auto;display:block}
+@media (max-width:620px){
+  .card{grid-template-columns:1fr;grid-template-areas:"tags" "row" "body" "thumb" "cta";row-gap:12px}
+  .card .thumb{width:auto;max-width:280px}
+  .card .apply{justify-self:stretch}
+}
+
+/* 無料体験のタグを目立たせる */
+@keyframes freepulse{0%,100%{opacity:1}50%{opacity:.45}}
+.tag.free{background:var(--rose);color:#fff;animation:freepulse 1.6s ease-in-out infinite}
+@media (prefers-reduced-motion:reduce){.tag.free{animation:none}}
