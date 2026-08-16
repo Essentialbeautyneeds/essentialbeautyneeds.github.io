@@ -153,3 +153,5 @@ p{margin:0 0 16px}
 @keyframes freepulse{0%,100%{opacity:1}50%{opacity:.45}}
 .tag.free{background:var(--rose);color:#fff;animation:freepulse 1.6s ease-in-out infinite}
 @media (prefers-reduced-motion:reduce){.tag.free{animation:none}}
+
+.tag.sale{background:oklch(0.94 0.03 60);color:oklch(0.45 0.09 55)}
