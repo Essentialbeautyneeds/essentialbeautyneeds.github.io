@@ -13,3 +13,33 @@ header.site-head .site-nav a[aria-current]{background:#eef1ec;color:#5f7a63;font
   header.site-head .brand{font-size:12.5px}
   header.site-head .site-nav a{font-size:11px;padding:4px 6px}
 }
+
+/* 案件カード（旧ページ用）*/
+.trial{display:grid;grid-template-columns:1fr;gap:14px;margin:0 0 20px}
+.card{background:#fff;border:1px solid #e8e6e1;border-radius:4px;padding:22px;overflow:hidden;
+  display:grid;grid-template-columns:1fr auto;
+  grid-template-areas:"tags thumb" "row thumb" "body thumb" "cta thumb";
+  column-gap:20px;align-items:start}
+.card .tags{grid-area:tags;display:flex;flex-wrap:wrap;gap:6px;margin:0 0 4px}
+.card .row{grid-area:row;display:flex;align-items:baseline;justify-content:space-between;gap:12px;flex-wrap:wrap}
+.card h3{margin:0;font-family:'Shippori Mincho',serif;font-size:18px;font-weight:600;color:#3d3836;line-height:1.5}
+.card .price{font-size:13px;color:#6f6a67;white-space:nowrap}
+.card>p{grid-area:body;margin:8px 0 0;font-size:14px;color:#6f6a67;line-height:1.8}
+.card .apply{grid-area:cta;align-self:end;justify-self:start;display:inline-block;margin-top:14px;
+  padding:10px 20px;background:#b83d63;color:#fff;font-size:13.5px;font-weight:700;
+  text-decoration:none;border-radius:3px}
+.card .apply:hover{background:#a53557;color:#fff;text-decoration:none}
+.card .thumb{grid-area:thumb;display:block;width:190px;margin:0;align-self:center}
+.card .thumb img{width:100%;height:auto;display:block}
+.tag{font-size:11px;letter-spacing:.04em;padding:2px 9px;border-radius:2px;
+  background:#eef1ec;color:#5f7a63;font-weight:700}
+.tag.n{background:#f3f1ec;color:#8a8076}
+.tag.sale{background:oklch(0.94 0.03 60);color:oklch(0.45 0.09 55)}
+@keyframes freepulse{0%,100%{opacity:1}50%{opacity:.45}}
+.tag.free{background:#b83d63;color:#fff;animation:freepulse 1.6s ease-in-out infinite}
+@media (prefers-reduced-motion:reduce){.tag.free{animation:none}}
+@media (max-width:620px){
+  .card{grid-template-columns:1fr;grid-template-areas:"tags" "row" "body" "thumb" "cta";row-gap:12px}
+  .card .thumb{width:100%;max-width:280px;justify-self:center}
+  .card .apply{width:100%;text-align:center}
+}
