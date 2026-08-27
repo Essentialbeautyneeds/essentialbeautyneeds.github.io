@@ -43,3 +43,24 @@ header.site-head .site-nav a[aria-current]{background:#eef1ec;color:#5f7a63;font
   .card .thumb{width:100%;max-width:280px;justify-self:center}
   .card .apply{width:100%;text-align:center}
 }
+
+/* ===== 旧ページの共通補正（site.css を読まないページ向け）===== */
+/* リンク色：未指定リンクがブラウザ既定の青になるのを防ぐ */
+main a,footer a{color:#8c4a5c}
+main a:hover,footer a:hover{color:#b2506b}
+
+/* 本文の左揃え：旧ページの中央寄せを新しく挿入したブロックに継承させない */
+nav.toc,nav.toc *,.earlycta,.earlycta *,.deepdive,.deepdive *,.related,.related *{text-align:left}
+
+/* 補足テキスト */
+.small{font-size:13.5px;line-height:1.85;color:#6f6a67;text-align:left}
+.small strong{color:#3d3836}
+
+/* 表 */
+.tbl-scroll{overflow-x:auto;-webkit-overflow-scrolling:touch;margin:0 0 14px}
+table.tbl{width:100%;border-collapse:collapse;font-size:14px;
+  font-family:'Zen Kaku Gothic New',sans-serif;text-align:left}
+table.tbl th{text-align:left;padding:9px 11px;border:1px solid #e8e6e1;
+  background:#f6f8f4;font-weight:700;color:#3d3836}
+table.tbl td{padding:9px 11px;border:1px solid #e8e6e1;text-align:left;color:#3d3836}
+@media (max-width:700px){table.tbl th,table.tbl td{min-width:6.5em}}
