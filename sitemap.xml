@@ -649,12 +649,6 @@
     <priority>0.8</priority>
   </url>
   <url>
-    <loc>https://essential-beauty-needs.com/meal/baby-food.html</loc>
-    <lastmod>2026-09-24</lastmod>
-    <changefreq>monthly</changefreq>
-    <priority>0.8</priority>
-  </url>
-  <url>
     <loc>https://essential-beauty-needs.com/meal/babyfood-coop.html</loc>
     <lastmod>2026-09-24</lastmod>
     <changefreq>monthly</changefreq>
@@ -662,7 +656,7 @@
   </url>
   <url>
     <loc>https://essential-beauty-needs.com/meal/babyfood-delivery.html</loc>
-    <lastmod>2026-09-24</lastmod>
+    <lastmod>2026-10-08</lastmod>
     <changefreq>monthly</changefreq>
     <priority>0.8</priority>
   </url>
@@ -698,7 +692,7 @@
   </url>
   <url>
     <loc>https://essential-beauty-needs.com/meal/chef-mutenn.html</loc>
-    <lastmod>2026-09-24</lastmod>
+    <lastmod>2026-10-08</lastmod>
     <changefreq>monthly</changefreq>
     <priority>0.8</priority>
   </url>
@@ -800,7 +794,7 @@
   </url>
   <url>
     <loc>https://essential-beauty-needs.com/meal/gout.html</loc>
-    <lastmod>2026-09-24</lastmod>
+    <lastmod>2026-10-08</lastmod>
     <changefreq>monthly</changefreq>
     <priority>0.8</priority>
   </url>
@@ -1082,19 +1076,19 @@
   </url>
   <url>
     <loc>https://essential-beauty-needs.com/meal/toddler-delivery.html</loc>
-    <lastmod>2026-09-24</lastmod>
+    <lastmod>2026-10-08</lastmod>
     <changefreq>monthly</changefreq>
     <priority>0.8</priority>
   </url>
   <url>
     <loc>https://essential-beauty-needs.com/meal/toddler-frozen.html</loc>
-    <lastmod>2026-09-25</lastmod>
+    <lastmod>2026-10-08</lastmod>
     <changefreq>monthly</changefreq>
     <priority>0.8</priority>
   </url>
   <url>
     <loc>https://essential-beauty-needs.com/meal/toddler-prep.html</loc>
-    <lastmod>2026-09-24</lastmod>
+    <lastmod>2026-10-08</lastmod>
     <changefreq>monthly</changefreq>
     <priority>0.8</priority>
   </url>
@@ -1124,7 +1118,7 @@
   </url>
   <url>
     <loc>https://essential-beauty-needs.com/meal/weekend-prep.html</loc>
-    <lastmod>2026-09-24</lastmod>
+    <lastmod>2026-10-08</lastmod>
     <changefreq>monthly</changefreq>
     <priority>0.8</priority>
   </url>
@@ -1160,7 +1154,13 @@
   </url>
   <url>
     <loc>https://essential-beauty-needs.com/meal/baby-food-ingredients.html</loc>
-    <lastmod>2026-09-25</lastmod>
+    <lastmod>2026-10-08</lastmod>
+    <changefreq>monthly</changefreq>
+    <priority>0.8</priority>
+  </url>
+  <url>
+    <loc>https://essential-beauty-needs.com/meal/tsukurioki-delivery.html</loc>
+    <lastmod>2026-10-08</lastmod>
     <changefreq>monthly</changefreq>
     <priority>0.8</priority>
   </url>
