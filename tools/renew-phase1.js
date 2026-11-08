@@ -131,7 +131,7 @@ const HUBS=[
 ${sec('datsumo')}
 <section>
   <h2>脱毛の記事</h2>
-  ${list(['hair-removal.html','nape-hair-removal.html'])}
+  ${list(['shirono-datsumo.html','hair-removal.html','nape-hair-removal.html'])}
 </section>`},
  {file:'esthe.html',crumb:'エステ・整体',title:'エステの体験・モニターを比べる｜初回料金と勧誘の断り方',desc:'エステや整体は、初回の体験やモニターで試せます。初回の料金、当日の流れ、勧誘を断る言い方、契約の前に確かめる点を表で整理しました。',
   h1:'エステは、体験で相性を見てから<br>契約するかを決める。',lead:'エステや整体の多くは、初回を割引の価格で試せます。いっぽうで、体験の日にコースをすすめられることもあります。その場で決めずに帰る準備をしてから行くと、落ち着いて比べられます。',
@@ -155,7 +155,7 @@ ${sec('s2')}
 ${sec('s3')}
 <section>
   <h2>ジム・ヨガの記事</h2>
-  ${list(['personal-gym.html','womens-gym.html','online-fitness.html','gym-trial-refusal.html','gym-cancel.html','workout-wear.html'])}
+  ${list(['lava-trial.html','soelu-trial.html','rizap-counseling.html','furdi-trial.html','personal-gym.html','womens-gym.html','online-fitness.html','gym-trial-refusal.html','gym-cancel.html','workout-wear.html'])}
 </section>`},
  {file:'teeth.html',crumb:'歯のホワイトニング',title:'ホワイトニングの初回体験を比べる｜通院と自宅の違いと回数',desc:'歯のホワイトニングを、通院（オフィス）と自宅（ホーム）で比べました。初回の体験、回数の目安、受ける前に確かめることを表で整理しています。',
   h1:'ホワイトニングは、<br>通院か自宅かを先に決める。',lead:'歯のホワイトニングには、歯科医院で受ける方法と、自宅で続ける方法があります。どちらも1回で終わるとは限らないため、何回・どのくらいの期間かかるかを、初回のカウンセリングで聞いておくと安心です。',
@@ -166,7 +166,7 @@ ${sec('s3')}
 ${sec('white')}
 <section>
   <h2>ホワイトニングの記事</h2>
-  ${list(['whitening.html'])}
+  ${list(['white-meister.html','whitening.html'])}
 </section>`},
 ];
 const BRIDAL={file:'bridal.html',crumb:'花嫁の準備',title:'花嫁の準備ノート｜挙式までの体と肌・ドレス・式場の記事一覧',desc:'挙式までの体と肌の整え方、ドレスの形別の準備、季節別の注意、ブライダルフェアの回り方まで、花嫁の準備の記事を時期と目的で並べました。',
