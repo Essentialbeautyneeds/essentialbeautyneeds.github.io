@@ -11,7 +11,7 @@ const BAR=tpl.match(/<!-- ebn-bar -->[\s\S]*?<!-- \/ebn-bar -->/)[0];
 const HEADMID=tpl.slice(tpl.indexOf('<link rel="icon"'),tpl.indexOf('<script type="application/ld+json">'));
 const tc=read('trial-collection.html');
 const card=name=>{const i=tc.indexOf(`<h3>${name}</h3>`);if(i<0)throw 'no card '+name;const s=tc.lastIndexOf('<div class="card">',i);const e=tc.indexOf('\n    </div>',i)+11;return tc.slice(s,e)};
-const CAT={gym:['gym.html','ジム・ヨガ・オンライン'],datsumo:['datsumo.html','脱毛'],teeth:['teeth.html','歯のホワイトニング']};
+const CAT={gym:['gym.html','ジム・ヨガ・オンライン'],datsumo:['datsumo.html','脱毛'],teeth:['teeth.html','歯のホワイトニング'],esthe:['esthe.html','エステ']};
 const td='style="padding:8px;border-bottom:1px solid #e8e6e1;vertical-align:top"';
 const th='style="text-align:left;padding:8px;border-bottom:1px solid #e8e6e1;vertical-align:top;white-space:nowrap;font-weight:700"';
 const table=rows=>`<div style="overflow-x:auto"><table style="width:100%;border-collapse:collapse;font-size:14px;line-height:1.7"><tbody>
@@ -80,11 +80,56 @@ const S=[
  refuse:'',refuseNote:'都度払いで入会金がないため、コースの契約を迫られる形ではありません。施術のあと24時間は、コーヒー・紅茶・赤ワイン・カレー・醤油など色の濃いものを避けるよう案内されています。予定のある日の前は、日程に気をつけましょう。',
  good:['1回で変化を見たい','銀座に通える','写真を撮る予定の前に白くしたい'],bad:['18歳未満・妊娠中・授乳中の人','知覚過敏が強い人（先に相談する）','自宅で少しずつ進めたい（ホームホワイトニングが合う）'],
  src:'ホワイトマイスター 公式サイト（トップページ・よくある質問・メニューとキャンペーンのページ）'},
+{file:'miss-paris-trial.html',cat:'esthe',card:'エステティック ミス・パリ',name:'エステティック ミス・パリ',day:'2026年11月9日',iso:'2026-11-09',
+ title:'ミス・パリの体験コース｜料金・所要時間・入会金と解約の決まり',
+ desc:'エステティック ミス・パリの初回限定体験は、痩身5,500円、フェイシャル7,700円（税込）が中心です。所要時間、持ち物、入会金、クーリングオフと中途解約の決まりを公式サイトの記載で整理しました。',
+ h1:'ミス・パリの体験は、<br>2〜3時間みておく。',
+ lead:'エステティック ミス・パリの初回限定体験は、痩身のコースが5,500円、フェイシャルのコースが7,700円（いずれも税込）のものが中心です。痩身の体験は、カウンセリングと着替えを含めて2〜3時間が目安です。コースに入る場合は、施術の料金のほかに入会金がかかります。',
+ rows:[['体験の料金','初回限定。痩身のコースは5,500円、フェイシャルのコースは7,700円（税込）のものが中心。コースごとの価格は公式サイトで確かめる'],['時間','痩身コースの施術は約90分。カウンセリング・着替えを含めて2〜3時間が目安'],['持ち物','写真付きの身分証明書。フェイシャルの体験はメイクを落とすので、必要ならメイク道具。コンタクトレンズを使う人は保存用ケース'],['受けられない場合','生理中・妊娠中はボディのコースを避けるよう案内されている。タトゥーなどがある人は施術を受けられない（4cm四方程度のもの1か所は可）'],['予約の変更','利用するサロンに連絡する。予約の当日は変更もキャンセルもできない'],['入会金','33,000円（税込・2年間有効）。入会すると会員料金でコースを利用できる'],['コースの料金','予算や体質、目的に合わせて提案するため人によって違う。体験のカウンセリングで説明がある'],['解約','契約日から8日以内ならクーリングオフができる。過ぎたあとも、有効期限内なら中途解約ができる'],['20歳未満','体験は受けられる。コースの契約には保護者の同伴か同意が必要']],
+ flow:['体験したいコース・日にち・サロンを決めて、Webか電話で予約する','サロンで身分証を見せ、カウンセリングを受ける','着替えて、体験の施術を受ける（痩身は約90分）','キャンペーンや入会の説明を聞き、続けるかどうかを答える'],
+ refuse:'「今日は体験だけのつもりです。総額と回数を書いたものをいただいて、家で考えます。」',
+ refuseNote:'公式サイトのよくある質問には、体験のときにキャンペーンや入会の説明はあるものの、無理な勧誘はしないと書かれています。コースの総額は人によって違うので、入会金を含めた合計を紙で受け取ってから比べると判断しやすくなります。',
+ good:['挙式の前にブライダルも含めて相談したい','まず1回、低額で試したい','半日ほど時間を取れる'],bad:['入会金をかけずに通いたい','短い時間で済ませたい','体験の予定日が動きやすい（当日の変更ができない）'],
+ src:'エステティック ミス・パリ 公式サイト（コース一覧・体験までの流れ・よくある質問）'},
+{file:'ciz-labo-trial.html',cat:'esthe',card:'シーズ・ラボ',name:'シーズ・ラボ',day:'2026年11月9日',iso:'2026-11-09',
+ title:'シーズ・ラボの体験コース｜料金・初回の所要時間・入会金と解約',
+ desc:'シーズ・ラボの体験は、確認したコースで4,400円と7,700円（税込）。初回はカウンセリングを含めて約120分です。入会金22,000円、未成年・学生の同意書、クーリングオフと中途解約の決まりを整理しました。',
+ h1:'シーズ・ラボの初回は、<br>カウンセリング込みで120分。',
+ lead:'シーズ・ラボは、毛穴やニキビなど悩み別の体験コースがあるエステサロンです。確認したコースの体験料金は4,400円と7,700円（税込）で、初回はカウンセリングを含めて約120分かかります。会員制で、入会金は22,000円（税込）です。',
+ rows:[['体験の料金','確認したコースの例：ニキビのケア 4,400円、背中など体のケア 4,400円、毛穴のケア 7,700円（税込）。通常は1回15,400円。コースごとに公式サイトで確かめる'],['時間','施術は50〜60分。初回はカウンセリングを含めて約120分'],['入会金','22,000円（税込）。入会しない場合はビジターとして通う形も案内されている'],['コースの例','入会金22,000円＋ニキビのケア 19,800円×12回＝233,200円（税込）。肌質などで内容と料金は変わる'],['受けられない場合','通院中・服薬中・経過観察中の人は受けられないことがある（同意書あり）。タトゥーなどは断られる場合がある（4cm四方以内1か所までは部位を避けて施術）'],['未成年・学生','保護者の同伴か、親権者の同意書と保護者への電話確認が必要'],['解約','契約書面を受け取った日から8日以内ならクーリングオフができる。過ぎたあとも期間内なら中途解約ができ、施術を始める前の解約料は20,000円まで']],
+ flow:['悩みに合う体験コースを選び、サロンを予約する','カウンセリングで肌の状態と希望を話す','フェイシャルの場合はコンタクトレンズを外して、施術を受ける','コースの提案を聞き、続けるかどうかを答える'],
+ refuse:'「今日は体験だけにします。入会金を含めた総額を書いたものをいただいて、家で考えます。」',
+ refuseNote:'コースの例では、入会金を含めて20万円を超えます。学生の人は年齢にかかわらず、来店の前に同意書か保護者への電話確認が必要なので、先に準備しておくと当日に慌てません。',
+ good:['毛穴やニキビなど、気になる悩みがはっきりしている','1回4,000〜8,000円ほどで試したい','初回に2時間取れる'],bad:['入会金をかけたくない','通院中や服薬中で、主治医に確認していない','短い時間で済ませたい'],
+ src:'シーズ・ラボ 公式サイト（体験コース一覧・ご来店前の注意事項・サロンシステムのご案内）'},
+{file:'dione-trial.html',cat:'datsumo',card:'ディオーネ',name:'ディオーネ（Dione）',day:'2026年11月9日',iso:'2026-11-09',
+ title:'ディオーネの無料お試しショット｜カウンセリングの流れと費用',
+ desc:'脱毛サロンのディオーネには、無料のお試しショットとカウンセリングがあります。所要時間、持ち物、契約は後日でよいこと、入会費やシェービング料の扱い、通う間隔を公式サイトの記載で整理しました。',
+ h1:'ディオーネは、<br>無料のお試しショットから。',
+ lead:'脱毛サロンのディオーネ（Dione）は、契約の前に無料のお試しショットとカウンセリングを受けられます。カウンセリングは約30分〜1時間です。契約は後日でもよいと公式サイトに書かれています。',
+ rows:[['お試し','無料のお試しショット（パッチテスト）と、無料カウンセリング。初回限定価格の体験もあり、料金は店舗ごとのページで確かめる'],['時間','カウンセリングは約30分〜1時間。施術は顔で1回30分〜1時間、全身で1時間〜1時間半ほど（サロンによって違う）'],['持ち物','特になし。パッチテストを受ける人は、腕まくりができる服装で行く'],['その日の契約','後日でよい。契約するときは、カウンセリングを受けた店舗にもう一度行く'],['ほかにかかる費用','コース料金のほかはかからないと案内されている（入会費・契約手数料・キャンセル料・シェービング料なし）'],['通う間隔','最短で2週間に1回。まず12回のコースを提案している'],['受けられない場合','妊娠中の人、通院中・服薬中で担当医の許可がない人など。生理中や日焼けのあとはサロンに相談する'],['解約・店舗','解約はでき、返金もあるが手数料がかかる。施術は契約した店舗だけで受ける']],
+ flow:['予約フォームから近くのサロンを予約する','サロンからの確認の電話を受ける','説明のあと、無料のパッチテストを受ける','希望すれば、コースや料金の説明を受ける','契約するかを決める（日を改めてもよい）'],
+ refuse:'「今日はお試しだけにします。総額と回数を確かめて、また連絡します。」',
+ refuseNote:'公式サイトには、脱毛に「◯回で終了」というものはなく、一生生えてこないわけではないとも書かれています。挙式の日までの回数と総額を先に聞いて、間に合うかを確かめてから決めるとよいでしょう。解約の手数料と、支払い方法はサロンごとに違うので、契約の前に聞いておきます。',
+ good:['痛みや肌の反応を、契約の前に確かめたい','部位を1つだけ試したい','契約した店舗に通い続けられる'],bad:['引っ越しの予定がある（店舗の移動は地域やサロンによる）','医療脱毛を受けたい','通う回数を少なくしたい'],
+ src:'ディオーネ 公式サイト（無料お試しショット・プラン料金・よくある質問）'},
+{file:'amazones-trial.html',cat:'gym',card:'Amazones（アマゾネス）',name:'Amazones（アマゾネス）',day:'2026年11月9日',iso:'2026-11-09',
+ title:'Amazonesの無料体験・見学｜所要時間・月会費と解約できない期間',
+ desc:'女性専用24時間ジムのAmazonesは、全店舗で無料体験（1時間）と見学（30分）を受け付けています。月会費、入会時の費用、キャンペーン入会の在籍必須期間、退会の締め切りを公式サイトで整理しました。',
+ h1:'Amazonesは、<br>入会キャンペーンの条件を先に見る。',
+ lead:'女性専用24時間ジムのAmazones（アマゾネス）は、全店舗で無料体験と見学を受け付けています。体験は1時間、見学は30分です。キャンペーンで入会すると、6ヶ月か12ヶ月は退会できない期間がつくため、体験の前に条件を見ておくと安心です。',
+ rows:[['体験・見学','全店舗で常時受付。無料。体験は1時間、見学は30分'],['行ける時間','スタッフがいる時間（月・火・木・金・土の11:00〜20:00）'],['体験の内容','カウンセリング → レンタルウェアに着替えて AI 姿勢診断 → 女性トレーナーとマシンを試す'],['借りられる物','初回の体験では、ウェア上下・シューズ・タオルなどを用意している'],['月会費','スタンダード 9,900円、学生 7,700円、シニア（60歳以上）7,700円、おさんぽ（有酸素マシンのみ）4,400円'],['入会時の費用','入会金・事務手数料 11,000円、セキュリティ登録料 5,500円（税込）と、月会費2ヶ月分。条件を満たすと入会金などが無料になるキャンペーンがある'],['入会の持ち物','写真付きの本人確認書類、クレジットカードかキャッシュカードと銀行印、スマートフォンなど'],['在籍必須期間','キャンペーンで入会すると、在籍2ヶ月目から6ヶ月間か12ヶ月間は退会できない。期間内にやめるときは、残りの月会費を一括で払う'],['退会の締め切り','店頭で手続きする（スタッフか各店の公式 LINE に声をかける）。クレジットカードは毎月19日、口座振替は毎月9日までの申請で、翌月末の退会'],['18歳未満','入会時に保護者の同意書が必要']],
+ flow:['Web の予約フォームか、入会したい店舗の公式 LINE から予約する','スタッフがいる時間に来店する','カウンセリングのあと、ウェアに着替えて AI 姿勢診断を受ける','マシンを試す（体験は1時間）','入会するかを決める（その日に手続きをすれば、そのまま使える）'],
+ refuse:'「今日は体験だけにします。キャンペーンの在籍必須期間を確かめて、家で考えます。」',
+ refuseNote:'挙式のあとまで続けるつもりがない場合は、在籍必須期間に注意が必要です。たとえばスタンダード会員で12ヶ月の期間がつくと、途中でやめても残りの月会費を払うことになります。入会金が無料でも、この分まで含めて比べると損得が見えます。',
+ good:['女性だけのジムで、マシンの使い方から教わりたい','仕事の前後など、好きな時間に通いたい','通える店舗が近くにある'],bad:['挙式までの数ヶ月だけ通いたい（キャンペーンの在籍必須期間に注意）','ネットだけで退会したい','スタッフがいない時間に体験したい'],
+ src:'Amazones 公式サイト（無料体験・見学の流れ・料金・入会案内・よくある質問・会則）'},
 ];
+const cardFor=s=>card(s.card).split(` <a href="${s.file}">条件と当日の流れを見る</a>`).join('');
 const ul=a=>`<ul>\n${a.map(x=>`    <li>${x}</li>`).join('\n')}\n  </ul>`;
 const out=[];
-for(const s of S){const [catFile,catName]=CAT[s.cat];const url=SITE+s.file;
- const ld={"@context":"https://schema.org","@graph":[{"@type":"Article","headline":s.title,"description":s.desc,"url":url,"datePublished":"2026-11-08","dateModified":"2026-11-08","author":{"@type":"Organization","name":"Essential Beauty Needs 編集部","url":SITE+"about.html"},"publisher":{"@type":"Organization","name":"Essential Beauty Needs","url":SITE}},{"@type":"BreadcrumbList","itemListElement":[{"@type":"ListItem","position":1,"name":"トップ","item":SITE},{"@type":"ListItem","position":2,"name":catName,"item":SITE+catFile},{"@type":"ListItem","position":3,"name":s.name,"item":url}]}]};
+for(const s of S){const [catFile,catName]=CAT[s.cat];const url=SITE+s.file;const dayJ=s.day||DAY,iso=s.iso||'2026-11-08';
+ const ld={"@context":"https://schema.org","@graph":[{"@type":"Article","headline":s.title,"description":s.desc,"url":url,"datePublished":iso,"dateModified":iso,"author":{"@type":"Organization","name":"Essential Beauty Needs 編集部","url":SITE+"about.html"},"publisher":{"@type":"Organization","name":"Essential Beauty Needs","url":SITE}},{"@type":"BreadcrumbList","itemListElement":[{"@type":"ListItem","position":1,"name":"トップ","item":SITE},{"@type":"ListItem","position":2,"name":catName,"item":SITE+catFile},{"@type":"ListItem","position":3,"name":s.name,"item":url}]}]};
  const html=`<!DOCTYPE html>
 <html lang="ja">
 <head>
@@ -117,7 +162,7 @@ ${HEADER}
 <section>
   <h2>${s.name}の条件（公式サイトの記載）</h2>
   ${table(s.rows)}
-  <p class="small">${DAY}に公式サイトで確かめた内容です。料金やキャンペーンは変わるため、申し込む前に公式サイトで最新の内容を確かめてください。</p>
+  <p class="small">${dayJ}に公式サイトで確かめた内容です。料金やキャンペーンは変わるため、申し込む前に公式サイトで最新の内容を確かめてください。</p>
 </section>
 
 <section>
@@ -147,12 +192,12 @@ ${s.flow.map(x=>`    <li>${x}</li>`).join('\n')}
 <section>
   <h2>申し込みはこちら</h2>
   <div class="trial">
-${card(s.card)}
+${cardFor(s)}
   </div>
 </section>
 
 <section class="next">
-  <p class="small">出典：${s.src}（${DAY}確認）</p>
+  <p class="small">出典：${s.src}（${dayJ}確認）</p>
   <p class="small">ほかのサービスとも比べるなら、<a href="${catFile}">${catName}の体験を比べる</a>と<a href="trial-collection.html">無料・低額で試せる体験リスト</a>へ。</p>
 </section>
 </div>
@@ -164,12 +209,12 @@ ${BAR}
 `;
  write(s.file,html);out.push(s.file);
  // 体験リストのカードから、このページへのリンク
- let t=read('trial-collection.html');const i=t.indexOf(`<h3>${s.card}</h3>`);const pe=t.indexOf('</p>',i);
- if(!t.slice(i,pe+200).includes(`href="${s.file}"`)){t=t.slice(0,pe)+` <a href="${s.file}">条件と当日の流れを見る</a>`+t.slice(pe);write('trial-collection.html',t);}
+ for(const hf of ['trial-collection.html',catFile]){let t=read(hf);const i=t.indexOf(`<h3>${s.card}</h3>`);if(i<0)continue;const pe=t.indexOf('</p>',i);
+ if(!t.slice(i,pe+200).includes(`href="${s.file}"`)){t=t.slice(0,pe)+` <a href="${s.file}">条件と当日の流れを見る</a>`+t.slice(pe);write(hf,t);}}
 }
 // 表参道 → 銀座（ホワイトマイスターの所在地を公式サイトで確認）
 for(const f of fs.readdirSync(R).filter(f=>f.endsWith('.html'))){let b=read(f);if(/http-equiv="refresh"/i.test(b))continue;const o=b;
  b=b.replace(/<span class="tag n">表参道<\/span>/g,'<span class="tag n">銀座</span>').replace(/東京・表参道のホワイトニング専門の歯科/g,'東京・銀座のホワイトニング専門の歯科').replace(/クリニック（表参道）/g,'クリニック（銀座）');if(b!==o)write(f,b);}
 // sitemap
-let sm=read('sitemap.xml');const add=S.map(s=>s.file).filter(f=>!sm.includes(SITE+f)).map(f=>`  <url>\n    <loc>${SITE}${f}</loc>\n    <lastmod>2026-11-08</lastmod>\n    <changefreq>monthly</changefreq>\n    <priority>0.7</priority>\n  </url>\n`).join('');sm=sm.replace('</urlset>',add+'</urlset>');write('sitemap.xml',sm);
+let sm=read('sitemap.xml');const add=S.map(s=>s.file).filter(f=>!sm.includes(SITE+f)).map(f=>`  <url>\n    <loc>${SITE}${f}</loc>\n    <lastmod>2026-11-09</lastmod>\n    <changefreq>monthly</changefreq>\n    <priority>0.7</priority>\n  </url>\n`).join('');sm=sm.replace('</urlset>',add+'</urlset>');write('sitemap.xml',sm);
 console.log('made',out.join(' '));
