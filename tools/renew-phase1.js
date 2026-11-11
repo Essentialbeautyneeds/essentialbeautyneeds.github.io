@@ -10,7 +10,7 @@ const titleOf=f=>((read(f).match(/<title>([^<]*)<\/title>/)||[])[1]||f).replace(
 const descOf=f=>((read(f).match(/<meta name="description" content="([^"]*)"/)||[])[1]||'');
 const A='style="display:block;color:#8c4a5c;text-decoration:underline;text-decoration-color:rgba(140,74,92,.4);text-underline-offset:3px;font-size:12.5px;font-weight:500;font-family:\'Zen Kaku Gothic New\',sans-serif;padding:3px 0;text-align:left;line-height:1.6"';
 const P='style="margin:0 0 8px;font-size:10.5px;letter-spacing:.12em;color:#5f7a63;font-weight:700;font-family:\'Zen Kaku Gothic New\',sans-serif;text-align:left"';
-const NAV=[['datsumo.html','脱毛'],['esthe.html','エステ'],['gym.html','ジム・ヨガ'],['teeth.html','ホワイトニング'],['bridal.html','花嫁の準備'],['trial-collection.html','体験リスト']];
+const NAV=[['datsumo.html','脱毛'],['esthe.html','エステ'],['gym.html','ジム・ヨガ'],['teeth.html','ホワイトニング'],['home-trial.html','自宅で試す'],['bridal.html','花嫁の準備'],['trial-collection.html','体験リスト']];
 const HEADER=`<header class="site-head">
   <div class="site-head-in">
     <a class="brand" href="index.html">Essential Beauty Needs<span>美容のお試しノート</span></a>
@@ -27,7 +27,7 @@ const FOOTER=`<footer class="site-foot">
   <div class="wrap">
     <div class="foot-by">Essential Beauty Needs ／ 編集：Essential Beauty Needs 編集部</div>
     <div class="foot-groups" style="display:grid;grid-template-columns:repeat(auto-fit,minmax(150px,1fr));gap:22px 24px;text-align:left">
-${grp('分類から探す',[['datsumo.html','脱毛'],['esthe.html','エステ・整体'],['gym.html','ジム・ヨガ・オンライン'],['teeth.html','歯のホワイトニング'],['bridal.html','花嫁の準備']])}
+${grp('分類から探す',[['datsumo.html','脱毛'],['esthe.html','エステ・整体'],['gym.html','ジム・ヨガ・オンライン'],['teeth.html','歯のホワイトニング'],['home-trial.html','自宅で試す（お試しセット・美容器）'],['bridal.html','花嫁の準備']])}
 ${grp('比べて決める',[['trial-collection.html','無料・低額で試せる体験リスト'],['gym-trial-refusal.html','体験だけで帰る方法'],['gym-cancel.html','契約の前に確認すること']])}
 ${grp('サイト情報',[['about.html','運営者情報'],['privacy-policy.html','プライバシーポリシー'],['beauty-column.html','記事の一覧']])}
     </div>
