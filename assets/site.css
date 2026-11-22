@@ -163,3 +163,12 @@ p{margin:0 0 16px}
 @media (max-width:620px){
   .card{grid-template-areas:"tags" "row" "body" "thumb" "nudge" "cta"}
 }
+
+.early-cta{margin:18px 0 0}
+.early-cta .ecta{background:#fff;border:1.5px solid var(--rose,#c06c84);border-radius:14px;padding:14px 16px}
+.early-cta .ecta-k{margin:0 0 4px;font-size:12px;font-weight:700;letter-spacing:.06em;color:var(--rose,#c06c84)}
+.early-cta .ecta-name{margin:0 0 4px;font-size:16px;font-weight:700;color:#3d3836}
+.early-cta .ecta-desc{margin:0 0 6px;font-size:14px;line-height:1.7;color:#4a4542}
+.early-cta .ecta-nudge{position:relative;margin:0 0 10px;padding-left:1.35em;font-size:13px;font-weight:700;color:#3d3836}
+.early-cta .ecta-nudge::before{content:"";position:absolute;left:.1em;top:.42em;width:.68em;height:.36em;border-left:2px solid var(--rose,#c06c84);border-bottom:2px solid var(--rose,#c06c84);transform:rotate(-45deg)}
+.early-cta .ecta-go{display:block;text-align:center;padding:12px 10px;border-radius:999px;background:var(--rose,#c06c84);color:#fff;font-weight:700;text-decoration:none}
